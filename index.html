@@ -185,10 +185,11 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .print-btn { display:inline-flex; align-items:center; gap:7px; background:var(--navy); color:#fff; border:none; font-size:.85rem; font-weight:600; padding:8px 16px; border-radius:999px; cursor:pointer; }
 .print-btn:hover { background:#16294d; }
 .print-btn .ic { font-size:1rem; }
-.home-fab { position:fixed; top:16px; left:16px; z-index:999; display:inline-flex; align-items:center; gap:6px; background:var(--navy); color:#fff !important; text-decoration:none; font-size:.82rem; font-weight:700; padding:8px 16px; border-radius:999px; box-shadow:0 2px 10px rgba(0,0,0,.25); }
-.home-fab:hover { background:#16294d; }
-.home-fab .ic { font-size:1rem; }
-@media (max-width:600px) { .home-fab { top:10px; left:10px; padding:7px 12px; font-size:.75rem; } }
+.hero-title-row { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; }
+.home-fab { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.5); color:#fff !important; text-decoration:none; font-size:1.05rem; font-weight:700; padding:12px 22px; border-radius:999px; box-shadow:0 2px 10px rgba(0,0,0,.25); transition:background .15s; }
+.home-fab:hover { background:rgba(255,255,255,.32); }
+.home-fab .ic { font-size:1.25rem; }
+@media (max-width:600px) { .home-fab { padding:9px 16px; font-size:.9rem; } .home-fab .ic { font-size:1.05rem; } }
 .print-row { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:18px 0 4px; }
 .print-mini { display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.4); color:#fff; font-size:.76rem; font-weight:600; padding:6px 13px; border-radius:999px; cursor:pointer; }
 .print-mini:hover { background:rgba(255,255,255,.32); }
@@ -310,12 +311,13 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 </head>
 <body>
 
-<a href="#top" class="home-fab no-print"><span class="ic">&#127968;</span>Home</a>
-
 <div class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-text">
-      <h1>The Fab 4 Take on Europe</h1>
+      <div class="hero-title-row">
+        <a href="#top" class="home-fab no-print"><span class="ic">&#127968;</span>Home</a>
+        <h1>The Fab 4 Take on Europe</h1>
+      </div>
       <div class="hero-flags" aria-label="United Kingdom, Italy, France">&#127468;&#127463; &#127470;&#127481; &#127467;&#127479;</div>
       <p class="sub">10 &ndash; 29 September 2026</p>
       <div class="nav-grid"><div class="nav-col">
