@@ -189,6 +189,12 @@ table.ttc td, table.ntb td { padding:10px 12px; border-bottom:1px solid #f0eee8;
 .tt-tick { text-align:center; }
 .tt-check { width:20px; height:20px; accent-color:var(--navy); cursor:pointer; }
 .tt-note { color:var(--muted); font-size:.82rem; font-style:italic; margin:-10px 0 24px; }
+.eta-check { width:20px; height:20px; accent-color:#c0392b; cursor:pointer; }
+.uketa-box { margin-top:28px; border:2px solid #c0392b; border-radius:10px; padding:14px 18px; background:#fdecec; }
+.uketa-summary { cursor:pointer; font-weight:700; color:#c0392b; font-size:1.02rem; }
+.uketa-box .tt-note { margin-top:10px; }
+.eta-reminder { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; background:#c0392b; color:#fff; text-align:center; padding:12px 20px; font-weight:700; font-size:.95rem; }
+.eta-reminder a { color:#fff; text-decoration:underline; }
 .japan-banner { text-align:center; padding:50px 20px 60px; background:var(--navy); color:#fff; }
 .japan-banner .jb-text { font-size:2rem; font-weight:800; letter-spacing:.03em; margin:0; }
 .japan-banner .jb-flag { font-size:2.4rem; display:block; margin-bottom:10px; }
@@ -386,6 +392,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       <a href="#hotels"><span class="ic">&#127976;&#65039;</span>Hotel Addresses</a>
       <button class="print-mini no-print" onclick="printSection('hotels')">Print Hotel Addresses</button>
       <a class="print-mini no-print" href="mailto:?subject=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses&body=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses%0A%0AThe%20Republic%20Hotel%0AVia%20Gaeta%2061%2C%2000185%20Rome%2C%20Italy%0ADates%3A%2010-14%20Sept%202026%20%28check-out%20morning%20of%20the%2014th%20for%20Civitavecchia/cruise%20embarkation%29%0APhone%3A%20%2B39%2006%208115%207001%0AEmail%3A%20therepublic%40aghotels.it%0A%0AHotel%20Borgo%20di%20Cortefreda%20Relais%0AVia%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%20%28FI%29%2C%20Italy%0ADates%3A%2021-23%20Sept%202026%20%28check-out%20morning%20of%20the%2023rd%20for%20the%20drive%20to%20Milan%29%0APhone%3A%20%2B39%20055%20807%203333%0AEmail%3A%20info%40borgodicortefreda.com%0A%0AiQ%20Hotel%20Milano%0AVia%20Giovanni%20Battista%20Pirelli%205%2C%2020124%20Milan%2C%20Italy%0ADates%3A%2023-24%20Sept%202026%20%28check-out%20morning%20of%20the%2024th%20for%20the%20flight%20to%20London%29%0APhone%3A%20%2B39%2002%208498%200810%0AEmail%3A%20info%40iqhotelmilano.it%0A%0AThe%20Level%20at%20Melia%20White%20House%0ALongford%20Street%2C%20Regent%27s%20Park%2C%20London%20NW1%203UP%2C%20United%20Kingdom%0ADates%3A%2024-27%20Sept%202026%20%28depart%20Heathrow%20the%20night%20of%20the%2027th%29%0APhone%3A%20%2B44%2020%207391%203000%0AEmail%3A%20melia.white.house%40melia.com"><span class="ic">&#9993;&#65039;</span>Email Hotel Addresses</a>
+    </div><div class="nav-col">
+      <a href="https://www.gov.uk/eta/apply" target="_blank" rel="noopener" onclick="revealEtaChecklist()"><span class="ic">&#128179;</span>UK ETA</a>
+      <button class="print-mini no-print" onclick="revealEtaChecklist()">Checklist</button>
     </div></div>
       <button class="print-mini print-mini-all no-print" onclick="printBook()"><span class="ic">&#128214;</span>Print Book</button>
       <button class="print-mini print-mini-all no-print" onclick="printAll()"><span class="ic">&#128424;&#65039;</span>Print All</button>
@@ -406,6 +415,12 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       </div>
     </div>
   </div>
+</div>
+
+<div id="etaReminder" class="eta-reminder no-print" style="display:none">
+  <span class="ic">&#9888;&#65039;</span>
+  <span id="etaReminderText">Reminder: Do our UK ETA's!</span>
+  <a href="https://www.gov.uk/eta/apply" target="_blank" rel="noopener" onclick="revealEtaChecklist()">Go to checklist</a>
 </div>
 
 <section id="overview" class="print-block" data-section="overview">
@@ -6330,6 +6345,31 @@ Visit Website: Headout</div>
       <td class="tt-tick"><input type="checkbox" class="tt-check" id="tt-6-get-some-pounds-and-some-euro-s-for-oope" data-tt-id="tt-6-get-some-pounds-and-some-euro-s-for-oope"></td>
     </tr>
   </table>
+
+  <details id="uketaDetails" class="uketa-box">
+    <summary class="uketa-summary"><span class="ic">&#128179;</span> UK ETA Applications &ndash; tick off once each person has applied</summary>
+    <p class="tt-note">Apply here: <a href="https://www.gov.uk/eta/apply" target="_blank" rel="noopener">gov.uk/eta/apply</a> &ndash; each of the 4 of us needs our own UK ETA before flying to London. Tick boxes save in this browser only.</p>
+    <table class="ntb">
+      <tr><th>Name</th><th>Applied?</th></tr>
+      
+    <tr>
+      <td>Karen Nicholson</td>
+      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-0-karen-nicholson" data-eta-id="karen-nicholson"></td>
+    </tr>
+    <tr>
+      <td>Debbie Gyde</td>
+      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-1-debbie-gyde" data-eta-id="debbie-gyde"></td>
+    </tr>
+    <tr>
+      <td>Thomas Akhurst</td>
+      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-2-thomas-akhurst" data-eta-id="thomas-akhurst"></td>
+    </tr>
+    <tr>
+      <td>Gary Nicholson</td>
+      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-3-gary-nicholson" data-eta-id="gary-nicholson"></td>
+    </tr>
+    </table>
+  </details>
 </section>
 
 <section id="hotels" class="print-block" data-section="hotels">
@@ -6412,6 +6452,38 @@ window.addEventListener('afterprint', function() {
       localStorage.setItem(key, box.checked ? '1' : '0');
     });
   });
+})();
+function revealEtaChecklist() {
+  var d = document.getElementById('uketaDetails');
+  if (d) {
+    d.open = true;
+    setTimeout(function() { d.scrollIntoView({behavior:'smooth', block:'center'}); }, 60);
+  }
+}
+(function() {
+  var boxes = document.querySelectorAll('.eta-check');
+  function updateEtaReminder() {
+    var banner = document.getElementById('etaReminder');
+    var textEl = document.getElementById('etaReminderText');
+    if (!banner || !boxes.length) return;
+    var doneCount = 0;
+    boxes.forEach(function(b) { if (b.checked) doneCount++; });
+    if (doneCount < boxes.length) {
+      banner.style.display = 'flex';
+      if (textEl) textEl.textContent = "Reminder: Do our UK ETA's! (" + doneCount + ' of ' + boxes.length + ' done)';
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+  boxes.forEach(function(box) {
+    var key = 'fab4-eta-' + box.dataset.etaId;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function() {
+      localStorage.setItem(key, box.checked ? '1' : '0');
+      updateEtaReminder();
+    });
+  });
+  updateEtaReminder();
 })();
 function updateHeroClock() {
   var el = document.getElementById('heroClock');
