@@ -113,6 +113,7 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .fun-fact-box { border:1px solid var(--gold); border-radius:8px; padding:10px 14px; margin-bottom:14px; background:#fffcf3; }
 .fun-fact-label { font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--gold); margin-bottom:4px; }
 .fun-fact-text { font-size:.85rem; color:var(--ink); line-height:1.45; }
+.fun-fact-text + .fun-fact-text { margin-top:8px; padding-top:8px; border-top:1px dashed #eee6cf; }
 .fun-fact-text a { color:var(--cruise); }
 .fun-fact-source { color:var(--muted); font-size:.8rem; white-space:nowrap; }
 .place-fact { margin-top:8px; padding-top:8px; border-top:1px dashed #e3ddc9; font-size:.78rem; color:var(--muted); font-style:italic; line-height:1.4; }
@@ -368,7 +369,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     </div><div class="nav-col">
       <a href="#hotels"><span class="ic">&#127976;&#65039;</span>Hotel Addresses</a>
       <button class="print-mini no-print" onclick="printSection('hotels')">Print Hotel Addresses</button>
-      <a class="print-mini no-print" href="mailto:?subject=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses&body=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses%0A%0AThe%20Republic%20Hotel%0AVia%20Gaeta%2061%2C%2000185%20Rome%2C%20Italy%0APhone%3A%20%2B39%2006%208115%207001%0AEmail%3A%20therepublic%40aghotels.it%0A%0AHotel%20Borgo%20di%20Cortefreda%20Relais%0AVia%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%20%28FI%29%2C%20Italy%0APhone%3A%20%2B39%20055%20807%203333%0AEmail%3A%20info%40borgodicortefreda.com%0A%0AiQ%20Hotel%20Milano%0AVia%20Giovanni%20Battista%20Pirelli%205%2C%2020124%20Milan%2C%20Italy%0APhone%3A%20%2B39%2002%208498%200810%0AEmail%3A%20info%40iqhotelmilano.it%0A%0AThe%20Level%20at%20Melia%20White%20House%0ALongford%20Street%2C%20Regent%27s%20Park%2C%20London%20NW1%203UP%2C%20United%20Kingdom%0APhone%3A%20%2B44%2020%207391%203000%0AEmail%3A%20melia.white.house%40melia.com"><span class="ic">&#9993;&#65039;</span>Email Hotel Addresses</a>
+      <a class="print-mini no-print" href="mailto:?subject=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses&body=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses%0A%0AThe%20Republic%20Hotel%0AVia%20Gaeta%2061%2C%2000185%20Rome%2C%20Italy%0ADates%3A%2010-14%20Sept%202026%20%28check-out%20morning%20of%20the%2014th%20for%20Civitavecchia/cruise%20embarkation%29%0APhone%3A%20%2B39%2006%208115%207001%0AEmail%3A%20therepublic%40aghotels.it%0A%0AHotel%20Borgo%20di%20Cortefreda%20Relais%0AVia%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%20%28FI%29%2C%20Italy%0ADates%3A%2021-23%20Sept%202026%20%28check-out%20morning%20of%20the%2023rd%20for%20the%20drive%20to%20Milan%29%0APhone%3A%20%2B39%20055%20807%203333%0AEmail%3A%20info%40borgodicortefreda.com%0A%0AiQ%20Hotel%20Milano%0AVia%20Giovanni%20Battista%20Pirelli%205%2C%2020124%20Milan%2C%20Italy%0ADates%3A%2023-24%20Sept%202026%20%28check-out%20morning%20of%20the%2024th%20for%20the%20flight%20to%20London%29%0APhone%3A%20%2B39%2002%208498%200810%0AEmail%3A%20info%40iqhotelmilano.it%0A%0AThe%20Level%20at%20Melia%20White%20House%0ALongford%20Street%2C%20Regent%27s%20Park%2C%20London%20NW1%203UP%2C%20United%20Kingdom%0ADates%3A%2024-27%20Sept%202026%20%28depart%20Heathrow%20the%20night%20of%20the%2027th%29%0APhone%3A%20%2B44%2020%207391%203000%0AEmail%3A%20melia.white.house%40melia.com"><span class="ic">&#9993;&#65039;</span>Email Hotel Addresses</a>
     </div></div>
       <button class="print-mini print-mini-all no-print" onclick="printAll()"><span class="ic">&#128424;&#65039;</span>Print All</button>
       <button class="print-mini no-print" id="factsToggleBtn" onclick="toggleFunFacts()"><span class="ic">&#127881;</span>Hide Fun Facts</button>
@@ -569,8 +570,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Villa Borghese Gardens were laid out from 1605 by Cardinal Scipione Borghese &ndash; nephew of Pope Paul V &ndash; as one of the first great "gardens of delight" in Europe, built purely for pleasure, art and parties rather than growing food. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Villa_Borghese_gardens" target="_blank">Wikipedia</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Villa Borghese Gardens were laid out from 1605 by Cardinal Scipione Borghese &ndash; nephew of Pope Paul V &ndash; as one of the first great "gardens of delight" in Europe, built purely for pleasure, art and parties rather than growing food. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Villa_Borghese_gardens" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">The Galleria Borghese inside the gardens holds Bernini's Apollo and Daphne, carved when he was just 24, and a marble statue of Napoleon's sister Pauline Bonaparte reclining semi-nude that scandalised Rome when it was unveiled in 1808. <span class="fun-fact-source">&mdash; <a href="https://galleriaborghese.beniculturali.it/en/" target="_blank">Galleria Borghese</a></span></div>
     </div>
         
         
@@ -825,8 +826,8 @@ Visit Website: Palazzo Montemartini &rarr; The Republic Hotel</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">It's a myth that Michelangelo painted the Sistine Chapel ceiling lying flat on his back. He actually designed a custom scaffold and painted standing up, craning his neck backwards for four years &ndash; the "lying down" idea came from a mistranslated 1527 biography. <span class="fun-fact-source">&mdash; <a href="https://www.history.com/articles/7-things-you-may-not-know-about-the-sistine-chapel" target="_blank">History.com</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">It's a myth that Michelangelo painted the Sistine Chapel ceiling lying flat on his back. He actually designed a custom scaffold and painted standing up, craning his neck backwards for four years &ndash; the "lying down" idea came from a mistranslated 1527 biography. <span class="fun-fact-source">&mdash; <a href="https://www.history.com/articles/7-things-you-may-not-know-about-the-sistine-chapel" target="_blank">History.com</a></span></div><div class="fun-fact-text">St Peter's Basilica, next to the Sistine Chapel, took 120 years to build (1506-1626) and passed through the hands of 24 different architects, including Bramante, Raphael, Michelangelo and finally Bernini, who added the great colonnaded piazza. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/St._Peter%27s_Basilica" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -1061,8 +1062,8 @@ Visit Website: Ristorante Target</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">The Colosseum had a retractable fabric awning called the velarium, made of the same sailcloth used on Roman warships. It weighed about 24 tonnes and was rigged and operated by a special detachment of around 1,000 sailors from the Roman navy. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Velarium" target="_blank">Wikipedia</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">The Colosseum had a retractable fabric awning called the velarium, made of the same sailcloth used on Roman warships. It weighed about 24 tonnes and was rigged and operated by a special detachment of around 1,000 sailors from the Roman navy. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Velarium" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Beneath the Colosseum's arena floor lies the hypogeum &ndash; a two-level maze of tunnels and animal cages with as many as 80 vertical shafts and lift mechanisms that could hoist lions, bears and other beasts straight up into trapdoors in the arena. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Colosseum" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -1385,8 +1386,8 @@ Visit Website: Walks of Italy</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Civitavecchia, where you'll board Queen Victoria, was built as a Roman port around 103-110 AD on the orders of Emperor Trajan, who commissioned the famous architect Apollodorus of Damascus to design it. It was originally called Centumcellae. <span class="fun-fact-source">&mdash; <a href="https://www.romanports.org/en/articles/human-interest/137-centumcellae-the-port-of-trajan.html" target="_blank">Roman Ports</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Civitavecchia, where you'll board Queen Victoria, was built as a Roman port around 103-110 AD on the orders of Emperor Trajan, who commissioned the famous architect Apollodorus of Damascus to design it. It was originally called Centumcellae. <span class="fun-fact-source">&mdash; <a href="https://www.romanports.org/en/articles/human-interest/137-centumcellae-the-port-of-trajan.html" target="_blank">Roman Ports</a></span></div><div class="fun-fact-text">Civitavecchia handles well over 2 million cruise passengers a year, making it one of the busiest cruise ports in the Mediterranean, despite the town itself having a population of only around 50,000. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Port_of_Civitavecchia" target="_blank">Port of Civitavecchia</a></span></div>
     </div>
         
         
@@ -1519,8 +1520,8 @@ Visit Website: Walks of Italy</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Cunard's Golden Lion Pub &ndash; where you'll have pre-dinner drinks tonight &ndash; takes its design cues from the original 1938 launch programme for the RMS Queen Elizabeth, keeping a slice of proper British pub tradition alive in the middle of the ocean. <span class="fun-fact-source">&mdash; <a href="https://www.cunard.com/en-us/activity-types/bars-and-lounges/golden-lion-pub" target="_blank">Cunard</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Cunard's Golden Lion Pub &ndash; where you'll have pre-dinner drinks tonight &ndash; takes its design cues from the original 1938 launch programme for the RMS Queen Elizabeth, keeping a slice of proper British pub tradition alive in the middle of the ocean. <span class="fun-fact-source">&mdash; <a href="https://www.cunard.com/en-us/activity-types/bars-and-lounges/golden-lion-pub" target="_blank">Cunard</a></span></div><div class="fun-fact-text">Cunard still keeps up a 'White Star Service' tradition of formal afternoon tea served by white-gloved waiters, a custom traceable back to Samuel Cunard winning the first transatlantic mail contract in 1839. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Cunard_Line" target="_blank">Cunard</a></span></div>
     </div>
         
         
@@ -1677,8 +1678,8 @@ Visit Website: Walks of Italy</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Marseille, today's port of call, is the oldest city in France &ndash; founded around 600 BC by Greek settlers from Phocaea, who named it Massalia. That makes it roughly 2,600 years old. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Marseille" target="_blank">Wikipedia</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Marseille, today's port of call, is the oldest city in France &ndash; founded around 600 BC by Greek settlers from Phocaea, who named it Massalia. That makes it roughly 2,600 years old. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Marseille" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Marseille soap, savon de Marseille, has been made to essentially the same olive-oil recipe since a 1688 royal decree from Louis XIV fixed the exact ingredients allowed to carry the name. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Savon_de_Marseille" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -1835,8 +1836,8 @@ Visit Website: Walks of Italy</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Monégasques &ndash; the actual citizens of Monaco &ndash; are legally banned from gambling in their own Monte Carlo Casino, a rule dating back to the mid-1800s. The casino was built specifically to draw money from wealthy foreign visitors instead. <span class="fun-fact-source">&mdash; <a href="https://factrepublic.com/facts/52517/" target="_blank">Fact Republic</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Monégasques &ndash; the actual citizens of Monaco &ndash; are legally banned from gambling in their own Monte Carlo Casino, a rule dating back to the mid-1800s. The casino was built specifically to draw money from wealthy foreign visitors instead. <span class="fun-fact-source">&mdash; <a href="https://factrepublic.com/facts/52517/" target="_blank">Fact Republic</a></span></div><div class="fun-fact-text">Monaco is the world's second-smallest country after Vatican City, at just over 2 square kilometres - and it has grown roughly 20% larger since 1861 through land reclaimed from the sea. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Monaco" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -1993,8 +1994,8 @@ Visit Website: Walks of Italy</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Genoa, today's port, is traditionally held to be the birthplace of Christopher Columbus around 1451 &ndash; Columbus himself wrote in his 1498 will "yo nacio en Genoba" ("I was born in Genoa"), though the claim is still debated by historians. <span class="fun-fact-source">&mdash; <a href="https://www.christopher-columbus.eu/who-was-columbus/italy.htm" target="_blank">Christopher Columbus</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Genoa, today's port, is traditionally held to be the birthplace of Christopher Columbus around 1451 &ndash; Columbus himself wrote in his 1498 will "yo nacio en Genoba" ("I was born in Genoa"), though the claim is still debated by historians. <span class="fun-fact-source">&mdash; <a href="https://www.christopher-columbus.eu/who-was-columbus/italy.htm" target="_blank">Christopher Columbus</a></span></div><div class="fun-fact-text">Genoa's medieval old town, the caruggi, is one of the largest and best-preserved historic centres in Europe - a dense maze of narrow lanes that helped the city earn UNESCO World Heritage status in 2006. <span class="fun-fact-source">&mdash; <a href="https://whc.unesco.org/en/list/1211/" target="_blank">UNESCO</a></span></div>
     </div>
         
         
@@ -2175,8 +2176,8 @@ Visit Website: Walks of Italy</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">The Leaning Tower of Pisa took almost 200 years to build (1173-1372) because construction was interrupted twice by war for decades at a time. Those pauses accidentally saved it &ndash; they gave the soft soil time to settle, which stopped the tower toppling before it was even finished. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa" target="_blank">Wikipedia</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">The Leaning Tower of Pisa took almost 200 years to build (1173-1372) because construction was interrupted twice by war for decades at a time. Those pauses accidentally saved it &ndash; they gave the soft soil time to settle, which stopped the tower toppling before it was even finished. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Before restoration work in the 1990s-2000s, the Leaning Tower of Pisa was tilting at nearly 5.5 degrees. Engineers carefully removed soil from beneath the raised side to reduce the lean to its current, more stable 3.97 degrees. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -2333,8 +2334,8 @@ Visit Website: Walks of Italy</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Queen Victoria &ndash; the ship you're sailing on &ndash; was christened in Southampton on 10 December 2007 by Camilla, Duchess of Cornwall. The first champagne bottle swung at the hull famously failed to break (a bad omen, traditionally) before a second bottle did the job. <span class="fun-fact-source">&mdash; <a href="https://www.travelweekly.com/Cruise-Travel/Queen-Victoria-christened" target="_blank">Travel Weekly</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Queen Victoria &ndash; the ship you're sailing on &ndash; was christened in Southampton on 10 December 2007 by Camilla, Duchess of Cornwall. The first champagne bottle swung at the hull famously failed to break (a bad omen, traditionally) before a second bottle did the job. <span class="fun-fact-source">&mdash; <a href="https://www.travelweekly.com/Cruise-Travel/Queen-Victoria-christened" target="_blank">Travel Weekly</a></span></div><div class="fun-fact-text">Queen Victoria carries a two-deck library stocked with thousands of books, plus a dedicated bookshop, card room and ballroom - deliberately echoing the classic ocean liners of the 1920s and 30s rather than a modern mega-ship. <span class="fun-fact-source">&mdash; <a href="https://www.cunard.com/en-us/find-a-cruise/ships/queen-victoria" target="_blank">Cunard</a></span></div>
     </div>
         
         
@@ -2533,8 +2534,8 @@ Visit Website: Walks of Italy</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Talamone, where you'll stop for lunch, gets a mocking mention in Dante's Purgatorio. The Sienese had just bought the port for 8,000 florins hoping to build their fortunes there, but it was plagued by silt and malaria and never really worked out. <span class="fun-fact-source">&mdash; <a href="https://dante.princeton.edu/" target="_blank">Princeton Dante Project</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Talamone, where you'll stop for lunch, gets a mocking mention in Dante's Purgatorio. The Sienese had just bought the port for 8,000 florins hoping to build their fortunes there, but it was plagued by silt and malaria and never really worked out. <span class="fun-fact-source">&mdash; <a href="https://dante.princeton.edu/" target="_blank">Princeton Dante Project</a></span></div><div class="fun-fact-text">Talamone's hilltop Rocca Aldobrandesca fortress, overlooking the harbour where you'll arrive, was refortified by the Sienese in the 1300s and later garrisoned by the Spanish in the 1500s as part of their coastal defences. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Talamone" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -2683,8 +2684,8 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">The black rooster on every bottle of Chianti Classico comes from a medieval legend: Florence and Siena settled a border dispute by each sending a knight to ride out at the crow of a rooster. Florence starved theirs so it crowed early in the dark, giving their knight a head start &ndash; and Florence most of Chianti. <span class="fun-fact-source">&mdash; <a href="https://www.visittuscany.com/en/ideas/the-gallo-nero-black-rooster-symbol-of-chianti-between-history-and-legend/" target="_blank">Visit Tuscany</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">The black rooster on every bottle of Chianti Classico comes from a medieval legend: Florence and Siena settled a border dispute by each sending a knight to ride out at the crow of a rooster. Florence starved theirs so it crowed early in the dark, giving their knight a head start &ndash; and Florence most of Chianti. <span class="fun-fact-source">&mdash; <a href="https://www.visittuscany.com/en/ideas/the-gallo-nero-black-rooster-symbol-of-chianti-between-history-and-legend/" target="_blank">Visit Tuscany</a></span></div><div class="fun-fact-text">Chianti Classico must legally be aged at least a year before release, and the black rooster 'Gallo Nero' seal is only allowed on wine from the original historic Chianti Classico zone - not the wider Chianti region that surrounds it. <span class="fun-fact-source">&mdash; <a href="https://www.chianticlassico.com/en/" target="_blank">Consorzio Vino Chianti Classico</a></span></div>
     </div>
         
         
@@ -2813,8 +2814,8 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">In the Galleria Vittorio Emanuele II next to the Duomo, tradition says spinning three times on your right heel on a certain mosaic bull's more sensitive anatomy brings good luck. It's so popular the mosaic has needed repeated restoration from all the grinding heels. <span class="fun-fact-source">&mdash; <a href="https://visitmilano.org/eng/sightseeing/historic-landmarks-and-buildings/galleria-vittorio-emanuele/" target="_blank">VisitMilano</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">In the Galleria Vittorio Emanuele II next to the Duomo, tradition says spinning three times on your right heel on a certain mosaic bull's more sensitive anatomy brings good luck. It's so popular the mosaic has needed repeated restoration from all the grinding heels. <span class="fun-fact-source">&mdash; <a href="https://visitmilano.org/eng/sightseeing/historic-landmarks-and-buildings/galleria-vittorio-emanuele/" target="_blank">VisitMilano</a></span></div><div class="fun-fact-text">Milan's Duomo took nearly 600 years to finish, from 1386 to 1965. Napoleon, crowned King of Italy inside it in 1805, ordered the facade rushed to completion and personally financed the work to have it ready in time. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Milan_Cathedral" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -2973,8 +2974,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Lake Como's Laglio, just along the shore from Harry's Bar Cernobbio, is home to George Clooney's 18th-century Villa Oleandra, bought in 2002 for around $10 million and now estimated at over $100 million. He's become an honorary citizen of the town. <span class="fun-fact-source">&mdash; <a href="https://wevillas.com/news/villa-oleandra-in-laglio-the-summer-home-of-george-clooney-on-como-lake" target="_blank">Wevillas</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Lake Como's Laglio, just along the shore from Harry's Bar Cernobbio, is home to George Clooney's 18th-century Villa Oleandra, bought in 2002 for around $10 million and now estimated at over $100 million. He's become an honorary citizen of the town. <span class="fun-fact-source">&mdash; <a href="https://wevillas.com/news/villa-oleandra-in-laglio-the-summer-home-of-george-clooney-on-como-lake" target="_blank">Wevillas</a></span></div><div class="fun-fact-text">Lake Como is one of the deepest lakes in Europe, plunging to over 400 metres in places - deep enough that its lake bed actually sits below sea level. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Lake_Como" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -3293,8 +3294,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Ferrari's prancing horse logo wasn't Enzo Ferrari's idea originally. It came from WWI flying ace Francesco Baracca, who painted a horse on his fighter plane. After he was killed in 1918, his mother suggested the young racer Enzo Ferrari use it for luck &ndash; he kept the horse but changed its colour to black, in Baracca's memory. <span class="fun-fact-source">&mdash; <a href="https://rossoautomobili.com/blogs/magazine/origin-of-ferrari-prancing-horse-world-war-1-fighter-francesco-baracca" target="_blank">Rosso Automobili</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Ferrari's prancing horse logo wasn't Enzo Ferrari's idea originally. It came from WWI flying ace Francesco Baracca, who painted a horse on his fighter plane. After he was killed in 1918, his mother suggested the young racer Enzo Ferrari use it for luck &ndash; he kept the horse but changed its colour to black, in Baracca's memory. <span class="fun-fact-source">&mdash; <a href="https://rossoautomobili.com/blogs/magazine/origin-of-ferrari-prancing-horse-world-war-1-fighter-francesco-baracca" target="_blank">Rosso Automobili</a></span></div><div class="fun-fact-text">Every Ferrari road car is still largely hand-assembled at the Maranello factory, where fewer than 15 cars typically roll off the line each day - production is deliberately kept scarce. <span class="fun-fact-source">&mdash; <a href="https://www.ferrari.com/en-EN/corporate" target="_blank">Ferrari</a></span></div>
     </div>
         
         
@@ -3497,8 +3498,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Venice has no cars at all in its historic centre &ndash; it's built across 118 small islands linked by more than 400 bridges, and the only way around is on foot or by boat. That's exactly why you'll need to park at Tronchetto or Piazzale Roma before walking in. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Venice" target="_blank">Wikipedia</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Venice has no cars at all in its historic centre &ndash; it's built across 118 small islands linked by more than 400 bridges, and the only way around is on foot or by boat. That's exactly why you'll need to park at Tronchetto or Piazzale Roma before walking in. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Venice" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Venice is slowly sinking at roughly 1-2mm a year while the Adriatic rises around it, which is why the city completed the MOSE flood barrier system in 2020 to hold back high tides during 'acqua alta'. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/MOSE_(Venice)" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -3709,8 +3710,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Galileo Galilei was born in Pisa in 1564 and, according to legend, dropped two different-sized cannonballs from the top of the Leaning Tower to prove they'd hit the ground at the same time &ndash; disproving Aristotle's theory that heavier objects fall faster. Most historians think it's a myth, but it's a nice one to think about on the climb up. <span class="fun-fact-source">&mdash; <a href="https://www.britannica.com/biography/Galileo-Galilei" target="_blank">Britannica</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Galileo Galilei was born in Pisa in 1564 and, according to legend, dropped two different-sized cannonballs from the top of the Leaning Tower to prove they'd hit the ground at the same time &ndash; disproving Aristotle's theory that heavier objects fall faster. Most historians think it's a myth, but it's a nice one to think about on the climb up. <span class="fun-fact-source">&mdash; <a href="https://www.britannica.com/biography/Galileo-Galilei" target="_blank">Britannica</a></span></div><div class="fun-fact-text">Pisa's Piazza dei Miracoli, home to the Leaning Tower, is a UNESCO World Heritage Site alongside the Duomo and Baptistery, both begun in the 11th and 12th centuries respectively - making the tower actually younger than its neighbours. <span class="fun-fact-source">&mdash; <a href="https://whc.unesco.org/en/list/395/" target="_blank">UNESCO</a></span></div>
     </div>
         
         
@@ -4080,8 +4081,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">Tonight's dinner spot, The Lighterman, is named after the Victorian "lightermen" who steered flat-bottomed barges (called lighters) along the Regent's Canal right outside, ferrying goods through this once-industrial part of King's Cross. <span class="fun-fact-source">&mdash; <a href="https://www.kingscross.co.uk/the-lighterman" target="_blank">King&#x27;s Cross</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">Tonight's dinner spot, The Lighterman, is named after the Victorian "lightermen" who steered flat-bottomed barges (called lighters) along the Regent's Canal right outside, ferrying goods through this once-industrial part of King's Cross. <span class="fun-fact-source">&mdash; <a href="https://www.kingscross.co.uk/the-lighterman" target="_blank">King&#x27;s Cross</a></span></div><div class="fun-fact-text">Regent's Canal, which runs right past tonight's dinner spot, was built in the 1810s-1820s and named for the Prince Regent (later George IV). It once floated coal and building materials into London before being revived as a leisure towpath. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Regent%27s_Canal" target="_blank">Wikipedia</a></span></div>
     </div>
         <div class="ev-link"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
@@ -4127,6 +4128,21 @@ Directions from iQ Hotel Milano</div>
           </div>
         </div>
         
+<div class="option-box">
+  <div class="option-box-title">Getting Around: Tube Map &amp; Travel Pass</div>
+  <div class="option-box-sub"><strong>Nearest station to the hotel:</strong> Great Portland Street (Circle, Hammersmith &amp; City, Metropolitan lines) &ndash; approx. 2-3 min walk (~0.2 km), directly opposite The Level at Meli&aacute; White House.</div>
+  <div class="ev-link" style="margin:6px 0 12px;">
+    <a class="pill pill-directions" href="https://content.tfl.gov.uk/standard-tube-map.pdf" target="_blank">&#128506;&#65039; CLICK HERE for the Official TfL Tube Map (PDF)</a>
+  </div>
+  <div class="option-box-sub"><strong>Getting a travel pass for the few days:</strong></div>
+  <p class="lede" style="margin:4px 0;"><strong>Contactless bank card / Apple Pay / Google Pay</strong> &ndash; simplest option for most visitors. Just tap in and out at the yellow readers on the Tube, buses, DLR, Overground and Elizabeth line &ndash; no need to buy anything in advance. Fares are automatically capped at around &pound;8.90/day for Zones 1-2 (2026 rate), so a few days of sightseeing between Zone 1 (central London) and Zone 2 (Regent's Park/Camden area) should never cost more than the daily cap, even if you tap in and out a lot. Check your bank doesn't charge foreign transaction fees before relying on this.</p>
+  <p class="lede" style="margin:4px 0;"><strong>Visitor Oyster card</strong> &ndash; order online before you fly (from about &pound;5 plus however much credit you preload) or buy a standard Oyster card at any station on arrival (&pound;7 refundable deposit). Works exactly like contactless with the same daily cap, and avoids any card fees or acceptance issues. Top up at station machines or the TfL Oyster app.</p>
+  <p class="lede" style="margin:4px 0;"><strong>7 Day Travelcard</strong> &ndash; only worth considering if doing lots of travel every single day; for a 4-day stay like this one, pay-as-you-go (contactless or Oyster) with the daily cap works out cheaper and more flexible.</p>
+  <div class="ev-link">
+    <a class="pill" href="https://visitorshop.tfl.gov.uk/" target="_blank">Order a Visitor Oyster Card</a>
+    <a class="pill" href="https://tfl.gov.uk/fares/find-fares/tube-and-rail-fares" target="_blank">Current TfL Fares</a>
+  </div>
+</div>
         
         <div class="ev-stay">🏨 Staying at The Level at Melia White House - Longford Street, Regents Park, London NW1 3UP (+44 20 7391 3000 · melia.white.house@melia.com)</div>
         
@@ -4233,8 +4249,8 @@ Directions from iQ Hotel Milano</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">The Mousetrap, playing tonight, is the world's longest continuously-running play &ndash; it opened in 1952 and passed 30,000 performances in 2025. By long tradition, the audience is asked at the end of every single show never to reveal the killer's identity. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/The_Mousetrap" target="_blank">Wikipedia</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">The Mousetrap, playing tonight, is the world's longest continuously-running play &ndash; it opened in 1952 and passed 30,000 performances in 2025. By long tradition, the audience is asked at the end of every single show never to reveal the killer's identity. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/The_Mousetrap" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">The V&A Museum was founded in 1852 using profits from the Great Exhibition of 1851, and its collection has since grown to more than 2.8 million objects spanning 5,000 years of art and design. <span class="fun-fact-source">&mdash; <a href="https://www.vam.ac.uk/info/about-us" target="_blank">V&amp;A</a></span></div>
     </div>
         <div class="ev-link"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
@@ -4415,13 +4431,13 @@ Directions from iQ Hotel Milano</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">The original <a href="https://www.hardrock.com/our-history" target="_blank">Hard Rock Cafe</a> in London opened on June 14, 1971, inside a deserted Rolls-Royce dealership. The founders only received a 6-month lease because their landlord did not think an American-style burger joint would last.</div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">The original <a href="https://www.hardrock.com/our-history" target="_blank">Hard Rock Cafe</a> in London opened on June 14, 1971, inside a deserted Rolls-Royce dealership. The founders only received a 6-month lease because their landlord did not think an American-style burger joint would last.</div><div class="fun-fact-text">The ravens at the Tower of London have had their wings trimmed since at least the 1600s, following the legend that the kingdom will fall if they ever leave. Traditionally at least six are kept there, plus one in reserve. <span class="fun-fact-source">&mdash; <a href="https://www.hrp.org.uk/tower-of-london/history-and-stories/the-ravens/" target="_blank">Historic Royal Palaces</a></span></div>
     </div>
         <div class="ev-link"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
         <div class="ev-row">
-          <div class="ev-time">8:00 AM – 8:30 AM</div>
+          <div class="ev-time">7:30 AM – 8:00 AM</div>
           <div class="ev-body">
             <div class="ev-name">Breakfast at The Level  </div>
             
@@ -4493,6 +4509,62 @@ Visit Website: Headout</div>
         </div>
         
         
+<div class="dinner-box">
+  <div class="day-map-title">After Hard Rock: Nightcap Options</div>
+  <p class="lede" style="margin:0 0 10px;">Estimates only &ndash; check live transit apps on the day.</p>
+  <div class="option-box-sub"><strong>3 bars near Hard Rock Cafe:</strong></div>
+  <div class="place-grid">
+    <div class="place-card">
+      <div class="place-name">Trader Vic&#x27;s</div>
+      <div class="place-type">Tiki cocktail bar inside the London Hilton on Park Lane - virtually next door</div>
+      <div class="place-addr">22 Park Ln, London W1K 1BE</div>
+      <div class="place-hours">&#128694; From Hard Rock: ~5 min walking</div>
+      <div class="place-hours">&#128694; To The Melia: ~30 min - Piccadilly line to Piccadilly Circus, change to Bakerloo to Great Portland Street, then ~5 min walk</div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=22%20Park%20Lane%2C%20London%20W1K%201BE&amp;travelmode=walking" target="_blank">Map</a></div>
+    </div>
+    <div class="place-card">
+      <div class="place-name">The Connaught Bar</div>
+      <div class="place-type">World-famous cocktail bar - a Mayfair institution, book ahead</div>
+      <div class="place-addr">Carlos Pl, Mayfair, London W1K 2AL</div>
+      <div class="place-hours">&#128694; From Hard Rock: ~12 min walking</div>
+      <div class="place-hours">&#128694; To The Melia: ~25 min - walk to Bond Street, Central line to Oxford Circus, change to Bakerloo, then ~5 min walk</div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=Carlos%20Pl%2C%20Mayfair%2C%20London%20W1K%202AL&amp;travelmode=walking" target="_blank">Map</a></div>
+    </div>
+    <div class="place-card">
+      <div class="place-name">Dukes Bar</div>
+      <div class="place-type">Legendary martini bar (since 1908) - birthplace of the &#x27;Vesper&#x27; martini style</div>
+      <div class="place-addr">35 St James&amp;#39;s Pl, London SW1A 1NY</div>
+      <div class="place-hours">&#128694; From Hard Rock: ~15 min walking</div>
+      <div class="place-hours">&#128694; To The Melia: ~30 min - walk to Green Park, Piccadilly line to Piccadilly Circus, change to Bakerloo, then ~5 min walk</div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=35%20St%20James%27s%20Place%2C%20London%20SW1A%201NY&amp;travelmode=walking" target="_blank">Map</a></div>
+    </div></div>
+  <div class="option-box-sub" style="margin-top:14px;"><strong>3 bars near The Melia:</strong></div>
+  <div class="place-grid">
+    <div class="place-card">
+      <div class="place-name">The Lucky Pig</div>
+      <div class="place-type">Speakeasy-style basement cocktail bar, just off Great Portland Street</div>
+      <div class="place-addr">5 Clipstone St, London W1W 6BB</div>
+      <div class="place-hours">&#128694; From The Melia: ~6 min walking</div>
+      <div class="place-hours">&#128694; To Hard Rock: ~25 min - Bakerloo line from Regent&amp;#39;s Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk</div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=5%20Clipstone%20St%2C%20London%20W1W%206BB&amp;travelmode=walking" target="_blank">Map</a></div>
+    </div>
+    <div class="place-card">
+      <div class="place-name">The George, Fitzrovia</div>
+      <div class="place-type">Grade II listed 18th-century corner pub with an ornate Italianate facade</div>
+      <div class="place-addr">55 Great Portland St, London W1W 7LQ</div>
+      <div class="place-hours">&#128694; From The Melia: ~5 min walking</div>
+      <div class="place-hours">&#128694; To Hard Rock: ~25 min - Bakerloo line from Regent&amp;#39;s Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk</div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=55%20Great%20Portland%20St%2C%20London%20W1W%207LQ&amp;travelmode=walking" target="_blank">Map</a></div>
+    </div>
+    <div class="place-card">
+      <div class="place-name">Artesian at The Langham</div>
+      <div class="place-type">Multi-award-winning hotel cocktail bar - voted World&#x27;s Best Bar for years running</div>
+      <div class="place-addr">1c Portland Pl, London W1B 1JA</div>
+      <div class="place-hours">&#128694; From The Melia: ~13 min walking</div>
+      <div class="place-hours">&#128694; To Hard Rock: ~20 min - Bakerloo line from Regent&amp;#39;s Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk</div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=1c%20Portland%20Place%2C%20London%20W1B%201JA&amp;travelmode=walking" target="_blank">Map</a></div>
+    </div></div>
+</div>
         <div class="ev-stay">🏨 Staying at The Level at Melia White House - Longford Street, Regents Park, London NW1 3UP (+44 20 7391 3000 · melia.white.house@melia.com)</div>
         
     <div class="day-map-box">
@@ -4584,8 +4656,8 @@ Visit Website: Headout</div>
       <div class="day-body">
         
     <div class="fun-fact-box">
-      <div class="fun-fact-label">&#127881; Fun Fact</div>
-      <div class="fun-fact-text">When Heathrow first opened to passengers in 1946, the "terminal" was literally a row of ex-military tents along the Bath Road, furnished with floral armchairs, small tables of fresh flowers and even a branch of WH Smith &ndash; 63,000 passengers passed through in its first year. <span class="fun-fact-source">&mdash; <a href="https://www.businesstraveller.com/news/snapshot-1946-heathrow-opens/" target="_blank">Business Traveller</a></span></div>
+      <div class="fun-fact-label">&#127881; Fun Facts</div>
+      <div class="fun-fact-text">When Heathrow first opened to passengers in 1946, the "terminal" was literally a row of ex-military tents along the Bath Road, furnished with floral armchairs, small tables of fresh flowers and even a branch of WH Smith &ndash; 63,000 passengers passed through in its first year. <span class="fun-fact-source">&mdash; <a href="https://www.businesstraveller.com/news/snapshot-1946-heathrow-opens/" target="_blank">Business Traveller</a></span></div><div class="fun-fact-text">The Castle pub in Farringdon (today's Option 1 lunch) is the only pub in London licensed as a pawnbroker - supposedly granted personally by King George IV after he pawned his watch there to settle a gambling debt. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/The_Castle,_Farringdon" target="_blank">Wikipedia</a></span></div>
     </div>
         <div class="ev-link"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
@@ -5545,13 +5617,13 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://www.uniqlo.com/jp/ja/contents/feature/masterpiece/common/au/img/product/item_15_kv.jpg?260713" alt="Uniqlo (Oxford Street)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.uniqlo.com/uk/en/" target="_blank">Website</a></div>
       <div class="place-name">Uniqlo (Oxford Street)</div>
       <div class="place-type">Shopping</div>
       <div class="place-addr">311 Oxford Street, London W1C 2HP</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.uniqlo.com/uk/en/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Uniqlo+311+Oxford+Street+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/uniqloeurope/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Uniqlo+311+Oxford+Street+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/uniqloeurope/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5695,13 +5767,14 @@ Visit Website: Headout</div>
   <div class="section-head-row">
     <h2>Hotel Addresses</h2>
     <button class="print-btn no-print" onclick="printSection('hotels')"><span class="ic">&#128424;&#65039;</span>Print</button>
-    <a class="print-btn no-print" href="mailto:?subject=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses&body=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses%0A%0AThe%20Republic%20Hotel%0AVia%20Gaeta%2061%2C%2000185%20Rome%2C%20Italy%0APhone%3A%20%2B39%2006%208115%207001%0AEmail%3A%20therepublic%40aghotels.it%0A%0AHotel%20Borgo%20di%20Cortefreda%20Relais%0AVia%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%20%28FI%29%2C%20Italy%0APhone%3A%20%2B39%20055%20807%203333%0AEmail%3A%20info%40borgodicortefreda.com%0A%0AiQ%20Hotel%20Milano%0AVia%20Giovanni%20Battista%20Pirelli%205%2C%2020124%20Milan%2C%20Italy%0APhone%3A%20%2B39%2002%208498%200810%0AEmail%3A%20info%40iqhotelmilano.it%0A%0AThe%20Level%20at%20Melia%20White%20House%0ALongford%20Street%2C%20Regent%27s%20Park%2C%20London%20NW1%203UP%2C%20United%20Kingdom%0APhone%3A%20%2B44%2020%207391%203000%0AEmail%3A%20melia.white.house%40melia.com"><span class="ic">&#9993;&#65039;</span>Email</a>
+    <a class="print-btn no-print" href="mailto:?subject=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses&body=Fab%204%20Europe%20Trip%20-%20Hotel%20Addresses%0A%0AThe%20Republic%20Hotel%0AVia%20Gaeta%2061%2C%2000185%20Rome%2C%20Italy%0ADates%3A%2010-14%20Sept%202026%20%28check-out%20morning%20of%20the%2014th%20for%20Civitavecchia/cruise%20embarkation%29%0APhone%3A%20%2B39%2006%208115%207001%0AEmail%3A%20therepublic%40aghotels.it%0A%0AHotel%20Borgo%20di%20Cortefreda%20Relais%0AVia%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%20%28FI%29%2C%20Italy%0ADates%3A%2021-23%20Sept%202026%20%28check-out%20morning%20of%20the%2023rd%20for%20the%20drive%20to%20Milan%29%0APhone%3A%20%2B39%20055%20807%203333%0AEmail%3A%20info%40borgodicortefreda.com%0A%0AiQ%20Hotel%20Milano%0AVia%20Giovanni%20Battista%20Pirelli%205%2C%2020124%20Milan%2C%20Italy%0ADates%3A%2023-24%20Sept%202026%20%28check-out%20morning%20of%20the%2024th%20for%20the%20flight%20to%20London%29%0APhone%3A%20%2B39%2002%208498%200810%0AEmail%3A%20info%40iqhotelmilano.it%0A%0AThe%20Level%20at%20Melia%20White%20House%0ALongford%20Street%2C%20Regent%27s%20Park%2C%20London%20NW1%203UP%2C%20United%20Kingdom%0ADates%3A%2024-27%20Sept%202026%20%28depart%20Heathrow%20the%20night%20of%20the%2027th%29%0APhone%3A%20%2B44%2020%207391%203000%0AEmail%3A%20melia.white.house%40melia.com"><span class="ic">&#9993;&#65039;</span>Email</a>
   </div>
   <p class="lede">Every hotel on the trip, with address, phone and email &ndash; use Print for a paper copy or a browser "Save as PDF", or Email to send yourself/family a copy.</p>
   <div class="place-grid">
         <div class="place-card hotel-card">
           <div class="place-name">The Republic Hotel</div>
           <div class="place-addr">Via Gaeta 61, 00185 Rome, Italy</div>
+          <div class="place-hours">&#128197; 10-14 Sept 2026 (check-out morning of the 14th for Civitavecchia/cruise embarkation)</div>
           <div class="place-hours">&#128222; +39 06 8115 7001</div>
           <div class="place-hours">&#9993;&#65039; therepublic@aghotels.it</div>
           
@@ -5709,6 +5782,7 @@ Visit Website: Headout</div>
         <div class="place-card hotel-card">
           <div class="place-name">Hotel Borgo di Cortefreda Relais</div>
           <div class="place-addr">Via Roma 191, 50028 Tavarnelle Val di Pesa (FI), Italy</div>
+          <div class="place-hours">&#128197; 21-23 Sept 2026 (check-out morning of the 23rd for the drive to Milan)</div>
           <div class="place-hours">&#128222; +39 055 807 3333</div>
           <div class="place-hours">&#9993;&#65039; info@borgodicortefreda.com</div>
           
@@ -5716,6 +5790,7 @@ Visit Website: Headout</div>
         <div class="place-card hotel-card">
           <div class="place-name">iQ Hotel Milano</div>
           <div class="place-addr">Via Giovanni Battista Pirelli 5, 20124 Milan, Italy</div>
+          <div class="place-hours">&#128197; 23-24 Sept 2026 (check-out morning of the 24th for the flight to London)</div>
           <div class="place-hours">&#128222; +39 02 8498 0810</div>
           <div class="place-hours">&#9993;&#65039; info@iqhotelmilano.it</div>
           
@@ -5723,6 +5798,7 @@ Visit Website: Headout</div>
         <div class="place-card hotel-card">
           <div class="place-name">The Level at Melia White House</div>
           <div class="place-addr">Longford Street, Regent&#x27;s Park, London NW1 3UP, United Kingdom</div>
+          <div class="place-hours">&#128197; 24-27 Sept 2026 (depart Heathrow the night of the 27th)</div>
           <div class="place-hours">&#128222; +44 20 7391 3000</div>
           <div class="place-hours">&#9993;&#65039; melia.white.house@melia.com</div>
           <div class="place-hours">&#128676; Great Portland Street station (Circle, Hammersmith &amp; City, Metropolitan lines) - approx. 2-3 min walk (~0.2 km), directly opposite the hotel</div>
