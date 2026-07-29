@@ -79,6 +79,10 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .day-map-box { margin-top:16px; padding:16px 18px; background:#faf9f5; border:1px dashed #d9d3c4; border-radius:10px; }
 .dinner-box { margin-top:16px; padding:16px 18px; background:#fdf6ec; border:1px dashed var(--gold); border-radius:10px; }
 .dinner-box .place-grid { margin:10px 0 0; }
+.option-box { margin-top:16px; padding:16px 18px; background:#eef3fb; border:1px dashed var(--london); border-radius:10px; }
+.option-box .place-grid { margin:10px 0 0; grid-template-columns:1fr; max-width:340px; }
+.option-box-title { font-weight:700; color:var(--navy); margin-bottom:4px; font-size:.95rem; }
+.option-box-sub { color:var(--muted); font-size:.82rem; margin-bottom:6px; }
 .day-map-title { font-weight:700; color:var(--navy); margin-bottom:8px; font-size:.95rem; }
 .day-map-caption { color:var(--muted); font-size:.78rem; font-style:italic; margin-top:8px; }
 .day-map-timeline { display:flex; flex-direction:column; }
@@ -191,6 +195,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .home-fab:hover { background:rgba(255,255,255,.32); }
 .home-fab .ic { font-size:1.25rem; }
 @media (max-width:600px) { .home-fab { padding:9px 16px; font-size:.9rem; } .home-fab .ic { font-size:1.05rem; } }
+.home-fab-fixed { position:fixed; bottom:22px; right:22px; z-index:999; display:flex; align-items:center; justify-content:center; width:54px; height:54px; border-radius:50%; background:var(--navy); color:#fff !important; text-decoration:none; font-size:1.5rem; box-shadow:0 3px 14px rgba(0,0,0,.35); transition:background .15s, transform .15s; }
+.home-fab-fixed:hover { background:var(--gold); transform:scale(1.06); }
+@media (max-width:600px) { .home-fab-fixed { width:46px; height:46px; font-size:1.25rem; bottom:14px; right:14px; } }
 .print-row { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:18px 0 4px; }
 .print-mini { display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.4); color:#fff; font-size:.76rem; font-weight:600; padding:6px 13px; border-radius:999px; cursor:pointer; }
 .print-mini:hover { background:rgba(255,255,255,.32); }
@@ -314,6 +321,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 </style>
 </head>
 <body>
+
+<a href="#top" class="home-fab-fixed no-print" title="Back to Home">&#127968;</a>
 
 <div class="hero" id="top">
   <div class="hero-inner">
@@ -667,6 +676,7 @@ Visit Website: Palazzo Montemartini  </div>
           </div>
         </div>
         
+        
     <div class="dinner-box">
       <div class="day-map-title">Dinner Suggestions (within ~20 min walk of the hotel)</div>
       <div class="place-grid">
@@ -862,6 +872,7 @@ Visit Website: Ristorante Target</div>
             
           </div>
         </div>
+        
         
     <div class="dinner-box">
       <div class="day-map-title">Saturday Afternoon Suggestions (5 ideas, after lunch)</div>
@@ -1096,6 +1107,7 @@ Visit Website: Walks of Italy</div>
             
           </div>
         </div>
+        
         
     <div class="dinner-box">
       <div class="day-map-title">Lunch Suggestions Near Piazza del Colosseo (5 ideas, before the tour)</div>
@@ -1429,6 +1441,7 @@ Visit Website: Walks of Italy</div>
           </div>
         </div>
         
+        
         <div class="ev-stay">🏨 Staying aboard Queen Victoria (departs Rome)</div>
         
     <div class="day-map-box">
@@ -1571,6 +1584,7 @@ Visit Website: Walks of Italy</div>
             
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 Staying aboard Queen Victoria</div>
         
@@ -1729,6 +1743,7 @@ Visit Website: Walks of Italy</div>
           </div>
         </div>
         
+        
         <div class="ev-stay">🏨 Staying aboard Queen Victoria</div>
         
     <div class="day-map-box">
@@ -1885,6 +1900,7 @@ Visit Website: Walks of Italy</div>
             
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 Staying aboard Queen Victoria</div>
         
@@ -2052,6 +2068,7 @@ Visit Website: Walks of Italy</div>
             
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 Staying aboard Queen Victoria</div>
         
@@ -2224,6 +2241,7 @@ Visit Website: Walks of Italy</div>
           </div>
         </div>
         
+        
         <div class="ev-stay">🏨 Staying aboard Queen Victoria</div>
         
     <div class="day-map-box">
@@ -2380,6 +2398,7 @@ Visit Website: Walks of Italy</div>
             
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 Staying aboard Queen Victoria</div>
         
@@ -2571,6 +2590,7 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
           </div>
         </div>
         
+        
         <div class="ev-stay">🏨 Staying at Hotel Borgo di Cortefreda Relais, Tuscany - Via Roma 191, 50028, Tavarnelle Val Di Pesa (+39 055 807 3333 · info@borgodicortefreda.com)</div>
         
     <div class="day-map-box">
@@ -2698,6 +2718,7 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
             
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 Staying at Hotel Borgo di Cortefreda Relais, Tuscany - Via Roma 191, 50028, Tavarnelle Val Di Pesa (+39 055 807 3333 · info@borgodicortefreda.com)</div>
         
@@ -2850,6 +2871,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
           </div>
         </div>
+        
         
         
         
@@ -3073,6 +3095,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 iQ Hotel Milano, Milan (OPTION A) - Via Giovanni Battista Pirelli, 5, 20124 Milan (+39 02 8498 0810 · info@iqhotelmilano.it)</div>
         
@@ -3350,6 +3373,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           </div>
         </div>
         
+        
         <div class="ev-stay">🏨 iQ Hotel Milano, Milan (OPTION B) - Via Giovanni Battista Pirelli, 5, 20124 Milan (+39 02 8498 0810 · info@iqhotelmilano.it)</div>
         
     <div class="day-map-box">
@@ -3561,6 +3585,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 iQ Hotel Milano, Milan (OPTION C) - Via Giovanni Battista Pirelli, 5, 20124 Milan (+39 02 8498 0810 · info@iqhotelmilano.it)</div>
         
@@ -3794,6 +3819,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 iQ Hotel Milano, Milan (OPTION D) - Via Giovanni Battista Pirelli, 5, 20124 Milan (+39 02 8498 0810 · info@iqhotelmilano.it)</div>
         
@@ -4101,6 +4127,7 @@ Directions from iQ Hotel Milano</div>
           </div>
         </div>
         
+        
         <div class="ev-stay">🏨 Staying at The Level at Melia White House - Longford Street, Regents Park, London NW1 3UP (+44 20 7391 3000 · melia.white.house@melia.com)</div>
         
     <div class="day-map-box">
@@ -4281,6 +4308,7 @@ Directions from iQ Hotel Milano</div>
             
           </div>
         </div>
+        
         
         <div class="ev-stay">🏨 Staying at The Level at Melia White House - Longford Street, Regents Park, London NW1 3UP (+44 20 7391 3000 · melia.white.house@melia.com)</div>
         
@@ -4464,6 +4492,7 @@ Visit Website: Headout</div>
           </div>
         </div>
         
+        
         <div class="ev-stay">🏨 Staying at The Level at Melia White House - Longford Street, Regents Park, London NW1 3UP (+44 20 7391 3000 · melia.white.house@melia.com)</div>
         
     <div class="day-map-box">
@@ -4591,6 +4620,28 @@ Visit Website: Headout</div>
           </div>
         </div>
         
+<div class="option-box">
+  <div class="option-box-title">Option 1: Lunch at The Castle, Farringdon</div>
+  <div class="option-box-sub">Historic Grade II listed pub (est. 1865) with the only pawnbroker's licence in London &ndash; a laid-back lunch stop before heading to the airport.</div>
+  <div class="option-box-sub"><strong>Getting there:</strong> Great Portland Street &rarr; Farringdon on the Metropolitan/Circle/Hammersmith &amp; City line, direct (no change), ~6 min journey, then ~2-3 min walk from Farringdon station to the pub.</div>
+  <div class="place-grid">
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Castle%2C%20Farringdon%20-%20geograph.org.uk%20-%205107529.jpg" alt="The Castle, Farringdon" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+      <div class="place-name">The Castle</div>
+      <div class="place-type">Grade II listed pub &amp; restaurant, est. 1865 &ndash; British pub food, craft beer, full bar</div>
+      <div class="place-addr">34-35 Cowcross St, Farringdon, London EC1M 6DB</div>
+      <div class="place-hours">&#128337; Sun 12pm-10:30pm (check ahead for any Sept 2026 changes)</div>
+      <div class="place-hours">&#128222; +44 20 7553 7621</div>
+      <div class="place-links">
+        <a class="pill" href="https://www.thecastlefarringdon.co.uk" target="_blank">Website</a>
+        <a class="pill pill-weblink" href="https://www.thecastlefarringdon.co.uk/food" target="_blank">Menu</a>
+        <a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=34-35%20Cowcross%20St%2C%20Farringdon%2C%20London%20EC1M%206DB&amp;travelmode=transit" target="_blank">Map</a>
+        <a class="pill pill-instagram" href="https://www.instagram.com/castleec1/" target="_blank" title="Instagram link">I</a>
+      </div>
+    </div>
+  </div>
+</div>
+        
         
         
       </div>
@@ -4648,7 +4699,7 @@ Visit Website: Headout</div>
   <p class="lede">20 things to do within roughly a 20-minute walk of The Level at Meli&aacute; White House, Longford Street. Walk times are estimates &ndash; check live maps nearer the time.</p>
   <div class="place-grid">
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Inner%20Circle%2C%20Regent%27s%20Park%2C%20London%20-%20DSCF0451.JPG" alt="The Regent&#x27;s Park" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">The Regent&#x27;s Park</div>
       <div class="place-type">Royal park right across the road - gardens, boating lake, rose garden (~1-2 min walk)</div>
       <div class="place-addr">Chester Rd, London NW1 4NR</div>
@@ -4658,47 +4709,47 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20to%20London%20Zoo%20-%20geograph.org.uk%20-%202271535.jpg" alt="London Zoo" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.zsl.org/zsl-london-zoo" target="_blank">Website</a></div>
       <div class="place-name">London Zoo</div>
       <div class="place-type">World-famous zoo, inside Regent&#x27;s Park (~15 min walk)</div>
       <div class="place-addr">Outer Circle, Regent&#x27;s Park, London NW1 4RY</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.zsl.org/zsl-london-zoo" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Outer%20Circle%2C%20Regent%27s%20Park%2C%20London%20NW1%204RY&amp;travelmode=walking" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Outer%20Circle%2C%20Regent%27s%20Park%2C%20London%20NW1%204RY&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Regent%27s%20Park%20Open%20Air%20Theatre%20Auditorium.JPG" alt="Regent&#x27;s Park Open Air Theatre" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://openairtheatre.com/" target="_blank">Website</a></div>
       <div class="place-name">Regent&#x27;s Park Open Air Theatre</div>
       <div class="place-type">Outdoor theatre - plays, concerts, events, seasonal (~15 min walk)</div>
       <div class="place-addr">Inner Circle, Regent&#x27;s Park, London NW1 4NU</div>
       
       
-      <div class="place-links"><a class="pill" href="https://openairtheatre.com/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Inner%20Circle%2C%20Regent%27s%20Park%2C%20London%20NW1%204NU&amp;travelmode=walking" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Inner%20Circle%2C%20Regent%27s%20Park%2C%20London%20NW1%204NU&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/221B%20Baker%20Street%2C%20London%20-%20Sherlock%20Holmes%20Museum.jpg" alt="Sherlock Holmes Museum" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.sherlock-holmes.co.uk/" target="_blank">Website</a></div>
       <div class="place-name">Sherlock Holmes Museum</div>
       <div class="place-type">Recreated Victorian rooms at the famous &#x27;221B&#x27; address (~10 min walk)</div>
       <div class="place-addr">221b Baker St, London NW1 6XE</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.sherlock-holmes.co.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=221b%20Baker%20St%2C%20London%20NW1%206XE&amp;travelmode=walking" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=221b%20Baker%20St%2C%20London%20NW1%206XE&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Madame%20Tussauds%20London.jpg" alt="Madame Tussauds London" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.madametussauds.com/london/" target="_blank">Website</a></div>
       <div class="place-name">Madame Tussauds London</div>
       <div class="place-type">Waxworks - celebrities, royals, film characters (~10 min walk)</div>
       <div class="place-addr">Marylebone Rd, London NW1 5LR</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.madametussauds.com/london/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Marylebone%20Rd%2C%20London%20NW1%205LR&amp;travelmode=walking" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Marylebone%20Rd%2C%20London%20NW1%205LR&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Baker%20Street%20Sign.jpg" alt="Baker Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Baker Street</div>
       <div class="place-type">Iconic street, tube station, shops and cafes (~9 min walk)</div>
       <div class="place-addr">Baker St, London NW1</div>
@@ -4708,7 +4759,7 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Marylebone%20pub.JPG" alt="Marylebone High Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Marylebone High Street</div>
       <div class="place-type">Boutique shops, cafes and Daunt Books&#x27; famous store (~14 min walk)</div>
       <div class="place-addr">Marylebone High St, London W1U</div>
@@ -4718,17 +4769,17 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Wallace%20Collection%20across%20Manchester%20Square.jpg" alt="The Wallace Collection" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.wallacecollection.org/" target="_blank">Website</a></div>
       <div class="place-name">The Wallace Collection</div>
       <div class="place-type">Free national museum - art, armour and furniture (~16 min walk)</div>
       <div class="place-addr">Hertford House, Manchester Square, London W1U 3BN</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.wallacecollection.org/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Hertford%20House%2C%20Manchester%20Square%2C%20London%20W1U%203BN&amp;travelmode=walking" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Hertford%20House%2C%20Manchester%20Square%2C%20London%20W1U%203BN&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/BBC%20Broadcasting%20House%20Portland%20Place.jpg" alt="BBC Broadcasting House" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">BBC Broadcasting House</div>
       <div class="place-type">Iconic Art Deco home of the BBC (~9 min walk)</div>
       <div class="place-addr">Portland Pl, London W1A 1AA</div>
@@ -4738,7 +4789,7 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Church%20of%20All%20Souls%2C%20Langham%20Place%20%285990857632%29.jpg" alt="All Souls Church, Langham Place" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">All Souls Church, Langham Place</div>
       <div class="place-type">Nash&#x27;s striking circular church next to the BBC (~9 min walk)</div>
       <div class="place-addr">2 All Souls Pl, London W1B 3DA</div>
@@ -4748,17 +4799,17 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/RIBA%2C%2066%20Portland%20Place%2C%20London.jpg" alt="RIBA (Royal Institute of British Architects)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.architecture.com/" target="_blank">Website</a></div>
       <div class="place-name">RIBA (Royal Institute of British Architects)</div>
       <div class="place-type">Free exhibitions, cafe and bookshop (~8 min walk)</div>
       <div class="place-addr">66 Portland Pl, London W1B 1AD</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.architecture.com/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=66%20Portland%20Pl%2C%20London%20W1B%201AD&amp;travelmode=walking" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=66%20Portland%20Pl%2C%20London%20W1B%201AD&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Great%20Portland%20Street%20underground%20station%20-%20geograph.org.uk%20-%201522059.jpg" alt="Great Portland Street shops &amp; cafes" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Great Portland Street shops &amp; cafes</div>
       <div class="place-type">Right outside the hotel - cafes, restaurants, shops (~1-2 min walk)</div>
       <div class="place-addr">Great Portland St, London W1W</div>
@@ -4768,7 +4819,7 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Charlotte%20Place%2C%20Fitzrovia.jpg" alt="Charlotte Street, Fitzrovia" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Charlotte Street, Fitzrovia</div>
       <div class="place-type">Buzzy strip of restaurants and bars (~15 min walk)</div>
       <div class="place-addr">Charlotte St, London W1T</div>
@@ -4778,7 +4829,7 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Regent%27s%20Canal%20Towpath%20by%20Lisson%20Grove%20-%20geograph.org.uk%20-%201388145.jpg" alt="Regent&#x27;s Canal towpath" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Regent&#x27;s Canal towpath</div>
       <div class="place-type">Scenic canal walk along the edge of Regent&#x27;s Park (~12 min walk)</div>
       <div class="place-addr">Regent&#x27;s Canal, London NW1</div>
@@ -4788,7 +4839,7 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Euston%20Square%20Gardens%20-%20geograph.org.uk%20-%203152505.jpg" alt="Euston Square &amp; UCL area" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Euston Square &amp; UCL area</div>
       <div class="place-type">University quarter with green squares (~10 min walk)</div>
       <div class="place-addr">Euston Square Gardens, London NW1 2EF</div>
@@ -4798,17 +4849,17 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Wellcome%20Building%2C%20Euston%20Road%2C%20London.jpg" alt="Wellcome Collection" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://wellcomecollection.org/" target="_blank">Website</a></div>
       <div class="place-name">Wellcome Collection</div>
       <div class="place-type">Free museum exploring medicine, art and science (~10 min walk)</div>
       <div class="place-addr">183 Euston Rd, London NW1 2BE</div>
       
       
-      <div class="place-links"><a class="pill" href="https://wellcomecollection.org/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=183%20Euston%20Rd%2C%20London%20NW1%202BE&amp;travelmode=walking" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=183%20Euston%20Rd%2C%20London%20NW1%202BE&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/London%20central%20mosque.JPG" alt="London Central Mosque" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">London Central Mosque</div>
       <div class="place-type">Striking gold-domed mosque on the edge of Regent&#x27;s Park (~14 min walk)</div>
       <div class="place-addr">146 Park Rd, London NW8 7RG</div>
@@ -4818,7 +4869,7 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Cumberland%20Terrace%2C%20Regent%27s%20Park%20-%20geograph.org.uk%20-%201297192.jpg" alt="Cumberland Terrace" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Cumberland Terrace</div>
       <div class="place-type">One of Regent&#x27;s Park&#x27;s grandest Nash terraces (~12 min walk)</div>
       <div class="place-addr">Cumberland Terrace, London NW1 4HE</div>
@@ -4828,7 +4879,7 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Oxford%20Circus%20tube%20station%2C%20London.JPG" alt="Oxford Circus &amp; top of Oxford Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Oxford Circus &amp; top of Oxford Street</div>
       <div class="place-type">Flagship shopping - Regent Street meets Oxford Street (~17 min walk)</div>
       <div class="place-addr">Oxford Circus, London W1B</div>
@@ -4838,7 +4889,7 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Primrose%20Hill%20Panorama%2C%20London%20-%20April%202011.jpg" alt="Primrose Hill" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"></div>
       <div class="place-name">Primrose Hill</div>
       <div class="place-type">Park hill with panoramic skyline views over London (~19 min walk)</div>
       <div class="place-addr">Primrose Hill, London NW1 4NR</div>
@@ -4852,203 +4903,203 @@ Visit Website: Headout</div>
   <p class="lede">A top-20 pick of iconic London shops, department stores and markets &ndash; not all are near the hotel, so check travel time before heading out.</p>
   <div class="place-grid">
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Harrods%20%28London%29.jpg" alt="Harrods" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.harrods.com" target="_blank">Website</a></div>
       <div class="place-name">Harrods</div>
       <div class="place-type">Flagship luxury department store, iconic since 1834</div>
       <div class="place-addr">87-135 Brompton Rd, Knightsbridge, London SW1X 7XL</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-9pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; +44 (0)20 7730 1234</div>
-      <div class="place-links"><a class="pill" href="https://www.harrods.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=87-135%20Brompton%20Rd%2C%20Knightsbridge%2C%20London%20SW1X%207XL" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=87-135%20Brompton%20Rd%2C%20Knightsbridge%2C%20London%20SW1X%207XL" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Selfridges%20Oxford%20Street.jpg" alt="Selfridges" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.selfridges.com" target="_blank">Website</a></div>
       <div class="place-name">Selfridges</div>
       <div class="place-type">Legendary Oxford Street department store</div>
       <div class="place-addr">400 Oxford St, London W1A 1AB</div>
       <div class="place-hours">&#128337; Mon-Fri 10am-10pm, Sat 10am-9pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; 020 7160 6222</div>
-      <div class="place-links"><a class="pill" href="https://www.selfridges.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=400%20Oxford%20St%2C%20London%20W1A%201AB" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=400%20Oxford%20St%2C%20London%20W1A%201AB" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Liberty%20department%20store%20London.jpg" alt="Liberty London" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.libertylondon.com" target="_blank">Website</a></div>
       <div class="place-name">Liberty London</div>
       <div class="place-type">Tudor-revival department store, famous for its prints</div>
       <div class="place-addr">Great Marlborough St, London W1B 5AH</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-8pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 020 7734 1234</div>
-      <div class="place-links"><a class="pill" href="https://www.libertylondon.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Great%20Marlborough%20St%2C%20London%20W1B%205AH" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Great%20Marlborough%20St%2C%20London%20W1B%205AH" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Fortnum%20and%20Mason.jpg" alt="Fortnum &amp; Mason" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.fortnumandmason.com" target="_blank">Website</a></div>
       <div class="place-name">Fortnum &amp; Mason</div>
       <div class="place-type">Royal grocer since 1707 - hampers, tea, food halls</div>
       <div class="place-addr">181 Piccadilly, London W1A 1ER</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-8pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; 020 7734 8040</div>
-      <div class="place-links"><a class="pill" href="https://www.fortnumandmason.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=181%20Piccadilly%2C%20London%20W1A%201ER" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=181%20Piccadilly%2C%20London%20W1A%201ER" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hamley%27s%20%28Regent%27s%20Street%20-%20London%29.jpg" alt="Hamleys" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.hamleys.com" target="_blank">Website</a></div>
       <div class="place-name">Hamleys</div>
       <div class="place-type">World&#x27;s oldest and largest toy shop</div>
       <div class="place-addr">188-196 Regent St, London W1B 5BT</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-9pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 0371 704 1977</div>
-      <div class="place-links"><a class="pill" href="https://www.hamleys.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=188-196%20Regent%20St%2C%20London%20W1B%205BT" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=188-196%20Regent%20St%2C%20London%20W1B%205BT" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Oxford%20Street%20-%20John%20Lewis.jpg" alt="John Lewis Oxford Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.johnlewis.com" target="_blank">Website</a></div>
       <div class="place-name">John Lewis Oxford Street</div>
       <div class="place-type">Flagship department store</div>
       <div class="place-addr">300 Oxford St, London W1C 1DX</div>
       <div class="place-hours">&#128337; Mon-Wed &amp; Fri-Sat 9:30am-8pm, Thu 9:30am-9pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 0345 608 0677</div>
-      <div class="place-links"><a class="pill" href="https://www.johnlewis.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=300%20Oxford%20St%2C%20London%20W1C%201DX" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=300%20Oxford%20St%2C%20London%20W1C%201DX" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Daunt%20Books%20Marylebone%20W1.jpg" alt="Daunt Books Marylebone" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.dauntbooks.co.uk" target="_blank">Website</a></div>
       <div class="place-name">Daunt Books Marylebone</div>
       <div class="place-type">Beautiful Edwardian travel bookshop</div>
       <div class="place-addr">83 Marylebone High St, London W1U 4QW</div>
       <div class="place-hours">&#128337; Mon-Sat 9am-7:30pm, Sun 11am-6pm</div>
       <div class="place-hours">&#128222; 020 7224 2295</div>
-      <div class="place-links"><a class="pill" href="https://www.dauntbooks.co.uk" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=83%20Marylebone%20High%20St%2C%20London%20W1U%204QW" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=83%20Marylebone%20High%20St%2C%20London%20W1U%204QW" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Simpsons%20of%20Piccadilly%201.jpg" alt="Waterstones Piccadilly" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.waterstones.com/bookshops/piccadilly" target="_blank">Website</a></div>
       <div class="place-name">Waterstones Piccadilly</div>
       <div class="place-type">Europe&#x27;s largest bookshop</div>
       <div class="place-addr">203-206 Piccadilly, London W1J 9HD</div>
       <div class="place-hours">&#128337; Mon-Sat 9am-10pm, Sun 12pm-6:30pm</div>
       <div class="place-hours">&#128222; 020 7851 2400</div>
-      <div class="place-links"><a class="pill" href="https://www.waterstones.com/bookshops/piccadilly" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=203-206%20Piccadilly%2C%20London%20W1J%209HD" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=203-206%20Piccadilly%2C%20London%20W1J%209HD" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Burlington%20Arcade%2C%20shops.jpg" alt="Burlington Arcade" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.burlingtonarcade.com" target="_blank">Website</a></div>
       <div class="place-name">Burlington Arcade</div>
       <div class="place-type">Historic covered luxury shopping arcade</div>
       <div class="place-addr">51 Piccadilly, London W1J 0QJ</div>
       <div class="place-hours">&#128337; Mon-Sat 8am-8pm, Sun 11am-6pm</div>
       <div class="place-hours">&#128222; 020 7493 1764</div>
-      <div class="place-links"><a class="pill" href="https://www.burlingtonarcade.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=51%20Piccadilly%2C%20London%20W1J%200QJ" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=51%20Piccadilly%2C%20London%20W1J%200QJ" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/London%20-%20Regent%20Street%20-%20View%20East.jpg" alt="Regent Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.regentstreetonline.com" target="_blank">Website</a></div>
       <div class="place-name">Regent Street</div>
       <div class="place-type">Iconic curved shopping street, flagship stores</div>
       <div class="place-addr">Regent St, London W1B</div>
       <div class="place-hours">&#128337; Varies by store (most 10am-7/8pm, Sun 12pm-6pm)</div>
       <div class="place-hours">&#128222; Varies by store</div>
-      <div class="place-links"><a class="pill" href="https://www.regentstreetonline.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Regent%20St%2C%20London%20W1B" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Regent%20St%2C%20London%20W1B" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Camden%20markets%20entrance.JPG" alt="Camden Market" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.camdenmarket.com" target="_blank">Website</a></div>
       <div class="place-name">Camden Market</div>
       <div class="place-type">Alternative fashion, crafts and street food stalls</div>
       <div class="place-addr">Camden Lock Pl, London NW1 8AF</div>
       <div class="place-hours">&#128337; Daily 10am-6pm (some stalls/evenings vary)</div>
       <div class="place-hours">&#128222; 020 3763 9999</div>
-      <div class="place-links"><a class="pill" href="https://www.camdenmarket.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Camden%20Lock%20Pl%2C%20London%20NW1%208AF" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Camden%20Lock%20Pl%2C%20London%20NW1%208AF" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Portobello%20market.JPG" alt="Portobello Road Market" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.visitportobello.com" target="_blank">Website</a></div>
       <div class="place-name">Portobello Road Market</div>
       <div class="place-type">Antiques, vintage and fashion market</div>
       <div class="place-addr">Portobello Rd, London W11 1LJ</div>
       <div class="place-hours">&#128337; Mon-Sat approx. 8am-7pm (Sat is main trading day)</div>
       <div class="place-hours">&#128222; 020 7727 7684</div>
-      <div class="place-links"><a class="pill" href="https://www.visitportobello.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Portobello%20Rd%2C%20London%20W11%201LJ" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Portobello%20Rd%2C%20London%20W11%201LJ" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Borough%20Market%20-%20Southwark%20Street%20London%20SE1%201TL.jpg" alt="Borough Market" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.boroughmarket.org.uk" target="_blank">Website</a></div>
       <div class="place-name">Borough Market</div>
       <div class="place-type">Historic food market</div>
       <div class="place-addr">8 Southwark St, London SE1 1TL</div>
       <div class="place-hours">&#128337; Mon-Fri 10am-5pm (limited), Sat 8am-5pm, Sun 10am-3pm</div>
       <div class="place-hours">&#128222; 020 7407 1002</div>
-      <div class="place-links"><a class="pill" href="https://www.boroughmarket.org.uk" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=8%20Southwark%20St%2C%20London%20SE1%201TL" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=8%20Southwark%20St%2C%20London%20SE1%201TL" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/East%20Piazza%2C%20Covent%20Garden.jpg" alt="Covent Garden Market" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.coventgarden.london" target="_blank">Website</a></div>
       <div class="place-name">Covent Garden Market</div>
       <div class="place-type">Boutiques, crafts market, street performers</div>
       <div class="place-addr">The Piazza, Covent Garden, London WC2E 8RF</div>
       <div class="place-hours">&#128337; Mon-Fri 10am-8pm, Sat 9am-8pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 020 7395 3765</div>
-      <div class="place-links"><a class="pill" href="https://www.coventgarden.london" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Piazza%2C%20Covent%20Garden%2C%20London%20WC2E%208RF" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Piazza%2C%20Covent%20Garden%2C%20London%20WC2E%208RF" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/New%20Bond%20Street%2C%20Mayfair%20-%20geograph.org.uk%20-%20966302.jpg" alt="New Bond Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.newbondstreet.co.uk" target="_blank">Website</a></div>
       <div class="place-name">New Bond Street</div>
       <div class="place-type">Luxury flagship boutiques - Chanel, Tiffany &amp; more</div>
       <div class="place-addr">New Bond St, London W1S</div>
       <div class="place-hours">&#128337; Varies by store (most 10am-6/7pm, Sun 12pm-6pm)</div>
       <div class="place-hours">&#128222; Varies by store</div>
-      <div class="place-links"><a class="pill" href="https://www.newbondstreet.co.uk" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=New%20Bond%20St%2C%20London%20W1S" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=New%20Bond%20St%2C%20London%20W1S" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Foyles%20Bookstore.jpg" alt="Foyles Charing Cross Road" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.foyles.co.uk" target="_blank">Website</a></div>
       <div class="place-name">Foyles Charing Cross Road</div>
       <div class="place-type">Famous independent bookshop</div>
       <div class="place-addr">107 Charing Cross Rd, London WC2H 0DT</div>
       <div class="place-hours">&#128337; Mon-Sat 9:30am-9pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; 020 7437 5660</div>
-      <div class="place-links"><a class="pill" href="https://www.foyles.co.uk" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=107%20Charing%20Cross%20Rd%2C%20London%20WC2H%200DT" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=107%20Charing%20Cross%20Rd%2C%20London%20WC2H%200DT" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/M%26M%27s%20World%20London.JPG" alt="M&amp;M&#x27;s World" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.mms.com/en-gb/explore/mms-stores/london" target="_blank">Website</a></div>
       <div class="place-name">M&amp;M&#x27;s World</div>
       <div class="place-type">Multi-storey confectionery flagship store</div>
       <div class="place-addr">1 Swiss Ct, London W1D 6AP</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-9pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 020 7025 7171</div>
-      <div class="place-links"><a class="pill" href="https://www.mms.com/en-gb/explore/mms-stores/london" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Swiss%20Ct%2C%20London%20W1D%206AP" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Swiss%20Ct%2C%20London%20W1D%206AP" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Lego%20Store%20Leicester%20Square%20London%20Lester.jpg" alt="LEGO Store Leicester Square" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.lego.com/en-gb/stores/store/lsq" target="_blank">Website</a></div>
       <div class="place-name">LEGO Store Leicester Square</div>
       <div class="place-type">Flagship LEGO store</div>
       <div class="place-addr">3 Swiss Ct, London W1D 6AP</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-10pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 020 7839 3480</div>
-      <div class="place-links"><a class="pill" href="https://www.lego.com/en-gb/stores/store/lsq" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=3%20Swiss%20Ct%2C%20London%20W1D%206AP" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=3%20Swiss%20Ct%2C%20London%20W1D%206AP" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Apple%20Store%2C%20235%20Regent%20Street%20-%20geograph.org.uk%20-%202346324.jpg" alt="Apple Store Regent Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.apple.com/uk/retail/regentstreet" target="_blank">Website</a></div>
       <div class="place-name">Apple Store Regent Street</div>
       <div class="place-type">Flagship Apple store in a historic building</div>
       <div class="place-addr">235 Regent St, London W1B 2EL</div>
       <div class="place-hours">&#128337; Mon-Fri 10am-9pm, Sat 10am-8pm, Sun 10am-6pm</div>
       <div class="place-hours">&#128222; 020 7153 9000</div>
-      <div class="place-links"><a class="pill" href="https://www.apple.com/uk/retail/regentstreet" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=235%20Regent%20St%2C%20London%20W1B%202EL" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=235%20Regent%20St%2C%20London%20W1B%202EL" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Primark%20in%20Oxford%20Street%20-%20geograph.org.uk%20-%201053122.jpg" alt="Primark Oxford Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.primark.com/en-gb/stores/london/14-28-oxford-street" target="_blank">Website</a></div>
       <div class="place-name">Primark Oxford Street</div>
       <div class="place-type">World&#x27;s largest Primark store</div>
       <div class="place-addr">14-28 Oxford St, Fitzrovia, London W1D 1AU</div>
       <div class="place-hours">&#128337; Mon-Sat 8am-10pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; 020 7580 5510</div>
-      <div class="place-links"><a class="pill" href="https://www.primark.com/en-gb/stores/london/14-28-oxford-street" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=14-28%20Oxford%20St%2C%20Fitzrovia%2C%20London%20W1D%201AU" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=14-28%20Oxford%20St%2C%20Fitzrovia%2C%20London%20W1D%201AU" target="_blank">Map</a></div>
       
     </div></div>
 </section>
@@ -5076,33 +5127,33 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rome%20Leonardo%20da%20Vinci%20%28Fiumicino%29%20Airport%2001.JPG" alt="Fiumicino Airport (FCO)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.adr.it/web/aeroporti-di-roma-en" target="_blank">Website</a></div>
       <div class="place-name">Fiumicino Airport (FCO)</div>
       <div class="place-type">Airport - arrival</div>
       <div class="place-addr">Fiumicino Airport, Rome</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.adr.it/web/aeroporti-di-roma-en" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Fiumicino+Airport" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/aeroporti_di_roma/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Fiumicino+Airport" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/aeroporti_di_roma/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sistine%20Chapel%20%285967688938%29.jpg" alt="Vatican Museums / Sistine Chapel" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.museivaticani.va/" target="_blank">Website</a></div>
       <div class="place-name">Vatican Museums / Sistine Chapel</div>
       <div class="place-type">Sightseeing - booked (Sat 12 Sep, 7:15am, 4hrs)</div>
       <div class="place-addr">Vatican Museums, Vatican City</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.museivaticani.va/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Vatican+Museums" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/vaticanmuseums/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Vatican+Museums" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/vaticanmuseums/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rome-villa-borghese-gardens.jpg" alt="Villa Borghese Gardens" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.turismoroma.it/en/places/villa-borghese" target="_blank">Website</a></div>
       <div class="place-name">Villa Borghese Gardens</div>
       <div class="place-type">Sightseeing (Fri 11 Sep, 3-5pm)</div>
       <div class="place-addr">Villa Borghese, Rome, Italy</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.turismoroma.it/en/places/villa-borghese" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Borghese+Gardens+Rome" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Borghese+Gardens+Rome" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
@@ -5116,13 +5167,13 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Civitavecchia%20harbour%2002.JPG" alt="Civitavecchia" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.civitavecchiaport.org/" target="_blank">Website</a></div>
       <div class="place-name">Civitavecchia</div>
       <div class="place-type">Cruise embark / car hire (Mon 14 &amp; Mon 21 Sep)</div>
       <div class="place-addr">Via 16 Settembre 46, Civitavecchia</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.civitavecchiaport.org/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Civitavecchia+Cruise+Terminal" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Civitavecchia+Cruise+Terminal" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
@@ -5240,13 +5291,13 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Terminal%20Linate.jpg" alt="Milan Linate Airport" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.milanolinate-airport.com/en" target="_blank">Website</a></div>
       <div class="place-name">Milan Linate Airport</div>
       <div class="place-type">Airport (car return)</div>
       <div class="place-addr">Milan Linate Airport</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.milanolinate-airport.com/en" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Milan+Linate+Airport" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/milanairports/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Milan+Linate+Airport" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/milanairports/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5287,13 +5338,13 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Civitavecchia%20harbour%2002.JPG" alt="Civitavecchia (cruise embark / car hire)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.civitavecchiaport.org/" target="_blank">Website</a></div>
       <div class="place-name">Civitavecchia (cruise embark / car hire)</div>
       <div class="place-type">Port / Car hire</div>
       <div class="place-addr">Via 16 Settembre 46, Civitavecchia</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.civitavecchiaport.org/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Civitavecchia+Cruise+Terminal" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Civitavecchia+Cruise+Terminal" target="_blank">Map</a></div>
       
     </div>
     <div class="place-card">
@@ -5307,43 +5358,43 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vieux%20port%20de%20Marseille.JPG" alt="Marseille, France" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.marseille-tourisme.com/en/" target="_blank">Website</a></div>
       <div class="place-name">Marseille, France</div>
       <div class="place-type">Cruise port of call</div>
       <div class="place-addr">Marseille, France</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.marseille-tourisme.com/en/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Marseille+France" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/marseilletourisme/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Marseille+France" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/marseilletourisme/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Villefranche%20sur%20Mer%20Port%20de%20la%20Darse%20close%20up%20view%206305.JPG" alt="Villefranche-sur-Mer, France" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://visitvillefranche.com/" target="_blank">Website</a></div>
       <div class="place-name">Villefranche-sur-Mer, France</div>
       <div class="place-type">Cruise port of call</div>
       <div class="place-addr">Villefranche-sur-Mer, France</div>
       
       
-      <div class="place-links"><a class="pill" href="https://visitvillefranche.com/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Villefranche-sur-Mer+France" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/villedevillefranchesurmer/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Villefranche-sur-Mer+France" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/villedevillefranchesurmer/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20-%20Harbour%20of%20Genoa%2C%20Italy%20-%20DSC01158.JPG" alt="Genoa, Italy" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.visitgenoa.it/en" target="_blank">Website</a></div>
       <div class="place-name">Genoa, Italy</div>
       <div class="place-type">Cruise port of call</div>
       <div class="place-addr">Genoa, Italy</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.visitgenoa.it/en" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Genoa+Italy" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/genovamorethanthis/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Genoa+Italy" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/genovamorethanthis/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Golfo%20di%20La%20Spezia%20Italy%20aerial%20view.jpg" alt="La Spezia, Italy" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.visitspezia.it/en/" target="_blank">Website</a></div>
       <div class="place-name">La Spezia, Italy</div>
       <div class="place-type">Cruise port of call</div>
       <div class="place-addr">La Spezia, Italy</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.visitspezia.it/en/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=La+Spezia+Italy" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/visitlaspezia_official/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=La+Spezia+Italy" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/visitlaspezia_official/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5384,13 +5435,13 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Terminal%205%20at%20London%20Heathrow%20Airport%2C%202008.jpg" alt="Heathrow Airport" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.heathrow.com/" target="_blank">Website</a></div>
       <div class="place-name">Heathrow Airport</div>
       <div class="place-type">Travel / Airport</div>
       <div class="place-addr">Heathrow Airport, Hounslow TW6 1EW</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.heathrow.com/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Heathrow%20Airport%2C%20Hounslow%20TW6%201EW" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/heathrow_airport/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Heathrow%20Airport%2C%20Hounslow%20TW6%201EW" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/heathrow_airport/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5484,13 +5535,13 @@ Visit Website: Headout</div>
       
     </div>
     <div class="place-card">
-      
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Primark%20in%20Oxford%20Street%20-%20geograph.org.uk%20-%201053122.jpg" alt="Primark (Oxford Street)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.primark.com/en-gb/stores/london/14-28-oxford-street" target="_blank">Website</a></div>
       <div class="place-name">Primark (Oxford Street)</div>
       <div class="place-type">Shopping</div>
       <div class="place-addr">14-28 Oxford Street, Fitzrovia, London W1D 1AU</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.primark.com/en-gb/stores/london/14-28-oxford-street" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Primark+14-28+Oxford+Street+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/primark/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Primark+14-28+Oxford+Street+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/primark/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
