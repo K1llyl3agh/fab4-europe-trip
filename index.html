@@ -12,6 +12,7 @@
   --tuscany: #2e6b3e; --tuscany-light: #eaf5ec;
   --london: #2e4d9e; --london-light: #eaeffc;
   --milan: #6a3fa0; --milan-light: #f2eafb;
+  --photo-frame: #3f7cbf;
   --ink: #262626; --muted: #666;
   --card-bg: #ffffff; --page-bg: #f6f5f1;
 }
@@ -108,6 +109,7 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ev-time { font-weight:700; color:var(--navy); font-size:.85rem; }
 .ev-name { font-weight:600; }
 .ev-addr { color:var(--muted); font-size:.85rem; margin-top:2px; }
+.ev-note { color:var(--muted); font-size:.85rem; font-style:italic; margin-top:2px; }
 .ev-empty { color:var(--muted); font-style:italic; padding:10px 0; }
 .ev-stay { margin-top:8px; font-size:.85rem; color:var(--gold); font-weight:600; }
 .fun-fact-box { border:1px solid var(--gold); border-radius:8px; padding:10px 14px; margin-bottom:14px; background:#fffcf3; }
@@ -126,9 +128,10 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .badge-optional { background:#f1eef8; color:#6a3fa0; }
 .place-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin:18px 0 30px; }
 .place-card { background:var(--card-bg); border-radius:10px; padding:14px 16px; box-shadow:0 1px 5px rgba(0,0,0,.07); border-top:4px solid var(--gold); }
-.place-photo { width:100%; height:130px; object-fit:cover; border-radius:8px; margin-bottom:8px; display:block; }
+.place-photo { width:100%; height:130px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); margin-bottom:8px; display:block; }
 .place-photo-btn { margin-bottom:10px; }
-.place-website-btn { display:inline-block; }
+.place-website-btn { display:inline-block; background:#c0392b !important; }
+.pill-website { background:#c0392b; }
 .place-name { font-weight:700; margin-bottom:2px; }
 .place-type { font-size:.8rem; color:var(--rome); margin-bottom:4px; }
 .place-addr { font-size:.82rem; color:var(--muted); margin-bottom:10px; min-height:2.2em; }
@@ -137,7 +140,7 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .resto-list { display:flex; flex-direction:column; gap:14px; margin:18px 0 30px; }
 .resto-item { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; background:var(--card-bg); border-radius:10px; padding:14px 18px; box-shadow:0 1px 5px rgba(0,0,0,.07); border-left:4px solid var(--milan); }
 .resto-info { flex:1 1 auto; min-width:0; }
-.resto-photo { flex:0 0 auto; width:120px; height:120px; object-fit:cover; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,.15); }
+.resto-photo { flex:0 0 auto; width:120px; height:120px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); box-shadow:0 1px 4px rgba(0,0,0,.15); }
 .resto-name { font-weight:700; font-size:1.02rem; margin-bottom:2px; }
 .resto-hours { font-size:.82rem; color:var(--milan); margin-bottom:4px; }
 .resto-addr { font-size:.85rem; color:var(--muted); margin-bottom:6px; }
@@ -154,7 +157,7 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .pill-instagram { background:#c13584; padding:4px 10px; font-weight:800; }
 .pill-todo { display:inline-block; background:#d64545; color:#fff !important; font-size:.68rem; font-weight:800; padding:2px 9px; border-radius:999px; margin-left:6px; letter-spacing:.4px; vertical-align:middle; }
 .ev-logo { height:34px; width:34px; vertical-align:middle; margin-left:6px; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,.25); }
-.ev-photo { display:block; width:100%; max-width:320px; height:180px; object-fit:cover; border-radius:8px; margin-top:8px; box-shadow:0 1px 5px rgba(0,0,0,.15); }
+.ev-photo { display:block; width:100%; max-width:320px; height:180px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); margin-top:8px; box-shadow:0 1px 5px rgba(0,0,0,.15); }
 @media print { .ev-photo { display:none; } }
 .ig-note { font-size:.78rem; color:var(--muted); font-style:italic; margin:-14px 0 20px; }
 .shop-list { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; }
@@ -587,6 +590,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -598,12 +603,16 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">12:30 PM</div>
           <div class="ev-body">
             <div class="ev-name">Check in at The Republic Hotel, freshen up  </div>
+            
+            
             
             
             
@@ -620,6 +629,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -631,12 +642,16 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">2:00 PM</div>
           <div class="ev-body">
             <div class="ev-name">Free time / coffee near the hotel  </div>
+            
+            
             
             
             
@@ -653,6 +668,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -660,6 +677,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
           <div class="ev-body">
             <div class="ev-name">Villa Borghese Gardens  </div>
             <div class="ev-addr">Villa Borghese, Rome, Italy</div>
+            
+            
             
             
             
@@ -672,7 +691,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             <div class="ev-name">Pre-dinner drinks - Terrazza Montemartini (rooftop bar, Palazzo Montemartini)
 Visit Website: Palazzo Montemartini  </div>
             <div class="ev-addr">Largo Giovanni Montemartini, Rome - ~10 min walk from hotel</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="http://www.palazzomontemartini.com/" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="http://www.palazzomontemartini.com/" target="_blank">Website</a></div>
             
             
             
@@ -682,6 +703,8 @@ Visit Website: Palazzo Montemartini  </div>
           <div class="ev-time">6:30 PM</div>
           <div class="ev-body">
             <div class="ev-name">Dinner - pick from the suggestions below  </div>
+            
+            
             
             
             
@@ -701,7 +724,8 @@ Visit Website: Palazzo Montemartini  </div>
       <div class="place-addr">Via Cernaia 37 - ~3 min walk</div>
       <div class="place-hours">&#128337; Mon-Sat 11:30am-3pm &amp; 5:30pm-midnight (closed Sun)</div>
       
-      <div class="place-links"><a class="pill" href="http://www.trimani.com/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d798184-Reviews-Trimani_Il_Winebar-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="http://www.trimani.com/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d798184-Reviews-Trimani_Il_Winebar-Rome_Lazio.html" target="_blank">Reviews</a></div>
       <div class="place-fact">&#128161; Trimani started life in 1821 as a family wine merchant business - it&#x27;s still run by the same Trimani family six generations later, and was the first place in the world to actually call itself a &quot;Wine Bar&quot;.</div>
     </div>
     <div class="place-card">
@@ -711,7 +735,8 @@ Visit Website: Palazzo Montemartini  </div>
       <div class="place-addr">Via Volturno 12 - ~6 min walk</div>
       <div class="place-hours">&#128337; Tue-Sun 12:30pm-11pm (closed Mon)</div>
       
-      <div class="place-links"><a class="pill" href="https://www.thefork.it/ristorante/rifugio-romano" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/RestaurantsNear-g187791-d246155-Piazza_della_Repubblica-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.thefork.it/ristorante/rifugio-romano" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/RestaurantsNear-g187791-d246155-Piazza_della_Repubblica-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div>
     <div class="place-card">
@@ -721,7 +746,8 @@ Visit Website: Palazzo Montemartini  </div>
       <div class="place-addr">Via Volturno area - ~6 min walk</div>
       <div class="place-hours">&#128337; Check ahead - hours not consistently published</div>
       
-      <div class="place-links"><a class="pill" href="https://www.thefork.it/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/RestaurantsNear-g187791-d246155-Piazza_della_Repubblica-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.thefork.it/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/RestaurantsNear-g187791-d246155-Piazza_della_Repubblica-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div>
     <div class="place-card">
@@ -731,7 +757,8 @@ Visit Website: Palazzo Montemartini  </div>
       <div class="place-addr">Via Genova 32 - ~8 min walk</div>
       <div class="place-hours">&#128337; Check ahead - typically lunch &amp; dinner daily</div>
       
-      <div class="place-links"><a class="pill" href="https://pizzeriaristoroestestest.com/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d696551-Reviews-Pizzeria_Ristoro_Est_Est_Est-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://pizzeriaristoroestestest.com/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d696551-Reviews-Pizzeria_Ristoro_Est_Est_Est-Rome_Lazio.html" target="_blank">Reviews</a></div>
       <div class="place-fact">&#128161; The odd name comes from a medieval legend: a bishop travelling to Rome sent his servant ahead to chalk &quot;Est!&quot; (Latin for &quot;it is [good]&quot;) on the doors of inns with good wine. At Montefiascone the wine was so good the servant wrote &quot;Est! Est!! Est!!!&quot; three times - the bishop loved it so much he settled there for the rest of his life.</div>
     </div>
     <div class="place-card">
@@ -741,7 +768,8 @@ Visit Website: Palazzo Montemartini  </div>
       <div class="place-addr">Via della Purificazione 21 - ~17 min walk</div>
       <div class="place-hours">&#128337; Mon-Sat 12:30-2:30pm &amp; 7-11pm (closed Sun)</div>
       
-      <div class="place-links"><a class="pill" href="https://www.osteriabarberini.it/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1573090-Reviews-Osteria_Barberini-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.osteriabarberini.it/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1573090-Reviews-Osteria_Barberini-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div></div>
     </div>
@@ -853,6 +881,8 @@ Visit Website: Palazzo Montemartini &rarr; The Republic Hotel</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -861,7 +891,9 @@ Visit Website: Palazzo Montemartini &rarr; The Republic Hotel</div>
             <div class="ev-name">Pristine Sistine Early Morning Small Group Tour - entry 7:15am (4hrs)  </div>
             <div class="ev-addr">Vatican Museums / Sistine Chapel, Vatican City
 Visit Website: Walks of Italy</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.walksofitaly.com/vatican-tours/pristine-sistine-chapel-tour/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/walksofitaly/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.walksofitaly.com/vatican-tours/pristine-sistine-chapel-tour/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/walksofitaly/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -873,7 +905,9 @@ Visit Website: Walks of Italy</div>
             <div class="ev-name">Lunch at Target Restaurant <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Near Piazza della Repubblica, Rome - ~8 min walk from hotel
 Visit Website: Ristorante Target</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d967428-Reviews-Target-Rome_Lazio.html" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d967428-Reviews-Target-Rome_Lazio.html" target="_blank">Website</a></div>
             
             
             
@@ -883,6 +917,8 @@ Visit Website: Ristorante Target</div>
           <div class="ev-time">1:00 PM</div>
           <div class="ev-body">
             <div class="ev-name">Free afternoon in Rome - pick from the 5 suggestions below  </div>
+            
+            
             
             
             
@@ -902,6 +938,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-addr">Piazza di Trevi, Rome</div>
       
       
+      
       <div class="place-links"></div>
       
     </div>
@@ -910,6 +947,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-name">Spanish Steps &amp; Piazza di Spagna</div>
       <div class="place-type">Famous steps, great people-watching and shopping nearby (~20 min walk)</div>
       <div class="place-addr">Piazza di Spagna, Rome</div>
+      
       
       
       <div class="place-links"></div>
@@ -922,6 +960,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-addr">Piazza della Rotonda, Rome</div>
       
       
+      
       <div class="place-links"></div>
       
     </div>
@@ -930,6 +969,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-name">Piazza Navona</div>
       <div class="place-type">Grand baroque square with Bernini&#x27;s Fountain of the Four Rivers, lively cafes (~25-30 min walk or short taxi)</div>
       <div class="place-addr">Piazza Navona, Rome</div>
+      
       
       
       <div class="place-links"></div>
@@ -942,7 +982,8 @@ Visit Website: Ristorante Target</div>
       <div class="place-addr">Piazzale Scipione Borghese 5, Rome</div>
       
       
-      <div class="place-links"><a class="pill" href="https://galleriaborghese.beniculturali.it/en/" target="_blank">Website</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://galleriaborghese.beniculturali.it/en/" target="_blank">Website</a></div>
       
     </div></div>
     </div>
@@ -956,6 +997,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-addr">Via Panisperna 251, Monti - ~15 min walk</div>
       <div class="place-hours">&#128337; Daily 12pm-10pm</div>
       
+      
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1187387-Reviews-Ai_Tre_Scalini_Bottiglieria_dal_1895-Rome_Lazio.html" target="_blank">Reviews</a></div>
       <div class="place-fact">&#128161; The name means &quot;at the three steps&quot; - a nod to the three little steps down into its cosy, cellar-like wine bar, which has barely changed since it opened in 1895.</div>
     </div>
@@ -965,6 +1007,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-type">Rome institution since 1906, famous for its namesake dish - carbonara, amatriciana, cacio e pepe</div>
       <div class="place-addr">Via Panisperna 214, Monti - ~15 min walk</div>
       <div class="place-hours">&#128337; Mon-Sat 12:30-2:30pm &amp; 7-11pm (closed Sun)</div>
+      
       
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1016936-Reviews-La_Carbonara-Rome_Lazio.html" target="_blank">Reviews</a></div>
       <div class="place-fact">&#128161; Ironically, this restaurant opened in 1906 - decades before food historians think the dish carbonara was even invented (most trace it to Rome in the 1940s, possibly influenced by American GI rations of eggs and bacon).</div>
@@ -976,6 +1019,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-addr">Via dei Serpenti 19, Monti - ~14 min walk</div>
       <div class="place-hours">&#128337; Mon-Thu &amp; Sun 7pm-midnight, Fri-Sat 7pm-1:30am</div>
       
+      
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1063520-Reviews-Al_Vino_al_Vino-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div>
@@ -986,6 +1030,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-addr">Via del Boschetto 41, Monti - ~15 min walk</div>
       <div class="place-hours">&#128337; Tue-Sun 12:30pm-11pm (closed Mon)</div>
       
+      
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/RestaurantsNear-g187791-d6704256-Rione_Monti-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div>
@@ -995,6 +1040,7 @@ Visit Website: Ristorante Target</div>
       <div class="place-type">One of the best-loved pizzerias in Monti - good prices, lovely courtyard seating out back</div>
       <div class="place-addr">Vicolo delle Carrette, Monti - ~16 min walk</div>
       <div class="place-hours">&#128337; Check ahead - published hours conflict between sources</div>
+      
       
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/RestaurantsNear-g187791-d6704256-Rione_Monti-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
@@ -1093,6 +1139,8 @@ Visit Website: Ristorante Target</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1100,6 +1148,8 @@ Visit Website: Ristorante Target</div>
           <div class="ev-body">
             <div class="ev-name">Self-guided morning walk - Roman Forum viewpoint, Trajan&#x27;s Column &amp; Markets, Piazza del Campidoglio (all free, ~10 min walk to Piazza del Colosseo afterwards)  </div>
             <div class="ev-addr">Via dei Fori Imperiali, Rome</div>
+            
+            
             
             
             
@@ -1115,6 +1165,8 @@ Visit Website: Ristorante Target</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1123,7 +1175,9 @@ Visit Website: Ristorante Target</div>
             <div class="ev-name">Colosseum Arena Floor &amp; VIP Caesar&#x27;s Palace Tour - meet 3:30pm (3.5hrs)  </div>
             <div class="ev-addr">Piazza del Colosseo, 1, 00184 Roma RM, Italy
 Visit Website: Walks of Italy</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.walksofitaly.com/rome-tours/rome-caesars-palace-tour-colosseum/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/walksofitaly/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.walksofitaly.com/rome-tours/rome-caesars-palace-tour-colosseum/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/walksofitaly/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -1141,7 +1195,8 @@ Visit Website: Walks of Italy</div>
       <div class="place-addr">Via di S. Giovanni in Laterano 42, Rome - ~2 min from Piazza del Colosseo</div>
       <div class="place-hours">&#128337; Daily 11am-11:30pm</div>
       
-      <div class="place-links"><a class="pill" href="https://ilsalottodelcolosseo.it/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d23737738-Reviews-Il_Salotto_Del_Colosseo-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://ilsalottodelcolosseo.it/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d23737738-Reviews-Il_Salotto_Del_Colosseo-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div>
     <div class="place-card">
@@ -1150,6 +1205,7 @@ Visit Website: Walks of Italy</div>
       <div class="place-type">TripAdvisor 4.8★ - &quot;best panini in Rome&quot;, fresh charcuterie boards, quick and casual</div>
       <div class="place-addr">Via dei Serpenti 178, Monti - ~10 min walk to Colosseo</div>
       <div class="place-hours">&#128337; Mon-Sat 11:30am-11:30pm (closed Sun)</div>
+      
       
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d12729060-Reviews-Fuorinorma-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
@@ -1161,6 +1217,7 @@ Visit Website: Walks of Italy</div>
       <div class="place-addr">Via di San Giovanni in Laterano 88, Rome</div>
       <div class="place-hours">&#128337; Mon, Tue, Thu-Sun 12pm-midnight (closed Wed)</div>
       
+      
       <div class="place-links"></div>
       
     </div>
@@ -1170,6 +1227,7 @@ Visit Website: Walks of Italy</div>
       <div class="place-type">TripAdvisor 4.6★ - relaxed all-day cafe/bar right by the Colosseum, big varied menu</div>
       <div class="place-addr">Via San Giovanni in Laterano 8, Rome</div>
       <div class="place-hours">&#128337; Check ahead - known for long/late hours but not consistently published</div>
+      
       
       <div class="place-links"></div>
       
@@ -1181,7 +1239,8 @@ Visit Website: Walks of Italy</div>
       <div class="place-addr">Via Celimontana 7, Rome</div>
       <div class="place-hours">&#128337; Daily 11am-11:30pm</div>
       
-      <div class="place-links"><a class="pill" href="https://www.naumachiaroma.com/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1601155-Reviews-Naumachia-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.naumachiaroma.com/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1601155-Reviews-Naumachia-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div></div>
     </div>
@@ -1195,6 +1254,7 @@ Visit Website: Walks of Italy</div>
       <div class="place-addr">Via del Boschetto, Monti - ~15 min walk</div>
       <div class="place-hours">&#128337; Check ahead - hours not consistently published</div>
       
+      
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1067222-Reviews-Hostaria_Al_Boschetto-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div>
@@ -1205,7 +1265,8 @@ Visit Website: Walks of Italy</div>
       <div class="place-addr">Via Urbana 47, Monti - ~15 min walk</div>
       <div class="place-hours">&#128337; Daily 8:30am-midnight</div>
       
-      <div class="place-links"><a class="pill" href="https://urbana47.com/?lang=en" target="_blank">Website</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://urbana47.com/?lang=en" target="_blank">Website</a></div>
       
     </div>
     <div class="place-card">
@@ -1214,6 +1275,7 @@ Visit Website: Walks of Italy</div>
       <div class="place-type">Lively bar/trattoria right on the prettiest square in Monti - good for a relaxed evening</div>
       <div class="place-addr">Piazza Madonna dei Monti 5, Monti - ~16 min walk</div>
       <div class="place-hours">&#128337; Mon-Sat 8am-2am, Sun 9am-2am</div>
+      
       
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1150937-Reviews-Bottega_del_Caffe-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
@@ -1225,6 +1287,7 @@ Visit Website: Walks of Italy</div>
       <div class="place-addr">Via Merulana 224 - ~20 min walk from hotel, ~5 min from the Colosseum</div>
       <div class="place-hours">&#128337; Closed Mondays - check ahead for exact times</div>
       
+      
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d2206695-Reviews-Ornelli_Black_Angus_Steakhouse-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div>
@@ -1235,7 +1298,8 @@ Visit Website: Walks of Italy</div>
       <div class="place-addr">Near Cavour/Colosseum - ~22 min walk from hotel, ~5 min from the Colosseum</div>
       <div class="place-hours">&#128337; Check ahead - hours not consistently published</div>
       
-      <div class="place-links"><a class="pill" href="https://www.cuocoecamicia.it/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d2391713-Reviews-Cuoco_Camicia-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.cuocoecamicia.it/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d2391713-Reviews-Cuoco_Camicia-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div></div>
     </div>
@@ -1421,6 +1485,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1432,6 +1498,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1439,7 +1507,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Dinner at Britannia Restaurant (confirmed for all 4) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Queen Victoria</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -1454,6 +1524,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1461,6 +1533,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Rhubarb Gin &amp; Pepsi Max at the Commodore Club <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -1560,6 +1634,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1567,6 +1643,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Drinking Gin  </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             
             
             
@@ -1582,6 +1660,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1589,7 +1669,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Dinner at Britannia Restaurant (confirmed for all 4) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Queen Victoria</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -1604,6 +1686,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1611,6 +1695,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Rhubarb Gin &amp; Pepsi Max at the Commodore Club - Gary&#x27;s Rhubarb Gin review: smooth, floral, dangerously easy to drink (9/10) <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -1724,6 +1810,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1731,7 +1819,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Marseille and the Little Train <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Cunard Shore Excursions</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/shore-excursions" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/shore-excursions" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -1746,6 +1836,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1753,7 +1845,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Dinner at Britannia Restaurant (confirmed for all 4) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Queen Victoria</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -1768,6 +1862,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1775,6 +1871,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Rhubarb Gin &amp; Pepsi Max at the Commodore Club - Gary&#x27;s Pepsi Max review: does exactly what a Pepsi Max should do, zero surprises (7/10) <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -1888,6 +1986,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1895,7 +1995,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Monaco and the Old Town <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Cunard Shore Excursions</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/shore-excursions" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/shore-excursions" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -1910,6 +2012,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1917,7 +2021,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Dinner at Britannia Restaurant (confirmed for all 4) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Queen Victoria</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -1932,6 +2038,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1939,6 +2047,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Rhubarb Gin &amp; Pepsi Max at the Commodore Club <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -2052,6 +2162,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2059,7 +2171,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Discover Genoa shore excursion <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Cunard Shore Excursions</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/shore-excursions" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/shore-excursions" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -2074,6 +2188,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2081,7 +2197,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Dinner at Britannia Restaurant (confirmed for all 4) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Queen Victoria</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -2096,6 +2214,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2103,6 +2223,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Rhubarb Gin &amp; Pepsi Max at the Commodore Club <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -2114,6 +2236,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Churchill&#x27;s Cigar Lounge, Level 10 <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria, Level 10 (Commodore Deck)</div>
+            
+            
             
             
             
@@ -2241,6 +2365,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2248,7 +2374,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Easy Pisa - 7.45am tour <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Cunard Shore Excursions</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/shore-excursions" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/shore-excursions" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -2263,6 +2391,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2270,7 +2400,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Dinner at Britannia Restaurant (confirmed for all 4) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Queen Victoria</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -2285,6 +2417,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2292,6 +2426,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Rhubarb Gin &amp; Pepsi Max at the Commodore Club <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -2405,6 +2541,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2412,6 +2550,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Drinking Gin  </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             
             
             
@@ -2427,6 +2567,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2434,7 +2576,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Dinner at Britannia Restaurant (confirmed for all 4) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Visit Website: Queen Victoria</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -2449,6 +2593,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2456,6 +2602,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Rhubarb Gin &amp; Pepsi Max at the Commodore Club <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
+            
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -2611,6 +2759,8 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2618,6 +2768,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Civitavecchia to Talamone (approx. 2h)  </div>
             <div class="ev-addr">Directions: Civitavecchia to Talamone</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%2016%20Settembre%2046%2C%20Civitavecchia%2C%20Italy&amp;destination=Strada%20Vicinale%20delle%20Casacce%2C%2065%2C%2058010%20Talamone%2C%20Orbetello%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -2629,7 +2781,9 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Lunch option: Agriturismo Buratta, Talamone <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Directions: Agriturismo Buratta</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.co.nz/Restaurant_Review-g194929-d1894984-Reviews-Agriturismo_Buratta-Talamone_Orbetello_Province_of_Grosseto_Tuscany.html" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://restaurantguru.com/Agriturismo-Buratta-Fonteblanda/menu" target="_blank">Menu</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Strada%20Vicinale%20delle%20Casacce%2C%2065%2C%2058010%20Talamone%2C%20Orbetello%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.co.nz/Restaurant_Review-g194929-d1894984-Reviews-Agriturismo_Buratta-Talamone_Orbetello_Province_of_Grosseto_Tuscany.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://restaurantguru.com/Agriturismo-Buratta-Fonteblanda/menu" target="_blank">Menu</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Strada%20Vicinale%20delle%20Casacce%2C%2065%2C%2058010%20Talamone%2C%20Orbetello%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
             
@@ -2640,6 +2794,8 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Talamone to Tuscany hotel (approx. 2h)  </div>
             <div class="ev-addr">Directions: Talamone to Tuscany</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Strada%20Vicinale%20delle%20Casacce%2C%2065%2C%2058010%20Talamone%2C%20Orbetello%2C%20Italy&amp;destination=Via%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -2652,6 +2808,8 @@ Visit Website: Walks of Italy</div>
             <div class="ev-name">Arrive Hotel Borgo di Cortefreda Relais  </div>
             <div class="ev-addr">Via Roma 191, 50028, Tavarnelle Val Di Pesa
 Parking note: free onsite parking (contact hotel in advance to reserve a space)</div>
+            
+            
             
             
             
@@ -2762,7 +2920,9 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
           <div class="ev-body">
             <div class="ev-name">Potential Breakfast/Coffee: Il Caffè degli Amici <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Directions from Hotel: Il Caffè degli Amici</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g670654-d3612860-Reviews-Caffe_Degli_Amici-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf" target="_blank">Menu</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%2C%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Roma%20121%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/ilcaffedegliamici/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g670654-d3612860-Reviews-Caffe_Degli_Amici-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf" target="_blank">Menu</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%2C%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Roma%20121%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/ilcaffedegliamici/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -2773,7 +2933,9 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
           <div class="ev-body">
             <div class="ev-name">Potential Pastries/Coffee: Pasticceria La Golosa <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Directions from Hotel: Pasticceria La Golosa</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g670654-d3418380-Reviews-Pasticceria_La_Golosa-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html" target="_blank">Weblink</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%2C%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Palazzuolo%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g670654-d3418380-Reviews-Pasticceria_La_Golosa-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html" target="_blank">Website</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%2C%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Palazzuolo%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
             
@@ -2784,7 +2946,9 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
           <div class="ev-body">
             <div class="ev-name">Potential Restaurant: Triocco <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Directions from Hotel: Triocco</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.borghiditoscana.net/en/restaurant-pizzeria-triocco-in-barberino-val-delsa-florence/il-menu-del-ristorante-triocco-barberino-val-delsa-2/" target="_blank">Menu</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%2C%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Vittorio%20Veneto%2048%2C%2050021%20Barberino%20Val%20d%27Elsa%2C%20Barberino%20Tavarnelle%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/triocco/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.borghiditoscana.net/en/restaurant-pizzeria-triocco-in-barberino-val-delsa-florence/il-menu-del-ristorante-triocco-barberino-val-delsa-2/" target="_blank">Menu</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%2C%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Vittorio%20Veneto%2048%2C%2050021%20Barberino%20Val%20d%27Elsa%2C%20Barberino%20Tavarnelle%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/triocco/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -2895,6 +3059,8 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
           <div class="ev-body">
             <div class="ev-name">Check out of Hotel Borgo di Cortefreda Relais &amp; drive to Milan (approx. 3h 10m)  </div>
             <div class="ev-addr">Directions: Tuscany to Milan</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -2908,7 +3074,9 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
             <div class="ev-addr">Via Giovanni Battista Pirelli, 5, 20124 Milan
 Check-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810
 Parking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.iqhotelmilano.it/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -2923,6 +3091,8 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2930,7 +3100,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
           <div class="ev-body">
             <div class="ev-name">Dinner in Milan <span class="badge badge-tobook">To Book</span> </div>
             <div class="ev-addr">Options: Cantine Milano, L&#x27;Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Website</a></div>
             
             
             
@@ -2942,7 +3114,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             <div class="ev-name">Nightcap drinks at LiQuido Rooftop Bar <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)
 Visit TripAdvisor: LiQuido Rooftop Bar</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
             
@@ -3060,6 +3234,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           <div class="ev-body">
             <div class="ev-name">Check out of Hotel Borgo di Cortefreda Relais &amp; drive to Bologna (approx. 1h 30m)  </div>
             <div class="ev-addr">Directions: Tuscany to Bologna</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Bologna%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3072,7 +3248,9 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-name">Arrive Bologna - Breakfast at Aroma Specialty Coffee <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Via Portanova 12/b, 40123 Bologna, Italy
 Visit Website: Aroma Specialty Coffee (Il Piacere del Caffè)</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.ilpiaceredelcaffe.it/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/aromacoffeelove/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.ilpiaceredelcaffe.it/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/aromacoffeelove/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3083,6 +3261,8 @@ Visit Website: Aroma Specialty Coffee (Il Piacere del Caffè)</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Bologna to Como (approx. 2h 30m)  </div>
             <div class="ev-addr">Directions: Bologna to Como</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Bologna%2C%20Italy&amp;destination=Como%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3095,7 +3275,9 @@ Visit Website: Aroma Specialty Coffee (Il Piacere del Caffè)</div>
             <div class="ev-name">Arrive Como - Como-Brunate Funicular up to Brunate (approx. 7 min ride)  </div>
             <div class="ev-addr">Piazza Alcide de Gasperi 4, 22100 Como, Italy
 Visit Website: Funicolare Como-Brunate</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.funicolarecomo.it/" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.funicolarecomo.it/" target="_blank">Website</a></div>
             
             
             
@@ -3107,7 +3289,9 @@ Visit Website: Funicolare Como-Brunate</div>
             <div class="ev-name">Gelato with a view at Il Balcone sul Lago Café, Brunate <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Via Pissarottino 26, 22034 Brunate (Como), Italy
 Visit Website: Il Balcone sul Lago (Facebook)</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.facebook.com/Ilbalconesullago/" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.facebook.com/Ilbalconesullago/" target="_blank">Website</a></div>
             
             
             
@@ -3118,6 +3302,8 @@ Visit Website: Il Balcone sul Lago (Facebook)</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Como to Cernobbio (approx. 15 min)  </div>
             <div class="ev-addr">Directions: Como to Cernobbio</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Piazza%20Alcide%20de%20Gasperi%204%2C%20Como%2C%20Italy&amp;destination=Via%20Besana%201%2C%2022012%20Cernobbio%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3130,7 +3316,9 @@ Visit Website: Il Balcone sul Lago (Facebook)</div>
             <div class="ev-name">Lunch at Harry&#x27;s Bar, Cernobbio (Lake Como) <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Via Besana 1, 22012 Cernobbio, Como, Italy
 Visit Website: Harry&#x27;s Bar Cernobbio</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.harrysbarcernobbio.it/en/" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.harrysbarcernobbio.it/en/menu-online/" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/harrysbarcernobbio/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.harrysbarcernobbio.it/en/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.harrysbarcernobbio.it/en/menu-online/" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/harrysbarcernobbio/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3141,6 +3329,8 @@ Visit Website: Harry&#x27;s Bar Cernobbio</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Lake Como to Milan (approx. 1h)  </div>
             <div class="ev-addr">Directions: Lake Como to Milan</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Besana%201%2C%2022012%20Cernobbio%2C%20Italy&amp;destination=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3154,7 +3344,9 @@ Visit Website: Harry&#x27;s Bar Cernobbio</div>
             <div class="ev-addr">Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy
 Check-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810
 Parking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.iqhotelmilano.it/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3165,7 +3357,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
           <div class="ev-body">
             <div class="ev-name">Dinner in Milan <span class="badge badge-tobook">To Book</span> </div>
             <div class="ev-addr">Options: Cantine Milano, L&#x27;Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Website</a></div>
             
             
             
@@ -3177,7 +3371,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             <div class="ev-name">Nightcap drinks at LiQuido Rooftop Bar <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)
 Visit TripAdvisor: LiQuido Rooftop Bar</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
             
@@ -3391,6 +3587,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           <div class="ev-body">
             <div class="ev-name">Check out of Hotel Borgo di Cortefreda Relais &amp; drive to Maranello (approx. 1h 40m)  </div>
             <div class="ev-addr">Directions: Tuscany to Maranello</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Dino%20Ferrari%2043%2C%2041053%20Maranello%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3403,7 +3601,9 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-name">Visit Museo Ferrari, Maranello <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Via Dino Ferrari 43, 41053 Maranello (MO), Italy
 Visit Website: Museo Ferrari</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.ferrari.com/en-EN/museums/ferrari-maranello" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/museiferrari/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.ferrari.com/en-EN/museums/ferrari-maranello" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/museiferrari/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3418,6 +3618,8 @@ Visit Website: Museo Ferrari</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3425,6 +3627,8 @@ Visit Website: Museo Ferrari</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Maranello to Milan (approx. 2h)  </div>
             <div class="ev-addr">Directions: Maranello to Milan</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Dino%20Ferrari%2043%2C%2041053%20Maranello%2C%20Italy&amp;destination=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3438,7 +3642,9 @@ Visit Website: Museo Ferrari</div>
             <div class="ev-addr">Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy
 Check-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810
 Parking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.iqhotelmilano.it/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3449,7 +3655,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
           <div class="ev-body">
             <div class="ev-name">Dinner in Milan <span class="badge badge-tobook">To Book</span> </div>
             <div class="ev-addr">Options: Cantine Milano, L&#x27;Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Website</a></div>
             
             
             
@@ -3461,7 +3669,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             <div class="ev-name">Nightcap drinks at LiQuido Rooftop Bar <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)
 Visit TripAdvisor: LiQuido Rooftop Bar</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
             
@@ -3602,6 +3812,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           <div class="ev-body">
             <div class="ev-name">Check out of Hotel Borgo di Cortefreda Relais &amp; drive to Venice (approx. 3h 30m)  </div>
             <div class="ev-addr">Directions: Tuscany to Venice</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Piazzale%20Roma%2C%20Venice%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3613,7 +3825,9 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           <div class="ev-body">
             <div class="ev-name">Arrive Venice - park at Tronchetto/Piazzale Roma (historic centre is car-free)  </div>
             <div class="ev-addr">Tronchetto Parking, Isola del Tronchetto, 30135 Venice, Italy</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.veneziaunica.it/en" target="_blank">Weblink</a><a class="pill pill-directions" href="https://www.google.com/maps/search/?api=1&amp;query=Tronchetto+Parking+Venice" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/veneziaunica/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.veneziaunica.it/en" target="_blank">Website</a><a class="pill pill-directions" href="https://www.google.com/maps/search/?api=1&amp;query=Tronchetto+Parking+Venice" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/veneziaunica/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3628,6 +3842,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3635,7 +3851,9 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           <div class="ev-body">
             <div class="ev-name">Lunch in Venice <span class="badge badge-tobook">To Book</span> </div>
             
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurants-g187870-Venice_Veneto.html" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187870-Venice_Veneto.html" target="_blank">Website</a></div>
             
             
             
@@ -3646,6 +3864,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Venice to Milan (approx. 2h 50m)  </div>
             <div class="ev-addr">Directions: Venice to Milan</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Piazzale%20Roma%2C%20Venice%2C%20Italy&amp;destination=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3659,7 +3879,9 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-addr">Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy
 Check-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810
 Parking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.iqhotelmilano.it/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3670,7 +3892,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
           <div class="ev-body">
             <div class="ev-name">Dinner in Milan <span class="badge badge-tobook">To Book</span> </div>
             <div class="ev-addr">Options: Cantine Milano, L&#x27;Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Website</a></div>
             
             
             
@@ -3682,7 +3906,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             <div class="ev-name">Nightcap drinks at LiQuido Rooftop Bar <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)
 Visit TripAdvisor: LiQuido Rooftop Bar</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
             
@@ -3822,6 +4048,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           <div class="ev-body">
             <div class="ev-name">Check out of Hotel Borgo di Cortefreda Relais &amp; drive to Pisa (approx. 1h 15m)  </div>
             <div class="ev-addr">Directions: Tuscany to Pisa</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Piazza%20dei%20Miracoli%2C%20Pisa%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3837,6 +4065,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3845,7 +4075,9 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-name">Skip-the-line Leaning Tower of Pisa - guided small-group tour (approx. 1h 30m, incl. tower climb) <span class="badge badge-tobook">To Book</span> </div>
             <div class="ev-addr">Meeting point: P.za Daniele Manin 6, Pisa (near Porta Nuova gate)
 Visit Website: Viator - Pisa Skip-the-Line Tower Tour</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.viator.com/tours/Pisa/Skip-the-Line-Leaning-Tower-of-Pisa/d520-36478P5" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.viator.com/tours/Pisa/Skip-the-Line-Leaning-Tower-of-Pisa/d520-36478P5" target="_blank">Website</a></div>
             
             
             
@@ -3860,6 +4092,8 @@ Visit Website: Viator - Pisa Skip-the-Line Tower Tour</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3867,6 +4101,8 @@ Visit Website: Viator - Pisa Skip-the-Line Tower Tour</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Pisa to Como (approx. 3h 10m)  </div>
             <div class="ev-addr">Directions: Pisa to Como</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Piazza%20dei%20Miracoli%2C%20Pisa%2C%20Italy&amp;destination=Via%20Besana%201%2C%2022012%20Cernobbio%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3879,7 +4115,9 @@ Visit Website: Viator - Pisa Skip-the-Line Tower Tour</div>
             <div class="ev-name">Lunch at Harry&#x27;s Bar, Cernobbio (Lake Como) <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Via Besana 1, 22012 Cernobbio, Como, Italy
 Visit Website: Harry&#x27;s Bar Cernobbio</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.harrysbarcernobbio.it/en/" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.harrysbarcernobbio.it/en/menu-online/" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/harrysbarcernobbio/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.harrysbarcernobbio.it/en/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.harrysbarcernobbio.it/en/menu-online/" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/harrysbarcernobbio/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3890,6 +4128,8 @@ Visit Website: Harry&#x27;s Bar Cernobbio</div>
           <div class="ev-body">
             <div class="ev-name">Drive from Lake Como to Milan (approx. 1h)  </div>
             <div class="ev-addr">Directions: Lake Como to Milan</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Besana%201%2C%2022012%20Cernobbio%2C%20Italy&amp;destination=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -3903,7 +4143,9 @@ Visit Website: Harry&#x27;s Bar Cernobbio</div>
             <div class="ev-addr">Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy
 Check-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810
 Parking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.iqhotelmilano.it/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -3914,7 +4156,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
           <div class="ev-body">
             <div class="ev-name">Dinner in Milan <span class="badge badge-tobook">To Book</span> </div>
             <div class="ev-addr">Options: Cantine Milano, L&#x27;Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Weblink</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Website</a></div>
             
             
             
@@ -3926,7 +4170,9 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             <div class="ev-name">Nightcap drinks at LiQuido Rooftop Bar <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)
 Visit TripAdvisor: LiQuido Rooftop Bar</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
             
@@ -4105,7 +4351,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="resto-hours">Open Wed: 12:00–3:00pm &amp; 6:00pm–12:30am</div>
             <div class="resto-addr">Via Trau 1, 20159 Milano</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>~1.8 km from iQ Hotel Milano &middot; ~20 min walk / ~7 min taxi &middot; Walk via Via Sammartini, or short taxi</div>
-            <div class="resto-links"><a class="pill" href="https://cantinemilano.com/" target="_blank">Website</a><a class="pill pill-weblink" href="https://cantinemilano.com/menu/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Cantine+Milano+Via+Trau+1+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/cantinemilano/" target="_blank" title="Instagram link">I</a></div>
+            <div class="resto-links"><a class="pill pill-website" href="https://cantinemilano.com/" target="_blank">Website</a><a class="pill pill-weblink" href="https://cantinemilano.com/menu/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Cantine+Milano+Via+Trau+1+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/cantinemilano/" target="_blank" title="Instagram link">I</a></div>
           </div>
           <img class="resto-photo" src="https://cantinemilano.com/wp-content/uploads/2023/05/wine-restaurant.jpg" alt="Cantine Milano" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
         </div>
@@ -4115,7 +4361,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="resto-hours">Open Wed: 6:00–10:30pm (dinner only)</div>
             <div class="resto-addr">Via Varesina 61, 20156 Milano</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>~4.5 km from iQ Hotel Milano &middot; ~15 min taxi / ~25 min metro + walk &middot; Taxi, or M5 to Portello then ~10 min walk</div>
-            <div class="resto-links"><a class="pill" href="https://www.limmaginebistrot.com/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.limmaginebistrot.com/s/menu-465.html" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=L%27immagine+Bistrot+Via+Varesina+61+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/limmaginebistrot/" target="_blank" title="Instagram link">I</a></div>
+            <div class="resto-links"><a class="pill pill-website" href="https://www.limmaginebistrot.com/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.limmaginebistrot.com/s/menu-465.html" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=L%27immagine+Bistrot+Via+Varesina+61+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/limmaginebistrot/" target="_blank" title="Instagram link">I</a></div>
           </div>
           <img class="resto-photo" src="https://media-cdn.tripadvisor.com/media/photo-f/1b/2d/36/13/interno-sala-bistrot.jpg" alt="L&#x27;Immagine Ristorante Bistrot" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
         </div>
@@ -4125,7 +4371,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="resto-hours">Open Wed: 11:30am–3:00pm &amp; 6:30–11:30pm</div>
             <div class="resto-addr">Viale Bligny 42, 20136 Milano</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>~4.8 km from iQ Hotel Milano &middot; ~18 min taxi / ~25 min metro &middot; Taxi, or M3 toward Porta Romana/Lodi then ~8 min walk</div>
-            <div class="resto-links"><a class="pill" href="https://www.pizzeriacasafesta.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.quandoo.it/en/place/johnny-take-ue-93037/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Festa+Pizzeria+Alcolica+Viale+Bligny+42+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/casafesta_pizzeriaalcolica/" target="_blank" title="Instagram link">I</a></div>
+            <div class="resto-links"><a class="pill pill-website" href="https://www.pizzeriacasafesta.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.quandoo.it/en/place/johnny-take-ue-93037/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Festa+Pizzeria+Alcolica+Viale+Bligny+42+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/casafesta_pizzeriaalcolica/" target="_blank" title="Instagram link">I</a></div>
           </div>
           <img class="resto-photo" src="https://media-cdn.tripadvisor.com/media/photo-s/1c/15/d3/e2/johnny-take-ue-bligny.jpg" alt="Casa Festa - Pizzeria Alcolica" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
         </div>
@@ -4135,7 +4381,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="resto-hours">TripAdvisor 4.6★ (362 reviews) · Open Wed: 12:00–3:00pm &amp; 7:00pm–12:00am</div>
             <div class="resto-addr">Via Emilio Cornalia 16, 20124 Milano</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>~0.6 km from iQ Hotel Milano &middot; ~8 min walk &middot; Walk via Via Napo Torriani/Via Sammartini</div>
-            <div class="resto-links"><a class="pill" href="https://www.osteriacornalia.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.osteriacornalia.it/menu-cena-osteria-cornalia/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Cornalia+Via+Emilio+Cornalia+16+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/osteriacornalia/" target="_blank" title="Instagram link">I</a></div>
+            <div class="resto-links"><a class="pill pill-website" href="https://www.osteriacornalia.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.osteriacornalia.it/menu-cena-osteria-cornalia/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Cornalia+Via+Emilio+Cornalia+16+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/osteriacornalia/" target="_blank" title="Instagram link">I</a></div>
           </div>
           <img class="resto-photo" src="https://www.osteriacornalia.it/wp-content/uploads/2024/02/IMG_2521-scaled.jpg" alt="Osteria Cornalia" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
         </div>
@@ -4145,7 +4391,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="resto-hours">TheFork 8.9/10 · Open Wed: 12:00pm–11:00pm (non-stop)</div>
             <div class="resto-addr">Via Mauro Macchi 2, 20124 Milano</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>~0.5 km from iQ Hotel Milano &middot; ~7 min walk &middot; Walk via Via Vittor Pisani/Via Mauro Macchi</div>
-            <div class="resto-links"><a class="pill" href="https://www.dagigiristorante.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.thefork.it/ristorante/da-gigi-ristorante-r742987/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Da+Gigi+Ristorante+Via+Mauro+Macchi+2+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/dagigi_ristorante/" target="_blank" title="Instagram link">I</a></div>
+            <div class="resto-links"><a class="pill pill-website" href="https://www.dagigiristorante.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.thefork.it/ristorante/da-gigi-ristorante-r742987/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Da+Gigi+Ristorante+Via+Mauro+Macchi+2+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/dagigi_ristorante/" target="_blank" title="Instagram link">I</a></div>
           </div>
           <img class="resto-photo" src="https://www.dagigiristorante.it/wp-content/uploads/2026/01/DA-GIGI-1727-scaled-e1768401050721.jpg" alt="Da Gigi Ristorante &amp; Pizzeria" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
         </div>
@@ -4155,7 +4401,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="resto-hours">TripAdvisor 4.0★ (97 reviews) · Open Wed: 12:00–3:00pm &amp; 7:00–10:45pm</div>
             <div class="resto-addr">Via Napo Torriani 10, 20124 Milano</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>~0.45 km from iQ Hotel Milano &middot; ~6 min walk &middot; Walk via Via Napo Torriani</div>
-            <div class="resto-links"><a class="pill" href="https://nanin.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://nanin.it/wp-content/uploads/Menu-Osteria-Nanin-Napo-Torriani-Gennaio-2024.pdf" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Nanin+Torriani+Via+Napo+Torriani+10+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/osteria_nanin/" target="_blank" title="Instagram link">I</a></div>
+            <div class="resto-links"><a class="pill pill-website" href="https://nanin.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://nanin.it/wp-content/uploads/Menu-Osteria-Nanin-Napo-Torriani-Gennaio-2024.pdf" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+Nanin+Torriani+Via+Napo+Torriani+10+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/osteria_nanin/" target="_blank" title="Instagram link">I</a></div>
           </div>
           <img class="resto-photo" src="https://nanin.it/wp-content/uploads/Header_Osteria_V2.jpeg" alt="Osteria Nanin - Torriani" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
         </div>
@@ -4165,7 +4411,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="resto-hours">TripAdvisor 4.3★ (303 reviews) · Open Wed: 12:00–3:00pm &amp; 7:00–11:30pm</div>
             <div class="resto-addr">Via Vittor Pisani 6, 20124 Milano</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>~0.9 km from iQ Hotel Milano &middot; ~12 min walk &middot; Walk via Via Vittor Pisani towards Piazza della Repubblica</div>
-            <div class="resto-links"><a class="pill" href="https://gianninoristorante.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://gianninoristorante.it/en/the-menu/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Giannino+dal+1899+Via+Vittor+Pisani+6+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/gianninodal1899/" target="_blank" title="Instagram link">I</a></div>
+            <div class="resto-links"><a class="pill pill-website" href="https://gianninoristorante.it/" target="_blank">Website</a><a class="pill pill-weblink" href="https://gianninoristorante.it/en/the-menu/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Giannino+dal+1899+Via+Vittor+Pisani+6+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/gianninodal1899/" target="_blank" title="Instagram link">I</a></div>
           </div>
           <img class="resto-photo" src="https://gianninoristorante.it/wp-content/uploads/2022/02/home1.jpg" alt="Giannino dal 1899" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
         </div>
@@ -4175,7 +4421,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="resto-hours">TripAdvisor 4.6★ (229 reviews) · Open Wed: 12:00–3:00pm &amp; 6:00–11:00pm</div>
             <div class="resto-addr">Via Edolo 1, 20125 Milano</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>~2.0 km from iQ Hotel Milano &middot; ~25 min walk / ~10 min taxi &middot; Taxi, or bus/tram towards Via Porpora</div>
-            <div class="resto-links"><a class="pill" href="https://www.thefork.it/ristorante/shambo-r465529" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.thefork.it/ristorante/shambo-r465529/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Pizza+Shambo+Via+Edolo+1+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/pizzashambo/" target="_blank" title="Instagram link">I</a></div>
+            <div class="resto-links"><a class="pill pill-website" href="https://www.thefork.it/ristorante/shambo-r465529" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.thefork.it/ristorante/shambo-r465529/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Pizza+Shambo+Via+Edolo+1+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/pizzashambo/" target="_blank" title="Instagram link">I</a></div>
           </div>
           <img class="resto-photo" src="https://www.pizzashambo.com/wp-content/uploads/2025/02/DSC09015-683x1024.jpg" alt="Pizza Shambò" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
         </div></div>
@@ -4187,6 +4433,22 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
   <h2>London</h2>
   <p class="lede">24 &ndash; 27 September &middot; The Level at Meli&aacute; White House</p>
   <p class="ig-note">'I' buttons link to that place's official Instagram page.</p>
+  
+<div class="option-box">
+  <div class="option-box-title">Getting Around: Tube Map &amp; Travel Pass</div>
+  <div class="option-box-sub"><strong>Nearest station to the hotel:</strong> Great Portland Street (Circle, Hammersmith &amp; City, Metropolitan lines) &ndash; approx. 2-3 min walk (~0.2 km), directly opposite The Level at Meli&aacute; White House.</div>
+  <div class="ev-link" style="margin:6px 0 12px;">
+    <a class="pill pill-directions" href="https://content.tfl.gov.uk/standard-tube-map.pdf" target="_blank">&#128506;&#65039; CLICK HERE for the Official TfL Tube Map (PDF)</a>
+  </div>
+  <div class="option-box-sub"><strong>Getting a travel pass for the few days:</strong></div>
+  <p class="lede" style="margin:4px 0;"><strong>Contactless bank card / Apple Pay / Google Pay</strong> &ndash; simplest option for most visitors. Just tap in and out at the yellow readers on the Tube, buses, DLR, Overground and Elizabeth line &ndash; no need to buy anything in advance. Fares are automatically capped at around &pound;8.90/day for Zones 1-2 (2026 rate), so a few days of sightseeing between Zone 1 (central London) and Zone 2 (Regent's Park/Camden area) should never cost more than the daily cap, even if you tap in and out a lot. Check your bank doesn't charge foreign transaction fees before relying on this.</p>
+  <p class="lede" style="margin:4px 0;"><strong>Visitor Oyster card</strong> &ndash; order online before you fly (from about &pound;5 plus however much credit you preload) or buy a standard Oyster card at any station on arrival (&pound;7 refundable deposit). Works exactly like contactless with the same daily cap, and avoids any card fees or acceptance issues. Top up at station machines or the TfL Oyster app.</p>
+  <p class="lede" style="margin:4px 0;"><strong>7 Day Travelcard</strong> &ndash; only worth considering if doing lots of travel every single day; for a 4-day stay like this one, pay-as-you-go (contactless or Oyster) with the daily cap works out cheaper and more flexible.</p>
+  <div class="ev-link">
+    <a class="pill" href="https://visitorshop.tfl.gov.uk/" target="_blank">Order a Visitor Oyster Card</a>
+    <a class="pill" href="https://tfl.gov.uk/fares/find-fares/tube-and-rail-fares" target="_blank">Current TfL Fares</a>
+  </div>
+</div>
   
     <div class="day-card theme-london" data-day-id="day-24">
       <div class="day-head"><span class="day-title">THURSDAY (DAY 24)</span><span class="day-head-right"><button class="print-mini print-day-btn no-print" onclick="printDay('day-24')">Print Day</button><span class="day-loc">London</span></span></div>
@@ -4204,6 +4466,8 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-name">Return hire car - Mercedes Vito (booking ref NZ759149602) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Milan Linate Airport
 Directions from iQ Hotel Milano</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;destination=Milan%20Linate%20Airport&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
@@ -4219,6 +4483,8 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4230,35 +4496,24 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">6:30 PM – 7:00 PM</div>
           <div class="ev-body">
-            <div class="ev-name">Dinner at The Lighterman <span class="badge badge-tobook">To Book</span> </div>
+            <div class="ev-name">Dinner at The Lighterman (confirmation 4NJL3Z4M6XN3) <span class="badge badge-tobook">To Book</span> </div>
             <div class="ev-addr">3 Granary Square, London N1C 4BH (~1 mile / 20 min walk from hotel)</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.thelighterman.co.uk/" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://www.thelighterman.co.uk/menus" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/thelightermankx/" target="_blank" title="Instagram link">I</a></div>
+            <div class="ev-addr">&#128222; 020 3846 3400</div>
+            <div class="ev-note">(If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;)</div>
+            <div class="ev-link"><a class="pill pill-website" href="https://www.thelighterman.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.thelighterman.co.uk/menus" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d10121217-Reviews-The_Lighterman-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-instagram" href="https://www.instagram.com/thelightermankx/" target="_blank" title="Instagram link">I</a></div>
             
             
             
           </div>
         </div>
         
-<div class="option-box">
-  <div class="option-box-title">Getting Around: Tube Map &amp; Travel Pass</div>
-  <div class="option-box-sub"><strong>Nearest station to the hotel:</strong> Great Portland Street (Circle, Hammersmith &amp; City, Metropolitan lines) &ndash; approx. 2-3 min walk (~0.2 km), directly opposite The Level at Meli&aacute; White House.</div>
-  <div class="ev-link" style="margin:6px 0 12px;">
-    <a class="pill pill-directions" href="https://content.tfl.gov.uk/standard-tube-map.pdf" target="_blank">&#128506;&#65039; CLICK HERE for the Official TfL Tube Map (PDF)</a>
-  </div>
-  <div class="option-box-sub"><strong>Getting a travel pass for the few days:</strong></div>
-  <p class="lede" style="margin:4px 0;"><strong>Contactless bank card / Apple Pay / Google Pay</strong> &ndash; simplest option for most visitors. Just tap in and out at the yellow readers on the Tube, buses, DLR, Overground and Elizabeth line &ndash; no need to buy anything in advance. Fares are automatically capped at around &pound;8.90/day for Zones 1-2 (2026 rate), so a few days of sightseeing between Zone 1 (central London) and Zone 2 (Regent's Park/Camden area) should never cost more than the daily cap, even if you tap in and out a lot. Check your bank doesn't charge foreign transaction fees before relying on this.</p>
-  <p class="lede" style="margin:4px 0;"><strong>Visitor Oyster card</strong> &ndash; order online before you fly (from about &pound;5 plus however much credit you preload) or buy a standard Oyster card at any station on arrival (&pound;7 refundable deposit). Works exactly like contactless with the same daily cap, and avoids any card fees or acceptance issues. Top up at station machines or the TfL Oyster app.</p>
-  <p class="lede" style="margin:4px 0;"><strong>7 Day Travelcard</strong> &ndash; only worth considering if doing lots of travel every single day; for a 4-day stay like this one, pay-as-you-go (contactless or Oyster) with the daily cap works out cheaper and more flexible.</p>
-  <div class="ev-link">
-    <a class="pill" href="https://visitorshop.tfl.gov.uk/" target="_blank">Order a Visitor Oyster Card</a>
-    <a class="pill" href="https://tfl.gov.uk/fares/find-fares/tube-and-rail-fares" target="_blank">Current TfL Fares</a>
-  </div>
-</div>
         
 <div class="dinner-box">
   <div class="day-map-title">After The Lighterman: Nightcap Options</div>
@@ -4270,7 +4525,7 @@ Directions from iQ Hotel Milano</div>
       <div class="place-addr">King&#x27;s Cross Station, London N1 9AL</div>
       <div class="place-hours">&#128694; From The Lighterman: ~8 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~15 min - Circle/Hammersmith &amp; City/Metropolitan line direct from King&#x27;s Cross St Pancras to Great Portland Street (2 stops), then ~3 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=3%20Granary%20Square%2C%20London%20N1C%204BH&amp;destination=King%27s%20Cross%20Station%2C%20London%20N1%209AL&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://www.parcelyard.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.parcelyard.co.uk/food/menus" target="_blank">Menu</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=3%20Granary%20Square%2C%20London%20N1C%204BH&amp;destination=King%27s%20Cross%20Station%2C%20London%20N1%209AL&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://www.parcelyard.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.parcelyard.co.uk/food/menus" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2690666-Reviews-The_Parcel_Yard_King_s_Cross-London_England.html" target="_blank">TripAdvisor</a></div>
     </div>
     <div class="place-card">
       <div class="place-name">Big Chill Bar</div>
@@ -4278,7 +4533,7 @@ Directions from iQ Hotel Milano</div>
       <div class="place-addr">257-259 Pentonville Rd, London N1 9NL</div>
       <div class="place-hours">&#128694; From The Lighterman: ~10 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~15 min - Circle/Hammersmith &amp; City/Metropolitan line direct from King&#x27;s Cross St Pancras to Great Portland Street (2 stops), then ~3 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=3%20Granary%20Square%2C%20London%20N1C%204BH&amp;destination=257-259%20Pentonville%20Rd%2C%20London%20N1%209NL&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://www.bigchillbar.com/kings-cross" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=3%20Granary%20Square%2C%20London%20N1C%204BH&amp;destination=257-259%20Pentonville%20Rd%2C%20London%20N1%209NL&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://www.bigchillbar.com/kings-cross" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d1906552-Reviews-Big_Chill_Kings_Cross-London_England.html" target="_blank">TripAdvisor</a></div>
     </div>
     <div class="place-card">
       <div class="place-name">The Racketeer</div>
@@ -4286,7 +4541,7 @@ Directions from iQ Hotel Milano</div>
       <div class="place-addr">105 King&#x27;s Cross Rd, London WC1X 9LR</div>
       <div class="place-hours">&#128694; From The Lighterman: ~12 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~15 min - Circle/Hammersmith &amp; City/Metropolitan line direct from King&#x27;s Cross St Pancras to Great Portland Street (2 stops), then ~3 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=3%20Granary%20Square%2C%20London%20N1C%204BH&amp;destination=105%20King%27s%20Cross%20Rd%2C%20London%20WC1X%209LR&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://www.theracketeer.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.theracketeer.co.uk/menu" target="_blank">Menu</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=3%20Granary%20Square%2C%20London%20N1C%204BH&amp;destination=105%20King%27s%20Cross%20Rd%2C%20London%20WC1X%209LR&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://www.theracketeer.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.theracketeer.co.uk/menu" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d12608553-Reviews-The_Racketeer-London_England.html" target="_blank">TripAdvisor</a></div>
     </div></div>
 </div>
         <div class="ev-stay">🏨 Staying at The Level at Melia White House - Longford Street, Regents Park, London NW1 3UP (+44 20 7391 3000 · melia.white.house@melia.com)</div>
@@ -4408,6 +4663,8 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4415,6 +4672,8 @@ Directions from iQ Hotel Milano</div>
           <div class="ev-body">
             <div class="ev-name">Potential Victoria and Albert Museum <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Directions from Hotel: V&amp;A Museum</div>
+            
+            
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Cromwell%20Road%2C%20London%20SW7%202RL%2C%20UK&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://instagram.com/vamuseum" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -4426,7 +4685,9 @@ Directions from iQ Hotel Milano</div>
           <div class="ev-body">
             <div class="ev-name">Potential Early Lunch at Harry&#x27;s Knightsbridge <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Directions from Hotel: Harry&#x27;s Knightsbridge</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://harrysdolcevita.com/harrys-menu/" target="_blank">Menu</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=27-31%20Basil%20Street%2C%20Knightsbridge%2C%20London%20SW3%201BB%2C%20England&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-weblink" href="https://harrysdolcevita.com/harrys-menu/" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d13224804-Reviews-Harry_s_Dolce_Vita_Knightsbridge-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=27-31%20Basil%20Street%2C%20Knightsbridge%2C%20London%20SW3%201BB%2C%20England&amp;travelmode=driving" target="_blank">Directions</a></div>
             
             
             <div class="place-fact">&#128161; Harry's Bar-style venues take their name and dolce vita aesthetic from the original Harry's Bar in Venice, opened in 1931 - said to be where the Bellini cocktail and carpaccio were both invented. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Harry's_Bar" target="_blank">Wikipedia</a></span></div>
@@ -4437,8 +4698,10 @@ Directions from iQ Hotel Milano</div>
           <div class="ev-body">
             <div class="ev-name">Free time wandering around Oxford Street  </div>
             <div class="ev-addr">Oxford Street: oxfordstreet.co.uk</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.oxfordstreet.co.uk/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/oxfordstreetw1/" target="_blank" title="Instagram link">I</a></div>
-            <div class="shop-list"><div class="shop-list-title">Potential shops to look at:</div><div class="shop-item"><span class="shop-name">Primark</span><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Primark+14-28+Oxford+Street+London" target="_blank">Address</a><a class="pill pill-weblink" href="https://www.primark.com/en-gb/stores/london/14-28-oxford-street" target="_blank">Website</a></div><div class="shop-item"><span class="shop-name">Uniqlo</span><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Uniqlo+311+Oxford+Street+London" target="_blank">Address</a><a class="pill pill-weblink" href="https://www.uniqlo.com/uk/en/" target="_blank">Website</a></div></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.oxfordstreet.co.uk/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/oxfordstreetw1/" target="_blank" title="Instagram link">I</a></div>
+            <div class="shop-list"><div class="shop-list-title">Potential shops to look at:</div><div class="shop-item"><span class="shop-name">Primark</span><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Primark+14-28+Oxford+Street+London" target="_blank">Address</a><a class="pill pill-website" href="https://www.primark.com/en-gb/stores/london/14-28-oxford-street" target="_blank">Website</a></div><div class="shop-item"><span class="shop-name">Uniqlo</span><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Uniqlo+311+Oxford+Street+London" target="_blank">Address</a><a class="pill pill-website" href="https://www.uniqlo.com/uk/en/" target="_blank">Website</a></div></div>
             
             
           </div>
@@ -4446,11 +4709,13 @@ Directions from iQ Hotel Milano</div>
         <div class="ev-row">
           <div class="ev-time">4:30 PM – 5:30 PM</div>
           <div class="ev-body">
-            <div class="ev-name">Dinner at Albert Schloss (booking 4:45pm)  </div>
+            <div class="ev-name">Dinner at Albert Schloss (booked, ref DMN-16959374828) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">20-24 Shaftesbury Avenue, London W1D 7EU</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.albertsschloss.com/menu/?location=london" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/albertsschloss/" target="_blank" title="Instagram link">I</a></div>
+            <div class="ev-addr">&#128222; 020 8165 0000</div>
             
+            <div class="ev-link"><a class="pill pill-weblink" href="https://www.albertsschloss.com/menu/?location=london" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d26909472-Reviews-Albert_s_Schloss_Soho-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-instagram" href="https://www.instagram.com/albertsschloss/" target="_blank" title="Instagram link">I</a></div>
             
+            <img class="ev-photo" src="https://assets.albertsschloss.com/content/uploads/2024/01/Schloss-London-Header-1400x788.jpg" alt="Dinner at Albert Schloss (booked, ref DMN-16959374828)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
             <div class="place-fact">&#128161; Albert's Schloss is one of a small chain of Alpine-Bavarian bier hall/cabaret venues from The New World Trading Company - the original opened in Manchester in 2017, with the Soho branch spread across several floors of a former Soho building near Piccadilly Circus. <span class="fun-fact-source">&mdash; <a href="https://www.albertsschloss.com/location/london/" target="_blank">Albert&#x27;s Schloss</a></span></div>
           </div>
         </div>
@@ -4463,6 +4728,8 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4470,6 +4737,8 @@ Directions from iQ Hotel Milano</div>
           <div class="ev-body">
             <div class="ev-name">The Mousetrap begins (confirmed ref T071226139201) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">St Martin&#x27;s Theatre, West Street, London WC2H 9NZ</div>
+            
+            
             
             
             
@@ -4488,7 +4757,7 @@ Directions from iQ Hotel Milano</div>
       <div class="place-addr">6-7 Great Newport St, London WC2H 7JB</div>
       <div class="place-hours">&#128694; From St Martin&#x27;s Theatre: ~2 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~25 min - Piccadilly line from Leicester Square to Piccadilly Circus, change to Bakerloo to Great Portland Street, then ~3 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=West%20Street%2C%20London%20WC2H%209NZ&amp;destination=6-7%20Great%20Newport%20St%2C%20London%20WC2H%207JB&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://coventgardensocialclub.co.uk/" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=West%20Street%2C%20London%20WC2H%209NZ&amp;destination=6-7%20Great%20Newport%20St%2C%20London%20WC2H%207JB&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://coventgardensocialclub.co.uk/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d27287603-Reviews-Covent_Garden_Social_Club-London_England.html" target="_blank">TripAdvisor</a></div>
     </div>
     <div class="place-card">
       <div class="place-name">Phoenix Artist Club</div>
@@ -4496,7 +4765,7 @@ Directions from iQ Hotel Milano</div>
       <div class="place-addr">1 Phoenix St, London WC2H 8BU</div>
       <div class="place-hours">&#128694; From St Martin&#x27;s Theatre: ~3 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~25 min - Piccadilly line from Leicester Square to Piccadilly Circus, change to Bakerloo to Great Portland Street, then ~3 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=West%20Street%2C%20London%20WC2H%209NZ&amp;destination=1%20Phoenix%20St%2C%20London%20WC2H%208BU&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://phoenixartsclub.com/" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=West%20Street%2C%20London%20WC2H%209NZ&amp;destination=1%20Phoenix%20St%2C%20London%20WC2H%208BU&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://phoenixartsclub.com/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d1389726-Reviews-Phoenix_Arts_Club-London_England.html" target="_blank">TripAdvisor</a></div>
     </div>
     <div class="place-card">
       <div class="place-name">The Alchemist St Martin&#x27;s Lane</div>
@@ -4504,7 +4773,7 @@ Directions from iQ Hotel Milano</div>
       <div class="place-addr">63-66 St Martin&#x27;s Ln, London WC2N 4JS</div>
       <div class="place-hours">&#128694; From St Martin&#x27;s Theatre: ~4 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~25 min - Piccadilly line from Leicester Square to Piccadilly Circus, change to Bakerloo to Great Portland Street, then ~3 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=West%20Street%2C%20London%20WC2H%209NZ&amp;destination=63-66%20St%20Martin%27s%20Lane%2C%20London%20WC2N%204JS&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://thealchemistbars.com/venues/london/st-martins-lane/" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=West%20Street%2C%20London%20WC2H%209NZ&amp;destination=63-66%20St%20Martin%27s%20Lane%2C%20London%20WC2N%204JS&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://thealchemistbars.com/venues/london/st-martins-lane/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d15321975-Reviews-The_Alchemist_St_Martins_Lane-London_England.html" target="_blank">TripAdvisor</a></div>
     </div></div>
 </div>
         <div class="ev-stay">🏨 Staying at The Level at Melia White House - Longford Street, Regents Park, London NW1 3UP (+44 20 7391 3000 · melia.white.house@melia.com)</div>
@@ -4626,6 +4895,8 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4634,7 +4905,9 @@ Directions from iQ Hotel Milano</div>
             <div class="ev-name">Combo: Tower of London (Crown Jewels) + Official Tower of London River Tour <span class="badge badge-toconfirm">To Confirm</span> </div>
             <div class="ev-addr">Tower of London, EC3N 4AB
 Visit Website: Headout</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.headout.com/tower-of-london-tickets/" target="_blank">Weblink</a><a class="pill pill-instagram" href="https://www.instagram.com/headout/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.headout.com/tower-of-london-tickets/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Attraction_Review-g186338-d187788-Reviews-Tower_of_London-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-instagram" href="https://www.instagram.com/headout/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -4644,6 +4917,8 @@ Visit Website: Headout</div>
           <div class="ev-time">11:30 AM</div>
           <div class="ev-body">
             <div class="ev-name">To be confirmed by Jennifer from Headout (jennifer@inspire.headout.com) <span class="badge badge-toconfirm">To Confirm</span> </div>
+            
+            
             
             
             
@@ -4660,6 +4935,8 @@ Visit Website: Headout</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4667,6 +4944,8 @@ Visit Website: Headout</div>
           <div class="ev-body">
             <div class="ev-name">Six the Musical begins - Stalls G8, G9, G10, G11 (4 adults) - see Information tab <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">Vaudeville Theatre, Strand, London WC2R 0NH</div>
+            
+            
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/sixthemusical/" target="_blank" title="Instagram link">I</a></div>
             
             
@@ -4678,7 +4957,9 @@ Visit Website: Headout</div>
           <div class="ev-body">
             <div class="ev-name">Visit Waterstones Piccadilly <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Directions from Hotel: Waterstones Piccadilly</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://www.waterstones.com/bookshops/piccadilly" target="_blank">Weblink</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=203-206%20Piccadilly%2C%20London%20W1J%209HD%2C%20UK&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/piccadillywaterstones/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://www.waterstones.com/bookshops/piccadilly" target="_blank">Website</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=203-206%20Piccadilly%2C%20London%20W1J%209HD%2C%20UK&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/piccadillywaterstones/" target="_blank" title="Instagram link">I</a></div>
             
             
             <div class="place-fact">&#128161; This shop opened in 1936 as Simpsons of Piccadilly, then Britain's largest menswear store, designed by modernist architect Joseph Emberton. Waterstones took it over in 1999 and it's now Europe's largest bookshop, with over 8 miles of shelving across 6 floors. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Simpsons_of_Piccadilly" target="_blank">Wikipedia</a></span></div>
@@ -4689,7 +4970,9 @@ Visit Website: Headout</div>
           <div class="ev-body">
             <div class="ev-name">Dinner at Hard Rock Cafe London <span class="badge badge-tobook">To Book</span> <img class="ev-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTQwIj4KPGNpcmNsZSBjeD0iNzAiIGN5PSI3MCIgcj0iNjQiIGZpbGw9IiNmNWM0NTEiIHN0cm9rZT0iIzhhM2IyMyIgc3Ryb2tlLXdpZHRoPSI3Ii8+CjxjaXJjbGUgY3g9IjcwIiBjeT0iNzAiIHI9IjY0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCB4PSI3MCIgeT0iNjMiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtc2l6ZT0iMjEiIGZpbGw9IiM4YTNiMjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkhhcmQgUm9jazwvdGV4dD4KPHRleHQgeD0iNzAiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTciIGxldHRlci1zcGFjaW5nPSIxIiBmaWxsPSIjOGEzYjIzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DQUZFPC90ZXh0Pgo8dGV4dCB4PSI3MCIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM4YTNiMjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxPTkRPTjwvdGV4dD4KPC9zdmc+" alt="Hard Rock Cafe London logo"></div>
             <div class="ev-addr">150 Old Park Lane, Mayfair, London W1K 1QZ</div>
-            <div class="ev-link"><a class="pill pill-weblink" href="https://cafe.hardrock.com/london/" target="_blank">Weblink</a><a class="pill pill-weblink" href="https://cafe.hardrock.com/menu.aspx" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/hardrockcafelondon/" target="_blank" title="Instagram link">I</a></div>
+            
+            
+            <div class="ev-link"><a class="pill pill-website" href="https://cafe.hardrock.com/london/" target="_blank">Website</a><a class="pill pill-weblink" href="https://cafe.hardrock.com/menu.aspx" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/hardrockcafelondon/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -4708,7 +4991,7 @@ Visit Website: Headout</div>
       <div class="place-addr">150 Piccadilly, London W1J 9BR</div>
       <div class="place-hours">&#128694; From Hard Rock: ~15 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~25 min - walk to Green Park, Piccadilly/Victoria line to Oxford Circus, change to Bakerloo, then ~5 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=150%20Piccadilly%2C%20London%20W1J%209BR&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://www.theritzlondon.com/dine-with-us/rivoli-bar/" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=150%20Piccadilly%2C%20London%20W1J%209BR&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://www.theritzlondon.com/dine-with-us/rivoli-bar/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d3172284-Reviews-The_Rivoli_Bar-London_England.html" target="_blank">TripAdvisor</a></div>
     </div>
     <div class="place-card">
       <div class="place-name">The Connaught Bar</div>
@@ -4716,7 +4999,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Carlos Pl, Mayfair, London W1K 2AL</div>
       <div class="place-hours">&#128694; From Hard Rock: ~12 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~25 min - walk to Bond Street, Central line to Oxford Circus, change to Bakerloo, then ~5 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=Carlos%20Pl%2C%20Mayfair%2C%20London%20W1K%202AL&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://www.maybourne.com/en/hotels/the-connaught/restaurants-bars/connaught-bar" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=Carlos%20Pl%2C%20Mayfair%2C%20London%20W1K%202AL&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://www.maybourne.com/en/hotels/the-connaught/restaurants-bars/connaught-bar" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d6519169-Reviews-The_Connaught_Bar-London_England.html" target="_blank">TripAdvisor</a></div>
     </div>
     <div class="place-card">
       <div class="place-name">Dukes Bar</div>
@@ -4724,7 +5007,7 @@ Visit Website: Headout</div>
       <div class="place-addr">35 St James&#x27;s Pl, London SW1A 1NY</div>
       <div class="place-hours">&#128694; From Hard Rock: ~15 min walking</div>
       <div class="place-hours">&#128694; To The Melia: ~30 min - walk to Green Park, Piccadilly line to Piccadilly Circus, change to Bakerloo, then ~5 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=35%20St%20James%27s%20Place%2C%20London%20SW1A%201NY&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://www.dukeshotel.com/dukes-bar/" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&amp;destination=35%20St%20James%27s%20Place%2C%20London%20SW1A%201NY&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://www.dukeshotel.com/dukes-bar/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d1014398-Reviews-DUKES_Bar-London_England.html" target="_blank">TripAdvisor</a></div>
     </div></div>
   <div class="option-box-sub" style="margin-top:14px;"><strong>3 bars near The Melia:</strong></div>
   <div class="place-grid">
@@ -4734,7 +5017,7 @@ Visit Website: Headout</div>
       <div class="place-addr">5 Clipstone St, London W1W 6BB</div>
       <div class="place-hours">&#128694; From The Melia: ~6 min walking</div>
       <div class="place-hours">&#128694; To Hard Rock: ~25 min - Bakerloo line from Regent&#x27;s Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=5%20Clipstone%20St%2C%20London%20W1W%206BB&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://www.theluckypig.co.uk/" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=5%20Clipstone%20St%2C%20London%20W1W%206BB&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://www.theluckypig.co.uk/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d2659449-Reviews-The_Lucky_Pig_Cocktail_Bar-London_England.html" target="_blank">TripAdvisor</a></div>
     </div>
     <div class="place-card">
       <div class="place-name">The George, Fitzrovia</div>
@@ -4742,7 +5025,7 @@ Visit Website: Headout</div>
       <div class="place-addr">55 Great Portland St, London W1W 7LQ</div>
       <div class="place-hours">&#128694; From The Melia: ~5 min walking</div>
       <div class="place-hours">&#128694; To Hard Rock: ~25 min - Bakerloo line from Regent&#x27;s Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=55%20Great%20Portland%20St%2C%20London%20W1W%207LQ&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://thegeorge.london/" target="_blank">Website</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=55%20Great%20Portland%20St%2C%20London%20W1W%207LQ&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://thegeorge.london/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d6405157-Reviews-The_George-London_England.html" target="_blank">TripAdvisor</a></div>
     </div>
     <div class="place-card">
       <div class="place-name">Artesian at The Langham</div>
@@ -4750,7 +5033,7 @@ Visit Website: Headout</div>
       <div class="place-addr">1c Portland Pl, London W1B 1JA</div>
       <div class="place-hours">&#128694; From The Melia: ~13 min walking</div>
       <div class="place-hours">&#128694; To Hard Rock: ~20 min - Bakerloo line from Regent&#x27;s Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk</div>
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=1c%20Portland%20Place%2C%20London%20W1B%201JA&amp;travelmode=walking" target="_blank">Map</a><a class="pill" href="https://www.artesian-bar.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.artesian-bar.co.uk/menus/" target="_blank">Menu</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=1c%20Portland%20Place%2C%20London%20W1B%201JA&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-website" href="https://www.artesian-bar.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.artesian-bar.co.uk/menus/" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d730307-Reviews-Artesian-London_England.html" target="_blank">TripAdvisor</a></div>
     </div></div>
 </div>
         <div class="ev-stay">🏨 Staying at The Level at Melia White House - Longford Street, Regents Park, London NW1 3UP (+44 20 7391 3000 · melia.white.house@melia.com)</div>
@@ -4858,12 +5141,16 @@ Visit Website: Headout</div>
             
             
             
+            
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">7:00 PM</div>
           <div class="ev-body">
             <div class="ev-name">Leave for Airport  </div>
+            
+            
             
             
             
@@ -4876,6 +5163,8 @@ Visit Website: Headout</div>
           <div class="ev-body">
             <div class="ev-name">Depart London Heathrow at 10.00pm (BA0015 LHR-SIN PE ~ BA0015 SIN-SYD PE)  </div>
             <div class="ev-addr">Heathrow Airport, Hounslow TW6 1EW</div>
+            
+            
             
             
             
@@ -4896,7 +5185,7 @@ Visit Website: Headout</div>
       <div class="place-hours">&#128337; Sun 12pm-10:30pm (check ahead for any Sept 2026 changes)</div>
       <div class="place-hours">&#128222; +44 20 7553 7621</div>
       <div class="place-links">
-        <a class="pill" href="https://www.thecastlefarringdon.co.uk" target="_blank">Website</a>
+        <a class="pill pill-website" href="https://www.thecastlefarringdon.co.uk" target="_blank">Website</a>
         <a class="pill pill-weblink" href="https://www.thecastlefarringdon.co.uk/food" target="_blank">Menu</a>
         <a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=34-35%20Cowcross%20St%2C%20Farringdon%2C%20London%20EC1M%206DB&amp;travelmode=transit" target="_blank">Map</a>
         <a class="pill pill-instagram" href="https://www.instagram.com/castleec1/" target="_blank" title="Instagram link">I</a>
@@ -4919,18 +5208,6 @@ Visit Website: Headout</div>
       <td>Book airport transfer to hotel <span class="pill pill-todo">TO DO</span></td>
       <td><span class="badge badge-tobook">To Book</span></td>
       <td class="ttc-notes">Arriving via BA0571 from Milan (LIN-LHR), lands 2:50pm; transfer to The Level at Melia White House not yet booked</td>
-    </tr>
-    <tr>
-      <td class="ttc-day">Thu (24)</td>
-      <td>Book dinner reservation - The Lighterman <span class="pill pill-todo">TO DO</span></td>
-      <td><span class="badge badge-tobook">To Book</span></td>
-      <td class="ttc-notes">3 Granary Square, London N1C 4BH - www.thelighterman.co.uk - ~1 mile / 20 min walk from hotel. Check with Deb before booking.</td>
-    </tr>
-    <tr>
-      <td class="ttc-day">Fri (25)</td>
-      <td>Confirm dinner reservation <span class="pill pill-todo">TO DO</span></td>
-      <td><span class="badge badge-toconfirm">To Confirm</span></td>
-      <td class="ttc-notes">Albert Schloss, booking for 4:45pm before The Mousetrap</td>
     </tr>
     <tr>
       <td class="ttc-day">Sat (26)</td>
@@ -4967,6 +5244,7 @@ Visit Website: Headout</div>
       <div class="place-type">Royal park right across the road - gardens, boating lake, rose garden (~1-2 min walk)</div>
       <div class="place-addr">Chester Rd, London NW1 4NR</div>
       
+      <div class="place-hours">&#128222; 0300 061 2300</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Chester%20Rd%2C%20London%20NW1%204NR&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -4977,6 +5255,7 @@ Visit Website: Headout</div>
       <div class="place-type">World-famous zoo, inside Regent&#x27;s Park (~15 min walk)</div>
       <div class="place-addr">Outer Circle, Regent&#x27;s Park, London NW1 4RY</div>
       
+      <div class="place-hours">&#128222; 0344 225 1826</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Outer%20Circle%2C%20Regent%27s%20Park%2C%20London%20NW1%204RY&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -4987,6 +5266,7 @@ Visit Website: Headout</div>
       <div class="place-type">Outdoor theatre - plays, concerts, events, seasonal (~15 min walk)</div>
       <div class="place-addr">Inner Circle, Regent&#x27;s Park, London NW1 4NU</div>
       
+      <div class="place-hours">&#128222; 0333 400 3562</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Inner%20Circle%2C%20Regent%27s%20Park%2C%20London%20NW1%204NU&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -4997,6 +5277,7 @@ Visit Website: Headout</div>
       <div class="place-type">Recreated Victorian rooms at the famous &#x27;221B&#x27; address (~10 min walk)</div>
       <div class="place-addr">221b Baker St, London NW1 6XE</div>
       
+      <div class="place-hours">&#128222; 020 7224 3688</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=221b%20Baker%20St%2C%20London%20NW1%206XE&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -5007,6 +5288,7 @@ Visit Website: Headout</div>
       <div class="place-type">Waxworks - celebrities, royals, film characters (~10 min walk)</div>
       <div class="place-addr">Marylebone Rd, London NW1 5LR</div>
       
+      <div class="place-hours">&#128222; 0207 487 0350</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Marylebone%20Rd%2C%20London%20NW1%205LR&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -5016,6 +5298,7 @@ Visit Website: Headout</div>
       <div class="place-name">Baker Street</div>
       <div class="place-type">Iconic street, tube station, shops and cafes (~9 min walk)</div>
       <div class="place-addr">Baker St, London NW1</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Baker%20St%2C%20London%20NW1&amp;travelmode=walking" target="_blank">Map</a></div>
@@ -5028,6 +5311,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Marylebone High St, London W1U</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Marylebone%20High%20St%2C%20London%20W1U&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
@@ -5037,6 +5321,7 @@ Visit Website: Headout</div>
       <div class="place-type">Free national museum - art, armour and furniture (~16 min walk)</div>
       <div class="place-addr">Hertford House, Manchester Square, London W1U 3BN</div>
       
+      <div class="place-hours">&#128222; 020 7563 9500</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Hertford%20House%2C%20Manchester%20Square%2C%20London%20W1U%203BN&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -5047,6 +5332,7 @@ Visit Website: Headout</div>
       <div class="place-type">Iconic Art Deco home of the BBC (~9 min walk)</div>
       <div class="place-addr">Portland Pl, London W1A 1AA</div>
       
+      <div class="place-hours">&#128222; 0370 010 0222</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Portland%20Pl%2C%20London%20W1A%201AA&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -5057,6 +5343,7 @@ Visit Website: Headout</div>
       <div class="place-type">Nash&#x27;s striking circular church next to the BBC (~9 min walk)</div>
       <div class="place-addr">2 All Souls Pl, London W1B 3DA</div>
       
+      <div class="place-hours">&#128222; 020 7580 3522</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=2%20All%20Souls%20Pl%2C%20London%20W1B%203DA&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -5067,6 +5354,7 @@ Visit Website: Headout</div>
       <div class="place-type">Free exhibitions, cafe and bookshop (~8 min walk)</div>
       <div class="place-addr">66 Portland Pl, London W1B 1AD</div>
       
+      <div class="place-hours">&#128222; +44 (0)20 7307 5355</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=66%20Portland%20Pl%2C%20London%20W1B%201AD&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -5076,6 +5364,7 @@ Visit Website: Headout</div>
       <div class="place-name">Great Portland Street shops &amp; cafes</div>
       <div class="place-type">Right outside the hotel - cafes, restaurants, shops (~1-2 min walk)</div>
       <div class="place-addr">Great Portland St, London W1W</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Great%20Portland%20St%2C%20London%20W1W&amp;travelmode=walking" target="_blank">Map</a></div>
@@ -5088,6 +5377,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Charlotte St, London W1T</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Charlotte%20St%2C%20London%20W1T&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
@@ -5096,6 +5386,7 @@ Visit Website: Headout</div>
       <div class="place-name">Regent&#x27;s Canal towpath</div>
       <div class="place-type">Scenic canal walk along the edge of Regent&#x27;s Park (~12 min walk)</div>
       <div class="place-addr">Regent&#x27;s Canal, London NW1</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Regent%27s%20Canal%2C%20London%20NW1&amp;travelmode=walking" target="_blank">Map</a></div>
@@ -5108,6 +5399,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Euston Square Gardens, London NW1 2EF</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Euston%20Square%20Gardens%2C%20London%20NW1%202EF&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
@@ -5117,6 +5409,7 @@ Visit Website: Headout</div>
       <div class="place-type">Free museum exploring medicine, art and science (~10 min walk)</div>
       <div class="place-addr">183 Euston Rd, London NW1 2BE</div>
       
+      <div class="place-hours">&#128222; 020 7611 2222</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=183%20Euston%20Rd%2C%20London%20NW1%202BE&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -5127,6 +5420,7 @@ Visit Website: Headout</div>
       <div class="place-type">Striking gold-domed mosque on the edge of Regent&#x27;s Park (~14 min walk)</div>
       <div class="place-addr">146 Park Rd, London NW8 7RG</div>
       
+      <div class="place-hours">&#128222; 020 7725 2152</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=146%20Park%20Rd%2C%20London%20NW8%207RG&amp;travelmode=walking" target="_blank">Map</a></div>
       
@@ -5136,6 +5430,7 @@ Visit Website: Headout</div>
       <div class="place-name">Cumberland Terrace</div>
       <div class="place-type">One of Regent&#x27;s Park&#x27;s grandest Nash terraces (~12 min walk)</div>
       <div class="place-addr">Cumberland Terrace, London NW1 4HE</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Cumberland%20Terrace%2C%20London%20NW1%204HE&amp;travelmode=walking" target="_blank">Map</a></div>
@@ -5148,6 +5443,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Oxford Circus, London W1B</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Oxford%20Circus%2C%20London%20W1B&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div>
@@ -5156,6 +5452,7 @@ Visit Website: Headout</div>
       <div class="place-name">Primrose Hill</div>
       <div class="place-type">Park hill with panoramic skyline views over London (~19 min walk)</div>
       <div class="place-addr">Primrose Hill, London NW1 4NR</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Primrose%20Hill%2C%20London%20NW1%204NR&amp;travelmode=walking" target="_blank">Map</a></div>
@@ -5172,6 +5469,7 @@ Visit Website: Headout</div>
       <div class="place-addr">87-135 Brompton Rd, Knightsbridge, London SW1X 7XL</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-9pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; +44 (0)20 7730 1234</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=87-135%20Brompton%20Rd%2C%20Knightsbridge%2C%20London%20SW1X%207XL" target="_blank">Map</a></div>
       
     </div>
@@ -5182,6 +5480,7 @@ Visit Website: Headout</div>
       <div class="place-addr">400 Oxford St, London W1A 1AB</div>
       <div class="place-hours">&#128337; Mon-Fri 10am-10pm, Sat 10am-9pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; 020 7160 6222</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=400%20Oxford%20St%2C%20London%20W1A%201AB" target="_blank">Map</a></div>
       
     </div>
@@ -5192,6 +5491,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Great Marlborough St, London W1B 5AH</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-8pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 020 7734 1234</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Great%20Marlborough%20St%2C%20London%20W1B%205AH" target="_blank">Map</a></div>
       
     </div>
@@ -5202,6 +5502,7 @@ Visit Website: Headout</div>
       <div class="place-addr">181 Piccadilly, London W1A 1ER</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-8pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; 020 7734 8040</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=181%20Piccadilly%2C%20London%20W1A%201ER" target="_blank">Map</a></div>
       
     </div>
@@ -5212,6 +5513,7 @@ Visit Website: Headout</div>
       <div class="place-addr">188-196 Regent St, London W1B 5BT</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-9pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 0371 704 1977</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=188-196%20Regent%20St%2C%20London%20W1B%205BT" target="_blank">Map</a></div>
       
     </div>
@@ -5222,6 +5524,7 @@ Visit Website: Headout</div>
       <div class="place-addr">300 Oxford St, London W1C 1DX</div>
       <div class="place-hours">&#128337; Mon-Wed &amp; Fri-Sat 9:30am-8pm, Thu 9:30am-9pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 0345 608 0677</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=300%20Oxford%20St%2C%20London%20W1C%201DX" target="_blank">Map</a></div>
       
     </div>
@@ -5232,6 +5535,7 @@ Visit Website: Headout</div>
       <div class="place-addr">83 Marylebone High St, London W1U 4QW</div>
       <div class="place-hours">&#128337; Mon-Sat 9am-7:30pm, Sun 11am-6pm</div>
       <div class="place-hours">&#128222; 020 7224 2295</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=83%20Marylebone%20High%20St%2C%20London%20W1U%204QW" target="_blank">Map</a></div>
       
     </div>
@@ -5242,6 +5546,7 @@ Visit Website: Headout</div>
       <div class="place-addr">203-206 Piccadilly, London W1J 9HD</div>
       <div class="place-hours">&#128337; Mon-Sat 9am-10pm, Sun 12pm-6:30pm</div>
       <div class="place-hours">&#128222; 020 7851 2400</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=203-206%20Piccadilly%2C%20London%20W1J%209HD" target="_blank">Map</a></div>
       
     </div>
@@ -5252,6 +5557,7 @@ Visit Website: Headout</div>
       <div class="place-addr">51 Piccadilly, London W1J 0QJ</div>
       <div class="place-hours">&#128337; Mon-Sat 8am-8pm, Sun 11am-6pm</div>
       <div class="place-hours">&#128222; 020 7493 1764</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=51%20Piccadilly%2C%20London%20W1J%200QJ" target="_blank">Map</a></div>
       
     </div>
@@ -5262,6 +5568,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Regent St, London W1B</div>
       <div class="place-hours">&#128337; Varies by store (most 10am-7/8pm, Sun 12pm-6pm)</div>
       <div class="place-hours">&#128222; Varies by store</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Regent%20St%2C%20London%20W1B" target="_blank">Map</a></div>
       
     </div>
@@ -5272,6 +5579,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Camden Lock Pl, London NW1 8AF</div>
       <div class="place-hours">&#128337; Daily 10am-6pm (some stalls/evenings vary)</div>
       <div class="place-hours">&#128222; 020 3763 9999</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Camden%20Lock%20Pl%2C%20London%20NW1%208AF" target="_blank">Map</a></div>
       
     </div>
@@ -5282,6 +5590,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Portobello Rd, London W11 1LJ</div>
       <div class="place-hours">&#128337; Mon-Sat approx. 8am-7pm (Sat is main trading day)</div>
       <div class="place-hours">&#128222; 020 7727 7684</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Portobello%20Rd%2C%20London%20W11%201LJ" target="_blank">Map</a></div>
       
     </div>
@@ -5292,6 +5601,7 @@ Visit Website: Headout</div>
       <div class="place-addr">8 Southwark St, London SE1 1TL</div>
       <div class="place-hours">&#128337; Mon-Fri 10am-5pm (limited), Sat 8am-5pm, Sun 10am-3pm</div>
       <div class="place-hours">&#128222; 020 7407 1002</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=8%20Southwark%20St%2C%20London%20SE1%201TL" target="_blank">Map</a></div>
       
     </div>
@@ -5302,6 +5612,7 @@ Visit Website: Headout</div>
       <div class="place-addr">The Piazza, Covent Garden, London WC2E 8RF</div>
       <div class="place-hours">&#128337; Mon-Fri 10am-8pm, Sat 9am-8pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 020 7395 3765</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Piazza%2C%20Covent%20Garden%2C%20London%20WC2E%208RF" target="_blank">Map</a></div>
       
     </div>
@@ -5312,6 +5623,7 @@ Visit Website: Headout</div>
       <div class="place-addr">New Bond St, London W1S</div>
       <div class="place-hours">&#128337; Varies by store (most 10am-6/7pm, Sun 12pm-6pm)</div>
       <div class="place-hours">&#128222; Varies by store</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=New%20Bond%20St%2C%20London%20W1S" target="_blank">Map</a></div>
       
     </div>
@@ -5322,6 +5634,7 @@ Visit Website: Headout</div>
       <div class="place-addr">107 Charing Cross Rd, London WC2H 0DT</div>
       <div class="place-hours">&#128337; Mon-Sat 9:30am-9pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; 020 7437 5660</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=107%20Charing%20Cross%20Rd%2C%20London%20WC2H%200DT" target="_blank">Map</a></div>
       
     </div>
@@ -5332,6 +5645,7 @@ Visit Website: Headout</div>
       <div class="place-addr">1 Swiss Ct, London W1D 6AP</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-9pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 020 7025 7171</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Swiss%20Ct%2C%20London%20W1D%206AP" target="_blank">Map</a></div>
       
     </div>
@@ -5342,6 +5656,7 @@ Visit Website: Headout</div>
       <div class="place-addr">3 Swiss Ct, London W1D 6AP</div>
       <div class="place-hours">&#128337; Mon-Sat 10am-10pm, Sun 12pm-6pm</div>
       <div class="place-hours">&#128222; 020 7839 3480</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=3%20Swiss%20Ct%2C%20London%20W1D%206AP" target="_blank">Map</a></div>
       
     </div>
@@ -5352,6 +5667,7 @@ Visit Website: Headout</div>
       <div class="place-addr">235 Regent St, London W1B 2EL</div>
       <div class="place-hours">&#128337; Mon-Fri 10am-9pm, Sat 10am-8pm, Sun 10am-6pm</div>
       <div class="place-hours">&#128222; 020 7153 9000</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=235%20Regent%20St%2C%20London%20W1B%202EL" target="_blank">Map</a></div>
       
     </div>
@@ -5362,6 +5678,7 @@ Visit Website: Headout</div>
       <div class="place-addr">14-28 Oxford St, Fitzrovia, London W1D 1AU</div>
       <div class="place-hours">&#128337; Mon-Sat 8am-10pm, Sun 11:30am-6pm</div>
       <div class="place-hours">&#128222; 020 7580 5510</div>
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=14-28%20Oxford%20St%2C%20Fitzrovia%2C%20London%20W1D%201AU" target="_blank">Map</a></div>
       
     </div></div>
@@ -5386,6 +5703,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Gaeta 61, 185 Rome</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=The+Republic+Hotel+Via+Gaeta+61+Rome" target="_blank">Map</a></div>
       
     </div>
@@ -5394,6 +5712,7 @@ Visit Website: Headout</div>
       <div class="place-name">Fiumicino Airport (FCO)</div>
       <div class="place-type">Airport - arrival</div>
       <div class="place-addr">Fiumicino Airport, Rome</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Fiumicino+Airport" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/aeroporti_di_roma/" target="_blank" title="Instagram link">I</a></div>
@@ -5406,6 +5725,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Vatican Museums, Vatican City</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Vatican+Museums" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/vaticanmuseums/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5414,6 +5734,7 @@ Visit Website: Headout</div>
       <div class="place-name">Villa Borghese Gardens</div>
       <div class="place-type">Sightseeing (Fri 11 Sep, 3-5pm)</div>
       <div class="place-addr">Villa Borghese, Rome, Italy</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Borghese+Gardens+Rome" target="_blank">Map</a></div>
@@ -5426,6 +5747,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Piazza del Colosseo, 1, 00184 Roma RM, Italy</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Colosseum+Rome" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/parcocolosseo/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5434,6 +5756,7 @@ Visit Website: Headout</div>
       <div class="place-name">Civitavecchia</div>
       <div class="place-type">Cruise embark / car hire (Mon 14 &amp; Mon 21 Sep)</div>
       <div class="place-addr">Via 16 Settembre 46, Civitavecchia</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Civitavecchia+Cruise+Terminal" target="_blank">Map</a></div>
@@ -5446,6 +5769,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Piazza Sallustio 24, 00187 Roma</div>
       
       
+      
       <div class="place-links"><a class="pill pill-weblink" href="https://www.ristorantecantinacantarini.it/menu-di-terra.php" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Cantina+Cantarini+da+Mario+Piazza+Sallustio+Roma" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d2041920-Reviews-Cantina_Cantarini_da_Mario-Rome_Lazio.html" target="_blank">Reviews</a><a class="pill pill-instagram" href="https://www.instagram.com/cantinacantarini/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5454,6 +5778,7 @@ Visit Website: Headout</div>
       <div class="place-name">Girarrosto Fiorentino</div>
       <div class="place-type">Restaurant candidate - veal specialities (Google 4.4/5)</div>
       <div class="place-addr">Via Sicilia 46, 00187 Roma</div>
+      
       
       
       <div class="place-links"><a class="pill pill-weblink" href="https://www.thefork.com/restaurant/girarrosto-fiorentino-r78540/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Girarrosto+Fiorentino+Via+Sicilia+Roma" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d780142-Reviews-Girarrosto_Fiorentino-Rome_Lazio.html" target="_blank">Reviews</a><a class="pill pill-instagram" href="https://www.instagram.com/girarrostofiorentino/" target="_blank" title="Instagram link">I</a></div>
@@ -5466,6 +5791,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via degli Avignonesi 22, 00187 Roma</div>
       
       
+      
       <div class="place-links"><a class="pill pill-weblink" href="https://restaurantguru.com/Colline-Emiliane-Rome/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Colline+Emiliane+Via+degli+Avignonesi+Roma" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d696516-Reviews-Colline_Emiliane-Rome_Lazio.html" target="_blank">Reviews</a><a class="pill pill-instagram" href="https://www.instagram.com/collineemiliane1931/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5474,6 +5800,7 @@ Visit Website: Headout</div>
       <div class="place-name">Trattoria Monti</div>
       <div class="place-type">Restaurant candidate - classic Marche/Roman cuisine (top ~4% of Rome restaurants)</div>
       <div class="place-addr">Via di San Vito 13/a, 00185 Roma</div>
+      
       
       
       <div class="place-links"><a class="pill pill-weblink" href="https://restaurantguru.com/Trattoria-Monti-Rome/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Trattoria+Monti+Via+di+San+Vito+Roma" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d793216-Reviews-Trattoria_Monti-Rome_Lazio.html" target="_blank">Reviews</a></div>
@@ -5493,6 +5820,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Roma 191, 50028, Tavarnelle Val Di Pesa</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Borgo+di+Cortefreda+Relais+Via+Roma+191+Tavarnelle" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/borgodicortefreda/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5501,6 +5829,7 @@ Visit Website: Headout</div>
       <div class="place-name">Il Caffè degli Amici</div>
       <div class="place-type">Cafe/restaurant - potential place to go (Tripadvisor 4.7/5, 562 reviews)</div>
       <div class="place-addr">Via Roma 121, 50028 Tavarnelle Val di Pesa</div>
+      
       
       
       <div class="place-links"><a class="pill pill-weblink" href="https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Caffe+Degli+Amici+Via+Roma+121+Tavarnelle+Val+di+Pesa" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g670654-d3612860-Reviews-Caffe_Degli_Amici-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html" target="_blank">Reviews</a><a class="pill pill-instagram" href="https://www.instagram.com/ilcaffedegliamici/" target="_blank" title="Instagram link">I</a></div>
@@ -5513,6 +5842,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Palazzuolo, 50028 Tavarnelle Val di Pesa</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Pasticceria+La+Golosa+Via+Palazzuolo+Tavarnelle+Val+di+Pesa" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g670654-d3418380-Reviews-Pasticceria_La_Golosa-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html" target="_blank">Reviews</a></div>
       
     </div>
@@ -5523,6 +5853,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Vittorio Veneto 48, 50021 Barberino Val d&#x27;Elsa, Barberino Tavarnelle</div>
       
       
+      
       <div class="place-links"><a class="pill pill-weblink" href="https://www.borghiditoscana.net/en/restaurant-pizzeria-triocco-in-barberino-val-delsa-florence/il-menu-del-ristorante-triocco-barberino-val-delsa-2/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Triocco+Via+Vittorio+Veneto+48+Barberino" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html" target="_blank">Reviews</a><a class="pill pill-instagram" href="https://www.instagram.com/triocco/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5531,6 +5862,7 @@ Visit Website: Headout</div>
       <div class="place-name">Agriturismo Buratta</div>
       <div class="place-type">Lunch option - potential stop en route from Civitavecchia (Tripadvisor 4.0/5, 832 reviews, #1 of 19 in Talamone)</div>
       <div class="place-addr">Strada Vicinale delle Casacce, 65, 58010 Talamone, Orbetello</div>
+      
       
       
       <div class="place-links"><a class="pill pill-weblink" href="https://restaurantguru.com/Agriturismo-Buratta-Fonteblanda/menu" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Agriturismo+Buratta+Strada+Vicinale+delle+Casacce+65+Talamone" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.co.nz/Restaurant_Review-g194929-d1894984-Reviews-Agriturismo_Buratta-Talamone_Orbetello_Province_of_Grosseto_Tuscany.html" target="_blank">Reviews</a></div>
@@ -5550,6 +5882,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Giovanni Battista Pirelli, 5, 20124 Milan</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=iQ+Hotel+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5558,6 +5891,7 @@ Visit Website: Headout</div>
       <div class="place-name">Milan Linate Airport</div>
       <div class="place-type">Airport (car return)</div>
       <div class="place-addr">Milan Linate Airport</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Milan+Linate+Airport" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/milanairports/" target="_blank" title="Instagram link">I</a></div>
@@ -5570,6 +5904,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Piazza del Duomo, 20121 Milan</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=La+Rinascente+Piazza+del+Duomo+Milano" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/rinascente/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5580,7 +5915,8 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Senato 2, 20121 Milan (near Corso Venezia)</div>
       <div class="place-hours">&#128337; 10:00am-7:30pm (confirm exact days, especially Sundays)</div>
       
-      <div class="place-links"><a class="pill" href="https://www.fornasetti.com/en-us" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via+Giovanni+Battista+Pirelli+5+Milan&amp;destination=Via+Senato+2+Milan&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/fornasetti_official/" target="_blank" title="Instagram link">I</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.fornasetti.com/en-us" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via+Giovanni+Battista+Pirelli+5+Milan&amp;destination=Via+Senato+2+Milan&amp;travelmode=walking" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/fornasetti_official/" target="_blank" title="Instagram link">I</a></div>
       
     </div></div>
 
@@ -5597,6 +5933,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Gaeta 61, 185 Rome</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=The+Republic+Hotel+Via+Gaeta+61+Rome" target="_blank">Map</a></div>
       
     </div>
@@ -5605,6 +5942,7 @@ Visit Website: Headout</div>
       <div class="place-name">Civitavecchia (cruise embark / car hire)</div>
       <div class="place-type">Port / Car hire</div>
       <div class="place-addr">Via 16 Settembre 46, Civitavecchia</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Civitavecchia+Cruise+Terminal" target="_blank">Map</a></div>
@@ -5617,6 +5955,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Roma 191, 50028, Tavarnelle Val Di Pesa</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Borgo+di+Cortefreda+Relais" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/borgodicortefreda/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5625,6 +5964,7 @@ Visit Website: Headout</div>
       <div class="place-name">Marseille, France</div>
       <div class="place-type">Cruise port of call</div>
       <div class="place-addr">Marseille, France</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Marseille+France" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/marseilletourisme/" target="_blank" title="Instagram link">I</a></div>
@@ -5637,6 +5977,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Villefranche-sur-Mer, France</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Villefranche-sur-Mer+France" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/villedevillefranchesurmer/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5645,6 +5986,7 @@ Visit Website: Headout</div>
       <div class="place-name">Genoa, Italy</div>
       <div class="place-type">Cruise port of call</div>
       <div class="place-addr">Genoa, Italy</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Genoa+Italy" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/genovamorethanthis/" target="_blank" title="Instagram link">I</a></div>
@@ -5657,6 +5999,7 @@ Visit Website: Headout</div>
       <div class="place-addr">La Spezia, Italy</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=La+Spezia+Italy" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/visitlaspezia_official/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5667,6 +6010,7 @@ Visit Website: Headout</div>
       <div class="place-addr">Via Roma 121, 50028 Tavarnelle Val di Pesa</div>
       
       
+      
       <div class="place-links"><a class="pill pill-weblink" href="https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Caffe+Degli+Amici+Via+Roma+121+Tavarnelle+Val+di+Pesa" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/ilcaffedegliamici/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5675,6 +6019,7 @@ Visit Website: Headout</div>
       <div class="place-name">Pasticceria La Golosa</div>
       <div class="place-type">Pastry shop/cafe - potential place to go (Tripadvisor 4.4/5, 31 reviews)</div>
       <div class="place-addr">Via Palazzuolo, 50028 Tavarnelle Val di Pesa</div>
+      
       
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Pasticceria+La+Golosa+Via+Palazzuolo+Tavarnelle+Val+di+Pesa" target="_blank">Map</a></div>
@@ -5694,7 +6039,8 @@ Visit Website: Headout</div>
       <div class="place-addr">Longford Street, Regents Park, London NW1 3UP</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.melia.com/en/hotels/united-kingdom/london/the-level-at-melia-white-house" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/meliawhitehouse/" target="_blank" title="Instagram link">I</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.melia.com/en/hotels/united-kingdom/london/the-level-at-melia-white-house" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/meliawhitehouse/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5703,6 +6049,7 @@ Visit Website: Headout</div>
       <div class="place-type">Travel / Airport</div>
       <div class="place-addr">Heathrow Airport, Hounslow TW6 1EW</div>
       
+      <div class="place-hours">&#128222; 0344 335 1801</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Heathrow%20Airport%2C%20Hounslow%20TW6%201EW" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/heathrow_airport/" target="_blank" title="Instagram link">I</a></div>
       
@@ -5713,8 +6060,9 @@ Visit Website: Headout</div>
       <div class="place-type">Food &amp; Drink</div>
       <div class="place-addr">20-24 Shaftesbury Avenue, London W1D 7EU</div>
       
-      
-      <div class="place-links"><a class="pill pill-weblink" href="https://www.albertsschloss.com/menu/?location=london" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=20-24%20Shaftesbury%20Avenue%2C%20London%20W1D%207EU" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/albertsschloss/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-hours">&#128222; 020 8165 0000</div>
+      <div class="place-hours">&#9993;&#65039; eventslondon@albertsschloss.co.uk</div>
+      <div class="place-links"><a class="pill pill-weblink" href="https://www.albertsschloss.com/menu/?location=london" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=20-24%20Shaftesbury%20Avenue%2C%20London%20W1D%207EU" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d26909472-Reviews-Albert_s_Schloss_Soho-London_England.html" target="_blank">Reviews</a><a class="pill pill-instagram" href="https://www.instagram.com/albertsschloss/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5723,8 +6071,9 @@ Visit Website: Headout</div>
       <div class="place-type">Food &amp; Drink</div>
       <div class="place-addr">3 Granary Square, London N1C 4BH</div>
       
+      <div class="place-hours">&#128222; 020 3846 3400</div>
       
-      <div class="place-links"><a class="pill pill-weblink" href="https://www.thelighterman.co.uk/menus" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=3%20Granary%20Square%2C%20London%20N1C%204BH" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/thelightermankx/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill pill-weblink" href="https://www.thelighterman.co.uk/menus" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=3%20Granary%20Square%2C%20London%20N1C%204BH" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d10121217-Reviews-The_Lighterman-London_England.html" target="_blank">Reviews</a><a class="pill pill-instagram" href="https://www.instagram.com/thelightermankx/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5733,6 +6082,7 @@ Visit Website: Headout</div>
       <div class="place-type">Show / Theatre</div>
       <div class="place-addr">West Street, London WC2H 9NZ</div>
       
+      <div class="place-hours">&#128222; 020 7836 1443</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=West%20Street%2C%20London%20WC2H%209NZ" target="_blank">Map</a></div>
       
@@ -5743,7 +6093,8 @@ Visit Website: Headout</div>
       <div class="place-type">Show / Theatre</div>
       <div class="place-addr">404 Strand, London WC2R 0NH</div>
       
-      
+      <div class="place-hours">&#128222; 0330 333 4814</div>
+      <div class="place-hours">&#9993;&#65039; boxoffice@nimaxtheatres.com</div>
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=404%20Strand%2C%20London%20WC2R%200NH" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/sixthemusical/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5753,8 +6104,9 @@ Visit Website: Headout</div>
       <div class="place-type">Sightseeing</div>
       <div class="place-addr">Tower of London, EC3N 4AB</div>
       
+      <div class="place-hours">&#128222; 020 3166 6646</div>
       
-      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Tower%20of%20London%2C%20EC3N%204AB" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/historicroyalpalaces/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Tower%20of%20London%2C%20EC3N%204AB" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Attraction_Review-g186338-d187788-Reviews-Tower_of_London-London_England.html" target="_blank">Reviews</a><a class="pill pill-instagram" href="https://www.instagram.com/historicroyalpalaces/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5763,8 +6115,9 @@ Visit Website: Headout</div>
       <div class="place-type">Food &amp; Drink</div>
       <div class="place-addr">54 Westow Hill, London SE19 1RX</div>
       
+      <div class="place-hours">&#128222; +44 7394 072189</div>
       
-      <div class="place-links"><a class="pill" href="https://www.hopscotchtap.com/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.hopscotchtap.com/copy-of-parties" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=54%20Westow%20Hill%2C%20London%20SE19%201RX" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/hopscotchtaprooms/" target="_blank" title="Instagram link">I</a></div>
+      <div class="place-links"><a class="pill pill-website" href="https://www.hopscotchtap.com/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.hopscotchtap.com/copy-of-parties" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=54%20Westow%20Hill%2C%20London%20SE19%201RX" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/hopscotchtaprooms/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
     <div class="place-card">
@@ -5773,6 +6126,7 @@ Visit Website: Headout</div>
       <div class="place-type">Shopping</div>
       <div class="place-addr">87-135 Brompton Road, Knightsbridge, London SW1X 7XL</div>
       
+      <div class="place-hours">&#128222; +44 (0)20 7730 1234</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=87-135%20Brompton%20Road%2C%20Knightsbridge%2C%20London%20SW1X%207XL" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/harrods/" target="_blank" title="Instagram link">I</a></div>
       
@@ -5783,6 +6137,7 @@ Visit Website: Headout</div>
       <div class="place-type">Sightseeing</div>
       <div class="place-addr">Cromwell Road, London SW7 2RL</div>
       
+      <div class="place-hours">&#128222; 020 7942 2000</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Victoria+and+Albert+Museum+Cromwell+Road+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://instagram.com/vamuseum" target="_blank" title="Instagram link">I</a></div>
       
@@ -5793,8 +6148,9 @@ Visit Website: Headout</div>
       <div class="place-type">Food &amp; Drink</div>
       <div class="place-addr">27-31 Basil Street, Knightsbridge, London SW3 1BB</div>
       
+      <div class="place-hours">&#128222; +44 20 3940 1020</div>
       
-      <div class="place-links"><a class="pill" href="https://harrysdolcevita.com/italian-restaurants-near-me/italian-restaurants-london/harrys-knightsbridge-italian-restaurant/" target="_blank">Website</a><a class="pill pill-weblink" href="https://harrysdolcevita.com/harrys-menu/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Harry%27s+Knightsbridge+27-31+Basil+Street+London" target="_blank">Map</a></div>
+      <div class="place-links"><a class="pill pill-website" href="https://harrysdolcevita.com/italian-restaurants-near-me/italian-restaurants-london/harrys-knightsbridge-italian-restaurant/" target="_blank">Website</a><a class="pill pill-weblink" href="https://harrysdolcevita.com/harrys-menu/" target="_blank">Menu</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Harry%27s+Knightsbridge+27-31+Basil+Street+London" target="_blank">Map</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d13224804-Reviews-Harry_s_Dolce_Vita_Knightsbridge-London_England.html" target="_blank">Reviews</a></div>
       
     </div>
     <div class="place-card">
@@ -5803,6 +6159,7 @@ Visit Website: Headout</div>
       <div class="place-type">Shopping</div>
       <div class="place-addr">14-28 Oxford Street, Fitzrovia, London W1D 1AU</div>
       
+      <div class="place-hours">&#128222; 020 7580 5510</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Primark+14-28+Oxford+Street+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/primark/" target="_blank" title="Instagram link">I</a></div>
       
@@ -5814,6 +6171,7 @@ Visit Website: Headout</div>
       <div class="place-addr">311 Oxford Street, London W1C 2HP</div>
       
       
+      
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Uniqlo+311+Oxford+Street+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/uniqloeurope/" target="_blank" title="Instagram link">I</a></div>
       
     </div>
@@ -5823,6 +6181,7 @@ Visit Website: Headout</div>
       <div class="place-type">Shopping - Books</div>
       <div class="place-addr">203-206 Piccadilly, London W1J 9HD</div>
       
+      <div class="place-hours">&#128222; 020 7851 2400</div>
       
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Waterstones+Piccadilly+203-206+Piccadilly+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/piccadillywaterstones/" target="_blank" title="Instagram link">I</a></div>
       
@@ -5834,7 +6193,8 @@ Visit Website: Headout</div>
       <div class="place-addr">Oxford Street, London W1</div>
       
       
-      <div class="place-links"><a class="pill" href="https://www.oxfordstreet.co.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Oxford+Street+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/oxfordstreetw1/" target="_blank" title="Instagram link">I</a></div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.oxfordstreet.co.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Oxford+Street+London" target="_blank">Map</a><a class="pill pill-instagram" href="https://www.instagram.com/oxfordstreetw1/" target="_blank" title="Instagram link">I</a></div>
       
     </div></div>
 </section>
@@ -5871,22 +6231,6 @@ Visit Website: Headout</div>
       <td class="ntb-notes">Arriving via BA0575 from Milan (LIN-LHR); transfer to The Level at Melia White House<div class="ntb-flag">Gary checked on 30 July - ongoing, to monitor.</div></td>
       <td class="ntb-tick"><span class="tickbox"></span></td>
       <td><a class="pill" href="https://www.melia.com/en/hotels/united-kingdom/london/melia-white-house" target="_blank">Visit</a></td>
-    </tr>
-    <tr>
-      <td class="ntb-date">Thu 24 Sep</td>
-      <td>Dinner reservation - The Lighterman</td>
-      <td><span class="badge badge-tobook">To Book</span></td>
-      <td class="ntb-notes">3 Granary Square, London N1C 4BH - ~1 mile / 20 min walk from hotel. Check with Deb before booking.</td>
-      <td class="ntb-tick"><span class="tickbox"></span></td>
-      <td><a class="pill" href="https://www.thelighterman.co.uk/" target="_blank">Visit</a></td>
-    </tr>
-    <tr>
-      <td class="ntb-date">Fri 25 Sep</td>
-      <td>Confirm dinner reservation - Albert’s Schloss</td>
-      <td><span class="badge badge-toconfirm">To Confirm</span></td>
-      <td class="ntb-notes">20-24 Shaftesbury Ave, London W1D 7EU - booking for 4:45pm before The Mousetrap</td>
-      <td class="ntb-tick"><span class="tickbox"></span></td>
-      <td><a class="pill" href="https://www.opentable.co.uk/r/alberts-schloss-london" target="_blank">Visit</a></td>
     </tr>
     <tr>
       <td class="ntb-date">Sat 26 Sep</td>
