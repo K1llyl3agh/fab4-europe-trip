@@ -234,6 +234,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   h3 { page-break-after: avoid; break-after: avoid-page; }
   #overview h2 { page-break-before: avoid; break-before: avoid; }
   .hero, .ship-banner, .map-wrap { page-break-inside: avoid; break-inside: avoid; }
+  body.printing-book .day-card, body.printing-book .place-card { page-break-inside: auto; break-inside: auto; }
   body.printing-overview .print-block:not([data-section="overview"]) { display:none !important; }
   body.printing-overview > *:not(.print-block) { display:none !important; }
   body.printing-overview .print-block[data-section="overview"] { padding-top:10px; }
@@ -334,35 +335,116 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-day-option-d-23sep .print-block:not(:has([data-day-id="option-d-23sep"])) { display:none !important; }
   body.printing-day-option-d-23sep > *:not(.print-block) { display:none !important; }
   body[class*="printing-day-"] h2, body[class*="printing-day-"] h3, body[class*="printing-day-"] table.ttc,
-  body[class*="printing-day-"] .lede, body[class*="printing-day-"] .ig-note, body[class*="printing-day-"] .place-grid,
-  body.printing-book h2, body.printing-book h3, body.printing-book table.ttc,
-  body.printing-book .lede, body.printing-book .ig-note, body.printing-book .place-grid {
+  body[class*="printing-day-"] .lede, body[class*="printing-day-"] .ig-note, body[class*="printing-day-"] .place-grid {
     display:none !important;
   }
-  body[class*="printing-day-"] .day-card, body.printing-book .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
-  body[class*="printing-day-"] .day-map-box, body.printing-book .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
-  body[class*="printing-day-"] .day-map-timeline, body[class*="printing-day-"] .dm-stop, body[class*="printing-day-"] .dm-leg,
-  body.printing-book .day-map-timeline, body.printing-book .dm-stop, body.printing-book .dm-leg {
+  body[class*="printing-day-"] .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
+  body[class*="printing-day-"] .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body[class*="printing-day-"] .day-map-timeline, body[class*="printing-day-"] .dm-stop, body[class*="printing-day-"] .dm-leg {
     display:block !important;
   }
-  body[class*="printing-day-"] .dm-leg-line, body.printing-book .dm-leg-line { display:none !important; }
-  body[class*="printing-day-"] .dm-stop-body, body[class*="printing-day-"] .dm-leg-body,
-  body.printing-book .dm-stop-body, body.printing-book .dm-leg-body { page-break-inside: avoid; break-inside: avoid; }
-  body[class*="printing-day-"], body.printing-book { font-size:.86em; }
-  body[class*="printing-day-"] .day-head, body.printing-book .day-head { padding:7px 12px; }
-  body[class*="printing-day-"] .day-body, body.printing-book .day-body { padding:3px 12px 8px; }
-  body[class*="printing-day-"] .ev-row, body.printing-book .ev-row { padding:5px 0; gap:10px; }
-  body[class*="printing-day-"] .fun-fact-box, body.printing-book .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
-  body[class*="printing-day-"] .fun-fact-text + .fun-fact-text, body.printing-book .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
-  body[class*="printing-day-"] .day-map-title, body.printing-book .day-map-title { margin-bottom:4px; }
-  body[class*="printing-day-"] .day-map-caption, body.printing-book .day-map-caption { margin-top:4px; }
-  body[class*="printing-day-"] .dm-leg-body, body.printing-book .dm-leg-body { padding:2px 0 4px; }
-  body[class*="printing-day-"] .dm-stop-body, body.printing-book .dm-stop-body { padding-bottom:1px; }
+  body[class*="printing-day-"] .dm-leg-line { display:none !important; }
+  body[class*="printing-day-"] .dm-stop-body, body[class*="printing-day-"] .dm-leg-body { page-break-inside: avoid; break-inside: avoid; }
+  body[class*="printing-day-"] { font-size:.86em; }
+  body[class*="printing-day-"] .day-head { padding:7px 12px; }
+  body[class*="printing-day-"] .day-body { padding:3px 12px 8px; }
+  body[class*="printing-day-"] .ev-row { padding:5px 0; gap:10px; }
+  body[class*="printing-day-"] .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
+  body[class*="printing-day-"] .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body[class*="printing-day-"] .day-map-title { margin-bottom:4px; }
+  body[class*="printing-day-"] .day-map-caption { margin-top:4px; }
+  body[class*="printing-day-"] .dm-leg-body { padding:2px 0 4px; }
+  body[class*="printing-day-"] .dm-stop-body { padding-bottom:1px; }
   body.printing-book .ev-photo, body.printing-book .day-map-box { display:none !important; }
-  body[class*="printing-day-"] .ship-banner, body.printing-book .ship-banner { display:none !important; }
-  body[class*="printing-day-"] .tube-info-box, body.printing-book .tube-info-box { display:none !important; }
-  body[class*="printing-day-"] .resto-list, body.printing-book .resto-list { display:none !important; }
-  body[class*="printing-day-"] .london-quicklinks, body.printing-book .london-quicklinks { display:none !important; }
+  body[class*="printing-day-"] .ship-banner { display:none !important; }
+  body[class*="printing-day-"] .tube-info-box { display:none !important; }
+  body[class*="printing-day-"] .resto-list { display:none !important; }
+  body[class*="printing-day-"] .london-quicklinks { display:none !important; }
+  body.printing-rome { font-size:.86em; }
+  body.printing-rome .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
+  body.printing-rome .day-head { padding:7px 12px; }
+  body.printing-rome .day-body { padding:3px 12px 8px; }
+  body.printing-rome .ev-row { padding:5px 0; gap:10px; }
+  body.printing-rome .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
+  body.printing-rome .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-rome .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body.printing-rome .day-map-title { margin-bottom:4px; }
+  body.printing-rome .day-map-caption { margin-top:4px; }
+  body.printing-rome .day-map-timeline, body.printing-rome .dm-stop, body.printing-rome .dm-leg { display:block !important; }
+  body.printing-rome .dm-leg-line { display:none !important; }
+  body.printing-rome .dm-stop-body, body.printing-rome .dm-leg-body { page-break-inside: avoid; break-inside: avoid; padding:2px 0 4px; }
+  body.printing-rome .ship-banner { display:none !important; }
+  body.printing-rome .tube-info-box { display:none !important; }
+  body.printing-rome .resto-list { display:none !important; }
+  body.printing-rome .london-quicklinks { display:none !important; }
+  body.printing-cruise { font-size:.86em; }
+  body.printing-cruise .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
+  body.printing-cruise .day-head { padding:7px 12px; }
+  body.printing-cruise .day-body { padding:3px 12px 8px; }
+  body.printing-cruise .ev-row { padding:5px 0; gap:10px; }
+  body.printing-cruise .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
+  body.printing-cruise .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-cruise .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body.printing-cruise .day-map-title { margin-bottom:4px; }
+  body.printing-cruise .day-map-caption { margin-top:4px; }
+  body.printing-cruise .day-map-timeline, body.printing-cruise .dm-stop, body.printing-cruise .dm-leg { display:block !important; }
+  body.printing-cruise .dm-leg-line { display:none !important; }
+  body.printing-cruise .dm-stop-body, body.printing-cruise .dm-leg-body { page-break-inside: avoid; break-inside: avoid; padding:2px 0 4px; }
+  body.printing-cruise .ship-banner { display:none !important; }
+  body.printing-cruise .tube-info-box { display:none !important; }
+  body.printing-cruise .resto-list { display:none !important; }
+  body.printing-cruise .london-quicklinks { display:none !important; }
+  body.printing-tuscany { font-size:.86em; }
+  body.printing-tuscany .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
+  body.printing-tuscany .day-head { padding:7px 12px; }
+  body.printing-tuscany .day-body { padding:3px 12px 8px; }
+  body.printing-tuscany .ev-row { padding:5px 0; gap:10px; }
+  body.printing-tuscany .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
+  body.printing-tuscany .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-tuscany .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body.printing-tuscany .day-map-title { margin-bottom:4px; }
+  body.printing-tuscany .day-map-caption { margin-top:4px; }
+  body.printing-tuscany .day-map-timeline, body.printing-tuscany .dm-stop, body.printing-tuscany .dm-leg { display:block !important; }
+  body.printing-tuscany .dm-leg-line { display:none !important; }
+  body.printing-tuscany .dm-stop-body, body.printing-tuscany .dm-leg-body { page-break-inside: avoid; break-inside: avoid; padding:2px 0 4px; }
+  body.printing-tuscany .ship-banner { display:none !important; }
+  body.printing-tuscany .tube-info-box { display:none !important; }
+  body.printing-tuscany .resto-list { display:none !important; }
+  body.printing-tuscany .london-quicklinks { display:none !important; }
+  body.printing-milan { font-size:.86em; }
+  body.printing-milan .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
+  body.printing-milan .day-head { padding:7px 12px; }
+  body.printing-milan .day-body { padding:3px 12px 8px; }
+  body.printing-milan .ev-row { padding:5px 0; gap:10px; }
+  body.printing-milan .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
+  body.printing-milan .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-milan .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body.printing-milan .day-map-title { margin-bottom:4px; }
+  body.printing-milan .day-map-caption { margin-top:4px; }
+  body.printing-milan .day-map-timeline, body.printing-milan .dm-stop, body.printing-milan .dm-leg { display:block !important; }
+  body.printing-milan .dm-leg-line { display:none !important; }
+  body.printing-milan .dm-stop-body, body.printing-milan .dm-leg-body { page-break-inside: avoid; break-inside: avoid; padding:2px 0 4px; }
+  body.printing-milan .ship-banner { display:none !important; }
+  body.printing-milan .tube-info-box { display:none !important; }
+  body.printing-milan .resto-list { display:none !important; }
+  body.printing-milan .london-quicklinks { display:none !important; }
+  body.printing-london { font-size:.86em; }
+  body.printing-london .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
+  body.printing-london .day-head { padding:7px 12px; }
+  body.printing-london .day-body { padding:3px 12px 8px; }
+  body.printing-london .ev-row { padding:5px 0; gap:10px; }
+  body.printing-london .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
+  body.printing-london .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-london .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body.printing-london .day-map-title { margin-bottom:4px; }
+  body.printing-london .day-map-caption { margin-top:4px; }
+  body.printing-london .day-map-timeline, body.printing-london .dm-stop, body.printing-london .dm-leg { display:block !important; }
+  body.printing-london .dm-leg-line { display:none !important; }
+  body.printing-london .dm-stop-body, body.printing-london .dm-leg-body { page-break-inside: avoid; break-inside: avoid; padding:2px 0 4px; }
+  body.printing-london .ship-banner { display:none !important; }
+  body.printing-london .tube-info-box { display:none !important; }
+  body.printing-london .resto-list { display:none !important; }
+  body.printing-london .london-quicklinks { display:none !important; }
   @page { margin: 10mm; }
 }
 @media (max-width:600px) {
