@@ -93,6 +93,8 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .dinner-box .place-grid { margin:10px 0 0; }
 .option-box { margin-top:16px; padding:16px 18px; background:#eef3fb; border:1px dashed var(--london); border-radius:10px; }
 .option-box .place-grid { margin:10px 0 0; grid-template-columns:1fr; max-width:340px; }
+.option-box .place-grid.place-grid-wide { grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); max-width:700px; }
+@media (max-width:600px) { .option-box .place-grid.place-grid-wide { grid-template-columns:1fr; } }
 .option-box-title { font-weight:700; color:var(--navy); margin-bottom:4px; font-size:.95rem; }
 .option-box-sub { color:var(--muted); font-size:.82rem; margin-bottom:6px; }
 .day-map-title { font-weight:700; color:var(--navy); margin-bottom:8px; font-size:.95rem; }
@@ -5706,10 +5708,10 @@ Visit Website: Headout</div>
   <div class="option-box-title">Option 1: Lunch at The Castle or The Sir John Oldcastle, Farringdon</div>
   <div class="option-box-sub">Two pub options right by Farringdon station &ndash; a laid-back lunch stop before heading to the airport.</div>
   <div class="option-box-sub"><strong>Getting there:</strong> Great Portland Street &rarr; Farringdon on the Metropolitan/Circle/Hammersmith &amp; City line, direct (no change), ~6 min journey, then ~2-3 min walk from Farringdon station to either pub.</div>
-  <div class="place-grid">
+  <div class="place-grid place-grid-wide">
     <div class="place-card">
       <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Castle%2C%20Farringdon%20-%20geograph.org.uk%20-%205107529.jpg" alt="The Castle, Farringdon" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-      <div class="place-name">The Castle </div>
+      <div class="place-name">The Castle <a class="w3w-badge" href="https://what3words.com/range.return.colleague" target="_blank" title="what3words location">///range.return.colleague</a></div>
       <div class="place-type">Grade II listed pub &amp; restaurant, est. 1865 &ndash; British pub food, craft beer, full bar, only pawnbroker's licence in London</div>
       <div class="place-addr">34-35 Cowcross St, Farringdon, London EC1M 6DB</div>
       <div class="place-hours">&#128337; Sun 12pm-10:30pm (check ahead for any Sept 2026 changes)</div>
@@ -5723,7 +5725,7 @@ Visit Website: Headout</div>
     </div>
     <div class="place-card">
       <img class="place-photo" src="https://www.jdwetherspoon.com/wp-content/uploads/2024/03/430-feature.jpg" alt="The Sir John Oldcastle, Farringdon" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-      <div class="place-name">The Sir John Oldcastle </div>
+      <div class="place-name">The Sir John Oldcastle <a class="w3w-badge" href="https://what3words.com/twin.milk.hurry" target="_blank" title="what3words location">///twin.milk.hurry</a></div>
       <div class="place-type">JD Wetherspoon pub, named after the historical figure said to have inspired Shakespeare's Falstaff &ndash; British pub food, full bar, right next to Farringdon station</div>
       <div class="place-addr">29-35 Farringdon Rd, Farringdon, London EC1M 3JF</div>
       <div class="place-hours">&#128337; Sun 8am-11:30pm (check ahead for any Sept 2026 changes)</div>
