@@ -6363,19 +6363,19 @@ Visit Website: Headout</div>
       
     <tr>
       <td>Karen Nicholson</td>
-      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-0-karen-nicholson" data-eta-id="karen-nicholson"></td>
+      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-0-karen-nicholson" data-eta-id="karen-nicholson" data-first-name="Karen"></td>
     </tr>
     <tr>
       <td>Debbie Gyde</td>
-      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-1-debbie-gyde" data-eta-id="debbie-gyde"></td>
+      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-1-debbie-gyde" data-eta-id="debbie-gyde" data-first-name="Debbie"></td>
     </tr>
     <tr>
       <td>Thomas Akhurst</td>
-      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-2-thomas-akhurst" data-eta-id="thomas-akhurst"></td>
+      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-2-thomas-akhurst" data-eta-id="thomas-akhurst" data-first-name="Thomas"></td>
     </tr>
     <tr>
       <td>Gary Nicholson</td>
-      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-3-gary-nicholson" data-eta-id="gary-nicholson"></td>
+      <td class="tt-tick"><input type="checkbox" class="eta-check" id="eta-3-gary-nicholson" data-eta-id="gary-nicholson" data-first-name="Gary"></td>
     </tr>
     </table>
   </details>
@@ -6388,19 +6388,19 @@ Visit Website: Headout</div>
       
     <tr>
       <td>Karen Nicholson</td>
-      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-0-karen-nicholson" data-passport-id="karen-nicholson"></td>
+      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-0-karen-nicholson" data-passport-id="karen-nicholson" data-first-name="Karen"></td>
     </tr>
     <tr>
       <td>Debbie Gyde</td>
-      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-1-debbie-gyde" data-passport-id="debbie-gyde"></td>
+      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-1-debbie-gyde" data-passport-id="debbie-gyde" data-first-name="Debbie"></td>
     </tr>
     <tr>
       <td>Thomas Akhurst</td>
-      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-2-thomas-akhurst" data-passport-id="thomas-akhurst"></td>
+      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-2-thomas-akhurst" data-passport-id="thomas-akhurst" data-first-name="Thomas"></td>
     </tr>
     <tr>
       <td>Gary Nicholson</td>
-      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-3-gary-nicholson" data-passport-id="gary-nicholson"></td>
+      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-3-gary-nicholson" data-passport-id="gary-nicholson" data-first-name="Gary"></td>
     </tr>
     </table>
   </details>
@@ -6494,6 +6494,11 @@ function revealEtaChecklist() {
     setTimeout(function() { d.scrollIntoView({behavior:'smooth', block:'center'}); }, 60);
   }
 }
+function joinNamesWithAnd(names) {
+  if (names.length === 0) return '';
+  if (names.length === 1) return names[0];
+  return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+}
 (function() {
   var boxes = document.querySelectorAll('.eta-check');
   function updateEtaReminder() {
@@ -6501,10 +6506,16 @@ function revealEtaChecklist() {
     var textEl = document.getElementById('etaReminderText');
     if (!banner || !boxes.length) return;
     var doneCount = 0;
-    boxes.forEach(function(b) { if (b.checked) doneCount++; });
+    var remaining = [];
+    boxes.forEach(function(b) {
+      if (b.checked) { doneCount++; } else { remaining.push(b.dataset.firstName); }
+    });
     if (doneCount < boxes.length) {
       banner.style.display = 'flex';
-      if (textEl) textEl.textContent = "Reminder: Do our UK ETA's! (" + doneCount + ' of ' + boxes.length + ' done)';
+      var base = "Reminder: Do our UK ETA's!";
+      if (textEl) textEl.textContent = doneCount > 0
+        ? base + ' Only ' + joinNamesWithAnd(remaining) + ' left to go'
+        : base;
     } else {
       banner.style.display = 'none';
     }
@@ -6533,10 +6544,16 @@ function revealPassportChecklist() {
     var textEl = document.getElementById('passportReminderText');
     if (!banner || !boxes.length) return;
     var doneCount = 0;
-    boxes.forEach(function(b) { if (b.checked) doneCount++; });
+    var remaining = [];
+    boxes.forEach(function(b) {
+      if (b.checked) { doneCount++; } else { remaining.push(b.dataset.firstName); }
+    });
     if (doneCount < boxes.length) {
       banner.style.display = 'flex';
-      if (textEl) textEl.textContent = 'Reminder: Check our passports are valid! (' + doneCount + ' of ' + boxes.length + ' done)';
+      var base = 'Reminder: Check our passports are valid!';
+      if (textEl) textEl.textContent = doneCount > 0
+        ? base + ' Only ' + joinNamesWithAnd(remaining) + ' left to go'
+        : base;
     } else {
       banner.style.display = 'none';
     }
