@@ -426,6 +426,12 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   <a href="https://www.gov.uk/eta/apply" target="_blank" rel="noopener" onclick="revealEtaChecklist()">Go to checklist</a>
 </div>
 
+<div id="passportReminder" class="eta-reminder no-print" style="display:none">
+  <span class="ic">&#9888;&#65039;</span>
+  <span id="passportReminderText">Reminder: Check our passports are valid!</span>
+  <a href="#needtobook" onclick="revealPassportChecklist()">Go to checklist</a>
+</div>
+
 <section id="overview" class="print-block" data-section="overview">
   <h2>Trip at a Glance</h2>
   <div class="timeline">
@@ -6373,6 +6379,31 @@ Visit Website: Headout</div>
     </tr>
     </table>
   </details>
+
+  <details id="passportDetails" class="uketa-box">
+    <summary class="uketa-summary"><span class="ic">&#128209;</span> Passport Validity Check &ndash; tick off once each passport is confirmed valid</summary>
+    <p class="tt-note">Passports need at least 6 months' validity remaining AT THE END of the trip (29 Sept 2026) &ndash; so valid until at least 29 March 2027. Tick boxes save in this browser only.</p>
+    <table class="ntb">
+      <tr><th>Name</th><th>Checked?</th></tr>
+      
+    <tr>
+      <td>Karen Nicholson</td>
+      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-0-karen-nicholson" data-passport-id="karen-nicholson"></td>
+    </tr>
+    <tr>
+      <td>Debbie Gyde</td>
+      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-1-debbie-gyde" data-passport-id="debbie-gyde"></td>
+    </tr>
+    <tr>
+      <td>Thomas Akhurst</td>
+      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-2-thomas-akhurst" data-passport-id="thomas-akhurst"></td>
+    </tr>
+    <tr>
+      <td>Gary Nicholson</td>
+      <td class="tt-tick"><input type="checkbox" class="passport-check" id="passport-3-gary-nicholson" data-passport-id="gary-nicholson"></td>
+    </tr>
+    </table>
+  </details>
 </section>
 
 <section id="hotels" class="print-block" data-section="hotels">
@@ -6487,6 +6518,38 @@ function revealEtaChecklist() {
     });
   });
   updateEtaReminder();
+})();
+function revealPassportChecklist() {
+  var d = document.getElementById('passportDetails');
+  if (d) {
+    d.open = true;
+    setTimeout(function() { d.scrollIntoView({behavior:'smooth', block:'center'}); }, 60);
+  }
+}
+(function() {
+  var boxes = document.querySelectorAll('.passport-check');
+  function updatePassportReminder() {
+    var banner = document.getElementById('passportReminder');
+    var textEl = document.getElementById('passportReminderText');
+    if (!banner || !boxes.length) return;
+    var doneCount = 0;
+    boxes.forEach(function(b) { if (b.checked) doneCount++; });
+    if (doneCount < boxes.length) {
+      banner.style.display = 'flex';
+      if (textEl) textEl.textContent = 'Reminder: Check our passports are valid! (' + doneCount + ' of ' + boxes.length + ' done)';
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+  boxes.forEach(function(box) {
+    var key = 'fab4-passport-' + box.dataset.passportId;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', function() {
+      localStorage.setItem(key, box.checked ? '1' : '0');
+      updatePassportReminder();
+    });
+  });
+  updatePassportReminder();
 })();
 function updateHeroClock() {
   var el = document.getElementById('heroClock');
