@@ -183,6 +183,11 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 @media print { .walk-map-wrap { display:none; } }
 @media (max-width:900px) { .ev-photo-row { flex-direction:column; } .walk-map-wrap { margin-top:0; } }
 @media (max-width:600px) { .walk-map-wrap { flex-direction:column; align-items:flex-start; width:100%; } .walk-map { max-width:100%; } .walk-info { max-width:100%; margin-top:8px; } }
+.travel-opts { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; font-size:.82rem; }
+.travel-opts-title { font-weight:700; color:var(--muted); text-transform:uppercase; font-size:.72rem; letter-spacing:.4px; margin-bottom:6px; }
+.travel-opt { margin:4px 0; color:var(--ink); }
+.travel-opt-label { font-weight:700; margin-right:6px; }
+@media print { .travel-opts { display:none; } }
 .ig-note { font-size:.78rem; color:var(--muted); font-style:italic; margin:-14px 0 20px; }
 .shop-list { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; }
 .shop-list-title { font-size:.78rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.4px; margin-bottom:6px; }
@@ -389,7 +394,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body[class*="printing-day-"] .day-map-caption { margin-top:4px; }
   body[class*="printing-day-"] .dm-leg-body { padding:2px 0 4px; }
   body[class*="printing-day-"] .dm-stop-body { padding-bottom:1px; }
-  body.printing-book .ev-photo, body.printing-book .day-map-box, body.printing-book .walk-map-wrap { display:none !important; }
+  body.printing-book .ev-photo, body.printing-book .day-map-box, body.printing-book .walk-map-wrap, body.printing-book .travel-opts { display:none !important; }
   body[class*="printing-day-"] .ship-banner { display:none !important; }
   body[class*="printing-day-"] .tube-info-box { display:none !important; }
   body[class*="printing-day-"] .resto-list { display:none !important; }
@@ -786,6 +791,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -799,12 +805,14 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">12:30 PM</div>
           <div class="ev-body">
             <div class="ev-name">Check in at The Republic Hotel, freshen up  </div>
+            
             
             
             
@@ -825,6 +833,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -838,12 +847,14 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">2:00 PM</div>
           <div class="ev-body">
             <div class="ev-name">Free time / coffee near the hotel  </div>
+            
             
             
             
@@ -864,6 +875,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -871,6 +883,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
           <div class="ev-body">
             <div class="ev-name">Villa Borghese Gardens  </div>
             <div class="ev-addr">Villa Borghese, Rome, Italy</div>
+            
             
             
             
@@ -891,12 +904,14 @@ Visit Website: Palazzo Montemartini  </div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">6:30 PM</div>
           <div class="ev-body">
             <div class="ev-name">Dinner - pick from the suggestions below  </div>
+            
             
             
             
@@ -1110,6 +1125,7 @@ Visit Website: Palazzo Montemartini &rarr; The Republic Hotel</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1121,6 +1137,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.walksofitaly.com/vatican-tours/pristine-sistine-chapel-tour/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/walksofitaly/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -1138,12 +1155,14 @@ Visit Website: Ristorante Target</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">1:00 PM</div>
           <div class="ev-body">
             <div class="ev-name">Free afternoon in Rome - pick from the 5 suggestions below  </div>
+            
             
             
             
@@ -1401,6 +1420,7 @@ Visit Website: Ristorante Target</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1408,6 +1428,7 @@ Visit Website: Ristorante Target</div>
           <div class="ev-body">
             <div class="ev-name">Self-guided morning walk - Roman Forum viewpoint, Trajan&#x27;s Column &amp; Markets, Piazza del Campidoglio (all free, ~10 min walk to Piazza del Colosseo afterwards)  </div>
             <div class="ev-addr">Via dei Fori Imperiali, Rome</div>
+            
             
             
             
@@ -1427,6 +1448,7 @@ Visit Website: Ristorante Target</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1438,6 +1460,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.walksofitaly.com/rome-tours/rome-caesars-palace-tour-colosseum/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/walksofitaly/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -1813,6 +1836,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1820,6 +1844,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Board Queen Victoria - depart Rome (Civitavecchia)  </div>
             <div class="ev-addr">Civitavecchia Downtown, Via 16 Settembre 46, Cruise Ship Gate</div>
+            
             
             
             
@@ -1839,6 +1864,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1846,6 +1872,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Evening Show, Royal Court Theatre <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -1862,6 +1889,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -1962,6 +1990,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1969,6 +1998,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Drinking Gin  </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -1988,6 +2018,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -1998,6 +2029,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -2014,6 +2046,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2024,6 +2057,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -2138,6 +2172,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2151,6 +2186,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2158,6 +2194,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Pre-dinner drinks at the Golden Lion Pub <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2177,6 +2214,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2184,6 +2222,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Evening Show, Royal Court Theatre <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2200,6 +2239,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -2314,6 +2354,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2327,6 +2368,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2334,6 +2376,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Pre-dinner drinks at the Golden Lion Pub <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2353,6 +2396,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2360,6 +2404,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Evening Show, Royal Court Theatre <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2376,6 +2421,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -2490,6 +2536,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2503,6 +2550,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2510,6 +2558,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Pre-dinner drinks at the Golden Lion Pub <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2529,6 +2578,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2536,6 +2586,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Evening Show, Royal Court Theatre <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2555,6 +2606,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2562,6 +2614,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Churchill&#x27;s Cigar Lounge, Level 10 <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria, Level 10 (Commodore Deck)</div>
+            
             
             
             
@@ -2693,6 +2746,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2706,6 +2760,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2713,6 +2768,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Pre-dinner drinks at the Golden Lion Pub <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2732,6 +2788,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2739,6 +2796,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Evening Show, Royal Court Theatre <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2755,6 +2813,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -2869,6 +2928,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2876,6 +2936,7 @@ Visit Website: Walks of Italy</div>
           <div class="ev-body">
             <div class="ev-name">Drinking Gin  </div>
             <div class="ev-addr">Aboard Queen Victoria</div>
+            
             
             
             
@@ -2895,6 +2956,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2905,6 +2967,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.cunard.com/en-us/cruise-ships/queen-victoria/9" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -2921,6 +2984,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -2931,6 +2995,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/cunardline/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -3087,6 +3152,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3097,6 +3163,7 @@ Visit Website: Walks of Italy</div>
             
             
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%2016%20Settembre%2046%2C%20Civitavecchia%2C%20Italy&amp;destination=Strada%20Vicinale%20delle%20Casacce%2C%2065%2C%2058010%20Talamone%2C%20Orbetello%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
             
             
             
@@ -3113,6 +3180,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3126,6 +3194,7 @@ Visit Website: Walks of Italy</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3134,6 +3203,7 @@ Visit Website: Walks of Italy</div>
             <div class="ev-name">Arrive Hotel Borgo di Cortefreda Relais  </div>
             <div class="ev-addr">Via Roma 191, 50028, Tavarnelle Val Di Pesa
 Parking note: free onsite parking (contact hotel in advance to reserve a space)</div>
+            
             
             
             
@@ -3252,6 +3322,7 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3265,6 +3336,7 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3275,6 +3347,7 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.borghiditoscana.net/en/restaurant-pizzeria-triocco-in-barberino-val-delsa-florence/il-menu-del-ristorante-triocco-barberino-val-delsa-2/" target="_blank">Menu</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Roma%20191%2C%2050028%2C%20Tavarnelle%20Val%20Di%20Pesa%2C%20Italy&amp;destination=Via%20Vittorio%20Veneto%2048%2C%2050021%20Barberino%20Val%20d%27Elsa%2C%20Barberino%20Tavarnelle%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/triocco/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -3391,6 +3464,7 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3406,6 +3480,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3413,6 +3488,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
           <div class="ev-body">
             <div class="ev-name">Free time / sightseeing in Milan (Duomo, Galleria Vittorio Emanuele II, Navigli) <span class="badge badge-toconfirm">To Confirm</span> </div>
             <div class="ev-addr">Milan city centre</div>
+            
             
             
             
@@ -3432,6 +3508,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3445,6 +3522,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            
             
           </div>
         </div>
@@ -3566,6 +3644,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3580,6 +3659,7 @@ Visit Website: Aroma Specialty Coffee (Il Piacere del Caffè)</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3590,6 +3670,7 @@ Visit Website: Aroma Specialty Coffee (Il Piacere del Caffè)</div>
             
             
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Bologna%2C%20Italy&amp;destination=Como%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
             
             
             
@@ -3607,6 +3688,7 @@ Visit Website: Funicolare Como-Brunate</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3621,6 +3703,7 @@ Visit Website: Il Balcone sul Lago (Facebook)</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3631,6 +3714,7 @@ Visit Website: Il Balcone sul Lago (Facebook)</div>
             
             
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Piazza%20Alcide%20de%20Gasperi%204%2C%20Como%2C%20Italy&amp;destination=Via%20Besana%201%2C%2022012%20Cernobbio%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
             
             
             
@@ -3648,6 +3732,7 @@ Visit Website: Harry&#x27;s Bar Cernobbio</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3658,6 +3743,7 @@ Visit Website: Harry&#x27;s Bar Cernobbio</div>
             
             
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Besana%201%2C%2022012%20Cernobbio%2C%20Italy&amp;destination=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
             
             
             
@@ -3676,6 +3762,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3686,6 +3773,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Website</a></div>
+            
             
             
             
@@ -3702,6 +3790,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            
             
           </div>
         </div>
@@ -3919,6 +4008,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3933,12 +4023,14 @@ Visit Website: Museo Ferrari</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">1:00 PM – 2:00pm</div>
           <div class="ev-body">
             <div class="ev-name">Lunch near Ferrari Museum, Maranello <span class="badge badge-optional">Optional</span> </div>
+            
             
             
             
@@ -3959,6 +4051,7 @@ Visit Website: Museo Ferrari</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -3971,6 +4064,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.iqhotelmilano.it/" target="_blank">Website</a><a class="pill pill-instagram" href="https://www.instagram.com/iqhotel_milano/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -3987,6 +4081,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4000,6 +4095,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            
             
           </div>
         </div>
@@ -4144,6 +4240,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4157,12 +4254,14 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">10:00 AM – 12:30pm</div>
           <div class="ev-body">
             <div class="ev-name">Free time - explore St Mark&#x27;s Square &amp; Rialto Bridge <span class="badge badge-optional">Optional</span> </div>
+            
             
             
             
@@ -4183,6 +4282,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4193,6 +4293,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Piazzale%20Roma%2C%20Venice%2C%20Italy&amp;destination=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
             
             
             
@@ -4211,6 +4312,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4221,6 +4323,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Website</a></div>
+            
             
             
             
@@ -4237,6 +4340,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            
             
           </div>
         </div>
@@ -4380,6 +4484,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4387,6 +4492,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
           <div class="ev-body">
             <div class="ev-name">Arrive Pisa - coffee near Piazza dei Miracoli <span class="badge badge-optional">Optional</span> </div>
             <div class="ev-addr">Piazza dei Miracoli, Pisa, Italy</div>
+            
             
             
             
@@ -4407,12 +4513,14 @@ Visit Website: Viator - Pisa Skip-the-Line Tower Tour</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">9:30 AM</div>
           <div class="ev-body">
             <div class="ev-name">Free time / photos at Piazza dei Miracoli <span class="badge badge-optional">Optional</span> </div>
+            
             
             
             
@@ -4433,6 +4541,7 @@ Visit Website: Viator - Pisa Skip-the-Line Tower Tour</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4447,6 +4556,7 @@ Visit Website: Harry&#x27;s Bar Cernobbio</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4457,6 +4567,7 @@ Visit Website: Harry&#x27;s Bar Cernobbio</div>
             
             
             <div class="ev-link"><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Via%20Besana%201%2C%2022012%20Cernobbio%2C%20Italy&amp;destination=Via%20Giovanni%20Battista%20Pirelli%2C%205%2C%2020124%20Milan%2C%20Italy&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
             
             
             
@@ -4475,6 +4586,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4485,6 +4597,7 @@ Parking note: no private hotel parking - nearest partner garage ~100m away (fee 
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html" target="_blank">Website</a></div>
+            
             
             
             
@@ -4501,6 +4614,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
             <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            
             
           </div>
         </div>
@@ -4798,6 +4912,7 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4805,6 +4920,7 @@ Directions from iQ Hotel Milano</div>
           <div class="ev-body">
             <div class="ev-name">Flight BA0571 Milan (Linate) to London Heathrow - arrives 2:50pm  </div>
             <div class="ev-addr">Milan Linate (LIN) to London Heathrow (LHR)</div>
+            
             
             
             
@@ -4824,6 +4940,7 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -4835,7 +4952,8 @@ Directions from iQ Hotel Milano</div>
             
             
             
-            <div class="ev-photo-row"><div class="walk-map-wrap"><svg class="walk-map" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Walking route from Great Portland Street Station to The Level at Meliá White House"><rect x="0" y="0" width="320" height="180" fill="#eef2e9"/><path d="M42,138 C110,58 214,124 278,42" fill="none" stroke="#1f3864" stroke-width="3" stroke-dasharray="7,6" stroke-linecap="round"/><circle cx="42" cy="138" r="8" fill="#c94b3f"/><circle cx="278" cy="42" r="8" fill="#2e6b3e"/><text x="42" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">Great Portland Street Station</text><text x="278" y="26" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">The Level at Meliá White House</text><text x="160" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="20" text-anchor="middle">&#128694;</text></svg><div class="walk-info"><div class="walk-time">&#128694; 2 min walk</div><div class="walk-dist">0.1 mile via Albany St</div><div class="walk-note">To The Level at Meliá White House (///baked.belly.neck)</div></div></div></div>
+            <div class="ev-photo-row"><img class="ev-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Great%20Portland%20Street%20underground%20station%20-%20geograph.org.uk%20-%201522059.jpg" alt="Arrive at The Level at Meliá White House - check in / drop bags" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="walk-map-wrap"><svg class="walk-map" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Walking route from Great Portland Street Station to The Level at Meliá White House"><rect x="0" y="0" width="320" height="180" fill="#eef2e9"/><path d="M42,138 C110,58 214,124 278,42" fill="none" stroke="#1f3864" stroke-width="3" stroke-dasharray="7,6" stroke-linecap="round"/><circle cx="42" cy="138" r="8" fill="#c94b3f"/><circle cx="278" cy="42" r="8" fill="#2e6b3e"/><text x="42" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">Great Portland Street Station</text><text x="278" y="26" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">The Level at Meliá White House</text><text x="160" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="20" text-anchor="middle">&#128694;</text></svg><div class="walk-info"><div class="walk-time">&#128694; 2 min walk</div><div class="walk-dist">0.1 mile via Albany St</div><div class="walk-note">To The Level at Meliá White House (///baked.belly.neck)</div></div></div></div>
+            
             
           </div>
         </div>
@@ -4843,6 +4961,7 @@ Directions from iQ Hotel Milano</div>
           <div class="ev-time">4:30 PM – 5:00 PM</div>
           <div class="ev-body">
             <div class="ev-name">Tapas and Gin for Deb  </div>
+            
             
             
             
@@ -4862,6 +4981,7 @@ Directions from iQ Hotel Milano</div>
             <div class="ev-link"><a class="pill pill-website" href="https://www.thelighterman.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.thelighterman.co.uk/menus" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d10121217-Reviews-The_Lighterman-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-instagram" href="https://www.instagram.com/thelightermankx/" target="_blank" title="Instagram link">I</a></div>
             
             <div class="ev-photo-row"><img class="ev-photo" src="http://static1.squarespace.com/static/61cc647e2e2bca2f4e1ae1da/t/61cc64ad2e2bca2f4e1ae5e8/1745590094055/WC%2BHeader.png?format=1500w" alt="Dinner at The Lighterman (confirmation 4NJL3Z4M6XN3)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="walk-map-wrap"><svg class="walk-map" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Walking route from The Level at Meliá White House to The Lighterman"><rect x="0" y="0" width="320" height="180" fill="#eef2e9"/><path d="M42,138 C110,58 214,124 278,42" fill="none" stroke="#1f3864" stroke-width="3" stroke-dasharray="7,6" stroke-linecap="round"/><circle cx="42" cy="138" r="8" fill="#c94b3f"/><circle cx="278" cy="42" r="8" fill="#2e6b3e"/><text x="42" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">The Level at Meliá White House</text><text x="278" y="26" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">The Lighterman</text><text x="160" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="20" text-anchor="middle">&#128694;</text></svg><div class="walk-info"><div class="walk-time">&#128694; 31 min walk</div><div class="walk-dist">1.4 miles via Euston Rd</div><div class="walk-note">To The Lighterman (///guides.riots.trader)</div></div></div></div>
+            <div class="travel-opts"><div class="travel-opts-title">Other ways to get there:</div><div class="travel-opt"><span class="travel-opt-label">A. Uber</span> approx. £8-£13 (UberX, off-peak; more at busy times or in traffic)</div><div class="travel-opt"><span class="travel-opt-label">B. Tube</span> Circle/Hammersmith &amp; City/Metropolitan line to King's Cross St Pancras, then ~5 min walk - about 13 min door to door, approx. £3.00 pay-as-you-go</div></div>
             
           </div>
         </div>
@@ -5017,6 +5137,7 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -5030,6 +5151,7 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -5040,6 +5162,7 @@ Directions from iQ Hotel Milano</div>
             
             
             <div class="ev-link"><a class="pill pill-weblink" href="https://harrysdolcevita.com/harrys-menu/" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d13224804-Reviews-Harry_s_Dolce_Vita_Knightsbridge-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=27-31%20Basil%20Street%2C%20Knightsbridge%2C%20London%20SW3%201BB%2C%20England&amp;travelmode=driving" target="_blank">Directions</a></div>
+            
             
             
             <div class="place-fact">&#128161; Harry's Bar-style venues take their name and dolce vita aesthetic from the original Harry's Bar in Venice, opened in 1931 - said to be where the Bellini cocktail and carpaccio were both invented. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Harry's_Bar" target="_blank">Wikipedia</a></span></div>
@@ -5056,6 +5179,7 @@ Directions from iQ Hotel Milano</div>
             <div class="shop-list"><div class="shop-list-title">Potential shops to look at:</div><div class="shop-item"><span class="shop-name">Primark</span><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Primark+14-28+Oxford+Street+London" target="_blank">Address</a><a class="pill pill-website" href="https://www.primark.com/en-gb/stores/london/14-28-oxford-street" target="_blank">Website</a></div><div class="shop-item"><span class="shop-name">Uniqlo</span><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Uniqlo+311+Oxford+Street+London" target="_blank">Address</a><a class="pill pill-website" href="https://www.uniqlo.com/uk/en/" target="_blank">Website</a></div></div>
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -5068,6 +5192,7 @@ Directions from iQ Hotel Milano</div>
             <div class="ev-link"><a class="pill pill-weblink" href="https://www.albertsschloss.com/menu/?location=london" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d26909472-Reviews-Albert_s_Schloss_Soho-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-instagram" href="https://www.instagram.com/albertsschloss/" target="_blank" title="Instagram link">I</a></div>
             
             <div class="ev-photo-row"><img class="ev-photo" src="https://assets.albertsschloss.com/content/uploads/2024/01/Schloss-London-Header-1400x788.jpg" alt="Dinner at Albert Schloss (booked, ref DMN-16959374828)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="walk-map-wrap"><svg class="walk-map" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Walking route from Albert&#x27;s Schloss to St Martin&#x27;s Theatre"><rect x="0" y="0" width="320" height="180" fill="#eef2e9"/><path d="M42,138 C110,58 214,124 278,42" fill="none" stroke="#1f3864" stroke-width="3" stroke-dasharray="7,6" stroke-linecap="round"/><circle cx="42" cy="138" r="8" fill="#c94b3f"/><circle cx="278" cy="42" r="8" fill="#2e6b3e"/><text x="42" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">Albert&#x27;s Schloss</text><text x="278" y="26" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">St Martin&#x27;s Theatre</text><text x="160" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="20" text-anchor="middle">&#128694;</text></svg><div class="walk-info"><div class="walk-time">&#128694; 8 min walk</div><div class="walk-dist">0.3 mile via Shaftesbury Ave</div><div class="walk-note">To St Martin&#x27;s Theatre (///trains.areas.nights)</div></div></div></div>
+            
             <div class="place-fact">&#128161; Albert's Schloss is one of a small chain of Alpine-Bavarian bier hall/cabaret venues from The New World Trading Company - the original opened in Manchester in 2017, with the Soho branch spread across several floors of a former Soho building near Piccadilly Circus. <span class="fun-fact-source">&mdash; <a href="https://www.albertsschloss.com/location/london/" target="_blank">Albert&#x27;s Schloss</a></span></div>
           </div>
         </div>
@@ -5082,6 +5207,7 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -5090,6 +5216,7 @@ Directions from iQ Hotel Milano</div>
             <div class="ev-name">The Mousetrap begins (confirmed ref T071226139201) <span class="badge badge-booked">Booked</span> </div>
             <div class="ev-addr">St Martin&#x27;s Theatre, West Street, London WC2H 9NZ</div>
             <div class="ev-addr"><a class="w3w-badge" href="https://what3words.com/trains.areas.nights" target="_blank" title="what3words location">///trains.areas.nights</a></div>
+            
             
             
             
@@ -5249,6 +5376,7 @@ Directions from iQ Hotel Milano</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -5263,12 +5391,14 @@ Visit Website: Headout</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">11:30 AM</div>
           <div class="ev-body">
             <div class="ev-name">To be confirmed by Jennifer from Headout (jennifer@inspire.headout.com) <span class="badge badge-toconfirm">To Confirm</span> </div>
+            
             
             
             
@@ -5289,6 +5419,7 @@ Visit Website: Headout</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
@@ -5299,6 +5430,7 @@ Visit Website: Headout</div>
             
             
             <div class="ev-link"><a class="pill pill-instagram" href="https://www.instagram.com/sixthemusical/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             <div class="place-fact">&#128161; SIX started life as a low-budget student production at Cambridge University in 2017, written by two undergraduates, Toby Marlow and Lucy Moss, who were still in their early twenties. It transferred to the West End in 2019 and has since played on Broadway and around the world. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Six_(musical)" target="_blank">Wikipedia</a></span></div>
@@ -5314,6 +5446,7 @@ Visit Website: Headout</div>
             <div class="ev-link"><a class="pill pill-website" href="https://www.waterstones.com/bookshops/piccadilly" target="_blank">Website</a><a class="pill pill-directions" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=203-206%20Piccadilly%2C%20London%20W1J%209HD%2C%20UK&amp;travelmode=driving" target="_blank">Directions</a><a class="pill pill-instagram" href="https://www.instagram.com/piccadillywaterstones/" target="_blank" title="Instagram link">I</a></div>
             
             
+            
             <div class="place-fact">&#128161; This shop opened in 1936 as Simpsons of Piccadilly, then Britain's largest menswear store, designed by modernist architect Joseph Emberton. Waterstones took it over in 1999 and it's now Europe's largest bookshop, with over 8 miles of shelving across 6 floors. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Simpsons_of_Piccadilly" target="_blank">Wikipedia</a></span></div>
           </div>
         </div>
@@ -5325,6 +5458,7 @@ Visit Website: Headout</div>
             
             
             <div class="ev-link"><a class="pill pill-website" href="https://cafe.hardrock.com/london/" target="_blank">Website</a><a class="pill pill-weblink" href="https://cafe.hardrock.com/menu.aspx" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/hardrockcafelondon/" target="_blank" title="Instagram link">I</a></div>
+            
             
             
             
@@ -5495,12 +5629,14 @@ Visit Website: Headout</div>
             
             
             
+            
           </div>
         </div>
         <div class="ev-row">
           <div class="ev-time">7:00 PM</div>
           <div class="ev-body">
             <div class="ev-name">Leave for Airport  </div>
+            
             
             
             
@@ -5515,6 +5651,7 @@ Visit Website: Headout</div>
           <div class="ev-body">
             <div class="ev-name">Depart London Heathrow at 10.00pm (BA0015 LHR-SIN PE ~ BA0015 SIN-SYD PE)  </div>
             <div class="ev-addr">Heathrow Airport, Hounslow TW6 1EW</div>
+            
             
             
             
