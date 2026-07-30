@@ -334,6 +334,28 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-day-option-d-23sep [data-day-id]:not([data-day-id="option-d-23sep"]) { display:none !important; }
   body.printing-day-option-d-23sep .print-block:not(:has([data-day-id="option-d-23sep"])) { display:none !important; }
   body.printing-day-option-d-23sep > *:not(.print-block) { display:none !important; }
+  body.printing-sub-melia20 [data-subsection]:not([data-subsection="melia20"]) { display:none !important; }
+  body.printing-sub-melia20 .print-block:not([data-subsection="melia20"]):not(:has([data-subsection="melia20"])) { display:none !important; }
+  body.printing-sub-melia20 > *:not(.print-block) { display:none !important; }
+  body.printing-sub-shops20 [data-subsection]:not([data-subsection="shops20"]) { display:none !important; }
+  body.printing-sub-shops20 .print-block:not([data-subsection="shops20"]):not(:has([data-subsection="shops20"])) { display:none !important; }
+  body.printing-sub-shops20 > *:not(.print-block) { display:none !important; }
+  body.printing-sub-piccshops20 [data-subsection]:not([data-subsection="piccshops20"]) { display:none !important; }
+  body.printing-sub-piccshops20 .print-block:not([data-subsection="piccshops20"]):not(:has([data-subsection="piccshops20"])) { display:none !important; }
+  body.printing-sub-piccshops20 > *:not(.print-block) { display:none !important; }
+  body.printing-sub-piccthings20 [data-subsection]:not([data-subsection="piccthings20"]) { display:none !important; }
+  body.printing-sub-piccthings20 .print-block:not([data-subsection="piccthings20"]):not(:has([data-subsection="piccthings20"])) { display:none !important; }
+  body.printing-sub-piccthings20 > *:not(.print-block) { display:none !important; }
+  body[class*="printing-sub-"] #london > *:not(.print-block) { display:none !important; }
+  body[class*="printing-sub-"] { font-size:.82em; }
+  body[class*="printing-sub-"] .lede { display:none !important; }
+  body[class*="printing-sub-"] .place-grid { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:8px; margin:8px 0; }
+  body[class*="printing-sub-"] .place-card { padding:6px 8px; }
+  body[class*="printing-sub-"] .place-photo, body[class*="printing-sub-"] .place-photo-btn { display:none !important; }
+  body[class*="printing-sub-"] .place-addr { min-height:0; margin-bottom:4px; }
+  body[class*="printing-sub-"] .place-hours { margin:1px 0 3px; }
+  body[class*="printing-sub-"] .place-fact { display:none !important; }
+
   body[class*="printing-day-"] h2, body[class*="printing-day-"] h3, body[class*="printing-day-"] table.ttc,
   body[class*="printing-day-"] .lede, body[class*="printing-day-"] .ig-note, body[class*="printing-day-"] .place-grid {
     display:none !important;
@@ -349,8 +371,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body[class*="printing-day-"] .day-head { padding:7px 12px; }
   body[class*="printing-day-"] .day-body { padding:3px 12px 8px; }
   body[class*="printing-day-"] .ev-row { padding:5px 0; gap:10px; }
-  body[class*="printing-day-"] .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
-  body[class*="printing-day-"] .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body[class*="printing-day-"] .fun-fact-box { display:none !important; }
   body[class*="printing-day-"] .day-map-title { margin-bottom:4px; }
   body[class*="printing-day-"] .day-map-caption { margin-top:4px; }
   body[class*="printing-day-"] .dm-leg-body { padding:2px 0 4px; }
@@ -360,13 +381,13 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body[class*="printing-day-"] .tube-info-box { display:none !important; }
   body[class*="printing-day-"] .resto-list { display:none !important; }
   body[class*="printing-day-"] .london-quicklinks { display:none !important; }
+  body.printing-book .fun-fact-box { display:none !important; }
   body.printing-rome { font-size:.86em; }
   body.printing-rome .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
   body.printing-rome .day-head { padding:7px 12px; }
   body.printing-rome .day-body { padding:3px 12px 8px; }
   body.printing-rome .ev-row { padding:5px 0; gap:10px; }
-  body.printing-rome .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
-  body.printing-rome .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-rome .fun-fact-box { display:none !important; }
   body.printing-rome .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
   body.printing-rome .day-map-title { margin-bottom:4px; }
   body.printing-rome .day-map-caption { margin-top:4px; }
@@ -382,8 +403,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-cruise .day-head { padding:7px 12px; }
   body.printing-cruise .day-body { padding:3px 12px 8px; }
   body.printing-cruise .ev-row { padding:5px 0; gap:10px; }
-  body.printing-cruise .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
-  body.printing-cruise .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-cruise .fun-fact-box { display:none !important; }
   body.printing-cruise .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
   body.printing-cruise .day-map-title { margin-bottom:4px; }
   body.printing-cruise .day-map-caption { margin-top:4px; }
@@ -399,8 +419,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-tuscany .day-head { padding:7px 12px; }
   body.printing-tuscany .day-body { padding:3px 12px 8px; }
   body.printing-tuscany .ev-row { padding:5px 0; gap:10px; }
-  body.printing-tuscany .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
-  body.printing-tuscany .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-tuscany .fun-fact-box { display:none !important; }
   body.printing-tuscany .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
   body.printing-tuscany .day-map-title { margin-bottom:4px; }
   body.printing-tuscany .day-map-caption { margin-top:4px; }
@@ -416,8 +435,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-milan .day-head { padding:7px 12px; }
   body.printing-milan .day-body { padding:3px 12px 8px; }
   body.printing-milan .ev-row { padding:5px 0; gap:10px; }
-  body.printing-milan .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
-  body.printing-milan .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-milan .fun-fact-box { display:none !important; }
   body.printing-milan .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
   body.printing-milan .day-map-title { margin-bottom:4px; }
   body.printing-milan .day-map-caption { margin-top:4px; }
@@ -433,8 +451,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-london .day-head { padding:7px 12px; }
   body.printing-london .day-body { padding:3px 12px 8px; }
   body.printing-london .ev-row { padding:5px 0; gap:10px; }
-  body.printing-london .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
-  body.printing-london .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body.printing-london .fun-fact-box { display:none !important; }
   body.printing-london .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
   body.printing-london .day-map-title { margin-bottom:4px; }
   body.printing-london .day-map-caption { margin-top:4px; }
@@ -879,7 +896,7 @@ Visit Website: Palazzo Montemartini  </div>
         
         
     <div class="dinner-box">
-      <div class="day-map-title">Dinner Suggestions (within ~20 min walk of the hotel)</div>
+      <div class="day-map-title">Dinner Suggestions (8 ideas, within ~20 min walk of the hotel)</div>
       <div class="place-grid">
     <div class="place-card">
       
@@ -934,6 +951,39 @@ Visit Website: Palazzo Montemartini  </div>
       
       
       <div class="place-links"><a class="pill pill-website" href="https://www.osteriabarberini.it/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1573090-Reviews-Osteria_Barberini-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Trattoria dell&#x27;Omo</div>
+      <div class="place-type">Probably the closest proper trattoria to Termini - traditional Roman menu that changes by the day (gnocchi on Thursdays)</div>
+      <div class="place-addr">Via Vicenza 18 - ~5 min walk</div>
+      <div class="place-hours">&#128337; Daily 12pm-3pm &amp; 7pm-10:45pm</div>
+      
+      
+      <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d2324300-Reviews-Trattoria_dell_Omo-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">La Matriciana dal 1870</div>
+      <div class="place-type">Rome institution since 1870 opposite the Opera House - the amatriciana it&#x27;s named after, plus classic carbonara</div>
+      <div class="place-addr">Via del Viminale 44 - ~10 min walk</div>
+      <div class="place-hours">&#128337; Sun-Fri 12:15-3pm &amp; 7:15-11pm (closed Sat)</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.lamatriciana.it/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1086681-Reviews-La_Matriciana-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Trattoria Monti</div>
+      <div class="place-type">Long-running family trattoria near Piazza Vittorio serving Le Marche regional dishes - olive ascolane, tortello al rosso d&#x27;uovo. Book ahead, it&#x27;s popular</div>
+      <div class="place-addr">Via di San Vito 13 - ~12 min walk</div>
+      <div class="place-hours">&#128337; Check ahead - reservations recommended</div>
+      
+      
+      <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurants-g187791-zfn7230918-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div></div>
     </div>
@@ -1152,7 +1202,7 @@ Visit Website: Ristorante Target</div>
     </div></div>
     </div>
     <div class="dinner-box">
-      <div class="day-map-title">5 More Dinner Suggestions (no repeats from the 11th)</div>
+      <div class="day-map-title">8 More Dinner Suggestions (no repeats from the 11th)</div>
       <div class="place-grid">
     <div class="place-card">
       
@@ -1207,6 +1257,39 @@ Visit Website: Ristorante Target</div>
       
       
       <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/RestaurantsNear-g187791-d6704256-Rione_Monti-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Maharajah</div>
+      <div class="place-type">Well-rated Indian restaurant in the middle of Monti - good change of pace if craving something other than Italian</div>
+      <div class="place-addr">Via dei Serpenti 124, Monti - ~14 min walk</div>
+      <div class="place-hours">&#128337; Mon-Thu 12:30-3pm &amp; 7:30pm-midnight (check ahead for weekends)</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.maharajah1.com/index-en.html" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d795697-Reviews-Maharajah-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Temakinho</div>
+      <div class="place-type">Fun Brazilian-Japanese fusion (sushi meets caipirinha) - colourful spot a few steps from the Colosseum end of Monti</div>
+      <div class="place-addr">Via dei Serpenti 16, Monti - ~13 min walk</div>
+      <div class="place-hours">&#128337; Daily 12-3:30pm &amp; 7-11:30pm</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.temakinho.com/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d5612568-Reviews-Temakinho_Rome_Monti-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Taverna Romana</div>
+      <div class="place-type">Popular family-run local spot known for authentic Roman cuisine and reasonable prices - book ahead as it fills fast</div>
+      <div class="place-addr">Via della Madonna dei Monti 79, Monti - ~14 min walk</div>
+      <div class="place-hours">&#128337; Mon-Sat 12-3pm &amp; 7:30-11pm (closed Sun)</div>
+      
+      
+      <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1943547-Reviews-Taverna_Romana-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div></div>
     </div>
@@ -1350,7 +1433,7 @@ Visit Website: Walks of Italy</div>
         
         
     <div class="dinner-box">
-      <div class="day-map-title">Lunch Suggestions Near Piazza del Colosseo (5 ideas, before the tour)</div>
+      <div class="day-map-title">Lunch Suggestions Near Piazza del Colosseo (8 ideas, before the tour)</div>
       <div class="place-grid">
     <div class="place-card">
       
@@ -1406,10 +1489,43 @@ Visit Website: Walks of Italy</div>
       
       <div class="place-links"><a class="pill pill-website" href="https://www.naumachiaroma.com/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1601155-Reviews-Naumachia-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Cafè Cafè</div>
+      <div class="place-type">Relaxed bistro/wine bar near the Colosseum - smoothies, salads and sandwiches, good for a lighter lunch</div>
+      <div class="place-addr">Via dei Santi Quattro 44, Rome</div>
+      <div class="place-hours">&#128337; Mon &amp; Wed-Sun 9:30am-7:45pm, Tue 9:30am-4:15pm</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.cafecafebistrot.it" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1070852-Reviews-Cafe_Cafe-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Terre e Domus</div>
+      <div class="place-type">Enoteca run by the Province of Rome next to Trajan&#x27;s Column - ingredients sourced entirely from the Lazio region</div>
+      <div class="place-addr">Foro Traiano 82, Rome</div>
+      <div class="place-hours">&#128337; Daily 9am-midnight</div>
+      
+      
+      <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d10201057-Reviews-Terre_e_Domus-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">La Taverna dei Quaranta</div>
+      <div class="place-type">Family-run local trattoria near the Colosseum, serving since 1984 - authentic Roman classics</div>
+      <div class="place-addr">Via Claudia 24, Rome</div>
+      <div class="place-hours">&#128337; Mon-Wed 12-3:30pm &amp; 7:30pm-midnight</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.latavernadeiquaranta.com/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d3162638-Reviews-La_Taverna_Dei_Quaranta-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
     </div></div>
     </div>
     <div class="dinner-box">
-      <div class="day-map-title">5 More Dinner Suggestions (no repeats - handy for after the Colosseum tour)</div>
+      <div class="day-map-title">8 More Dinner Suggestions (no repeats - handy for after the Colosseum tour)</div>
       <div class="place-grid">
     <div class="place-card">
       
@@ -1464,6 +1580,39 @@ Visit Website: Walks of Italy</div>
       
       
       <div class="place-links"><a class="pill pill-website" href="https://www.cuocoecamicia.it/en/" target="_blank">Website</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d2391713-Reviews-Cuoco_Camicia-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Trattoria Vecchia Roma</div>
+      <div class="place-type">Traveller&#x27;s Choice 2025 winner, est. 1916 - famous for its Amatriciana Flambé, near Piazza Vittorio</div>
+      <div class="place-addr">Via Ferruccio 12B/C, Esquilino - ~18 min walk</div>
+      <div class="place-hours">&#128337; Mon-Sat 12:30-3pm &amp; 7-11pm (closed Sun)</div>
+      
+      
+      <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1584357-Reviews-Trattoria_Vecchia_Roma-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Le Caveau</div>
+      <div class="place-type">Traveller&#x27;s Choice-rated Italian restaurant near Piazza Vittorio - fried baby octopus, burrata, good all-rounder</div>
+      <div class="place-addr">Via Conte Verde 6, Esquilino - ~15 min walk</div>
+      <div class="place-hours">&#128337; Daily 12pm-11pm</div>
+      
+      
+      <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1583145-Reviews-Le_Caveau-Rome_Lazio.html" target="_blank">Reviews</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Hostaria Al Gladiatore</div>
+      <div class="place-type">Over 200 years serving Roman classics right on Piazza del Colosseo - come for the Colosseum view as much as the carbonara</div>
+      <div class="place-addr">Piazza del Colosseo 5 - ~20 min walk from hotel, on the Colosseum square</div>
+      <div class="place-hours">&#128337; Daily 7am-midnight</div>
+      
+      
+      <div class="place-links"><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g187791-d1012381-Reviews-Hostaria_al_Gladiatore-Rome_Lazio.html" target="_blank">Reviews</a></div>
       
     </div></div>
     </div>
@@ -1636,7 +1785,7 @@ Visit Website: Walks of Italy</div>
         
     <div class="fun-fact-box">
       <div class="fun-fact-label">&#127881; Fun Facts</div>
-      <div class="fun-fact-text">Civitavecchia, where you'll board Queen Victoria, was built as a Roman port around 103-110 AD on the orders of Emperor Trajan, who commissioned the famous architect Apollodorus of Damascus to design it. It was originally called Centumcellae. <span class="fun-fact-source">&mdash; <a href="https://www.romanports.org/en/articles/human-interest/137-centumcellae-the-port-of-trajan.html" target="_blank">Roman Ports</a></span></div><div class="fun-fact-text">Civitavecchia handles well over 2 million cruise passengers a year, making it one of the busiest cruise ports in the Mediterranean, despite the town itself having a population of only around 50,000. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Port_of_Civitavecchia" target="_blank">Port of Civitavecchia</a></span></div>
+      <div class="fun-fact-text">Civitavecchia, where you'll board Queen Victoria, was built as a Roman port around 103-110 AD on the orders of Emperor Trajan, who commissioned the famous architect Apollodorus of Damascus to design it. It was originally called Centumcellae. <span class="fun-fact-source">&mdash; <a href="https://www.romanports.org/en/articles/human-interest/137-centumcellae-the-port-of-trajan.html" target="_blank">Roman Ports</a></span></div><div class="fun-fact-text">Civitavecchia handles well over 2 million cruise passengers a year, making it one of the busiest cruise ports in the Mediterranean, despite the town itself having a population of only around 50,000. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Port_of_Civitavecchia" target="_blank">Port of Civitavecchia</a></span></div><div class="fun-fact-text">Queen Victoria, the ship you'll board today, carries just over 2,000 passengers - modest by modern cruise-ship standards, deliberately built smaller and more traditionally styled than Cunard's flagship Queen Mary 2. <span class="fun-fact-source">&mdash; <a href="https://www.cunard.com/en-us/find-a-cruise/ships/queen-victoria" target="_blank">Cunard</a></span></div>
     </div>
         
         
@@ -1961,7 +2110,7 @@ Visit Website: Walks of Italy</div>
         
     <div class="fun-fact-box">
       <div class="fun-fact-label">&#127881; Fun Facts</div>
-      <div class="fun-fact-text">Marseille, today's port of call, is the oldest city in France &ndash; founded around 600 BC by Greek settlers from Phocaea, who named it Massalia. That makes it roughly 2,600 years old. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Marseille" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Marseille soap, savon de Marseille, has been made to essentially the same olive-oil recipe since a 1688 royal decree from Louis XIV fixed the exact ingredients allowed to carry the name. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Savon_de_Marseille" target="_blank">Wikipedia</a></span></div>
+      <div class="fun-fact-text">Marseille, today's port of call, is the oldest city in France &ndash; founded around 600 BC by Greek settlers from Phocaea, who named it Massalia. That makes it roughly 2,600 years old. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Marseille" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Marseille soap, savon de Marseille, has been made to essentially the same olive-oil recipe since a 1688 royal decree from Louis XIV fixed the exact ingredients allowed to carry the name. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Savon_de_Marseille" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Marseille's Notre-Dame de la Garde basilica, perched on the city's highest point, is topped by a 9.5-metre gilded statue of the Madonna and Child that has watched over sailors leaving and returning to the port since 1870. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Notre-Dame_de_la_Garde" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -2137,7 +2286,7 @@ Visit Website: Walks of Italy</div>
         
     <div class="fun-fact-box">
       <div class="fun-fact-label">&#127881; Fun Facts</div>
-      <div class="fun-fact-text">Monégasques &ndash; the actual citizens of Monaco &ndash; are legally banned from gambling in their own Monte Carlo Casino, a rule dating back to the mid-1800s. The casino was built specifically to draw money from wealthy foreign visitors instead. <span class="fun-fact-source">&mdash; <a href="https://factrepublic.com/facts/52517/" target="_blank">Fact Republic</a></span></div><div class="fun-fact-text">Monaco is the world's second-smallest country after Vatican City, at just over 2 square kilometres - and it has grown roughly 20% larger since 1861 through land reclaimed from the sea. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Monaco" target="_blank">Wikipedia</a></span></div>
+      <div class="fun-fact-text">Monégasques &ndash; the actual citizens of Monaco &ndash; are legally banned from gambling in their own Monte Carlo Casino, a rule dating back to the mid-1800s. The casino was built specifically to draw money from wealthy foreign visitors instead. <span class="fun-fact-source">&mdash; <a href="https://factrepublic.com/facts/52517/" target="_blank">Fact Republic</a></span></div><div class="fun-fact-text">Monaco is the world's second-smallest country after Vatican City, at just over 2 square kilometres - and it has grown roughly 20% larger since 1861 through land reclaimed from the sea. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Monaco" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">The Monaco Grand Prix, first raced in 1929, runs on ordinary public streets barricaded off once a year - drivers reach speeds of over 290 km/h just metres from the harbour where cruise ships dock. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Monaco_Grand_Prix" target="_blank">Wikipedia</a></span></div>
     </div>
         
         
@@ -3075,7 +3224,7 @@ Parking note: free onsite parking (contact hotel in advance to reserve a space)<
         
     <div class="fun-fact-box">
       <div class="fun-fact-label">&#127881; Fun Facts</div>
-      <div class="fun-fact-text">The black rooster on every bottle of Chianti Classico comes from a medieval legend: Florence and Siena settled a border dispute by each sending a knight to ride out at the crow of a rooster. Florence starved theirs so it crowed early in the dark, giving their knight a head start &ndash; and Florence most of Chianti. <span class="fun-fact-source">&mdash; <a href="https://www.visittuscany.com/en/ideas/the-gallo-nero-black-rooster-symbol-of-chianti-between-history-and-legend/" target="_blank">Visit Tuscany</a></span></div><div class="fun-fact-text">Chianti Classico must legally be aged at least a year before release, and the black rooster 'Gallo Nero' seal is only allowed on wine from the original historic Chianti Classico zone - not the wider Chianti region that surrounds it. <span class="fun-fact-source">&mdash; <a href="https://www.chianticlassico.com/en/" target="_blank">Consorzio Vino Chianti Classico</a></span></div>
+      <div class="fun-fact-text">The black rooster on every bottle of Chianti Classico comes from a medieval legend: Florence and Siena settled a border dispute by each sending a knight to ride out at the crow of a rooster. Florence starved theirs so it crowed early in the dark, giving their knight a head start &ndash; and Florence most of Chianti. <span class="fun-fact-source">&mdash; <a href="https://www.visittuscany.com/en/ideas/the-gallo-nero-black-rooster-symbol-of-chianti-between-history-and-legend/" target="_blank">Visit Tuscany</a></span></div><div class="fun-fact-text">Chianti Classico must legally be aged at least a year before release, and the black rooster 'Gallo Nero' seal is only allowed on wine from the original historic Chianti Classico zone - not the wider Chianti region that surrounds it. <span class="fun-fact-source">&mdash; <a href="https://www.chianticlassico.com/en/" target="_blank">Consorzio Vino Chianti Classico</a></span></div><div class="fun-fact-text">The rows of cypress trees lining Tuscany's hillsides were originally planted as windbreaks and property boundary markers by landowners centuries ago, long before they became the region's postcard image. <span class="fun-fact-source">&mdash; <a href="https://www.visittuscany.com/en/" target="_blank">Visit Tuscany</a></span></div>
     </div>
         
         
@@ -5046,7 +5195,7 @@ Directions from iQ Hotel Milano</div>
         
     <div class="fun-fact-box">
       <div class="fun-fact-label">&#127881; Fun Facts</div>
-      <div class="fun-fact-text">The original <a href="https://www.hardrock.com/our-history" target="_blank">Hard Rock Cafe</a> in London opened on June 14, 1971, inside a deserted Rolls-Royce dealership. The founders only received a 6-month lease because their landlord did not think an American-style burger joint would last.</div><div class="fun-fact-text">The ravens at the Tower of London have had their wings trimmed since at least the 1600s, following the legend that the kingdom will fall if they ever leave. Traditionally at least six are kept there, plus one in reserve. <span class="fun-fact-source">&mdash; <a href="https://www.hrp.org.uk/tower-of-london/history-and-stories/the-ravens/" target="_blank">Historic Royal Palaces</a></span></div>
+      <div class="fun-fact-text">The original <a href="https://www.hardrock.com/our-history" target="_blank">Hard Rock Cafe</a> in London opened on June 14, 1971, inside a deserted Rolls-Royce dealership. The founders only received a 6-month lease because their landlord did not think an American-style burger joint would last.</div><div class="fun-fact-text">The ravens at the Tower of London have had their wings trimmed since at least the 1600s, following the legend that the kingdom will fall if they ever leave. Traditionally at least six are kept there, plus one in reserve. <span class="fun-fact-source">&mdash; <a href="https://www.hrp.org.uk/tower-of-london/history-and-stories/the-ravens/" target="_blank">Historic Royal Palaces</a></span></div><div class="fun-fact-text">Six, the West End musical you're seeing tonight, reimagines the six wives of Henry VIII as a girl-group pop concert. It began life as a student production at Cambridge University in 2017 before transferring to the West End in 2019. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Six_(musical)" target="_blank">Wikipedia</a></span></div>
     </div>
         <div class="ev-link london-quicklinks"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
@@ -5399,7 +5548,8 @@ Visit Website: Headout</div>
     </tr>
   </table>
 
-  <h3 id="melia20">Within 20 Minutes of the Melia on foot</h3>
+  <div class="print-block" data-subsection="melia20">
+  <h3 id="melia20">Within 20 Minutes of the Melia on foot <button class="print-mini no-print" onclick="printSub('melia20')">Print</button></h3>
   <p class="lede">20 things to do within roughly a 20-minute walk of The Level at Meli&aacute; White House, Longford Street. Walk times are estimates &ndash; check live maps nearer the time.</p>
   <div class="place-grid">
     <div class="place-card">
@@ -5622,8 +5772,10 @@ Visit Website: Headout</div>
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&amp;destination=Primrose%20Hill%2C%20London%20NW1%204NR&amp;travelmode=walking" target="_blank">Map</a></div>
       
     </div></div>
+  </div>
 
-  <h3 id="shops20">20 Shops to See in London</h3>
+  <div class="print-block" data-subsection="shops20">
+  <h3 id="shops20">20 Shops to See in London <button class="print-mini no-print" onclick="printSub('shops20')">Print</button></h3>
   <p class="lede">A top-20 pick of iconic London shops, department stores and markets &ndash; not all are near the hotel, so check travel time before heading out.</p>
   <div class="place-grid">
     <div class="place-card">
@@ -5846,6 +5998,459 @@ Visit Website: Headout</div>
       <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=14-28%20Oxford%20St%2C%20Fitzrovia%2C%20London%20W1D%201AU" target="_blank">Map</a></div>
       
     </div></div>
+  </div>
+
+  <div class="print-block" data-subsection="piccshops20">
+  <h3 id="piccshops20">20 Shops within 15 Minutes of Piccadilly Circus <button class="print-mini no-print" onclick="printSub('piccshops20')">Print</button></h3>
+  <p class="lede">20 shops, arcades and shopping streets all within roughly a 15-minute walk of Piccadilly Circus tube station. Walk times are estimates &ndash; check live maps nearer the time.</p>
+  <div class="place-grid">
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Fortnum%20and%20Mason.jpg" alt="Fortnum &amp; Mason" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.fortnumandmason.com" target="_blank">Website</a></div>
+      <div class="place-name">Fortnum &amp; Mason</div>
+      <div class="place-type">Royal grocer since 1707 - hampers, tea, food halls (~2 min walk)</div>
+      <div class="place-addr">181 Piccadilly, London W1A 1ER</div>
+      <div class="place-hours">&#128337; Mon-Sat 10am-8pm, Sun 11:30am-6pm</div>
+      <div class="place-hours">&#128222; 020 7734 8040</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=181%20Piccadilly%2C%20London%20W1A%201ER" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Hatchards</div>
+      <div class="place-type">UK&#x27;s oldest bookshop (est. 1797), five floors, right next to Fortnum&#x27;s (~2 min walk)</div>
+      <div class="place-addr">187 Piccadilly, London W1J 9LE</div>
+      <div class="place-hours">&#128337; Mon-Sat 9:30am-8pm, Sun 10:30am-6pm</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.hatchards.co.uk" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=187%20Piccadilly%2C%20London%20W1J%209LE" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Simpsons%20of%20Piccadilly%201.jpg" alt="Waterstones Piccadilly" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.waterstones.com/bookshops/piccadilly" target="_blank">Website</a></div>
+      <div class="place-name">Waterstones Piccadilly</div>
+      <div class="place-type">Europe&#x27;s largest bookshop (~3 min walk)</div>
+      <div class="place-addr">203-206 Piccadilly, London W1J 9HD</div>
+      <div class="place-hours">&#128337; Mon-Sat 9am-10pm, Sun 12pm-6:30pm</div>
+      <div class="place-hours">&#128222; 020 7851 2400</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=203-206%20Piccadilly%2C%20London%20W1J%209HD" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Burlington%20Arcade%2C%20shops.jpg" alt="Burlington Arcade" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.burlingtonarcade.com" target="_blank">Website</a></div>
+      <div class="place-name">Burlington Arcade</div>
+      <div class="place-type">Historic 1819 covered luxury shopping arcade with uniformed Beadles (~4 min walk)</div>
+      <div class="place-addr">51 Piccadilly, London W1J 0QJ</div>
+      <div class="place-hours">&#128337; Mon-Sat 8am-8pm, Sun 11am-6pm</div>
+      <div class="place-hours">&#128222; 020 7493 1764</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=51%20Piccadilly%2C%20London%20W1J%200QJ" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Penhaligon&#x27;s</div>
+      <div class="place-type">British perfumer established 1870, inside Burlington Arcade (~4 min walk)</div>
+      <div class="place-addr">16-17 Burlington Arcade, London W1J 0PL</div>
+      <div class="place-hours">&#128337; Check ahead - hours vary</div>
+      <div class="place-hours">&#128222; 020 7629 1416</div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.penhaligons.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=16-17%20Burlington%20Arcade%2C%20London%20W1J%200PL" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Prince&#x27;s Arcade</div>
+      <div class="place-type">Victorian shopping arcade linking Piccadilly to Jermyn Street (~4 min walk)</div>
+      <div class="place-addr">8-10 Prince&#x27;s Arcade, Piccadilly, London SW1Y 6DS</div>
+      <div class="place-hours">&#128337; Varies by store</div>
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=8-10%20Prince%27s%20Arcade%2C%20Piccadilly%2C%20London%20SW1Y%206DS" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Lillywhites</div>
+      <div class="place-type">Flagship five-floor sports store, oldest in the UK (est. 1863), right on Piccadilly Circus (~1 min walk)</div>
+      <div class="place-addr">24-36 Regent St, London SW1Y 4QF</div>
+      <div class="place-hours">&#128337; Mon-Sat 9:30am-10pm, Sun 12pm-6pm</div>
+      <div class="place-hours">&#128222; 0844 332 5602</div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.lillywhites.com" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=24-36%20Regent%20St%2C%20London%20SW1Y%204QF" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hamley%27s%20%28Regent%27s%20Street%20-%20London%29.jpg" alt="Hamleys" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.hamleys.com" target="_blank">Website</a></div>
+      <div class="place-name">Hamleys</div>
+      <div class="place-type">World&#x27;s oldest and largest toy shop (~7 min walk)</div>
+      <div class="place-addr">188-196 Regent St, London W1B 5BT</div>
+      <div class="place-hours">&#128337; Mon-Sat 10am-9pm, Sun 12pm-6pm</div>
+      <div class="place-hours">&#128222; 0371 704 1977</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=188-196%20Regent%20St%2C%20London%20W1B%205BT" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Apple%20Store%2C%20235%20Regent%20Street%20-%20geograph.org.uk%20-%202346324.jpg" alt="Apple Store Regent Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.apple.com/uk/retail/regentstreet" target="_blank">Website</a></div>
+      <div class="place-name">Apple Store Regent Street</div>
+      <div class="place-type">Flagship Apple store in a historic building (~9 min walk)</div>
+      <div class="place-addr">235 Regent St, London W1B 2EL</div>
+      <div class="place-hours">&#128337; Mon-Fri 10am-9pm, Sat 10am-8pm, Sun 10am-6pm</div>
+      <div class="place-hours">&#128222; 020 7153 9000</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=235%20Regent%20St%2C%20London%20W1B%202EL" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Liberty%20department%20store%20London.jpg" alt="Liberty London" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.libertylondon.com" target="_blank">Website</a></div>
+      <div class="place-name">Liberty London</div>
+      <div class="place-type">Tudor-revival department store, famous for its prints (~8 min walk)</div>
+      <div class="place-addr">Great Marlborough St, London W1B 5AH</div>
+      <div class="place-hours">&#128337; Mon-Sat 10am-8pm, Sun 12pm-6pm</div>
+      <div class="place-hours">&#128222; 020 7734 1234</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Great%20Marlborough%20St%2C%20London%20W1B%205AH" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/London%20-%20Regent%20Street%20-%20View%20East.jpg" alt="Regent Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.regentstreetonline.com" target="_blank">Website</a></div>
+      <div class="place-name">Regent Street</div>
+      <div class="place-type">Iconic curved shopping street, flagship stores end to end (~1-9 min walk)</div>
+      <div class="place-addr">Regent St, London W1B</div>
+      <div class="place-hours">&#128337; Varies by store (most 10am-7/8pm, Sun 12pm-6pm)</div>
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Regent%20St%2C%20London%20W1B" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Carnaby Street</div>
+      <div class="place-type">Swinging-60s fashion street, now independent boutiques and big brands (~8 min walk)</div>
+      <div class="place-addr">Carnaby St, London W1F</div>
+      <div class="place-hours">&#128337; Varies by store (most 10am-7pm, Sun 12-6pm)</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.carnaby.co.uk" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Carnaby%20St%2C%20London%20W1F" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Jermyn Street</div>
+      <div class="place-type">London&#x27;s shirtmaking street - Turnbull &amp; Asser and other historic tailors (~5 min walk)</div>
+      <div class="place-addr">71-72 Jermyn St, London SW1Y 6PF</div>
+      <div class="place-hours">&#128337; Mon-Fri 9am-6pm, Sat 9:30am-6pm (closed Sun)</div>
+      <div class="place-hours">&#128222; 020 7808 3000</div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://turnbullandasser.com/pages/jermyn" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=71-72%20Jermyn%20St%2C%20London%20SW1Y%206PF" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Savile Row</div>
+      <div class="place-type">The world-famous bespoke tailoring street (~10 min walk)</div>
+      <div class="place-addr">32 Old Burlington St / 17 Clifford St, London W1S</div>
+      <div class="place-hours">&#128337; Mon-Fri 8:30am-5pm (haberdashery also open Sat 10:30am-4pm)</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.anderson-sheppard.co.uk" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=32%20Old%20Burlington%20St%20/%2017%20Clifford%20St%2C%20London%20W1S" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/M%26M%27s%20World%20London.JPG" alt="M&amp;M&#x27;s World" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.mms.com/en-gb/explore/mms-stores/london" target="_blank">Website</a></div>
+      <div class="place-name">M&amp;M&#x27;s World</div>
+      <div class="place-type">Multi-storey confectionery flagship store, Leicester Square (~6 min walk)</div>
+      <div class="place-addr">1 Swiss Ct, London W1D 6AP</div>
+      <div class="place-hours">&#128337; Mon-Sat 10am-9pm, Sun 12pm-6pm</div>
+      <div class="place-hours">&#128222; 020 7025 7171</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Swiss%20Ct%2C%20London%20W1D%206AP" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Lego%20Store%20Leicester%20Square%20London%20Lester.jpg" alt="LEGO Store Leicester Square" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.lego.com/en-gb/stores/store/lsq" target="_blank">Website</a></div>
+      <div class="place-name">LEGO Store Leicester Square</div>
+      <div class="place-type">Flagship LEGO store (~6 min walk)</div>
+      <div class="place-addr">3 Swiss Ct, London W1D 6AP</div>
+      <div class="place-hours">&#128337; Mon-Sat 10am-10pm, Sun 12pm-6pm</div>
+      <div class="place-hours">&#128222; 020 7839 3480</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=3%20Swiss%20Ct%2C%20London%20W1D%206AP" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Foyles%20Bookstore.jpg" alt="Foyles Charing Cross Road" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.foyles.co.uk" target="_blank">Website</a></div>
+      <div class="place-name">Foyles Charing Cross Road</div>
+      <div class="place-type">Famous independent bookshop, five floors (~9 min walk)</div>
+      <div class="place-addr">107 Charing Cross Rd, London WC2H 0DT</div>
+      <div class="place-hours">&#128337; Mon-Sat 9:30am-9pm, Sun 11:30am-6pm</div>
+      <div class="place-hours">&#128222; 020 7437 5660</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=107%20Charing%20Cross%20Rd%2C%20London%20WC2H%200DT" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/East%20Piazza%2C%20Covent%20Garden.jpg" alt="Covent Garden Market" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.coventgarden.london" target="_blank">Website</a></div>
+      <div class="place-name">Covent Garden Market</div>
+      <div class="place-type">Boutiques, craft market, street performers (~10 min walk)</div>
+      <div class="place-addr">The Piazza, Covent Garden, London WC2E 8RF</div>
+      <div class="place-hours">&#128337; Mon-Fri 10am-8pm, Sat 9am-8pm, Sun 12pm-6pm</div>
+      <div class="place-hours">&#128222; 020 7395 3765</div>
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Piazza%2C%20Covent%20Garden%2C%20London%20WC2E%208RF" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      <img class="place-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/New%20Bond%20Street%2C%20Mayfair%20-%20geograph.org.uk%20-%20966302.jpg" alt="New Bond Street" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="place-photo-btn"><a class="pill place-website-btn" href="https://www.newbondstreet.co.uk" target="_blank">Website</a></div>
+      <div class="place-name">New Bond Street</div>
+      <div class="place-type">Luxury flagship boutiques - Chanel, Tiffany &amp; more (~10 min walk)</div>
+      <div class="place-addr">New Bond St, London W1S</div>
+      <div class="place-hours">&#128337; Varies by store (most 10am-6/7pm, Sun 12pm-6pm)</div>
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=New%20Bond%20St%2C%20London%20W1S" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">St James&#x27;s Market</div>
+      <div class="place-type">Small modern food-and-shopping precinct behind Waterstones (~4 min walk)</div>
+      <div class="place-addr">St James&#x27;s Market, London SW1Y 4AH</div>
+      <div class="place-hours">&#128337; Varies by outlet</div>
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=St%20James%27s%20Market%2C%20London%20SW1Y%204AH" target="_blank">Map</a></div>
+      
+    </div></div>
+  </div>
+
+  <div class="print-block" data-subsection="piccthings20">
+  <h3 id="piccthings20">20 Things to Do within 15 Minutes of Piccadilly Circus <button class="print-mini no-print" onclick="printSub('piccthings20')">Print</button></h3>
+  <p class="lede">20 sights, galleries, parks and landmarks all within roughly a 15-minute walk of Piccadilly Circus tube station. Walk times are estimates &ndash; check live maps nearer the time.</p>
+  <div class="place-grid">
+    <div class="place-card">
+      
+      <div class="place-name">Piccadilly Circus &amp; the Shaftesbury Memorial (Eros)</div>
+      <div class="place-type">The famous statue and video-screen hub itself - starting point for everything below</div>
+      <div class="place-addr">Piccadilly Circus, London W1J</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Piccadilly%20Circus%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">St James&#x27;s Church Piccadilly</div>
+      <div class="place-type">Wren-designed church (1684) with a leafy courtyard and craft/antiques market most days</div>
+      <div class="place-addr">197 Piccadilly, London W1J 9LL</div>
+      
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.sjp.org.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=St%20James%27s%20Church%20Piccadilly%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Royal Academy of Arts</div>
+      <div class="place-type">Major art exhibitions inside historic Burlington House - free courtyard and permanent collection displays</div>
+      <div class="place-addr">Burlington House, Piccadilly, London W1J 0BD</div>
+      <div class="place-hours">&#128337; Tue-Thu &amp; Sun 10am-6pm, Fri-Sat 10am-9pm (closed Mon)</div>
+      <div class="place-hours">&#128222; 020 7300 8090</div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.royalacademy.org.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Royal%20Academy%20of%20Arts%2C%20Piccadilly%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Leicester Square</div>
+      <div class="place-type">Cinemas, half-price theatre ticket booth (TKTS) and street entertainers</div>
+      <div class="place-addr">Leicester Square, London WC2H 7NA</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Leicester%20Square%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Chinatown London</div>
+      <div class="place-type">Pagoda gates, dim sum and Chinese bakeries around Gerrard Street</div>
+      <div class="place-addr">Gerrard St, London W1D 5PW</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Chinatown%20London%20Gerrard%20Street" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Soho Square</div>
+      <div class="place-type">Small leafy square in the heart of Soho, good for a sit-down break</div>
+      <div class="place-addr">Soho Square, London W1D 3QP</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Soho%20Square%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Trafalgar Square</div>
+      <div class="place-type">Nelson&#x27;s Column, the four bronze lions and the famous fourth plinth artwork</div>
+      <div class="place-addr">Trafalgar Square, London WC2N 5DN</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Trafalgar%20Square%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">National Gallery</div>
+      <div class="place-type">World-class collection of Western European paintings - free entry to the permanent collection</div>
+      <div class="place-addr">Trafalgar Square, London WC2N 5DN</div>
+      <div class="place-hours">&#128337; Daily 10am-6pm, Fri until 9pm</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.nationalgallery.org.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=National%20Gallery%2C%20Trafalgar%20Square%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">National Portrait Gallery</div>
+      <div class="place-type">Portraits of famous Britons through history - free entry to the permanent collection</div>
+      <div class="place-addr">St Martin&#x27;s Place, London WC2H 0HE</div>
+      <div class="place-hours">&#128337; Daily 10:30am-6pm, Fri-Sat until 9pm</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.npg.org.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=National%20Portrait%20Gallery%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">St James&#x27;s Park</div>
+      <div class="place-type">One of London&#x27;s prettiest royal parks - lake, pelicans, views to Buckingham Palace</div>
+      <div class="place-addr">St James&#x27;s Park, London SW1A 2BJ</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=St%20James%27s%20Park%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Green Park</div>
+      <div class="place-type">Quiet, tree-lined royal park between Piccadilly and Buckingham Palace</div>
+      <div class="place-addr">Green Park, London SW1A 1BW</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Green%20Park%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">The Ritz London</div>
+      <div class="place-type">Legendary 1906 hotel - iconic Louis XVI-style facade, famous afternoon tea (book well ahead)</div>
+      <div class="place-addr">150 Piccadilly, London W1J 9BR</div>
+      
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.theritzlondon.com/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Ritz%20London%2C%20Piccadilly" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Spencer House</div>
+      <div class="place-type">Princess Diana&#x27;s ancestral family home - 18th-century state rooms, open select days</div>
+      <div class="place-addr">27 St James&#x27;s Place, London SW1A 1NR</div>
+      
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.spencerhouse.co.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Spencer%20House%2C%20St%20James%27s%20Place%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Christie&#x27;s</div>
+      <div class="place-type">World-famous auction house - free public viewing rooms before major sales</div>
+      <div class="place-addr">8 King St, St James&#x27;s, London SW1Y 6QT</div>
+      
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://www.christies.com/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Christie%27s%20King%20Street%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Handel &amp; Hendrix House</div>
+      <div class="place-type">Composer Handel&#x27;s Georgian home next door to where Jimi Hendrix once lived - small museum</div>
+      <div class="place-addr">25 Brook St, London W1K 4HB</div>
+      <div class="place-hours">&#128337; Wed-Sun 10am-5pm (closed Mon-Tue)</div>
+      <div class="place-hours">&#128222; 020 7495 1685</div>
+      
+      <div class="place-links"><a class="pill pill-website" href="https://handelhendrix.org/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Handel%20Hendrix%20House%2C%20Brook%20Street%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">The Photographers&#x27; Gallery</div>
+      <div class="place-type">London&#x27;s leading photography gallery - free exhibitions on the ground floor</div>
+      <div class="place-addr">16-18 Ramillies St, London W1F 7LW</div>
+      <div class="place-hours">&#128337; Mon-Wed &amp; Sat 10:30am-6pm, Thu-Fri 10:30am-8pm, Sun 11am-6pm</div>
+      
+      
+      <div class="place-links"><a class="pill pill-website" href="https://thephotographersgallery.org.uk/" target="_blank">Website</a><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Photographers%27%20Gallery%2C%20Ramillies%20Street%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Covent Garden Piazza</div>
+      <div class="place-type">Street performers, market stalls and the Royal Opera House</div>
+      <div class="place-addr">The Piazza, Covent Garden, London WC2E 8RF</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Covent%20Garden%20Piazza%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Shaftesbury Avenue Theatreland</div>
+      <div class="place-type">London&#x27;s main theatre strip - Lyric, Apollo, Gielgud, Queen&#x27;s and more, all in a row</div>
+      <div class="place-addr">Shaftesbury Ave, London W1D</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Shaftesbury%20Avenue%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Waterloo Place &amp; Duke of York Column</div>
+      <div class="place-type">Grand statue-lined avenue with steps down toward The Mall and St James&#x27;s Park</div>
+      <div class="place-addr">Waterloo Place, London SW1Y 5AY</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Waterloo%20Place%2C%20London" target="_blank">Map</a></div>
+      
+    </div>
+    <div class="place-card">
+      
+      <div class="place-name">Berkeley Square</div>
+      <div class="place-type">Mayfair&#x27;s grand garden square, lined with plane trees - of &#x27;nightingale sang&#x27; fame</div>
+      <div class="place-addr">Berkeley Square, London W1J 6BR</div>
+      
+      
+      
+      <div class="place-links"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Berkeley%20Square%2C%20London" target="_blank">Map</a></div>
+      
+    </div></div>
+  </div>
 </section>
 </div>
 
@@ -6574,6 +7179,10 @@ function printSection(id) {
 }
 function printDay(id) {
   document.body.className = 'printing-day-' + id;
+  window.print();
+}
+function printSub(id) {
+  document.body.className = 'printing-sub-' + id;
   window.print();
 }
 function printAll() {
