@@ -334,12 +334,36 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-day-option-d-23sep .print-block:not(:has([data-day-id="option-d-23sep"])) { display:none !important; }
   body.printing-day-option-d-23sep > *:not(.print-block) { display:none !important; }
   body[class*="printing-day-"] h2, body[class*="printing-day-"] h3, body[class*="printing-day-"] table.ttc,
-  body[class*="printing-day-"] .lede, body[class*="printing-day-"] .ig-note, body[class*="printing-day-"] .place-grid {
+  body[class*="printing-day-"] .lede, body[class*="printing-day-"] .ig-note, body[class*="printing-day-"] .place-grid,
+  body.printing-book h2, body.printing-book h3, body.printing-book table.ttc,
+  body.printing-book .lede, body.printing-book .ig-note, body.printing-book .place-grid {
     display:none !important;
   }
-  body[class*="printing-day-"] .day-card { page-break-inside: auto; break-inside: auto; padding-top:10px; }
-  body[class*="printing-day-"] .day-map-box { page-break-before: always; break-before: page; padding-top:20px; }
+  body[class*="printing-day-"] .day-card, body.printing-book .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
+  body[class*="printing-day-"] .day-map-box, body.printing-book .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body[class*="printing-day-"] .day-map-timeline, body[class*="printing-day-"] .dm-stop, body[class*="printing-day-"] .dm-leg,
+  body.printing-book .day-map-timeline, body.printing-book .dm-stop, body.printing-book .dm-leg {
+    display:block !important;
+  }
+  body[class*="printing-day-"] .dm-leg-line, body.printing-book .dm-leg-line { display:none !important; }
+  body[class*="printing-day-"] .dm-stop-body, body[class*="printing-day-"] .dm-leg-body,
+  body.printing-book .dm-stop-body, body.printing-book .dm-leg-body { page-break-inside: avoid; break-inside: avoid; }
+  body[class*="printing-day-"], body.printing-book { font-size:.86em; }
+  body[class*="printing-day-"] .day-head, body.printing-book .day-head { padding:7px 12px; }
+  body[class*="printing-day-"] .day-body, body.printing-book .day-body { padding:3px 12px 8px; }
+  body[class*="printing-day-"] .ev-row, body.printing-book .ev-row { padding:5px 0; gap:10px; }
+  body[class*="printing-day-"] .fun-fact-box, body.printing-book .fun-fact-box { padding:6px 10px; margin-bottom:8px; }
+  body[class*="printing-day-"] .fun-fact-text + .fun-fact-text, body.printing-book .fun-fact-text + .fun-fact-text { margin-top:4px; padding-top:4px; }
+  body[class*="printing-day-"] .day-map-title, body.printing-book .day-map-title { margin-bottom:4px; }
+  body[class*="printing-day-"] .day-map-caption, body.printing-book .day-map-caption { margin-top:4px; }
+  body[class*="printing-day-"] .dm-leg-body, body.printing-book .dm-leg-body { padding:2px 0 4px; }
+  body[class*="printing-day-"] .dm-stop-body, body.printing-book .dm-stop-body { padding-bottom:1px; }
   body.printing-book .ev-photo, body.printing-book .day-map-box { display:none !important; }
+  body[class*="printing-day-"] .ship-banner, body.printing-book .ship-banner { display:none !important; }
+  body[class*="printing-day-"] .tube-info-box, body.printing-book .tube-info-box { display:none !important; }
+  body[class*="printing-day-"] .resto-list, body.printing-book .resto-list { display:none !important; }
+  body[class*="printing-day-"] .london-quicklinks, body.printing-book .london-quicklinks { display:none !important; }
+  @page { margin: 10mm; }
 }
 @media (max-width:600px) {
   .hero h1 { font-size:1.9rem; }
@@ -4492,7 +4516,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
   <p class="lede">24 &ndash; 27 September &middot; The Level at Meli&aacute; White House</p>
   <p class="ig-note">'I' buttons link to that place's official Instagram page.</p>
   
-<div class="option-box">
+<div class="option-box tube-info-box">
   <div class="option-box-title">Getting Around: Tube Map &amp; Travel Pass</div>
   <div class="option-box-sub"><strong>Nearest station to the hotel:</strong> Great Portland Street (Circle, Hammersmith &amp; City, Metropolitan lines) &ndash; approx. 2-3 min walk (~0.2 km), directly opposite The Level at Meli&aacute; White House.</div>
   <div class="ev-link" style="margin:6px 0 12px;">
@@ -4516,7 +4540,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
       <div class="fun-fact-label">&#127881; Fun Facts</div>
       <div class="fun-fact-text">Tonight's dinner spot, The Lighterman, is named after the Victorian "lightermen" who steered flat-bottomed barges (called lighters) along the Regent's Canal right outside, ferrying goods through this once-industrial part of King's Cross. <span class="fun-fact-source">&mdash; <a href="https://www.kingscross.co.uk/the-lighterman" target="_blank">King&#x27;s Cross</a></span></div><div class="fun-fact-text">Regent's Canal, which runs right past tonight's dinner spot, was built in the 1810s-1820s and named for the Prince Regent (later George IV). It once floated coal and building materials into London before being revived as a leisure towpath. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Regent%27s_Canal" target="_blank">Wikipedia</a></span></div>
     </div>
-        <div class="ev-link"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
+        <div class="ev-link london-quicklinks"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
         <div class="ev-row">
           <div class="ev-time">12:00 PM</div>
@@ -4710,7 +4734,7 @@ Directions from iQ Hotel Milano</div>
       <div class="fun-fact-label">&#127881; Fun Facts</div>
       <div class="fun-fact-text">The Mousetrap, playing tonight, is the world's longest continuously-running play &ndash; it opened in 1952 and passed 30,000 performances in 2025. By long tradition, the audience is asked at the end of every single show never to reveal the killer's identity. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/The_Mousetrap" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">The V&A Museum was founded in 1852 using profits from the Great Exhibition of 1851, and its collection has since grown to more than 2.8 million objects spanning 5,000 years of art and design. <span class="fun-fact-source">&mdash; <a href="https://www.vam.ac.uk/info/about-us" target="_blank">V&amp;A</a></span></div><div class="fun-fact-text">The V&A's Cast Courts hold a full plaster cast of Rome's Trajan's Column, taken in the 1860s - it's so tall it had to be split into two pieces just to fit under the gallery ceiling. <span class="fun-fact-source">&mdash; <a href="https://www.vam.ac.uk/articles/a-history-of-the-cast-courts" target="_blank">V&amp;A</a></span></div>
     </div>
-        <div class="ev-link"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
+        <div class="ev-link london-quicklinks"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
         <div class="ev-row">
           <div class="ev-time">8:00 AM – 8:30 AM</div>
@@ -4942,7 +4966,7 @@ Directions from iQ Hotel Milano</div>
       <div class="fun-fact-label">&#127881; Fun Facts</div>
       <div class="fun-fact-text">The original <a href="https://www.hardrock.com/our-history" target="_blank">Hard Rock Cafe</a> in London opened on June 14, 1971, inside a deserted Rolls-Royce dealership. The founders only received a 6-month lease because their landlord did not think an American-style burger joint would last.</div><div class="fun-fact-text">The ravens at the Tower of London have had their wings trimmed since at least the 1600s, following the legend that the kingdom will fall if they ever leave. Traditionally at least six are kept there, plus one in reserve. <span class="fun-fact-source">&mdash; <a href="https://www.hrp.org.uk/tower-of-london/history-and-stories/the-ravens/" target="_blank">Historic Royal Palaces</a></span></div>
     </div>
-        <div class="ev-link"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
+        <div class="ev-link london-quicklinks"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
         <div class="ev-row">
           <div class="ev-time">7:30 AM – 8:00 AM</div>
@@ -5188,7 +5212,7 @@ Visit Website: Headout</div>
       <div class="fun-fact-label">&#127881; Fun Facts</div>
       <div class="fun-fact-text">When Heathrow first opened to passengers in 1946, the "terminal" was literally a row of ex-military tents along the Bath Road, furnished with floral armchairs, small tables of fresh flowers and even a branch of WH Smith &ndash; 63,000 passengers passed through in its first year. <span class="fun-fact-source">&mdash; <a href="https://www.businesstraveller.com/news/snapshot-1946-heathrow-opens/" target="_blank">Business Traveller</a></span></div><div class="fun-fact-text">The Castle pub in Farringdon (today's Option 1 lunch) is the only pub in London licensed as a pawnbroker - supposedly granted personally by King George IV after he pawned his watch there to settle a gambling debt. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/The_Castle,_Farringdon" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Heathrow, where you'll fly out from tonight, handles more international passengers than any other airport on Earth - despite operating from just two runways, making it one of the busiest dual-runway airports in the world. <span class="fun-fact-source">&mdash; <a href="https://www.heathrow.com/company/about-heathrow" target="_blank">Heathrow Airport</a></span></div>
     </div>
-        <div class="ev-link"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
+        <div class="ev-link london-quicklinks"><a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a><a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a></div>
         
         <div class="ev-row">
           <div class="ev-time">8:00 AM – 8:30 AM</div>
