@@ -172,6 +172,16 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .ev-logo { height:34px; width:34px; vertical-align:middle; margin-left:6px; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,.25); }
 .ev-photo { display:block; width:100%; max-width:320px; height:180px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); margin-top:8px; box-shadow:0 1px 5px rgba(0,0,0,.15); }
 @media print { .ev-photo { display:none; } }
+.ev-photo-row { display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+.ev-photo-row .ev-photo { margin-top:8px; flex:0 0 auto; }
+.walk-map-wrap { display:flex; align-items:center; gap:12px; margin-top:8px; flex:0 0 auto; }
+.walk-map { display:block; width:320px; max-width:320px; height:180px; border-radius:12px; border:3px solid var(--photo-frame); box-shadow:0 1px 5px rgba(0,0,0,.15); }
+.walk-info { font-size:.82rem; color:var(--ink); max-width:150px; }
+.walk-time { font-weight:700; margin-bottom:4px; }
+.walk-dist { color:var(--muted); margin-bottom:4px; }
+.walk-note { color:var(--muted); font-size:.78rem; }
+@media print { .walk-map-wrap { display:none; } }
+@media (max-width:900px) { .ev-photo-row { flex-direction:column; } .walk-map-wrap { margin-top:0; } }
 .ig-note { font-size:.78rem; color:var(--muted); font-style:italic; margin:-14px 0 20px; }
 .shop-list { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; }
 .shop-list-title { font-size:.78rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.4px; margin-bottom:6px; }
@@ -378,7 +388,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body[class*="printing-day-"] .day-map-caption { margin-top:4px; }
   body[class*="printing-day-"] .dm-leg-body { padding:2px 0 4px; }
   body[class*="printing-day-"] .dm-stop-body { padding-bottom:1px; }
-  body.printing-book .ev-photo, body.printing-book .day-map-box { display:none !important; }
+  body.printing-book .ev-photo, body.printing-book .day-map-box, body.printing-book .walk-map-wrap { display:none !important; }
   body[class*="printing-day-"] .ship-banner { display:none !important; }
   body[class*="printing-day-"] .tube-info-box { display:none !important; }
   body[class*="printing-day-"] .resto-list { display:none !important; }
@@ -3433,7 +3443,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
-            <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+            <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
             
           </div>
         </div>
@@ -3690,7 +3700,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
-            <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+            <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
             
           </div>
         </div>
@@ -3988,7 +3998,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
-            <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+            <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
             
           </div>
         </div>
@@ -4225,7 +4235,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
-            <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+            <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
             
           </div>
         </div>
@@ -4489,7 +4499,7 @@ Visit TripAdvisor: LiQuido Rooftop Bar</div>
             
             <div class="ev-link"><a class="pill pill-website" href="https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf" target="_blank">Menu</a></div>
             
-            <img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+            <div class="ev-photo-row"><img class="ev-photo" src="https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg" alt="Nightcap drinks at LiQuido Rooftop Bar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
             
           </div>
         </div>
@@ -4824,7 +4834,7 @@ Directions from iQ Hotel Milano</div>
             <div class="ev-note">(If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;)</div>
             <div class="ev-link"><a class="pill pill-website" href="https://www.thelighterman.co.uk/" target="_blank">Website</a><a class="pill pill-weblink" href="https://www.thelighterman.co.uk/menus" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.com/Restaurant_Review-g186338-d10121217-Reviews-The_Lighterman-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-instagram" href="https://www.instagram.com/thelightermankx/" target="_blank" title="Instagram link">I</a></div>
             
-            <img class="ev-photo" src="http://static1.squarespace.com/static/61cc647e2e2bca2f4e1ae1da/t/61cc64ad2e2bca2f4e1ae5e8/1745590094055/WC%2BHeader.png?format=1500w" alt="Dinner at The Lighterman (confirmation 4NJL3Z4M6XN3)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+            <div class="ev-photo-row"><img class="ev-photo" src="http://static1.squarespace.com/static/61cc647e2e2bca2f4e1ae1da/t/61cc64ad2e2bca2f4e1ae5e8/1745590094055/WC%2BHeader.png?format=1500w" alt="Dinner at The Lighterman (confirmation 4NJL3Z4M6XN3)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
             
           </div>
         </div>
@@ -5030,7 +5040,7 @@ Directions from iQ Hotel Milano</div>
             
             <div class="ev-link"><a class="pill pill-weblink" href="https://www.albertsschloss.com/menu/?location=london" target="_blank">Menu</a><a class="pill pill-review" href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d26909472-Reviews-Albert_s_Schloss_Soho-London_England.html" target="_blank">TripAdvisor</a><a class="pill pill-instagram" href="https://www.instagram.com/albertsschloss/" target="_blank" title="Instagram link">I</a></div>
             
-            <img class="ev-photo" src="https://assets.albertsschloss.com/content/uploads/2024/01/Schloss-London-Header-1400x788.jpg" alt="Dinner at Albert Schloss (booked, ref DMN-16959374828)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+            <div class="ev-photo-row"><img class="ev-photo" src="https://assets.albertsschloss.com/content/uploads/2024/01/Schloss-London-Header-1400x788.jpg" alt="Dinner at Albert Schloss (booked, ref DMN-16959374828)" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="walk-map-wrap"><svg class="walk-map" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Walking route from Albert&#x27;s Schloss to St Martin&#x27;s Theatre"><rect x="0" y="0" width="320" height="180" fill="#eef2e9"/><path d="M42,138 C110,58 214,124 278,42" fill="none" stroke="#1f3864" stroke-width="3" stroke-dasharray="7,6" stroke-linecap="round"/><circle cx="42" cy="138" r="8" fill="#c94b3f"/><circle cx="278" cy="42" r="8" fill="#2e6b3e"/><text x="42" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">Albert&#x27;s Schloss</text><text x="278" y="26" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#262626" text-anchor="middle">St Martin&#x27;s Theatre</text><text x="160" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="20" text-anchor="middle">&#128694;</text></svg><div class="walk-info"><div class="walk-time">&#128694; 8 min walk</div><div class="walk-dist">0.3 mile via Shaftesbury Ave</div><div class="walk-note">To St Martin&#x27;s Theatre (///trains.areas.nights)</div></div></div></div>
             <div class="place-fact">&#128161; Albert's Schloss is one of a small chain of Alpine-Bavarian bier hall/cabaret venues from The New World Trading Company - the original opened in Manchester in 2017, with the Soho branch spread across several floors of a former Soho building near Piccadilly Circus. <span class="fun-fact-source">&mdash; <a href="https://www.albertsschloss.com/location/london/" target="_blank">Albert&#x27;s Schloss</a></span></div>
           </div>
         </div>
