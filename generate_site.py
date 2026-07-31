@@ -692,6 +692,8 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         logo_html = f'<img class="ev-logo" src="{logo_url}" alt="Hard Rock Cafe London logo">' if logo_url else ''
         shops = shoplist_for(b['name'])
         shops_html = shoplist_html(shops) if shops else ''
+        if shops:
+            shops_html += ROLLING_STONES_HTML
         photo_url = event_photo_for(b['name'])
         photo_html = (
             f'<img class="ev-photo" src="{esc(photo_url)}" alt="{esc(b["name"])}" '
@@ -801,10 +803,11 @@ def place_card(p, with_review=False):
     hours_html = f'<div class="place-hours">&#128337; {esc(p["hours"])}</div>' if p.get('hours') else ''
     phone_html = f'<div class="place-hours">&#128222; {esc(p["phone"])}</div>' if p.get('phone') else ''
     email_html = f'<div class="place-hours">&#9993;&#65039; {esc(p["email"])}</div>' if p.get('email') else ''
+    w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(p["w3w"])}" target="_blank" title="what3words location">///{esc(p["w3w"])}</a>' if p.get('w3w') else ''
     return f'''
     <div class="place-card">
       {photo_block}
-      <div class="place-name">{esc(p['place'])}</div>
+      <div class="place-name">{esc(p['place'])} {w3w_html}</div>
       <div class="place-type">{esc(p.get('type') or '')}</div>
       <div class="place-addr">{esc(p.get('address') or '')}</div>
       {hours_html}
@@ -813,6 +816,22 @@ def place_card(p, with_review=False):
       <div class="place-links">{links}</div>
       {fact_html}
     </div>'''
+
+ROLLING_STONES_SHOP = {
+    'place': 'RS No.9 Carnaby (Official Rolling Stones Store)',
+    'type': "The Rolling Stones' official flagship store - clothing, vinyl and memorabilia, plus a Ronnie Wood art exhibition in the basement (~12 min walk via Regent Street/Carnaby Street)",
+    'address': '9 Carnaby St, Carnaby, London W1F 9PE',
+    'hours': 'Mon-Sat 11am-7pm, Sun 12pm-6pm',
+    'website': 'https://therollingstonesshop.com/pages/rs-no-9',
+    'gmap': 'https://www.google.com/maps/dir/?api=1&destination=9%20Carnaby%20St%2C%20Carnaby%2C%20London%20W1F%209PE&travelmode=walking',
+    'photo': 'https://therollingstonesshop.com/cdn/shop/files/133_2Q6A0102-Gavsy-Media.jpg',
+    'w3w': 'catch.future.librarian',
+}
+ROLLING_STONES_HTML = f'''
+<div class="shop-list" style="margin-top:14px;">
+  <div class="shop-list-title">Also worth a look:</div>
+  <div class="place-grid" style="max-width:340px;">{place_card(ROLLING_STONES_SHOP)}</div>
+</div>'''
 
 def ttc_row(t):
     todo_btn = '<span class="pill pill-todo">TO DO</span>' if t.get('status') in ('To Book', 'To Confirm') else ''
