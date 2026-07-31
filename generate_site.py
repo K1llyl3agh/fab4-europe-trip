@@ -1224,8 +1224,8 @@ milan_days_html = ''.join(
 )
 LONDON_QUICKLINKS = (
     '<div class="ev-link london-quicklinks">'
-    '<a class="pill pill-directions" href="#melia20">&#128694; CLICK HERE to go to Within 20 Minutes of the Melia (on foot)</a>'
-    '<a class="pill pill-directions" href="#shops20">&#128722; CLICK HERE to go to 20 Shops to See in London</a>'
+    '<a class="pill pill-directions" href="#melia20">&#128694; Sites within 20m</a>'
+    '<a class="pill pill-directions" href="#shops20">&#128722; Shops within 20m</a>'
     '</div>'
 )
 
@@ -1255,28 +1255,32 @@ HRC_BARS = [
              'To The Melia', '~25 min - walk to Green Park, Piccadilly/Victoria line to Oxford Circus, change to Bakerloo, then ~5 min walk',
              'https://www.google.com/maps/dir/?api=1&origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&destination=150%20Piccadilly%2C%20London%20W1J%209BR&travelmode=walking',
              website='https://www.theritzlondon.com/dine-with-us/rivoli-bar/',
-             tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d3172284-Reviews-The_Rivoli_Bar-London_England.html'),
+             tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d3172284-Reviews-The_Rivoli_Bar-London_England.html',
+             w3w='jazz.choice.factories'),
     bar_card('The Connaught Bar', "World-famous cocktail bar - a Mayfair institution, book ahead",
              'Carlos Pl, Mayfair, London W1K 2AL',
              'From Hard Rock', '~12 min walking',
              'To The Melia', '~25 min - walk to Bond Street, Central line to Oxford Circus, change to Bakerloo, then ~5 min walk',
              'https://www.google.com/maps/dir/?api=1&origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&destination=Carlos%20Pl%2C%20Mayfair%2C%20London%20W1K%202AL&travelmode=walking',
              website='https://www.maybourne.com/en/hotels/the-connaught/restaurants-bars/connaught-bar',
-             tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d6519169-Reviews-The_Connaught_Bar-London_England.html'),
+             tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d6519169-Reviews-The_Connaught_Bar-London_England.html',
+             w3w='tamed.zooms.pest'),
     bar_card('Dukes Bar', "Legendary martini bar (since 1908) - birthplace of the 'Vesper' martini style",
               "35 St James's Pl, London SW1A 1NY",
               'From Hard Rock', '~15 min walking',
               'To The Melia', '~30 min - walk to Green Park, Piccadilly line to Piccadilly Circus, change to Bakerloo, then ~5 min walk',
               'https://www.google.com/maps/dir/?api=1&origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&destination=35%20St%20James%27s%20Place%2C%20London%20SW1A%201NY&travelmode=walking',
               website='https://www.dukeshotel.com/dukes-bar/',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1014398-Reviews-DUKES_Bar-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1014398-Reviews-DUKES_Bar-London_England.html',
+              w3w='less.candy.award'),
     bar_card('Blue Bar at The Berkeley', 'Sophisticated hotel cocktail bar in Knightsbridge, David Collins-designed interior',
               'Wilton Pl, Knightsbridge, London SW1X 7RL',
               'From Hard Rock', '~26 min walking',
               'To The Melia', '~30 min - walk to Hyde Park Corner, Piccadilly line to Piccadilly Circus, change to Bakerloo, then ~5 min walk',
               'https://www.google.com/maps/dir/?api=1&origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&destination=Wilton%20Place%2C%20Knightsbridge%2C%20London%20SW1X%207RL&travelmode=walking',
               website='https://www.the-berkeley.co.uk/blue-bar',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d23586783-Reviews-Blue_Bar_The_Berkeley-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d23586783-Reviews-Blue_Bar_The_Berkeley-London_England.html',
+              w3w='flame.fears.retail'),
 ]
 
 MELIA_BARS = [
@@ -1293,14 +1297,16 @@ MELIA_BARS = [
               "To Hard Rock", "~25 min - Bakerloo line from Regent's Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk",
               'https://www.google.com/maps/dir/?api=1&origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&destination=55%20Great%20Portland%20St%2C%20London%20W1W%207LQ&travelmode=walking',
               website='https://thegeorge.london/',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d6405157-Reviews-The_George-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d6405157-Reviews-The_George-London_England.html',
+              w3w='moss.fend.agrees'),
     bar_card('Artesian at The Langham', "Multi-award-winning hotel cocktail bar - voted World's Best Bar for years running",
               '1c Portland Pl, London W1B 1JA',
               'From The Melia', '~13 min walking',
               "To Hard Rock", "~20 min - Bakerloo line from Regent's Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk",
               'https://www.google.com/maps/dir/?api=1&origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&destination=1c%20Portland%20Place%2C%20London%20W1B%201JA&travelmode=walking',
               website='https://www.artesian-bar.co.uk/', menu='https://www.artesian-bar.co.uk/menus/',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d730307-Reviews-Artesian-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d730307-Reviews-Artesian-London_England.html',
+              w3w='nights.truly.squad'),
     bar_card('The Social', 'Long-running Fitzrovia bar and music venue, intimate upstairs bar plus basement gigs/DJ sets',
               '5 Little Portland St, London W1W 7JD',
               'From The Melia', '~9 min walking',
@@ -1348,14 +1354,16 @@ MOUSETRAP_BARS = [
               'To The Melia', "~25 min - Piccadilly line from Leicester Square to Piccadilly Circus, change to Bakerloo to Great Portland Street, then ~3 min walk",
               "https://www.google.com/maps/dir/?api=1&origin=West%20Street%2C%20London%20WC2H%209NZ&destination=6-7%20Great%20Newport%20St%2C%20London%20WC2H%207JB&travelmode=walking",
               website='https://coventgardensocialclub.co.uk/',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d27287603-Reviews-Covent_Garden_Social_Club-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d27287603-Reviews-Covent_Garden_Social_Club-London_England.html',
+              w3w='begins.jumpy.bake'),
     bar_card('Phoenix Artist Club', 'Theatrical cocktail bar and cabaret club beneath the Phoenix Theatre',
               '1 Phoenix St, London WC2H 8BU',
               "From St Martin's Theatre", '~3 min walking',
               'To The Melia', "~25 min - Piccadilly line from Leicester Square to Piccadilly Circus, change to Bakerloo to Great Portland Street, then ~3 min walk",
               "https://www.google.com/maps/dir/?api=1&origin=West%20Street%2C%20London%20WC2H%209NZ&destination=1%20Phoenix%20St%2C%20London%20WC2H%208BU&travelmode=walking",
               website='https://phoenixartsclub.com/',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1389726-Reviews-Phoenix_Arts_Club-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1389726-Reviews-Phoenix_Arts_Club-London_England.html',
+              w3w='meant.costs.defend'),
     bar_card("The Alchemist St Martin's Lane", 'Theatrical cocktails and post-theatre menu, right around the corner',
               "63-66 St Martin's Ln, London WC2N 4JS",
               "From St Martin's Theatre", '~4 min walking',
