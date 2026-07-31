@@ -147,6 +147,12 @@ EVENT_W3W = [
     ('vaudeville theatre', 'diner.donor.rails'),
     ('waterstones piccadilly', 'blank.buns.bump'),
     ('hard rock cafe london', 'month.wakes.tests'),
+    ('the republic hotel', 'sports.pocket.anchors'),
+    ('fontana delle naiadi', 'mouth.dished.cheaply'),
+    ('santa maria degli angeli', 'mouth.dished.cheaply'),
+    ('colosseum arena floor', 'food.reddish.dormant'),
+    ('transfer by private minibus to queen victoria', 'snipe.nipped.miss'),
+    ('collect avis hire car', 'snipe.nipped.miss'),
 ]
 
 def event_w3w_for(name):
