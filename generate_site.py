@@ -2647,6 +2647,16 @@ HTML = f'''<!DOCTYPE html>
   <div class="place-grid">{HOTEL_DIRECTORY_HTML}</div>
 </section>
 
+<section id="tubemap" class="print-block" data-section="tubemap">
+  <div class="section-head-row">
+    <h2>London Tube Map</h2>
+  </div>
+  <p class="lede">The official TfL Tube map, saved here so it's always at hand even offline.</p>
+  <div class="ev-link">
+    <a class="pill pill-directions" href="standard-tube-map.pdf" target="_blank">&#128506;&#65039; CLICK HERE to view the Tube Map (PDF)</a>
+  </div>
+</section>
+
 <footer class="no-print">
   Built from the Fab4takeoneurope itinerary workbook &middot; private &amp; for family use only
 </footer>
