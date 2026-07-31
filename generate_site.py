@@ -221,6 +221,12 @@ TRAVEL_OPTIONS = [
         ('A. Uber', 'approx. £8-£13 (UberX, off-peak; more at busy times or in traffic)'),
         ("B. Tube", "Circle/Hammersmith &amp; City/Metropolitan line to King's Cross St Pancras, then ~5 min walk - about 13 min door to door, approx. £3.00 pay-as-you-go"),
     ]),
+    ('take the tube from heathrow', [
+        ('A. Uber', 'approx. £70-£95 for an UberXL (seats up to 6, fits 4 people + luggage) - book via the app once through arrivals; ~45-60 min depending on traffic, more at peak times'),
+        ('B. Black cab', 'approx. £75-£120 metered from the official taxi rank (fits 4 + luggage), or a pre-booked fixed fare from about £45-£70 - ~45-70 min depending on traffic'),
+        ('C. Private transfer', 'a pre-booked executive MPV/people-carrier (e.g. Blackberry Cars, Blacklane) runs from about £75-£90 fixed price for 4 people + luggage, with a driver meeting you in the arrivals hall - no queuing, good after a long flight'),
+        ('D. Tube (booked plan)', 'Elizabeth line from Terminal 5 to Paddington, then Hammersmith &amp; City/Circle line to Great Portland Street, then ~2-3 min walk - about 50 min total, approx. £15.50pp (~£62 for 4) but every bag has to come on the train'),
+    ]),
 ]
 
 def travel_options_for(name):
