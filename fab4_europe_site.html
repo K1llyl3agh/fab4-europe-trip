@@ -204,6 +204,14 @@ table.ttc th, table.ntb th { background:var(--navy); color:#fff; padding:10px 12
 table.ttc td, table.ntb td { padding:10px 12px; border-bottom:1px solid #f0eee8; vertical-align:top; }
 .ttc-day, .ntb-date { font-weight:700; white-space:nowrap; color:var(--navy); }
 .ttc-notes, .ntb-notes { color:var(--muted); font-size:.85rem; }
+table.flight-table tr.flight-gk td { background:var(--london-light); }
+table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
+.flight-legend { display:flex; flex-wrap:wrap; gap:18px; align-items:center; font-size:.82rem; color:var(--muted); margin:-14px 0 26px; }
+.flight-legend span { display:inline-flex; align-items:center; gap:6px; }
+.flight-swatch { display:inline-block; width:14px; height:14px; border-radius:3px; }
+.flight-swatch.gk { background:var(--london-light); border:1px solid var(--london); }
+.flight-swatch.dt { background:var(--tuscany-light); border:1px solid var(--tuscany); }
+.flight-swatch.all { background:var(--card-bg); border:1px solid #ccc; }
 .ntb-flag { color:#c0392b; font-weight:700; font-size:.85rem; margin-top:4px; }
 .ntb-tick { text-align:center; }
 .tickbox { display:inline-block; width:18px; height:18px; border:2px solid var(--navy); border-radius:4px; }
@@ -257,8 +265,13 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   h2 { page-break-before: always; break-before: page; page-break-after: avoid; }
   h3 { page-break-after: avoid; break-after: avoid-page; }
   #overview h2 { page-break-before: avoid; break-before: avoid; }
+  #flights h2 { page-break-before: avoid; break-before: avoid; }
   .hero, .ship-banner, .map-wrap { page-break-inside: avoid; break-inside: avoid; }
   body.printing-book .day-card, body.printing-book .place-card { page-break-inside: auto; break-inside: auto; }
+  body.printing-flights .print-block:not([data-section="flights"]) { display:none !important; }
+  body.printing-flights > *:not(.print-block) { display:none !important; }
+  body.printing-flights .print-block[data-section="flights"] { padding-top:10px; }
+  body.printing-flights .print-block[data-section="flights"] h2 { page-break-before: avoid; }
   body.printing-overview .print-block:not([data-section="overview"]) { display:none !important; }
   body.printing-overview > *:not(.print-block) { display:none !important; }
   body.printing-overview .print-block[data-section="overview"] { padding-top:10px; }
@@ -511,6 +524,10 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       <div class="hero-flags" aria-label="United Kingdom, Italy, France">&#127468;&#127463; &#127470;&#127481; &#127467;&#127479;</div>
       <p class="sub">10 &ndash; 29 September 2026</p>
       <div class="nav-grid"><div class="nav-col">
+      <a href="#flights"><span class="ic">&#9992;&#65039;</span>Flights</a>
+      <button class="print-mini no-print" onclick="printSection('flights')">Print Flights</button>
+      
+    </div><div class="nav-col">
       <a href="#overview"><span class="ic">&#129517;</span>Overview</a>
       <button class="print-mini no-print" onclick="printSection('overview')">Print Overview</button>
       
@@ -585,6 +602,22 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   <span id="passportReminderText">Reminder: Check our passports are valid!</span>
   <a href="#needtobook" onclick="revealPassportChecklist()">Go to checklist</a>
 </div>
+
+<section id="flights" class="print-block" data-section="flights">
+  <h2>Flight Summary</h2>
+  
+<table class="ttc flight-table">
+  <tr><th>Date</th><th>Flight</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th><th>Travellers</th></tr>
+  <tr class="flight-gk"><td>Thu 10 Sept</td><td>QF162</td><td>Wellington (WLG) &rarr; Sydney (SYD)</td><td>6:05am &rarr; 7:45am</td><td>Business</td><td>3h 40m</td><td>Karen &amp; Gary only</td></tr><tr class="flight-all"><td>Thu 10 Sept</td><td>QF1</td><td>Sydney (SYD) &rarr; Singapore (SIN)</td><td>2:45pm &rarr; 9:15pm</td><td>Premium Economy</td><td>8h 30m</td><td>All 4</td></tr><tr class="flight-all"><td>Thu 10 &ndash; Fri 11 Sept</td><td>BA12</td><td>Singapore (SIN) &rarr; London Heathrow (LHR)</td><td>11:20/11:25pm &rarr; 6:35am +1</td><td>Premium Economy</td><td>~14h 10-15m</td><td>All 4</td></tr><tr class="flight-gk"><td>Fri 11 Sept</td><td>BA548</td><td>London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)</td><td>8:00am &rarr; 11:35am</td><td>Business</td><td>2h 35m</td><td>Karen &amp; Gary only</td></tr><tr class="flight-dt"><td>Fri 11 Sept</td><td>BA548</td><td>London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)</td><td>8:00am &rarr; 11:35am</td><td>Economy</td><td>2h 35m</td><td>Debbie &amp; Tom only</td></tr><tr class="flight-all"><td>Thu 24 Sept</td><td>BA575</td><td>Milan Linate (LIN) &rarr; London Heathrow (LHR)</td><td>3:55pm &rarr; 4:50pm</td><td>Business</td><td>1h 55m</td><td>All 4</td></tr><tr class="flight-all"><td>Sun 27 &ndash; Mon 28 Sept</td><td>BA15</td><td>London Heathrow (LHR) &rarr; Singapore (SIN)</td><td>10:00pm &rarr; 6:40pm +1</td><td>Premium Economy</td><td>13h 40m</td><td>All 4</td></tr><tr class="flight-all"><td>Mon 28 &ndash; Tue 29 Sept</td><td>BA15</td><td>Singapore (SIN) &rarr; Sydney (SYD)</td><td>8:20pm &rarr; 6:05am +1</td><td>Premium Economy</td><td>7h 45m</td><td>All 4</td></tr><tr class="flight-gk"><td>Tue 29 Sept</td><td>QF161</td><td>Sydney (SYD) &rarr; Wellington (WLG)</td><td>9:35am &rarr; 3:45pm</td><td>Economy</td><td>3h 10m</td><td>Karen &amp; Gary only</td></tr>
+</table>
+<div class="flight-legend">
+  <span><span class="flight-swatch gk"></span>Karen &amp; Gary only</span>
+  <span><span class="flight-swatch dt"></span>Debbie &amp; Tom only</span>
+  <span><span class="flight-swatch all"></span>All 4 together</span>
+</div>
+<p class="tt-note">All flights are on 2026 dates, operated by Qantas (QF) and British Airways (BA). Reservation codes: Gary &amp; Karen &ndash; KXFECY / EKNMYW; Debbie &amp; Tom &ndash; UWBGQP / EKH3PP (the Akhursts join the group in Sydney, so have no Wellington&ndash;Sydney sector). Frequent flyer numbers, seat assignments and check-in requirements are held in the original Sabre itinerary emails.</p>
+
+</section>
 
 <section id="overview" class="print-block" data-section="overview">
   <h2>Trip at a Glance</h2>
@@ -4927,7 +4960,7 @@ Directions from iQ Hotel Milano</div>
         <div class="ev-row">
           <div class="ev-time">2:30 PM</div>
           <div class="ev-body">
-            <div class="ev-name">Flight BA0571 Milan (Linate) to London Heathrow - arrives 2:50pm  </div>
+            <div class="ev-name">Flight BA575 Milan (Linate) to London Heathrow - arrives 2:50pm  </div>
             <div class="ev-addr">Milan Linate (LIN) to London Heathrow (LHR)</div>
             
             
@@ -5069,14 +5102,14 @@ Directions from iQ Hotel Milano</div>
           <div class="dm-leg-line"></div>
           <div class="dm-leg-body">
             <div class="dm-leg-head">Milan Linate Airport &rarr; London Heathrow Airport (Terminal 5)</div>
-            <div class="dm-leg-text">~1h 50m flight &middot; ~1,000 km &middot; Flight BA0571, Milan Linate to London Heathrow (only ~20 min apart on local clocks due to the UK/Italy time difference)</div>
+            <div class="dm-leg-text">~1h 50m flight &middot; ~1,000 km &middot; Flight BA575, Milan Linate to London Heathrow (only ~20 min apart on local clocks due to the UK/Italy time difference)</div>
           </div>
         </div>
         <div class="dm-stop">
           <div class="dm-dot"></div>
           <div class="dm-stop-body">
             <div class="dm-name">London Heathrow Airport (Terminal 5)</div>
-            <div class="dm-note">2:50pm - Arrive on flight BA0571</div>
+            <div class="dm-note">2:50pm - Arrive on flight BA575</div>
           </div>
         </div>
         <div class="dm-leg">
@@ -5771,7 +5804,7 @@ Visit Website: Headout</div>
       <td class="ttc-day">Thu (24)</td>
       <td>Book airport transfer to hotel <span class="pill pill-todo">TO DO</span></td>
       <td><span class="badge badge-tobook">To Book</span></td>
-      <td class="ttc-notes">Arriving via BA0571 from Milan (LIN-LHR), lands 2:50pm; transfer to The Level at Melia White House not yet booked</td>
+      <td class="ttc-notes">Arriving via BA575 from Milan (LIN-LHR), lands 2:50pm; transfer to The Level at Melia White House not yet booked</td>
     </tr>
     <tr>
       <td class="ttc-day">Sat (26)</td>

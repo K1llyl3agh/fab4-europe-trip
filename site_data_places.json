@@ -1,0 +1,646 @@
+{
+  "london_places": [
+    {
+      "place": "The Level at Melia White House",
+      "type": "Hotel - approx. 2-3 min walk (~0.2 km) to Great Portland Street Underground station (Circle, Hammersmith & City, Metropolitan lines), directly opposite the hotel",
+      "address": "Longford Street, Regents Park, London NW1 3UP",
+      "website": "https://www.melia.com/en/hotels/united-kingdom/london/the-level-at-melia-white-house",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP",
+      "review": null,
+      "instagram": "https://www.instagram.com/meliawhitehouse/"
+    },
+    {
+      "place": "Heathrow Airport",
+      "type": "Travel / Airport",
+      "address": "Heathrow Airport, Hounslow TW6 1EW",
+      "website": "https://www.heathrow.com/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Heathrow%20Airport%2C%20Hounslow%20TW6%201EW",
+      "review": null,
+      "instagram": "https://www.instagram.com/heathrow_airport/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Terminal%205%20at%20London%20Heathrow%20Airport%2C%202008.jpg",
+      "phone": "0344 335 1801"
+    },
+    {
+      "place": "Albert's Schloss",
+      "type": "Food & Drink",
+      "address": "20-24 Shaftesbury Avenue, London W1D 7EU",
+      "website": "https://www.albertsschloss.com/location/london/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=20-24%20Shaftesbury%20Avenue%2C%20London%20W1D%207EU",
+      "review": "https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d26909472-Reviews-Albert_s_Schloss_Soho-London_England.html",
+      "instagram": "https://www.instagram.com/albertsschloss/",
+      "photo": "https://assets.albertsschloss.com/content/uploads/2024/01/Schloss-London-Header-1400x788.jpg",
+      "menu": "https://www.albertsschloss.com/menu/?location=london",
+      "phone": "020 8165 0000",
+      "email": "eventslondon@albertsschloss.co.uk"
+    },
+    {
+      "place": "The Lighterman",
+      "type": "Food & Drink",
+      "address": "3 Granary Square, London N1C 4BH",
+      "website": "https://www.thelighterman.co.uk/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=3%20Granary%20Square%2C%20London%20N1C%204BH",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g186338-d10121217-Reviews-The_Lighterman-London_England.html",
+      "instagram": "https://www.instagram.com/thelightermankx/",
+      "photo": "http://static1.squarespace.com/static/61cc647e2e2bca2f4e1ae1da/t/61cc64ad2e2bca2f4e1ae5e8/1745590094055/WC%2BHeader.png?format=1500w",
+      "menu": "https://www.thelighterman.co.uk/menus",
+      "phone": "020 3846 3400"
+    },
+    {
+      "place": "St Martin's Theatre (The Mousetrap)",
+      "type": "Show / Theatre",
+      "address": "West Street, London WC2H 9NZ",
+      "website": "https://stmartinstheatre.co.uk/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=West%20Street%2C%20London%20WC2H%209NZ",
+      "review": null,
+      "instagram": null,
+      "photo": "https://stmartinstheatre.netlify.app/shareimage.jpeg",
+      "phone": "020 7836 1443"
+    },
+    {
+      "place": "Vaudeville Theatre (Six the Musical)",
+      "type": "Show / Theatre",
+      "address": "404 Strand, London WC2R 0NH",
+      "website": "https://sixthemusical.com/london/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=404%20Strand%2C%20London%20WC2R%200NH",
+      "review": null,
+      "instagram": "https://www.instagram.com/sixthemusical/",
+      "photo": "https://sixthemusical.com/Six-Feb24_Share_1200x600.jpg",
+      "phone": "0330 333 4814",
+      "email": "boxoffice@nimaxtheatres.com"
+    },
+    {
+      "place": "Tower of London / Tower Bridge",
+      "type": "Sightseeing",
+      "address": "Tower of London, EC3N 4AB",
+      "website": "https://www.hrp.org.uk/tower-of-london/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Tower%20of%20London%2C%20EC3N%204AB",
+      "review": "https://www.tripadvisor.com/Attraction_Review-g186338-d187788-Reviews-Tower_of_London-London_England.html",
+      "instagram": "https://www.instagram.com/historicroyalpalaces/",
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-s/06/af/56/36/the-tower.jpg",
+      "phone": "020 3166 6646"
+    },
+    {
+      "place": "Hopscotch Taprooms",
+      "type": "Food & Drink",
+      "address": "54 Westow Hill, London SE19 1RX",
+      "website": "https://www.hopscotchtap.com/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=54%20Westow%20Hill%2C%20London%20SE19%201RX",
+      "review": null,
+      "instagram": "https://www.instagram.com/hopscotchtaprooms/",
+      "menu": "https://www.hopscotchtap.com/copy-of-parties",
+      "phone": "+44 7394 072189"
+    },
+    {
+      "place": "Harrods",
+      "type": "Shopping",
+      "address": "87-135 Brompton Road, Knightsbridge, London SW1X 7XL",
+      "website": "https://www.harrods.com",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=87-135%20Brompton%20Road%2C%20Knightsbridge%2C%20London%20SW1X%207XL",
+      "review": null,
+      "instagram": "https://www.instagram.com/harrods/",
+      "photo": "https://d2wd7685k000to.cloudfront.net/image/306683987547/image_91simn257p64586b6l6kdkc222/-B3072-FJPG",
+      "phone": "+44 (0)20 7730 1234"
+    },
+    {
+      "place": "Victoria and Albert Museum",
+      "type": "Sightseeing",
+      "address": "Cromwell Road, London SW7 2RL",
+      "website": "https://www.vam.ac.uk/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Victoria+and+Albert+Museum+Cromwell+Road+London",
+      "review": null,
+      "instagram": "https://instagram.com/vamuseum",
+      "photo": "https://assets-cdn.vam.ac.uk/2026/07/08/16/46/33/cdd2e751-ad40-4cdd-8c41-3fcb503ab94d/640.jpg",
+      "phone": "020 7942 2000"
+    },
+    {
+      "place": "Harry's Knightsbridge",
+      "type": "Food & Drink",
+      "address": "27-31 Basil Street, Knightsbridge, London SW3 1BB",
+      "website": "https://harrysdolcevita.com/italian-restaurants-near-me/italian-restaurants-london/harrys-knightsbridge-italian-restaurant/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Harry%27s+Knightsbridge+27-31+Basil+Street+London",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g186338-d13224804-Reviews-Harry_s_Dolce_Vita_Knightsbridge-London_England.html",
+      "instagram": null,
+      "menu": "https://harrysdolcevita.com/harrys-menu/",
+      "phone": "+44 20 3940 1020"
+    },
+    {
+      "place": "Primark (Oxford Street)",
+      "type": "Shopping",
+      "address": "14-28 Oxford Street, Fitzrovia, London W1D 1AU",
+      "website": "https://www.primark.com/en-gb/stores/london/14-28-oxford-street",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Primark+14-28+Oxford+Street+London",
+      "review": null,
+      "instagram": "https://www.instagram.com/primark/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Primark%20in%20Oxford%20Street%20-%20geograph.org.uk%20-%201053122.jpg",
+      "phone": "020 7580 5510"
+    },
+    {
+      "place": "Uniqlo (Oxford Street)",
+      "type": "Shopping",
+      "address": "311 Oxford Street, London W1C 2HP",
+      "website": "https://www.uniqlo.com/uk/en/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Uniqlo+311+Oxford+Street+London",
+      "review": null,
+      "instagram": "https://www.instagram.com/uniqloeurope/",
+      "photo": "https://www.uniqlo.com/jp/ja/contents/feature/masterpiece/common/au/img/product/item_15_kv.jpg?260713"
+    },
+    {
+      "place": "Waterstones Piccadilly (for Karen)",
+      "type": "Shopping - Books",
+      "address": "203-206 Piccadilly, London W1J 9HD",
+      "website": "https://www.waterstones.com/bookshops/piccadilly",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Waterstones+Piccadilly+203-206+Piccadilly+London",
+      "review": null,
+      "instagram": "https://www.instagram.com/piccadillywaterstones/",
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-s/02/39/59/08/filename-111125-waterstones.jpg",
+      "phone": "020 7851 2400"
+    },
+    {
+      "place": "Oxford Street",
+      "type": "Shopping street",
+      "address": "Oxford Street, London W1",
+      "website": "https://www.oxfordstreet.co.uk/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Oxford+Street+London",
+      "review": null,
+      "instagram": "https://www.instagram.com/oxfordstreetw1/"
+    }
+  ],
+  "rome_places": [
+    {
+      "place": "The Republic Hotel",
+      "type": "Hotel (11-14 Sep)",
+      "address": "Via Gaeta 61, 185 Rome",
+      "website": "https://www.therepublichotel.it/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=The+Republic+Hotel+Via+Gaeta+61+Rome",
+      "review": null,
+      "instagram": null,
+      "photo": "https://image-tc.galaxy.tf/wijpeg-5kw482wtncwn1o9cs06qlm2dr/img-8684.jpg?width=2560"
+    },
+    {
+      "place": "Fiumicino Airport (FCO)",
+      "type": "Airport - arrival",
+      "address": "Fiumicino Airport, Rome",
+      "website": "https://www.adr.it/web/aeroporti-di-roma-en",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Fiumicino+Airport",
+      "review": null,
+      "instagram": "https://www.instagram.com/aeroporti_di_roma/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rome%20Leonardo%20da%20Vinci%20%28Fiumicino%29%20Airport%2001.JPG"
+    },
+    {
+      "place": "Vatican Museums / Sistine Chapel",
+      "type": "Sightseeing - booked (Sat 12 Sep, 7:15am, 4hrs)",
+      "address": "Vatican Museums, Vatican City",
+      "website": "https://www.museivaticani.va/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Vatican+Museums",
+      "review": null,
+      "instagram": "https://www.instagram.com/vaticanmuseums/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sistine%20Chapel%20%285967688938%29.jpg"
+    },
+    {
+      "place": "Villa Borghese Gardens",
+      "type": "Sightseeing (Fri 11 Sep, 3-5pm)",
+      "address": "Villa Borghese, Rome, Italy",
+      "website": "https://www.turismoroma.it/en/places/villa-borghese",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Villa+Borghese+Gardens+Rome",
+      "review": null,
+      "instagram": null,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rome-villa-borghese-gardens.jpg"
+    },
+    {
+      "place": "Colosseum",
+      "type": "Sightseeing - booked (Sun 13 Sep, 3:30pm, 3.5hrs, Arena Floor & VIP Caesar's Palace)",
+      "address": "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+      "website": "https://colosseo.it/en/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Colosseum+Rome",
+      "review": null,
+      "instagram": "https://www.instagram.com/parcocolosseo/",
+      "photo": "https://colosseo.it/sito/wp-content/uploads/2023/05/Colosseo_restauro_30-maggio_veduta-dallalto-600x600.jpg"
+    },
+    {
+      "place": "Civitavecchia",
+      "type": "Cruise embark / car hire (Mon 14 & Mon 21 Sep)",
+      "address": "Via 16 Settembre 46, Civitavecchia",
+      "website": "https://www.civitavecchiaport.org/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Civitavecchia+Cruise+Terminal",
+      "review": null,
+      "instagram": null,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Civitavecchia%20harbour%2002.JPG"
+    },
+    {
+      "place": "Cantina Cantarini da Mario",
+      "type": "Restaurant candidate - veal scaloppine al limone (Tripadvisor 3.9/5)",
+      "address": "Piazza Sallustio 24, 00187 Roma",
+      "website": "https://www.ristorantecantinacantarini.it/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Cantina+Cantarini+da+Mario+Piazza+Sallustio+Roma",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g187791-d2041920-Reviews-Cantina_Cantarini_da_Mario-Rome_Lazio.html",
+      "instagram": "https://www.instagram.com/cantinacantarini/",
+      "photo": "https://cms.paginesi.it/user_img_online/2450/-1/1_IMAGESSCOR_CHILD_20141010_051624.png?20231130021809",
+      "menu": "https://www.ristorantecantinacantarini.it/menu-di-terra.php"
+    },
+    {
+      "place": "Girarrosto Fiorentino",
+      "type": "Restaurant candidate - veal specialities (Google 4.4/5)",
+      "address": "Via Sicilia 46, 00187 Roma",
+      "website": "https://www.girarrostofiorentino.it/en/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Girarrosto+Fiorentino+Via+Sicilia+Roma",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g187791-d780142-Reviews-Girarrosto_Fiorentino-Rome_Lazio.html",
+      "instagram": "https://www.instagram.com/girarrostofiorentino/",
+      "photo": "https://www.girarrostofiorentino.it/images/base.jpg",
+      "menu": "https://www.thefork.com/restaurant/girarrosto-fiorentino-r78540/menu"
+    },
+    {
+      "place": "Colline Emiliane",
+      "type": "Restaurant candidate - veal specialities (Tripadvisor 4.5/5)",
+      "address": "Via degli Avignonesi 22, 00187 Roma",
+      "website": "https://www.collineemiliane.com/en/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Colline+Emiliane+Via+degli+Avignonesi+Roma",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g187791-d696516-Reviews-Colline_Emiliane-Rome_Lazio.html",
+      "instagram": "https://www.instagram.com/collineemiliane1931/",
+      "photo": "https://www.collineemiliane.com/wp-content/uploads/2021/03/Colline-Emiliane_0000_IMG_0323_0000_IMG_0355_0001_IMG_0322-1.jpg",
+      "menu": "https://restaurantguru.com/Colline-Emiliane-Rome/menu"
+    },
+    {
+      "place": "Trattoria Monti",
+      "type": "Restaurant candidate - classic Marche/Roman cuisine (top ~4% of Rome restaurants)",
+      "address": "Via di San Vito 13/a, 00185 Roma",
+      "website": "https://www.turismoroma.it/en/hospitality/trattoria-monti",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Trattoria+Monti+Via+di+San+Vito+Roma",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g187791-d793216-Reviews-Trattoria_Monti-Rome_Lazio.html",
+      "instagram": null,
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-s/15/47/c4/ee/the-exterior.jpg",
+      "menu": "https://restaurantguru.com/Trattoria-Monti-Rome/menu"
+    }
+  ],
+  "tuscany_places": [
+    {
+      "place": "Hotel Borgo di Cortefreda Relais",
+      "type": "Hotel (14-16 Sep)",
+      "address": "Via Roma 191, 50028, Tavarnelle Val Di Pesa",
+      "website": "https://www.borgodicortefreda.com/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Hotel+Borgo+di+Cortefreda+Relais+Via+Roma+191+Tavarnelle",
+      "review": null,
+      "instagram": "https://www.instagram.com/borgodicortefreda/",
+      "photo": "https://www.borgodicortefreda.com/assets/img/slide-1.jpg"
+    },
+    {
+      "place": "Il Caff\u00e8 degli Amici",
+      "type": "Cafe/restaurant - potential place to go (Tripadvisor 4.7/5, 562 reviews)",
+      "address": "Via Roma 121, 50028 Tavarnelle Val di Pesa",
+      "website": null,
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Caffe+Degli+Amici+Via+Roma+121+Tavarnelle+Val+di+Pesa",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g670654-d3612860-Reviews-Caffe_Degli_Amici-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html",
+      "instagram": "https://www.instagram.com/ilcaffedegliamici/",
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-w/27/f7/be/40/caption.jpg",
+      "menu": "https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf"
+    },
+    {
+      "place": "Pasticceria La Golosa",
+      "type": "Pastry shop/cafe - potential place to go (Tripadvisor 4.4/5, 31 reviews)",
+      "address": "Via Palazzuolo, 50028 Tavarnelle Val di Pesa",
+      "website": null,
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Pasticceria+La+Golosa+Via+Palazzuolo+Tavarnelle+Val+di+Pesa",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g670654-d3418380-Reviews-Pasticceria_La_Golosa-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html",
+      "instagram": null,
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-o/1c/56/af/9c/caption.jpg"
+    },
+    {
+      "place": "Ristorante Triocco",
+      "type": "Dinner option - potential place to go (Tripadvisor 4.6/5, 334 reviews, #2 of 20 in Barberino Val d'Elsa)",
+      "address": "Via Vittorio Veneto 48, 50021 Barberino Val d'Elsa, Barberino Tavarnelle",
+      "website": null,
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Ristorante+Triocco+Via+Vittorio+Veneto+48+Barberino",
+      "review": "https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html",
+      "instagram": "https://www.instagram.com/triocco/",
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/82/95/b5/20191006-191143-largejpg.jpg",
+      "menu": "https://www.borghiditoscana.net/en/restaurant-pizzeria-triocco-in-barberino-val-delsa-florence/il-menu-del-ristorante-triocco-barberino-val-delsa-2/"
+    },
+    {
+      "place": "Agriturismo Buratta",
+      "type": "Lunch option - potential stop en route from Civitavecchia (Tripadvisor 4.0/5, 832 reviews, #1 of 19 in Talamone)",
+      "address": "Strada Vicinale delle Casacce, 65, 58010 Talamone, Orbetello",
+      "website": "https://buratta.com/en/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Agriturismo+Buratta+Strada+Vicinale+delle+Casacce+65+Talamone",
+      "review": "https://www.tripadvisor.co.nz/Restaurant_Review-g194929-d1894984-Reviews-Agriturismo_Buratta-Talamone_Orbetello_Province_of_Grosseto_Tuscany.html",
+      "instagram": null,
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/4f/b5/87/photo7jpg.jpg",
+      "menu": "https://restaurantguru.com/Agriturismo-Buratta-Fonteblanda/menu"
+    }
+  ],
+  "italy_places": [
+    {
+      "place": "The Republic Hotel",
+      "type": "Hotel",
+      "address": "Via Gaeta 61, 185 Rome",
+      "website": "https://www.therepublichotel.it/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=The+Republic+Hotel+Via+Gaeta+61+Rome",
+      "review": null,
+      "instagram": null,
+      "photo": "https://image-tc.galaxy.tf/wijpeg-5kw482wtncwn1o9cs06qlm2dr/img-8684.jpg?width=2560"
+    },
+    {
+      "place": "Civitavecchia (cruise embark / car hire)",
+      "type": "Port / Car hire",
+      "address": "Via 16 Settembre 46, Civitavecchia",
+      "website": "https://www.civitavecchiaport.org/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Civitavecchia+Cruise+Terminal",
+      "review": null,
+      "instagram": null,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Civitavecchia%20harbour%2002.JPG"
+    },
+    {
+      "place": "Hotel Borgo di Cortefreda Relais",
+      "type": "Hotel",
+      "address": "Via Roma 191, 50028, Tavarnelle Val Di Pesa",
+      "website": "https://www.borgodicortefreda.com/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Hotel+Borgo+di+Cortefreda+Relais",
+      "review": null,
+      "instagram": "https://www.instagram.com/borgodicortefreda/",
+      "photo": "https://www.borgodicortefreda.com/assets/img/slide-1.jpg"
+    },
+    {
+      "place": "Marseille, France",
+      "type": "Cruise port of call",
+      "address": "Marseille, France",
+      "website": "https://www.marseille-tourisme.com/en/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Marseille+France",
+      "review": null,
+      "instagram": "https://www.instagram.com/marseilletourisme/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux%20port%20de%20Marseille.JPG"
+    },
+    {
+      "place": "Villefranche-sur-Mer, France",
+      "type": "Cruise port of call",
+      "address": "Villefranche-sur-Mer, France",
+      "website": "https://visitvillefranche.com/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Villefranche-sur-Mer+France",
+      "review": null,
+      "instagram": "https://www.instagram.com/villedevillefranchesurmer/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Villefranche%20sur%20Mer%20Port%20de%20la%20Darse%20close%20up%20view%206305.JPG"
+    },
+    {
+      "place": "Genoa, Italy",
+      "type": "Cruise port of call",
+      "address": "Genoa, Italy",
+      "website": "https://www.visitgenoa.it/en",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Genoa+Italy",
+      "review": null,
+      "instagram": "https://www.instagram.com/genovamorethanthis/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20-%20Harbour%20of%20Genoa%2C%20Italy%20-%20DSC01158.JPG"
+    },
+    {
+      "place": "La Spezia, Italy",
+      "type": "Cruise port of call",
+      "address": "La Spezia, Italy",
+      "website": "https://www.visitspezia.it/en/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=La+Spezia+Italy",
+      "review": null,
+      "instagram": "https://www.instagram.com/visitlaspezia_official/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Golfo%20di%20La%20Spezia%20Italy%20aerial%20view.jpg"
+    },
+    {
+      "place": "Il Caff\u00e8 degli Amici",
+      "type": "Cafe/restaurant - potential place to go (Tripadvisor 4.7/5, 562 reviews)",
+      "address": "Via Roma 121, 50028 Tavarnelle Val di Pesa",
+      "website": "https://www.tripadvisor.com/Restaurant_Review-g670654-d3612860-Reviews-Caffe_Degli_Amici-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Caffe+Degli+Amici+Via+Roma+121+Tavarnelle+Val+di+Pesa",
+      "review": null,
+      "instagram": "https://www.instagram.com/ilcaffedegliamici/",
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-w/27/f7/be/40/caption.jpg",
+      "menu": "https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf"
+    },
+    {
+      "place": "Pasticceria La Golosa",
+      "type": "Pastry shop/cafe - potential place to go (Tripadvisor 4.4/5, 31 reviews)",
+      "address": "Via Palazzuolo, 50028 Tavarnelle Val di Pesa",
+      "website": "https://www.tripadvisor.com/Restaurant_Review-g670654-d3418380-Reviews-Pasticceria_La_Golosa-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Pasticceria+La+Golosa+Via+Palazzuolo+Tavarnelle+Val+di+Pesa",
+      "review": null,
+      "instagram": null,
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-o/1c/56/af/9c/caption.jpg"
+    }
+  ],
+  "need_to_book": [
+    {
+      "date": "Sat 12 Sep",
+      "item": "Dinner reservation - Rome (Veal Scaloppine al limone)",
+      "status": "To Confirm",
+      "notes": "Choose from: Cantina Cantarini da Mario, Girarrosto Fiorentino, Colline Emiliane, Trattoria Monti - see Rome Map tab",
+      "flag": "Decide on the day.",
+      "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d2041920-Reviews-Cantina_Cantarini_da_Mario-Rome_Lazio.html"
+    },
+    {
+      "date": "Mon 14 Sep",
+      "item": "Confirm transfer time to Queen Victoria",
+      "status": "To Confirm",
+      "notes": "Transfer by private minibus, Rome to Civitavecchia - likely mid-afternoon, evening departure. Gary checked with Lynnaire on 30 July, awaiting a response.",
+      "website": "https://www.cunard.com/en-us/find-a-cruise"
+    },
+    {
+      "date": "Thu 24 Sep",
+      "item": "Book airport transfer to hotel",
+      "status": "To Book",
+      "notes": "Arriving via BA0575 from Milan (LIN-LHR); transfer to The Level at Melia White House",
+      "flag": "Gary checked on 30 July - ongoing, to monitor.",
+      "website": "https://www.melia.com/en/hotels/united-kingdom/london/melia-white-house"
+    },
+    {
+      "date": "Sat 26 Sep",
+      "item": "Confirm Tower of London + Crown Jewels + River Tour (combo)",
+      "status": "To Confirm",
+      "notes": "To be confirmed by Jennifer from Headout (jennifer@inspire.headout.com)",
+      "website": "https://www.london-tickets.co.uk/tower-of-london/"
+    },
+    {
+      "date": "Sat 26 Sep",
+      "item": "Dinner reservation - Hard Rock Cafe London",
+      "status": "To Book",
+      "notes": "150 Old Park Lane, Mayfair, London W1K 1QZ - after the Six show (ends 5:15pm)",
+      "website": "https://cafe.hardrock.com/london/"
+    },
+    {
+      "date": "Sun 27 Sep",
+      "item": "Confirm transfer to airport",
+      "status": "To Confirm",
+      "notes": "Leaving hotel 7:00pm for 10:00pm LHR departure",
+      "website": "https://www.melia.com/en/hotels/united-kingdom/london/melia-white-house"
+    },
+    {
+      "date": "Thu 10 Sep",
+      "item": "Confirm flight numbers & exact times - Wellington to Sydney",
+      "status": "To Confirm",
+      "notes": "Currently only have rough times on the Travel tab (arrive Sydney ~7:45am, depart Sydney ~2:45pm) - no flight numbers on file yet",
+      "website": null
+    }
+  ],
+  "things_to_take": [
+    {
+      "item": "Euro Power Adapter"
+    },
+    {
+      "item": "Passports with 6 months left"
+    },
+    {
+      "item": "Check on VPN support"
+    },
+    {
+      "item": "Hats for us all (for tours)"
+    },
+    {
+      "item": "Water (for tours)"
+    },
+    {
+      "item": "DJI Gimbal (Gary)"
+    },
+    {
+      "item": "Get some Pounds and some Euro's for OOPE"
+    }
+  ],
+  "london_ttc": [
+    {
+      "day": "Thu (24)",
+      "item": "Book airport transfer to hotel",
+      "status": "To Book",
+      "notes": "Arriving via BA575 from Milan (LIN-LHR), lands 2:50pm; transfer to The Level at Melia White House not yet booked"
+    },
+    {
+      "day": "Sat (26)",
+      "item": "Tower of London + Crown Jewels + River Tour (combo)",
+      "status": "To Confirm",
+      "notes": "To be confirmed by Jennifer from Headout (jennifer@inspire.headout.com) - see Links tab for tour detail from Deb"
+    },
+    {
+      "day": "Sat (26)",
+      "item": "Six the Musical tickets",
+      "status": "Booked",
+      "notes": "Vaudeville Theatre, 4:00pm, Stalls G8-G11 (4 adults)"
+    },
+    {
+      "day": "Sat (26)",
+      "item": "Book dinner reservation - Hard Rock Cafe London",
+      "status": "To Book",
+      "notes": "150 Old Park Lane, Mayfair, London W1K 1QZ - cafe.hardrock.com/london - after the Six show (ends 5:15pm)"
+    },
+    {
+      "day": "Sun (27)",
+      "item": "Confirm transfer to airport",
+      "status": "To Confirm",
+      "notes": "Leaving hotel 7:00pm for 10:00pm LHR departure"
+    }
+  ],
+  "italy_ttc": [
+    {
+      "day": "Tuscany",
+      "item": "Coffee/breakfast stop - Il Caff\u00e8 degli Amici",
+      "status": "Optional",
+      "notes": "Tripadvisor 4.7/5 (562 reviews). Via Roma 121, ~5 min walk from Hotel Borgo di Cortefreda Relais. See Italy Map tab."
+    },
+    {
+      "day": "Tuscany",
+      "item": "Pastries/coffee stop - Pasticceria La Golosa",
+      "status": "Optional",
+      "notes": "Tripadvisor 4.4/5 (31 reviews). Via Palazzuolo, ~7 min walk from Hotel Borgo di Cortefreda Relais. See Italy Map tab."
+    },
+    {
+      "day": "Sat (12)",
+      "item": "Plan Saturday afternoon in Rome",
+      "status": "To Confirm",
+      "notes": "Free from ~11:15am after the Sistine Chapel tour"
+    },
+    {
+      "day": "Sun (13)",
+      "item": "Plan Sunday morning in Rome",
+      "status": "To Confirm",
+      "notes": "Free until the 3:30pm Colosseum tour"
+    },
+    {
+      "day": "Mon (14)",
+      "item": "Confirm transfer time to Queen Victoria",
+      "status": "To Confirm",
+      "notes": "Likely mid-afternoon - what to do in Rome first thing that morning?"
+    },
+    {
+      "day": "Wed (16)",
+      "item": "Land excursion - Marseille, France",
+      "status": "Booked",
+      "notes": "Queen Victoria shore day"
+    },
+    {
+      "day": "Thu (17)",
+      "item": "Land excursion - Villefranche, France",
+      "status": "Booked",
+      "notes": "Queen Victoria shore day"
+    },
+    {
+      "day": "Fri (18)",
+      "item": "Land excursion - Genoa, Italy",
+      "status": "Booked",
+      "notes": "Queen Victoria shore day"
+    },
+    {
+      "day": "Sat (19)",
+      "item": "Land excursion - La Spezia (Florence or Pisa)",
+      "status": "Booked",
+      "notes": "Queen Victoria shore day"
+    },
+    {
+      "day": "Rome",
+      "item": "Choose restaurant for Veal Scaloppine al limone dinner",
+      "status": "To Confirm",
+      "notes": "Options on Rome Map tab: Cantina Cantarini da Mario, Girarrosto Fiorentino, Colline Emiliane, Trattoria Monti"
+    },
+    {
+      "day": "Tuscany",
+      "item": "Dinner option - Ristorante Triocco",
+      "status": "Optional",
+      "notes": "Tripadvisor 4.6/5 (334 reviews), #2 of 20 in Barberino Val d'Elsa. Via Vittorio Veneto 48, ~5 km / short drive from hotel (in Barberino Val d'Elsa, not walking distance). See Tuscany Map tab."
+    },
+    {
+      "day": "Tuscany",
+      "item": "Lunch option (en route, 21 Sep) - Agriturismo Buratta, Talamone",
+      "status": "Optional",
+      "notes": "Tripadvisor 4.0/5 (832 reviews), #1 of 19 restaurants in Talamone. Strada Vicinale delle Casacce 65, Talamone - stop along the Civitavecchia to Tuscany drive route. See Tuscany Map tab."
+    }
+  ],
+  "milan_places": [
+    {
+      "place": "iQ Hotel Milano",
+      "type": "Hotel",
+      "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan",
+      "website": "https://www.iqhotelmilano.it/",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=iQ+Hotel+Milano",
+      "review": null,
+      "instagram": "https://www.instagram.com/iqhotel_milano/",
+      "photo": "https://www.iqhotelmilano.it/static/6566674371b9fc32411a37d6ead2a8fd/07dfe/5c1a51d0-2ab3-42c0-87c5-44dbf1a5ba56.jpg"
+    },
+    {
+      "place": "Milan Linate Airport",
+      "type": "Airport (car return)",
+      "address": "Milan Linate Airport",
+      "website": "https://www.milanolinate-airport.com/en",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Milan+Linate+Airport",
+      "review": null,
+      "instagram": "https://www.instagram.com/milanairports/",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Terminal%20Linate.jpg"
+    },
+    {
+      "place": "Rinascente Milano",
+      "type": "Department store / Shopping",
+      "address": "Piazza del Duomo, 20121 Milan",
+      "website": "https://www.rinascente.it/en/store-milano",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=La+Rinascente+Piazza+del+Duomo+Milano",
+      "review": null,
+      "instagram": "https://www.instagram.com/rinascente/",
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-s/1a/35/5e/f5/rinascente-milano.jpg"
+    },
+    {
+      "place": "Fornasetti (flagship store)",
+      "type": "Potential shop - official Fornasetti flagship, iconic Italian design house (~3.5 km / ~45 min walk from hotel, or ~10-15 min by taxi/metro)",
+      "address": "Via Senato 2, 20121 Milan (near Corso Venezia)",
+      "hours": "10:00am-7:30pm (confirm exact days, especially Sundays)",
+      "website": "https://www.fornasetti.com/en-us",
+      "gmap": "https://www.google.com/maps/dir/?api=1&origin=Via+Giovanni+Battista+Pirelli+5+Milan&destination=Via+Senato+2+Milan&travelmode=walking",
+      "review": null,
+      "instagram": "https://www.instagram.com/fornasetti_official/"
+    }
+  ]
+}

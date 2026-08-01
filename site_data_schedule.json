@@ -1,0 +1,1634 @@
+{
+  "london": [
+    {
+      "title": "THURSDAY (DAY 24)",
+      "events": [
+        {
+          "time": "12:00 PM",
+          "event": "Return hire car - Mercedes Vito (booking ref NZ759149602)",
+          "status": "Booked",
+          "address": "Milan Linate Airport\nDirections from iQ Hotel Milano"
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Flight BA575 Milan (Linate) to London Heathrow - arrives 2:50pm",
+          "status": null,
+          "address": "Milan Linate (LIN) to London Heathrow (LHR)"
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Take the Tube from Heathrow (Terminal 5)",
+          "status": null,
+          "address": "Elizabeth line to Paddington, then Hammersmith & City/Circle line to Great Portland Street (~50 min, approx. £15.50 pp)"
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Arrive at The Level at Meliá White House - check in / drop bags",
+          "status": null,
+          "address": "Longford Street, Regent's Park, London NW1 3UP"
+        },
+        {
+          "time": "4:30 PM",
+          "event": "Tapas and Gin for Deb",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Tapas and Gin for Deb (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "6:30 PM",
+          "event": "Dinner at The Lighterman (confirmation 4NJL3Z4M6XN3)",
+          "status": "Booked",
+          "address": "3 Granary Square, London N1C 4BH (~1 mile / 20 min walk from hotel)"
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Dinner at The Lighterman (continues)",
+          "status": "Booked",
+          "address": null
+        }
+      ],
+      "stay": "Staying at The Level at Melia White House"
+    },
+    {
+      "title": "FRIDAY (DAY 25)",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "Breakfast at The Level",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "8:30 AM",
+          "event": "Breakfast at The Level (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Potential Victoria and Albert Museum",
+          "status": "Optional",
+          "address": "Directions from Hotel: V&A Museum"
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Potential Early Lunch at Harry's Knightsbridge",
+          "status": "Optional",
+          "address": "Directions from Hotel: Harry's Knightsbridge"
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Free time wandering around Oxford Street",
+          "status": null,
+          "address": "Oxford Street: oxfordstreet.co.uk"
+        },
+        {
+          "time": "4:30 PM",
+          "event": "Dinner at Albert Schloss (booked, ref DMN-16959374828)",
+          "status": "Booked",
+          "address": "20-24 Shaftesbury Avenue, London W1D 7EU"
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Dinner at Albert Schloss (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "5:30 PM",
+          "event": "Dinner at Albert Schloss (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "6:30 PM",
+          "event": "Need to be at Mousetrap by 6:30pm to get in",
+          "status": "Booked",
+          "address": "St Martin's Theatre, West Street, London WC2H 9NZ"
+        },
+        {
+          "time": "7:30 PM",
+          "event": "The Mousetrap begins (confirmed ref T071226139201)",
+          "status": "Booked",
+          "address": "St Martin's Theatre, West Street, London WC2H 9NZ"
+        },
+        {
+          "time": "8:00 PM",
+          "event": "The Mousetrap (continues)",
+          "status": "Booked",
+          "address": null
+        },
+        {
+          "time": "8:30 PM",
+          "event": "The Mousetrap (continues)",
+          "status": "Booked",
+          "address": null
+        },
+        {
+          "time": "9:00 PM",
+          "event": "The Mousetrap (continues)",
+          "status": "Booked",
+          "address": null
+        },
+        {
+          "time": "9:30 PM",
+          "event": "The Mousetrap (continues, ends 10pm)",
+          "status": "Booked",
+          "address": null
+        }
+      ],
+      "stay": "Staying at The Level at Melia White House"
+    },
+    {
+      "title": "SATURDAY (DAY 26)",
+      "events": [
+        {
+          "time": "7:30 AM",
+          "event": "Breakfast at The Level",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "8:00 AM",
+          "event": "Breakfast at The Level (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Combo: Tower of London (Crown Jewels) + Official Tower of London River Tour",
+          "status": "To Confirm",
+          "address": "Tower of London, EC3N 4AB\nVisit Website: Headout"
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Tower of London / River Tour (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "10:00 AM",
+          "event": "Tower of London / River Tour (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "10:30 AM",
+          "event": "Tower of London / River Tour (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "11:00 AM",
+          "event": "Tower of London / River Tour (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "11:30 AM",
+          "event": "To be confirmed by Jennifer from Headout (jennifer@inspire.headout.com)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Need to be at Vaudeville Theatre by 3:00pm (1hr before show)",
+          "status": "Booked",
+          "address": "Vaudeville Theatre, Strand, London WC2R 0NH"
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Six the Musical begins - Stalls G8, G9, G10, G11 (4 adults) - see Information tab",
+          "status": "Booked",
+          "address": "Vaudeville Theatre, Strand, London WC2R 0NH"
+        },
+        {
+          "time": "4:30 PM",
+          "event": "Six the Musical (continues)",
+          "status": "Booked",
+          "address": null
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Six the Musical (continues, ends 5:15pm)",
+          "status": "Booked",
+          "address": null
+        },
+        {
+          "time": "5:30 PM",
+          "event": "Visit Waterstones Piccadilly",
+          "status": "Optional",
+          "address": "Directions from Hotel: Waterstones Piccadilly"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Visit Waterstones Piccadilly (continues, ends 6:30pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "6:30 PM",
+          "event": "Dinner at Hard Rock Cafe London (starts 6:45pm)",
+          "status": "To Book",
+          "address": "150 Old Park Lane, Mayfair, London W1K 1QZ"
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Dinner at Hard Rock Cafe London (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "7:30 PM",
+          "event": "Dinner at Hard Rock Cafe London (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Dinner at Hard Rock Cafe London (continues, ends 8:15pm)",
+          "status": "To Book",
+          "address": null
+        }
+      ],
+      "stay": "Staying at The Level at Melia White House"
+    },
+    {
+      "title": "SUNDAY (DAY 27)",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "Breakfast at The Level",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "8:30 AM",
+          "event": "Breakfast at The Level (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Leave for Airport",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "10:00 PM",
+          "event": "Depart London Heathrow at 10.00pm (BA0015 LHR-SIN PE ~ BA0015 SIN-SYD PE)",
+          "status": null,
+          "address": "Heathrow Airport, Hounslow TW6 1EW"
+        }
+      ],
+      "stay": null
+    }
+  ],
+  "italy": [
+    {
+      "title": "FRIDAY (DAY 11) - 11 SEP",
+      "events": [
+        {
+          "time": "11:30 AM",
+          "event": "Arrive Fiumicino Airport (FCO) 11.35am",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Transfer by private minibus - airport to The Republic Hotel (~30-45 min drive depending on traffic, ~28 min best case)",
+          "status": null,
+          "address": "Via Gaeta 61, 185 Rome"
+        },
+        {
+          "time": "12:30 PM",
+          "event": "Check in at The Republic Hotel, freshen up",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Piazza della Repubblica & Fontana delle Naiadi",
+          "status": null,
+          "address": "Piazza della Repubblica, Rome - ~5 min walk from hotel"
+        },
+        {
+          "time": "1:30 PM",
+          "event": "Santa Maria degli Angeli e dei Martiri (built into the ancient Baths of Diocletian, free entry)",
+          "status": null,
+          "address": "Piazza della Repubblica, Rome - ~5 min walk from hotel"
+        },
+        {
+          "time": "2:00 PM",
+          "event": "Free time / coffee near the hotel",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Travel to Villa Borghese Gardens (~20 min by taxi or metro)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Villa Borghese Gardens",
+          "status": null,
+          "address": "Villa Borghese, Rome, Italy"
+        },
+        {
+          "time": "3:30 PM",
+          "event": "Villa Borghese Gardens (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Villa Borghese Gardens (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "4:30 PM",
+          "event": "Villa Borghese Gardens (continues - ends 5pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Pre-dinner drinks - Terrazza Montemartini (rooftop bar, Palazzo Montemartini)\nVisit Website: Palazzo Montemartini",
+          "status": null,
+          "address": "Largo Giovanni Montemartini, Rome - ~10 min walk from hotel"
+        },
+        {
+          "time": "5:30 PM",
+          "event": "Pre-dinner drinks - Terrazza Montemartini (continues - ends approx. 6:15pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "6:30 PM",
+          "event": "Dinner - pick from the suggestions below",
+          "status": null,
+          "address": null
+        }
+      ],
+      "stay": "Staying at The Republic Hotel, Rome"
+    },
+    {
+      "title": "SATURDAY (DAY 12) - 12 SEP",
+      "events": [
+        {
+          "time": "5:30 AM",
+          "event": "Early breakfast at The Republic Hotel (confirm 5:30am service with hotel in advance - standard buffet runs 7:00-10:30am)",
+          "status": "To Confirm",
+          "address": "The Republic Hotel, Via Gaeta 61, Rome"
+        },
+        {
+          "time": "7:00 AM",
+          "event": "Pristine Sistine Early Morning Small Group Tour - entry 7:15am (4hrs)",
+          "status": null,
+          "address": "Vatican Museums / Sistine Chapel, Vatican City\nVisit Website: Walks of Italy"
+        },
+        {
+          "time": "7:30 AM",
+          "event": "Pristine Sistine Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "8:00 AM",
+          "event": "Pristine Sistine Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "8:30 AM",
+          "event": "Pristine Sistine Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Pristine Sistine Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Pristine Sistine Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "10:00 AM",
+          "event": "Pristine Sistine Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "10:30 AM",
+          "event": "Pristine Sistine Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "11:00 AM",
+          "event": "Pristine Sistine Tour (continues - ends approx. 11:15am)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Lunch at Target Restaurant",
+          "status": "Optional",
+          "address": "Near Piazza della Repubblica, Rome - ~8 min walk from hotel\nVisit Website: Ristorante Target"
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Free afternoon in Rome - pick from the 5 suggestions below",
+          "status": null,
+          "address": null
+        }
+      ],
+      "stay": "Staying at The Republic Hotel, Rome"
+    },
+    {
+      "title": "SUNDAY (DAY 13) - 13 SEP",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "Breakfast at The Republic Hotel (included, buffet 7:00-10:30am)",
+          "status": null,
+          "address": "The Republic Hotel, Via Gaeta 61, Rome"
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Self-guided morning walk - Roman Forum viewpoint, Trajan's Column & Markets, Piazza del Campidoglio (all free, ~10 min walk to Piazza del Colosseo afterwards)",
+          "status": null,
+          "address": "Via dei Fori Imperiali, Rome"
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Lunch near Piazza del Colosseo - pick from the 5 suggestions below",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "3:30 PM",
+          "event": "Colosseum Arena Floor & VIP Caesar's Palace Tour - meet 3:30pm (3.5hrs)",
+          "status": null,
+          "address": "Piazza del Colosseo, 1, 00184 Roma RM, Italy\nVisit Website: Walks of Italy"
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Colosseum/Caesar's Palace Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "4:30 PM",
+          "event": "Colosseum/Caesar's Palace Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Colosseum/Caesar's Palace Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "5:30 PM",
+          "event": "Colosseum/Caesar's Palace Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Colosseum/Caesar's Palace Tour (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "6:30 PM",
+          "event": "Colosseum/Caesar's Palace Tour (continues - ends approx. 7:00pm)",
+          "status": null,
+          "address": null
+        }
+      ],
+      "stay": "Staying at The Republic Hotel, Rome"
+    },
+    {
+      "title": "MONDAY (DAY 14) - 14 SEP",
+      "events": [
+        {
+          "time": "2:00 PM",
+          "event": "Transfer by private minibus to Queen Victoria - evening departure",
+          "status": "To Confirm",
+          "address": "Civitavecchia Downtown, Via 16 Settembre 46, Cruise Ship Gate"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Board Queen Victoria - depart Rome (Civitavecchia)",
+          "status": null,
+          "address": "Civitavecchia Downtown, Via 16 Settembre 46, Cruise Ship Gate"
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Dinner at Britannia Restaurant (confirmed for all 4)",
+          "status": "Booked",
+          "address": "Visit Website: Queen Victoria"
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Evening Show, Royal Court Theatre",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Rhubarb Gin & Pepsi Max at the Commodore Club",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        }
+      ],
+      "stay": "Staying aboard Queen Victoria (departs Rome)"
+    },
+    {
+      "title": "TUESDAY (DAY 15) - 15 SEP",
+      "events": [
+        {
+          "time": "9:00 AM",
+          "event": "Sea Day",
+          "status": null,
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Drinking Gin",
+          "status": null,
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Pre-dinner drinks at the Golden Lion Pub",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Dinner at Britannia Restaurant (confirmed for all 4)",
+          "status": "Booked",
+          "address": "Visit Website: Queen Victoria"
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Evening Show, Royal Court Theatre",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Rhubarb Gin & Pepsi Max at the Commodore Club - Gary's Rhubarb Gin review: smooth, floral, dangerously easy to drink (9/10)",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        }
+      ],
+      "stay": "Staying aboard Queen Victoria"
+    },
+    {
+      "title": "WEDNESDAY (DAY 16) - 16 SEP",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "In port: Marseille, France",
+          "status": null,
+          "address": "Marseille, France"
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Marseille and the Little Train",
+          "status": "Booked",
+          "address": "Visit Website: Cunard Shore Excursions"
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Pre-dinner drinks at the Golden Lion Pub",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Dinner at Britannia Restaurant (confirmed for all 4)",
+          "status": "Booked",
+          "address": "Visit Website: Queen Victoria"
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Evening Show, Royal Court Theatre",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Rhubarb Gin & Pepsi Max at the Commodore Club - Gary's Pepsi Max review: does exactly what a Pepsi Max should do, zero surprises (7/10)",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        }
+      ],
+      "stay": "Staying aboard Queen Victoria"
+    },
+    {
+      "title": "THURSDAY (DAY 17) - 17 SEP",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "In port: Villefranche, France",
+          "status": null,
+          "address": "Villefranche, France"
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Monaco and the Old Town ",
+          "status": "Booked",
+          "address": "Visit Website: Cunard Shore Excursions"
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Pre-dinner drinks at the Golden Lion Pub",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Dinner at Britannia Restaurant (confirmed for all 4)",
+          "status": "Booked",
+          "address": "Visit Website: Queen Victoria"
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Evening Show, Royal Court Theatre",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Rhubarb Gin & Pepsi Max at the Commodore Club",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        }
+      ],
+      "stay": "Staying aboard Queen Victoria"
+    },
+    {
+      "title": "FRIDAY (DAY 18) - 18 SEP",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "In port: Genoa, Italy",
+          "status": null,
+          "address": "Genoa, Italy"
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Discover Genoa shore excursion",
+          "status": "Booked",
+          "address": "Visit Website: Cunard Shore Excursions"
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Pre-dinner drinks at the Golden Lion Pub",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Dinner at Britannia Restaurant (confirmed for all 4)",
+          "status": "Booked",
+          "address": "Visit Website: Queen Victoria"
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Evening Show, Royal Court Theatre",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Rhubarb Gin & Pepsi Max at the Commodore Club",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "10:00 PM",
+          "event": "Churchill's Cigar Lounge, Level 10",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria, Level 10 (Commodore Deck)"
+        }
+      ],
+      "stay": "Staying aboard Queen Victoria"
+    },
+    {
+      "title": "SATURDAY (DAY 19) - 19 SEP",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "In port: La Spezia (Florence or Pisa)",
+          "status": null,
+          "address": "La Spezia, Italy"
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Easy Pisa - 7.45am tour",
+          "status": "Booked",
+          "address": "Visit Website: Cunard Shore Excursions"
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Pre-dinner drinks at the Golden Lion Pub",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Dinner at Britannia Restaurant (confirmed for all 4)",
+          "status": "Booked",
+          "address": "Visit Website: Queen Victoria"
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Evening Show, Royal Court Theatre",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Rhubarb Gin & Pepsi Max at the Commodore Club",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        }
+      ],
+      "stay": "Staying aboard Queen Victoria"
+    },
+    {
+      "title": "SUNDAY (DAY 20) - 20 SEP",
+      "events": [
+        {
+          "time": "9:00 AM",
+          "event": "Sea Day",
+          "status": null,
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Drinking Gin",
+          "status": null,
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Pre-dinner drinks at the Golden Lion Pub",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Dinner at Britannia Restaurant (confirmed for all 4)",
+          "status": "Booked",
+          "address": "Visit Website: Queen Victoria"
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Evening Show, Royal Court Theatre",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Rhubarb Gin & Pepsi Max at the Commodore Club",
+          "status": "Optional",
+          "address": "Aboard Queen Victoria"
+        }
+      ],
+      "stay": "Staying aboard Queen Victoria"
+    },
+    {
+      "title": "MONDAY (DAY 21) - 21 SEP",
+      "events": [
+        {
+          "time": "9:00 AM",
+          "event": "Collect Avis hire car - Mercedes Vito (booking ref NZ759149602)",
+          "status": "Booked",
+          "address": "Civitavecchia Downtown, Via 16 Settembre 46, Cruise Ship Gate"
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Drive from Civitavecchia to Talamone (approx. 2h)",
+          "status": null,
+          "address": "Directions: Civitavecchia to Talamone"
+        },
+        {
+          "time": "11:30 AM",
+          "event": "Lunch option: Agriturismo Buratta, Talamone",
+          "status": "Optional",
+          "address": "Directions: Agriturismo Buratta"
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Drive from Talamone to Tuscany hotel (approx. 2h)",
+          "status": null,
+          "address": "Directions: Talamone to Tuscany"
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Arrive Hotel Borgo di Cortefreda Relais",
+          "status": null,
+          "address": "Via Roma 191, 50028, Tavarnelle Val Di Pesa\nParking note: free onsite parking (contact hotel in advance to reserve a space)"
+        }
+      ],
+      "stay": "Staying at Hotel Borgo di Cortefreda Relais, Tuscany"
+    },
+    {
+      "title": "TUESDAY (DAY 22) - 22 SEP",
+      "events": [
+        {
+          "time": "9:00 AM",
+          "event": "Potential Breakfast/Coffee: Il Caffè degli Amici",
+          "status": "Optional",
+          "address": "Directions from Hotel: Il Caffè degli Amici"
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Potential Pastries/Coffee: Pasticceria La Golosa",
+          "status": "Optional",
+          "address": "Directions from Hotel: Pasticceria La Golosa"
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Potential Restaurant: Triocco",
+          "status": "Optional",
+          "address": "Directions from Hotel: Triocco"
+        }
+      ],
+      "stay": "Staying at Hotel Borgo di Cortefreda Relais, Tuscany"
+    },
+    {
+      "title": "WEDNESDAY (DAY 23) - 23 SEP",
+      "events": [
+        {
+          "time": "9:00 AM",
+          "event": "Check out of Hotel Borgo di Cortefreda Relais & drive to Milan (approx. 3h 10m)",
+          "status": null,
+          "address": "Directions: Tuscany to Milan"
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "10:00 AM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "10:30 AM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "11:00 AM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "11:30 AM",
+          "event": "Drive to Milan (continues - ends approx. 12:10pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Arrive Milan - Check-in at iQ Hotel Milano",
+          "status": null,
+          "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Free time / sightseeing in Milan (Duomo, Galleria Vittorio Emanuele II, Navigli)",
+          "status": "To Confirm",
+          "address": "Milan city centre"
+        },
+        {
+          "time": "1:30 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "2:00 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "3:30 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "4:30 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "5:30 PM",
+          "event": "Free time / sightseeing in Milan (continues)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Free time / sightseeing in Milan (continues - ends approx. 6:00pm)",
+          "status": "To Confirm",
+          "address": null
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Dinner in Milan",
+          "status": "To Book",
+          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
+        },
+        {
+          "time": "7:30 PM",
+          "event": "Dinner in Milan (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "9:00 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar",
+          "status": "Booked",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
+          "status": "Booked",
+          "address": null
+        }
+      ],
+      "stay": null
+    }
+  ],
+  "italy_options": [
+    {
+      "title": "OPTION A - LAKE COMO, LUNCH AT HARRY'S (23 SEP) [Total driving: 5h 15m]",
+      "events": [
+        {
+          "time": "6:00 AM",
+          "event": "Check out of Hotel Borgo di Cortefreda Relais & drive to Bologna (approx. 1h 30m)",
+          "status": null,
+          "address": "Directions: Tuscany to Bologna"
+        },
+        {
+          "time": "6:30 AM",
+          "event": "Drive to Bologna (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "7:00 AM",
+          "event": "Drive to Bologna (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "7:30 AM",
+          "event": "Arrive Bologna - Breakfast at Aroma Specialty Coffee",
+          "status": "Optional",
+          "address": "Via Portanova 12/b, 40123 Bologna, Italy\nVisit Website: Aroma Specialty Coffee (Il Piacere del Caffè)"
+        },
+        {
+          "time": "8:00 AM",
+          "event": "Breakfast at Aroma Specialty Coffee, Bologna (continues - ends approx. 8:30am)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "8:30 AM",
+          "event": "Drive from Bologna to Como (approx. 2h 30m)",
+          "status": null,
+          "address": "Directions: Bologna to Como"
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Drive to Como (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Drive to Como (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "10:00 AM",
+          "event": "Drive to Como (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "10:30 AM",
+          "event": "Drive to Como (continues - ends approx. 11:00am)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "11:00 AM",
+          "event": "Arrive Como - Como-Brunate Funicular up to Brunate (approx. 7 min ride)",
+          "status": null,
+          "address": "Piazza Alcide de Gasperi 4, 22100 Como, Italy\nVisit Website: Funicolare Como-Brunate"
+        },
+        {
+          "time": "11:30 AM",
+          "event": "Gelato with a view at Il Balcone sul Lago Café, Brunate",
+          "status": "Optional",
+          "address": "Via Pissarottino 26, 22034 Brunate (Como), Italy\nVisit Website: Il Balcone sul Lago (Facebook)"
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Funicular back down to Como (continues - ends approx. 12:30pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "12:30 PM",
+          "event": "Drive from Como to Cernobbio (approx. 15 min)",
+          "status": null,
+          "address": "Directions: Como to Cernobbio"
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (Lake Como)",
+          "status": "Optional",
+          "address": "Via Besana 1, 22012 Cernobbio, Como, Italy\nVisit Website: Harry's Bar Cernobbio"
+        },
+        {
+          "time": "1:30 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (continues)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "2:00 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (continues - ends approx. 2:30pm)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Drive from Lake Como to Milan (approx. 1h)",
+          "status": null,
+          "address": "Directions: Lake Como to Milan"
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Drive to Milan (continues - ends approx. 3:30pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "3:30 PM",
+          "event": "Arrive Milan - Check-in at iQ Hotel Milano",
+          "status": null,
+          "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Dinner in Milan",
+          "status": "To Book",
+          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
+        },
+        {
+          "time": "7:30 PM",
+          "event": "Dinner in Milan (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "9:00 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar",
+          "status": "Booked",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
+          "status": "Booked",
+          "address": null
+        }
+      ],
+      "stay": "iQ Hotel Milano, Milan (OPTION A)"
+    },
+    {
+      "title": "OPTION B - FERRARI MUSEUM, MARANELLO (23 SEP) [Total driving: 3h 40m]",
+      "events": [
+        {
+          "time": "9:00 AM",
+          "event": "Check out of Hotel Borgo di Cortefreda Relais & drive to Maranello (approx. 1h 40m)",
+          "status": null,
+          "address": "Directions: Tuscany to Maranello"
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Drive to Maranello (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "10:00 AM",
+          "event": "Drive to Maranello (continues - ends approx. 10:40am)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "11:00 AM",
+          "event": "Visit Museo Ferrari, Maranello",
+          "status": "Optional",
+          "address": "Via Dino Ferrari 43, 41053 Maranello (MO), Italy\nVisit Website: Museo Ferrari"
+        },
+        {
+          "time": "11:30 AM",
+          "event": "Visit Museo Ferrari, Maranello (continues)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Visit Museo Ferrari, Maranello (continues)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "12:30 PM",
+          "event": "Visit Museo Ferrari, Maranello (continues - ends approx. 1:00pm)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Lunch near Ferrari Museum, Maranello",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "1:30 PM",
+          "event": "Lunch near Ferrari Museum, Maranello (continues - ends approx. 2:00pm)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "2:00 PM",
+          "event": "Drive from Maranello to Milan (approx. 2h)",
+          "status": null,
+          "address": "Directions: Maranello to Milan"
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "3:30 PM",
+          "event": "Drive to Milan (continues - ends approx. 4:00pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Arrive Milan - Check-in at iQ Hotel Milano",
+          "status": null,
+          "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Dinner in Milan",
+          "status": "To Book",
+          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
+        },
+        {
+          "time": "7:30 PM",
+          "event": "Dinner in Milan (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "9:00 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar",
+          "status": "Booked",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
+          "status": "Booked",
+          "address": null
+        }
+      ],
+      "stay": "iQ Hotel Milano, Milan (OPTION B)"
+    },
+    {
+      "title": "OPTION C - VENICE LUNCH (23 SEP) [Total driving: 6h 20m]",
+      "events": [
+        {
+          "time": "6:00 AM",
+          "event": "Check out of Hotel Borgo di Cortefreda Relais & drive to Venice (approx. 3h 30m)",
+          "status": null,
+          "address": "Directions: Tuscany to Venice"
+        },
+        {
+          "time": "6:30 AM",
+          "event": "Drive to Venice (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "7:00 AM",
+          "event": "Drive to Venice (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "7:30 AM",
+          "event": "Drive to Venice (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "8:00 AM",
+          "event": "Drive to Venice (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "8:30 AM",
+          "event": "Drive to Venice (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Drive to Venice (continues - ends approx. 9:30am)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Arrive Venice - park at Tronchetto/Piazzale Roma (historic centre is car-free)",
+          "status": null,
+          "address": "Tronchetto Parking, Isola del Tronchetto, 30135 Venice, Italy"
+        },
+        {
+          "time": "10:00 AM",
+          "event": "Free time - explore St Mark's Square & Rialto Bridge",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "10:30 AM",
+          "event": "Free time in Venice (continues)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "11:00 AM",
+          "event": "Free time in Venice (continues)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "11:30 AM",
+          "event": "Free time in Venice (continues)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Free time in Venice (continues - ends approx. 12:30pm)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "12:30 PM",
+          "event": "Lunch in Venice",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Lunch in Venice (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "1:30 PM",
+          "event": "Lunch in Venice (continues - ends approx. 2:00pm)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "2:00 PM",
+          "event": "Drive from Venice to Milan (approx. 2h 50m)",
+          "status": null,
+          "address": "Directions: Venice to Milan"
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "3:30 PM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Drive to Milan (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "4:30 PM",
+          "event": "Drive to Milan (continues - ends approx. 4:50pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Arrive Milan - Check-in at iQ Hotel Milano",
+          "status": null,
+          "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Dinner in Milan",
+          "status": "To Book",
+          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
+        },
+        {
+          "time": "7:30 PM",
+          "event": "Dinner in Milan (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "9:00 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar",
+          "status": "Booked",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
+          "status": "Booked",
+          "address": null
+        }
+      ],
+      "stay": "iQ Hotel Milano, Milan (OPTION C)"
+    },
+    {
+      "title": "OPTION D - PISA & LEANING TOWER, LAKE COMO (23 SEP) [Total driving: approx. 5h 25m]",
+      "stay": "iQ Hotel Milano, Milan (OPTION D)",
+      "events": [
+        {
+          "time": "6:00 AM",
+          "event": "Check out of Hotel Borgo di Cortefreda Relais & drive to Pisa (approx. 1h 15m)",
+          "status": null,
+          "address": "Directions: Tuscany to Pisa"
+        },
+        {
+          "time": "6:30 AM",
+          "event": "Drive to Pisa (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "7:00 AM",
+          "event": "Drive to Pisa (continues - ends approx. 7:15am)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "7:30 AM",
+          "event": "Arrive Pisa - coffee near Piazza dei Miracoli",
+          "status": "Optional",
+          "address": "Piazza dei Miracoli, Pisa, Italy"
+        },
+        {
+          "time": "8:00 AM",
+          "event": "Skip-the-line Leaning Tower of Pisa - guided small-group tour (approx. 1h 30m, incl. tower climb)",
+          "status": "To Book",
+          "address": "Meeting point: P.za Daniele Manin 6, Pisa (near Porta Nuova gate)\nVisit Website: Viator - Pisa Skip-the-Line Tower Tour"
+        },
+        {
+          "time": "8:30 AM",
+          "event": "Leaning Tower of Pisa tour (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "9:00 AM",
+          "event": "Leaning Tower of Pisa tour (continues - ends approx. 9:30am)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Free time / photos at Piazza dei Miracoli",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "10:00 AM",
+          "event": "Drive from Pisa to Como (approx. 3h 10m)",
+          "status": null,
+          "address": "Directions: Pisa to Como"
+        },
+        {
+          "time": "10:30 AM",
+          "event": "Drive to Como (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "11:00 AM",
+          "event": "Drive to Como (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "11:30 AM",
+          "event": "Drive to Como (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Drive to Como (continues)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "12:30 PM",
+          "event": "Drive to Como (continues - ends approx. 1:10pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "1:00 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (Lake Como)",
+          "status": "Optional",
+          "address": "Via Besana 1, 22012 Cernobbio, Como, Italy\nVisit Website: Harry's Bar Cernobbio"
+        },
+        {
+          "time": "1:30 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (continues)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "2:00 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (continues - ends approx. 2:30pm)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Drive from Lake Como to Milan (approx. 1h)",
+          "status": null,
+          "address": "Directions: Lake Como to Milan"
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Drive to Milan (continues - ends approx. 3:30pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "3:30 PM",
+          "event": "Arrive Milan - Check-in at iQ Hotel Milano",
+          "status": null,
+          "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
+        },
+        {
+          "time": "7:00 PM",
+          "event": "Dinner in Milan",
+          "status": "To Book",
+          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
+        },
+        {
+          "time": "7:30 PM",
+          "event": "Dinner in Milan (continues)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "8:00 PM",
+          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
+          "status": "To Book",
+          "address": null
+        },
+        {
+          "time": "9:00 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar",
+          "status": "Booked",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
+        },
+        {
+          "time": "9:30 PM",
+          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
+          "status": "Booked",
+          "address": null
+        }
+      ]
+    }
+  ]
+}

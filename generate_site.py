@@ -1081,7 +1081,7 @@ DAY24_MAP = {
     'stops': [
         {'name': 'iQ Hotel Milano', 'note': 'Start of day - check out'},
         {'name': 'Milan Linate Airport', 'note': '12:00pm - Return hire car'},
-        {'name': 'London Heathrow Airport (Terminal 5)', 'note': '2:50pm - Arrive on flight BA0571'},
+        {'name': 'London Heathrow Airport (Terminal 5)', 'note': '2:50pm - Arrive on flight BA575'},
         {'name': 'The Level at Melia White House', 'note': '4:00pm - Arrive, check in / drop bags'},
         {'name': 'Tapas & Gin for Deb', 'note': '4:30pm - venue not yet booked, see Things to Do'},
         {'name': 'The Lighterman, Granary Square', 'note': '6:30pm - Dinner'},
@@ -1089,7 +1089,7 @@ DAY24_MAP = {
     ],
     'legs': [
         {'time': '~20 min', 'distance': '~8 km', 'method': 'Drive: iQ Hotel Milano to Milan Linate Airport (car return)'},
-        {'time': '~1h 50m flight', 'distance': '~1,000 km', 'method': 'Flight BA0571, Milan Linate to London Heathrow (only ~20 min apart on local clocks due to the UK/Italy time difference)'},
+        {'time': '~1h 50m flight', 'distance': '~1,000 km', 'method': 'Flight BA575, Milan Linate to London Heathrow (only ~20 min apart on local clocks due to the UK/Italy time difference)'},
         {'time': '~50 min tube + walk', 'distance': '~24 km', 'method': 'Elizabeth line from Heathrow Terminal 5 to Paddington, then Hammersmith & City/Circle line to Great Portland Street (~£15.50pp), then ~2-3 min walk to the hotel'},
         {'time': 'TBC', 'distance': 'TBC', 'method': 'Venue not yet booked – see Things to Do for options near the hotel'},
         {'time': '~20 min', 'distance': '~1 mile', 'method': 'Walk towards King’s Cross/Granary Square (estimate assumes the Tapas & Gin venue ends up near the hotel – recheck once booked)'},
@@ -2178,6 +2178,14 @@ table.ttc th, table.ntb th { background:var(--navy); color:#fff; padding:10px 12
 table.ttc td, table.ntb td { padding:10px 12px; border-bottom:1px solid #f0eee8; vertical-align:top; }
 .ttc-day, .ntb-date { font-weight:700; white-space:nowrap; color:var(--navy); }
 .ttc-notes, .ntb-notes { color:var(--muted); font-size:.85rem; }
+table.flight-table tr.flight-gk td { background:var(--london-light); }
+table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
+.flight-legend { display:flex; flex-wrap:wrap; gap:18px; align-items:center; font-size:.82rem; color:var(--muted); margin:-14px 0 26px; }
+.flight-legend span { display:inline-flex; align-items:center; gap:6px; }
+.flight-swatch { display:inline-block; width:14px; height:14px; border-radius:3px; }
+.flight-swatch.gk { background:var(--london-light); border:1px solid var(--london); }
+.flight-swatch.dt { background:var(--tuscany-light); border:1px solid var(--tuscany); }
+.flight-swatch.all { background:var(--card-bg); border:1px solid #ccc; }
 .ntb-flag { color:#c0392b; font-weight:700; font-size:.85rem; margin-top:4px; }
 .ntb-tick { text-align:center; }
 .tickbox { display:inline-block; width:18px; height:18px; border:2px solid var(--navy); border-radius:4px; }
@@ -2231,6 +2239,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   h2 { page-break-before: always; break-before: page; page-break-after: avoid; }
   h3 { page-break-after: avoid; break-after: avoid-page; }
   #overview h2 { page-break-before: avoid; break-before: avoid; }
+  #flights h2 { page-break-before: avoid; break-before: avoid; }
   .hero, .ship-banner, .map-wrap { page-break-inside: avoid; break-inside: avoid; }
   body.printing-book .day-card, body.printing-book .place-card { page-break-inside: auto; break-inside: auto; }
 ''' + '\n'.join(
@@ -2238,7 +2247,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -2313,7 +2322,37 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 }
 '''
 
+FLIGHTS = [
+    ('Thu 10 Sept', 'QF162', 'Wellington (WLG) &rarr; Sydney (SYD)', '6:05am &rarr; 7:45am', 'Business', '3h 40m', 'gk'),
+    ('Thu 10 Sept', 'QF1', 'Sydney (SYD) &rarr; Singapore (SIN)', '2:45pm &rarr; 9:15pm', 'Premium Economy', '8h 30m', 'all'),
+    ('Thu 10 &ndash; Fri 11 Sept', 'BA12', 'Singapore (SIN) &rarr; London Heathrow (LHR)', '11:20/11:25pm &rarr; 6:35am +1', 'Premium Economy', '~14h 10-15m', 'all'),
+    ('Fri 11 Sept', 'BA548', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Business', '2h 35m', 'gk'),
+    ('Fri 11 Sept', 'BA548', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Economy', '2h 35m', 'dt'),
+    ('Thu 24 Sept', 'BA575', 'Milan Linate (LIN) &rarr; London Heathrow (LHR)', '3:55pm &rarr; 4:50pm', 'Business', '1h 55m', 'all'),
+    ('Sun 27 &ndash; Mon 28 Sept', 'BA15', 'London Heathrow (LHR) &rarr; Singapore (SIN)', '10:00pm &rarr; 6:40pm +1', 'Premium Economy', '13h 40m', 'all'),
+    ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; 6:05am +1', 'Premium Economy', '7h 45m', 'all'),
+    ('Tue 29 Sept', 'QF161', 'Sydney (SYD) &rarr; Wellington (WLG)', '9:35am &rarr; 3:45pm', 'Economy', '3h 10m', 'gk'),
+]
+FLIGHT_WHO = {'gk': 'Karen &amp; Gary only', 'dt': 'Debbie &amp; Tom only', 'all': 'All 4'}
+flight_rows_html = ''.join(
+    f'<tr class="flight-{who}"><td>{date}</td><td>{flight}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td><td>{FLIGHT_WHO[who]}</td></tr>'
+    for date, flight, route, times, cabin, dur, who in FLIGHTS
+)
+FLIGHTS_TABLE_HTML = f'''
+<table class="ttc flight-table">
+  <tr><th>Date</th><th>Flight</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th><th>Travellers</th></tr>
+  {flight_rows_html}
+</table>
+<div class="flight-legend">
+  <span><span class="flight-swatch gk"></span>Karen &amp; Gary only</span>
+  <span><span class="flight-swatch dt"></span>Debbie &amp; Tom only</span>
+  <span><span class="flight-swatch all"></span>All 4 together</span>
+</div>
+<p class="tt-note">All flights are on 2026 dates, operated by Qantas (QF) and British Airways (BA). Reservation codes: Gary &amp; Karen &ndash; KXFECY / EKNMYW; Debbie &amp; Tom &ndash; UWBGQP / EKH3PP (the Akhursts join the group in Sydney, so have no Wellington&ndash;Sydney sector). Frequent flyer numbers, seat assignments and check-in requirements are held in the original Sabre itinerary emails.</p>
+'''
+
 NAV_SECTIONS = [
+    ('flights', '&#9992;&#65039;', 'Flights'),
     ('overview', '&#129517;', 'Overview'),
     ('rome', '&#127963;&#65039;', 'Rome'),
     ('cruise', '&#128674;', 'Cruise'),
@@ -2405,6 +2444,11 @@ HTML = f'''<!DOCTYPE html>
   <span id="passportReminderText">Reminder: Check our passports are valid!</span>
   <a href="#needtobook" onclick="revealPassportChecklist()">Go to checklist</a>
 </div>
+
+<section id="flights" class="print-block" data-section="flights">
+  <h2>Flight Summary</h2>
+  {FLIGHTS_TABLE_HTML}
+</section>
 
 <section id="overview" class="print-block" data-section="overview">
   <h2>Trip at a Glance</h2>
