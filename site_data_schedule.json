@@ -11,9 +11,9 @@
         },
         {
           "time": "2:30 PM",
-          "event": "Flight BA575 Milan (Linate) to London Heathrow - arrives 2:50pm",
+          "event": "Flight BA575 (British Airways) Milan Linate to London Heathrow (T5) - arrives 2:50pm",
           "status": null,
-          "address": "Milan Linate (LIN) to London Heathrow (LHR)"
+          "address": "Milan Linate (LIN) to London Heathrow (LHR Terminal 5)"
         },
         {
           "time": "3:00 PM",
@@ -281,7 +281,7 @@
         },
         {
           "time": "10:00 PM",
-          "event": "Depart London Heathrow at 10.00pm (BA0015 LHR-SIN PE ~ BA0015 SIN-SYD PE)",
+          "event": "Depart London Heathrow (T5) at 10.00pm - BA15 (British Airways) LHR (T5) to SIN (T1) PE, then BA15 SIN (T1) to SYD (T1) PE",
           "status": null,
           "address": "Heathrow Airport, Hounslow TW6 1EW"
         }
@@ -295,7 +295,7 @@
       "events": [
         {
           "time": "11:30 AM",
-          "event": "Arrive Fiumicino Airport (FCO) 11.35am",
+          "event": "Arrive Fiumicino Airport (FCO Terminal 3) 11.35am - flight BA548 (British Airways) from London Heathrow (T5)",
           "status": null,
           "address": null
         },

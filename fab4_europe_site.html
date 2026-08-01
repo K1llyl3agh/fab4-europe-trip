@@ -63,12 +63,12 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 #overview { padding:16px 20px 4px; }
 #overview h2 { font-size:1.3rem; margin-bottom:4px; padding-left:10px; border-left-width:4px; }
 #overview .lede { margin-bottom:8px; font-size:.85rem; }
-#overview .timeline { gap:4px; margin-bottom:8px; }
-#overview .tl-row { padding:5px 10px; gap:8px; grid-template-columns:95px 1fr 28px; border-radius:6px; }
-#overview .tl-date { font-size:.75rem; }
-#overview .tl-where { font-size:.88rem; }
-#overview .tl-what { font-size:.78rem; }
-#overview .tl-notes { font-size:.7rem; margin-top:0; }
+#overview .timeline { gap:2px; margin-bottom:6px; }
+#overview .tl-row { padding:3px 8px; gap:8px; grid-template-columns:95px 1fr 28px; border-radius:6px; }
+#overview .tl-date { font-size:.74rem; }
+#overview .tl-where { font-size:.87rem; }
+#overview .tl-what { font-size:.76rem; line-height:1.25; }
+#overview .tl-notes { font-size:.68rem; margin-top:0; line-height:1.2; }
 #overview .tl-flag { font-size:1.1rem; }
 .tl-row { display:grid; grid-template-columns:130px 1fr 32px; gap:14px; background:var(--card-bg); border-radius:10px; padding:12px 16px; box-shadow:0 1px 4px rgba(0,0,0,.06); border-left:5px solid var(--navy); }
 .tl-row.rome { border-left-color:var(--rome); }
@@ -204,8 +204,14 @@ table.ttc th, table.ntb th { background:var(--navy); color:#fff; padding:10px 12
 table.ttc td, table.ntb td { padding:10px 12px; border-bottom:1px solid #f0eee8; vertical-align:top; }
 .ttc-day, .ntb-date { font-weight:700; white-space:nowrap; color:var(--navy); }
 .ttc-notes, .ntb-notes { color:var(--muted); font-size:.85rem; }
+table.flight-table { font-size:.82rem; }
+table.flight-table th, table.flight-table td { padding:8px 9px; }
 table.flight-table tr.flight-gk td { background:var(--london-light); }
 table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
+@media print {
+  table.flight-table { font-size:.72rem; }
+  table.flight-table th, table.flight-table td { padding:5px 6px; }
+}
 .flight-legend { display:flex; flex-wrap:wrap; gap:18px; align-items:center; font-size:.82rem; color:var(--muted); margin:-14px 0 26px; }
 .flight-legend span { display:inline-flex; align-items:center; gap:6px; }
 .flight-swatch { display:inline-block; width:14px; height:14px; border-radius:3px; }
@@ -607,8 +613,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   <h2>Flight Summary</h2>
   
 <table class="ttc flight-table">
-  <tr><th>Date</th><th>Flight</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th><th>Travellers</th></tr>
-  <tr class="flight-gk"><td>Thu 10 Sept</td><td>QF162</td><td>Wellington (WLG) &rarr; Sydney (SYD)</td><td>6:05am &rarr; 7:45am</td><td>Business</td><td>3h 40m</td><td>Karen &amp; Gary only</td></tr><tr class="flight-all"><td>Thu 10 Sept</td><td>QF1</td><td>Sydney (SYD) &rarr; Singapore (SIN)</td><td>2:45pm &rarr; 9:15pm</td><td>Premium Economy</td><td>8h 30m</td><td>All 4</td></tr><tr class="flight-all"><td>Thu 10 &ndash; Fri 11 Sept</td><td>BA12</td><td>Singapore (SIN) &rarr; London Heathrow (LHR)</td><td>11:20/11:25pm &rarr; 6:35am +1</td><td>Premium Economy</td><td>~14h 10-15m</td><td>All 4</td></tr><tr class="flight-gk"><td>Fri 11 Sept</td><td>BA548</td><td>London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)</td><td>8:00am &rarr; 11:35am</td><td>Business</td><td>2h 35m</td><td>Karen &amp; Gary only</td></tr><tr class="flight-dt"><td>Fri 11 Sept</td><td>BA548</td><td>London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)</td><td>8:00am &rarr; 11:35am</td><td>Economy</td><td>2h 35m</td><td>Debbie &amp; Tom only</td></tr><tr class="flight-all"><td>Thu 24 Sept</td><td>BA575</td><td>Milan Linate (LIN) &rarr; London Heathrow (LHR)</td><td>3:55pm &rarr; 4:50pm</td><td>Business</td><td>1h 55m</td><td>All 4</td></tr><tr class="flight-all"><td>Sun 27 &ndash; Mon 28 Sept</td><td>BA15</td><td>London Heathrow (LHR) &rarr; Singapore (SIN)</td><td>10:00pm &rarr; 6:40pm +1</td><td>Premium Economy</td><td>13h 40m</td><td>All 4</td></tr><tr class="flight-all"><td>Mon 28 &ndash; Tue 29 Sept</td><td>BA15</td><td>Singapore (SIN) &rarr; Sydney (SYD)</td><td>8:20pm &rarr; 6:05am +1</td><td>Premium Economy</td><td>7h 45m</td><td>All 4</td></tr><tr class="flight-gk"><td>Tue 29 Sept</td><td>QF161</td><td>Sydney (SYD) &rarr; Wellington (WLG)</td><td>9:35am &rarr; 3:45pm</td><td>Economy</td><td>3h 10m</td><td>Karen &amp; Gary only</td></tr>
+  <tr><th>Date</th><th>Flight</th><th>Terminal</th><th>Airline</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th></tr>
+  <tr class="flight-gk"><td>Thu 10 Sept</td><td>QF162</td><td>T1 &rarr; T1</td><td>Qantas</td><td>Wellington (WLG) &rarr; Sydney (SYD)</td><td>6:05am &rarr; 7:45am</td><td>Business</td><td>3h 40m</td></tr><tr class="flight-all"><td>Thu 10 Sept</td><td>QF1</td><td>T1 &rarr; T1</td><td>Qantas</td><td>Sydney (SYD) &rarr; Singapore (SIN)</td><td>2:45pm &rarr; 9:15pm</td><td>Premium Economy</td><td>8h 30m</td></tr><tr class="flight-all"><td>Thu 10 &ndash; Fri 11 Sept</td><td>BA12</td><td>T1 &rarr; T5</td><td>British Airways</td><td>Singapore (SIN) &rarr; London Heathrow (LHR)</td><td>11:20/11:25pm &rarr; 6:35am +1</td><td>Premium Economy</td><td>~14h 10-15m</td></tr><tr class="flight-gk"><td>Fri 11 Sept</td><td>BA548</td><td>T5 &rarr; T3</td><td>British Airways</td><td>London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)</td><td>8:00am &rarr; 11:35am</td><td>Business</td><td>2h 35m</td></tr><tr class="flight-dt"><td>Fri 11 Sept</td><td>BA548</td><td>T5 &rarr; T3</td><td>British Airways</td><td>London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)</td><td>8:00am &rarr; 11:35am</td><td>Economy</td><td>2h 35m</td></tr><tr class="flight-all"><td>Thu 24 Sept</td><td>BA575</td><td>n/a &rarr; T5</td><td>British Airways</td><td>Milan Linate (LIN) &rarr; London Heathrow (LHR)</td><td>3:55pm &rarr; 4:50pm</td><td>Business</td><td>1h 55m</td></tr><tr class="flight-all"><td>Sun 27 &ndash; Mon 28 Sept</td><td>BA15</td><td>T5 &rarr; T1</td><td>British Airways</td><td>London Heathrow (LHR) &rarr; Singapore (SIN)</td><td>10:00pm &rarr; 6:40pm +1</td><td>Premium Economy</td><td>13h 40m</td></tr><tr class="flight-all"><td>Mon 28 &ndash; Tue 29 Sept</td><td>BA15</td><td>T1 &rarr; T1</td><td>British Airways</td><td>Singapore (SIN) &rarr; Sydney (SYD)</td><td>8:20pm &rarr; 6:05am +1</td><td>Premium Economy</td><td>7h 45m</td></tr><tr class="flight-gk"><td>Tue 29 Sept</td><td>QF161</td><td>T1 &rarr; n/a</td><td>Qantas</td><td>Sydney (SYD) &rarr; Wellington (WLG)</td><td>9:35am &rarr; 3:45pm</td><td>Economy</td><td>3h 10m</td></tr>
 </table>
 <div class="flight-legend">
   <span><span class="flight-swatch gk"></span>Karen &amp; Gary only</span>
@@ -627,8 +633,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       <div class="tl-date">Thu 10 Sep</div>
       <div>
         <div class="tl-where">Air travel</div>
-        <div class="tl-what">Gary and Karen Wgtn to Syd arrive 7.45am - FAB4 Depart 2.45pm</div>
-        <div class="tl-notes">SING transit 2hrs arrive LHR 6.35am Depart 8.00am</div>
+        <div class="tl-what">Gary &amp; Karen: QF162 (Qantas) Wgtn (WLG) to Syd (T1), arrive 7.45am - FAB4: QF1 (Qantas) Syd (T1) to Singapore (T1), depart 2.45pm, PE</div>
+        <div class="tl-notes">SIN transit ~2hrs (T1) - BA12 SIN (T1) to LHR (T5) arrive 6.35am, then BA548 LHR (T5) to FCO (T3) depart 8.00am (both British Airways) - Business Gary &amp; Karen / Economy Debbie &amp; Tom</div>
       </div>
       <div class="tl-flag" title="Flying">&#9992;&#65039;</div>
     </div>
@@ -754,7 +760,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       <div>
         <div class="tl-where">London</div>
         <div class="tl-what">Dinner at The Lighterman confirmed (4NJL3Z4M6XN3)</div>
-        
+        <div class="tl-notes">BA575 (British Airways) Milan Linate to London Heathrow (T5), Depart 3.55pm arrive 4.50pm, Business, all 4</div>
       </div>
       <div class="tl-flag" title="UK">&#127468;&#127463;</div>
     </div>
@@ -779,8 +785,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row air">
       <div class="tl-date">Sun 27 Sep</div>
       <div>
-        <div class="tl-where">Air Travel – Depart LHR 10.00pm</div>
-        <div class="tl-what"></div>
+        <div class="tl-where">Air Travel – Depart LHR (T5) 10.00pm</div>
+        <div class="tl-what">BA15 (British Airways) London Heathrow (T5) to Singapore (SIN T1), Premium Economy, all 4</div>
         
       </div>
       <div class="tl-flag" title="Flying">&#9992;&#65039;</div>
@@ -788,8 +794,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row air">
       <div class="tl-date">Mon 28 Sep</div>
       <div>
-        <div class="tl-where">Air Travel – Arrive SIN 6.40pm - Depart 8.20pm</div>
-        <div class="tl-what"></div>
+        <div class="tl-where">Air Travel – Arrive SIN (T1) 6.40pm - Depart 8.20pm</div>
+        <div class="tl-what">BA15 (British Airways) Singapore (SIN T1) to Sydney (SYD T1), Premium Economy, all 4</div>
         
       </div>
       <div class="tl-flag" title="Flying">&#9992;&#65039;</div>
@@ -798,7 +804,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       <div class="tl-date">Tue 29 Sep</div>
       <div>
         <div class="tl-where">HOME</div>
-        <div class="tl-what">FAB4 Arrive SYD 6.05am (Karen and Gary depart SYD 9.35am arrive WGTN 3.45pm</div>
+        <div class="tl-what">FAB4 Arrive SYD (T1) 6.05am (Karen and Gary depart SYD (T1) 9.35am on QF161 (Qantas), Economy, arrive WGTN 3.45pm</div>
         
       </div>
       <div class="tl-flag" title="Flying home">&#9992;&#65039;</div>
@@ -825,7 +831,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
         <div class="ev-row">
           <div class="ev-time">11:30 AM</div>
           <div class="ev-body">
-            <div class="ev-name">Arrive Fiumicino Airport (FCO) 11.35am  </div>
+            <div class="ev-name">Arrive Fiumicino Airport (FCO Terminal 3) 11.35am - flight BA548 (British Airways) from London Heathrow (T5)  </div>
             
             
             
@@ -4960,8 +4966,8 @@ Directions from iQ Hotel Milano</div>
         <div class="ev-row">
           <div class="ev-time">2:30 PM</div>
           <div class="ev-body">
-            <div class="ev-name">Flight BA575 Milan (Linate) to London Heathrow - arrives 2:50pm  </div>
-            <div class="ev-addr">Milan Linate (LIN) to London Heathrow (LHR)</div>
+            <div class="ev-name">Flight BA575 (British Airways) Milan Linate to London Heathrow (T5) - arrives 2:50pm  </div>
+            <div class="ev-addr">Milan Linate (LIN) to London Heathrow (LHR Terminal 5)</div>
             
             
             
@@ -5102,7 +5108,7 @@ Directions from iQ Hotel Milano</div>
           <div class="dm-leg-line"></div>
           <div class="dm-leg-body">
             <div class="dm-leg-head">Milan Linate Airport &rarr; London Heathrow Airport (Terminal 5)</div>
-            <div class="dm-leg-text">~1h 50m flight &middot; ~1,000 km &middot; Flight BA575, Milan Linate to London Heathrow (only ~20 min apart on local clocks due to the UK/Italy time difference)</div>
+            <div class="dm-leg-text">~1h 50m flight &middot; ~1,000 km &middot; Flight BA575 (British Airways), Milan Linate to London Heathrow (T5) (only ~20 min apart on local clocks due to the UK/Italy time difference)</div>
           </div>
         </div>
         <div class="dm-stop">
@@ -5704,7 +5710,7 @@ Visit Website: Headout</div>
       </div>
     </div>
     <div class="day-card theme-london" data-day-id="day-27">
-      <div class="day-head"><span class="day-title">SUNDAY (DAY 27)</span><span class="day-head-right"><button class="print-mini print-day-btn no-print" onclick="printDay('day-27')">Print Day</button><span class="day-loc">Air Travel – Depart LHR 10.00pm</span></span></div>
+      <div class="day-head"><span class="day-title">SUNDAY (DAY 27)</span><span class="day-head-right"><button class="print-mini print-day-btn no-print" onclick="printDay('day-27')">Print Day</button><span class="day-loc">Air Travel – Depart LHR (T5) 10.00pm</span></span></div>
       <div class="day-body">
         
     <div class="fun-fact-box">
@@ -5744,7 +5750,7 @@ Visit Website: Headout</div>
         <div class="ev-row">
           <div class="ev-time">10:00 PM</div>
           <div class="ev-body">
-            <div class="ev-name">Depart London Heathrow at 10.00pm (BA0015 LHR-SIN PE ~ BA0015 SIN-SYD PE)  </div>
+            <div class="ev-name">Depart London Heathrow (T5) at 10.00pm - BA15 (British Airways) LHR (T5) to SIN (T1) PE, then BA15 SIN (T1) to SYD (T1) PE  </div>
             <div class="ev-addr">Heathrow Airport, Hounslow TW6 1EW</div>
             
             

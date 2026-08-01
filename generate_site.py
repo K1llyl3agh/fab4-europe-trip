@@ -1089,7 +1089,7 @@ DAY24_MAP = {
     ],
     'legs': [
         {'time': '~20 min', 'distance': '~8 km', 'method': 'Drive: iQ Hotel Milano to Milan Linate Airport (car return)'},
-        {'time': '~1h 50m flight', 'distance': '~1,000 km', 'method': 'Flight BA575, Milan Linate to London Heathrow (only ~20 min apart on local clocks due to the UK/Italy time difference)'},
+        {'time': '~1h 50m flight', 'distance': '~1,000 km', 'method': 'Flight BA575 (British Airways), Milan Linate to London Heathrow (T5) (only ~20 min apart on local clocks due to the UK/Italy time difference)'},
         {'time': '~50 min tube + walk', 'distance': '~24 km', 'method': 'Elizabeth line from Heathrow Terminal 5 to Paddington, then Hammersmith & City/Circle line to Great Portland Street (~£15.50pp), then ~2-3 min walk to the hotel'},
         {'time': 'TBC', 'distance': 'TBC', 'method': 'Venue not yet booked – see Things to Do for options near the hotel'},
         {'time': '~20 min', 'distance': '~1 mile', 'method': 'Walk towards King’s Cross/Granary Square (estimate assumes the Tapas & Gin venue ends up near the hotel – recheck once booked)'},
@@ -2062,12 +2062,12 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 #overview { padding:16px 20px 4px; }
 #overview h2 { font-size:1.3rem; margin-bottom:4px; padding-left:10px; border-left-width:4px; }
 #overview .lede { margin-bottom:8px; font-size:.85rem; }
-#overview .timeline { gap:4px; margin-bottom:8px; }
-#overview .tl-row { padding:5px 10px; gap:8px; grid-template-columns:95px 1fr 28px; border-radius:6px; }
-#overview .tl-date { font-size:.75rem; }
-#overview .tl-where { font-size:.88rem; }
-#overview .tl-what { font-size:.78rem; }
-#overview .tl-notes { font-size:.7rem; margin-top:0; }
+#overview .timeline { gap:2px; margin-bottom:6px; }
+#overview .tl-row { padding:3px 8px; gap:8px; grid-template-columns:95px 1fr 28px; border-radius:6px; }
+#overview .tl-date { font-size:.74rem; }
+#overview .tl-where { font-size:.87rem; }
+#overview .tl-what { font-size:.76rem; line-height:1.25; }
+#overview .tl-notes { font-size:.68rem; margin-top:0; line-height:1.2; }
 #overview .tl-flag { font-size:1.1rem; }
 .tl-row { display:grid; grid-template-columns:130px 1fr 32px; gap:14px; background:var(--card-bg); border-radius:10px; padding:12px 16px; box-shadow:0 1px 4px rgba(0,0,0,.06); border-left:5px solid var(--navy); }
 .tl-row.rome { border-left-color:var(--rome); }
@@ -2178,8 +2178,14 @@ table.ttc th, table.ntb th { background:var(--navy); color:#fff; padding:10px 12
 table.ttc td, table.ntb td { padding:10px 12px; border-bottom:1px solid #f0eee8; vertical-align:top; }
 .ttc-day, .ntb-date { font-weight:700; white-space:nowrap; color:var(--navy); }
 .ttc-notes, .ntb-notes { color:var(--muted); font-size:.85rem; }
+table.flight-table { font-size:.82rem; }
+table.flight-table th, table.flight-table td { padding:8px 9px; }
 table.flight-table tr.flight-gk td { background:var(--london-light); }
 table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
+@media print {
+  table.flight-table { font-size:.72rem; }
+  table.flight-table th, table.flight-table td { padding:5px 6px; }
+}
 .flight-legend { display:flex; flex-wrap:wrap; gap:18px; align-items:center; font-size:.82rem; color:var(--muted); margin:-14px 0 26px; }
 .flight-legend span { display:inline-flex; align-items:center; gap:6px; }
 .flight-swatch { display:inline-block; width:14px; height:14px; border-radius:3px; }
@@ -2323,24 +2329,24 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 '''
 
 FLIGHTS = [
-    ('Thu 10 Sept', 'QF162', 'Wellington (WLG) &rarr; Sydney (SYD)', '6:05am &rarr; 7:45am', 'Business', '3h 40m', 'gk'),
-    ('Thu 10 Sept', 'QF1', 'Sydney (SYD) &rarr; Singapore (SIN)', '2:45pm &rarr; 9:15pm', 'Premium Economy', '8h 30m', 'all'),
-    ('Thu 10 &ndash; Fri 11 Sept', 'BA12', 'Singapore (SIN) &rarr; London Heathrow (LHR)', '11:20/11:25pm &rarr; 6:35am +1', 'Premium Economy', '~14h 10-15m', 'all'),
-    ('Fri 11 Sept', 'BA548', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Business', '2h 35m', 'gk'),
-    ('Fri 11 Sept', 'BA548', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Economy', '2h 35m', 'dt'),
-    ('Thu 24 Sept', 'BA575', 'Milan Linate (LIN) &rarr; London Heathrow (LHR)', '3:55pm &rarr; 4:50pm', 'Business', '1h 55m', 'all'),
-    ('Sun 27 &ndash; Mon 28 Sept', 'BA15', 'London Heathrow (LHR) &rarr; Singapore (SIN)', '10:00pm &rarr; 6:40pm +1', 'Premium Economy', '13h 40m', 'all'),
-    ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; 6:05am +1', 'Premium Economy', '7h 45m', 'all'),
-    ('Tue 29 Sept', 'QF161', 'Sydney (SYD) &rarr; Wellington (WLG)', '9:35am &rarr; 3:45pm', 'Economy', '3h 10m', 'gk'),
+    ('Thu 10 Sept', 'QF162', 'Qantas', 'T1 &rarr; T1', 'Wellington (WLG) &rarr; Sydney (SYD)', '6:05am &rarr; 7:45am', 'Business', '3h 40m', 'gk'),
+    ('Thu 10 Sept', 'QF1', 'Qantas', 'T1 &rarr; T1', 'Sydney (SYD) &rarr; Singapore (SIN)', '2:45pm &rarr; 9:15pm', 'Premium Economy', '8h 30m', 'all'),
+    ('Thu 10 &ndash; Fri 11 Sept', 'BA12', 'British Airways', 'T1 &rarr; T5', 'Singapore (SIN) &rarr; London Heathrow (LHR)', '11:20/11:25pm &rarr; 6:35am +1', 'Premium Economy', '~14h 10-15m', 'all'),
+    ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Business', '2h 35m', 'gk'),
+    ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Economy', '2h 35m', 'dt'),
+    ('Thu 24 Sept', 'BA575', 'British Airways', 'n/a &rarr; T5', 'Milan Linate (LIN) &rarr; London Heathrow (LHR)', '3:55pm &rarr; 4:50pm', 'Business', '1h 55m', 'all'),
+    ('Sun 27 &ndash; Mon 28 Sept', 'BA15', 'British Airways', 'T5 &rarr; T1', 'London Heathrow (LHR) &rarr; Singapore (SIN)', '10:00pm &rarr; 6:40pm +1', 'Premium Economy', '13h 40m', 'all'),
+    ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'British Airways', 'T1 &rarr; T1', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; 6:05am +1', 'Premium Economy', '7h 45m', 'all'),
+    ('Tue 29 Sept', 'QF161', 'Qantas', 'T1 &rarr; n/a', 'Sydney (SYD) &rarr; Wellington (WLG)', '9:35am &rarr; 3:45pm', 'Economy', '3h 10m', 'gk'),
 ]
 FLIGHT_WHO = {'gk': 'Karen &amp; Gary only', 'dt': 'Debbie &amp; Tom only', 'all': 'All 4'}
 flight_rows_html = ''.join(
-    f'<tr class="flight-{who}"><td>{date}</td><td>{flight}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td><td>{FLIGHT_WHO[who]}</td></tr>'
-    for date, flight, route, times, cabin, dur, who in FLIGHTS
+    f'<tr class="flight-{who}"><td>{date}</td><td>{flight}</td><td>{terminals}</td><td>{airline}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td></tr>'
+    for date, flight, airline, terminals, route, times, cabin, dur, who in FLIGHTS
 )
 FLIGHTS_TABLE_HTML = f'''
 <table class="ttc flight-table">
-  <tr><th>Date</th><th>Flight</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th><th>Travellers</th></tr>
+  <tr><th>Date</th><th>Flight</th><th>Terminal</th><th>Airline</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th></tr>
   {flight_rows_html}
 </table>
 <div class="flight-legend">
