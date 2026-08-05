@@ -422,6 +422,16 @@
   "need_to_book": [
     {
       "date": "Sat 12 Sep",
+      "item": "Book Vatican Necropolis (Scavi Tour) - Tomb of St Peter",
+      "status": "To Book",
+      "notes": "Guided tour beneath St Peter's Basilica ending at the tomb believed to hold St Peter's remains - must be booked well in advance (small groups, no photos allowed). Slotted into Saturday afternoon (after the Pristine Sistine tour and lunch) as one of the free-afternoon options.",
+      "flag": "Book ahead - popular, limited daily slots.",
+      "website": "https://www.basilicasanpietro.va/en/products/the-necropolis",
+      "review": "https://www.tripadvisor.com/Attraction_Review-g187793-d195269-Reviews-Necropolis_of_Saint_Peter-Vatican_City_Lazio.html",
+      "w3w": "searched.circling.supposed"
+    },
+    {
+      "date": "Sat 12 Sep",
       "item": "Dinner reservation - Rome (Veal Scaloppine al limone)",
       "status": "To Confirm",
       "notes": "Choose from: Cantina Cantarini da Mario, Girarrosto Fiorentino, Colline Emiliane, Trattoria Monti - see Rome Map tab",

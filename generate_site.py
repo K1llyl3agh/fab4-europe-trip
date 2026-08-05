@@ -851,15 +851,17 @@ def ttc_row(t):
 
 def ntb_row(n):
     web = f'<a class="pill" href="{esc(n["website"])}" target="_blank">Visit</a>' if n.get('website') else ''
+    review = f'<a class="pill pill-review" href="{esc(n["review"])}" target="_blank">Reviews</a>' if n.get('review') else ''
     flag_html = f'<div class="ntb-flag">{esc(n["flag"])}</div>' if n.get('flag') else ''
+    w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(n["w3w"])}" target="_blank" title="what3words location">///{esc(n["w3w"])}</a>' if n.get('w3w') else ''
     return f'''
     <tr>
       <td class="ntb-date">{esc(n['date'])}</td>
-      <td>{esc(n['item'])}</td>
+      <td>{esc(n['item'])} {w3w_html}</td>
       <td>{badge(n['status'])}</td>
       <td class="ntb-notes">{esc(n.get('notes') or '')}{flag_html}</td>
       <td class="ntb-tick"><span class="tickbox"></span></td>
-      <td>{web}</td>
+      <td>{web}{review}</td>
     </tr>'''
 
 def tt_row(t, idx):
@@ -1009,8 +1011,13 @@ AFTERNOON_12SEP = [
      'address': 'Piazza Navona, Rome', 'website': None, 'review': None},
     {'place': 'Galleria Borghese', 'type': 'World-class Bernini/Caravaggio art collection - needs a pre-booked timed entry ticket, so only if booked in advance',
      'address': 'Piazzale Scipione Borghese 5, Rome', 'website': 'https://galleriaborghese.beniculturali.it/en/', 'review': None},
+    {'place': "Vatican Necropolis (Scavi Tour) - Tomb of St Peter", 'type': 'Guided tour through the ancient necropolis beneath St Peter\'s Basilica, ending at the tomb believed to hold St Peter\'s remains - must be booked well in advance, no photos allowed, small groups only',
+     'address': 'Meet at the Ufficio Scavi (Excavations Office), Piazza San Pietro, Vatican City',
+     'website': 'https://www.basilicasanpietro.va/en/products/the-necropolis',
+     'review': 'https://www.tripadvisor.com/Attraction_Review-g187793-d195269-Reviews-Necropolis_of_Saint_Peter-Vatican_City_Lazio.html',
+     'w3w': 'searched.circling.supposed'},
 ]
-afternoon_box_12sep = dinner_box('Saturday Afternoon Suggestions (5 ideas, after lunch)', AFTERNOON_12SEP)
+afternoon_box_12sep = dinner_box('Saturday Afternoon Suggestions (6 ideas, after lunch)', AFTERNOON_12SEP)
 
 LUNCH_13SEP = [
     {'place': 'Il Salotto del Colosseo', 'type': 'TripAdvisor 4.7★ - "great lunch by the Colosseum", cosy hidden gem',
@@ -2682,7 +2689,7 @@ HTML = f'''<!DOCTYPE html>
   </div>
   <p class="lede">Everything still to book or confirm, pulled together from across the itinerary.</p>
   <table class="ntb">
-    <tr><th>Date</th><th>Item</th><th>Status</th><th>Notes</th><th>Booked?</th><th>Website</th></tr>
+    <tr><th>Date</th><th>Item</th><th>Status</th><th>Notes</th><th>Booked?</th><th>Links</th></tr>
     {ntb_html}
   </table>
 
