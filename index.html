@@ -30,6 +30,9 @@ a { color: inherit; }
 @media print { .hero-next-trip { display:none !important; } }
 .hero-countdown-wrap { margin-top:16px; text-align:center; }
 .hero-countdown-label { font-size:.75rem; letter-spacing:.09em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; font-weight:700; }
+.polarsteps-link { display:inline-flex; align-items:center; gap:6px; margin-top:14px; padding:7px 16px; border-radius:20px; background:rgba(255,255,255,.12); color:#fff; text-decoration:none; font-size:.82rem; font-weight:600; border:1px solid rgba(255,255,255,.3); transition:background .2s; }
+.polarsteps-link:hover { background:rgba(255,255,255,.22); }
+.polarsteps-link .ic { font-size:1rem; }
 .flip-clock { display:flex; justify-content:center; align-items:flex-start; gap:12px; flex-wrap:wrap; }
 .flip-unit { display:flex; flex-direction:column; align-items:center; }
 .flip-card { position:relative; width:64px; height:76px; background:#132038; border:2px solid var(--gold); border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.05); overflow:hidden; perspective:200px; }
@@ -581,8 +584,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       <a href="https://www.gov.uk/eta/apply" target="_blank" rel="noopener" onclick="revealEtaChecklist()"><span class="ic">&#128179;</span>UK ETA</a>
       <button class="print-mini no-print" onclick="revealEtaChecklist()">Checklist</button>
     </div><div class="nav-col">
-      <a href="https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan" target="_blank" rel="noopener"><span class="ic">&#128205;</span>Polarsteps</a>
-      <a class="print-mini no-print" href="https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan" target="_blank" rel="noopener">Open trip</a>
+      <a href="fab4-connections-audit.pdf" target="_blank" rel="noopener"><span class="ic">&#128203;</span>Connections Audit</a>
+      <a class="print-mini no-print" href="fab4-connections-audit-print.html" target="_blank" rel="noopener">Print</a>
     </div></div>
       <button class="print-mini print-mini-all no-print" onclick="printBook()"><span class="ic">&#128214;</span>Print Book</button>
       <button class="print-mini print-mini-all no-print" onclick="printAll()"><span class="ic">&#128424;&#65039;</span>Print All</button>
@@ -600,6 +603,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
           <div class="flip-unit"><div class="flip-card"><div class="flip-digit" data-unit="minutes">00</div></div><div class="flip-label">Min</div></div>
           <div class="flip-unit"><div class="flip-card"><div class="flip-digit" data-unit="seconds">00</div></div><div class="flip-label">Sec</div></div>
         </div>
+        <a class="polarsteps-link no-print" href="https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan" target="_blank" rel="noopener"><span class="ic">&#128205;</span>Polarsteps &ndash; Open trip</a>
       </div>
     </div>
   </div>
@@ -7412,12 +7416,12 @@ Visit Website: Headout</div>
       <td><a class="pill" href="https://www.melia.com/en/hotels/united-kingdom/london/melia-white-house" target="_blank">Visit</a></td>
     </tr>
     <tr>
-      <td class="ntb-date">Thu 10 Sep</td>
-      <td>Confirm flight numbers &amp; exact times - Wellington to Sydney</td>
+      <td class="ntb-date">Fri 11 Sep</td>
+      <td>Confirm booking reference for Fiumicino to hotel transfer</td>
       <td><span class="badge badge-toconfirm">To Confirm</span></td>
-      <td class="ntb-notes">Currently only have rough times on the Travel tab (arrive Sydney ~7:45am, depart Sydney ~2:45pm) - no flight numbers on file yet</td>
+      <td class="ntb-notes">Private minibus, Fiumicino Airport to The Republic Hotel (Via Gaeta 61, Rome) - arranged in principle but no booking or confirmation reference is on file</td>
       <td class="ntb-tick"><span class="tickbox"></span></td>
-      <td></td>
+      <td><a class="pill" href="https://www.therepublichotel.com/" target="_blank">Visit</a></td>
     </tr>
   </table>
 

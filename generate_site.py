@@ -2029,6 +2029,9 @@ a { color: inherit; }
 @media print { .hero-next-trip { display:none !important; } }
 .hero-countdown-wrap { margin-top:16px; text-align:center; }
 .hero-countdown-label { font-size:.75rem; letter-spacing:.09em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; font-weight:700; }
+.polarsteps-link { display:inline-flex; align-items:center; gap:6px; margin-top:14px; padding:7px 16px; border-radius:20px; background:rgba(255,255,255,.12); color:#fff; text-decoration:none; font-size:.82rem; font-weight:600; border:1px solid rgba(255,255,255,.3); transition:background .2s; }
+.polarsteps-link:hover { background:rgba(255,255,255,.22); }
+.polarsteps-link .ic { font-size:1rem; }
 .flip-clock { display:flex; justify-content:center; align-items:flex-start; gap:12px; flex-wrap:wrap; }
 .flip-unit { display:flex; flex-direction:column; align-items:center; }
 .flip-card { position:relative; width:64px; height:76px; background:#132038; border:2px solid var(--gold); border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.05); overflow:hidden; perspective:200px; }
@@ -2376,10 +2379,12 @@ NAV_SECTIONS = [
     ('needtobook', '&#9989;', 'Things to Do'),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
     ('uketa', '&#128179;', 'UK ETA'),
-    ('polarsteps', '&#128205;', 'Polarsteps'),
+    ('connections', '&#128203;', 'Connections Audit'),
 ]
 UKETA_URL = 'https://www.gov.uk/eta/apply'
 POLARSTEPS_URL = 'https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan'
+CONNECTIONS_PDF_URL = 'fab4-connections-audit.pdf'
+CONNECTIONS_PRINT_URL = 'fab4-connections-audit-print.html'
 nav_grid_html = ''.join(
     (
         f'''<div class="nav-col">
@@ -2388,10 +2393,10 @@ nav_grid_html = ''.join(
     </div>'''
         if sid == 'uketa' else
         f'''<div class="nav-col">
-      <a href="{POLARSTEPS_URL}" target="_blank" rel="noopener"><span class="ic">{icon}</span>{label}</a>
-      <a class="print-mini no-print" href="{POLARSTEPS_URL}" target="_blank" rel="noopener">Open trip</a>
+      <a href="{CONNECTIONS_PDF_URL}" target="_blank" rel="noopener"><span class="ic">{icon}</span>{label}</a>
+      <a class="print-mini no-print" href="{CONNECTIONS_PRINT_URL}" target="_blank" rel="noopener">Print</a>
     </div>'''
-        if sid == 'polarsteps' else
+        if sid == 'connections' else
         f'''<div class="nav-col">
       <a href="#{sid}"><span class="ic">{icon}</span>{label}</a>
       <button class="print-mini no-print" onclick="printSection('{sid}')">Print {label}</button>
@@ -2442,6 +2447,7 @@ HTML = f'''<!DOCTYPE html>
           <div class="flip-unit"><div class="flip-card"><div class="flip-digit" data-unit="minutes">00</div></div><div class="flip-label">Min</div></div>
           <div class="flip-unit"><div class="flip-card"><div class="flip-digit" data-unit="seconds">00</div></div><div class="flip-label">Sec</div></div>
         </div>
+        <a class="polarsteps-link no-print" href="{POLARSTEPS_URL}" target="_blank" rel="noopener"><span class="ic">&#128205;</span>Polarsteps &ndash; Open trip</a>
       </div>
     </div>
   </div>
