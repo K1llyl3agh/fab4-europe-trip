@@ -2385,25 +2385,12 @@ NAV_SECTIONS = [
     ('places', '&#128506;&#65039;', 'Places &amp; Maps'),
     ('needtobook', '&#9989;', 'Things to Do'),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
-    ('uketa', '&#128179;', 'UK ETA'),
-    ('connections', '&#128203;', 'Connections Audit'),
 ]
 UKETA_URL = 'https://www.gov.uk/eta/apply'
 POLARSTEPS_URL = 'https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan'
 CONNECTIONS_PDF_URL = 'fab4-connections-audit.pdf'
-CONNECTIONS_PRINT_URL = 'fab4-connections-audit-print.html'
 nav_grid_html = ''.join(
     (
-        f'''<div class="nav-col">
-      <a href="{UKETA_URL}" target="_blank" rel="noopener" onclick="revealEtaChecklist()"><span class="ic">{icon}</span>{label}</a>
-      <button class="print-mini no-print" onclick="revealEtaChecklist()">Checklist</button>
-    </div>'''
-        if sid == 'uketa' else
-        f'''<div class="nav-col">
-      <a href="{CONNECTIONS_PDF_URL}" target="_blank" rel="noopener"><span class="ic">{icon}</span>{label}</a>
-      <a class="print-mini no-print" href="{CONNECTIONS_PRINT_URL}" target="_blank" rel="noopener">Print</a>
-    </div>'''
-        if sid == 'connections' else
         f'''<div class="nav-col">
       <a href="#{sid}"><span class="ic">{icon}</span>{label}</a>
       <button class="print-mini no-print" onclick="printSection('{sid}')">Print {label}</button>
@@ -2455,6 +2442,7 @@ HTML = f'''<!DOCTYPE html>
           <div class="flip-unit"><div class="flip-card"><div class="flip-digit" data-unit="seconds">00</div></div><div class="flip-label">Sec</div></div>
         </div>
         <a class="polarsteps-link no-print" href="{POLARSTEPS_URL}" target="_blank" rel="noopener"><span class="ic">&#128205;</span>Polarsteps &ndash; Open trip</a>
+        <a class="polarsteps-link no-print" href="{CONNECTIONS_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128203;</span>Connections Audit</a>
       </div>
     </div>
   </div>
