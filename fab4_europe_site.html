@@ -76,6 +76,12 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 #overview .tl-what { font-size:.76rem; line-height:1.25; }
 #overview .tl-notes { font-size:.68rem; margin-top:0; line-height:1.2; }
 #overview .tl-flag { font-size:1.1rem; }
+#overview .tl-status { font-size:.58rem; padding:1px 5px; }
+#overview .tl-dst { font-size:.66rem; margin-top:0; }
+.tl-status { display:inline-block; font-size:.68rem; font-weight:800; letter-spacing:.03em; padding:2px 7px; border-radius:8px; vertical-align:middle; margin-left:4px; }
+.tl-status-confirmed { background:#1f8f4e; color:#fff; }
+.tl-status-unconfirmed { background:#c62828; color:#fff; }
+.tl-dst { color:var(--gold); font-weight:700; font-size:.82rem; margin-top:3px; }
 .tl-row { display:grid; grid-template-columns:130px 1fr 32px; gap:14px; background:var(--card-bg); border-radius:10px; padding:12px 16px; box-shadow:0 1px 4px rgba(0,0,0,.06); border-left:5px solid var(--navy); }
 .tl-row.rome { border-left-color:var(--rome); }
 .tl-row.cruise { border-left-color:var(--cruise); }
@@ -647,17 +653,19 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row air">
       <div class="tl-date">Thu 10 Sep<div class="tl-daynum">(Day 1)</div></div>
       <div>
-        <div class="tl-where">Air travel</div>
+        <div class="tl-where">Air travel <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">Gary &amp; Karen: QF162 (Qantas) Wgtn (WLG) to Syd (T1), arrive 7.45am - FAB4: QF1 (Qantas) Syd (T1) to Singapore (T1), depart 2.45pm, PE</div>
         <div class="tl-notes">SIN transit ~2hrs (T1) - BA12 SIN (T1) to LHR (T5) arrive 6.35am, then BA548 LHR (T5) to FCO (T3) depart 8.00am (both British Airways) - Business Gary &amp; Karen / Economy Debbie &amp; Tom</div>
+        
       </div>
       <div class="tl-flag" title="Flying">&#9992;&#65039;</div>
     </div>
     <div class="tl-row rome">
       <div class="tl-date">Fri 11 Sep<div class="tl-daynum">(Day 2)</div></div>
       <div>
-        <div class="tl-where">Arrival in Rome</div>
+        <div class="tl-where">Arrival in Rome <span class="tl-status tl-status-unconfirmed">UNCONFIRMED</span></div>
         <div class="tl-what"></div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -665,8 +673,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row rome">
       <div class="tl-date">Sat 12 Sep<div class="tl-daynum">(Day 3)</div></div>
       <div>
-        <div class="tl-where">Rome </div>
+        <div class="tl-where">Rome  <span class="tl-status tl-status-unconfirmed">UNCONFIRMED</span></div>
         <div class="tl-what">Pristine Sistine Early Morning Small Group Tour</div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -674,8 +683,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row rome">
       <div class="tl-date">Sun 13 Sep<div class="tl-daynum">(Day 4)</div></div>
       <div>
-        <div class="tl-where">Rome </div>
+        <div class="tl-where">Rome  <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">Colosseum Areana Floor &amp; VIP Caesar&#x27;s Palace</div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -683,8 +693,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row rome">
       <div class="tl-date">Mon 14 Sep<div class="tl-daynum">(Day 5)</div></div>
       <div>
-        <div class="tl-where">Rome </div>
+        <div class="tl-where">Rome  <span class="tl-status tl-status-unconfirmed">UNCONFIRMED</span></div>
         <div class="tl-what">Transfer by Private Minibus to Queen Victoria</div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -692,8 +703,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row cruise">
       <div class="tl-date">Tue 15 Sep<div class="tl-daynum">(Day 6)</div></div>
       <div>
-        <div class="tl-where">Sea Day</div>
+        <div class="tl-where">Sea Day </div>
         <div class="tl-what"></div>
+        
         
       </div>
       <div class="tl-flag" title="EU / at sea">&#127466;&#127482;</div>
@@ -701,8 +713,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row cruise">
       <div class="tl-date">Wed 16 Sep<div class="tl-daynum">(Day 7)</div></div>
       <div>
-        <div class="tl-where">Marseille France</div>
+        <div class="tl-where">Marseille France <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">Marseille and the little train (booked)</div>
+        
         
       </div>
       <div class="tl-flag" title="France">&#127467;&#127479;</div>
@@ -710,8 +723,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row cruise">
       <div class="tl-date">Thu 17 Sep<div class="tl-daynum">(Day 8)</div></div>
       <div>
-        <div class="tl-where">Villefranche, France</div>
+        <div class="tl-where">Villefranche, France <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">Monaco Old Town &amp; Scenic Drive (booked)</div>
+        
         
       </div>
       <div class="tl-flag" title="France">&#127467;&#127479;</div>
@@ -719,8 +733,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row cruise">
       <div class="tl-date">Fri 18 Sep<div class="tl-daynum">(Day 9)</div></div>
       <div>
-        <div class="tl-where">Genoa, Italy</div>
+        <div class="tl-where">Genoa, Italy <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">Discover Genoa (booked)</div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -728,8 +743,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row cruise">
       <div class="tl-date">Sat 19 Sep<div class="tl-daynum">(Day 10)</div></div>
       <div>
-        <div class="tl-where">La Spezia (Florence or Pisa)</div>
+        <div class="tl-where">La Spezia (Florence or Pisa) <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">Easy Pisa (booked)</div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -737,8 +753,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row cruise">
       <div class="tl-date">Sun 20 Sep<div class="tl-daynum">(Day 11)</div></div>
       <div>
-        <div class="tl-where">Sea Day</div>
+        <div class="tl-where">Sea Day </div>
         <div class="tl-what"></div>
+        
         
       </div>
       <div class="tl-flag" title="EU / at sea">&#127466;&#127482;</div>
@@ -746,8 +763,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row tuscany">
       <div class="tl-date">Mon 21 Sep<div class="tl-daynum">(Day 12)</div></div>
       <div>
-        <div class="tl-where">Tuscany</div>
+        <div class="tl-where">Tuscany </div>
         <div class="tl-what"></div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -755,8 +773,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row tuscany">
       <div class="tl-date">Tue 22 Sep<div class="tl-daynum">(Day 13)</div></div>
       <div>
-        <div class="tl-where">Tuscany</div>
+        <div class="tl-where">Tuscany </div>
         <div class="tl-what"></div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -764,8 +783,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row milan">
       <div class="tl-date">Wed 23 Sep<div class="tl-daynum">(Day 14)</div></div>
       <div>
-        <div class="tl-where">Milan</div>
+        <div class="tl-where">Milan </div>
         <div class="tl-what"></div>
+        
         
       </div>
       <div class="tl-flag" title="Italy">&#127470;&#127481;</div>
@@ -773,17 +793,19 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row london">
       <div class="tl-date">Thu 24 Sep<div class="tl-daynum">(Day 15)</div></div>
       <div>
-        <div class="tl-where">London</div>
+        <div class="tl-where">London <span class="tl-status tl-status-unconfirmed">UNCONFIRMED</span></div>
         <div class="tl-what">Dinner at The Lighterman confirmed (4NJL3Z4M6XN3)</div>
         <div class="tl-notes">BA575 (British Airways) Milan Linate to London Heathrow (T5), Depart 3.55pm arrive 4.50pm, Business, all 4</div>
+        
       </div>
       <div class="tl-flag" title="UK">&#127468;&#127463;</div>
     </div>
     <div class="tl-row london">
       <div class="tl-date">Fri 25 Sep<div class="tl-daynum">(Day 16)</div></div>
       <div>
-        <div class="tl-where">London</div>
+        <div class="tl-where">London <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">The Mousetrap (confirmed), Dinner at Albert Schloss confirmed</div>
+        
         
       </div>
       <div class="tl-flag" title="UK">&#127468;&#127463;</div>
@@ -791,8 +813,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row london">
       <div class="tl-date">Sat 26 Sep<div class="tl-daynum">(Day 17)</div></div>
       <div>
-        <div class="tl-where">London</div>
+        <div class="tl-where">London <span class="tl-status tl-status-unconfirmed">UNCONFIRMED</span></div>
         <div class="tl-what">Tower / Bridge Tour then Six show and then dinner</div>
+        
         
       </div>
       <div class="tl-flag" title="UK">&#127468;&#127463;</div>
@@ -800,17 +823,19 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row air">
       <div class="tl-date">Sun 27 Sep<div class="tl-daynum">(Day 18)</div></div>
       <div>
-        <div class="tl-where">Air Travel – Depart LHR (T5) 10.00pm</div>
+        <div class="tl-where">Air Travel – Depart LHR (T5) 10.00pm <span class="tl-status tl-status-unconfirmed">UNCONFIRMED</span></div>
         <div class="tl-what">BA15 (British Airways) London Heathrow (T5) to Singapore (SIN T1), Premium Economy, all 4</div>
         
+        <div class="tl-dst">NZ Daylight Saving starts here</div>
       </div>
       <div class="tl-flag" title="Flying">&#9992;&#65039;</div>
     </div>
     <div class="tl-row air">
       <div class="tl-date">Mon 28 Sep<div class="tl-daynum">(Day 19)</div></div>
       <div>
-        <div class="tl-where">Air Travel – Arrive SIN (T1) 6.40pm - Depart 8.20pm</div>
+        <div class="tl-where">Air Travel – Arrive SIN (T1) 6.40pm - Depart 8.20pm <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">BA15 (British Airways) Singapore (SIN T1) to Sydney (SYD T1), Premium Economy, all 4</div>
+        
         
       </div>
       <div class="tl-flag" title="Flying">&#9992;&#65039;</div>
@@ -818,8 +843,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     <div class="tl-row air">
       <div class="tl-date">Tue 29 Sep<div class="tl-daynum">(Day 20)</div></div>
       <div>
-        <div class="tl-where">HOME</div>
+        <div class="tl-where">HOME <span class="tl-status tl-status-confirmed">CONFIRMED</span></div>
         <div class="tl-what">FAB4 Arrive SYD (T1) 6.05am (Karen and Gary depart SYD (T1) 9.35am on QF161 (Qantas), Economy, arrive WGTN 3.45pm</div>
+        
         
       </div>
       <div class="tl-flag" title="Flying home">&#9992;&#65039;</div>
