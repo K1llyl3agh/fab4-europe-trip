@@ -742,7 +742,7 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
     fact_html = fun_fact_box(day_id) if day_id else ''
     return f'''
     <div class="day-card theme-{theme}"{day_id_attr}>
-      <div class="day-head"><span class="day-title">{esc(day['title'])}</span><span class="day-head-right">{print_day_btn}{where_html}</span></div>
+      <div class="day-head"><span class="day-title">{esc(trip_day_title(day['title']))}</span><span class="day-head-right">{print_day_btn}{where_html}</span></div>
       <div class="day-body">
         {fact_html}
         {quicklink_html or ''}
@@ -1082,6 +1082,23 @@ def day_id_for(title):
     if 'OPTION D' in title.upper():
         return 'option-d-23sep'
     return None
+
+TRIP_START_DATE = datetime.date(2026, 9, 10)  # Thu 10 Sept = Trip Day 1
+
+def trip_day_number(d):
+    """Given a date (datetime.date or ISO string), return the trip day number (10 Sept = Day 1)."""
+    if isinstance(d, str):
+        d = datetime.date.fromisoformat(d)
+    return (d - TRIP_START_DATE).days + 1
+
+def trip_day_title(title):
+    """Rewrite a '(DAY N)' label in a schedule title from the date-of-month number to the trip day number (10 Sept = Day 1), leaving everything else (weekday, '- N SEP' etc) untouched."""
+    m = re.search(r'\(DAY\s*(\d{1,2})\)', title, re.I)
+    if not m:
+        return title
+    date_of_month = int(m.group(1))
+    trip_day = date_of_month - (TRIP_START_DATE.day - 1)
+    return re.sub(r'\(DAY\s*\d{1,2}\)', f'(DAY {trip_day})', title, count=1, flags=re.I)
 
 DAY24_MAP = {
     'title': "Thursday 24 Sept - Today's Places & Suggested Routes",
@@ -1985,14 +2002,16 @@ for t in travel_json:
     theme = theme_for_where(t.get('where'))
     d = datetime.date.fromisoformat(t['date'])
     date_disp = d.strftime('%a %d %b')
+    day_num = trip_day_number(d)
     where = t.get('where') or t.get('accom') or ''
     what = t.get('what') or ''
     notes = t.get('notes') or ''
     flag_emoji, flag_title = flag_for_where(where)
     flag_html = f'<div class="tl-flag" title="{esc(flag_title)}">{flag_emoji}</div>' if flag_emoji else '<div class="tl-flag"></div>'
+    day_num_html = f'<div class="tl-daynum">(Day {day_num})</div>' if 1 <= day_num <= 20 else ''
     timeline_html += f'''
     <div class="tl-row {theme}">
-      <div class="tl-date">{esc(date_disp)}</div>
+      <div class="tl-date">{esc(date_disp)}{day_num_html}</div>
       <div>
         <div class="tl-where">{esc(where)}</div>
         <div class="tl-what">{esc(what)}</div>
@@ -2049,6 +2068,7 @@ a { color: inherit; }
 @media (max-width:480px) { .flip-card { width:48px; height:58px; } .flip-digit { font-size:1.5rem; } .flip-clock { gap:8px; } }
 .hero h1 { font-size:2.6rem; margin:0 0 8px; letter-spacing:.5px; text-shadow:0 2px 10px rgba(0,0,0,.25); }
 .hero-h1-cover { display:none; }
+.hero-dates-cover { display:none; }
 .hero p.sub { font-size:1.15rem; opacity:.95; margin:0 0 6px; }
 .hero .fab4 { margin-top:22px; font-size:.95rem; opacity:.9; }
 @media (max-width:700px) { .hero-inner { flex-direction:column-reverse; gap:24px; } .hero-photo img { width:160px; height:160px; } }
@@ -2076,6 +2096,7 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 #overview .timeline { gap:2px; margin-bottom:6px; }
 #overview .tl-row { padding:3px 8px; gap:8px; grid-template-columns:95px 1fr 28px; border-radius:6px; }
 #overview .tl-date { font-size:.74rem; }
+#overview .tl-daynum { font-size:.65rem; font-weight:400; }
 #overview .tl-where { font-size:.87rem; }
 #overview .tl-what { font-size:.76rem; line-height:1.25; }
 #overview .tl-notes { font-size:.68rem; margin-top:0; line-height:1.2; }
@@ -2088,6 +2109,7 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .tl-row.milan { border-left-color:var(--milan); }
 .tl-row.air { border-left-color:#999; }
 .tl-date { font-weight:700; color:var(--navy); font-size:.88rem; }
+.tl-daynum { font-weight:400; color:var(--navy); opacity:.7; font-size:.74rem; }
 .tl-where { font-weight:700; }
 .tl-what { color:var(--ink); font-size:.92rem; }
 .tl-notes { color:var(--muted); font-size:.82rem; margin-top:2px; }
@@ -2255,16 +2277,20 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   table.ttc tr, table.ntb tr { page-break-inside: avoid; break-inside: avoid; }
   h2 { page-break-before: always; break-before: page; page-break-after: avoid; }
   h3 { page-break-after: avoid; break-after: avoid-page; }
-  #overview h2 { page-break-before: avoid; break-before: avoid; }
   #flights h2 { page-break-before: avoid; break-before: avoid; }
   .hero, .ship-banner, .map-wrap { page-break-inside: avoid; break-inside: avoid; }
   body.printing-book .day-card, body.printing-book .place-card { page-break-inside: auto; break-inside: auto; }
+  body.printing-book .day-card { page-break-before: always; break-before: page; }
+  body.printing-book [data-day-id="day-11"] .dinner-box { page-break-before: always; break-before: page; }
   body.printing-book .hero { background:#fff !important; color:var(--navy) !important; padding:0; height:100vh; page-break-after:always; break-after:page; page-break-inside:avoid; display:flex; align-items:center; justify-content:center; }
   body.printing-book .hero-title-row, body.printing-book .hero-flags, body.printing-book .hero p.sub,
   body.printing-book .nav-grid, body.printing-book .hero .fab4 { display:none !important; }
-  body.printing-book .hero-inner { flex-direction:column; gap:32px; }
-  body.printing-book .hero-h1-cover { display:block; font-size:2.6rem; color:var(--navy); text-shadow:none; margin:0; text-align:center; max-width:640px; }
-  body.printing-book .hero-photo img { border-color:var(--navy); box-shadow:none; width:260px; height:260px; }
+  body.printing-book .hero-inner { display:block; text-align:center; }
+  body.printing-book .hero-text { display:block; }
+  body.printing-book .hero-h1-cover { display:block; font-size:2.6rem; color:var(--navy); text-shadow:none; margin:0 auto; text-align:center; max-width:640px; }
+  body.printing-book .hero-dates-cover { display:block; font-size:1.3rem; color:var(--gold); font-weight:700; letter-spacing:.04em; text-align:center; margin:10px auto 0; }
+  body.printing-book .hero-photo { display:block; }
+  body.printing-book .hero-photo img { display:block; border-color:var(--navy); box-shadow:none; width:740px; height:740px; margin:26px auto 0; }
 ''' + '\n'.join(
     f'  body.printing-{sid} .print-block:not([data-section="{sid}"]) {{ display:none !important; }}\n'
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
@@ -2422,6 +2448,7 @@ HTML = f'''<!DOCTYPE html>
         <h1 class="hero-h1-normal">The Fab 4 Take on Europe</h1>
       </div>
       <h1 class="hero-h1-cover">FAB4 Does Europe &ndash; September 2026</h1>
+      <p class="hero-dates-cover">10 &ndash; 29 September 2026</p>
       <div class="hero-flags" aria-label="United Kingdom, Italy, France">&#127468;&#127463; &#127470;&#127481; &#127467;&#127479;</div>
       <p class="sub">10 &ndash; 29 September 2026</p>
       <div class="nav-grid">{nav_grid_html}</div>
