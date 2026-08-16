@@ -480,6 +480,39 @@
       "status": "To Confirm",
       "notes": "Private minibus, Fiumicino Airport to The Republic Hotel (Via Gaeta 61, Rome) - arranged in principle but no booking or confirmation reference is on file",
       "website": "https://www.therepublichotel.com/"
+    },
+    {
+      "date": "Fri 11 Sep",
+      "item": "Dinner reservation - Rome",
+      "status": "To Book",
+      "notes": "No table booked yet - choose from the 8 Dinner Suggestions on the Rome page (within ~20 min walk of The Republic Hotel)",
+      "flag": "Decide on the day."
+    },
+    {
+      "date": "Sun 13 Sep",
+      "item": "Dinner reservation - Rome (near the Colosseum)",
+      "status": "To Book",
+      "notes": "No table booked yet - Colosseum tour finishes ~7pm; choose from the 8 Dinner Suggestions on the Rome page near Piazza del Colosseo",
+      "flag": "Decide on the day."
+    },
+    {
+      "date": "Mon 21 Sep",
+      "item": "Dinner reservation - Tuscany",
+      "status": "To Book",
+      "notes": "No dinner plan yet for the first night at Hotel Borgo di Cortefreda Relais - hotel restaurant or a short drive into Tavarnelle Val di Pesa"
+    },
+    {
+      "date": "Tue 22 Sep",
+      "item": "Dinner reservation - Tuscany (Triocco)",
+      "status": "To Confirm",
+      "notes": "Triocco, Barberino Val d'Elsa pencilled in as a potential 7pm dinner spot - not yet booked",
+      "website": "https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html"
+    },
+    {
+      "date": "Wed 23 Sep",
+      "item": "Dinner reservation - Milan",
+      "status": "To Book",
+      "notes": "No table booked yet - choose from the 8 dinner options on the Milan page (7:00-8:30pm, before LiQuido Rooftop Bar nightcap)"
     }
   ],
   "things_to_take": [
