@@ -147,6 +147,8 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .fun-fact-text + .fun-fact-text { margin-top:8px; padding-top:8px; border-top:1px dashed #eee6cf; }
 .fun-fact-text a { color:var(--cruise); }
 .fun-fact-source { color:var(--muted); font-size:.8rem; white-space:nowrap; }
+.ffp-day { border:1px solid var(--gold); border-radius:8px; padding:12px 16px; margin-bottom:14px; background:#fffcf3; page-break-inside:avoid; break-inside:avoid; }
+.ffp-day-title { font-size:.95rem; color:var(--navy); margin:0 0 8px; }
 .place-fact { margin-top:8px; padding-top:8px; border-top:1px dashed #e3ddc9; font-size:.78rem; color:var(--muted); font-style:italic; line-height:1.4; }
 .place-hours { font-size:.78rem; color:var(--navy); font-weight:600; margin:2px 0 6px; }
 body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !important; }
@@ -341,6 +343,10 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-hotels > *:not(.print-block) { display:none !important; }
   body.printing-hotels .print-block[data-section="hotels"] { padding-top:10px; }
   body.printing-hotels .print-block[data-section="hotels"] h2 { page-break-before: avoid; }
+  body.printing-funfacts .print-block:not([data-section="funfacts"]) { display:none !important; }
+  body.printing-funfacts > *:not(.print-block) { display:none !important; }
+  body.printing-funfacts .print-block[data-section="funfacts"] { padding-top:10px; }
+  body.printing-funfacts .print-block[data-section="funfacts"] h2 { page-break-before: avoid; }
   body.printing-day-day-11 [data-day-id]:not([data-day-id="day-11"]) { display:none !important; }
   body.printing-day-day-11 .print-block:not(:has([data-day-id="day-11"])) { display:none !important; }
   body.printing-day-day-11 > *:not(.print-block) { display:none !important; }
@@ -455,6 +461,14 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body[class*="printing-day-"] .resto-list { display:none !important; }
   body[class*="printing-day-"] .london-quicklinks { display:none !important; }
   body.printing-book .fun-fact-box { display:none !important; }
+  body.printing-all .day-card { page-break-before: always; break-before: page; page-break-inside: auto; padding-top:4px; }
+  body.printing-all .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body.printing-all .day-map-timeline, body.printing-all .dm-stop, body.printing-all .dm-leg { display:block !important; }
+  body.printing-all .dm-leg-line { display:none !important; }
+  body.printing-all .dm-stop-body, body.printing-all .dm-leg-body { page-break-inside: avoid; break-inside: avoid; padding:2px 0 4px; }
+  body.printing-all .dm-stop-body { padding-bottom:1px; }
+  body.printing-all .day-map-title { margin-bottom:4px; }
+  body.printing-all .day-map-caption { margin-top:4px; }
   body.printing-rome { font-size:.86em; }
   body.printing-rome .day-card { page-break-inside: auto; break-inside: auto; padding-top:4px; }
   body.printing-rome .day-head { padding:7px 12px; }
@@ -602,6 +616,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
       <a class="print-mini print-mini-all no-print" href="fab4-print-book.pdf" target="_blank" rel="noopener"><span class="ic">&#128214;</span>Print Book</a>
       <button class="print-mini print-mini-all no-print" onclick="printAll()"><span class="ic">&#128424;&#65039;</span>Print All</button>
       <button class="print-mini no-print" id="factsToggleBtn" onclick="toggleFunFacts()"><span class="ic">&#127881;</span>Hide Fun Facts</button>
+      <button class="print-mini no-print" onclick="printSection('funfacts')"><span class="ic">&#128424;&#65039;</span>Print Fun Facts</button>
       <div class="fab4">Karen Nicholson &middot; Deborah Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
     </div>
     <div class="hero-photo">
@@ -7653,6 +7668,99 @@ Visit Website: Headout</div>
   <div class="ev-link">
     <a class="pill pill-directions" href="standard-tube-map.pdf" target="_blank">&#128506;&#65039; CLICK HERE to view the Tube Map (PDF)</a>
   </div>
+</section>
+
+<section id="funfacts" class="print-block" data-section="funfacts">
+  <div class="section-head-row">
+    <h2>Fun Facts by Day</h2>
+    <button class="print-btn no-print" onclick="printSection('funfacts')"><span class="ic">&#128424;&#65039;</span>Print</button>
+  </div>
+  <p class="lede">Extra fun facts for the places we're seeing each day &ndash; on top of the ones shown in each day's Fun Facts box on screen.</p>
+  
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Friday 11th September (Day 2)</h3>
+        <div class="fun-fact-text">Tucked inside Villa Borghese is a curious 1867 water clock, invented by the monk-scientist Giovan Battista Embriaco, which still keeps time today using only the flow and pressure of water &ndash; no electricity or batteries. <span class="fun-fact-source">&mdash; <a href="https://www.turismoroma.it/en/news/stories-and-hidden-facts-discovering-villa-borghese-through-educational-panels-and-podcasts" target="_blank">Turismo Roma</a></span></div><div class="fun-fact-text">Cardinal Scipione Borghese amassed a private collection of over 800 sculptures and paintings by artists including Caravaggio, Bernini and Titian, which only became the public Galleria Borghese museum after the Italian state bought the estate from the family in 1902. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Galleria_Borghese" target="_blank">Wikipedia</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Saturday 12th September (Day 3)</h3>
+        <div class="fun-fact-text">A ten-year restoration of the Sistine Chapel ceiling, completed in 1990 and sponsored by Japan's Nippon Television, stripped away centuries of soot, glue and candle grease to reveal Michelangelo's original vivid colours hidden underneath. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Restoration_of_the_Sistine_Chapel_frescoes" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Michelangelo became chief architect of St Peter's Basilica in 1547 at the age of 71, but only lived to see the drum of its dome completed; his design was finished by Giacomo della Porta and Domenico Fontana in 1590, 26 years after his death. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/St._Peter%27s_Basilica" target="_blank">Wikipedia</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Sunday 13th September (Day 4)</h3>
+        <div class="fun-fact-text">The Colosseum's opening games in 80 AD reportedly included a naumachia, a staged naval battle, with the arena flooded for small ships &ndash; once the underground hypogeum was built under Emperor Domitian, further flooding became impossible and the practice stopped. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Colosseum" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">The amphitheatre wasn't officially called the Colosseum in ancient times &ndash; it was the Flavian Amphitheatre &ndash; and the popular name actually comes from the Colossus of Nero, a giant bronze statue over 30 metres tall that once stood beside it. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Colossus_of_Nero" target="_blank">Wikipedia</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Monday 14th September (Day 5)</h3>
+        <div class="fun-fact-text">Civitavecchia's harbour fortress, Forte Michelangelo, was designed by the architect Bramante in 1508 and completed in 1537 under the supervision of Michelangelo himself, and it still stands guard over the port today. <span class="fun-fact-source">&mdash; <a href="https://www.portofrome.it/history-of-civitavecchia/?lang=en" target="_blank">Port of Rome - Civitavecchia</a></span></div><div class="fun-fact-text">In 1696, Pope Innocent XII declared Civitavecchia a free port, exempting trading ships from certain taxes &ndash; a status that helped it grow into Rome's principal seaport. <span class="fun-fact-source">&mdash; <a href="https://www.britannica.com/place/Civitavecchia" target="_blank">Britannica</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Tuesday 15th September (Day 6)</h3>
+        <div class="fun-fact-text">Queen Victoria was christened in Southampton on 10 December 2007 by Camilla, Duchess of Cornwall, and set sail on her maiden voyage to the Canary Islands the very next day. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/MS_Queen_Victoria" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">The custom of afternoon tea dates back to the 1840s, credited to Anna, 7th Duchess of Bedford, who began taking tea and a light snack in her rooms to bridge the gap between lunch and dinner &ndash; a habit Queen Victoria herself later helped make fashionable. <span class="fun-fact-source">&mdash; <a href="https://www.britishmuseum.org/blog/tea-rific-history-victorian-afternoon-tea" target="_blank">British Museum</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Wednesday 16th September (Day 7)</h3>
+        <div class="fun-fact-text">Marseille's signature bouillabaisse traces back to a simple fisherman's stew the ancient Greeks called kakavia; in 1980 the city's restaurateurs even drew up an official Bouillabaisse Charter defining the authentic recipe and ingredients. <span class="fun-fact-source">&mdash; <a href="https://www.nationalgeographic.com/travel/article/bouillabaisse-deconstructing-pride-marseille" target="_blank">National Geographic</a></span></div><div class="fun-fact-text">Marseille's Vieux Port was once spanned by a pioneering transporter bridge, inaugurated in 1905, which carried passengers and vehicles across the harbour entrance on a suspended gondola until German forces destroyed it in 1944. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Marseille_Transporter_Bridge" target="_blank">Wikipedia</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Thursday 17th September (Day 8)</h3>
+        <div class="fun-fact-text">In 1297, the Grimaldi family seized Monaco's fortress when François Grimaldi disguised himself as a Franciscan monk to sneak armed men inside &ndash; the origin of the sword-wielding monk still shown on Monaco's coat of arms today. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Fran%C3%A7ois_Grimaldi" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Prince Rainier III's 1956 marriage to Hollywood actress Grace Kelly at Monaco's Saint Nicholas Cathedral was watched by more than 30 million television viewers worldwide, dubbed the 'wedding of the century'. <span class="fun-fact-source">&mdash; <a href="https://www.history.com/this-day-in-history/april-19/grace-kelly-and-prince-rainier-marry" target="_blank">History.com</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Friday 18th September (Day 9)</h3>
+        <div class="fun-fact-text">The word "jeans" traces back to Genoa itself: French traders called the sturdy cotton fabric woven there for sailors' trousers "bleu de Gênes" (blue of Genoa), later shortened to "jean". <span class="fun-fact-source">&mdash; <a href="https://www.merriam-webster.com/dictionary/jean" target="_blank">Merriam-Webster</a></span></div><div class="fun-fact-text">From the 11th century until Napoleon dissolved it in 1797, Genoa was the seat of its own maritime superpower, the Republic of Genoa, whose fleets and banks once rivalled Venice's. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Republic_of_Genoa" target="_blank">Wikipedia</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Saturday 19th September (Day 10)</h3>
+        <div class="fun-fact-text">The tower was already sinking before it even looked crooked: by the time builders reached the second floor in 1178, the soft subsoil beneath its shallow 3-metre foundation had begun to give way, decades before the famous lean became obvious. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Legend says Galileo Galilei, who lived in Pisa, dropped two cannonballs of different masses from the tower around 1589-92 to prove they fall at the same speed &ndash; but the only source is a biography written by his student decades later, and historians still dispute whether it happened. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa" target="_blank">Wikipedia</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Sunday 20th September (Day 11)</h3>
+        <div class="fun-fact-text">Queen Victoria was the first Cunard ship to feature West End-style private theatre boxes, in her three-storey Royal Court Theatre &ndash; an innovation later copied on sister ship Queen Elizabeth. <span class="fun-fact-source">&mdash; <a href="https://www.cunard.com/en-gb/cunard-stories/queen-victoria-in-numbers" target="_blank">Cunard</a></span></div><div class="fun-fact-text">Each year, guests and crew aboard Queen Victoria get through around 1.5 million fresh eggs and close to a million cups of tea. <span class="fun-fact-source">&mdash; <a href="https://www.cunard.com/en-gb/cunard-stories/queen-victoria-in-numbers" target="_blank">Cunard</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Monday 21st September (Day 12)</h3>
+        <div class="fun-fact-text">Talamone's Etruscan temple, built in the 4th century BC to honour the god Tinia, once bore a dramatic terracotta pediment depicting the myth of the "Seven Against Thebes"; the surviving reliefs are now housed in Florence's Archaeological Museum. <span class="fun-fact-source">&mdash; <a href="https://www.invacanzaallargentario.it/en/the-etruscan-pediment-of-talamone/" target="_blank">In Vacanza all&#x27;Argentario</a></span></div><div class="fun-fact-text">San Gimignano grew rich on saffron: medieval merchants exported its "red gold" as far as Alexandria and Damietta, and the profits helped fund the stone tower-houses that still define the skyline. <span class="fun-fact-source">&mdash; <a href="https://www.visittuscany.com/en/flavors/san-gimignano-saffron-dop/" target="_blank">Visit Tuscany</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Tuesday 22nd September (Day 13)</h3>
+        <div class="fun-fact-text">The name "Chianti" first appears in writing as early as 1398, in a notarial document referring to wine from the area &ndash; centuries before the modern Chianti Classico appellation existed. <span class="fun-fact-source">&mdash; <a href="https://www.chianticlassico.com/en/consortium/history-of-chianti-classico/" target="_blank">Consorzio Vino Chianti Classico</a></span></div><div class="fun-fact-text">In 1716, Grand Duke Cosimo III de' Medici issued a decree formally defining the boundaries of the Chianti wine-producing zone, making it one of the earliest legally delimited wine regions in the world. <span class="fun-fact-source">&mdash; <a href="https://www.chianticlassico.com/en/consortium/history-of-chianti-classico/" target="_blank">Consorzio Vino Chianti Classico</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Wednesday 23rd September (Day 14)</h3>
+        <div class="fun-fact-text">The golden Madonnina statue atop Milan's Duomo secretly doubles as a giant lightning rod &ndash; the metal halberd she holds was engineered to protect the cathedral from lightning strikes. <span class="fun-fact-source">&mdash; <a href="https://www.duomomilano.it/en/art-and-culture/the-madonnina/" target="_blank">Duomo di Milano</a></span></div><div class="fun-fact-text">From 1939, Milan's golden Madonnina was covered in grey-green camouflage cloth for five years during the Second World War, so Allied bombers couldn't use her golden glint to pinpoint the city. <span class="fun-fact-source">&mdash; <a href="https://www.duomomilano.it/en/art-and-culture/the-madonnina/" target="_blank">Duomo di Milano</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Wednesday 23rd September (Day 14) &ndash; Option A &ndash; Lake Como &amp; Harry's Bar</h3>
+        <div class="fun-fact-text">The Roman writer Pliny the Younger owned two villas on Lake Como which he nicknamed "Comedy" and "Tragedy" &ndash; one perched high with sweeping views, the other so close to the water he claimed he could fish from his bedroom window. <span class="fun-fact-source">&mdash; <a href="https://en.wikipedia.org/wiki/Pliny%27s_Comedy_and_Tragedy_villas" target="_blank">Wikipedia</a></span></div><div class="fun-fact-text">Julius Caesar conquered the Como area in 49 BC and resettled it with 5,000 colonists, founding "Novum Comum"; the Romans named the lake itself "Larius", the root of its modern name, Como. <span class="fun-fact-source">&mdash; <a href="https://www.lakecomo.tours/a-brief-history-of-the-lake-como-area/" target="_blank">Lake Como Tours</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Wednesday 23rd September (Day 14) &ndash; Option B &ndash; Ferrari Maranello</h3>
+        <div class="fun-fact-text">The Ferrari Museum in Maranello opened on 18 February 1990 &ndash; deliberately chosen as the birthday of founder Enzo Ferrari, known as "the Drake", who had died two years earlier in 1988. <span class="fun-fact-source">&mdash; <a href="https://www.visitmodena.it/en/discover-modena/motor-valley/explore-motorvalley/motors-ferrari-museum-in-maranello" target="_blank">VisitModena</a></span></div><div class="fun-fact-text">Enzo Ferrari personally test-drove every car his factory produced, but for his own daily journeys he had a soft spot for four-seaters &ndash; a preference that ran from the 1960 250 GT 2+2 to the 456 GT he approved in 1988. <span class="fun-fact-source">&mdash; <a href="https://www.ferrari.com/en-EN/museums/driven-by-enzo" target="_blank">Ferrari.com</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Wednesday 23rd September (Day 14) &ndash; Option C &ndash; Venice</h3>
+        <div class="fun-fact-text">The Republic of Venice was an independent maritime power for more than 1,100 years, from 697 AD until Napoleon deposed the last doge, Ludovico Manin, in 1797. <span class="fun-fact-source">&mdash; <a href="https://www.worldhistory.org/article/2273/doges-palace-in-venice/" target="_blank">World History Encyclopedia</a></span></div><div class="fun-fact-text">The enclosed Bridge of Sighs, built around 1600, connects the Doge's Palace interrogation rooms to the old prisons; its name comes from the sighs of condemned prisoners glimpsing their last view of Venice through its stone-barred windows. <span class="fun-fact-source">&mdash; <a href="https://www.britannica.com/topic/Bridge-of-Sighs" target="_blank">Britannica</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Wednesday 23rd September (Day 14) &ndash; Option D &ndash; Pisa &amp; Lake Como</h3>
+        <div class="fun-fact-text">The Leaning Tower took almost 200 years to finish because a war between Pisa and Genoa halted construction for nearly a century after only three storeys had been built &ndash; the accidental pause let the soft subsoil settle and likely stopped the tower toppling over. <span class="fun-fact-source">&mdash; <a href="https://www.history.com/articles/why-does-the-leaning-tower-of-pisa-lean" target="_blank">History.com</a></span></div><div class="fun-fact-text">Lake Como's grand lakeside villas have drawn the wealthy since Roman times; actor George Clooney bought the 18th-century Villa Oleandra in the village of Laglio in 2002, joining a long line of noble and celebrity residents on its shores. <span class="fun-fact-source">&mdash; <a href="https://www.livetheworld.com/post/historical-villas-on-the-lake-como-1zpz" target="_blank">Live The World</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Thursday 24th September (Day 15)</h3>
+        <div class="fun-fact-text">Regent's Canal, which runs past The Lighterman, was designed by architect John Nash &ndash; the same man behind Regent Street, Regent's Park and Buckingham Palace &ndash; and opened to great fanfare in 1820. <span class="fun-fact-source">&mdash; <a href="https://www.kingscross.co.uk/history-regents-canal" target="_blank">King&#x27;s Cross</a></span></div><div class="fun-fact-text">Granary Square, where The Lighterman sits, was once a Victorian canal basin where barges unloaded wheat for London's bakers; today the same spot features over 1,000 individually choreographed fountains. <span class="fun-fact-source">&mdash; <a href="https://www.kingscross.co.uk/granary-square" target="_blank">King&#x27;s Cross</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Friday 25th September (Day 16)</h3>
+        <div class="fun-fact-text">The Mousetrap began life as a short BBC radio play called 'Three Blind Mice', which Agatha Christie wrote as an 80th-birthday gift for Queen Mary in 1947, before she expanded it into the stage play in 1952. <span class="fun-fact-source">&mdash; <a href="https://www.agathachristie.com/theatre/the-mousetrap" target="_blank">Agatha Christie</a></span></div><div class="fun-fact-text">The V&A's National Art Library holds more than 750,000 books, photographs and drawings, including works connected to Leonardo da Vinci's notebooks. <span class="fun-fact-source">&mdash; <a href="https://www.vam.ac.uk/info/national-art-library" target="_blank">Victoria and Albert Museum</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Saturday 26th September (Day 17)</h3>
+        <div class="fun-fact-text">Hard Rock Cafe's now-famous memorabilia collection began right there in London in 1979, when regular customer Eric Clapton gave the cafe a signed Fender guitar; the venue today also houses 'The Vault', London's only rock-and-roll museum. <span class="fun-fact-source">&mdash; <a href="https://www.hardrock.com/our-history" target="_blank">Hard Rock International</a></span></div><div class="fun-fact-text">Six the Musical's writers modelled each of Henry VIII's wives on a real pop star &ndash; Catherine of Aragon channels Beyoncé, Anne Boleyn is Avril Lavigne/Lily Allen, Jane Seymour is Adele, Anne of Cleves is Nicki Minaj/Rihanna, and Katherine Howard is Ariana Grande/Britney Spears. <span class="fun-fact-source">&mdash; <a href="https://feeds.bbci.co.uk/news/newsbeat-45739935" target="_blank">BBC Newsbeat</a></span></div>
+      </div>
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">Sunday 27th September (Day 18)</h3>
+        <div class="fun-fact-text">Heathrow handled just 63,000 passengers in its first full year of operation in 1946; by 2025 that figure had grown to a record 84.5 million passengers in a single year. <span class="fun-fact-source">&mdash; <a href="https://aerospaceglobalnews.com/news/london-heathrow-airport-80-anniversary-history/" target="_blank">Aerospace Global News</a></span></div><div class="fun-fact-text">The Castle's current building on Cowcross Street, Farringdon, is Grade II listed and dates to 1865, sitting just off historic Smithfield Market in the City of London's square mile. <span class="fun-fact-source">&mdash; <a href="https://camra.org.uk/pubs/castle-london-156309" target="_blank">CAMRA</a></span></div>
+      </div>
 </section>
 
 <footer class="no-print">
