@@ -537,6 +537,53 @@ def hotel_directory_cards():
 
 HOTEL_DIRECTORY_HTML = hotel_directory_cards()
 
+EMERGENCY_CONTACTS = [
+    {
+        'title': 'Karen &amp; Gary Nicholson',
+        'people': [
+            {'name': 'Emma Warmouth', 'phone': '+64 27 848 6867', 'email': 'emma.warmouth@nzdata.co.nz'},
+            {'name': 'David Nicholson', 'phone': '+64 27 856 7966', 'email': 'davidnicholson@hotmail.com'},
+            {'name': 'Steve Nicholson', 'phone': '+64 27 873 9578', 'email': ''},
+            {'name': 'Martina Gyde', 'phone': '+64 27 590 4156', 'email': 'martinag@xtra.co.nz'},
+        ],
+    },
+    {
+        'title': 'Deborah Gyde &amp; Thomas Akhurst',
+        'people': [
+            {'name': '', 'phone': '', 'email': ''},
+            {'name': '', 'phone': '', 'email': ''},
+            {'name': '', 'phone': '', 'email': ''},
+            {'name': '', 'phone': '', 'email': ''},
+        ],
+    },
+]
+
+def _emergency_contact_person_html(slot_num, person):
+    if person['name']:
+        name_html = esc(person['name'])
+    else:
+        name_html = f'<span class="ec-blank">Person {slot_num} &ndash; (add name)</span>'
+    phone_html = (f'<div class="ec-line">&#128222; {esc(person["phone"])}</div>' if person['phone']
+                  else '<div class="ec-line ec-blank-line">&#128222; &nbsp;</div>')
+    email_html = (f'<div class="ec-line">&#9993;&#65039; {esc(person["email"])}</div>' if person['email']
+                  else '<div class="ec-line ec-blank-line">&#9993;&#65039; &nbsp;</div>')
+    return f'''
+        <div class="ec-person">
+          <div class="ec-person-name">{name_html}</div>
+          {phone_html}
+          {email_html}
+        </div>'''
+
+def _emergency_contacts_box_html(box):
+    people_html = ''.join(_emergency_contact_person_html(i + 1, p) for i, p in enumerate(box['people']))
+    return f'''
+      <div class="ec-box">
+        <h3 class="ec-box-title">{box['title']}</h3>
+        <div class="ec-people">{people_html}</div>
+      </div>'''
+
+EMERGENCY_CONTACTS_HTML = ''.join(_emergency_contacts_box_html(b) for b in EMERGENCY_CONTACTS)
+
 HOTEL_EMAIL_BODY = "Fab 4 Europe Trip - Hotel Addresses\n\n" + "\n\n".join(
     f"{h['name']}\n{h['full_address']}\nDates: {h.get('dates','')}\nPhone: {h['phone']}\nEmail: {h['email']}"
     for h in HOTEL_INFO
@@ -662,6 +709,330 @@ FUN_FACTS_4 = {
                'Wikipedia', 'https://en.wikipedia.org/wiki/Six_(musical)'),
 }
 
+# Print-only fun facts: these do NOT appear in the on-screen fun-fact-box, and are
+# hidden from Print Day / Print Book / section prints - they appear ONLY on the
+# dedicated "Fun Facts by Day" printable page/section at the bottom of the site.
+FUN_FACTS_5 = {
+    'day-11': ("Tucked inside Villa Borghese is a curious 1867 water clock, invented by the monk-scientist Giovan Battista Embriaco, which still keeps time today using only the flow and pressure of water &ndash; no electricity or batteries.",
+               'Turismo Roma', 'https://www.turismoroma.it/en/news/stories-and-hidden-facts-discovering-villa-borghese-through-educational-panels-and-podcasts'),
+    'day-12': ("A ten-year restoration of the Sistine Chapel ceiling, completed in 1990 and sponsored by Japan's Nippon Television, stripped away centuries of soot, glue and candle grease to reveal Michelangelo's original vivid colours hidden underneath.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Restoration_of_the_Sistine_Chapel_frescoes'),
+    'day-13': ("The Colosseum's opening games in 80 AD reportedly included a naumachia, a staged naval battle, with the arena flooded for small ships &ndash; once the underground hypogeum was built under Emperor Domitian, further flooding became impossible and the practice stopped.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Colosseum'),
+    'day-14': ("Civitavecchia's harbour fortress, Forte Michelangelo, was designed by the architect Bramante in 1508 and completed in 1537 under the supervision of Michelangelo himself, and it still stands guard over the port today.",
+               'Port of Rome - Civitavecchia', 'https://www.portofrome.it/history-of-civitavecchia/?lang=en'),
+    'day-15': ("Queen Victoria was christened in Southampton on 10 December 2007 by Camilla, Duchess of Cornwall, and set sail on her maiden voyage to the Canary Islands the very next day.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/MS_Queen_Victoria'),
+    'day-16': ("Marseille's signature bouillabaisse traces back to a simple fisherman's stew the ancient Greeks called kakavia; in 1980 the city's restaurateurs even drew up an official Bouillabaisse Charter defining the authentic recipe and ingredients.",
+               'National Geographic', 'https://www.nationalgeographic.com/travel/article/bouillabaisse-deconstructing-pride-marseille'),
+    'day-17': ("In 1297, the Grimaldi family seized Monaco's fortress when François Grimaldi disguised himself as a Franciscan monk to sneak armed men inside &ndash; the origin of the sword-wielding monk still shown on Monaco's coat of arms today.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Fran%C3%A7ois_Grimaldi'),
+    'day-18': ("The word \"jeans\" traces back to Genoa itself: French traders called the sturdy cotton fabric woven there for sailors' trousers \"bleu de Gênes\" (blue of Genoa), later shortened to \"jean\".",
+               'Merriam-Webster', 'https://www.merriam-webster.com/dictionary/jean'),
+    'day-19': ("The tower was already sinking before it even looked crooked: by the time builders reached the second floor in 1178, the soft subsoil beneath its shallow 3-metre foundation had begun to give way, decades before the famous lean became obvious.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa'),
+    'day-20': ("Queen Victoria was the first Cunard ship to feature West End-style private theatre boxes, in her three-storey Royal Court Theatre &ndash; an innovation later copied on sister ship Queen Elizabeth.",
+               'Cunard', 'https://www.cunard.com/en-gb/cunard-stories/queen-victoria-in-numbers'),
+    'day-21': ("Talamone's Etruscan temple, built in the 4th century BC to honour the god Tinia, once bore a dramatic terracotta pediment depicting the myth of the \"Seven Against Thebes\"; the surviving reliefs are now housed in Florence's Archaeological Museum.",
+               "In Vacanza all'Argentario", 'https://www.invacanzaallargentario.it/en/the-etruscan-pediment-of-talamone/'),
+    'day-22': ('The name "Chianti" first appears in writing as early as 1398, in a notarial document referring to wine from the area &ndash; centuries before the modern Chianti Classico appellation existed.',
+               'Consorzio Vino Chianti Classico', 'https://www.chianticlassico.com/en/consortium/history-of-chianti-classico/'),
+    'day-23': ("The golden Madonnina statue atop Milan's Duomo secretly doubles as a giant lightning rod &ndash; the metal halberd she holds was engineered to protect the cathedral from lightning strikes.",
+               'Duomo di Milano', 'https://www.duomomilano.it/en/art-and-culture/the-madonnina/'),
+    'option-a-23sep': ('The Roman writer Pliny the Younger owned two villas on Lake Como which he nicknamed "Comedy" and "Tragedy" &ndash; one perched high with sweeping views, the other so close to the water he claimed he could fish from his bedroom window.',
+               "Wikipedia", 'https://en.wikipedia.org/wiki/Pliny%27s_Comedy_and_Tragedy_villas'),
+    'option-b-23sep': ('The Ferrari Museum in Maranello opened on 18 February 1990 &ndash; deliberately chosen as the birthday of founder Enzo Ferrari, known as "the Drake", who had died two years earlier in 1988.',
+               'VisitModena', 'https://www.visitmodena.it/en/discover-modena/motor-valley/explore-motorvalley/motors-ferrari-museum-in-maranello'),
+    'option-c-23sep': ("The Republic of Venice was an independent maritime power for more than 1,100 years, from 697 AD until Napoleon deposed the last doge, Ludovico Manin, in 1797.",
+               'World History Encyclopedia', 'https://www.worldhistory.org/article/2273/doges-palace-in-venice/'),
+    'option-d-23sep': ("The Leaning Tower took almost 200 years to finish because a war between Pisa and Genoa halted construction for nearly a century after only three storeys had been built &ndash; the accidental pause let the soft subsoil settle and likely stopped the tower toppling over.",
+               'History.com', 'https://www.history.com/articles/why-does-the-leaning-tower-of-pisa-lean'),
+    'day-24': ("Regent's Canal, which runs past The Lighterman, was designed by architect John Nash &ndash; the same man behind Regent Street, Regent's Park and Buckingham Palace &ndash; and opened to great fanfare in 1820.",
+               "King's Cross", 'https://www.kingscross.co.uk/history-regents-canal'),
+    'day-25': ("The Mousetrap began life as a short BBC radio play called 'Three Blind Mice', which Agatha Christie wrote as an 80th-birthday gift for Queen Mary in 1947, before she expanded it into the stage play in 1952.",
+               'Agatha Christie', 'https://www.agathachristie.com/theatre/the-mousetrap'),
+    'day-26': ("Hard Rock Cafe's now-famous memorabilia collection began right there in London in 1979, when regular customer Eric Clapton gave the cafe a signed Fender guitar; the venue today also houses 'The Vault', London's only rock-and-roll museum.",
+               'Hard Rock International', 'https://www.hardrock.com/our-history'),
+    'day-27': ("Heathrow handled just 63,000 passengers in its first full year of operation in 1946; by 2025 that figure had grown to a record 84.5 million passengers in a single year.",
+               'Aerospace Global News', 'https://aerospaceglobalnews.com/news/london-heathrow-airport-80-anniversary-history/'),
+}
+
+FUN_FACTS_6 = {
+    'day-11': ("Cardinal Scipione Borghese amassed a private collection of over 800 sculptures and paintings by artists including Caravaggio, Bernini and Titian, which only became the public Galleria Borghese museum after the Italian state bought the estate from the family in 1902.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Galleria_Borghese'),
+    'day-12': ("Michelangelo became chief architect of St Peter's Basilica in 1547 at the age of 71, but only lived to see the drum of its dome completed; his design was finished by Giacomo della Porta and Domenico Fontana in 1590, 26 years after his death.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/St._Peter%27s_Basilica'),
+    'day-13': ("The amphitheatre wasn't officially called the Colosseum in ancient times &ndash; it was the Flavian Amphitheatre &ndash; and the popular name actually comes from the Colossus of Nero, a giant bronze statue over 30 metres tall that once stood beside it.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Colossus_of_Nero'),
+    'day-14': ("In 1696, Pope Innocent XII declared Civitavecchia a free port, exempting trading ships from certain taxes &ndash; a status that helped it grow into Rome's principal seaport.",
+               'Britannica', 'https://www.britannica.com/place/Civitavecchia'),
+    'day-15': ("The custom of afternoon tea dates back to the 1840s, credited to Anna, 7th Duchess of Bedford, who began taking tea and a light snack in her rooms to bridge the gap between lunch and dinner &ndash; a habit Queen Victoria herself later helped make fashionable.",
+               'British Museum', 'https://www.britishmuseum.org/blog/tea-rific-history-victorian-afternoon-tea'),
+    'day-16': ("Marseille's Vieux Port was once spanned by a pioneering transporter bridge, inaugurated in 1905, which carried passengers and vehicles across the harbour entrance on a suspended gondola until German forces destroyed it in 1944.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Marseille_Transporter_Bridge'),
+    'day-17': ("Prince Rainier III's 1956 marriage to Hollywood actress Grace Kelly at Monaco's Saint Nicholas Cathedral was watched by more than 30 million television viewers worldwide, dubbed the 'wedding of the century'.",
+               'History.com', 'https://www.history.com/this-day-in-history/april-19/grace-kelly-and-prince-rainier-marry'),
+    'day-18': ("From the 11th century until Napoleon dissolved it in 1797, Genoa was the seat of its own maritime superpower, the Republic of Genoa, whose fleets and banks once rivalled Venice's.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Republic_of_Genoa'),
+    'day-19': ("Legend says Galileo Galilei, who lived in Pisa, dropped two cannonballs of different masses from the tower around 1589-92 to prove they fall at the same speed &ndash; but the only source is a biography written by his student decades later, and historians still dispute whether it happened.",
+               'Wikipedia', 'https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa'),
+    'day-20': ("Each year, guests and crew aboard Queen Victoria get through around 1.5 million fresh eggs and close to a million cups of tea.",
+               'Cunard', 'https://www.cunard.com/en-gb/cunard-stories/queen-victoria-in-numbers'),
+    'day-21': ("San Gimignano grew rich on saffron: medieval merchants exported its \"red gold\" as far as Alexandria and Damietta, and the profits helped fund the stone tower-houses that still define the skyline.",
+               'Visit Tuscany', 'https://www.visittuscany.com/en/flavors/san-gimignano-saffron-dop/'),
+    'day-22': ("In 1716, Grand Duke Cosimo III de' Medici issued a decree formally defining the boundaries of the Chianti wine-producing zone, making it one of the earliest legally delimited wine regions in the world.",
+               'Consorzio Vino Chianti Classico', 'https://www.chianticlassico.com/en/consortium/history-of-chianti-classico/'),
+    'day-23': ("From 1939, Milan's golden Madonnina was covered in grey-green camouflage cloth for five years during the Second World War, so Allied bombers couldn't use her golden glint to pinpoint the city.",
+               'Duomo di Milano', 'https://www.duomomilano.it/en/art-and-culture/the-madonnina/'),
+    'option-a-23sep': ('Julius Caesar conquered the Como area in 49 BC and resettled it with 5,000 colonists, founding "Novum Comum"; the Romans named the lake itself "Larius", the root of its modern name, Como.',
+               'Lake Como Tours', 'https://www.lakecomo.tours/a-brief-history-of-the-lake-como-area/'),
+    'option-b-23sep': ("Enzo Ferrari personally test-drove every car his factory produced, but for his own daily journeys he had a soft spot for four-seaters &ndash; a preference that ran from the 1960 250 GT 2+2 to the 456 GT he approved in 1988.",
+               'Ferrari.com', 'https://www.ferrari.com/en-EN/museums/driven-by-enzo'),
+    'option-c-23sep': ("The enclosed Bridge of Sighs, built around 1600, connects the Doge's Palace interrogation rooms to the old prisons; its name comes from the sighs of condemned prisoners glimpsing their last view of Venice through its stone-barred windows.",
+               'Britannica', 'https://www.britannica.com/topic/Bridge-of-Sighs'),
+    'option-d-23sep': ("Lake Como's grand lakeside villas have drawn the wealthy since Roman times; actor George Clooney bought the 18th-century Villa Oleandra in the village of Laglio in 2002, joining a long line of noble and celebrity residents on its shores.",
+               'Live The World', 'https://www.livetheworld.com/post/historical-villas-on-the-lake-como-1zpz'),
+    'day-24': ("Granary Square, where The Lighterman sits, was once a Victorian canal basin where barges unloaded wheat for London's bakers; today the same spot features over 1,000 individually choreographed fountains.",
+               "King's Cross", 'https://www.kingscross.co.uk/granary-square'),
+    'day-25': ("The V&A's National Art Library holds more than 750,000 books, photographs and drawings, including works connected to Leonardo da Vinci's notebooks.",
+               'Victoria and Albert Museum', 'https://www.vam.ac.uk/info/national-art-library'),
+    'day-26': ("Six the Musical's writers modelled each of Henry VIII's wives on a real pop star &ndash; Catherine of Aragon channels Beyoncé, Anne Boleyn is Avril Lavigne/Lily Allen, Jane Seymour is Adele, Anne of Cleves is Nicki Minaj/Rihanna, and Katherine Howard is Ariana Grande/Britney Spears.",
+               'BBC Newsbeat', 'https://feeds.bbci.co.uk/news/newsbeat-45739935'),
+    'day-27': ("The Castle's current building on Cowcross Street, Farringdon, is Grade II listed and dates to 1865, sitting just off historic Smithfield Market in the City of London's square mile.",
+               'CAMRA', 'https://camra.org.uk/pubs/castle-london-156309'),
+}
+
+# Extra quirky/offbeat print-only facts - same rules as FUN_FACTS_5/6 (print-only,
+# never shown on screen or in Print Day/Book/section prints). Counts vary per day
+# since some quirky angles found in research turned out to duplicate facts already
+# used elsewhere on the page and were dropped rather than force a duplicate in.
+FUN_FACTS_QUIRKY = {
+    'day-11': [
+        ("Villa Borghese has a hydraulic 'water clock' (the Pincio Clepsydra) built in 1867-73 that has run continuously ever since, powered only by two seesawing basins of flowing water &ndash; it never needs winding.",
+         'Through Eternity Tours', 'https://www.througheternity.com/rome/water-clock-villa-borghese-pincio'),
+        ("Cardinal Scipione Borghese was such a ruthless art collector that he once had the painter Domenichino thrown in prison until he handed over a painting the cardinal wanted for his gallery.",
+         'RomeHints', 'https://www.romehints.com/en/the-story-of-galleria-borghese-private-collection-then-museum-hosting-caravaggio-raffaello-and-bernini-works/'),
+        ("Caravaggio's Madonna and Child with St Anne was rejected by St Peter's Basilica because church officials thought the Madonna looked too much like a real woman off the street &ndash; Cardinal Scipione Borghese snapped it up for his own collection instead.",
+         'Sightseeing Experience Magazine', 'https://www.sightseeing-experience.com/magazine/galleria-borghese-rome-bernini-caravaggio-masterpieces/'),
+        ("The building now known as Casa del Cinema inside the gardens was once a dairy serving cream and custard, before it became a glitzy 1930s restaurant and later a Dolce Vita-era dance club called 'La Lucciola'.",
+         'Turismo Roma', 'https://www.turismoroma.it/en/news/stories-and-hidden-facts-discovering-villa-borghese-through-educational-panels-and-podcasts'),
+    ],
+    'day-12': [
+        ("Michelangelo hated painting the Sistine Chapel ceiling so much he wrote a grumbling poem about it, complaining his stomach was 'squashed under his chin' and that he'd grown a goiter from the strain of looking up for months.",
+         'Dutch Fine Paintings', 'https://dutchfinepaintings.com/michelangelos-sistine-chapel-ceiling-fun-facts/'),
+        ("A later painter named Daniele da Volterra was hired to paint loincloths and drapery over the nude figures in Michelangelo's Last Judgment &ndash; earning him the permanent nickname 'Il Braghettone', or 'The Breeches-Maker'.",
+         'Wikipedia', 'https://en.wikipedia.org/wiki/Daniele_da_Volterra'),
+        ("In 1972 a man attacked Michelangelo's Pietà in St Peter's Basilica with a hammer, shouting he was Jesus Christ; the statue was restored and now sits behind bulletproof glass.",
+         'EWTN Vatican', 'https://ewtnvatican.com/articles/10-surprising-facts-about-st-peters-basilica-and-the-vatican-3817'),
+        ("The gold letters running around the base of St Peter's dome look like modest, ordinary lettering from the floor &ndash; each one is actually about 7 feet tall, roughly the height of an adult man.",
+         'EWTN Vatican', 'https://ewtnvatican.com/articles/10-surprising-facts-about-st-peters-basilica-and-the-vatican-3817'),
+    ],
+    'day-13': [
+        ("Beneath the Colosseum's arena floor was the hypogeum, a maze of tunnels and cages with pulley-operated lifts &ndash; gladiators and wild animals could pop up through trapdoors, seemingly out of nowhere, right in front of the crowd.",
+         'Through Eternity Tours', 'https://www.througheternity.com/rome/8-fascinating-facts-about-the-colosseum-you-might-not-know'),
+        ("Before the underground hypogeum existed, the Colosseum could be flooded for mock naval battles called naumachiae, with small warships fighting it out in a man-made lake inside the arena.",
+         'National Geographic', 'https://www.nationalgeographic.com/history/history-magazine/article/roman-mock-naval-sea-battles-naumachia'),
+        ("In one bizarre event, the arena floor was landscaped like a forest and stocked with deer, boar and ostriches &ndash; spectators were handed tickets and let loose to hunt the animals themselves and take the meat home.",
+         "All That's Interesting", 'https://allthatsinteresting.com/venatio'),
+        ("The Colosseum we see today is a bare stone skeleton, but in Roman times it was covered in polished marble and bronze details, making it gleam rather than look like a ruin.",
+         'The Colosseum', 'https://www.thecolosseum.org/facts/'),
+    ],
+    'day-14': [
+        ("The French novelist Stendhal &ndash; famous for giving his name to 'Stendhal syndrome', the fainting fits caused by overwhelming art &ndash; once served as the French consul in Civitavecchia.",
+         'Roma Experience', 'https://www.romaexperience.com/post/civitavecchia-the-city-port'),
+        ("Civitavecchia's harbour fortress is popularly called 'Fort Michelangelo', but that was never its official name &ndash; it was christened Fortress Giulia after Pope Julius II, who commissioned it; Michelangelo is only credited with the top tower.",
+         'Cabinet', 'https://www.cabinet.ox.ac.uk/forte-michelangelo-civitavecchia-roma-1508-1535'),
+        ("In 1972, workers in Civitavecchia found frescoes hidden under layers of lime and wallpaper that turned out to be near-exact copies of Raphael's frescoes from the Vatican's Room of Heliodorus &ndash; nobody has ever figured out why they're there.",
+         'Port Mobility Civitavecchia', 'https://civitavecchia.portmobility.it/en/10-things-maybe-you-dont-know-about-civitavecchia-and-port'),
+        ("When Queen Victoria was officially named by the Duchess of Cornwall in 2007, the champagne bottle swung at the bow refused to smash &ndash; considered a maritime bad omen &ndash; so a backup bottle had to be released to finish the job.",
+         'UPI', 'https://www.upi.com/Entertainment_News/2007/12/11/Camilla-has-unlucky-break-at-ship-launch/94141197425702/'),
+    ],
+    'day-15': [
+        ("The roaring lion on the Golden Lion pub's signage traces back to the artwork on the launch programme for the original Queen Elizabeth in 1938 &ndash; Cunard's mascot has been guarding the ship's pub ever since.",
+         "Paul's Beer & Travel Blog", 'https://baileysbeerblog.blogspot.com/2022/07/gold-red-black-at-queen-mary-2s-golden.html'),
+        ("The Golden Lion pubs on Cunard ships serve beers brewed exclusively for the line, including an odd one called 'Breakfast' &ndash; a biscotti-flavoured stout.",
+         "Paul's Beer & Travel Blog", 'https://baileysbeerblog.blogspot.com/2022/07/gold-red-black-at-queen-mary-2s-golden.html'),
+        ("Tucked among Cunard's white-tie ballrooms and formal dining rooms is a proper English pub complete with a dartboard, karaoke nights and pub quizzes &ndash; a deliberately unpretentious contrast to the rest of the ship.",
+         'Cunard', 'https://www.cunard.com/en-us/activity-types/bars-and-lounges/golden-lion-pub'),
+    ],
+    'day-16': [
+        ("There's a Marseille saying that 'it was the sardine that blocked the port' &ndash; a real 1780 incident where a warship called the Sartine ran aground at the harbour mouth got garbled over time into a legend about a giant fish plugging the port.",
+         'Connexion France', 'https://www.connexionfrance.com/magazine/when-and-why-do-we-say-cest-la-sardine-qui-a-bouche-le-port-de-marseille/395138'),
+        ("Coffee first entered France through Marseille in 1644, and the city opened its first coffeehouse in 1671 &ndash; a full year before Paris got one.",
+         'All About Coffee', 'https://ukersallaboutcoffee.wordpress.com/chapter5/'),
+    ],
+    'day-17': [
+        ("Monaco has no airport, so getting there means arriving by helicopter, superyacht or train &ndash; yet the tiny 2-square-kilometre country still packs in a network of public tunnels, escalators and lifts to move people up and down its cliffside terrain.",
+         'Trafalgar', 'https://www.trafalgar.com/real-word/11-crazy-facts-billionaires-playground-monaco/'),
+        ("Monaco's royal couple are both genuine Olympians &ndash; Prince Albert II competed in bobsleigh at five consecutive Winter Olympics, while Princess Charlene won swimming medals for South Africa before becoming a princess.",
+         'Trafalgar', 'https://www.trafalgar.com/real-word/11-crazy-facts-billionaires-playground-monaco/'),
+        ("Monaco is watched over by more than 560 CCTV cameras and has roughly one police officer for every 60 residents, giving it one of the highest security-personnel densities of any country on Earth.",
+         'Trafalgar', 'https://www.trafalgar.com/real-word/11-crazy-facts-billionaires-playground-monaco/'),
+    ],
+    'day-18': [
+        ("Genoa's medieval cathedral, San Lorenzo, still has an unexploded WWII naval shell embedded in its side wall &ndash; it crashed through during a 1941 bombardment and simply never went off.",
+         'Atlas Obscura', 'https://www.atlasobscura.com/things-to-do/genoa-italy/architecture'),
+        ("Beneath Genoa's streets lies a hidden network of WWII-era escape tunnels and bomb shelters, including a 150-metre passage burrowed under the Doge's Palace.",
+         'myCityHunt', 'https://www.mycityhunt.com/explorer-blog/10-facts-about-genoa-you-didnt-know-519'),
+        ("Genoa's harbour lighthouse, La Lanterna, can claim the title of the tallest traditional lighthouse in the world, depending on how you measure it.",
+         'Atlas Obscura', 'https://www.atlasobscura.com/things-to-do/genoa-italy/architecture'),
+        ("Palazzo San Giorgio, once home to one of the oldest banks in the world, is also where Marco Polo is said to have dictated his famous travel memoirs.",
+         'Atlas Obscura', 'https://www.atlasobscura.com/places/palazzo-san-giorgio'),
+    ],
+    'day-19': [
+        ("The Leaning Tower of Pisa's largest bell weighs around 3,600kg &ndash; about the same as a full-grown female African elephant.",
+         'The Fact Site', 'https://www.thefactsite.com/pisa-tower-facts/'),
+        ("In 1944, a 23-year-old American sergeant was ordered to check the tower for German snipers before possibly calling in an artillery strike &ndash; he couldn't bring himself to destroy something so beautiful, and the tower survived the war.",
+         'The Fact Site', 'https://www.thefactsite.com/pisa-tower-facts/'),
+        ("Pisa's famous tilt isn't unique &ndash; the bell tower of the nearby Church of St Nicola leans too, thanks to the same soft ground.",
+         'Fact City', 'https://facts.uk/facts-about-the-leaning-tower-of-pisa/'),
+        ("The tower's bells haven't rung properly in over 100 years &ndash; partly because one of them, the 'Bell of the Traitor', traditionally tolled whenever a criminal was executed.",
+         'Fact City', 'https://facts.uk/facts-about-the-leaning-tower-of-pisa/'),
+    ],
+    'day-20': [
+        ("Queen Victoria has the first two-storey library ever built at sea, stocked with around 6,000 books, journals and periodicals.",
+         "Chris Frame's Cunard Page", 'https://www.chriscunard.com/queenvictoria/qv-facts/'),
+        ("The ship's Winter Garden has a retractable glass roof that can be opened to the sky &ndash; a colonial-style conservatory built right into a working ocean liner.",
+         "Chris Frame's Cunard Page", 'https://www.chriscunard.com/queenvictoria/qv-facts/'),
+        ("Queen Victoria's six main suites are each named after a historic Cunard liner &ndash; Mauretania, Laconia, Aquitania, Berengaria, Carpathia and Caronia.",
+         "Chris Frame's Cunard Page", 'https://www.chriscunard.com/queenvictoria/qv-facts/'),
+    ],
+    'day-21': [
+        ("The 1280 Torre Chigi in San Gimignano has its front door on the first floor &ndash; residents climbed a ladder to get in and pulled it up at night so rival families couldn't attack them in their sleep.",
+         'Torciano Magazine', 'https://magazine.torciano.com/en/san-gimignano-towers-torre-chigi/'),
+        ("Talamone doubled as a Tuscan hideaway in the James Bond film Quantum of Solace &ndash; 007 arrives by boat near the medieval Torre di Talamonaccio on the coast.",
+         'James Bond Lifestyle', 'https://www.jamesbondlifestyle.com/product/villa-le-torre-talamone-southern-tuscany-italy'),
+        ("Admiral Horatio Nelson dropped anchor off Talamone in June 1798 while hunting for Napoleon's fleet, just weeks before his decisive victory at the Battle of the Nile.",
+         'My Kind of Italy', 'https://www.mykindofitaly.com/post/talamone-tuscany'),
+    ],
+    'day-22': [
+        ("Renaissance master Giorgio Vasari painted the black rooster into his 1565 'Allegory of Chianti' ceiling panel in Florence's Palazzo Vecchio, cementing it as the region's symbol centuries before it appeared on a wine label.",
+         'Chianti Classico Consorzio', 'https://www.chianticlassico.com/en/trademark/history-of-the-black-rooster/'),
+        ("The Chianti Classico black rooster trademark is so tightly policed that, since 2005, a bottle without the rooster on its label legally isn't allowed to call itself Chianti Classico at all.",
+         'Chianti Classico Consorzio', 'https://www.chianticlassico.com/en/trademark/history-of-the-black-rooster/'),
+    ],
+    'day-23': [
+        ("The Galleria's floor mosaics depict four cities of the newly unified Kingdom of Italy as animals &ndash; Turin as a bull, Rome as a wolf, Florence as a lily, and Milan as its own red cross.",
+         'The Art Post Blog', 'https://www.theartpostblog.com/en/bull-galleria-milan/'),
+    ],
+    'option-a-23sep': [
+        ("Villa d'Este in Cernobbio started life in 1568 as a cardinal's summer retreat, later passed through the hands of a ballerina, a Napoleonic general and an exiled queen, and only became a hotel in 1873.",
+         'Historic Hotels of the World', 'http://www.historichotelsthenandnow.com/villaestecernobbio.html'),
+        ("From parts of Cernobbio you genuinely can't tell where Italy ends and Switzerland begins &ndash; the town blends into Chiasso just across the invisible border on the forested slopes of Mount Bisbino.",
+         'Lake Como Travel', 'https://lakecomotravel.com/cernobbio/'),
+        ("Harry's Bar in Cernobbio was opened in 1973 by Piero Sacchi, who wanted to bring the American cocktail-bar trend to Lake Como &ndash; its decor has barely changed since.",
+         "Harry's Bar Cernobbio", 'https://www.harrysbarcernobbio.it/en/about-us/'),
+    ],
+    'option-b-23sep': [
+        ("The Ferrari Museum's futuristic entrance was designed by Renzo Piano, the same architect behind the Pompidou Centre in Paris &ndash; a design flourish for a factory that started out with a modest 1947 gate.",
+         'Ferrari.com', 'https://www.ferrari.com/en-EN/museums/ferrari-maranello'),
+        ("Next to the museum runs the 'Strada della Storia' (History Trail), a red pedestrian path through the park with plaques tracing a decade of Ferrari and Maranello history each.",
+         'Maranello Plus', 'https://www.maranelloplus.com/en/places/il-museo-ferrari/'),
+        ("Visitors to the museum can try a real Formula 1 pit-stop wheel change against the clock &ndash; the same task F1 crews do in under 2-3 seconds during a race.",
+         'Ferrari.com Museums', 'https://www.ferrari.com/en-EN/museums'),
+        ("Maranello sits deep in Italy's balsamic vinegar country, and several local tour operators combine a Ferrari Museum visit with a traditional balsamic vinegar tasting tour &ndash; supercars and 12-year-aged vinegar, back to back.",
+         'Expedia', 'https://www.expedia.com.my/things-to-do/maranello-ferrari-museum-balsamic-vinegar-tour.a514248.activity-details'),
+    ],
+    'option-c-23sep': [
+        ("Venice's Acqua Alta bookshop keeps its stock safe from flooding canals by storing books inside full-size gondolas, bathtubs and even a rowing boat &ndash; when the water rises, the 'shelves' simply float.",
+         'Rosemary and Pork Belly', 'https://rosemaryandporkbelly.co.uk/quirky-venice/'),
+        ("The city is built on more than 100 small islands, held up by wooden piles driven into the lagoon mud &ndash; starved of oxygen, the wood never rotted and instead petrified into something as hard as stone over the centuries.",
+         'Our Escape Clause', 'https://www.ourescapeclause.com/fun-facts-about-venice-interesting/'),
+        ("Tucked in Venice is the Scala Contarini del Bovolo, a spiralling external staircase so distinctive it gave the noble family who built it the nickname 'Bovolo' &ndash; Venetian dialect for 'snail'.",
+         'Atlas Obscura', 'https://www.atlasobscura.com/users/blackbolt616/lists/venice-italy'),
+        ("Lazzaretto Nuovo, one of Venice's lagoon islands, was used as a plague quarantine station centuries ago and is linked to local legend of the so-called 'Vampire of Venice' &ndash; a skeleton found buried with a brick wedged in its jaw.",
+         'Atlas Obscura', 'https://www.atlasobscura.com/users/blackbolt616/lists/venice-italy'),
+    ],
+    'option-d-23sep': [
+        ("To correct the sinking foundation as building continued, medieval masons made the upper floors taller on the low side than the high side &ndash; giving the Leaning Tower of Pisa a subtle banana-like curve rather than a straight lean.",
+         'Wikipedia', 'https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa'),
+        ("The Tower of Pisa has survived at least four strong earthquakes since 1280 &ndash; engineers found in 2018 that the very soft, unstable soil that caused its famous lean also acts as a shock absorber, stopping the tower resonating with the tremors.",
+         'ScienceDaily', 'https://www.sciencedaily.com/releases/2018/05/180509105004.htm'),
+        ("Lake Como has its own lake-monster legend, nicknamed 'Lariosauro' after a prehistoric reptile whose fossils were found nearby &ndash; the first reported sighting of the reptile-like creature was in 1946.",
+         'Como Lake Today', 'https://comolake.today/facts-about-lake-como/'),
+        ("Villa Balbianello on Lake Como isn't just a pretty stop &ndash; George Lucas filmed scenes for Star Wars Episode II: Attack of the Clones there in 2002, doubling as Padmé Amidala's lakeside retreat on Naboo.",
+         'Como Lake Today', 'https://comolake.today/facts-about-lake-como/'),
+    ],
+    'day-24': [
+        ("In 1874 a barge loaded with gunpowder exploded under Macclesfield Bridge on Regent's Canal, killing four people, destroying the bridge and reportedly terrifying the animals at nearby London Zoo.",
+         'London Museum', 'https://www.londonmuseum.org.uk/collections/london-stories/regents-canal/'),
+        ("The Coal Drops Yard arches near King's Cross weren't always shops and restaurants &ndash; in the Victorian era, gangs of famously tough, muscular women worked there unloading up to 30 wagon-loads of glass bottles a day for a bottle merchant.",
+         "King's Cross", 'https://www.kingscross.co.uk/meet-mr-coal-drops'),
+        ("Long before its boutique-shop makeover, the grimy Victorian coal-drop arches were home to the nightclub Bagley's, which packed in up to 2,500 clubbers on a Saturday night at the height of London's warehouse rave scene.",
+         "King's Cross", 'https://www.kingscross.co.uk/meet-mr-coal-drops'),
+    ],
+    'day-25': [
+        ("In March 1974 The Mousetrap moved from the Ambassadors Theatre to the St Martin's Theatre next door &ndash; and pulled off the entire transfer over a single weekend without missing one single performance.",
+         'Wikipedia', 'https://en.wikipedia.org/wiki/The_Mousetrap'),
+        ("Agatha Christie was so sure The Mousetrap wouldn't last that she predicted it might run eight months. It has now passed 30,000 performances and is still the longest-running show of any kind in the world.",
+         'Wikipedia', 'https://en.wikipedia.org/wiki/The_Mousetrap'),
+        ("The V&A's collection includes an antique French chair reputed to be haunted &ndash; visitors and staff have long claimed its cushion mysteriously deflates several times a day, as if someone invisible keeps sitting down.",
+         'Time Out London', 'https://www.timeout.com/london/blog/ten-weird-and-fascinating-things-every-londoner-needs-to-see-at-the-victoria-albert-museum-103116'),
+        ("Among the V&A's oddest objects is Tippoo's Tiger, a life-size 18th-century wooden automaton of a tiger mauling a British soldier &ndash; originally fitted with an organ mechanism that made the soldier's arm flail and produced groaning sounds.",
+         'Time Out London', 'https://www.timeout.com/london/blog/ten-weird-and-fascinating-things-every-londoner-needs-to-see-at-the-victoria-albert-museum-103116'),
+    ],
+    'day-26': [
+        ("The Tower of London's ravens are technically enlisted members of the armed forces and can be formally 'dismissed' for misconduct &ndash; Raven George was sacked in 1986 for destroying television aerials and exiled to a zoo in Wales.",
+         'Wikipedia', 'https://en.wikipedia.org/wiki/Ravens_of_the_Tower_of_London'),
+        ("Anne Boleyn's now-iconic space buns in Six the Musical weren't scripted &ndash; original West End cast member Millie O'Connell simply wore her hair that way at a 2018 preview, the creative team loved it, and it became the character's permanent look.",
+         'Beano', 'https://www.beano.com/facts/music/six-the-musical-facts'),
+    ],
+    'day-27': [
+        ("Despite terminals numbered 2 through 5, Heathrow has no Terminal 1 in use today &ndash; it opened in 1968 and was permanently closed in 2015 after 47 years of service.",
+         'Fact City', 'https://facts.uk/interesting-facts-about-london-heathrow-airport/'),
+        ("If Heathrow's control tower ever went out of action, a secret windowless backup replica of the tower's visual control room, hidden away from the airfield, can take over and keep up to 70% of flights running.",
+         'Surrey Live', 'https://www.getsurrey.co.uk/news/local-news/heathrow-airport-fascinating-secret-facts-18565532'),
+        ("Heathrow's Animal Reception Centre processes an extraordinary menagerie every year &ndash; around 28,000 fish, 2,000 birds and up to 200,000 reptiles pass through the airport.",
+         'Surrey Live', 'https://www.getsurrey.co.uk/news/local-news/heathrow-airport-fascinating-secret-facts-18565532'),
+        ("Nearby Farringdon has an oddly split identity: since 1394 it's been divided into 'Farringdon Within' and 'Farringdon Without', depending on which side of the old Roman London Wall each half fell on.",
+         'London x London', 'https://www.londonxlondon.com/london-area-guides/farringdon/'),
+    ],
+}
+
+FUN_FACTS_PAGE_ORDER = [
+    'day-11', 'day-12', 'day-13', 'day-14', 'day-15', 'day-16', 'day-17', 'day-18', 'day-19', 'day-20',
+    'day-21', 'day-22', 'day-23',
+    'option-a-23sep', 'option-b-23sep', 'option-c-23sep', 'option-d-23sep',
+    'day-24', 'day-25', 'day-26', 'day-27',
+]
+
+OPTION_FUN_FACT_LABELS = {
+    'option-a-23sep': "Option A &ndash; Lake Como &amp; Harry's Bar",
+    'option-b-23sep': 'Option B &ndash; Ferrari Maranello',
+    'option-c-23sep': 'Option C &ndash; Venice',
+    'option-d-23sep': 'Option D &ndash; Pisa &amp; Lake Como',
+}
+
+def fun_facts_day_label(day_id):
+    m = re.match(r'day-(\d{1,2})$', day_id)
+    if m:
+        dom = int(m.group(1))
+        d = datetime.date(2026, 9, dom)
+        trip_day = dom - (TRIP_START_DATE.day - 1)
+        return f'{d.strftime("%A")} {_ordinal(dom)} September (Day {trip_day})'
+    if day_id in OPTION_FUN_FACT_LABELS:
+        return f'Wednesday 23rd September (Day 14) &ndash; {OPTION_FUN_FACT_LABELS[day_id]}'
+    return day_id
+
+def fun_facts_print_only(day_id):
+    facts = [f for f in (FUN_FACTS_5.get(day_id), FUN_FACTS_6.get(day_id)) if f]
+    facts.extend(FUN_FACTS_QUIRKY.get(day_id, []))
+    return facts
+
+def fun_facts_page_html():
+    blocks = []
+    for did in FUN_FACTS_PAGE_ORDER:
+        facts = fun_facts_print_only(did)
+        if not facts:
+            continue
+        facts_html = ''.join(_one_fact_html(f) for f in facts)
+        blocks.append(f'''
+      <div class="ffp-day">
+        <h3 class="ffp-day-title">{fun_facts_day_label(did)}</h3>
+        {facts_html}
+      </div>''')
+    return ''.join(blocks)
+
 def _one_fact_html(fact):
     text, source_label, source_url = fact
     source_html = f' <span class="fun-fact-source">&mdash; <a href="{source_url}" target="_blank">{esc(source_label)}</a></span>' if source_url else ''
@@ -742,7 +1113,7 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
     fact_html = fun_fact_box(day_id) if day_id else ''
     return f'''
     <div class="day-card theme-{theme}"{day_id_attr}>
-      <div class="day-head"><span class="day-title">{esc(trip_day_title(day['title']))}</span><span class="day-head-right">{print_day_btn}{where_html}</span></div>
+      <div class="day-head"><span class="day-title">{esc(day_heading_display(day['title']))}</span><span class="day-head-right">{print_day_btn}{where_html}</span></div>
       <div class="day-body">
         {fact_html}
         {quicklink_html or ''}
@@ -1002,15 +1373,15 @@ dinner_box_13sep = dinner_box('8 More Dinner Suggestions (no repeats - handy for
 
 AFTERNOON_12SEP = [
     {'place': 'Trevi Fountain', 'type': 'Iconic baroque fountain - toss a coin in for luck (~15 min walk from hotel)',
-     'address': 'Piazza di Trevi, Rome', 'website': None, 'review': None},
+     'address': 'Piazza di Trevi, Rome', 'website': None, 'review': None, 'w3w': 'wiped.school.dreaming'},
     {'place': 'Spanish Steps & Piazza di Spagna', 'type': 'Famous steps, great people-watching and shopping nearby (~20 min walk)',
-     'address': 'Piazza di Spagna, Rome', 'website': None, 'review': None},
+     'address': 'Piazza di Spagna, Rome', 'website': None, 'review': None, 'w3w': 'rungs.diverts.tractor'},
     {'place': 'Pantheon', 'type': 'Best-preserved ancient Roman building, free entry (~20-25 min walk)',
-     'address': 'Piazza della Rotonda, Rome', 'website': None, 'review': None},
+     'address': 'Piazza della Rotonda, Rome', 'website': None, 'review': None, 'w3w': 'strictly.into.evolves'},
     {'place': 'Piazza Navona', 'type': "Grand baroque square with Bernini's Fountain of the Four Rivers, lively cafes (~25-30 min walk or short taxi)",
-     'address': 'Piazza Navona, Rome', 'website': None, 'review': None},
+     'address': 'Piazza Navona, Rome', 'website': None, 'review': None, 'w3w': 'drank.navy.scanning'},
     {'place': 'Galleria Borghese', 'type': 'World-class Bernini/Caravaggio art collection - needs a pre-booked timed entry ticket, so only if booked in advance',
-     'address': 'Piazzale Scipione Borghese 5, Rome', 'website': 'https://galleriaborghese.beniculturali.it/en/', 'review': None},
+     'address': 'Piazzale Scipione Borghese 5, Rome', 'website': 'https://galleriaborghese.beniculturali.it/en/', 'review': None, 'w3w': 'detained.planting.describe'},
     {'place': "Vatican Necropolis (Scavi Tour) - Tomb of St Peter", 'type': 'Guided tour through the ancient necropolis beneath St Peter\'s Basilica, ending at the tomb believed to hold St Peter\'s remains - must be booked well in advance, no photos allowed, small groups only',
      'address': 'Meet at the Ufficio Scavi (Excavations Office), Piazza San Pietro, Vatican City',
      'website': 'https://www.basilicasanpietro.va/en/products/the-necropolis',
@@ -1099,6 +1470,25 @@ def trip_day_title(title):
     date_of_month = int(m.group(1))
     trip_day = date_of_month - (TRIP_START_DATE.day - 1)
     return re.sub(r'\(DAY\s*\d{1,2}\)', f'(DAY {trip_day})', title, count=1, flags=re.I)
+
+def _ordinal(n):
+    if 11 <= (n % 100) <= 13:
+        return f'{n}th'
+    return f'{n}' + {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+
+def day_heading_display(title):
+    """Build the full-date day-card heading, e.g. 'Thursday 24th September (Day 15)',
+    from a schedule title like 'THURSDAY (DAY 24)' or 'FRIDAY (DAY 11) - 11 SEP'.
+    Falls back to trip_day_title()'s output for titles that don't match the weekday+(DAY N) pattern
+    (e.g. the Option A/B/C/D headings for 23 Sept)."""
+    m = re.match(r'([A-Za-z]+)\s*\(DAY\s*(\d{1,2})\)', title.strip(), re.I)
+    if not m:
+        return trip_day_title(title)
+    weekday, date_of_month = m.group(1).capitalize(), int(m.group(2))
+    trip_day = date_of_month - (TRIP_START_DATE.day - 1)
+    return f'{weekday} {_ordinal(date_of_month)} September (Day {trip_day})'
+
+FUN_FACTS_PAGE_HTML = fun_facts_page_html()
 
 DAY24_MAP = {
     'title': "Thursday 24 Sept - Today's Places & Suggested Routes",
@@ -1757,7 +2147,7 @@ piccshops20_html = ''.join(
 
 PICC_THINGS_20 = [
     {'place': 'Piccadilly Circus & the Shaftesbury Memorial (Eros)', 'type': "The famous statue and video-screen hub itself - starting point for everything below",
-     'address': 'Piccadilly Circus, London W1J', 'gmap': gsearch('Piccadilly Circus, London')},
+     'address': 'Piccadilly Circus, London W1J', 'gmap': gsearch('Piccadilly Circus, London'), 'w3w': 'tidy.loyal.public'},
     {'place': "St James's Church Piccadilly", 'type': "Wren-designed church (1684) with a leafy courtyard and craft/antiques market most days",
      'address': '197 Piccadilly, London W1J 9LL', 'website': 'https://www.sjp.org.uk/', 'gmap': gsearch("St James's Church Piccadilly, London")},
     {'place': 'Royal Academy of Arts', 'type': 'Major art exhibitions inside historic Burlington House - free courtyard and permanent collection displays',
@@ -1995,6 +2385,11 @@ def flag_for_where(where):
     if 'home' in w: return ('&#9992;&#65039;', 'Flying home')
     return ('', '')
 
+# Dates (ISO) that still have an outstanding item in the Things To Do "need to book" list -
+# these drive the UNCONFIRMED tag on the Trip at a Glance timeline. Kept in sync manually
+# against site_data_places.json's need_to_book array.
+UNCONFIRMED_DATES = {'2026-09-11', '2026-09-12', '2026-09-13', '2026-09-14', '2026-09-21', '2026-09-22', '2026-09-23', '2026-09-24', '2026-09-26', '2026-09-27'}
+
 timeline_html = ''
 for t in travel_json:
     if not (t.get('where') or t.get('what') or t.get('accom')):
@@ -2009,13 +2404,21 @@ for t in travel_json:
     flag_emoji, flag_title = flag_for_where(where)
     flag_html = f'<div class="tl-flag" title="{esc(flag_title)}">{flag_emoji}</div>' if flag_emoji else '<div class="tl-flag"></div>'
     day_num_html = f'<div class="tl-daynum">(Day {day_num})</div>' if 1 <= day_num <= 20 else ''
+    if t['date'] in UNCONFIRMED_DATES:
+        status_html = '<span class="tl-status tl-status-unconfirmed">UNCONFIRMED</span>'
+    elif what:
+        status_html = '<span class="tl-status tl-status-confirmed">CONFIRMED</span>'
+    else:
+        status_html = ''
+    dst_html = '<div class="tl-dst">NZ Daylight Saving starts here</div>' if t['date'] == '2026-09-27' else ''
     timeline_html += f'''
     <div class="tl-row {theme}">
       <div class="tl-date">{esc(date_disp)}{day_num_html}</div>
       <div>
-        <div class="tl-where">{esc(where)}</div>
+        <div class="tl-where">{esc(where)} {status_html}</div>
         <div class="tl-what">{esc(what)}</div>
         {f'<div class="tl-notes">{esc(notes)}</div>' if notes else ''}
+        {dst_html}
       </div>
       {flag_html}
     </div>'''
@@ -2090,17 +2493,23 @@ section h2 { font-size:1.7rem; color:var(--navy); border-left:6px solid var(--go
 section h3 { color:var(--navy); margin-top: 30px; }
 section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .timeline { display:grid; gap:10px; margin-bottom:20px; }
-#overview { padding:16px 20px 4px; }
-#overview h2 { font-size:1.3rem; margin-bottom:4px; padding-left:10px; border-left-width:4px; }
-#overview .lede { margin-bottom:8px; font-size:.85rem; }
-#overview .timeline { gap:2px; margin-bottom:6px; }
-#overview .tl-row { padding:3px 8px; gap:8px; grid-template-columns:95px 1fr 28px; border-radius:6px; }
-#overview .tl-date { font-size:.74rem; }
-#overview .tl-daynum { font-size:.65rem; font-weight:400; }
-#overview .tl-where { font-size:.87rem; }
-#overview .tl-what { font-size:.76rem; line-height:1.25; }
-#overview .tl-notes { font-size:.68rem; margin-top:0; line-height:1.2; }
-#overview .tl-flag { font-size:1.1rem; }
+#overview { padding:10px 16px 2px; }
+#overview h2 { font-size:1.22rem; margin-bottom:2px; padding-left:8px; border-left-width:4px; }
+#overview .lede { margin-bottom:4px; font-size:.78rem; }
+#overview .timeline { gap:1px; margin-bottom:3px; }
+#overview .tl-row { padding:2px 7px; gap:6px; grid-template-columns:90px 1fr 24px; border-radius:5px; }
+#overview .tl-date { font-size:.68rem; }
+#overview .tl-daynum { font-size:.58rem; font-weight:400; }
+#overview .tl-where { font-size:.8rem; }
+#overview .tl-what { font-size:.7rem; line-height:1.18; }
+#overview .tl-notes { font-size:.62rem; margin-top:0; line-height:1.15; }
+#overview .tl-flag { font-size:.95rem; }
+#overview .tl-status { font-size:.54rem; padding:1px 4px; }
+#overview .tl-dst { font-size:.6rem; margin-top:0; }
+.tl-status { display:inline-block; font-size:.68rem; font-weight:800; letter-spacing:.03em; padding:2px 7px; border-radius:8px; vertical-align:middle; margin-left:4px; }
+.tl-status-confirmed { background:#1f8f4e; color:#fff; }
+.tl-status-unconfirmed { background:#c62828; color:#fff; }
+.tl-dst { color:var(--gold); font-weight:700; font-size:.82rem; margin-top:3px; }
 .tl-row { display:grid; grid-template-columns:130px 1fr 32px; gap:14px; background:var(--card-bg); border-radius:10px; padding:12px 16px; box-shadow:0 1px 4px rgba(0,0,0,.06); border-left:5px solid var(--navy); }
 .tl-row.rome { border-left-color:var(--rome); }
 .tl-row.cruise { border-left-color:var(--cruise); }
@@ -2163,6 +2572,19 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .fun-fact-text + .fun-fact-text { margin-top:8px; padding-top:8px; border-top:1px dashed #eee6cf; }
 .fun-fact-text a { color:var(--cruise); }
 .fun-fact-source { color:var(--muted); font-size:.8rem; white-space:nowrap; }
+.ffp-day { border:1px solid var(--gold); border-radius:8px; padding:12px 16px; margin-bottom:14px; background:#fffcf3; page-break-inside:avoid; break-inside:avoid; }
+.ffp-day-title { font-size:.95rem; color:var(--navy); margin:0 0 8px; }
+.ec-boxes { display:flex; flex-wrap:wrap; gap:20px; margin-top:14px; }
+.ec-box { flex:1 1 320px; border:1px solid var(--gold); border-radius:10px; padding:18px 20px; background:#fffcf3; page-break-inside:avoid; break-inside:avoid; }
+.ec-box-title { color:var(--navy); margin:0 0 12px; font-size:1.08rem; }
+.ec-people { display:flex; flex-direction:column; gap:12px; }
+.ec-person { border-top:1px dashed #eee6cf; padding-top:12px; }
+.ec-person:first-child { border-top:none; padding-top:0; }
+.ec-person-name { font-weight:700; color:var(--ink); margin-bottom:4px; font-size:.95rem; }
+.ec-line { font-size:.85rem; color:var(--muted); }
+.ec-blank { color:#b9ac7e; font-style:italic; font-weight:600; }
+.ec-blank-line { color:#ccc; }
+@media print { .ec-box { break-inside:avoid; } }
 .place-fact { margin-top:8px; padding-top:8px; border-top:1px dashed #e3ddc9; font-size:.78rem; color:var(--muted); font-style:italic; line-height:1.4; }
 .place-hours { font-size:.78rem; color:var(--navy); font-weight:600; margin:2px 0 6px; }
 body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !important; }
@@ -2271,6 +2693,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .print-mini-all { background:var(--gold); border-color:var(--gold); font-weight:700; display:inline-flex; margin:2px auto 4px; padding:8px 20px; font-size:.8rem; }
 .print-mini-all:hover { background:#b98a30; }
 @media print {
+  body, body * { font-family:'Source Sans Pro','Segoe UI',system-ui,sans-serif !important; }
   .home-fab { display:none !important; }
   .no-print { display:none !important; }
   .day-card, .place-card, .tl-row { page-break-inside: avoid; break-inside: avoid; }
@@ -2296,7 +2719,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -2344,6 +2767,15 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body[class*="printing-day-"] .resto-list { display:none !important; }
   body[class*="printing-day-"] .london-quicklinks { display:none !important; }
   body.printing-book .fun-fact-box { display:none !important; }
+  body.printing-book #funfacts { display:none !important; }
+  body.printing-all .day-card { page-break-before: always; break-before: page; page-break-inside: auto; padding-top:4px; }
+  body.printing-all .day-map-box { page-break-before: always; break-before: page; page-break-inside: auto; margin-top:0; padding:8px 10px; }
+  body.printing-all .day-map-timeline, body.printing-all .dm-stop, body.printing-all .dm-leg { display:block !important; }
+  body.printing-all .dm-leg-line { display:none !important; }
+  body.printing-all .dm-stop-body, body.printing-all .dm-leg-body { page-break-inside: avoid; break-inside: avoid; padding:2px 0 4px; }
+  body.printing-all .dm-stop-body { padding-bottom:1px; }
+  body.printing-all .day-map-title { margin-bottom:4px; }
+  body.printing-all .day-map-caption { margin-top:4px; }
 ''' + '\n'.join(
     f'  body.printing-{sid} {{ font-size:.86em; }}\n'
     f'  body.printing-{sid} .day-card {{ page-break-inside: auto; break-inside: auto; padding-top:4px; }}\n'
@@ -2363,7 +2795,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} .london-quicklinks {{ display:none !important; }}'
     for sid in ['rome', 'cruise', 'tuscany', 'milan', 'london']
 ) + '''
-  @page { margin: 10mm; }
+  @page { margin: 8mm; }
 }
 @media (max-width:600px) {
   .hero h1 { font-size:1.9rem; }
@@ -2415,6 +2847,8 @@ NAV_SECTIONS = [
 UKETA_URL = 'https://www.gov.uk/eta/apply'
 POLARSTEPS_URL = 'https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan'
 CONNECTIONS_PDF_URL = 'fab4-connections-audit.pdf'
+PRINT_BOOK_PDF_URL = 'fab4-print-book.pdf'
+PRINT_ALL_PDF_URL = 'fab4-print-all.pdf'
 nav_grid_html = ''.join(
     (
         f'''<div class="nav-col">
@@ -2434,6 +2868,9 @@ HTML = f'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Fab 4 Take on Europe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head>
 <body>
@@ -2452,9 +2889,10 @@ HTML = f'''<!DOCTYPE html>
       <div class="hero-flags" aria-label="United Kingdom, Italy, France">&#127468;&#127463; &#127470;&#127481; &#127467;&#127479;</div>
       <p class="sub">10 &ndash; 29 September 2026</p>
       <div class="nav-grid">{nav_grid_html}</div>
-      <button class="print-mini print-mini-all no-print" onclick="printBook()"><span class="ic">&#128214;</span>Print Book</button>
-      <button class="print-mini print-mini-all no-print" onclick="printAll()"><span class="ic">&#128424;&#65039;</span>Print All</button>
+      <a class="print-mini print-mini-all no-print" href="{PRINT_BOOK_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128214;</span>Print Book</a>
+      <a class="print-mini print-mini-all no-print" href="{PRINT_ALL_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128424;&#65039;</span>Print All</a>
       <button class="print-mini no-print" id="factsToggleBtn" onclick="toggleFunFacts()"><span class="ic">&#127881;</span>Hide Fun Facts</button>
+      <button class="print-mini no-print" onclick="printSection('funfacts')"><span class="ic">&#128424;&#65039;</span>Print Fun Facts</button>
       <div class="fab4">Karen Nicholson &middot; Deborah Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
     </div>
     <div class="hero-photo">
@@ -2469,6 +2907,7 @@ HTML = f'''<!DOCTYPE html>
           <div class="flip-unit"><div class="flip-card"><div class="flip-digit" data-unit="seconds">00</div></div><div class="flip-label">Sec</div></div>
         </div>
         <a class="polarsteps-link no-print" href="{POLARSTEPS_URL}" target="_blank" rel="noopener"><span class="ic">&#128205;</span>Polarsteps &ndash; Open trip</a>
+        <a class="polarsteps-link no-print" href="#emergencycontacts"><span class="ic">&#128222;</span>Emergency Contacts</a>
         <a class="polarsteps-link no-print" href="{CONNECTIONS_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128203;</span>Connections Audit</a>
       </div>
     </div>
@@ -2752,6 +3191,24 @@ HTML = f'''<!DOCTYPE html>
   <div class="ev-link">
     <a class="pill pill-directions" href="standard-tube-map.pdf" target="_blank">&#128506;&#65039; CLICK HERE to view the Tube Map (PDF)</a>
   </div>
+</section>
+
+<section id="funfacts" class="print-block" data-section="funfacts">
+  <div class="section-head-row">
+    <h2>Fun Facts by Day</h2>
+    <button class="print-btn no-print" onclick="printSection('funfacts')"><span class="ic">&#128424;&#65039;</span>Print</button>
+  </div>
+  <p class="lede">Extra fun facts for the places we're seeing each day &ndash; on top of the ones shown in each day's Fun Facts box on screen.</p>
+  {FUN_FACTS_PAGE_HTML}
+</section>
+
+<section id="emergencycontacts" class="print-block" data-section="emergencycontacts">
+  <div class="section-head-row">
+    <h2>Emergency Contacts</h2>
+    <button class="print-btn no-print" onclick="printSection('emergencycontacts')"><span class="ic">&#128424;&#65039;</span>Print</button>
+  </div>
+  <p class="lede">Emergency contacts back home for each couple, in case anyone needs to reach family while we're away.</p>
+  <div class="ec-boxes">{EMERGENCY_CONTACTS_HTML}</div>
 </section>
 
 <footer class="no-print">

@@ -283,7 +283,7 @@
       "photo": "https://www.borgodicortefreda.com/assets/img/slide-1.jpg"
     },
     {
-      "place": "Il Caff\u00e8 degli Amici",
+      "place": "Il Caffè degli Amici",
       "type": "Cafe/restaurant - potential place to go (Tripadvisor 4.7/5, 562 reviews)",
       "address": "Via Roma 121, 50028 Tavarnelle Val di Pesa",
       "website": null,
@@ -398,7 +398,7 @@
       "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Golfo%20di%20La%20Spezia%20Italy%20aerial%20view.jpg"
     },
     {
-      "place": "Il Caff\u00e8 degli Amici",
+      "place": "Il Caffè degli Amici",
       "type": "Cafe/restaurant - potential place to go (Tripadvisor 4.7/5, 562 reviews)",
       "address": "Via Roma 121, 50028 Tavarnelle Val di Pesa",
       "website": "https://www.tripadvisor.com/Restaurant_Review-g670654-d3612860-Reviews-Caffe_Degli_Amici-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html",
@@ -429,14 +429,6 @@
       "website": "https://www.basilicasanpietro.va/en/products/the-necropolis",
       "review": "https://www.tripadvisor.com/Attraction_Review-g187793-d195269-Reviews-Necropolis_of_Saint_Peter-Vatican_City_Lazio.html",
       "w3w": "searched.circling.supposed"
-    },
-    {
-      "date": "Sat 12 Sep",
-      "item": "Dinner reservation - Rome (Veal Scaloppine al limone)",
-      "status": "To Confirm",
-      "notes": "Choose from: Cantina Cantarini da Mario, Girarrosto Fiorentino, Colline Emiliane, Trattoria Monti - see Rome Map tab",
-      "flag": "Decide on the day.",
-      "website": "https://www.tripadvisor.com/Restaurant_Review-g187791-d2041920-Reviews-Cantina_Cantarini_da_Mario-Rome_Lazio.html"
     },
     {
       "date": "Mon 14 Sep",
@@ -480,20 +472,6 @@
       "status": "To Confirm",
       "notes": "Private minibus, Fiumicino Airport to The Republic Hotel (Via Gaeta 61, Rome) - arranged in principle but no booking or confirmation reference is on file",
       "website": "https://www.therepublichotel.com/"
-    },
-    {
-      "date": "Fri 11 Sep",
-      "item": "Dinner reservation - Rome",
-      "status": "To Book",
-      "notes": "No table booked yet - choose from the 8 Dinner Suggestions on the Rome page (within ~20 min walk of The Republic Hotel)",
-      "flag": "Decide on the day."
-    },
-    {
-      "date": "Sun 13 Sep",
-      "item": "Dinner reservation - Rome (near the Colosseum)",
-      "status": "To Book",
-      "notes": "No table booked yet - Colosseum tour finishes ~7pm; choose from the 8 Dinner Suggestions on the Rome page near Piazza del Colosseo",
-      "flag": "Decide on the day."
     },
     {
       "date": "Mon 21 Sep",
@@ -573,7 +551,7 @@
   "italy_ttc": [
     {
       "day": "Tuscany",
-      "item": "Coffee/breakfast stop - Il Caff\u00e8 degli Amici",
+      "item": "Coffee/breakfast stop - Il Caffè degli Amici",
       "status": "Optional",
       "notes": "Tripadvisor 4.7/5 (562 reviews). Via Roma 121, ~5 min walk from Hotel Borgo di Cortefreda Relais. See Italy Map tab."
     },
