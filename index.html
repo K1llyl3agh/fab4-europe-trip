@@ -195,6 +195,7 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 @media (max-width:520px) { .resto-item { flex-direction:column; } .resto-photo { width:100%; height:160px; } }
 .pill { font-size:.75rem; text-decoration:none; background:var(--navy); color:#fff !important; padding:4px 11px; border-radius:999px; font-weight:600; }
 .pill-review { background:var(--gold); }
+.pill-booking { background:#1f8a5f; }
 .ev-link { margin-top:6px; }
 .pill-weblink { background:var(--cruise); }
 .pill-directions { background:#8a5a1f; }
@@ -5626,11 +5627,11 @@ Visit Website: Headout</div>
         <div class="ev-row">
           <div class="ev-time">6:45pm – 8:15pm</div>
           <div class="ev-body">
-            <div class="ev-name">Dinner at Hard Rock Cafe London <span class="badge badge-tobook">To Book</span> <img class="ev-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTQwIj4KPGNpcmNsZSBjeD0iNzAiIGN5PSI3MCIgcj0iNjQiIGZpbGw9IiNmNWM0NTEiIHN0cm9rZT0iIzhhM2IyMyIgc3Ryb2tlLXdpZHRoPSI3Ii8+CjxjaXJjbGUgY3g9IjcwIiBjeT0iNzAiIHI9IjY0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCB4PSI3MCIgeT0iNjMiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtc2l6ZT0iMjEiIGZpbGw9IiM4YTNiMjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkhhcmQgUm9jazwvdGV4dD4KPHRleHQgeD0iNzAiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTciIGxldHRlci1zcGFjaW5nPSIxIiBmaWxsPSIjOGEzYjIzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DQUZFPC90ZXh0Pgo8dGV4dCB4PSI3MCIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM4YTNiMjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxPTkRPTjwvdGV4dD4KPC9zdmc+" alt="Hard Rock Cafe London logo"></div>
+            <div class="ev-name">Dinner at Hard Rock Cafe London (confirmed via OpenTable) <span class="badge badge-booked">Booked</span> <img class="ev-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTQwIj4KPGNpcmNsZSBjeD0iNzAiIGN5PSI3MCIgcj0iNjQiIGZpbGw9IiNmNWM0NTEiIHN0cm9rZT0iIzhhM2IyMyIgc3Ryb2tlLXdpZHRoPSI3Ii8+CjxjaXJjbGUgY3g9IjcwIiBjeT0iNzAiIHI9IjY0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCB4PSI3MCIgeT0iNjMiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtc2l6ZT0iMjEiIGZpbGw9IiM4YTNiMjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkhhcmQgUm9jazwvdGV4dD4KPHRleHQgeD0iNzAiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTciIGxldHRlci1zcGFjaW5nPSIxIiBmaWxsPSIjOGEzYjIzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DQUZFPC90ZXh0Pgo8dGV4dCB4PSI3MCIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM4YTNiMjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxPTkRPTjwvdGV4dD4KPC9zdmc+" alt="Hard Rock Cafe London logo"></div>
             <div class="ev-addr">150 Old Park Lane, Mayfair, London W1K 1QZ</div>
             <div class="ev-addr"><a class="w3w-badge" href="https://what3words.com/month.wakes.tests" target="_blank" title="what3words location">///month.wakes.tests</a></div>
             
-            <div class="ev-link"><a class="pill pill-website" href="https://cafe.hardrock.com/london/" target="_blank">Website</a><a class="pill pill-weblink" href="https://cafe.hardrock.com/menu.aspx" target="_blank">Menu</a><a class="pill pill-instagram" href="https://www.instagram.com/hardrockcafelondon/" target="_blank" title="Instagram link">I</a></div>
+            <div class="ev-link"><a class="pill pill-website" href="https://cafe.hardrock.com/london/" target="_blank">Website</a><a class="pill pill-weblink" href="https://cafe.hardrock.com/menu.aspx" target="_blank">Menu</a><a class="pill pill-booking" href="https://opentable.com/l/GyRGOnW7p" target="_blank">Manage on OpenTable</a><a class="pill pill-instagram" href="https://www.instagram.com/hardrockcafelondon/" target="_blank" title="Instagram link">I</a></div>
             
             
             
@@ -7474,14 +7475,6 @@ Visit Website: Headout</div>
       <td class="ntb-notes">To be confirmed by Jennifer from Headout (jennifer@inspire.headout.com)</td>
       <td class="ntb-tick"><span class="tickbox"></span></td>
       <td><a class="pill" href="https://www.london-tickets.co.uk/tower-of-london/" target="_blank">Visit</a></td>
-    </tr>
-    <tr>
-      <td class="ntb-date">Sat 26 Sep</td>
-      <td>Dinner reservation - Hard Rock Cafe London </td>
-      <td><span class="badge badge-tobook">To Book</span></td>
-      <td class="ntb-notes">150 Old Park Lane, Mayfair, London W1K 1QZ - after the Six show (ends 5:15pm)</td>
-      <td class="ntb-tick"><span class="tickbox"></span></td>
-      <td><a class="pill" href="https://cafe.hardrock.com/london/" target="_blank">Visit</a></td>
     </tr>
     <tr>
       <td class="ntb-date">Sun 27 Sep</td>

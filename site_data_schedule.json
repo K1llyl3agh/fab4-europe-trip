@@ -233,26 +233,26 @@
         },
         {
           "time": "6:30 PM",
-          "event": "Dinner at Hard Rock Cafe London (starts 6:45pm)",
-          "status": "To Book",
+          "event": "Dinner at Hard Rock Cafe London (confirmed via OpenTable) (starts 6:45pm)",
+          "status": "Booked",
           "address": "150 Old Park Lane, Mayfair, London W1K 1QZ"
         },
         {
           "time": "7:00 PM",
           "event": "Dinner at Hard Rock Cafe London (continues)",
-          "status": "To Book",
+          "status": "Booked",
           "address": null
         },
         {
           "time": "7:30 PM",
           "event": "Dinner at Hard Rock Cafe London (continues)",
-          "status": "To Book",
+          "status": "Booked",
           "address": null
         },
         {
           "time": "8:00 PM",
           "event": "Dinner at Hard Rock Cafe London (continues, ends 8:15pm)",
-          "status": "To Book",
+          "status": "Booked",
           "address": null
         }
       ],
