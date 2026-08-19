@@ -205,6 +205,9 @@ HOTEL_QR = {
     'The Level at Melia White House': MELIA_QR_B64,
 }
 
+TRAVEL_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAACAElEQVR4nO2YMW4jMQxFn8wBUmqAPYCPQt8gRwp8M/koPsACnDIAB38LjbPbZLPNwiyiSjNsPr6++L/YxKdrP31eg+/iV0UUACYpXOEJ2SffnuXQnsClQw77+fqiYTHBF+T2BLR2YWttZdnecrsswNaWJwL6dC0fO0vgtvz0W/MnAvo3tH5rgO8r9LE8D9CXRWkA4NLVArtf6MonAvpb8dZaAyxYtjdwYG+trSXRdknKx/d+vu4rkqRRDy0KB0yywDQUbo8/9fot0kg8+7A4nAKcPiwKugMKzz5MQwH94Fbh9JLcPgSQkLgF0lBQllsL5tHTR3aZxkReEa3G0V27sg8gu0wqmWp+W8NMXxZYAJTVbUICfSSeYBqmUbSDhU8+LdyCD92q4i070a/v55HwvpIAt729LTPYlEM7desw9eBH78KLKkGyIPFpagom+LK3bNI7TU2SSVV1iwK6FCiOhJN9mFTSy07gdr+0sxa8rUcYy+2yn4smxgRJdD1ygiwo6WUnwIK23nRvpitdrbV9peQLfT4TdOTGYF43hZfk9o9ZjTSNDNyK5tvTMavZGtvl5X7hsImb3S8VlRA+yVS4NDRnSpAVuf1AO4MNM4ZV1e3vydL7D7XzsHh9idfWY8mC81sUPt2WPg6S5zu9ZqoJYIZbzz6SuVFJ3bbvSf5/K/4CyViOgjOEbRUAAAAASUVORK5CYII='
+CAR_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB9UlEQVR4nO2YMW7kMAxFn4YCUsrAHiBHkW+wRwr2ZpyjzAEC0OUAMv4W0qQbZJvFsAjhwjabB+KJolTE0zgvz3Pwk/wuiQLA5KM5TaOJNuvdRzraC3RJQD12jvIWcOwmKRLW9gKUsgMWSM6x05yj1BcCPY369Xb/5fXz43wPjv2FQP9I+zageQ3O96ivA/qWVlPaAoVRsM+dJo6EtBe4llKgW3SL/hYdOEspW0JatMJNAiQfbf3K18FQ9NHcoktu0RUMmMApaVEwW64CRTc5TSPj7oDkU1rJTT6aLJh/ctJOb0fzwbLCgtGSmjCaA4pu0WmumGNDTto+mh6oGrBqm9PbwAKaFqo0mptE6toypgOBSSYlNUFugclZ9mJS1lV2AWh+37Dbh4IK53a9v/tLgZ7GNOGr30pSdJOS9tvAJMkBmubnPPJkpH1wjiaTSz7os8L5aC/QB+hWgHMDsKByPbec3i4Zpr00l5R5ToA+miSf3s4npbcXjo8BFSroViqcG2WDY89owoyAtpYYzJk8pQkBrN12Tl+KPieHfLSXdVdzlHtZbaHCoI8joQkVKHSaamylqQBcC1j8zkeLoq/jub4mxrkR5zQBgPaHY68wuNptH/M+JB0tiq450K7LBB+Pw1q+2j56wjqdrd6VdXcoPzf5/y35F9YVsOVd3wvZAAAAAElFTkSuQmCC'
+
 WALK_ROUTES = [
     ('dinner at albert schloss', {
         'from': "Albert's Schloss",
@@ -2443,6 +2446,25 @@ def passport_row(name, idx):
     </tr>'''
 passport_html = ''.join(passport_row(n, i) for i, n in enumerate(PASSPORT_PEOPLE))
 
+IDP_PEOPLE = [
+    ('Karen Nicholson', False, ''),
+    ('Debbie Gyde', False, ''),
+    ('Thomas Akhurst', False, ''),
+    ('Gary Nicholson', True, 'IDP196978'),
+]
+def idp_row(name, has_idp, number, idx):
+    idp_id = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+    first_name = name.split(' ')[0]
+    checked = ' checked' if has_idp else ''
+    number_html = esc(number) if number else '&nbsp;'
+    return f'''
+    <tr>
+      <td>{esc(name)}</td>
+      <td class="tt-tick"><input type="checkbox" class="idp-check" id="idp-{idx}-{idp_id}" data-idp-id="{idp_id}" data-first-name="{esc(first_name)}"{checked}></td>
+      <td>{number_html}</td>
+    </tr>'''
+idp_html = ''.join(idp_row(n, has_idp, num, i) for i, (n, has_idp, num) in enumerate(IDP_PEOPLE))
+
 DRIVE_TIMES = [
     ('Civitavecchia (car collection) &rarr; Agriturismo Buratta, Talamone', '~140 km', '~2h 00m', 'Coastal route via SS1 Aurelia'),
     ('Agriturismo Buratta, Talamone &rarr; Hotel Borgo di Cortefreda Relais', '~140 km', '~2h 00m', 'Via SS223 (Siena&ndash;Grosseto), then north toward Tavarnelle'),
@@ -2672,6 +2694,9 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ec-blank { color:#b9ac7e; font-style:italic; font-weight:600; }
 .ec-blank-line { color:#ccc; }
 @media print { .ec-box { break-inside:avoid; } }
+.td-row { display:flex; align-items:center; gap:14px; margin:14px 0; }
+.td-btn { min-width:140px; text-align:center; }
+.td-qr { width:70px; height:70px; border:1px solid #ddd; border-radius:6px; background:#fff; padding:3px; }
 .place-fact { margin-top:8px; padding-top:8px; border-top:1px dashed #e3ddc9; font-size:.78rem; color:var(--muted); font-style:italic; line-height:1.4; }
 .place-hours { font-size:.78rem; color:var(--navy); font-weight:600; margin:2px 0 6px; }
 body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !important; }
@@ -2811,7 +2836,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -3000,6 +3025,7 @@ HTML = f'''<!DOCTYPE html>
         </div>
         <a class="polarsteps-link no-print" href="{POLARSTEPS_URL}" target="_blank" rel="noopener"><span class="ic">&#128205;</span>Polarsteps &ndash; Open trip</a>
         <a class="polarsteps-link no-print" href="#emergencycontacts"><span class="ic">&#128222;</span>Emergency Contacts</a>
+        <a class="polarsteps-link no-print" href="#traveldocuments"><span class="ic">&#128196;</span>Travel Documents</a>
         <a class="polarsteps-link no-print" href="{CONNECTIONS_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128203;</span>Connections Audit</a>
       </div>
     </div>
@@ -3303,6 +3329,31 @@ HTML = f'''<!DOCTYPE html>
   <div class="ec-boxes">{EMERGENCY_CONTACTS_HTML}</div>
 </section>
 
+<section id="traveldocuments" class="print-block" data-section="traveldocuments">
+  <div class="section-head-row">
+    <h2>Travel Documents</h2>
+    <button class="print-btn no-print" onclick="printSection('traveldocuments')"><span class="ic">&#128424;&#65039;</span>Print</button>
+  </div>
+  <p class="lede">Key trip documents, saved here so they're always at hand &ndash; open on screen or scan the QR code with your phone.</p>
+  <div class="td-row">
+    <a class="pill pill-weblink td-btn" href="fab4-travel-docs.mhtml" target="_blank">Travel Docs</a>
+    <img class="td-qr" src="data:image/png;base64,{TRAVEL_DOCS_QR_B64}" alt="QR code to Travel Docs">
+  </div>
+  <div class="td-row">
+    <a class="pill pill-weblink td-btn" href="fab4-car-docs.pdf" target="_blank">Car Docs</a>
+    <img class="td-qr" src="data:image/png;base64,{CAR_DOCS_QR_B64}" alt="QR code to Car Docs">
+  </div>
+
+  <details class="uketa-box">
+    <summary class="uketa-summary"><span class="ic">&#128663;</span> International Driving Permit (IDP) Check</summary>
+    <p class="tt-note">Whoever's driving in Italy needs a valid IDP alongside their normal licence. Tick boxes save in this browser only.</p>
+    <table class="ntb">
+      <tr><th>Name</th><th>Have IDP?</th><th>IDP Number</th></tr>
+      {idp_html}
+    </table>
+  </details>
+</section>
+
 <footer class="no-print">
   Built from the Fab4takeoneurope itinerary workbook &middot; private &amp; for family use only
 </footer>
@@ -3430,6 +3481,17 @@ function revealPassportChecklist() {{
     }});
   }});
   updatePassportReminder();
+}})();
+(function() {{
+  var boxes = document.querySelectorAll('.idp-check');
+  boxes.forEach(function(box) {{
+    var key = 'fab4-idp-' + box.dataset.idpId;
+    var stored = localStorage.getItem(key);
+    if (stored !== null) {{ box.checked = stored === '1'; }}
+    box.addEventListener('change', function() {{
+      localStorage.setItem(key, box.checked ? '1' : '0');
+    }});
+  }});
 }})();
 function updateHeroClock() {{
   var el = document.getElementById('heroClock');
