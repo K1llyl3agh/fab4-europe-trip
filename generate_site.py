@@ -205,7 +205,7 @@ HOTEL_QR = {
     'The Level at Melia White House': MELIA_QR_B64,
 }
 
-TRAVEL_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAACAElEQVR4nO2YMW4jMQxFn8wBUmqAPYCPQt8gRwp8M/koPsACnDIAB38LjbPbZLPNwiyiSjNsPr6++L/YxKdrP31eg+/iV0UUACYpXOEJ2SffnuXQnsClQw77+fqiYTHBF+T2BLR2YWttZdnecrsswNaWJwL6dC0fO0vgtvz0W/MnAvo3tH5rgO8r9LE8D9CXRWkA4NLVArtf6MonAvpb8dZaAyxYtjdwYG+trSXRdknKx/d+vu4rkqRRDy0KB0yywDQUbo8/9fot0kg8+7A4nAKcPiwKugMKzz5MQwH94Fbh9JLcPgSQkLgF0lBQllsL5tHTR3aZxkReEa3G0V27sg8gu0wqmWp+W8NMXxZYAJTVbUICfSSeYBqmUbSDhU8+LdyCD92q4i070a/v55HwvpIAt729LTPYlEM7desw9eBH78KLKkGyIPFpagom+LK3bNI7TU2SSVV1iwK6FCiOhJN9mFTSy07gdr+0sxa8rUcYy+2yn4smxgRJdD1ygiwo6WUnwIK23nRvpitdrbV9peQLfT4TdOTGYF43hZfk9o9ZjTSNDNyK5tvTMavZGtvl5X7hsImb3S8VlRA+yVS4NDRnSpAVuf1AO4MNM4ZV1e3vydL7D7XzsHh9idfWY8mC81sUPt2WPg6S5zu9ZqoJYIZbzz6SuVFJ3bbvSf5/K/4CyViOgjOEbRUAAAAASUVORK5CYII='
+TRAVEL_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB8klEQVR4nO2YQWrlQAxEX/9uyLINc4AcRYY5QI4UcqS5QfsoOcBAe/lBpmYhO2QxIbMZokUaL2xrUxSlUqmL+PAct49r8F38rIgmQJW8S9McvAff5hnRmqQq1WneR9WIT82EaG9AKSv7el9o+7PvawP20r4Q0D8U60R6adhR1hSA/nLa9bLBVrBjgT7a1wH6FK2gYcejYPv5e6mvK13sCdHeYCulAA+va9ufwYCjlLIkRNsIv9q5/5gNjsdf62JhYfmmA5oGVKlOqoam1etPPgdD83o0YlKA0UfN6LdI0rSqUTXoJ7eaRk/JbUwxcHCsXiQn5pY6CTfwrqoRyHOipQ/HpOF9+AlYaVNNRBppgNWTZxLrlsiKdDlEx6V1MPqId3+n25SJkWj/UG9E3NR+Owl4dPmpW3MspRJugAfmSOBwLDS2Y0mYatA8faBK3s81J6tuT24dO5at7c+llPuyPUgpN53g1moskrE/auTNCdOqhmNgdUZOUJ05p8MNuC80oA/vL3SVUo4Fva4ZlRBnnsYLpkiMSXMCxO6g4V1XWsir2yviRrsNx/Lm22lX9LK4Vgq2PSO3b0U7Fo6FUtZjQdPanrDL3u5qqL6toP3pYT6VPpsn3dAlvVshrz09Y6q5PGEiyfuIXvOulLot3zf5/634B7IimfqVQm6jAAAAAElFTkSuQmCC'
 CAR_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB9UlEQVR4nO2YMW7kMAxFn4YCUsrAHiBHkW+wRwr2ZpyjzAEC0OUAMv4W0qQbZJvFsAjhwjabB+KJolTE0zgvz3Pwk/wuiQLA5KM5TaOJNuvdRzraC3RJQD12jvIWcOwmKRLW9gKUsgMWSM6x05yj1BcCPY369Xb/5fXz43wPjv2FQP9I+zageQ3O96ivA/qWVlPaAoVRsM+dJo6EtBe4llKgW3SL/hYdOEspW0JatMJNAiQfbf3K18FQ9NHcoktu0RUMmMApaVEwW64CRTc5TSPj7oDkU1rJTT6aLJh/ctJOb0fzwbLCgtGSmjCaA4pu0WmumGNDTto+mh6oGrBqm9PbwAKaFqo0mptE6toypgOBSSYlNUFugclZ9mJS1lV2AWh+37Dbh4IK53a9v/tLgZ7GNOGr30pSdJOS9tvAJMkBmubnPPJkpH1wjiaTSz7os8L5aC/QB+hWgHMDsKByPbec3i4Zpr00l5R5ToA+miSf3s4npbcXjo8BFSroViqcG2WDY89owoyAtpYYzJk8pQkBrN12Tl+KPieHfLSXdVdzlHtZbaHCoI8joQkVKHSaamylqQBcC1j8zkeLoq/jub4mxrkR5zQBgPaHY68wuNptH/M+JB0tiq450K7LBB+Pw1q+2j56wjqdrd6VdXcoPzf5/y35F9YVsOVd3wvZAAAAAElFTkSuQmCC'
 
 WALK_ROUTES = [
@@ -2561,6 +2561,8 @@ a { color: inherit; }
 .hero-inner { max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; text-align:center; }
 .hero-text { flex:1 1 380px; text-align:center; }
 .hero-photo { flex:0 0 auto; display:flex; flex-direction:column; align-items:center; }
+.view-counter { display:inline-flex; align-items:center; gap:6px; margin-bottom:10px; padding:5px 14px; border-radius:20px; background:rgba(255,255,255,.12); color:#fff; font-size:.8rem; font-weight:600; border:1px solid rgba(255,255,255,.3); }
+.view-counter .ic { font-size:.9rem; }
 .hero-photo img { width:220px; height:220px; object-fit:cover; border-radius:50%; border:5px solid rgba(255,255,255,.85); box-shadow:0 8px 30px rgba(0,0,0,.35); }
 .hero-clock { margin-top:12px; font-size:.85rem; color:#fff; opacity:.9; text-align:center; }
 .hero-next-trip { margin-top:6px; font-size:.8rem; font-weight:700; letter-spacing:.04em; color:var(--gold); text-align:center; }
@@ -2963,7 +2965,7 @@ NAV_SECTIONS = [
 ]
 UKETA_URL = 'https://www.gov.uk/eta/apply'
 POLARSTEPS_URL = 'https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan'
-CONNECTIONS_PDF_URL = 'fab4-connections-audit.pdf'
+CONNECTIONS_PDF_URL = 'audit.pdf'
 PRINT_BOOK_PDF_URL = 'fab4-print-book.pdf'
 PRINT_ALL_PDF_URL = 'fab4-print-all.pdf'
 nav_grid_html = ''.join(
@@ -3013,6 +3015,7 @@ HTML = f'''<!DOCTYPE html>
       <div class="fab4">Karen Nicholson &middot; Deborah Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
     </div>
     <div class="hero-photo">
+      <div class="view-counter no-print" id="viewCounter" title="Website views"><span class="ic">&#128065;&#65039;</span><span id="viewCounterNum">100</span> views</div>
       <img src="data:image/jpeg;base64,{IMG['hero']}" alt="The Fab 4 at dinner">
       <div class="hero-clock no-print" id="heroClock">&nbsp;</div>
       <div class="hero-countdown-wrap no-print">
@@ -3026,7 +3029,7 @@ HTML = f'''<!DOCTYPE html>
         <a class="polarsteps-link no-print" href="{POLARSTEPS_URL}" target="_blank" rel="noopener"><span class="ic">&#128205;</span>Polarsteps &ndash; Open trip</a>
         <a class="polarsteps-link no-print" href="#emergencycontacts"><span class="ic">&#128222;</span>Emergency Contacts</a>
         <a class="polarsteps-link no-print" href="#traveldocuments"><span class="ic">&#128196;</span>Travel Documents</a>
-        <a class="polarsteps-link no-print" href="{CONNECTIONS_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128203;</span>Connections Audit</a>
+        <a class="polarsteps-link no-print" href="{CONNECTIONS_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128203;</span>Audit</a>
       </div>
     </div>
   </div>
@@ -3336,7 +3339,7 @@ HTML = f'''<!DOCTYPE html>
   </div>
   <p class="lede">Key trip documents, saved here so they're always at hand &ndash; open on screen or scan the QR code with your phone.</p>
   <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-travel-docs.mhtml" target="_blank">Travel Docs</a>
+    <a class="pill pill-weblink td-btn" href="fab4-travel-docs.pdf" target="_blank">Travel Docs</a>
     <img class="td-qr" src="data:image/png;base64,{TRAVEL_DOCS_QR_B64}" alt="QR code to Travel Docs">
   </div>
   <div class="td-row">
@@ -3492,6 +3495,18 @@ function revealPassportChecklist() {{
       localStorage.setItem(key, box.checked ? '1' : '0');
     }});
   }});
+}})();
+(function() {{
+  var el = document.getElementById('viewCounterNum');
+  if (!el) return;
+  fetch('https://api.countapi.xyz/hit/fab4-europe-trip-2026/site-views')
+    .then(function(r) {{ return r.json(); }})
+    .then(function(data) {{
+      if (data && typeof data.value === 'number') {{
+        el.textContent = (data.value + 99).toLocaleString();
+      }}
+    }})
+    .catch(function() {{ /* offline or blocked - leave default 100 shown */ }});
 }})();
 function updateHeroClock() {{
   var el = document.getElementById('heroClock');
