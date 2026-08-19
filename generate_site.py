@@ -165,8 +165,23 @@ def event_w3w_for(name):
 
 LIGHTERMAN_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABi0lEQVR4nO2YwY7CMBBDn6v+/y97D54ksFqJE2G0AYTapj6Y0cRjR+bF53oF+CL+MeIG5c6y0izCa7UN0231wJAiVDm8HtSH6b56oFUTWeOxLl2YbkdIIAuM9UEebRAGK53ivxF7eHwSccP897IAOb+x2oXpHgQereBf3/G6C9Nt/TH3Rg3ciMdc7cJ0D0KuDbKGClNOjU7zH0MtZBHfESsyBsyB9dBsh1yrYyCl6sJ0G8IY2x6SKhmlR9SL6QZE/Km1HFiKoYwY92G6DaFY0loou24h6bz8chELImFhZduUIzszv1ggXHsmeyUrPk8/LpBLQQVJt6kKHKgf8kr7XncxZtZx/uMaCaZmiqKupann6UfybQauFTGdbv1A/cBmujEYnmy+Ozbfuqx7ZgzjEKQP0231eAyzyXR1LKQD/cfT+foQErLoY/NLyahB49QQkM/rjwdEgtzwI46Nb8n0jYj76clibJN5JtSF6UaE61C53Pq0Id7MowHiZg6YCjCejz4zv7Tg8UX0RPwAXk7F86HV554AAAAASUVORK5CYII='
 
+ALBERT_SCHLOSS_MENU_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB80lEQVR4nO2YMY4bMQxFn6wBXMrAHsBHkW6QIwW5meYoPsACVGmAg59CsrfJbtIEZrHEFDNi88Chvr6YxKdxnD7PwXfyb0lkAFmiKGs9AFQPR3uCKonRnJ2RfCQgS7KAtT0BKbX54ZCu3UdjpO2FQJ/G9nzLxnEV45LfXwn0T8nyC3bYt6Lj2gMA/TE2QLBRjzfb3n8A2aCIEZD2BHtKidHOtwYwGqMdKaVLQFo0w3BqlqB6WWvxFAxZlZQNL91L9yIgq1NC0kpQZWSrFFE6RTJy0Noi9Sxlq07NRn6QR6RdbSCnUuSzvBCW1oEin5BUWaVIFtInjEbpsv1sZMPhuHbYj0tMBetzo2V1SbKqKQgxO8Fw8NWxoiw1yxE7YWrC0tis7lTAIWTfInV/VhgAn+QRaU+Mdra6lb4BVC+d0o/LC4G+ilVbdX/KbOnThsWr7dMnrMN3HRbgEe9lyKqselE2ZExZcML6hLr++5QC9Sd2TFpK9yI9ToesDjVqbQGyuoxpxX2th+zbx91huUSYxiak3n7Marx0HpedqP72tGY1wGhzozk4+wuBvghZXXuq9DUKMwiqtx/JbbR8a/fU7tfuEYC+Su5QgQ3Ot5/zPR7tc1aD4Niqb9zf7ICzAk6bH5owpx/G8relh7w7pO9J/n9L/gat0o2rzB38FAAAAABJRU5ErkJggg=='
+HARD_ROCK_MENU_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABkElEQVR4nO2YMW7lMAxEn0wDKeUb/KNQN1vszeQbUeUHZEwKfafa7AJbJCwiuJGmGYyGQ9FF/Hld2ycA/CCAAsAkCzeJuoT0+f3cNnBJjDI5J0wwSZFBtw0opVH79dB1ADDK/sUM/oW8xWnBW3wfg8+Q0eZojHKVlobbDgj22ktVqSpAFSMDt7tOwz8+IEedotfqFj5rt3ufgNvGaPtoO0wAnqUx2nVkuVNTl/oEhSugdkWSO+2TV0ew8LXN4rdggoKlmKmbNGsGv6FwajfJJFO3wNRnEt0kBVJXuIW/7JfFb1qsqF3qK0/S6NaBWTt1pRxSz+G3DbBghzka8DzYgdFS5JtE7bPqI99s9YgM3FYbfdWpFA6ex2/LY7DyTbMm8RsKnwAObiuB8Sy9fr094rxPXEEpOWohgOX/paFbkMNv95wFz8PhfAsmWGR4I91z1vhlwXUwOcvhX83g70j9DadJ10MTypGJ22jXQ3AyCpw5ZmcUrvuBtOZ6hefItw3OUgqjAKYODkn6afn5x/VfyDtOQT2eeL6uywAAAABJRU5ErkJggg=='
+MOUSETRAP_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABpElEQVR4nO2YMW7dQAxEHz8XcLm6gY9C3SBHMnIz6Sj/AAGo8gMUJsV+BQhgF0lhb2E2Wu00A4qcIWXi/ThvHwDwjQBKAM9QQt+kkcior+d2g5BE/9mIAsAl5Qx5uwFmK8f6WHZPbIHD2iczeD/a89m31vNs+H39ZAb/gPTtqxn8hUgbx5tyf8ngWOmqWbjtZga0421cnWa2zMANPWMbZ7/eJ9AQlOESXZ4UAVFdnjPoG0Nsq6u6lBTQVbNo766kHQZ7I+ib3+0lZ6k316bEMyCU4dpmqbfRCF0FLhVBl6aotxvHCuhunuNmB85lhm96A057s4XzVY+FRvh99ZyBG5I8Q1Jd+lbELPWWUYRrc21FKOept6tPtY3xcvTCHLPlc+6lP+kV1EjmDNyk6psyqgvCk+rz+OnTUi/5hWFhM3AbkQBXOzCH1984zMwa4RmPJTx5LjUzcLv2rGLnWM+FmsUXGmAE0H7h+QN2A9cMe337cyp0vqZBNaznBHm7kGOFvbEXeEYd6wTcUMY1wg2JgyF6U3AD8EQZumxrDl+w739c/4X8BiDGN212wLL4AAAAAElFTkSuQmCC'
+PARCEL_YARD_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABpUlEQVR4nO2YMY4bMQxFn8wBXGqAHGCOwrlBjmT4YAHko+QGVLkABz+FxlU2QZDCVrGsJLB5oPQ/KRXxeRyXPyTgKwMoAEzNJFMDB8Dz/WwXcEnAsZL9NiAVM9TtApSyAwllu9N3elleTPB5LM+FL/lQ/35ssbyW4B/YHh9rUNsSryb4O5tg6bslx0IWp4o+A9sFHqUUcPp+Db8GRyllnYENndFMLYF67ifwEBSetVm4wi1cQdZp2NSoTWpA4go3NcUk3osFZUXBUu/H1hLK1ua4b83GsaopHEicOsuZDiEonNosMLWcop8iydSyKgE8mUsLWTWGEJOGFuaYQ5BkQdY2zCSrBu0UbHEObBbn3cuqWdjUsraErA3cJOo0/tZvCyz4mHiz7+DHOks/tWA0LFOzQNIsHhI+dDoWw0lsFg+RJIVLomq01Fk8JACGpymwcBsFfD/b853VbwrKJiB5XGMOLYSf1nHWDZinbgD0HTg2fWyyeFx/7hPU7Zmp96xt6TuQ7yH4PZ7vLKAX9XWhCP/xLSb4q3nqNBycqpnuW/n64/qvzC/QH0o2e86FKQAAAABJRU5ErkJggg=='
+BIG_CHILL_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABkklEQVR4nO2YMW7kMAxFn4YCUtJADpCjcG6wR9qraY6yBwhAlwFk/BTyJE2CBbaYZRE1NszmwdT/X1QTX6/j8k0BfiqAEsASJcqYBAAxS7CFJEsASZJMUlZguwCtXXHho7XrscHe+oMJvl79fO7b7Fe4Pc1HE/y94gNiEm9bHbYOCDrR85fp1h1c7BXYLnBrrbFfgb7/tj/Xo7W2VWA7tanEMqaPSawPBXSKMvCBj0lYgss0ZiF/G0okWZ7GW8PfULLMDbCMMxq8SE/BtRpq0nKSKv9NkgRhGdKYLmlYES1IwHSZBq7pwlUq6xfViUeUYcOSlaJaJxBiFtGChmVYxnQpY9HWYVv7f8L0oYzpo4yHhEnLQE73cNXRqSVLnhMWZBm2gQ/L1dD7+FCFbZ1DwhLLFVvU8RA+5qwzIIro9AKxouHY4tg+va7E2TIDYiWCaayGVtlvi+3eUH0M0f+frX++7pvN27HF8aL+WqGn9znL1V85tiQ3uL09Z427mjVnteNFQNt4ykcTfLPazx3XP1XeASOxTk2qxmvZAAAAAElFTkSuQmCC'
+RACKETEER_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABiUlEQVR4nO2YMW7rQAxEn0wBKakb5Cj0zQLfbHWU3IAqDawxv6DsKml+YxYhhAWkaQbD5ZDUIn6Ox+UXAP4QQAlg0nSZhJeQMd/P7QIhieO6sk92jqtJyia6BYRpWMZ0SbLEsoluZ9w/b/Z9Xbb3MfgNOb4+EmC+jcHPiDTw2yRO0VyzBbdnnWa8HqBHnaIzBq7pYxL13oJbyaVhGUpMUsb0HtykOidMQhmmoRYewtPQXiSHSV3uWzktUQwnNMppBj4gLAMfSkxjttCtkJBu+KhPjw3LDv52wYd9LyvArmR1TXhsPbjB/VP3jfvy9diA3RJ8NOBWfSGgnI0JeJv75lLuSu7b/tjOav3IDjlFGSpD89PfcPXQDWlImi5pWPUsjT7+ZhoQtSlYUlN6C24VCa7KZk3pDbhdOJZlWVbXPBblDqzsPWbL557FjovjWi21R1947lkZNYqX3fWohSfiN9hNY3Wpk7+9dHu1hi6zZYYkk6YP06DX/AZgSSk2ifN8P7fl7x/XfyH/AJzdRRvj2EVpAAAAAElFTkSuQmCC'
+SPIRITLAND_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB6klEQVR4nO2YMY7rMAxEn0L39A32KPTNgtxMPsq/AV0GkDG/kH+22t3qIyxWSBNPMxiQMyM18eU5b19j8Av+BKIEsAzLUAYEPvWOUY7tDUISgPcFpD6OzSRlQW1vQGsb/oAdWI7N1Dna8kZCP4LH/Wz34Y/nSmtbAULfgt7xB8d98T4n+d2EvgSlDrv9ubcVjg3ANd5I6Dtwb61x3AFLLFngbK2tBdmieRJlDMD1OhUd7NjaurcPLbCAcj9XFvazbfW0vQGWKPfBrozW7sC5UtLBkDQIS/AuSep4HzAqZhnKwKW8BtgkvA/vypJsJbxbxnABJlkypuYl2Q7XmDylS1Xvw0uyzWmzIXWp49LsY1W1nXM7iOEa3qVu6laWLWHSuFS9Eq0k2xsw4Nka0D4egzjXAMZRMB1mpYl5d5hWYNIgqLpll195N3X809CKsnXZlREx/45JuCLbkC6//fctTCqbZZYBzFCY5oCraE9QN3Ulpj5muc0wVe0JGTMgcJm6JEuAolt23R1CGYPrNytZPbY3jtZamxcH02PxxwILca4l23jGXLTpt5ZAKCnrYBCmrrlryQDqZlnAVWaUaPYZr+m3n+Bzpa1AXI9g3uvOrV7NVvMKWVLb1/stUrcrI7pllOy37fcl/7+BfwGEFrm6ajIsPQAAAABJRU5ErkJggg=='
+REPUBLIC_HOTEL_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABl0lEQVR4nO2YPYocMRBGn0YNG2rAB9ijVN9s2SP5AIbqo8wBDNXhQg2fA/V0Yq8DB54KVohG6koen1R/auLP4375xABfFkAB0IMczhAYAJYl2ExSD1M81pKiAtsFaG1lvN+vBrQr7G35zwR/t+xvL/L2+p5PI/jcMvx+pd/enkfw+1gAwcKmveViAEPsFdhOP7VzAlX8dI4wSXlupRJsYQxneA7P4V3q8iyiW1gPFChgOBhYjfiG5ArrYfngTIxR4UwX9lXw8e37ka2GGmhffzyfDUk5xFAPY7gkyXsRX5gJVJ5YDxiaGb8EW9jULYcnBnZ8a7D1MMkfsZfEsoQvoDiEmqfZ5QqqsMmPOQUMm0VmCbbjvrnkYNNt6/gpkNis3HocnluDzXtYl+fw82cZtlmHAHYca1AjhlzYW2ttAYYvACyQwwvUlpd5/8Fgm6Il9NtagA2FgXWJoYQeUKUOOfusder2cUWx6VZBt+Wx2HJZpe1F2/1Vy88ivczs5T2Bofn4UCVnBcBsr3IIZqyrwNa+3rj+yfILLXRIJPUqXcYAAAAASUVORK5CYII='
+CORTEFREDA_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABoklEQVR4nO2YvW0jQQyFP2oWUDgLuIArhdvBlXRQSdcBVYoLEMANDcziXTCSAuN8wQU2AxMTDZMPbx9/Zk38PY7TBwn4zsCJ3cxs2Tf2bV6ZmdlWgg2XRL8A7NthW5OUFXRbAMMBg2OFHsu+tlsFtkdm/9XSF/z8un0Rwb8yo19aQo8vI3gfCyBYuB4vv48feaxJF3sFNpQALf15APBRgW1GMvCmmGUrqQRbutLBRw96TBmVNXRLHz2UPnBJTXOI1WBT3Hl60NUS8Cq6KSQNfIAUo8f0Xgm2pEngSkaPAZJGL1QLSqSgS7p/1gJsJ+BYsdVt9QHs24CWNXqvpsEAp8e9uZXQbfbegFmnoWT0Qn4DHzC6HqOhTJ1KkughBT2aYk7VImxTtJZI0ZIyfjuxW1OcE+BYeVsxszJ1et9DZlubA6vGzHq8s/Bj9dEvwMJ1+VSCD0M5148Ab8mYg75SD2lJUzTFmJdldkvwpnj2t9FVxW+PaK8G1zfbWl5treC35zuL5eZnXc/5c7ltY6nA9nxn0dJHj/uCVKIW7Psf139l/gBxlzw1RY/RgwAAAABJRU5ErkJggg=='
+IQHOTEL_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABm0lEQVR4nO2YsW3kQAxFn5YDbDjqYEvhdnAlHbYzqhR3QIUGRvgXjGwHPsPABbcMzEjCTx5IkfzUIv4ex+ULAX4UQAlg0gB6mGYifTyf7QIuiX25pg98cior5O0CLMsd/LjF9eU+9jv70v4zwTfKZslxexzr0wi+VLqOdQPa0wg+RwMEjW20u72s2n/RxV6B7QLbsizsv6/p4A2OZVnWCmxoRropJNn5rgIzBKVLssQkeowepqAXYcMUA5d0UuFV2CTeR65COR+KsIVJo09CVzJ6VGFL6EE/M2bpdCkr7FM0v7EepjAFYOmjxK4/Z4gpxhvq6GFFaipZokSJpZsC3MrUdJYSnB7jrG+NvCWmkMLSlcxuLeMtOVYaHLdHA/pDetTwlih9wOhBF7jS544okrerosEA5QZbm074+WwfPkQKpStdSY28fdxZAPjApycpwPZ2ZwE9dBbXX9cqvQBuCkvmDQhFavqu+ADLzRSjRw1P/qG0Hq3H60rb788h+BSnJ5csmYZk9KiyTxPA0i1dEl1QpE+Xn39c/6T8AVOJRghHuXccAAAAAElFTkSuQmCC'
+MELIA_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACVElEQVR4nO2ZQYrcQAxFX00ZelkNc4A5ivpmQ46UG5SPMgcIyMsBmZ+Fyh3IommSkO6CEb2wWwt/q76kL7mIW7a/3HTDl//v/MgBqgQEROu0TstjsXg0vjvwm6SqLnVJ1S2waKqS/PnxL0DBgNJ8f/1O63vrS8B2rj8ej+9+vz4uCwac/CHP/zP/cr0qzfdXYP0sthf7T8//V/x3qno00XpeTML/o/64/fYD5qg/wzqty5Ejt2jj3wnwu0XrGfPApJ4nkq8wAX6JjLZDk9ykLvWaveDR+O7A3+VUJ0jaW94Cc/DfTZLcqhQYICegus3AnxeglLLAXkr1NVoHTs7+1vdyeQp8Ny0JH6MQdY7I0zQHf7J5udXMXB/iLdNhBvw9Ws/gR+vXzK1u0Z6f/2TmglUn8dejnc3Cn4z8r5qDaUiIGfC7BVbVr0JidAT1afCn8pGy8kcbjYAJ+J9+K29atgtYVWcrC1S3eBp8N0xStNF/r7OA3Gg9JuDPC3ByFmC7APsZmmBVjgDPgO+mJe3HKUjVCYAhh2aI/7o0LVthK/t56J8AWJ8E323LyEfrmbxHF+i0KeI/9Bs5sA/905P8c8zv6lnzD+Vz8H8a/cN125lbxBzBYBL9kOZW1Y9C1PMV5uCPA1QN5VmPQTIn4qfH/wImie2yv/X9vAbrZ7mcnMjd4hPgu21yG7IHy0J63T/MML8f+9vtvcZaP4p8pWlfiMWWeDy+e/3tW2zvYPvZUogCn2WW/YPy+1Fq5uqjqM7An+v+GZoSfECuU2aoP+Xr++lD/T8B6iIpTJGI5+8AAAAASUVORK5CYII='
+
 EVENT_QR = [
     ('dinner at the lighterman', ('https://www.thelighterman.co.uk/', LIGHTERMAN_QR_B64)),
+    ('dinner at albert schloss', ('https://www.albertsschloss.com/menu/?location=london', ALBERT_SCHLOSS_MENU_QR_B64)),
+    ('dinner at hard rock cafe london', ('https://cafe.hardrock.com/menu.aspx', HARD_ROCK_MENU_QR_B64)),
+    ('need to be at mousetrap', ('https://stmartinstheatre.co.uk/', MOUSETRAP_QR_B64)),
 ]
 
 def event_qr_for(name):
@@ -175,6 +190,20 @@ def event_qr_for(name):
         if keyword in n:
             return val
     return None
+
+BAR_QR = {
+    'The Parcel Yard': PARCEL_YARD_QR_B64,
+    'Big Chill Bar': BIG_CHILL_QR_B64,
+    'The Racketeer': RACKETEER_QR_B64,
+    "Spiritland King's Cross": SPIRITLAND_QR_B64,
+}
+
+HOTEL_QR = {
+    'The Republic Hotel': REPUBLIC_HOTEL_QR_B64,
+    'Hotel Borgo di Cortefreda Relais': CORTEFREDA_QR_B64,
+    'iQ Hotel Milano': IQHOTEL_QR_B64,
+    'The Level at Melia White House': MELIA_QR_B64,
+}
 
 WALK_ROUTES = [
     ('dinner at albert schloss', {
@@ -520,18 +549,22 @@ HOTEL_INFO = [
     {'name': 'The Republic Hotel', 'address': 'Via Gaeta 61, 185 Rome',
      'full_address': 'Via Gaeta 61, 00185 Rome, Italy',
      'phone': '+39 06 8115 7001', 'email': 'therepublic@aghotels.it',
+     'website': 'https://www.therepublichotel.it/',
      'dates': '11-14 Sept 2026 (check-out morning of the 14th for Civitavecchia/cruise embarkation)'},
     {'name': 'Hotel Borgo di Cortefreda Relais', 'address': 'Via Roma 191, 50028, Tavarnelle Val Di Pesa',
      'full_address': 'Via Roma 191, 50028 Tavarnelle Val di Pesa (FI), Italy',
      'phone': '+39 055 807 3333', 'email': 'info@borgodicortefreda.com',
+     'website': 'https://www.borgodicortefreda.com/',
      'dates': '21-23 Sept 2026 (check-out morning of the 23rd for the drive to Milan)'},
     {'name': 'iQ Hotel Milano', 'address': 'Via Giovanni Battista Pirelli, 5, 20124 Milan',
      'full_address': 'Via Giovanni Battista Pirelli 5, 20124 Milan, Italy',
      'phone': '+39 02 8498 0810', 'email': 'info@iqhotelmilano.it',
+     'website': 'https://www.iqhotelmilano.it/',
      'dates': '23-24 Sept 2026 (check-out morning of the 24th for the flight to London)'},
     {'name': 'The Level at Melia White House', 'address': 'Longford Street, Regents Park, London NW1 3UP',
      'full_address': "Longford Street, Regent's Park, London NW1 3UP, United Kingdom",
      'phone': '+44 20 7391 3000', 'email': 'melia.white.house@melia.com',
+     'website': 'https://www.melia.com/en/hotels/united-kingdom/london/the-level-at-melia-white-house',
      'tube': 'Great Portland Street station (Circle, Hammersmith & City, Metropolitan lines) - approx. 2-3 min walk (~0.2 km), directly opposite the hotel',
      'dates': '24-27 Sept 2026 (depart Heathrow the night of the 27th)'},
 ]
@@ -549,6 +582,11 @@ def hotel_directory_cards():
     for h in HOTEL_INFO:
         tube_html = f'<div class="place-hours">&#128676; {esc(h["tube"])}</div>' if h.get('tube') else ''
         dates_html = f'<div class="place-hours">&#128197; {esc(h["dates"])}</div>' if h.get('dates') else ''
+        qr_b64 = HOTEL_QR.get(h['name'])
+        qr_html = (
+            f'<a class="place-qr-corner" href="{esc(h["website"])}" target="_blank" title="Scan or click for hotel website">'
+            f'<img src="data:image/png;base64,{qr_b64}" alt="QR code to {esc(h["name"])} website"></a>'
+        ) if qr_b64 and h.get('website') else ''
         cards += f'''
         <div class="place-card hotel-card">
           <div class="place-name">{esc(h['name'])}</div>
@@ -557,6 +595,7 @@ def hotel_directory_cards():
           <div class="place-hours">&#128222; {esc(h['phone'])}</div>
           <div class="place-hours">&#9993;&#65039; {esc(h['email'])}</div>
           {tube_html}
+          {qr_html}
         </div>'''
     return cards
 
@@ -1677,7 +1716,7 @@ LONDON_QUICKLINKS = (
     '</div>'
 )
 
-def bar_card(name, ctype, address, dist1_label, dist1_text, dist2_label, dist2_text, gmap_url, website=None, menu=None, tripadvisor=None, w3w=None):
+def bar_card(name, ctype, address, dist1_label, dist1_text, dist2_label, dist2_text, gmap_url, website=None, menu=None, tripadvisor=None, w3w=None, qr=None):
     links = f'<a class="pill" href="{esc(gmap_url)}" target="_blank">Map</a>'
     if website:
         links += f'<a class="pill pill-website" href="{esc(website)}" target="_blank">Website</a>'
@@ -1686,6 +1725,11 @@ def bar_card(name, ctype, address, dist1_label, dist1_text, dist2_label, dist2_t
     if tripadvisor:
         links += f'<a class="pill pill-review" href="{esc(tripadvisor)}" target="_blank">TripAdvisor</a>'
     w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(w3w)}" target="_blank" title="what3words location">///{esc(w3w)}</a>' if w3w else ''
+    qr_target = website or menu
+    qr_html = (
+        f'<a class="place-qr-corner" href="{esc(qr_target)}" target="_blank" title="Scan or click for website">'
+        f'<img src="data:image/png;base64,{qr}" alt="QR code to {esc(name)} website"></a>'
+    ) if qr and qr_target else ''
     return f'''
     <div class="place-card">
       <div class="place-name">{esc(name)} {w3w_html}</div>
@@ -1694,6 +1738,7 @@ def bar_card(name, ctype, address, dist1_label, dist1_text, dist2_label, dist2_t
       <div class="place-hours">&#128694; {esc(dist1_label)}: {esc(dist1_text)}</div>
       <div class="place-hours">&#128694; {esc(dist2_label)}: {esc(dist2_text)}</div>
       <div class="place-links">{links}</div>
+      {qr_html}
     </div>'''
 
 HRC_BARS = [
@@ -1771,28 +1816,32 @@ LIGHTERMAN_BARS = [
               'To The Melia', "~15 min - Circle/Hammersmith & City/Metropolitan line direct from King's Cross St Pancras to Great Portland Street (2 stops), then ~3 min walk",
               'https://www.google.com/maps/dir/?api=1&origin=3%20Granary%20Square%2C%20London%20N1C%204BH&destination=King%27s%20Cross%20Station%2C%20London%20N1%209AL&travelmode=walking',
               website='https://www.parcelyard.co.uk/', menu='https://www.parcelyard.co.uk/food/menus',
-              tripadvisor='https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2690666-Reviews-The_Parcel_Yard_King_s_Cross-London_England.html'),
+              tripadvisor='https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2690666-Reviews-The_Parcel_Yard_King_s_Cross-London_England.html',
+              qr=BAR_QR['The Parcel Yard']),
     bar_card('Big Chill Bar', 'Three-storey bar/club with a roof terrace, near the station',
               '257-259 Pentonville Rd, London N1 9NL',
               'From The Lighterman', '~10 min walking',
               'To The Melia', "~15 min - Circle/Hammersmith & City/Metropolitan line direct from King's Cross St Pancras to Great Portland Street (2 stops), then ~3 min walk",
               'https://www.google.com/maps/dir/?api=1&origin=3%20Granary%20Square%2C%20London%20N1C%204BH&destination=257-259%20Pentonville%20Rd%2C%20London%20N1%209NL&travelmode=walking',
               website='https://www.bigchillbar.com/kings-cross',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1906552-Reviews-Big_Chill_Kings_Cross-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1906552-Reviews-Big_Chill_Kings_Cross-London_England.html',
+              qr=BAR_QR['Big Chill Bar']),
     bar_card('The Racketeer', 'Independent, family-run cocktail and wine bar',
               "105 King's Cross Rd, London WC1X 9LR",
               'From The Lighterman', '~12 min walking',
               'To The Melia', "~15 min - Circle/Hammersmith & City/Metropolitan line direct from King's Cross St Pancras to Great Portland Street (2 stops), then ~3 min walk",
               'https://www.google.com/maps/dir/?api=1&origin=3%20Granary%20Square%2C%20London%20N1C%204BH&destination=105%20King%27s%20Cross%20Rd%2C%20London%20WC1X%209LR&travelmode=walking',
               website='https://www.theracketeer.co.uk/', menu='https://www.theracketeer.co.uk/menu',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d12608553-Reviews-The_Racketeer-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d12608553-Reviews-The_Racketeer-London_England.html',
+              qr=BAR_QR['The Racketeer']),
     bar_card('Spiritland King\'s Cross', 'Music-focused listening bar with a serious sound system and a well-executed cocktail list',
               '9-10 Stable St, London N1C 4AB',
               'From The Lighterman', '~2 min walking',
               'To The Melia', "~15 min - Circle/Hammersmith & City/Metropolitan line direct from King's Cross St Pancras to Great Portland Street (2 stops), then ~3 min walk",
               'https://www.google.com/maps/dir/?api=1&origin=3%20Granary%20Square%2C%20London%20N1C%204BH&destination=9-10%20Stable%20St%2C%20London%20N1C%204AB&travelmode=walking',
               website='https://spiritland.com/location/spiritland-kings-cross/',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d11718544-Reviews-Spiritland_King_s_Cross-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d11718544-Reviews-Spiritland_King_s_Cross-London_England.html',
+              qr=BAR_QR["Spiritland King's Cross"]),
 ]
 
 MOUSETRAP_BARS = [
@@ -2633,7 +2682,9 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .badge-toconfirm { background:#e5edfb; color:#1f4fa6; }
 .badge-optional { background:#f1eef8; color:#6a3fa0; }
 .place-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin:18px 0 30px; }
-.place-card { background:var(--card-bg); border-radius:10px; padding:14px 16px; box-shadow:0 1px 5px rgba(0,0,0,.07); border-top:4px solid var(--gold); }
+.place-card { position:relative; background:var(--card-bg); border-radius:10px; padding:14px 16px; box-shadow:0 1px 5px rgba(0,0,0,.07); border-top:4px solid var(--gold); }
+.place-qr-corner { position:absolute; bottom:8px; right:8px; width:34px; height:34px; display:block; line-height:0; }
+.place-qr-corner img { width:100%; height:100%; border:1px solid #ddd; border-radius:3px; background:#fff; padding:1px; }
 .place-photo { width:100%; height:130px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); margin-bottom:8px; display:block; }
 .place-photo-btn { margin-bottom:10px; }
 .place-website-btn { display:inline-block; background:#c0392b !important; }
