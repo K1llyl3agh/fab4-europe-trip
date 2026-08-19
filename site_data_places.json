@@ -439,9 +439,9 @@
     },
     {
       "date": "Thu 24 Sep",
-      "item": "Book airport transfer to hotel",
-      "status": "To Book",
-      "notes": "Arriving via BA0575 from Milan (LIN-LHR); transfer to The Level at Melia White House",
+      "item": "Confirm limo company & contact details",
+      "status": "To Confirm",
+      "notes": "Mercedes Viano Limousine booked direct from Heathrow to hotel (booking ref 190826) - still need to confirm limo company name and contact details",
       "flag": "Gary checked on 30 July - ongoing, to monitor.",
       "website": "https://www.melia.com/en/hotels/united-kingdom/london/melia-white-house"
     },
@@ -512,9 +512,9 @@
   "london_ttc": [
     {
       "day": "Thu (24)",
-      "item": "Book airport transfer to hotel",
-      "status": "To Book",
-      "notes": "Arriving via BA575 from Milan (LIN-LHR), lands 2:50pm; transfer to The Level at Melia White House not yet booked"
+      "item": "Confirm limo company & contact details",
+      "status": "To Confirm",
+      "notes": "Mercedes Viano Limousine booked direct from Heathrow to hotel (booking ref 190826) - company/contact details still to be confirmed"
     },
     {
       "day": "Sat (26)",

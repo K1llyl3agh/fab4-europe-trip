@@ -17,9 +17,9 @@
         },
         {
           "time": "3:00 PM",
-          "event": "Take the Tube from Heathrow (Terminal 5)",
-          "status": null,
-          "address": "Elizabeth line to Paddington, then Hammersmith & City/Circle line to Great Portland Street (~50 min, approx. £15.50 pp)"
+          "event": "Mercedes Viano Limousine transfer to hotel (booking ref 190826)",
+          "status": "Booked",
+          "address": "Direct from Heathrow Terminal 5 to The Level at Meliá White House"
         },
         {
           "time": "4:00 PM",
@@ -233,7 +233,7 @@
         },
         {
           "time": "6:30 PM",
-          "event": "Dinner at Hard Rock Cafe London (confirmed via OpenTable) (starts 6:45pm)",
+          "event": "Dinner at Hard Rock Cafe London (confirmation #496211, via OpenTable) (starts 6:45pm)",
           "status": "Booked",
           "address": "150 Old Park Lane, Mayfair, London W1K 1QZ"
         },

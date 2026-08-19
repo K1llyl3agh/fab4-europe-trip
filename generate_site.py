@@ -127,6 +127,7 @@ def tripadvisor_for(name):
 EVENT_PHONE = [
     ('dinner at albert schloss', '020 8165 0000'),
     ('dinner at the lighterman', '020 3846 3400'),
+    ('dinner at hard rock cafe london', '0044 20 7514 1700'),
 ]
 
 def event_phone_for(name):
@@ -160,6 +161,19 @@ def event_w3w_for(name):
     for keyword, words in EVENT_W3W:
         if keyword in n:
             return words
+    return None
+
+LIGHTERMAN_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABi0lEQVR4nO2YwY7CMBBDn6v+/y97D54ksFqJE2G0AYTapj6Y0cRjR+bF53oF+CL+MeIG5c6y0izCa7UN0231wJAiVDm8HtSH6b56oFUTWeOxLl2YbkdIIAuM9UEebRAGK53ivxF7eHwSccP897IAOb+x2oXpHgQereBf3/G6C9Nt/TH3Rg3ciMdc7cJ0D0KuDbKGClNOjU7zH0MtZBHfESsyBsyB9dBsh1yrYyCl6sJ0G8IY2x6SKhmlR9SL6QZE/Km1HFiKoYwY92G6DaFY0loou24h6bz8chELImFhZduUIzszv1ggXHsmeyUrPk8/LpBLQQVJt6kKHKgf8kr7XncxZtZx/uMaCaZmiqKupann6UfybQauFTGdbv1A/cBmujEYnmy+Ozbfuqx7ZgzjEKQP0231eAyzyXR1LKQD/cfT+foQErLoY/NLyahB49QQkM/rjwdEgtzwI46Nb8n0jYj76clibJN5JtSF6UaE61C53Pq0Id7MowHiZg6YCjCejz4zv7Tg8UX0RPwAXk7F86HV554AAAAASUVORK5CYII='
+
+EVENT_QR = [
+    ('dinner at the lighterman', ('https://www.thelighterman.co.uk/', LIGHTERMAN_QR_B64)),
+]
+
+def event_qr_for(name):
+    n = name.lower()
+    for keyword, val in EVENT_QR:
+        if keyword in n:
+            return val
     return None
 
 WALK_ROUTES = [
@@ -1102,6 +1116,12 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         ev_phone_html = f'<div class="ev-addr">&#128222; {esc(ev_phone)} {w3w_html}</div>' if ev_phone else (f'<div class="ev-addr">{w3w_html}</div>' if w3w_html else '')
         ev_note = event_note_for(b['name'])
         ev_note_html = f'<div class="ev-note">({ev_note})</div>' if ev_note else ''
+        ev_qr = event_qr_for(b['name'])
+        ev_qr_html = (
+            f'<div class="ev-qr"><a href="{esc(ev_qr[0])}" target="_blank" title="Scan or click for website">'
+            f'<img src="data:image/png;base64,{ev_qr[1]}" alt="QR code to website" width="88" height="88"></a>'
+            f'<div class="ev-qr-label">Website</div></div>'
+        ) if ev_qr else ''
         rows += f'''
         <div class="ev-row">
           <div class="ev-time">{esc(b['time_display'])}</div>
@@ -1111,6 +1131,7 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
             {ev_phone_html}
             {ev_note_html}
             {f'<div class="ev-link">{link_row}</div>' if link_row else ''}
+            {ev_qr_html}
             {shops_html}
             {photo_html}
             {travel_opts_html}
@@ -2604,6 +2625,9 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .badge { display:inline-block; font-size:.7rem; font-weight:700; padding:2px 9px; border-radius:999px; margin-left:6px; vertical-align:middle; text-transform:uppercase; letter-spacing:.3px; }
 .badge-booked { background:#e3f6e8; color:#1e7d3a; }
 .w3w-badge { display:inline-block; background:#000; color:#fff; font-size:.75rem; font-weight:700; padding:2px 8px; border-radius:3px; margin-left:6px; vertical-align:middle; text-decoration:none; letter-spacing:.2px; }
+.ev-qr { display:inline-flex; flex-direction:column; align-items:center; gap:2px; margin:6px 0; }
+.ev-qr img { width:88px; height:88px; border:1px solid #ddd; border-radius:6px; padding:4px; background:#fff; }
+.ev-qr-label { font-size:.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
 .w3w-badge:hover { background:#222; }
 .badge-tobook { background:#fdecd6; color:#b6591a; }
 .badge-toconfirm { background:#e5edfb; color:#1f4fa6; }
