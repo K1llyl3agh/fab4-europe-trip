@@ -609,6 +609,8 @@ EMERGENCY_CONTACTS = [
             {'name': 'David Nicholson', 'phone': '+64 27 856 7966', 'email': 'davidnicholson@hotmail.com'},
             {'name': 'Steve Nicholson', 'phone': '+64 27 873 9578', 'email': ''},
             {'name': 'Martina Gyde', 'phone': '+64 27 590 4156', 'email': 'martinag@xtra.co.nz'},
+            {'name': 'Gary Nicholson', 'phone': '+64 27 542 7747', 'email': 'gary.nicholson@garrison.co.nz',
+             'extra': [('&#128194;', 'International Drivers Licence: IDP196978')]},
         ],
     },
     {
@@ -631,11 +633,13 @@ def _emergency_contact_person_html(slot_num, person):
                   else '<div class="ec-line ec-blank-line">&#128222; &nbsp;</div>')
     email_html = (f'<div class="ec-line">&#9993;&#65039; {esc(person["email"])}</div>' if person['email']
                   else '<div class="ec-line ec-blank-line">&#9993;&#65039; &nbsp;</div>')
+    extra_html = ''.join(f'<div class="ec-line">{icon} {esc(text)}</div>' for icon, text in person.get('extra', []))
     return f'''
         <div class="ec-person">
           <div class="ec-person-name">{name_html}</div>
           {phone_html}
           {email_html}
+          {extra_html}
         </div>'''
 
 def _emergency_contacts_box_html(box):
