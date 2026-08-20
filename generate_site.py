@@ -950,28 +950,6 @@ def _quiz_screen_day_html(day):
 
 QUIZ_SCREEN_HTML = ''.join(_quiz_screen_day_html(d) for d in DAILY_QUIZ)
 
-def _quiz_print_sheet_html(day, person):
-    q_html = ''.join(
-        f'<li><div class="quiz-sheet-q">{i+1}. {q["q"]}</div>'
-        f'<div class="quiz-sheet-opts">'
-        + ''.join(f'<span>&#9711; {QUIZ_LETTERS[j]}) {opt}</span>' for j, opt in enumerate(q['opts']))
-        + '</div></li>'
-        for i, q in enumerate(day['qs'])
-    )
-    return f'''
-    <div class="quiz-sheet">
-      <div class="quiz-sheet-head">
-        <div class="quiz-sheet-title">FAB4 Does Europe &ndash; Daily Quiz</div>
-        <div class="quiz-sheet-sub">Day {day['day_num']} &middot; {day['date']} &middot; {day['theme']}</div>
-        <div class="quiz-sheet-name">Name: <strong>{person}</strong></div>
-      </div>
-      <ol class="quiz-sheet-qlist">{q_html}</ol>
-    </div>'''
-
-QUIZ_PRINT_SHEETS_HTML = ''.join(
-    _quiz_print_sheet_html(day, person) for day in DAILY_QUIZ for person in QUIZ_PEOPLE
-)
-
 def _quiz_answer_day_html(day):
     li_html = ''.join(
         f'<li><strong>{QUIZ_LETTERS[q["ans"]]}</strong> &ndash; {q["opts"][q["ans"]]}. <span class="quiz-note">{q["note"]}</span></li>'
@@ -2849,7 +2827,7 @@ ALL_DAY_IDS = sorted(set(
     ) if did
 ))
 
-SUB_IDS = ['melia20', 'shops20', 'piccshops20', 'piccthings20', 'carsbaby']
+SUB_IDS = ['melia20', 'shops20', 'piccshops20', 'piccthings20', 'carsbaby', 'quizquestions', 'quizanswers']
 
 CSS = '''
 :root {
@@ -3249,21 +3227,12 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .quiz-q-list li { margin-bottom:10px; }
 .quiz-q-text { font-weight:600; color:var(--ink); }
 .quiz-opts { font-size:.84rem; color:var(--muted); margin-top:2px; }
-.quiz-print-only { display:none; }
-body.printing-dailyquiz .quiz-print-only { display:block; }
-body.printing-dailyquiz .quiz-screen-only { display:none !important; }
-body.printing-dailyquiz .lede { display:none !important; }
+.quiz-answers-hidden { display:none; }
+body.printing-sub-quizanswers .quiz-answers-hidden { display:block !important; }
+body[class*="printing-sub-"] #dailyquiz > *:not(.print-block) { display:none !important; }
+body.printing-dailyquiz .print-block[data-subsection="quizquestions"] { display:block !important; }
 @media print {
-  .quiz-sheet { page-break-before: always; break-before: page; page-break-inside: avoid; padding-top:6px; }
-  .quiz-sheet-head { border-bottom:2px solid var(--navy); padding-bottom:8px; margin-bottom:14px; }
-  .quiz-sheet-title { font-weight:800; color:var(--navy); font-size:1.1rem; }
-  .quiz-sheet-sub { color:var(--muted); font-size:.9rem; margin-top:2px; }
-  .quiz-sheet-name { font-size:1rem; margin-top:8px; }
-  .quiz-sheet-qlist { list-style:none; margin:0; padding:0; }
-  .quiz-sheet-qlist li { margin-bottom:18px; page-break-inside: avoid; break-inside: avoid; }
-  .quiz-sheet-q { font-weight:700; margin-bottom:6px; }
-  .quiz-sheet-opts { display:flex; flex-direction:column; gap:5px; padding-left:14px; font-size:.94rem; }
-  .quiz-answers-section { page-break-before: always; break-before: page; }
+  .quiz-day-box { page-break-inside: avoid; break-inside: avoid; }
   .quiz-answer-day { page-break-inside: avoid; break-inside: avoid; margin-bottom:14px; }
   .quiz-answer-day h3 { color:var(--navy); font-size:.98rem; margin-bottom:6px; page-break-before:avoid !important; }
   .quiz-answer-day ol { margin:0; padding-left:20px; }
@@ -3684,16 +3653,24 @@ HTML = f'''<!DOCTYPE html>
 <section id="dailyquiz" class="print-block" data-section="dailyquiz">
   <div class="section-head-row">
     <h2>Daily Quiz</h2>
-    <button class="print-btn no-print" onclick="printSection('dailyquiz')"><span class="ic">&#128424;&#65039;</span>Print</button>
   </div>
-  <p class="lede quiz-screen-only">A 5-question multi-choice quiz for every day of the trip, themed to wherever we are that day &ndash; Rome history, cruise trivia, French Riviera, Tuscany, London and more. Browse the questions below, or hit Print for a paper question sheet for each of the 4 of us, plus one combined answer key at the end.</p>
-  <div class="quiz-screen-only">{QUIZ_SCREEN_HTML}</div>
-  <div class="quiz-print-only">
-    {QUIZ_PRINT_SHEETS_HTML}
-    <div class="quiz-answers-section">
-      <h2>Daily Quiz &ndash; Answer Key</h2>
-      {QUIZ_ANSWER_KEY_HTML}
+  <p class="lede">A 5-question multi-choice quiz for every day of the trip, themed to wherever we are that day &ndash; Rome history, cruise trivia, French Riviera, Tuscany, London and more. Browse the questions below any time, or print two separate documents: one with just the questions, one with the answer key.</p>
+
+  <div class="print-block" data-subsection="quizquestions">
+    <div class="section-head-row">
+      <h3 id="quizquestions" style="margin-bottom:0;">Questions</h3>
+      <button class="print-btn no-print" onclick="printSub('quizquestions')"><span class="ic">&#128424;&#65039;</span>Print Questions</button>
     </div>
+    {QUIZ_SCREEN_HTML}
+  </div>
+
+  <div class="print-block" data-subsection="quizanswers">
+    <div class="section-head-row">
+      <h3 id="quizanswers" style="margin-bottom:0;">Answer Key</h3>
+      <button class="print-btn no-print" onclick="printSub('quizanswers')"><span class="ic">&#128424;&#65039;</span>Print Answers</button>
+    </div>
+    <p class="tt-note">Hidden from normal browsing so the quiz stays a surprise &ndash; use Print Answers to check your scores.</p>
+    <div class="quiz-answers-hidden">{QUIZ_ANSWER_KEY_HTML}</div>
   </div>
 </section>
 
