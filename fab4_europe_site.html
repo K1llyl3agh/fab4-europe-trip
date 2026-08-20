@@ -7635,6 +7635,12 @@ Visit Website: Headout</div>
           <div class="ec-line">&#128222; +64 27 542 7747</div>
           <div class="ec-line">&#9993;&#65039; gary.nicholson@garrison.co.nz</div>
           <div class="ec-line">&#128194; International Drivers Licence: IDP196978</div><div class="ec-line">&#128194; ETA reference number: 2020-0000-6027-5337</div>
+        </div>
+        <div class="ec-person">
+          <div class="ec-person-name">Karen Nicholson</div>
+          <div class="ec-line">&#128222; +64 275 536 746</div>
+          <div class="ec-line">&#9993;&#65039; karen.nicholson@garrison.co.nz</div>
+          <div class="ec-line">&#128194; ETA reference number: 2020-0000-6027-5878</div>
         </div></div>
       </div>
       <div class="ec-box">
@@ -7876,7 +7882,7 @@ function revealPassportChecklist() {
 (function() {
   var el = document.getElementById('viewCounterNum');
   if (!el) return;
-  fetch('https://api.countapi.xyz/hit/fab4-europe-trip-2026/site-views')
+  fetch('https://countapi.mileshilliard.com/api/v1/hit/fab4-europe-trip-netlify-2026-siteviews')
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data && typeof data.value === 'number') {
