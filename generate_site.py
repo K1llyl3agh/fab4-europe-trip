@@ -16,6 +16,9 @@ IMG = {
     'milan': b64('milan_map.png'),
     'hero': b64('fab4_hero_photo_web.jpg'),
     'ship': b64('ship_web.jpg'),
+    'qv8': b64('qv8.png'),
+    'ship_at_sea': b64('ship_at_sea_web.jpg'),
+    'ztl': b64('ztl_map.png'),
 }
 
 EUROPE_MAP_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
@@ -207,6 +210,7 @@ HOTEL_QR = {
 
 TRAVEL_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB8klEQVR4nO2YQWrlQAxEX/9uyLINc4AcRYY5QI4UcqS5QfsoOcBAe/lBpmYhO2QxIbMZokUaL2xrUxSlUqmL+PAct49r8F38rIgmQJW8S9McvAff5hnRmqQq1WneR9WIT82EaG9AKSv7el9o+7PvawP20r4Q0D8U60R6adhR1hSA/nLa9bLBVrBjgT7a1wH6FK2gYcejYPv5e6mvK13sCdHeYCulAA+va9ufwYCjlLIkRNsIv9q5/5gNjsdf62JhYfmmA5oGVKlOqoam1etPPgdD83o0YlKA0UfN6LdI0rSqUTXoJ7eaRk/JbUwxcHCsXiQn5pY6CTfwrqoRyHOipQ/HpOF9+AlYaVNNRBppgNWTZxLrlsiKdDlEx6V1MPqId3+n25SJkWj/UG9E3NR+Owl4dPmpW3MspRJugAfmSOBwLDS2Y0mYatA8faBK3s81J6tuT24dO5at7c+llPuyPUgpN53g1moskrE/auTNCdOqhmNgdUZOUJ05p8MNuC80oA/vL3SVUo4Fva4ZlRBnnsYLpkiMSXMCxO6g4V1XWsir2yviRrsNx/Lm22lX9LK4Vgq2PSO3b0U7Fo6FUtZjQdPanrDL3u5qqL6toP3pYT6VPpsn3dAlvVshrz09Y6q5PGEiyfuIXvOulLot3zf5/634B7IimfqVQm6jAAAAAElFTkSuQmCC'
 CAR_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB9UlEQVR4nO2YMW7kMAxFn4YCUsrAHiBHkW+wRwr2ZpyjzAEC0OUAMv4W0qQbZJvFsAjhwjabB+KJolTE0zgvz3Pwk/wuiQLA5KM5TaOJNuvdRzraC3RJQD12jvIWcOwmKRLW9gKUsgMWSM6x05yj1BcCPY369Xb/5fXz43wPjv2FQP9I+zageQ3O96ivA/qWVlPaAoVRsM+dJo6EtBe4llKgW3SL/hYdOEspW0JatMJNAiQfbf3K18FQ9NHcoktu0RUMmMApaVEwW64CRTc5TSPj7oDkU1rJTT6aLJh/ctJOb0fzwbLCgtGSmjCaA4pu0WmumGNDTto+mh6oGrBqm9PbwAKaFqo0mptE6toypgOBSSYlNUFugclZ9mJS1lV2AWh+37Dbh4IK53a9v/tLgZ7GNOGr30pSdJOS9tvAJMkBmubnPPJkpH1wjiaTSz7os8L5aC/QB+hWgHMDsKByPbec3i4Zpr00l5R5ToA+miSf3s4npbcXjo8BFSroViqcG2WDY89owoyAtpYYzJk8pQkBrN12Tl+KPieHfLSXdVdzlHtZbaHCoI8joQkVKHSaamylqQBcC1j8zkeLoq/jub4mxrkR5zQBgPaHY68wuNptH/M+JB0tiq450K7LBB+Pw1q+2j56wjqdrd6VdXcoPzf5/y35F9YVsOVd3wvZAAAAAElFTkSuQmCC'
+ETA_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADCklEQVR4nO2cwW3jMBBF36wE+EgDKcCliJ1tTduBWYoLCCAeDUj4eyApK7klDiTHHh50kPzgIUxwZv6nbOLLI/35OgMOOeSQQw455NBzQlZH327nHtIRSNYDuX0g7hKeQ9tDgyRphLIs0hEYRmDQBNBJkvQR2i48h7aHctsAhnE2i+FqFnPPbd9Y7yC/ZE4OfQfqP99IJwHMKJ0mgNkY/v3ANzn0O6DPK0IARniH4WJAeO9F3is8h3aDgqQzANmMYexkduwkXQ6yCEilotgnPIe2hpKZmR3BIp1KrzGMYLE8n0ursVd4Dm2dNdZSdriayLC+8FHrfvA5OXQPROkqa/fZlV9eZ0DnIDGUe13JKaUHPT/4nBy6B2orYmyVwqJMlMs51HssooSviJeAgmQx99TyMkyQTpLFfKgZYxhnryNeAKqJYLUfjFByxXIpD6Cr2cX3iGeGatYg1Lzw4VknSVPNH7fhK+L5IenSU3IFq3pybtYWsBK6f8ecHLqn+zTChMgGMPeCCZHfJpJ1IkUwWJrQB5+TQ/dDOjOb2UliuBxkMZtBuFr1PlsdYXGX8Bza3tcYLuUYBMBsAlVzg/zWxOswbh+eQ5tDi0LVSohST44AoRaVteHwXuMloFUPUW+EqfShpc2ojWfVMX1FPD/UhGluykTbD6oAMdFaD1exXweyCFjMZma3czKa0DkfVGrMImvuEp5D+9QRVY0quaJ6HcXwqGKm+xovBrVDt1WcokiYKzHTfY1XgFZueE0T4WaOr10P3Nd4Deizr9FqzMXzWpqQYTlH4Svi+aG2H0zYX0lmx/a8vLkhqRzA3Cc8h3bwNcroJiUDpdgjcjdVHbMJl+5rvAy0FA437QHChMXQfI1acu4SnkPbQ4vVnU6LJJV7IB9EsmZ87RWeQztD6Qhmp6uRTlcre8Rw6bH4EOE5tCVUXFCo4lRtPKk15k9+k0MPDYVqbpTtIYar3bJGNbnGrr329Uvm5NB3oKZHlLEctaXT6n2NtcbtesSTQ+b/TOaQQw455JBDDn0T+g/R5zGFDCexrAAAAABJRU5ErkJggg=='
 
 WALK_ROUTES = [
     ('dinner at albert schloss', {
@@ -553,22 +557,29 @@ HOTEL_INFO = [
      'full_address': 'Via Gaeta 61, 00185 Rome, Italy',
      'phone': '+39 06 8115 7001', 'email': 'therepublic@aghotels.it',
      'website': 'https://www.therepublichotel.it/',
+     'booking_ref': 'Gary &amp; Karen: 5179180 &middot; Deb &amp; Tom: 5179179',
+     'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;7.50 per person, per night (up to 10 nights), payable directly to the hotel'),
      'dates': '11-14 Sept 2026 (check-out morning of the 14th for Civitavecchia/cruise embarkation)'},
     {'name': 'Hotel Borgo di Cortefreda Relais', 'address': 'Via Roma 191, 50028, Tavarnelle Val Di Pesa',
      'full_address': 'Via Roma 191, 50028 Tavarnelle Val di Pesa (FI), Italy',
      'phone': '+39 055 807 3333', 'email': 'info@borgodicortefreda.com',
      'website': 'https://www.borgodicortefreda.com/',
+     'booking_ref': 'Gary &amp; Karen: 900422765 (hotel conf. 45873846) &middot; Deb &amp; Tom: 900422785 (hotel conf. 45873847)',
+     'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;3.00 per person, per night (up to 7 nights), payable directly to the hotel'),
      'dates': '21-23 Sept 2026 (check-out morning of the 23rd for the drive to Milan)'},
     {'name': 'iQ Hotel Milano', 'address': 'Via Giovanni Battista Pirelli, 5, 20124 Milan',
      'full_address': 'Via Giovanni Battista Pirelli 5, 20124 Milan, Italy',
      'phone': '+39 02 8498 0810', 'email': 'info@iqhotelmilano.it',
      'website': 'https://www.iqhotelmilano.it/',
+     'booking_ref': 'Gary &amp; Karen: 9079750869671 (conf. 2385198897) &middot; Deb &amp; Tom: 9074737872483 (conf. 2385198904)',
+     'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;10.00 per person, per night, payable directly to the hotel'),
      'dates': '23-24 Sept 2026 (check-out morning of the 24th for the flight to London)'},
     {'name': 'The Level at Melia White House', 'address': 'Longford Street, Regents Park, London NW1 3UP',
      'full_address': "Longford Street, Regent's Park, London NW1 3UP, United Kingdom",
      'phone': '+44 20 7391 3000', 'email': 'melia.white.house@melia.com',
      'website': 'https://www.melia.com/en/hotels/united-kingdom/london/the-level-at-melia-white-house',
      'tube': 'Great Portland Street station (Circle, Hammersmith & City, Metropolitan lines) - approx. 2-3 min walk (~0.2 km), directly opposite the hotel',
+     'booking_ref': 'Gary &amp; Karen: 702Lb92xxk &middot; Deb &amp; Tom: 702Hpxuze6',
      'dates': '24-27 Sept 2026 (depart Heathrow the night of the 27th)'},
 ]
 
@@ -580,11 +591,23 @@ def stay_with_address(stay_text):
             return f"{stay_text} - {h['address']} ({h['phone']} · {h['email']})"
     return stay_text
 
+CURRENCY_SYMBOL = {'EUR': '&euro;', 'GBP': '&pound;', 'USD': '$', 'NZD': 'NZ$'}
+
+def mandatory_fee_box(currency, text):
+    symbol = CURRENCY_SYMBOL.get(currency, currency)
+    return f'''
+    <div class="mandatory-fee-box">
+      <span class="currency-badge" title="Payable in {esc(currency)}">{symbol}</span>
+      <span class="mandatory-fee-text"><strong>Mandatory fee:</strong> {text}</span>
+    </div>'''
+
 def hotel_directory_cards():
     cards = ''
     for h in HOTEL_INFO:
         tube_html = f'<div class="place-hours">&#128676; {esc(h["tube"])}</div>' if h.get('tube') else ''
         dates_html = f'<div class="place-hours">&#128197; {esc(h["dates"])}</div>' if h.get('dates') else ''
+        ref_html = f'<div class="place-hours">&#128203; Booking ref &ndash; {h["booking_ref"]}</div>' if h.get('booking_ref') else ''
+        fee_html = mandatory_fee_box(*h['mandatory_fee']) if h.get('mandatory_fee') else ''
         qr_b64 = HOTEL_QR.get(h['name'])
         qr_html = (
             f'<a class="place-qr-corner" href="{esc(h["website"])}" target="_blank" title="Scan or click for hotel website">'
@@ -598,6 +621,8 @@ def hotel_directory_cards():
           <div class="place-hours">&#128222; {esc(h['phone'])}</div>
           <div class="place-hours">&#9993;&#65039; {esc(h['email'])}</div>
           {tube_html}
+          {ref_html}
+          {fee_html}
           {qr_html}
         </div>'''
     return cards
@@ -613,11 +638,14 @@ EMERGENCY_CONTACTS = [
             {'name': 'Steve Nicholson', 'phone': '+64 27 873 9578', 'email': ''},
             {'name': 'Martina Gyde', 'phone': '+64 27 590 4156', 'email': 'martinag@xtra.co.nz'},
             {'name': 'Gary Nicholson', 'phone': '+64 27 542 7747', 'email': 'gary.nicholson@garrison.co.nz',
-             'extra': [('&#128194;', 'International Drivers Licence: IDP196978')]},
+             'extra': [('&#128194;', 'International Drivers Licence: IDP196978'),
+                       ('&#128194;', 'ETA reference number: 2020-0000-6027-5337')]},
+            {'name': 'Karen Nicholson', 'phone': '+64 275 536 746', 'email': 'karen.nicholson@garrison.co.nz',
+             'extra': [('&#128194;', 'ETA reference number: 2020-0000-6027-5878')]},
         ],
     },
     {
-        'title': 'Deborah Gyde &amp; Thomas Akhurst',
+        'title': 'Deb Gyde &amp; Thomas Akhurst',
         'people': [
             {'name': '', 'phone': '', 'email': ''},
             {'name': '', 'phone': '', 'email': ''},
@@ -664,6 +692,298 @@ HOTEL_MAILTO = (
     + "&body=" + urllib.parse.quote(HOTEL_EMAIL_BODY)
 )
 
+# ---------- ZTL / Limited Traffic Zones (Italy) ----------
+
+ZTL_CITIES = [
+    {'place': 'Rome (Centro Storico)', 'type': "Italy's most famous ZTL &ndash; not on our drive route",
+     'address': "Daytime hours Mon&ndash;Fri, with extended evening ZTL in some nightlife sectors on weekends &ndash; camera-enforced across the historic centre.",
+     'fact': "We don't collect the hire car until Civitavecchia, so this one's FYI only &ndash; but it's the zone every guide warns about first, and worth knowing about generally."},
+    {'place': 'Milan &ndash; Area C', 'type': 'Congestion charge + ZTL ring around the Duomo',
+     'address': 'Mon&ndash;Fri 7:30am&ndash;7:30pm, about &euro;7.50/entry (higher on weekends), camera-enforced seven days a week from 2026.',
+     'fact': 'The iQ Hotel Milano (Via Pirelli) sits just outside the Area C ring, so arriving/leaving the hotel should be fine &ndash; it only becomes a problem if we drive in towards the Duomo.'},
+    {'place': 'Como &amp; Cernobbio (Option A)', 'type': 'Como old town ZTL &ndash; enforced daily, 9am&ndash;10pm',
+     'address': 'Covers the walled Citt&agrave; Murata, Piazza Duomo and Via Vittorio Emanuele II. The Cernobbio/Tremezzo lakeside road (SS340) itself is open, but narrow and often busy.',
+     'fact': "Best to park in a signed lot outside the old town (e.g. Autosilo Valduce) rather than drive in for Harry's Bar/the lakefront."},
+    {'place': 'Bologna (Option B breakfast stop)', 'type': 'ZTL Centro Storico &ndash; every day, 7am&ndash;8pm',
+     'address': 'Camera-enforced ("Sirio" system) across the historic centre; a few streets are pedestrian-only around the clock.',
+     'fact': 'Our Option B breakfast stop, Aroma Specialty Coffee on Via Portanova, sits inside this zone &ndash; better to park just outside and walk the last few minutes than drive to the door.'},
+    {'place': 'Modena &amp; Maranello (Option B)', 'type': "Modena's old town ZTL is effectively permit-holders-only",
+     'address': "Modena's historic centre is restricted for most of the day; Maranello itself has no formal ZTL, but very heavy paid parking near the Ferrari Museum.",
+     'fact': 'Best to follow the signed ring road/tangenziale around Modena rather than cut through its centre on the way to Maranello.'},
+    {'place': 'Florence', 'type': 'ZTL &ndash; 5 sectors, Mon&ndash;Fri 7:30am&ndash;8pm, Sat 7:30am&ndash;4pm',
+     'address': 'Free to drive Sundays and public holidays. Covers Piazza del Duomo, Piazza della Signoria and most of the historic core.',
+     'fact': "Not on our base route, but easy to stumble into if we detour into central Florence for a look."},
+    {'place': 'Siena', 'type': 'Historic centre is effectively car-free',
+     'address': 'The whole medieval core sits inside a strict ZTL &ndash; park in one of the signed "parcheggio scambiatore" lots outside the walls and walk in.',
+     'fact': 'Relevant if we make the short detour south from our hotel to see the Palio square (Piazza del Campo).'},
+    {'place': 'San Gimignano', 'type': 'No visitor cars inside the walls, ever (Apr&ndash;Oct)',
+     'address': 'Five paid car parks (P1&ndash;P5) sit just outside the medieval gates &ndash; it\'s a walk up from there, whichever one we use.',
+     'fact': "The 'medieval Manhattan' towers from our Day 12 Fun Facts &ndash; a natural detour from our Tuscany hotel, so worth knowing before we drive up."},
+    {'place': 'Venice (Option C)', 'type': "No cars at all in the historic centre &ndash; more a total ban than a ZTL",
+     'address': "The car has to be left on the mainland at Tronchetto or Piazzale Roma car parks; the centre itself is reached on foot or by vaporetto (water bus).",
+     'fact': "Already flagged on our Option C route notes &ndash; the most extreme version of a 'limited traffic zone' in Italy."},
+]
+
+def _ztl_card(c):
+    return f'''
+    <div class="place-card">
+      <div class="place-name">{c['place']}</div>
+      <div class="place-hours">&#128337; {c['type']}</div>
+      <div class="place-addr">{c['address']}</div>
+      <div class="place-fact">&#128663; {c['fact']}</div>
+    </div>'''
+
+ZTL_CARDS_HTML = ''.join(_ztl_card(c) for c in ZTL_CITIES)
+
+# ---------- Daily Quiz (16 "on the ground" days, 11-26 Sept - excludes pure long-haul travel days) ----------
+
+QUIZ_PEOPLE = ['Gary', 'Karen', 'Deb', 'Tom']
+QUIZ_LETTERS = ['A', 'B', 'C', 'D']
+
+DAILY_QUIZ = [
+    {'date': 'Fri 11 Sep', 'day_num': 2, 'theme': 'Rome Arrival', 'qs': [
+        {'q': 'Which river runs through the middle of Rome?', 'opts': ['The Po', 'The Tiber', 'The Arno', 'The Danube'], 'ans': 1,
+         'note': 'The Tiber (Tevere) flows right past our hotel on its way out to the sea at Ostia.'},
+        {'q': 'Rome is famously said to be built on how many hills?', 'opts': ['Five', 'Six', 'Seven', 'Nine'], 'ans': 2,
+         'note': 'The "Seven Hills of Rome" - Palatine, Capitoline, Aventine, Caelian, Esquiline, Viminal and Quirinal.'},
+        {'q': 'What is the name of the independent city-state entirely enclosed within Rome?', 'opts': ['San Marino', 'Monaco', 'Vatican City', 'Andorra'], 'ans': 2,
+         'note': "Vatican City - the world's smallest country, and where we're headed tomorrow."},
+        {'q': 'Which ancient structure is also known by its Latin name, the Amphitheatrum Flavium?', 'opts': ['The Pantheon', 'The Colosseum', 'The Circus Maximus', 'The Roman Forum'], 'ans': 1,
+         'note': "The Colosseum - on the itinerary for Day 4 (Sunday)."},
+        {'q': 'Legend says Rome was founded by twin brothers raised by a wolf. What were their names?', 'opts': ['Castor and Pollux', 'Romulus and Remus', 'Brutus and Cassius', 'Titus and Vespasian'], 'ans': 1,
+         'note': 'Romulus and Remus - Romulus supposedly founded the city in 753 BC and became its first king.'},
+    ]},
+    {'date': 'Sat 12 Sep', 'day_num': 3, 'theme': 'Vatican & Sistine Chapel', 'qs': [
+        {'q': 'Who painted the ceiling of the Sistine Chapel?', 'opts': ['Leonardo da Vinci', 'Raphael', 'Michelangelo', 'Botticelli'], 'ans': 2,
+         'note': 'Michelangelo - he reportedly complained the whole time that he was a sculptor, not a painter.'},
+        {'q': 'Roughly how long did it take Michelangelo to paint the Sistine Chapel ceiling?', 'opts': ['About 1 year', 'About 4 years', 'About 10 years', 'About 20 years'], 'ans': 1,
+         'note': 'About 4 years, 1508-1512, mostly lying on his back on scaffolding.'},
+        {'q': "What is the name of Michelangelo's huge fresco on the Sistine Chapel's altar wall, painted decades after the ceiling?", 'opts': ['The Creation of Adam', 'The Last Supper', 'The Last Judgment', 'The School of Athens'], 'ans': 2,
+         'note': 'The Last Judgment, painted 1536-1541 - nearly 30 years after the ceiling.'},
+        {'q': "What is the world's smallest country by area, which we're visiting today?", 'opts': ['Monaco', 'Vatican City', 'San Marino', 'Liechtenstein'], 'ans': 1,
+         'note': 'Vatican City - about 0.44 sq km, smaller than most golf courses.'},
+        {'q': "What is the name of the huge square in front of St Peter's Basilica, ringed by Bernini's colonnades?", 'opts': ['Piazza Navona', 'Piazza del Popolo', "St Peter's Square", 'Piazza di Spagna'], 'ans': 2,
+         'note': "St Peter's Square - the colonnade's four rows of columns are designed to line up as a single row from two marked spots in the piazza."},
+    ]},
+    {'date': 'Sun 13 Sep', 'day_num': 4, 'theme': 'Colosseum', 'qs': [
+        {'q': 'In roughly what year did construction of the Colosseum finish?', 'opts': ['80 AD', '200 AD', '30 BC', '500 AD'], 'ans': 0,
+         'note': '80 AD, under Emperor Titus - construction had started under his father Vespasian about 8 years earlier.'},
+        {'q': 'Roughly how many spectators could the Colosseum hold?', 'opts': ['5,000', '15,000', '50,000-80,000', '200,000'], 'ans': 2,
+         'note': 'Around 50,000-80,000 - similar to a large modern stadium.'},
+        {'q': 'What was the underground network of tunnels and animal cages beneath the arena floor called?', 'opts': ['The Catacombs', 'The Hypogeum', 'The Forum', 'The Atrium'], 'ans': 1,
+         'note': 'The Hypogeum - a two-level maze of passages used to hoist animals and scenery up through trapdoors.'},
+        {'q': 'Which Roman emperor commissioned the Colosseum?', 'opts': ['Nero', 'Augustus', 'Vespasian', 'Julius Caesar'], 'ans': 2,
+         'note': 'Vespasian, funded partly by treasure from the sack of Jerusalem.'},
+        {'q': "What stone makes up most of the Colosseum's outer structure?", 'opts': ['Marble', 'Travertine limestone', 'Granite', 'Brick only'], 'ans': 1,
+         'note': 'Travertine limestone, quarried near Tivoli and hauled to Rome along a purpose-built road.'},
+    ]},
+    {'date': 'Mon 14 Sep', 'day_num': 5, 'theme': 'Rome to the Cruise', 'qs': [
+        {'q': "What is the name of the ship we're boarding today?", 'opts': ['Queen Mary 2', 'Queen Elizabeth', 'Queen Victoria', 'Queen Anne'], 'ans': 2,
+         'note': 'Queen Victoria - Cunard voyage V618D, our home for the next week.'},
+        {'q': 'Which shipping line operates Queen Victoria?', 'opts': ['Cunard', 'P&O', 'Princess Cruises', 'Royal Caribbean'], 'ans': 0,
+         'note': 'Cunard - famous for transatlantic ocean liners since the 1840s.'},
+        {'q': 'Which Cunard liner sank after being torpedoed in 1915, helping draw the US into WWI?', 'opts': ['Titanic', 'Lusitania', 'Britannic', 'Mauretania'], 'ans': 1,
+         'note': 'RMS Lusitania - torpedoed off Ireland; nearly 1,200 died, including 128 Americans.'},
+        {'q': 'What year was the Cunard Line founded?', 'opts': ['1740', '1840', '1900', '1950'], 'ans': 1,
+         'note': '1840, by Samuel Cunard - making it one of the oldest shipping brands still operating.'},
+        {'q': "Which Italian port are we sailing from today?", 'opts': ['Naples', 'Genoa', 'Civitavecchia', 'Livorno'], 'ans': 2,
+         'note': "Civitavecchia - Rome's cruise port, about an hour from the city."},
+    ]},
+    {'date': 'Tue 15 Sep', 'day_num': 6, 'theme': 'Sea Day', 'qs': [
+        {'q': 'The Mediterranean Sea connects to the Atlantic Ocean via which strait?', 'opts': ['Strait of Messina', 'Strait of Gibraltar', 'The Bosphorus', 'Strait of Otranto'], 'ans': 1,
+         'note': 'The Strait of Gibraltar - only about 13km wide at its narrowest.'},
+        {'q': 'Which is the largest island in the Mediterranean?', 'opts': ['Corsica', 'Cyprus', 'Sicily', 'Sardinia'], 'ans': 2,
+         'note': 'Sicily - just ahead of Sardinia in size.'},
+        {'q': "Approximately how deep is the Mediterranean's deepest point, the Calypso Deep?", 'opts': ['About 500m', 'About 2,000m', 'About 5,200m', 'About 10,000m'], 'ans': 2,
+         'note': 'About 5,200m, southwest of Greece.'},
+        {'q': 'Which sea connects to the Mediterranean via the Dardanelles and Bosphorus straits?', 'opts': ['The Red Sea', 'The Black Sea', 'The Caspian Sea', 'The Adriatic Sea'], 'ans': 1,
+         'note': 'The Black Sea, via Istanbul\'s two famous straits.'},
+        {'q': "What unit is traditionally used to measure a ship's speed at sea?", 'opts': ['Miles per hour', 'Knots', 'Fathoms per hour', 'Leagues per hour'], 'ans': 1,
+         'note': 'Knots (nautical miles per hour) - one knot is about 1.85 km/h.'},
+    ]},
+    {'date': 'Wed 16 Sep', 'day_num': 7, 'theme': 'Marseille, France', 'qs': [
+        {'q': "Marseille is France's ___ largest city.", 'opts': ['Largest', 'Second-largest', 'Third-largest', 'Fifth-largest'], 'ans': 1,
+         'note': 'Second-largest, after Paris.'},
+        {'q': 'Marseille was founded by settlers from which ancient civilisation, around 600 BC?', 'opts': ['Romans', 'Phoenicians', 'Greeks (Phocaeans)', 'Etruscans'], 'ans': 2,
+         'note': 'Greek settlers from Phocaea - making it one of the oldest cities in France.'},
+        {'q': "What is France's national anthem called, named after soldiers from Marseille who sang it marching to Paris in 1792?", 'opts': ['La Vie en Rose', 'La Marseillaise', 'Non, Je Ne Regrette Rien', 'Frère Jacques'], 'ans': 1,
+         'note': 'La Marseillaise - now sung at every French sporting event and state occasion.'},
+        {'q': 'What is the traditional Provençal fish stew Marseille is famous for?', 'opts': ['Ratatouille', 'Bouillabaisse', 'Cassoulet', 'Coq au vin'], 'ans': 1,
+         'note': "Bouillabaisse - originally a fisherman's stew made from the day's unsellable catch."},
+        {'q': "What is the fortified hilltop basilica overlooking Marseille's harbour called?", 'opts': ['Notre-Dame de la Garde', 'Sacré-Cœur', 'Notre-Dame de Paris', 'Sainte-Chapelle'], 'ans': 0,
+         'note': "Notre-Dame de la Garde - locals call it 'la bonne mère' (the good mother)."},
+    ]},
+    {'date': 'Thu 17 Sep', 'day_num': 8, 'theme': 'Villefranche & Monaco', 'qs': [
+        {'q': 'Monaco is the second-smallest country in the world. Which is the smallest?', 'opts': ['San Marino', 'Vatican City', 'Liechtenstein', 'Malta'], 'ans': 1,
+         'note': 'Vatican City - Monaco is second, at about 2.1 sq km.'},
+        {'q': 'Which royal family has ruled Monaco for over 700 years?', 'opts': ['The Windsors', 'The Grimaldis', 'The Bourbons', 'The Habsburgs'], 'ans': 1,
+         'note': 'The Grimaldis - one of the longest-reigning royal families in the world.'},
+        {'q': 'What famous annual motor race runs through the streets of Monaco?', 'opts': ['Le Mans 24 Hours', 'Monaco Grand Prix', 'Dakar Rally', 'Tour de France'], 'ans': 1,
+         'note': "The Monaco Grand Prix - one of Formula 1's oldest and most prestigious races."},
+        {'q': 'Which Hollywood actress became Princess of Monaco in 1956, marrying Prince Rainier III?', 'opts': ['Audrey Hepburn', 'Grace Kelly', 'Ingrid Bergman', 'Elizabeth Taylor'], 'ans': 1,
+         'note': 'Grace Kelly - she gave up her acting career to become Princess Grace.'},
+        {'q': 'Monaco residents famously pay no what?', 'opts': ['Council rates', 'Income tax', 'Road tolls', 'Import duty'], 'ans': 1,
+         'note': "No personal income tax for residents - part of why it's such an expensive place to live."},
+    ]},
+    {'date': 'Fri 18 Sep', 'day_num': 9, 'theme': 'Genoa, Italy', 'qs': [
+        {'q': 'Which explorer, credited with reaching the Americas in 1492, was born in Genoa?', 'opts': ['Marco Polo', 'Amerigo Vespucci', 'Christopher Columbus', 'Ferdinand Magellan'], 'ans': 2,
+         'note': 'Christopher Columbus - born in Genoa around 1451.'},
+        {'q': 'Genoa is the capital of which Italian region?', 'opts': ['Tuscany', 'Liguria', 'Piedmont', 'Lombardy'], 'ans': 1,
+         'note': 'Liguria - the crescent-shaped region along the Italian Riviera.'},
+        {'q': 'Which world-famous basil sauce originated in Genoa?', 'opts': ['Marinara', 'Pesto', 'Alfredo', 'Arrabbiata'], 'ans': 1,
+         'note': 'Pesto (alla genovese) - traditionally made with basil, pine nuts, garlic, parmesan and olive oil.'},
+        {'q': "Genoa's historic centre is often ranked among Europe's largest what?", 'opts': ['Medieval castles', 'Medieval old towns', 'Cathedrals', 'Palace complexes'], 'ans': 1,
+         'note': "Its centro storico is regularly cited as one of the largest and best-preserved medieval old towns in Europe."},
+        {'q': 'In the Middle Ages, Genoa was a powerful maritime republic rivalling which other Italian sea power?', 'opts': ['Naples', 'Venice', 'Palermo', 'Bari'], 'ans': 1,
+         'note': 'Venice - the two republics fought several wars for control of Mediterranean trade.'},
+    ]},
+    {'date': 'Sat 19 Sep', 'day_num': 10, 'theme': 'La Spezia & Pisa', 'qs': [
+        {'q': 'The Leaning Tower of Pisa started leaning almost immediately, mainly because of what?', 'opts': ['An earthquake', 'Soft, unstable ground', 'A design flaw in the bells', 'War damage'], 'ans': 1,
+         'note': "Soft, waterlogged subsoil couldn't support the foundation evenly."},
+        {'q': 'How many storeys does the Leaning Tower of Pisa have?', 'opts': ['4', '6', '8', '12'], 'ans': 2,
+         'note': '8 storeys, including the belfry at the top.'},
+        {'q': 'What type of building is the Leaning Tower actually part of?', 'opts': ['A city hall', "A cathedral bell tower (campanile)", 'A fortress', 'A university'], 'ans': 1,
+         'note': "It's the freestanding campanile (bell tower) of Pisa Cathedral."},
+        {'q': 'Which scientist, born in Pisa, is said (probably as legend) to have dropped balls from the tower to study gravity?', 'opts': ['Leonardo da Vinci', 'Galileo Galilei', 'Copernicus', 'Archimedes'], 'ans': 1,
+         'note': "Galileo Galilei - the story is likely apocryphal, but he did live and study in Pisa."},
+        {'q': 'La Spezia sits at the gateway to which colourful stretch of Ligurian coastline, famous for five cliffside villages?', 'opts': ['Amalfi Coast', 'Cinque Terre', 'Costa Smeralda', 'Riviera di Levante'], 'ans': 1,
+         'note': "Cinque Terre - literally 'Five Lands': Monterosso, Vernazza, Corniglia, Manarola and Riomaggiore."},
+    ]},
+    {'date': 'Sun 20 Sep', 'day_num': 11, 'theme': 'Sea Day', 'qs': [
+        {'q': 'Which is traditionally considered the longest river in the world?', 'opts': ['Amazon', 'Nile', 'Yangtze', 'Mississippi'], 'ans': 1,
+         'note': 'The Nile, by most classic measurements - though some newer surveys argue for the Amazon.'},
+        {'q': 'Which is the largest ocean on Earth?', 'opts': ['Atlantic', 'Indian', 'Arctic', 'Pacific'], 'ans': 3,
+         'note': 'The Pacific - bigger than all the landmasses on Earth combined.'},
+        {'q': 'Which country has the most time zones?', 'opts': ['Russia', 'USA', 'France', 'China'], 'ans': 2,
+         'note': 'France - thanks to its overseas territories scattered around the globe (12 in total).'},
+        {'q': 'What is the smallest continent by land area?', 'opts': ['Europe', 'Australia/Oceania', 'Antarctica', 'South America'], 'ans': 1,
+         'note': 'Australia/Oceania.'},
+        {'q': 'Which mountain range forms part of the traditional boundary between Europe and Asia?', 'opts': ['The Alps', 'The Urals', 'The Pyrenees', 'The Carpathians'], 'ans': 1,
+         'note': 'The Ural Mountains, running through Russia.'},
+    ]},
+    {'date': 'Mon 21 Sep', 'day_num': 12, 'theme': 'Tuscany (Talamone & Chianti)', 'qs': [
+        {'q': 'What colour is the rooster on the seal of authentic Chianti Classico wine?', 'opts': ['Red', 'White', 'Black', 'Gold'], 'ans': 2,
+         'note': 'Black - the "Gallo Nero" seal, only allowed on wine from the original historic Chianti Classico zone.'},
+        {'q': 'Which grape variety is Chianti primarily made from?', 'opts': ['Nebbiolo', 'Sangiovese', 'Barbera', 'Montepulciano'], 'ans': 1,
+         'note': 'Sangiovese - Italy\'s most widely planted red grape.'},
+        {'q': "In Dante's Divine Comedy, which section mockingly mentions Talamone, the port we're passing through today?", 'opts': ['Inferno', 'Purgatorio', 'Paradiso', "It isn't mentioned"], 'ans': 1,
+         'note': "Purgatorio - the Sienese had just bought Talamone hoping to build their fortunes there; it never worked out."},
+        {'q': "Tuscany's capital and the birthplace of the Renaissance is which city?", 'opts': ['Siena', 'Pisa', 'Florence', 'Lucca'], 'ans': 2,
+         'note': 'Florence.'},
+        {'q': 'What is the name for the low stone farmhouse-style accommodation common across the Tuscan countryside?', 'opts': ['Villa', 'Agriturismo', 'Palazzo', 'Trattoria'], 'ans': 1,
+         'note': "Agriturismo - a working farm offering accommodation and food, like our lunch stop today."},
+    ]},
+    {'date': 'Tue 22 Sep', 'day_num': 13, 'theme': 'Tuscany Free Day', 'qs': [
+        {'q': 'San Gimignano, near our hotel, is famous for its skyline of medieval what?', 'opts': ['Windmills', 'Towers', 'Bridges', 'Domes'], 'ans': 1,
+         'note': "Its 'medieval Manhattan' skyline - rival families once competed to build the tallest tower."},
+        {'q': "How many of San Gimignano's original ~72 medieval towers still survive today?", 'opts': ['About 3', 'About 14', 'About 40', 'All 72'], 'ans': 1,
+         'note': 'About 14 - most were later torn down or collapsed.'},
+        {'q': 'Which Renaissance polymath was born in a small Tuscan town near Florence, sharing his name with it?', 'opts': ['Michelangelo Buonarroti', 'Leonardo da Vinci', 'Sandro Botticelli', 'Donatello'], 'ans': 1,
+         'note': "Leonardo da Vinci - born in the town of Vinci, in the province of Florence."},
+        {'q': 'The Chianti wine region lies roughly between which two famous Tuscan cities?', 'opts': ['Florence and Siena', 'Pisa and Lucca', 'Florence and Rome', 'Siena and Rome'], 'ans': 0,
+         'note': 'Florence and Siena.'},
+        {'q': 'Which powerful banking family ruled Florence and patronised the Renaissance for generations?', 'opts': ['The Borgias', 'The Medici', 'The Sforza', 'The Visconti'], 'ans': 1,
+         'note': 'The Medici family - bankers, popes and patrons of Michelangelo, Botticelli and Galileo.'},
+    ]},
+    {'date': 'Wed 23 Sep', 'day_num': 14, 'theme': 'Milan (Options Day)', 'qs': [
+        {'q': "Roughly how long did Milan's Duomo take to complete, from start to its final touches?", 'opts': ['About 10 years', 'About 50 years', 'Nearly 6 centuries', '100 years'], 'ans': 2,
+         'note': "Started in 1386, with its final bronze door only added in 1965 - almost 600 years."},
+        {'q': "Leonardo da Vinci's mural The Last Supper is housed in which Milan building?", 'opts': ['Milan Cathedral', 'Santa Maria delle Grazie', 'La Scala', 'Castello Sforzesco'], 'ans': 1,
+         'note': 'The refectory of the Santa Maria delle Grazie convent.'},
+        {'q': 'Milan is considered, alongside Paris, one of the world capitals of which industry?', 'opts': ['Finance', 'Fashion', 'Film', 'Publishing'], 'ans': 1,
+         'note': "Fashion - home to Milan Fashion Week and many major Italian fashion houses."},
+        {'q': "What is the name of Milan's world-famous opera house?", 'opts': ['La Fenice', 'La Scala', 'San Carlo', 'Teatro Massimo'], 'ans': 1,
+         'note': 'La Scala, opened in 1778.'},
+        {'q': "If we take the Como option today, whose famous villa on Lake Como's shore might we spot?", 'opts': ["Elton John's", "George Clooney's", "Tom Cruise's", "Ed Sheeran's"], 'ans': 1,
+         'note': "George Clooney's Villa Oleandra in Laglio - he's an honorary citizen of the town."},
+    ]},
+    {'date': 'Thu 24 Sep', 'day_num': 15, 'theme': 'London Arrival', 'qs': [
+        {'q': 'What is the name of the river that flows through London?', 'opts': ['The Severn', 'The Thames', 'The Avon', 'The Mersey'], 'ans': 1,
+         'note': 'The Thames - our hotel and The Lighterman both sit right on it near Regent\'s Park/Kings Cross.'},
+        {'q': 'Approximately how long is the River Thames?', 'opts': ['50 miles', '100 miles', '215 miles', '400 miles'], 'ans': 2,
+         'note': 'About 215 miles (346 km) from its source in Gloucestershire to the North Sea.'},
+        {'q': "What is London's famous clock tower usually called, after the bell inside it?", 'opts': ['Big Ben', 'The Shard', 'The Gherkin', 'The Elizabeth Tower'], 'ans': 0,
+         'note': "Big Ben is technically the bell - the tower itself is the Elizabeth Tower - but everyone calls the whole thing Big Ben."},
+        {'q': 'Which London Underground line is coloured dark blue on the Tube map?', 'opts': ['Circle line', 'Piccadilly line', 'Victoria line', 'Central line'], 'ans': 1,
+         'note': 'The Piccadilly line - dark blue, running past Piccadilly Circus.'},
+        {'q': "What is the collective name for London's famous red double-decker vehicles?", 'opts': ['Trams', 'Buses', 'Tuk-tuks', 'Trolleys'], 'ans': 1,
+         'note': 'Buses - the modern Routemaster is a direct descendant of the original AEC Routemaster.'},
+    ]},
+    {'date': 'Fri 25 Sep', 'day_num': 16, 'theme': "London (The Mousetrap)", 'qs': [
+        {'q': "The Mousetrap, which we're seeing tonight, is the world's longest-running what?", 'opts': ['Musical', 'Play', 'Opera', 'Ballet'], 'ans': 1,
+         'note': "It's a play, not a musical - the longest continuously-running show of any kind in the world."},
+        {'q': 'Who wrote The Mousetrap?', 'opts': ['Agatha Christie', 'Arthur Conan Doyle', 'Noël Coward', 'J.B. Priestley'], 'ans': 0,
+         'note': "Agatha Christie - the undisputed 'Queen of Crime'."},
+        {'q': 'Which London theatre district is home to most of the famous long-running shows?', 'opts': ['Shoreditch', 'West End', 'Camden', 'South Bank'], 'ans': 1,
+         'note': "The West End - London's answer to Broadway."},
+        {'q': 'The Mousetrap first opened in the West End in which decade?', 'opts': ['1930s', '1950s', '1970s', '1990s'], 'ans': 1,
+         'note': '1952 - and it has run continuously ever since (apart from a brief COVID closure).'},
+        {'q': 'Traditionally, audiences leaving The Mousetrap are asked to do what?', 'opts': ['Sign a guestbook', 'Keep the ending a secret', 'Take a photo with the cast', 'Write a review'], 'ans': 1,
+         'note': "Keep the twist ending a secret - a tradition observed by audiences for over 70 years."},
+    ]},
+    {'date': 'Sat 26 Sep', 'day_num': 17, 'theme': 'London (Tower Bridge & Six)', 'qs': [
+        {'q': "How many wives did King Henry VIII have - the subject of tonight's show, Six?", 'opts': ['Four', 'Five', 'Six', 'Seven'], 'ans': 2,
+         'note': 'Six - "divorced, beheaded, died, divorced, beheaded, survived", as the old rhyme goes.'},
+        {'q': 'Which of his six wives was famously beheaded, and was the second wife?', 'opts': ['Catherine of Aragon', 'Anne Boleyn', 'Jane Seymour', 'Catherine Howard'], 'ans': 1,
+         'note': 'Anne Boleyn - executed in 1536; Catherine Howard (wife five) was also later beheaded.'},
+        {'q': 'Tower Bridge, which we visit today, is often confused with which other London bridge?', 'opts': ['Millennium Bridge', 'London Bridge', 'Westminster Bridge', 'Blackfriars Bridge'], 'ans': 1,
+         'note': "London Bridge - a US buyer once reportedly thought he'd bought Tower Bridge when he actually bought London Bridge."},
+        {'q': 'What famous fortress sits beside Tower Bridge, once used as a royal palace and prison?', 'opts': ['Windsor Castle', 'The Tower of London', 'Buckingham Palace', 'Hampton Court'], 'ans': 1,
+         'note': 'The Tower of London - nearly 1,000 years old.'},
+        {'q': 'What valuable items are famously kept and guarded at the Tower of London?', 'opts': ['The Crown Jewels', 'The original Magna Carta', 'The Domesday Book', "Nelson's flagship"], 'ans': 0,
+         'note': 'The Crown Jewels - including the Imperial State Crown, worn at coronations.'},
+    ]},
+]
+
+def _quiz_screen_day_html(day):
+    q_html = ''.join(
+        f'<li><div class="quiz-q-text">{q["q"]}</div>'
+        f'<div class="quiz-opts">{"&nbsp;&nbsp;&nbsp;".join(f"{QUIZ_LETTERS[i]}) {opt}" for i, opt in enumerate(q["opts"]))}</div></li>'
+        for q in day['qs']
+    )
+    return f'''
+    <div class="quiz-day-box">
+      <div class="quiz-day-head">Day {day['day_num']} &middot; {day['date']} &middot; {day['theme']}</div>
+      <ol class="quiz-q-list">{q_html}</ol>
+    </div>'''
+
+QUIZ_SCREEN_HTML = ''.join(_quiz_screen_day_html(d) for d in DAILY_QUIZ)
+
+def _quiz_print_sheet_html(day, person):
+    q_html = ''.join(
+        f'<li><div class="quiz-sheet-q">{i+1}. {q["q"]}</div>'
+        f'<div class="quiz-sheet-opts">'
+        + ''.join(f'<span>&#9711; {QUIZ_LETTERS[j]}) {opt}</span>' for j, opt in enumerate(q['opts']))
+        + '</div></li>'
+        for i, q in enumerate(day['qs'])
+    )
+    return f'''
+    <div class="quiz-sheet">
+      <div class="quiz-sheet-head">
+        <div class="quiz-sheet-title">FAB4 Does Europe &ndash; Daily Quiz</div>
+        <div class="quiz-sheet-sub">Day {day['day_num']} &middot; {day['date']} &middot; {day['theme']}</div>
+        <div class="quiz-sheet-name">Name: <strong>{person}</strong></div>
+      </div>
+      <ol class="quiz-sheet-qlist">{q_html}</ol>
+    </div>'''
+
+QUIZ_PRINT_SHEETS_HTML = ''.join(
+    _quiz_print_sheet_html(day, person) for day in DAILY_QUIZ for person in QUIZ_PEOPLE
+)
+
+def _quiz_answer_day_html(day):
+    li_html = ''.join(
+        f'<li><strong>{QUIZ_LETTERS[q["ans"]]}</strong> &ndash; {q["opts"][q["ans"]]}. <span class="quiz-note">{q["note"]}</span></li>'
+        for q in day['qs']
+    )
+    return f'''
+    <div class="quiz-answer-day">
+      <h3>Day {day['day_num']} &middot; {day['date']} &middot; {day['theme']}</h3>
+      <ol>{li_html}</ol>
+    </div>'''
+
+QUIZ_ANSWER_KEY_HTML = ''.join(_quiz_answer_day_html(d) for d in DAILY_QUIZ)
+
 FUN_FACTS = {
     'day-11': ('Villa Borghese Gardens were laid out from 1605 by Cardinal Scipione Borghese &ndash; nephew of Pope Paul V &ndash; as one of the first great "gardens of delight" in Europe, built purely for pleasure, art and parties rather than growing food.',
                'Wikipedia', 'https://en.wikipedia.org/wiki/Villa_Borghese_gardens'),
@@ -697,8 +1017,6 @@ FUN_FACTS = {
                'Rosso Automobili', 'https://rossoautomobili.com/blogs/magazine/origin-of-ferrari-prancing-horse-world-war-1-fighter-francesco-baracca'),
     'option-c-23sep': ("Venice has no cars at all in its historic centre &ndash; it's built across 118 small islands linked by more than 400 bridges, and the only way around is on foot or by boat. That's exactly why you'll need to park at Tronchetto or Piazzale Roma before walking in.",
                'Wikipedia', 'https://en.wikipedia.org/wiki/Venice'),
-    'option-d-23sep': ("Galileo Galilei was born in Pisa in 1564 and, according to legend, dropped two different-sized cannonballs from the top of the Leaning Tower to prove they'd hit the ground at the same time &ndash; disproving Aristotle's theory that heavier objects fall faster. Most historians think it's a myth, but it's a nice one to think about on the climb up.",
-               'Britannica', 'https://www.britannica.com/biography/Galileo-Galilei'),
     'day-24': ('Tonight\'s dinner spot, The Lighterman, is named after the Victorian "lightermen" who steered flat-bottomed barges (called lighters) along the Regent\'s Canal right outside, ferrying goods through this once-industrial part of King\'s Cross.',
                "King's Cross", 'https://www.kingscross.co.uk/the-lighterman'),
     'day-25': ('The Mousetrap, playing tonight, is the world\'s longest continuously-running play &ndash; it opened in 1952 and passed 30,000 performances in 2025. By long tradition, the audience is asked at the end of every single show never to reveal the killer\'s identity.',
@@ -742,8 +1060,6 @@ FUN_FACTS_2 = {
                'Ferrari', 'https://www.ferrari.com/en-EN/corporate'),
     'option-c-23sep': ("Venice is slowly sinking at roughly 1-2mm a year while the Adriatic rises around it, which is why the city completed the MOSE flood barrier system in 2020 to hold back high tides during 'acqua alta'.",
                'Wikipedia', 'https://en.wikipedia.org/wiki/MOSE_(Venice)'),
-    'option-d-23sep': ("Pisa's Piazza dei Miracoli, home to the Leaning Tower, is a UNESCO World Heritage Site alongside the Duomo and Baptistery, both begun in the 11th and 12th centuries respectively - making the tower actually younger than its neighbours.",
-               'UNESCO', 'https://whc.unesco.org/en/list/395/'),
     'day-24': ("Regent's Canal, which runs right past tonight's dinner spot, was built in the 1810s-1820s and named for the Prince Regent (later George IV). It once floated coal and building materials into London before being revived as a leisure towpath.",
                'Wikipedia', 'https://en.wikipedia.org/wiki/Regent%27s_Canal'),
     'day-25': ("The V&A Museum was founded in 1852 using profits from the Great Exhibition of 1851, and its collection has since grown to more than 2.8 million objects spanning 5,000 years of art and design.",
@@ -816,8 +1132,6 @@ FUN_FACTS_5 = {
                'VisitModena', 'https://www.visitmodena.it/en/discover-modena/motor-valley/explore-motorvalley/motors-ferrari-museum-in-maranello'),
     'option-c-23sep': ("The Republic of Venice was an independent maritime power for more than 1,100 years, from 697 AD until Napoleon deposed the last doge, Ludovico Manin, in 1797.",
                'World History Encyclopedia', 'https://www.worldhistory.org/article/2273/doges-palace-in-venice/'),
-    'option-d-23sep': ("The Leaning Tower took almost 200 years to finish because a war between Pisa and Genoa halted construction for nearly a century after only three storeys had been built &ndash; the accidental pause let the soft subsoil settle and likely stopped the tower toppling over.",
-               'History.com', 'https://www.history.com/articles/why-does-the-leaning-tower-of-pisa-lean'),
     'day-24': ("Regent's Canal, which runs past The Lighterman, was designed by architect John Nash &ndash; the same man behind Regent Street, Regent's Park and Buckingham Palace &ndash; and opened to great fanfare in 1820.",
                "King's Cross", 'https://www.kingscross.co.uk/history-regents-canal'),
     'day-25': ("The Mousetrap began life as a short BBC radio play called 'Three Blind Mice', which Agatha Christie wrote as an 80th-birthday gift for Queen Mary in 1947, before she expanded it into the stage play in 1952.",
@@ -861,8 +1175,6 @@ FUN_FACTS_6 = {
                'Ferrari.com', 'https://www.ferrari.com/en-EN/museums/driven-by-enzo'),
     'option-c-23sep': ("The enclosed Bridge of Sighs, built around 1600, connects the Doge's Palace interrogation rooms to the old prisons; its name comes from the sighs of condemned prisoners glimpsing their last view of Venice through its stone-barred windows.",
                'Britannica', 'https://www.britannica.com/topic/Bridge-of-Sighs'),
-    'option-d-23sep': ("Lake Como's grand lakeside villas have drawn the wealthy since Roman times; actor George Clooney bought the 18th-century Villa Oleandra in the village of Laglio in 2002, joining a long line of noble and celebrity residents on its shores.",
-               'Live The World', 'https://www.livetheworld.com/post/historical-villas-on-the-lake-como-1zpz'),
     'day-24': ("Granary Square, where The Lighterman sits, was once a Victorian canal basin where barges unloaded wheat for London's bakers; today the same spot features over 1,000 individually choreographed fountains.",
                "King's Cross", 'https://www.kingscross.co.uk/granary-square'),
     'day-25': ("The V&A's National Art Library holds more than 750,000 books, photographs and drawings, including works connected to Leonardo da Vinci's notebooks.",
@@ -1014,16 +1326,6 @@ FUN_FACTS_QUIRKY = {
         ("Lazzaretto Nuovo, one of Venice's lagoon islands, was used as a plague quarantine station centuries ago and is linked to local legend of the so-called 'Vampire of Venice' &ndash; a skeleton found buried with a brick wedged in its jaw.",
          'Atlas Obscura', 'https://www.atlasobscura.com/users/blackbolt616/lists/venice-italy'),
     ],
-    'option-d-23sep': [
-        ("To correct the sinking foundation as building continued, medieval masons made the upper floors taller on the low side than the high side &ndash; giving the Leaning Tower of Pisa a subtle banana-like curve rather than a straight lean.",
-         'Wikipedia', 'https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa'),
-        ("The Tower of Pisa has survived at least four strong earthquakes since 1280 &ndash; engineers found in 2018 that the very soft, unstable soil that caused its famous lean also acts as a shock absorber, stopping the tower resonating with the tremors.",
-         'ScienceDaily', 'https://www.sciencedaily.com/releases/2018/05/180509105004.htm'),
-        ("Lake Como has its own lake-monster legend, nicknamed 'Lariosauro' after a prehistoric reptile whose fossils were found nearby &ndash; the first reported sighting of the reptile-like creature was in 1946.",
-         'Como Lake Today', 'https://comolake.today/facts-about-lake-como/'),
-        ("Villa Balbianello on Lake Como isn't just a pretty stop &ndash; George Lucas filmed scenes for Star Wars Episode II: Attack of the Clones there in 2002, doubling as Padmé Amidala's lakeside retreat on Naboo.",
-         'Como Lake Today', 'https://comolake.today/facts-about-lake-como/'),
-    ],
     'day-24': [
         ("In 1874 a barge loaded with gunpowder exploded under Macclesfield Bridge on Regent's Canal, killing four people, destroying the bridge and reportedly terrifying the animals at nearby London Zoo.",
          'London Museum', 'https://www.londonmuseum.org.uk/collections/london-stories/regents-canal/'),
@@ -1063,7 +1365,7 @@ FUN_FACTS_QUIRKY = {
 FUN_FACTS_PAGE_ORDER = [
     'day-11', 'day-12', 'day-13', 'day-14', 'day-15', 'day-16', 'day-17', 'day-18', 'day-19', 'day-20',
     'day-21', 'day-22', 'day-23',
-    'option-a-23sep', 'option-b-23sep', 'option-c-23sep', 'option-d-23sep',
+    'option-a-23sep', 'option-b-23sep', 'option-c-23sep',
     'day-24', 'day-25', 'day-26', 'day-27',
 ]
 
@@ -1071,7 +1373,6 @@ OPTION_FUN_FACT_LABELS = {
     'option-a-23sep': "Option A &ndash; Lake Como &amp; Harry's Bar",
     'option-b-23sep': 'Option B &ndash; Ferrari Maranello',
     'option-c-23sep': 'Option C &ndash; Venice',
-    'option-d-23sep': 'Option D &ndash; Pisa &amp; Lake Como',
 }
 
 def fun_facts_day_label(day_id):
@@ -1530,8 +1831,6 @@ def day_id_for(title):
         return 'option-b-23sep'
     if 'OPTION C' in title.upper():
         return 'option-c-23sep'
-    if 'OPTION D' in title.upper():
-        return 'option-d-23sep'
     return None
 
 TRIP_START_DATE = datetime.date(2026, 9, 10)  # Thu 10 Sept = Trip Day 1
@@ -1575,17 +1874,18 @@ DAY24_MAP = {
     'stops': [
         {'name': 'iQ Hotel Milano', 'note': 'Start of day - check out'},
         {'name': 'Milan Linate Airport', 'note': '12:00pm - Return hire car'},
-        {'name': 'London Heathrow Airport (Terminal 5)', 'note': '2:50pm - Arrive on flight BA575'},
-        {'name': 'The Level at Melia White House', 'note': '4:00pm - Arrive, check in / drop bags'},
-        {'name': 'Tapas & Gin for Deb', 'note': '4:30pm - venue not yet booked, see Things to Do'},
+        {'name': 'London Heathrow Airport (Terminal 5)', 'note': '4:50pm - Arrive on flight BA575'},
+        {'name': 'The Level at Melia White House', 'note': '6:00pm - Arrive, check in / drop bags'},
+        {'name': 'Tapas & Gin for Deb', 'note': 'Tight connection before dinner - venue not yet booked, see Things to Do'},
         {'name': 'The Lighterman, Granary Square', 'note': '6:30pm - Dinner'},
         {'name': 'The Level at Melia White House', 'note': 'Return for the night'},
     ],
     'legs': [
         {'time': '~20 min', 'distance': '~8 km', 'method': 'Drive: iQ Hotel Milano to Milan Linate Airport (car return)'},
-        {'time': '~1h 50m flight', 'distance': '~1,000 km', 'method': 'Flight BA575 (British Airways), Milan Linate to London Heathrow (T5) (only ~20 min apart on local clocks due to the UK/Italy time difference)'},
-        {'time': '~50 min tube + walk', 'distance': '~24 km', 'method': 'Elizabeth line from Heathrow Terminal 5 to Paddington, then Hammersmith & City/Circle line to Great Portland Street (~£15.50pp), then ~2-3 min walk to the hotel'},
-        {'time': 'TBC', 'distance': 'TBC', 'method': 'Venue not yet booked – see Things to Do for options near the hotel'},
+        {'time': '~1h 55m flight (dep 3:55pm, arr 4:50pm)', 'distance': '~1,000 km', 'method': 'Flight BA575 (British Airways), Milan Linate to London Heathrow (T5) (~55 min apart on local clocks due to the UK/Italy time difference)'},
+        {'time': '~25 min', 'distance': 'n/a', 'method': 'Immigration/border and baggage at Heathrow T5, then meet the Luxury Private Vehicle driver at Meeting Point South, by Caffè Nero'},
+        {'time': '~45 min drive', 'distance': '~24 km', 'method': 'Luxury Private Vehicle transfer (The Traveling Group / London Travel In, ref 190826), Heathrow T5 direct to The Level at Meliá White House'},
+        {'time': 'Tight - likely won\'t fit', 'distance': 'TBC', 'method': 'Venue not yet booked, and with the corrected BA575/transfer timing there\'s only ~30 min before the 6:30pm Lighterman booking – see Audit/Things to Do'},
         {'time': '~20 min', 'distance': '~1 mile', 'method': 'Walk towards King’s Cross/Granary Square (estimate assumes the Tapas & Gin venue ends up near the hotel – recheck once booked)'},
         {'time': '~20 min', 'distance': '~1.6 km', 'method': 'Walk back via Euston Road (or ~10 min taxi)'},
     ],
@@ -1704,7 +2004,16 @@ rome_days_html = ''.join(
              day_map=day_map_for(d['title'], d, 'italy', prev_stay=prev))
     for d, prev in sequence_with_prev(rome_days)
 )
+QV_CABIN_BOX_HTML = '''
+<div class="cabin-box">
+  <div class="cabin-box-title">&#128274; Our Staterooms &ndash; Queen Victoria (Deck 8, Balcony)</div>
+  <div class="cabin-row"><span class="cabin-num">8118</span><span class="cabin-who">Gary &amp; Karen</span></div>
+  <div class="cabin-row"><span class="cabin-num">8112</span><span class="cabin-who">Deb &amp; Tom</span></div>
+  <div class="cabin-note">See the Deck 8 plan above for exact locations.</div>
+</div>'''
+
 cruise_days_html = ''.join(
+    (QV_CABIN_BOX_HTML if 'DAY 14' in d['title'].upper() else '') +
     day_card(d, 'cruise', day_id=day_id_for(d['title']), day_map=day_map_for(d['title'], d, 'cruise', prev_stay=prev))
     for d, prev in sequence_with_prev(cruise_days, first_prev=rome_days[-1].get('stay') if rome_days else None)
 )
@@ -2424,7 +2733,7 @@ italy_ttc_html = ''.join(ttc_row(t) for t in places['italy_ttc'])
 ntb_html = ''.join(ntb_row(n) for n in places['need_to_book'])
 tt_html = ''.join(tt_row(t, i) for i, t in enumerate(places.get('things_to_take', [])))
 
-ETA_PEOPLE = ['Karen Nicholson', 'Debbie Gyde', 'Thomas Akhurst', 'Gary Nicholson']
+ETA_PEOPLE = ['Karen Nicholson', 'Deb Gyde', 'Thomas Akhurst', 'Gary Nicholson']
 def eta_row(name, idx):
     eta_id = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
     first_name = name.split(' ')[0]
@@ -2435,7 +2744,7 @@ def eta_row(name, idx):
     </tr>'''
 eta_html = ''.join(eta_row(n, i) for i, n in enumerate(ETA_PEOPLE))
 
-PASSPORT_PEOPLE = ['Karen Nicholson', 'Debbie Gyde', 'Thomas Akhurst', 'Gary Nicholson']
+PASSPORT_PEOPLE = ['Karen Nicholson', 'Deb Gyde', 'Thomas Akhurst', 'Gary Nicholson']
 def passport_row(name, idx):
     pp_id = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
     first_name = name.split(' ')[0]
@@ -2448,7 +2757,7 @@ passport_html = ''.join(passport_row(n, i) for i, n in enumerate(PASSPORT_PEOPLE
 
 IDP_PEOPLE = [
     ('Karen Nicholson', False, ''),
-    ('Debbie Gyde', False, ''),
+    ('Deb Gyde', False, ''),
     ('Thomas Akhurst', False, ''),
     ('Gary Nicholson', True, 'IDP196978'),
 ]
@@ -2497,7 +2806,7 @@ def flag_for_where(where):
 # Dates (ISO) that still have an outstanding item in the Things To Do "need to book" list -
 # these drive the UNCONFIRMED tag on the Trip at a Glance timeline. Kept in sync manually
 # against site_data_places.json's need_to_book array.
-UNCONFIRMED_DATES = {'2026-09-11', '2026-09-12', '2026-09-13', '2026-09-14', '2026-09-21', '2026-09-22', '2026-09-23', '2026-09-24', '2026-09-26', '2026-09-27'}
+UNCONFIRMED_DATES = {'2026-09-14', '2026-09-26'}
 
 timeline_html = ''
 for t in travel_json:
@@ -2599,6 +2908,19 @@ a { color: inherit; }
 .nav-col .print-mini:hover { opacity:1; }
 .ship-banner { margin:0 0 22px; border-radius:12px; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.12); }
 .ship-banner img { width:100%; display:block; max-height:420px; object-fit:cover; }
+.deck-plan-btn-row { display:flex; justify-content:center; padding:14px 0; background:#fff; }
+.qv4-map-wrap { background:#fff; padding:0 12px 16px; text-align:center; }
+.qv4-map-img { width:100%; max-width:100%; height:auto; display:block; margin:0 auto; border:1px solid #e3ddc9; border-radius:8px; }
+.qv4-caption { font-size:.78rem; color:var(--muted); margin-top:8px; font-style:italic; }
+.cabin-box { background:#eef4fb; border:1px solid #c8d9ec; border-radius:10px; padding:14px 18px; margin:0 0 18px; }
+.cabin-box-title { font-weight:700; color:var(--navy); margin-bottom:8px; }
+.cabin-row { display:flex; align-items:center; gap:12px; padding:3px 0; font-size:.95rem; }
+.cabin-num { display:inline-block; min-width:56px; padding:2px 8px; background:var(--navy); color:#fff; border-radius:5px; font-weight:700; text-align:center; }
+.cabin-who { color:#333; }
+.cabin-note { font-size:.78rem; color:var(--muted); margin-top:8px; font-style:italic; }
+.mandatory-fee-box { display:flex; align-items:flex-start; gap:8px; margin-top:8px; padding:7px 10px; background:#eef8ee; border:1.5px solid #8fce8f; border-radius:7px; }
+.currency-badge { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:#3f9142; color:#fff; font-size:.72rem; font-weight:700; line-height:1; }
+.mandatory-fee-text { font-size:.76rem; color:#2e5c2e; line-height:1.35; }
 section { max-width:1080px; margin:0 auto; padding:48px 20px 8px; }
 section h2 { font-size:1.7rem; color:var(--navy); border-left:6px solid var(--gold); padding-left:14px; margin-bottom:6px; }
 section h3 { color:var(--navy); margin-top: 30px; }
@@ -2838,7 +3160,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -2920,6 +3242,33 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   .hero h1 { font-size:1.9rem; }
   .tl-row, .ev-row { grid-template-columns:1fr; }
 }
+.quiz-day-box { background:var(--card-bg); border-radius:10px; padding:14px 18px; box-shadow:0 1px 5px rgba(0,0,0,.07); border-top:4px solid var(--gold); margin-bottom:14px; }
+.quiz-day-head { font-weight:700; color:var(--navy); margin-bottom:8px; }
+.quiz-q-list { margin:0; padding-left:22px; }
+.quiz-q-list li { margin-bottom:10px; }
+.quiz-q-text { font-weight:600; color:var(--ink); }
+.quiz-opts { font-size:.84rem; color:var(--muted); margin-top:2px; }
+.quiz-print-only { display:none; }
+body.printing-dailyquiz .quiz-print-only { display:block; }
+body.printing-dailyquiz .quiz-screen-only { display:none !important; }
+body.printing-dailyquiz .lede { display:none !important; }
+@media print {
+  .quiz-sheet { page-break-before: always; break-before: page; page-break-inside: avoid; padding-top:6px; }
+  .quiz-sheet-head { border-bottom:2px solid var(--navy); padding-bottom:8px; margin-bottom:14px; }
+  .quiz-sheet-title { font-weight:800; color:var(--navy); font-size:1.1rem; }
+  .quiz-sheet-sub { color:var(--muted); font-size:.9rem; margin-top:2px; }
+  .quiz-sheet-name { font-size:1rem; margin-top:8px; }
+  .quiz-sheet-qlist { list-style:none; margin:0; padding:0; }
+  .quiz-sheet-qlist li { margin-bottom:18px; page-break-inside: avoid; break-inside: avoid; }
+  .quiz-sheet-q { font-weight:700; margin-bottom:6px; }
+  .quiz-sheet-opts { display:flex; flex-direction:column; gap:5px; padding-left:14px; font-size:.94rem; }
+  .quiz-answers-section { page-break-before: always; break-before: page; }
+  .quiz-answer-day { page-break-inside: avoid; break-inside: avoid; margin-bottom:14px; }
+  .quiz-answer-day h3 { color:var(--navy); font-size:.98rem; margin-bottom:6px; page-break-before:avoid !important; }
+  .quiz-answer-day ol { margin:0; padding-left:20px; }
+  .quiz-answer-day li { margin-bottom:5px; font-size:.85rem; }
+  .quiz-note { color:var(--muted); font-style:italic; }
+}
 '''
 
 FLIGHTS = [
@@ -2933,7 +3282,7 @@ FLIGHTS = [
     ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'British Airways', 'T1 &rarr; T1', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; 6:05am +1', 'Premium Economy', '7h 45m', 'all'),
     ('Tue 29 Sept', 'QF161', 'Qantas', 'T1 &rarr; n/a', 'Sydney (SYD) &rarr; Wellington (WLG)', '9:35am &rarr; 3:45pm', 'Economy', '3h 10m', 'gk'),
 ]
-FLIGHT_WHO = {'gk': 'Karen &amp; Gary only', 'dt': 'Debbie &amp; Tom only', 'all': 'All 4'}
+FLIGHT_WHO = {'gk': 'Karen &amp; Gary only', 'dt': 'Deb &amp; Tom only', 'all': 'All 4'}
 flight_rows_html = ''.join(
     f'<tr class="flight-{who}"><td>{date}</td><td>{flight}</td><td>{terminals}</td><td>{airline}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td></tr>'
     for date, flight, airline, terminals, route, times, cabin, dur, who in FLIGHTS
@@ -2945,10 +3294,12 @@ FLIGHTS_TABLE_HTML = f'''
 </table>
 <div class="flight-legend">
   <span><span class="flight-swatch gk"></span>Karen &amp; Gary only</span>
-  <span><span class="flight-swatch dt"></span>Debbie &amp; Tom only</span>
+  <span><span class="flight-swatch dt"></span>Deb &amp; Tom only</span>
   <span><span class="flight-swatch all"></span>All 4 together</span>
 </div>
-<p class="tt-note">All flights are on 2026 dates, operated by Qantas (QF) and British Airways (BA). Reservation codes: Gary &amp; Karen &ndash; KXFECY / EKNMYW; Debbie &amp; Tom &ndash; UWBGQP / EKH3PP (the Akhursts join the group in Sydney, so have no Wellington&ndash;Sydney sector). Frequent flyer numbers, seat assignments and check-in requirements are held in the original Sabre itinerary emails.</p>
+<p class="tt-note">All flights are on 2026 dates, operated by Qantas (QF) and British Airways (BA). Reservation codes: Gary &amp; Karen &ndash; KXFECY / EKNMYW; Deb &amp; Tom &ndash; UWBGQP / EKH3PP (the Akhursts join the group in Sydney, so have no Wellington&ndash;Sydney sector). Frequent flyer numbers, seat assignments and check-in requirements are held in the original Sabre itinerary emails.</p>
+<p class="tt-note"><strong>Sydney layover (Thu 10 Sept, ~7 hrs):</strong> Yes, you can leave the airport. As NZ passport holders, Gary &amp; Karen are automatically granted a Special Category (subclass 444) visa on arrival, so there's no separate visa to arrange. A ~7 hour layover is comfortably above the ~5 hour minimum generally recommended to clear immigration, get into the city and back through security in time (allow ~45 min for immigration on arrival, ~60 min for security before the next departure).</p>
+<p class="tt-note"><strong>Singapore transit on BA15 (Mon 28 Sept, ~1h 40m):</strong> Everyone must deplane at Changi with all carry-on items &ndash; there's no option to stay onboard. On one ticket with bags checked through you won't need to clear passport control, but you WILL need to re-clear security before boarding the onward Sydney sector, as security is at the gate in Singapore. Queues can be long since the whole aircraft transits at once &ndash; follow the crew's instruction on what time to be back at the gate.</p>
 '''
 
 NAV_SECTIONS = [
@@ -2962,6 +3313,7 @@ NAV_SECTIONS = [
     ('places', '&#128506;&#65039;', 'Places &amp; Maps'),
     ('needtobook', '&#9989;', 'Things to Do'),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
+    ('dailyquiz', '&#129504;', 'Daily Quiz'),
 ]
 UKETA_URL = 'https://www.gov.uk/eta/apply'
 POLARSTEPS_URL = 'https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan'
@@ -3012,7 +3364,7 @@ HTML = f'''<!DOCTYPE html>
       <a class="print-mini print-mini-all no-print" href="{PRINT_ALL_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128424;&#65039;</span>Print All</a>
       <button class="print-mini no-print" id="factsToggleBtn" onclick="toggleFunFacts()"><span class="ic">&#127881;</span>Hide Fun Facts</button>
       <button class="print-mini no-print" onclick="printSection('funfacts')"><span class="ic">&#128424;&#65039;</span>Print Fun Facts</button>
-      <div class="fab4">Karen Nicholson &middot; Deborah Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
+      <div class="fab4">Karen Nicholson &middot; Deb Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
     </div>
     <div class="hero-photo">
       <div class="view-counter no-print" id="viewCounter" title="Website views"><span class="ic">&#128065;&#65039;</span><span id="viewCounterNum">100</span> views</div>
@@ -3029,7 +3381,9 @@ HTML = f'''<!DOCTYPE html>
         <a class="polarsteps-link no-print" href="{POLARSTEPS_URL}" target="_blank" rel="noopener"><span class="ic">&#128205;</span>Polarsteps &ndash; Open trip</a>
         <a class="polarsteps-link no-print" href="#emergencycontacts"><span class="ic">&#128222;</span>Emergency Contacts</a>
         <a class="polarsteps-link no-print" href="#traveldocuments"><span class="ic">&#128196;</span>Travel Documents</a>
+        <a class="polarsteps-link no-print" href="#ztl"><span class="ic">&#128663;</span>ZTL / Driving Zones</a>
         <a class="polarsteps-link no-print" href="{CONNECTIONS_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128203;</span>Audit</a>
+        <a class="polarsteps-link no-print" href="#" id="shareSiteBtn" onclick="shareSite(event)"><span class="ic">&#128257;</span>Share This Site</a>
       </div>
     </div>
   </div>
@@ -3081,6 +3435,13 @@ HTML = f'''<!DOCTYPE html>
   <p class="ig-note">'I' buttons link to that place's official Instagram page.</p>
   <div class="ship-banner">
     <img src="data:image/jpeg;base64,{IMG['ship']}" alt="Cunard Queen Victoria in port">
+    <div class="deck-plan-btn-row no-print">
+      <a class="pill pill-weblink" href="fab4-qv-deck-plans.pdf" target="_blank" rel="noopener">&#128421;&#65039; Full Deck Plan (PDF)</a>
+    </div>
+    <div class="qv4-map-wrap">
+      <img class="qv4-map-img" src="data:image/png;base64,{IMG['qv8']}" alt="Queen Victoria Deck 8 plan showing staterooms 8118 and 8112 circled">
+      <div class="qv4-caption">Deck 8 (Balcony) &ndash; our two staterooms circled</div>
+    </div>
   </div>
   {cruise_days_html}
 
@@ -3116,6 +3477,10 @@ HTML = f'''<!DOCTYPE html>
   </table>
 
   <p class="ig-note">Full deck plan: <a href="https://www.cunard.com/dam/inventory-assets/ships/QV/0/qv-deck-plan-november-2025.pdf.pdf" target="_blank" rel="noopener">View Deck Plan (PDF)</a></p>
+  <div class="ship-banner">
+    <img src="data:image/jpeg;base64,{IMG['ship_at_sea']}" alt="Cunard Queen Victoria under way at sea">
+    <div class="qv4-caption" style="padding:8px 12px 14px;text-align:center;">Fair winds &ndash; the Queen Victoria at sea</div>
+  </div>
 </section>
 </div>
 
@@ -3144,8 +3509,7 @@ HTML = f'''<!DOCTYPE html>
 
   <h3>Alternative Options for 23 September</h3>
   <p class="lede">Four alternative full-day plans in place of the base Tuscany &rarr; Milan drive above &ndash; pick one.</p>
-  <p class="lede"><strong>Note on Option C:</strong> Venice is a significant detour east before doubling back west to Milan &ndash; approx. 610 km / ~6h 20m total driving (vs. ~1h 30m for the base plan, ~5h 15m for Option A, ~3h 40m for Option B, ~5h 25m for Option D). Also note Venice's historic centre is car-free, so the car must be left at Tronchetto or Piazzale Roma and the centre reached on foot/vaporetto. Worth confirming everyone's comfortable with the long day before booking.</p>
-  <p class="lede"><strong>Note on Option D:</strong> Combines Pisa (Leaning Tower climb, pre-booked skip-the-line small-group tour recommended - tours run at multiple times throughout the day, book ahead for the 23rd) with a Lake Como lunch stop en route to Milan. It's a long day (~5h 25m total driving, on top of ~1h 30m at Pisa) but covers two bucket-list stops in one go.</p>
+  <p class="lede"><strong>Note on Option C:</strong> Venice is a significant detour east before doubling back west to Milan &ndash; approx. 610 km / ~6h 20m total driving (vs. ~1h 30m for the base plan, ~5h 15m for Option A, ~3h 40m for Option B). Also note Venice's historic centre is car-free, so the car must be left at Tronchetto or Piazzale Roma and the centre reached on foot/vaporetto. Worth confirming everyone's comfortable with the long day before booking.</p>
   {italy_options_html}
 
   <h3>Potential Dinner Restaurants &ndash; Milan (23 September, all 3 plans)</h3>
@@ -3257,6 +3621,18 @@ HTML = f'''<!DOCTYPE html>
   <div class="place-grid">{london_places_html}</div>
 </section>
 
+<section id="ztl" class="print-block" data-section="ztl">
+  <h2>ZTL / Limited Traffic Zones (Italy)</h2>
+  <p class="lede">You asked about "LTZ" areas &ndash; in Italy these are officially called ZTL (Zona a Traffico Limitato), or Limited Traffic Zones. Every historic Italian city centre has one, and they're the single easiest way to rack up fines while self-driving.</p>
+  <p class="tt-note">A ZTL is a camera-enforced zone &ndash; usually the old walled/historic centre &ndash; where only residents, permit holders and registered vehicles may drive during posted hours. Drive through the wrong gate and a camera reads the plate; the fine (typically &euro;80&ndash;335, sometimes one per gate crossed) goes to the hire company, who forwards it to us plus their own admin fee &ndash; and it can turn up months after we're home. Watch for the sign: a white circle with a red border reading "Zona Traffico Limitato".</p>
+  <div class="map-wrap">
+    <img src="data:image/png;base64,{IMG['ztl']}" alt="Schematic map of ZTL zones relevant to our Italy driving route">
+    <div class="cap">Schematic map &ndash; approximate positions, not to scale</div>
+  </div>
+  <div class="place-grid">{ZTL_CARDS_HTML}</div>
+  <p class="tt-note">General rule of thumb: park in a signed paid car park outside the old walls/centre and walk in, rather than following the satnav to the door &ndash; it's almost always faster than dealing with a fine later.</p>
+</section>
+
 <section id="needtobook" class="print-block" data-section="needtobook">
   <div class="section-head-row">
     <h2>Things to Do</h2>
@@ -3304,6 +3680,22 @@ HTML = f'''<!DOCTYPE html>
   <div class="place-grid">{HOTEL_DIRECTORY_HTML}</div>
 </section>
 
+<section id="dailyquiz" class="print-block" data-section="dailyquiz">
+  <div class="section-head-row">
+    <h2>Daily Quiz</h2>
+    <button class="print-btn no-print" onclick="printSection('dailyquiz')"><span class="ic">&#128424;&#65039;</span>Print</button>
+  </div>
+  <p class="lede quiz-screen-only">A 5-question multi-choice quiz for every day of the trip, themed to wherever we are that day &ndash; Rome history, cruise trivia, French Riviera, Tuscany, London and more. Browse the questions below, or hit Print for a paper question sheet for each of the 4 of us, plus one combined answer key at the end.</p>
+  <div class="quiz-screen-only">{QUIZ_SCREEN_HTML}</div>
+  <div class="quiz-print-only">
+    {QUIZ_PRINT_SHEETS_HTML}
+    <div class="quiz-answers-section">
+      <h2>Daily Quiz &ndash; Answer Key</h2>
+      {QUIZ_ANSWER_KEY_HTML}
+    </div>
+  </div>
+</section>
+
 <section id="tubemap" class="print-block" data-section="tubemap">
   <div class="section-head-row">
     <h2>London Tube Map</h2>
@@ -3346,8 +3738,12 @@ HTML = f'''<!DOCTYPE html>
     <a class="pill pill-weblink td-btn" href="fab4-car-docs.pdf" target="_blank">Car Docs</a>
     <img class="td-qr" src="data:image/png;base64,{CAR_DOCS_QR_B64}" alt="QR code to Car Docs">
   </div>
+  <div class="td-row">
+    <a class="pill pill-weblink td-btn" href="fab4-eta-docs.pdf" target="_blank">ETA Confirmation (Gary)</a>
+    <img class="td-qr" src="data:image/png;base64,{ETA_DOCS_QR_B64}" alt="QR code to ETA Confirmation">
+  </div>
 
-  <details class="uketa-box">
+  <details id="idpDetails" class="uketa-box">
     <summary class="uketa-summary"><span class="ic">&#128663;</span> International Driving Permit (IDP) Check</summary>
     <p class="tt-note">Whoever's driving in Italy needs a valid IDP alongside their normal licence. Tick boxes save in this browser only.</p>
     <table class="ntb">
@@ -3400,6 +3796,24 @@ window.addEventListener('afterprint', function() {{
     }});
   }});
 }})();
+function shareSite(e) {{
+  if (e) e.preventDefault();
+  var url = 'https://fab4-europe-trip.netlify.app/';
+  var btn = document.getElementById('shareSiteBtn');
+  if (navigator.share) {{
+    navigator.share({{ title: 'The Fab 4 Take on Europe', text: 'Our September 2026 Europe trip itinerary', url: url }}).catch(function() {{}});
+  }} else if (navigator.clipboard) {{
+    navigator.clipboard.writeText(url).then(function() {{
+      if (btn) {{
+        var orig = btn.innerHTML;
+        btn.innerHTML = '<span class="ic">&#9989;</span>Link copied!';
+        setTimeout(function() {{ btn.innerHTML = orig; }}, 2000);
+      }}
+    }}).catch(function() {{ prompt('Copy this link to share:', url); }});
+  }} else {{
+    prompt('Copy this link to share:', url);
+  }}
+}}
 function revealEtaChecklist() {{
   var d = document.getElementById('uketaDetails');
   if (d) {{
@@ -3499,7 +3913,7 @@ function revealPassportChecklist() {{
 (function() {{
   var el = document.getElementById('viewCounterNum');
   if (!el) return;
-  fetch('https://api.countapi.xyz/hit/fab4-europe-trip-2026/site-views')
+  fetch('https://countapi.mileshilliard.com/api/v1/hit/fab4-europe-trip-netlify-2026-siteviews')
     .then(function(r) {{ return r.json(); }})
     .then(function(data) {{
       if (data && typeof data.value === 'number') {{
