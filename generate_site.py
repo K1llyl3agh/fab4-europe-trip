@@ -180,6 +180,7 @@ IQHOTEL_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABm0lEQVR4nO2YsW
 MELIA_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACVElEQVR4nO2ZQYrcQAxFX00ZelkNc4A5ivpmQ46UG5SPMgcIyMsBmZ+Fyh3IommSkO6CEb2wWwt/q76kL7mIW7a/3HTDl//v/MgBqgQEROu0TstjsXg0vjvwm6SqLnVJ1S2waKqS/PnxL0DBgNJ8f/1O63vrS8B2rj8ej+9+vz4uCwac/CHP/zP/cr0qzfdXYP0sthf7T8//V/x3qno00XpeTML/o/64/fYD5qg/wzqty5Ejt2jj3wnwu0XrGfPApJ4nkq8wAX6JjLZDk9ykLvWaveDR+O7A3+VUJ0jaW94Cc/DfTZLcqhQYICegus3AnxeglLLAXkr1NVoHTs7+1vdyeQp8Ny0JH6MQdY7I0zQHf7J5udXMXB/iLdNhBvw9Ws/gR+vXzK1u0Z6f/2TmglUn8dejnc3Cn4z8r5qDaUiIGfC7BVbVr0JidAT1afCn8pGy8kcbjYAJ+J9+K29atgtYVWcrC1S3eBp8N0xStNF/r7OA3Gg9JuDPC3ByFmC7APsZmmBVjgDPgO+mJe3HKUjVCYAhh2aI/7o0LVthK/t56J8AWJ8E323LyEfrmbxHF+i0KeI/9Bs5sA/905P8c8zv6lnzD+Vz8H8a/cN125lbxBzBYBL9kOZW1Y9C1PMV5uCPA1QN5VmPQTIn4qfH/wImie2yv/X9vAbrZ7mcnMjd4hPgu21yG7IHy0J63T/MML8f+9vtvcZaP4p8pWlfiMWWeDy+e/3tW2zvYPvZUogCn2WW/YPy+1Fq5uqjqM7An+v+GZoSfECuU2aoP+Xr++lD/T8B6iIpTJGI5+8AAAAASUVORK5CYII='
 VATICAN_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAACx0lEQVR4nO2bTW7jMAxGH0cGulRukKPYN5gzzZF6A/soOcAA9tKAAs5Cv41XnaJOalMLVXH8EBlmyU+kJMqn2/Tr8wwYZJBBBhlkkEHHhCS1DiYRkWERAe4Ci8QutuEp0zNoRwhVVaVXVdXZpW6M3znV0QfoZ6fNfeOLP5NBX4G69He5QP+ePkivwPR7Rvpbh7KAgAu7T8+g50PTdRX9cwH6mwjgVIZv+SWDXhLqNleWN5X+JtC/uwCsoizPmp5Bu0OPOgK8xqSVjj6gI05NR5wJShaRWnr72y7fYBZxeChGjZrK1ukaAO6i03WVKCvaG/adnkG7QyVq1AhBHmkAfOq0NvMRR4Zy1PABHYuESNc0SYgxXgsWNU4Apf/96h4aAckHlREVhVnE0aEcDfLrzqsOaONHXITk0GEWcWSoWARAdhTRNpKEUKXks80izgPF170KAClgzABLF72FDKTuxzyTQf8DFR1BChMaO5c8g2ogjWbMR5wHKkqB6RqQwa+iIyAibzlD5cMDtN/0DNo/HzHTmgW0o5zeNh1xKsipjtkzJKewvClwT4nL8anTM2gvqM1Q6ZyWmzr6vIGmqXRZPuIUUA4EXouKzF/EFKbXIiotapwBapKUea3hsh1U55Gb+YjjQ20W++Ht4z8WN7zVNc4AlcqFa6paNZWdFQVW1zgL1GaoiF4gV0HrqPEWZhFHhzb7I1LoKBrTtyNTlseH2p0wVT1U4QC0hS/zEYeHHvdZRuHQLjxLNRyra5wB2uzF7ovQhLq/LgUW8xHHhx7rGjVXlaOGyx7ElOUpoXgIeLo4jXWNXlfJoSNtnPhxz2TQV6AUJm4dMvgA08VpHLF0yPDk6Rn07VA+5ecV4mE+/1dynLh3sZsuczzIoXtPz6Ddoc2ZrtrV8xpl9WlrjeNDmzNdbefqJ7S57cWfySCDDDLIIIMM2gf6B1P5A9rtVqFFAAAAAElFTkSuQmCC'
 COLOSSEUM_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAADlklEQVR4nO2cTW7cMAyFHysDs5SBHmCOYt8syJF6A+soOUABeTmADHZBypadLIJ00vnp48IY2/NBMkA8UtSPKL5m6ccXQYAkSZIkSZIkSfL+SHHrAMwiSD2AJCIAFhHpYS/Mxhv3luRdkoOqqmZApA8qIxaRlwwgyUl1AiAjgqqq6p68RW9J3iU5V30ZMoDhrYNOsUDGWCAveREAgEvVldok+Rxkd3yQeogCCkH8vT7LCszXapPkc5M6RVUk6aoi5UUwZEDGb2uT5GOTVYeiwpVm7ooMuRdg/qlIElRSn+1fbUHysb6T5PeR7kPJ8p0AGfJPAAhFAPjt8KsrADwp+us2ST4XaT7U6Es6F2g6X0SBiyCdC4BY4FJ1jTZJPiMpIwBg7uplf5v6RfRVurVmdI02ST4LCSv5DDmopdNDDqqat1pQsPqQ38Ziv3R6rO8k+d2kvp4vYiVqxAKPYHNn4zIZAZOgWm28bW9J3hfpqqIZAKKa5pgjmSJpQZUlS4rUitrUIZI7UsZYoPrW+azHNJ8UiBeREUE9p547uIfduLck74tEk/aoFqssWgI0We5T3HMGLVaBZD5Ecm81loV25G6OFFWP8c2CHH2I5DtSxnjxdBoI6pfZJzzkJQfVae7glxv3luR9kVWHLGQFtYtFNQtepYY2BDWBYiwjuTOvD6nHKH9Wi0QYsnuOlYYm0IdIHq3WDnX1l6AuQXVI1uqQcmxP8mhbfahdpIjgNaPWpWqeTR8iubMmlmFd7WrBC3AfArZ8KHBsT/Jg2lpNioatUhQLGpWiD5F8b+1cRxPB9om1qRTA+hDJD6xRoSmW9ZmXqDencUfivD3Jj0kZsQgwn1yHUu97ONoJsvpWxqu0SfJZyDXP2dTHzaY52kSp7ETrsb6T5D8hReRk2xMB+MSrb2zdFjjO3OdK8mjbeMuTnYz9QKydDtkI6hDJD0id5pPaXmnpgyL1LkZI/eK78bfC0a17S/JuyH19SBsxMluzoGaagzpE8j25nfthBaHU1xT7VTrUcz98w4eMN+4tybskh6bQuIilR0lO6zYPoK4uWrg3iOTBttTZNwgBx8Wvzb+5fojkZ8i6AATzSQ/PuCaf5GfIeBFbGptsz5mPxvT17FP7Ml69TZKPTH507gewrqeWQRdRzIsAERDEdfb1sb6T5LeTScSOXbQT9IBFZNxSoaiKIS/CWEbyvQnPOCdJkiRJkiRJ/ufkH8y2Esl4zjl7AAAAAElFTkSuQmCC'
+TRAVEL_COVER_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAAC70lEQVR4nO2cS26kMBCGvxqQsjRSDpCjmJuN5mb4KDnASPYyklHNwg/onsUoStT0QHkFwZ/ayKV6/C4iyqdH+PF5BgwyyCCDDDLIoHNCUscIYQKZU70iyAikNmE+ZHkGPRBCVVXxqqoah3IFDLofsd6WecuTv5NB3wGl5gDCtAq4j3Jb/AY3V//NOxn0LZCPg+Ij6K8JNtv4/l8y6Cmh8e5egwBh+g0+riOkESUdtTyDDoOcqi5AySN8HFREXkoKITOgqvm45Rn0aCiIiMjUygzSCD6CzOX5WkqNo5Zn0KOjxk7KDtNA/VtaBVgF3K3W/eTvZNBXoL+qT5yW7dfF1fgBDCWmlBrUqs8zQ22TnSq4XNMFH0E1tuzhTqMwi7gA5N9FdEkjNY9wGcI0qMzppUYMH1fLIy4A1aixcwAuU9XLJmHq4jLAYJrlBaBmEU61hokItQ4t2nXu8UMtalwAajsdAa8ZXaipZHnsN4soU8wiTg51H5Gp1USkuYd4Yxt9slnEqaHuI9qxZ/EC1DJjyy2wPOJSUHj7KLUGpBH5qaoiE+W2Dmcq9hWgXdTAa2ZTqKo8EalBZDEfcQmoaZaxp5JxCxiZFjB6/WEWcXZoX30uvQQt/qB1Smz2Ypnl+aG2yUDdfe1m4WrKWaRsnHXVXQHqJ10tTOx8xHbrcheszCJODrVKIr1qPbVwivg4iZJeVfyiAIMKrKKPXp5BD4d6Zgk72aGUHvFG0TQ94hpQP+ni5gw8sksr6tNNsHrydzLo61CTJrX0VIq8NTUqTDSzSCMyH7I8gx6eR7TGhyGXvmu/rChpyIRZgPRaLMTyiPND9111tZsKepME1kN1Sah/00USKWYR3nJttgwi5Tuvw5Zn0IGQy8jPuIrMSUSkfPSXwb9bHnFJyEfqF+FdoSojTN/8SwY9NeSalF068Z0qpJfSebtrslsOWp5BD4P2ekTRoGJ70LXrvcZtmeXZIdF/z7kf9p/JDDLIIIMMMsgggD9CDKrZPisl1AAAAABJRU5ErkJggg=='
 
 EVENT_QR = [
     ('dinner at the lighterman', ('https://www.thelighterman.co.uk/', LIGHTERMAN_QR_B64)),
@@ -2007,8 +2008,15 @@ GALA_DAY_BOXES = {
     'DAY 19': gala_day_box_html('Roaring 20s', ' after today\'s La Spezia/Pisa excursion'),
 }
 
+VILLEFRANCHE_TENDER_BOX_HTML = '''
+<div class="cabin-box">
+  <div class="cabin-box-title">&#9973; Tender Port &ndash; Villefranche</div>
+  <p>Villefranche is a tender port &ndash; the ship anchors offshore and you'll be ferried in by tender boat, so allow extra time to get ashore. A soft-shoe day for the Fab 4.</p>
+</div>'''
+
 cruise_days_html = ''.join(
     (QV_CABIN_BOX_HTML if 'DAY 14' in d['title'].upper() else '') +
+    (VILLEFRANCHE_TENDER_BOX_HTML if 'DAY 17' in d['title'].upper() else '') +
     next((box for tag, box in GALA_DAY_BOXES.items() if tag in d['title'].upper()), '') +
     day_card(d, 'cruise', day_id=day_id_for(d['title']), day_map=day_map_for(d['title'], d, 'cruise', prev_stay=prev))
     for d, prev in sequence_with_prev(cruise_days, first_prev=rome_days[-1].get('stay') if rome_days else None)
@@ -3787,6 +3795,10 @@ HTML = f'''<!DOCTYPE html>
   <div class="td-row">
     <a class="pill pill-weblink td-btn" href="fab4-gk-travel-insurance.pdf" target="_blank">G&amp;K Travel Insurance</a>
     <img class="td-qr" src="data:image/png;base64,{INSURANCE_DOCS_QR_B64}" alt="QR code to G&amp;K Travel Insurance">
+  </div>
+  <div class="td-row">
+    <a class="pill pill-weblink td-btn" href="fab4-travel-cover.pdf" target="_blank">Travel Cover</a>
+    <img class="td-qr" src="data:image/png;base64,{TRAVEL_COVER_QR_B64}" alt="QR code to Travel Cover summary">
   </div>
   <div class="td-row">
     <a class="pill pill-weblink td-btn" href="fab4-six-musical-booking.pdf" target="_blank">Six the Musical Booking</a>
