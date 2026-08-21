@@ -92,23 +92,22 @@ function table(rows, labels, cols, colsSum) {
 // ---------- CONTENT: single whole-document numbered punch list ----------
 // Everything already booked/confirmed/fixed has been removed. Only genuinely
 // outstanding items remain, numbered in trip order. Re-checked against all
-// changes made today: Vatican/Colosseum tours confirmed with vouchers+QR,
-// Civitavecchia transfer confirmed 12pm, Travel Docs replaced with the
-// 21 Aug version, Travel Cover PDF added, Villefranche tender-port note
-// added, Deb & Tom's To-Do page added (with their own IDP checklist), and
-// the Infinity Holidays after-hours line added to Emergency Contacts.
+// changes made today: Tower of London Tour + River Tour now confirmed
+// (Headout booking #33605663 / #33605662, tickets on Gary's app) so that
+// item has been removed from this list; the Fiumicino (FCO) transfer was
+// re-checked against the current 32-page Travel Documents PDF (20 Aug 2026
+// version) and its wording corrected below.
 
 const items = [
-  { num: 1, dateArea: 'Fri 11 Sep\nRome arrival', item: 'Fiumicino (FCO) → The Republic Hotel transfer – no booking reference on file, and it doesn’t appear in the confirmed 23-page itinerary at all (only in the original 14 Jan quote). Confirm with Lynaire.', kind: 'gap' },
-  { num: 2, dateArea: 'Sat 26 Sep\nLondon', item: 'Tower of London + Crown Jewels + River Tour combo – still not confirmed by Jennifer at Headout (jennifer@inspire.headout.com). Checked the mailbox again – only an earlier guidance thread found, no booking confirmation on file.', kind: 'gap' },
-  { num: 3, dateArea: 'Sun 27 Sep\nLondon departure', item: 'Meliá White House → Heathrow (T5) transfer – NOT CONFIRMED. No transfer mode booked for the 7:00pm hotel departure ahead of the 10:00pm BA15.', kind: 'gap' },
-  { num: 4, dateArea: 'Thu 10 Sep\nOutbound', item: 'Singapore connection (~2 hr, Qantas → British Airways) – confirm checked baggage goes through to Rome across the airline change.', kind: 'warn' },
-  { num: 5, dateArea: 'Fri 11 Sep\nOutbound', item: 'Heathrow connection (~85 min) – clears BA’s 75-minute T5 minimum connection time, but only by about 10 minutes. No action possible, just worth knowing there’s no margin if the overnight sector runs late.', kind: 'warn' },
-  { num: 6, dateArea: 'Mon 21–24 Sep\nHire car', item: 'Avis Mercedes Vito is a manual transmission (changed from the automatic Ford Kuga SUV in the original quote, ref NZ759149602) – confirm whoever’s driving in Italy is comfortable with a manual gearbox.', kind: 'warn' },
-  { num: 7, dateArea: 'Thu 24 Sep\nMilan → London', item: 'With the corrected BA575/transfer timing, hotel arrival is now ~6:00pm – only ~30 min before the 6:30pm Lighterman dinner booking. Decide whether to skip pre-dinner drinks or move the dinner booking.', kind: 'warn' },
-  { num: 8, dateArea: 'Ongoing', item: 'UK Electronic Travel Authorisation (ETA) – verify all 4 travellers’ applications are approved via the checklist on the website.', kind: 'warn' },
-  { num: 9, dateArea: 'Ongoing', item: 'Passport validity – verify all 4 passports are valid to at least 29 Mar 2027 (6 months beyond the 29 Sep 2026 return) via the checklist on the website.', kind: 'warn' },
-  { num: 10, dateArea: 'Ongoing', item: 'International Driving Permit (IDP) – Gary’s is confirmed (IDP196978); Karen, Deb and Tom are not yet ticked. Deb & Tom now have their own IDP checklist on the new Deb & Tom’s To-Do page – still needs to be filled in.', kind: 'warn' },
+  { num: 1, dateArea: 'Fri 11 Sep\nRome arrival', item: 'Fiumicino (FCO) → The Republic Hotel transfer – does appear in the current 32-page Travel Documents (pick-up for BA548 arriving 11:35am, drop-off at The Republic Hotel, Destination Italia supplier contacts) but is still flagged "DETAILS REQUIRED FOR BOOKING" with no booking reference issued, unlike the hotel stays themselves (Ref 5179180/5179179). Confirm with Lynaire.', kind: 'gap' },
+  { num: 2, dateArea: 'Sun 27 Sep\nLondon departure', item: 'Meliá White House → Heathrow (T5) transfer – NOT CONFIRMED. No transfer mode booked for the 7:00pm hotel departure ahead of the 10:00pm BA15.', kind: 'gap' },
+  { num: 3, dateArea: 'Thu 10 Sep\nOutbound', item: 'Singapore connection (~2 hr, Qantas → British Airways) – confirm checked baggage goes through to Rome across the airline change.', kind: 'warn' },
+  { num: 4, dateArea: 'Fri 11 Sep\nOutbound', item: 'Heathrow connection (~85 min) – clears BA’s 75-minute T5 minimum connection time, but only by about 10 minutes. No action possible, just worth knowing there’s no margin if the overnight sector runs late.', kind: 'warn' },
+  { num: 5, dateArea: 'Mon 21–24 Sep\nHire car', item: 'Avis Mercedes Vito is a manual transmission (changed from the automatic Ford Kuga SUV in the original quote, ref NZ759149602) – confirm whoever’s driving in Italy is comfortable with a manual gearbox.', kind: 'warn' },
+  { num: 6, dateArea: 'Thu 24 Sep\nMilan → London', item: 'With the corrected BA575/transfer timing, hotel arrival is now ~6:00pm – only ~30 min before the 6:30pm Lighterman dinner booking. Decide whether to skip pre-dinner drinks or move the dinner booking.', kind: 'warn' },
+  { num: 7, dateArea: 'Ongoing', item: 'UK Electronic Travel Authorisation (ETA) – verify all 4 travellers’ applications are approved via the checklist on the website.', kind: 'warn' },
+  { num: 8, dateArea: 'Ongoing', item: 'Passport validity – verify all 4 passports are valid to at least 29 Mar 2027 (6 months beyond the 29 Sep 2026 return) via the checklist on the website.', kind: 'warn' },
+  { num: 9, dateArea: 'Ongoing', item: 'International Driving Permit (IDP) – Gary’s is confirmed (IDP196978); Karen, Deb and Tom are not yet ticked. Deb & Tom now have their own IDP checklist on the new Deb & Tom’s To-Do page – still needs to be filled in.', kind: 'warn' },
 ];
 
 const gapCount = items.filter(i => i.kind === 'gap').length;
@@ -138,7 +137,7 @@ children.push(new Paragraph({
 children.push(new Paragraph({
   spacing: { after: 260 },
   children: [new TextRun({
-    text: `Re-checked today against: Vatican & Colosseum tours (now confirmed, with vouchers and QR codes on the day cards), the Civitavecchia transfer (12pm pickup confirmed), the replaced Travel Documents PDF (21 Aug 2026 version), the new Travel Cover summary PDF, the Villefranche tender-port note, the new Deb & Tom’s To-Do page, and the Infinity Holidays after-hours line (now added to Emergency Contacts). ${gapCount} item${gapCount === 1 ? '' : 's'} need booking, ${warnCount} ${warnCount === 1 ? 'is' : 'are'} worth a final check.`,
+    text: `Re-checked today against: the Tower of London Tour and River Tour, now confirmed with separate Headout bookings (#33605663 / #33605662, tickets on Gary's phone) and removed from this list, and the current 32-page Travel Documents PDF (20 Aug 2026 version), which does include the Fiumicino transfer but still without a booking reference. ${gapCount} item${gapCount === 1 ? '' : 's'} need booking, ${warnCount} ${warnCount === 1 ? 'is' : 'are'} worth a final check.`,
     italics: true, color: GREY, size: 18, font: 'Source Sans Pro',
   })],
 }));
@@ -186,7 +185,7 @@ const footerTable = new Table({
             new TextRun({ children: [PageNumber.CURRENT], size: 12, color: GREY, font: 'Source Sans Pro' }),
             new TextRun({ text: ' of ', size: 12, color: GREY, font: 'Source Sans Pro' }),
             new TextRun({ children: [PageNumber.TOTAL_PAGES], size: 12, color: GREY, font: 'Source Sans Pro' }),
-            new TextRun({ text: `   |   Printed: ${dd}/${mm}/${yyyy} (Version 3.0)`, size: 12, color: GREY, font: 'Source Sans Pro' }),
+            new TextRun({ text: `   |   Printed: ${dd}/${mm}/${yyyy} (Version 3.1)`, size: 12, color: GREY, font: 'Source Sans Pro' }),
           ],
         })],
       }),
@@ -213,6 +212,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buf => {
-  fs.writeFileSync('Fab4_Audit_v3.0.docx', buf);
-  console.log('Wrote Fab4_Audit_v3.0.docx', buf.length, 'bytes');
+  fs.writeFileSync('Fab4_Audit_v3.1.docx', buf);
+  console.log('Wrote Fab4_Audit_v3.1.docx', buf.length, 'bytes');
 });
