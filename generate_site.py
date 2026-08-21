@@ -2867,12 +2867,13 @@ CSS = '''
   --milan: #6a3fa0; --milan-light: #f2eafb;
   --photo-frame: #3f7cbf;
   --ink: #262626; --muted: #666;
-  --card-bg: #ffffff; --page-bg: #f6f5f1;
+  --card-bg: #ffffff; --page-bg: #eaf3fb;
+  --hero-blue: #cfe0f5;
 }
 * { box-sizing: border-box; }
 body { margin:0; font-family:'Segoe UI','Source Sans Pro',system-ui,sans-serif; color:var(--ink); background:var(--page-bg); line-height:1.5; }
 a { color: inherit; }
-.hero { background: linear-gradient(rgba(11,31,58,.15), rgba(11,31,58,.15)), url('data:image/jpeg;base64,__HERO_BG_B64__') center/cover no-repeat, var(--navy); color:#fff; padding:56px 24px; }
+.hero { background: linear-gradient(135deg, rgba(11,31,58,.86) 0%, rgba(196,90,60,.78) 45%, rgba(91,155,213,.72) 100%), url('data:image/svg+xml;base64,__EUROPE_MAP_B64__') center/cover no-repeat, var(--navy); color:#fff; padding:56px 24px; }
 .hero-flags { font-size:1.9rem; letter-spacing:10px; margin:6px 0 4px; }
 .hero-inner { max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; text-align:center; }
 .hero-text { flex:1 1 380px; text-align:center; }
@@ -3349,7 +3350,7 @@ nav_grid_html = ''.join(
     for sid, icon, label in NAV_SECTIONS
 )
 
-CSS = CSS.replace('__HERO_BG_B64__', IMG['hero_bg'])
+CSS = CSS.replace('__EUROPE_MAP_B64__', EUROPE_MAP_B64)
 
 HTML = f'''<!DOCTYPE html>
 <html lang="en">
