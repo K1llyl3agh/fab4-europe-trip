@@ -434,16 +434,8 @@
       "date": "Mon 14 Sep",
       "item": "Confirm transfer time to Queen Victoria",
       "status": "To Confirm",
-      "notes": "Transfer by private minibus, Rome to Civitavecchia - likely mid-afternoon, evening departure. Gary checked with Lynnaire on 30 July, awaiting a response.",
+      "notes": "Transfer by private minibus, Rome to Civitavecchia - likely mid-afternoon, evening departure. Gary checked with Lynaire on 30 July, awaiting a response.",
       "website": "https://www.cunard.com/en-us/find-a-cruise"
-    },
-    {
-      "date": "Thu 24 Sep",
-      "item": "Confirm limo company & contact details",
-      "status": "To Confirm",
-      "notes": "Mercedes Viano Limousine booked direct from Heathrow to hotel (booking ref 190826) - still need to confirm limo company name and contact details",
-      "flag": "Gary checked on 30 July - ongoing, to monitor.",
-      "website": "https://www.melia.com/en/hotels/united-kingdom/london/melia-white-house"
     },
     {
       "date": "Sat 26 Sep",
@@ -465,25 +457,6 @@
       "status": "To Confirm",
       "notes": "Private minibus, Fiumicino Airport to The Republic Hotel (Via Gaeta 61, Rome) - arranged in principle but no booking or confirmation reference is on file",
       "website": "https://www.therepublichotel.com/"
-    },
-    {
-      "date": "Mon 21 Sep",
-      "item": "Dinner reservation - Tuscany",
-      "status": "To Book",
-      "notes": "No dinner plan yet for the first night at Hotel Borgo di Cortefreda Relais - hotel restaurant or a short drive into Tavarnelle Val di Pesa"
-    },
-    {
-      "date": "Tue 22 Sep",
-      "item": "Dinner reservation - Tuscany (Triocco)",
-      "status": "To Confirm",
-      "notes": "Triocco, Barberino Val d'Elsa pencilled in as a potential 7pm dinner spot - not yet booked",
-      "website": "https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html"
-    },
-    {
-      "date": "Wed 23 Sep",
-      "item": "Dinner reservation - Milan",
-      "status": "To Book",
-      "notes": "No table booked yet - choose from the 8 dinner options on the Milan page (7:00-8:30pm, before LiQuido Rooftop Bar nightcap)"
     }
   ],
   "things_to_take": [
@@ -511,12 +484,6 @@
   ],
   "london_ttc": [
     {
-      "day": "Thu (24)",
-      "item": "Confirm limo company & contact details",
-      "status": "To Confirm",
-      "notes": "Mercedes Viano Limousine booked direct from Heathrow to hotel (booking ref 190826) - company/contact details still to be confirmed"
-    },
-    {
       "day": "Sat (26)",
       "item": "Tower of London + Crown Jewels + River Tour (combo)",
       "status": "To Confirm",
@@ -526,7 +493,7 @@
       "day": "Sat (26)",
       "item": "Six the Musical tickets",
       "status": "Booked",
-      "notes": "Vaudeville Theatre, 4:00pm, Stalls G8-G11 (4 adults)"
+      "notes": "Vaudeville Theatre, 4:00pm (1hr 15min), Stalls G8-G11 (4 adults) - Headout booking #32832547, purchased by Gary Nicholson"
     },
     {
       "day": "Sat (26)",

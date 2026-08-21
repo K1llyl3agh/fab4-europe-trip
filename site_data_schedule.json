@@ -10,26 +10,26 @@
           "address": "Milan Linate Airport\nDirections from iQ Hotel Milano"
         },
         {
-          "time": "2:30 PM",
-          "event": "Flight BA575 (British Airways) Milan Linate to London Heathrow (T5) - arrives 2:50pm",
+          "time": "3:55 PM",
+          "event": "Flight BA575 (British Airways) Milan Linate to London Heathrow (T5) - arrives 4:50pm",
           "status": null,
           "address": "Milan Linate (LIN) to London Heathrow (LHR Terminal 5)"
         },
         {
-          "time": "3:00 PM",
-          "event": "Mercedes Viano Limousine transfer to hotel (booking ref 190826)",
+          "time": "5:15 PM",
+          "event": "Luxury Private Vehicle transfer to hotel - The Traveling Group / London Travel In (office +44 (0)20 8049 4300, emergency +44 7733 448902) (booking ref 190826)",
           "status": "Booked",
-          "address": "Direct from Heathrow Terminal 5 to The Level at Meliá White House"
+          "address": "Direct from Heathrow Terminal 5 (Meeting Point South, by Caffè Nero) to The Level at Meliá White House"
         },
         {
-          "time": "4:00 PM",
-          "event": "Arrive at The Level at Meliá White House - check in / drop bags",
+          "time": "6:00 PM",
+          "event": "Arrive at The Level at Meliá White House - check in / drop bags (tight connection before dinner - see Audit)",
           "status": null,
           "address": "Longford Street, Regent's Park, London NW1 3UP"
         },
         {
           "time": "4:30 PM",
-          "event": "Tapas and Gin for Deb",
+          "event": "Tapas and Gin for Deb (likely won't fit before dinner now BA575's official time is later - reconsider or move to another evening)",
           "status": null,
           "address": null
         },
@@ -203,7 +203,7 @@
         },
         {
           "time": "4:00 PM",
-          "event": "Six the Musical begins - Stalls G8, G9, G10, G11 (4 adults) - see Information tab",
+          "event": "Six the Musical begins - Stalls G8, G9, G10, G11 (4 adults, 1hr 15min) - Headout booking #32832547 (Gary Nicholson)",
           "status": "Booked",
           "address": "Vaudeville Theatre, Strand, London WC2R 0NH"
         },
@@ -1473,162 +1473,6 @@
         }
       ],
       "stay": "iQ Hotel Milano, Milan (OPTION C)"
-    },
-    {
-      "title": "OPTION D - PISA & LEANING TOWER, LAKE COMO (23 SEP) [Total driving: approx. 5h 25m]",
-      "stay": "iQ Hotel Milano, Milan (OPTION D)",
-      "events": [
-        {
-          "time": "6:00 AM",
-          "event": "Check out of Hotel Borgo di Cortefreda Relais & drive to Pisa (approx. 1h 15m)",
-          "status": null,
-          "address": "Directions: Tuscany to Pisa"
-        },
-        {
-          "time": "6:30 AM",
-          "event": "Drive to Pisa (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "7:00 AM",
-          "event": "Drive to Pisa (continues - ends approx. 7:15am)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "7:30 AM",
-          "event": "Arrive Pisa - coffee near Piazza dei Miracoli",
-          "status": "Optional",
-          "address": "Piazza dei Miracoli, Pisa, Italy"
-        },
-        {
-          "time": "8:00 AM",
-          "event": "Skip-the-line Leaning Tower of Pisa - guided small-group tour (approx. 1h 30m, incl. tower climb)",
-          "status": "To Book",
-          "address": "Meeting point: P.za Daniele Manin 6, Pisa (near Porta Nuova gate)\nVisit Website: Viator - Pisa Skip-the-Line Tower Tour"
-        },
-        {
-          "time": "8:30 AM",
-          "event": "Leaning Tower of Pisa tour (continues)",
-          "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "9:00 AM",
-          "event": "Leaning Tower of Pisa tour (continues - ends approx. 9:30am)",
-          "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "9:30 AM",
-          "event": "Free time / photos at Piazza dei Miracoli",
-          "status": "Optional",
-          "address": null
-        },
-        {
-          "time": "10:00 AM",
-          "event": "Drive from Pisa to Como (approx. 3h 10m)",
-          "status": null,
-          "address": "Directions: Pisa to Como"
-        },
-        {
-          "time": "10:30 AM",
-          "event": "Drive to Como (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "11:00 AM",
-          "event": "Drive to Como (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "11:30 AM",
-          "event": "Drive to Como (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "12:00 PM",
-          "event": "Drive to Como (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "12:30 PM",
-          "event": "Drive to Como (continues - ends approx. 1:10pm)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "1:00 PM",
-          "event": "Lunch at Harry's Bar, Cernobbio (Lake Como)",
-          "status": "Optional",
-          "address": "Via Besana 1, 22012 Cernobbio, Como, Italy\nVisit Website: Harry's Bar Cernobbio"
-        },
-        {
-          "time": "1:30 PM",
-          "event": "Lunch at Harry's Bar, Cernobbio (continues)",
-          "status": "Optional",
-          "address": null
-        },
-        {
-          "time": "2:00 PM",
-          "event": "Lunch at Harry's Bar, Cernobbio (continues - ends approx. 2:30pm)",
-          "status": "Optional",
-          "address": null
-        },
-        {
-          "time": "2:30 PM",
-          "event": "Drive from Lake Como to Milan (approx. 1h)",
-          "status": null,
-          "address": "Directions: Lake Como to Milan"
-        },
-        {
-          "time": "3:00 PM",
-          "event": "Drive to Milan (continues - ends approx. 3:30pm)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "3:30 PM",
-          "event": "Arrive Milan - Check-in at iQ Hotel Milano",
-          "status": null,
-          "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
-        },
-        {
-          "time": "7:00 PM",
-          "event": "Dinner in Milan",
-          "status": "To Book",
-          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
-        },
-        {
-          "time": "7:30 PM",
-          "event": "Dinner in Milan (continues)",
-          "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "8:00 PM",
-          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
-          "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "9:00 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar",
-          "status": "Booked",
-          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
-        },
-        {
-          "time": "9:30 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
-          "status": "Booked",
-          "address": null
-        }
-      ]
     }
   ]
 }
