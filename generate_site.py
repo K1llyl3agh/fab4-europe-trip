@@ -3022,9 +3022,12 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ec-blank { color:#b9ac7e; font-style:italic; font-weight:600; }
 .ec-blank-line { color:#ccc; }
 @media print { .ec-box { break-inside:avoid; } }
-.td-row { display:flex; align-items:center; gap:14px; margin:14px 0; }
-.td-btn { min-width:140px; text-align:center; }
+.td-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin:14px 0; }
+.td-row { display:flex; flex-direction:column; align-items:center; gap:10px; margin:0; padding:16px 14px; background:var(--card-bg); border-radius:10px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+.td-btn { width:100%; text-align:center; }
 .td-qr { width:70px; height:70px; border:1px solid #ddd; border-radius:6px; background:#fff; padding:3px; }
+@media print { .td-grid { grid-template-columns:repeat(3, 1fr); } .td-row { break-inside:avoid; page-break-inside:avoid; } }
+@media (max-width: 640px) { .td-grid { grid-template-columns:1fr; } }
 .place-fact { margin-top:8px; padding-top:8px; border-top:1px dashed #e3ddc9; font-size:.78rem; color:var(--muted); font-style:italic; line-height:1.4; }
 .place-hours { font-size:.78rem; color:var(--navy); font-weight:600; margin:2px 0 6px; }
 body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !important; }
@@ -3780,33 +3783,35 @@ HTML = f'''<!DOCTYPE html>
     <button class="print-btn no-print" onclick="printSection('traveldocuments')"><span class="ic">&#128424;&#65039;</span>Print</button>
   </div>
   <p class="lede">Key trip documents, saved here so they're always at hand &ndash; open on screen or scan the QR code with your phone.</p>
-  <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-travel-docs-v2.pdf" target="_blank">Travel Docs</a>
-    <img class="td-qr" src="data:image/png;base64,{TRAVEL_DOCS_QR_B64}" alt="QR code to Travel Docs">
-  </div>
-  <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-car-docs.pdf" target="_blank">Car Docs</a>
-    <img class="td-qr" src="data:image/png;base64,{CAR_DOCS_QR_B64}" alt="QR code to Car Docs">
-  </div>
-  <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-eta-docs.pdf" target="_blank">ETA Confirmation (Gary)</a>
-    <img class="td-qr" src="data:image/png;base64,{ETA_DOCS_QR_B64}" alt="QR code to ETA Confirmation">
-  </div>
-  <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-gk-travel-insurance.pdf" target="_blank">G&amp;K Travel Insurance</a>
-    <img class="td-qr" src="data:image/png;base64,{INSURANCE_DOCS_QR_B64}" alt="QR code to G&amp;K Travel Insurance">
-  </div>
-  <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-travel-cover.pdf" target="_blank">Travel Cover</a>
-    <img class="td-qr" src="data:image/png;base64,{TRAVEL_COVER_QR_B64}" alt="QR code to Travel Cover summary">
-  </div>
-  <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-six-musical-booking.pdf" target="_blank">Six the Musical Booking</a>
-    <img class="td-qr" src="data:image/png;base64,{SIX_MUSICAL_QR_B64}" alt="QR code to Six the Musical booking confirmation">
-  </div>
-  <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-qv-deck-plans.pdf" target="_blank">QV Deck Plans</a>
-    <img class="td-qr" src="data:image/png;base64,{QV_DECKPLAN_QR_B64}" alt="QR code to Queen Victoria Deck Plans">
+  <div class="td-grid">
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-travel-docs-v2.pdf" target="_blank">Travel Docs</a>
+      <img class="td-qr" src="data:image/png;base64,{TRAVEL_DOCS_QR_B64}" alt="QR code to Travel Docs">
+    </div>
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-car-docs.pdf" target="_blank">Car Docs</a>
+      <img class="td-qr" src="data:image/png;base64,{CAR_DOCS_QR_B64}" alt="QR code to Car Docs">
+    </div>
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-eta-docs.pdf" target="_blank">ETA Confirmation (Gary)</a>
+      <img class="td-qr" src="data:image/png;base64,{ETA_DOCS_QR_B64}" alt="QR code to ETA Confirmation">
+    </div>
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-gk-travel-insurance.pdf" target="_blank">G&amp;K Travel Insurance</a>
+      <img class="td-qr" src="data:image/png;base64,{INSURANCE_DOCS_QR_B64}" alt="QR code to G&amp;K Travel Insurance">
+    </div>
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-travel-cover.pdf" target="_blank">Travel Cover</a>
+      <img class="td-qr" src="data:image/png;base64,{TRAVEL_COVER_QR_B64}" alt="QR code to Travel Cover summary">
+    </div>
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-six-musical-booking.pdf" target="_blank">Six the Musical Booking</a>
+      <img class="td-qr" src="data:image/png;base64,{SIX_MUSICAL_QR_B64}" alt="QR code to Six the Musical booking confirmation">
+    </div>
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-qv-deck-plans.pdf" target="_blank">QV Deck Plans</a>
+      <img class="td-qr" src="data:image/png;base64,{QV_DECKPLAN_QR_B64}" alt="QR code to Queen Victoria Deck Plans">
+    </div>
   </div>
 
   <details id="idpDetails" class="uketa-box">
