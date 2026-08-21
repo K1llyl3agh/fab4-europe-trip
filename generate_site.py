@@ -57,6 +57,9 @@ EUROPE_MAP_B64 = base64.b64encode(EUROPE_MAP_SVG.encode('utf-8')).decode('ascii'
 def esc(s):
     return html.escape(str(s)) if s is not None else ''
 
+def esc_br(s):
+    return html.escape(str(s)).replace('\n', '<br>') if s is not None else ''
+
 def collapse_events(events):
     blocks = []
     for e in events:
@@ -148,7 +151,6 @@ EVENT_W3W = [
     ('arrive at the level', 'baked.belly.neck'),
     ('victoria and albert museum', 'spots.mugs.cards'),
     ("harry's knightsbridge", 'icon.spends.third'),
-    ('tower of london', 'swift.blitz.funds'),
     ('vaudeville theatre', 'diner.donor.rails'),
     ('waterstones piccadilly', 'blank.buns.bump'),
     ('hard rock cafe london', 'month.wakes.tests'),
@@ -165,6 +167,32 @@ def event_w3w_for(name):
         if keyword in n:
             return words
     return None
+
+# Some events need more than one what3words badge (e.g. a combo ticket where each
+# leg starts from a different spot). Keyed by a keyword match on the event name;
+# value is a list of (label, words) pairs rendered as a row of badges.
+EVENT_W3W_PAIRS = [
+    ('tower of london tour', [
+        ('Tower of London entrance', 'swift.blitz.funds'),
+        ('River Tour (Tower Bridge Quay)', 'dunes.copy.miles'),
+    ]),
+]
+
+def event_w3w_pairs_for(name):
+    n = name.lower()
+    for keyword, pairs in EVENT_W3W_PAIRS:
+        if keyword in n:
+            return pairs
+    return None
+
+def w3w_pairs_html(pairs):
+    items = ''.join(
+        f'<span style="display:inline-flex; align-items:center; gap:6px; margin:2px 10px 2px 0;">'
+        f'<a class="w3w-badge" href="https://what3words.com/{esc(words)}" target="_blank" title="what3words location">///{esc(words)}</a>'
+        f'<span style="color:var(--muted); font-size:.78rem;">{esc(label)}</span></span>'
+        for label, words in pairs
+    )
+    return f'<div class="ev-addr" style="display:flex; flex-wrap:wrap; margin-top:6px;">{items}</div>'
 
 LIGHTERMAN_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABi0lEQVR4nO2YwY7CMBBDn6v+/y97D54ksFqJE2G0AYTapj6Y0cRjR+bF53oF+CL+MeIG5c6y0izCa7UN0231wJAiVDm8HtSH6b56oFUTWeOxLl2YbkdIIAuM9UEebRAGK53ivxF7eHwSccP897IAOb+x2oXpHgQereBf3/G6C9Nt/TH3Rg3ciMdc7cJ0D0KuDbKGClNOjU7zH0MtZBHfESsyBsyB9dBsh1yrYyCl6sJ0G8IY2x6SKhmlR9SL6QZE/Km1HFiKoYwY92G6DaFY0loou24h6bz8chELImFhZduUIzszv1ggXHsmeyUrPk8/LpBLQQVJt6kKHKgf8kr7XncxZtZx/uMaCaZmiqKupann6UfybQauFTGdbv1A/cBmujEYnmy+Ozbfuqx7ZgzjEKQP0231eAyzyXR1LKQD/cfT+foQErLoY/NLyahB49QQkM/rjwdEgtzwI46Nb8n0jYj76clibJN5JtSF6UaE61C53Pq0Id7MowHiZg6YCjCejz4zv7Tg8UX0RPwAXk7F86HV554AAAAASUVORK5CYII='
 
@@ -1446,6 +1474,8 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         ev_w3w = event_w3w_for(b['name'])
         w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(ev_w3w)}" target="_blank" title="what3words location">///{esc(ev_w3w)}</a>' if ev_w3w else ''
         ev_phone_html = f'<div class="ev-addr">&#128222; {esc(ev_phone)} {w3w_html}</div>' if ev_phone else (f'<div class="ev-addr">{w3w_html}</div>' if w3w_html else '')
+        ev_w3w_pairs = event_w3w_pairs_for(b['name'])
+        ev_w3w_pairs_html = w3w_pairs_html(ev_w3w_pairs) if ev_w3w_pairs else ''
         ev_note = event_note_for(b['name'])
         ev_note_html = f'<div class="ev-note">({ev_note})</div>' if ev_note else ''
         ev_qr = event_qr_for(b['name'])
@@ -1458,9 +1488,10 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         <div class="ev-row">
           <div class="ev-time">{esc(b['time_display'])}</div>
           <div class="ev-body">
-            <div class="ev-name">{esc(b['name'])} {badge(b['status'])} {logo_html}</div>
+            <div class="ev-name">{esc_br(b['name'])} {badge(b['status'])} {logo_html}</div>
             {addr}
             {ev_phone_html}
+            {ev_w3w_pairs_html}
             {ev_note_html}
             {f'<div class="ev-link">{link_row}</div>' if link_row else ''}
             {ev_qr_html}
@@ -2198,7 +2229,46 @@ MOUSETRAP_BARS = [
               tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1010143-Reviews-American_Bar-London_England.html'),
 ]
 
-SAT26_BARS_HTML = f'''
+LUNCH_26SEP = [
+    {'place': 'The Dickens Inn', 'type': 'Historic 18th-century dockside pub - Tavern Bar downstairs, Poplars restaurant with balcony views upstairs',
+     'address': "Marble Quay, St Katharine's Way, London E1W 1UH", 'phone': '020 7488 2208',
+     'hours': 'Mon-Tue 12pm-10pm, Wed 12pm-11pm, Thu-Fri 10am-11pm, Sat 10am-11:30pm, Sun 10am-10pm',
+     'website': 'https://www.dickensinn.co.uk/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=Marble%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201UH&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1124979-Reviews-The_Dickens_Inn-London_England.html',
+     'photo': 'https://www.dickensinn.co.uk/wp-content/uploads/2026/06/The-Dickens-Inn-June-26-5261.jpg?format=auto'},
+    {'place': 'Coppa Club Tower Bridge', 'type': 'Riverside terrace and iconic igloos with Tower Bridge views - all-day dining, brunch and lunch bowls',
+     'address': '3 Three Quays Walk, Lower Thames Street, London EC3R 6AH', 'phone': '020 8016 9227',
+     'hours': 'Mon-Thu 9am-11pm, Fri-Sat 9am-12am, Sun 9am-10pm',
+     'website': 'https://www.coppaclub.co.uk/tower',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=3%20Three%20Quays%20Walk%2C%20Lower%20Thames%20Street%2C%20London%20EC3R%206AH&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d10328438-Reviews-Coppa_Club_Tower_Bridge-London_England.html',
+     'photo': 'https://images.prismic.io/coppa/rEFWD5oZI4ZugV5Y_ADS_3451.jpg?auto=format,compress&rect=0,334,2000,1332&w=763&h=508'},
+    {'place': 'Honest Burgers St Katharine Docks', 'type': 'British smashed-beef burgers and rosemary salted chips, right on the marina',
+     'address': '1 Commodity Quay, London E1W 1AZ', 'phone': '020 4542 0590',
+     'hours': 'Mon-Tue 11am-10pm, Wed-Sat 11am-11pm, Sun 11am-10pm',
+     'website': 'https://www.honestburgers.co.uk/locations/st-katharine-docks/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=1%20Commodity%20Quay%2C%20London%20E1W%201AZ&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d23136938-Reviews-Honest_Burgers_St_Katharine_Docks-London_England.html',
+     'photo': 'https://www.honestburgers.co.uk/wp-content/uploads/2021/01/st-katharine-docks-5.jpg'},
+    {'place': 'Cafe Rouge St Katharine Docks', 'type': 'French bistro classics (steak frites, croques, Beef Bourguignon burger) with a waterfront terrace',
+     'address': "Unit 4 Quayside, St Katharine's Way, London E1W 1BA", 'phone': '020 4530 7176',
+     'hours': 'Mon 9am-9pm, Tue-Sat 9am-10pm, Sun 9am-9pm',
+     'website': 'https://www.caferouge.com/restaurants/london/st-katherine-docks',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=Unit%204%20Quayside%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201BA&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1385610-Reviews-Cafe_Rouge_St_Katharine_Docks-London_England.html',
+     'photo': 'https://images.ctfassets.net/hhagtzhy2px1/3pIEU6pVvs0yEeI51945nP/c13af1700891cfc0ea185d7bd6bb17b2/SEO_Image.jpg'},
+    {'place': 'Bravas Tapas', 'type': 'Independent family-run Basque tapas and Spanish wine, waterside setting',
+     'address': 'St Katharine Docks, E Smithfield, London E1W 1AT', 'phone': '020 7481 1464',
+     'hours': 'Mon-Sat 12pm-10pm, Sun 12pm-9pm',
+     'website': 'https://www.bravastapas.com/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=St%20Katharine%20Docks%2C%20E%20Smithfield%2C%20London%20E1W%201AT&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d6413446-Reviews-Bravas_Tapas-London_England.html',
+     'photo': 'https://static.wixstatic.com/media/f00c08_39b2b0ce7df6482ba50b607efeb6bab5~mv2.png/v1/fit/w_2500,h_1330,al_c/f00c08_39b2b0ce7df6482ba50b607efeb6bab5~mv2.png'},
+]
+LUNCH_26SEP_HTML = dinner_box('Lunch Suggestions (12:30-2:15pm) - near Tower Bridge / St Katharine Docks, a 5-8 min walk from the River Tour end point', LUNCH_26SEP)
+
+SAT26_BARS_HTML = LUNCH_26SEP_HTML + f'''
 <div class="dinner-box">
   <div class="day-map-title">After Hard Rock: Nightcap Options</div>
   <p class="lede" style="margin:0 0 10px;">Estimates only &ndash; check live transit apps on the day.</p>
@@ -2813,7 +2883,7 @@ def flag_for_where(where):
 # Dates (ISO) that still have an outstanding item in the Things To Do "need to book" list -
 # these drive the UNCONFIRMED tag on the Trip at a Glance timeline. Kept in sync manually
 # against site_data_places.json's need_to_book array.
-UNCONFIRMED_DATES = {'2026-09-26'}
+UNCONFIRMED_DATES = set()
 
 timeline_html = ''
 for t in travel_json:

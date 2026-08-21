@@ -161,38 +161,44 @@
         },
         {
           "time": "9:00 AM",
-          "event": "Combo: Tower of London (Crown Jewels) + Official Tower of London River Tour",
-          "status": "To Confirm",
-          "address": "Tower of London, EC3N 4AB\nVisit Website: Headout"
+          "event": "Combo: 9:00am Tower of London Tour (#33605663)\n10:45am River Tour (#33605662)",
+          "status": "Booked",
+          "address": null
         },
         {
           "time": "9:30 AM",
           "event": "Tower of London / River Tour (continues)",
-          "status": "To Confirm",
+          "status": "Booked",
           "address": null
         },
         {
           "time": "10:00 AM",
           "event": "Tower of London / River Tour (continues)",
-          "status": "To Confirm",
+          "status": "Booked",
           "address": null
         },
         {
           "time": "10:30 AM",
           "event": "Tower of London / River Tour (continues)",
-          "status": "To Confirm",
+          "status": "Booked",
           "address": null
         },
         {
           "time": "11:00 AM",
           "event": "Tower of London / River Tour (continues)",
-          "status": "To Confirm",
+          "status": "Booked",
           "address": null
         },
         {
-          "time": "11:30 AM",
-          "event": "To be confirmed by Jennifer from Headout (jennifer@inspire.headout.com)",
-          "status": "To Confirm",
+          "time": "12:30 PM",
+          "event": "Lunch near Tower Bridge / St Katharine Docks (see suggestions below)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "2:15 PM",
+          "event": "Lunch (continues)",
+          "status": "Optional",
           "address": null
         },
         {
