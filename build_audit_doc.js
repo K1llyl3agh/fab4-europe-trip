@@ -103,11 +103,7 @@ const items = [
   { num: 2, dateArea: 'Sun 27 Sep\nLondon departure', item: 'Meliá White House → Heathrow (T5) transfer – NOT CONFIRMED. No transfer mode booked for the 7:00pm hotel departure ahead of the 10:00pm BA15.', kind: 'gap' },
   { num: 3, dateArea: 'Thu 10 Sep\nOutbound', item: 'Singapore connection (~2 hr, Qantas → British Airways) – confirm checked baggage goes through to Rome across the airline change.', kind: 'warn' },
   { num: 4, dateArea: 'Fri 11 Sep\nOutbound', item: 'Heathrow connection (~85 min) – clears BA’s 75-minute T5 minimum connection time, but only by about 10 minutes. No action possible, just worth knowing there’s no margin if the overnight sector runs late.', kind: 'warn' },
-  { num: 5, dateArea: 'Mon 21–24 Sep\nHire car', item: 'Avis Mercedes Vito is a manual transmission (changed from the automatic Ford Kuga SUV in the original quote, ref NZ759149602) – confirm whoever’s driving in Italy is comfortable with a manual gearbox.', kind: 'warn' },
-  { num: 6, dateArea: 'Thu 24 Sep\nMilan → London', item: 'With the corrected BA575/transfer timing, hotel arrival is now ~6:00pm – only ~30 min before the 6:30pm Lighterman dinner booking. Decide whether to skip pre-dinner drinks or move the dinner booking.', kind: 'warn' },
-  { num: 7, dateArea: 'Ongoing', item: 'UK Electronic Travel Authorisation (ETA) – verify all 4 travellers’ applications are approved via the checklist on the website.', kind: 'warn' },
-  { num: 8, dateArea: 'Ongoing', item: 'Passport validity – verify all 4 passports are valid to at least 29 Mar 2027 (6 months beyond the 29 Sep 2026 return) via the checklist on the website.', kind: 'warn' },
-  { num: 9, dateArea: 'Ongoing', item: 'International Driving Permit (IDP) – Gary’s is confirmed (IDP196978); Karen, Deb and Tom are not yet ticked. Deb & Tom now have their own IDP checklist on the new Deb & Tom’s To-Do page – still needs to be filled in.', kind: 'warn' },
+  { num: 5, dateArea: 'Ongoing', item: 'International Driving Permit (IDP) – Gary’s is confirmed (IDP196978); Karen, Deb and Tom are not yet ticked. Deb & Tom now have their own IDP checklist on the new Deb & Tom’s To-Do page – still needs to be filled in.', kind: 'warn' },
 ];
 
 const gapCount = items.filter(i => i.kind === 'gap').length;
@@ -137,7 +133,7 @@ children.push(new Paragraph({
 children.push(new Paragraph({
   spacing: { after: 260 },
   children: [new TextRun({
-    text: `Re-checked today against: the Tower of London Tour and River Tour, now confirmed with separate Headout bookings (#33605663 / #33605662, tickets on Gary's phone) and removed from this list, and the current 32-page Travel Documents PDF (20 Aug 2026 version), which does include the Fiumicino transfer but still without a booking reference. ${gapCount} item${gapCount === 1 ? '' : 's'} need booking, ${warnCount} ${warnCount === 1 ? 'is' : 'are'} worth a final check.`,
+    text: `Re-checked today against: the Tower of London Tour and River Tour, now confirmed with separate Headout bookings (#33605663 / #33605662, tickets on Gary's phone) and removed from this list, and the current 32-page Travel Documents PDF (20 Aug 2026 version), which does include the Fiumicino transfer but still without a booking reference. The Avis Mercedes Vito gearbox note, the Milan-London/Lighterman timing note, the UK ETA check and the passport validity check have also been removed as no longer needed on this list. ${gapCount} item${gapCount === 1 ? '' : 's'} need booking, ${warnCount} ${warnCount === 1 ? 'is' : 'are'} worth a final check.`,
     italics: true, color: GREY, size: 18, font: 'Source Sans Pro',
   })],
 }));
@@ -185,7 +181,7 @@ const footerTable = new Table({
             new TextRun({ children: [PageNumber.CURRENT], size: 12, color: GREY, font: 'Source Sans Pro' }),
             new TextRun({ text: ' of ', size: 12, color: GREY, font: 'Source Sans Pro' }),
             new TextRun({ children: [PageNumber.TOTAL_PAGES], size: 12, color: GREY, font: 'Source Sans Pro' }),
-            new TextRun({ text: `   |   Printed: ${dd}/${mm}/${yyyy} (Version 3.1)`, size: 12, color: GREY, font: 'Source Sans Pro' }),
+            new TextRun({ text: `   |   Printed: ${dd}/${mm}/${yyyy} (Version 3.2)`, size: 12, color: GREY, font: 'Source Sans Pro' }),
           ],
         })],
       }),
@@ -212,6 +208,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buf => {
-  fs.writeFileSync('Fab4_Audit_v3.1.docx', buf);
-  console.log('Wrote Fab4_Audit_v3.1.docx', buf.length, 'bytes');
+  fs.writeFileSync('Fab4_Audit_v3.2.docx', buf);
+  console.log('Wrote Fab4_Audit_v3.2.docx', buf.length, 'bytes');
 });

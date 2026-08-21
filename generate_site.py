@@ -1870,18 +1870,15 @@ DAY24_MAP = {
         {'name': 'Milan Linate Airport', 'note': '12:00pm - Return hire car'},
         {'name': 'London Heathrow Airport (Terminal 5)', 'note': '4:50pm - Arrive on flight BA575'},
         {'name': 'The Level at Melia White House', 'note': '6:00pm - Arrive, check in / drop bags'},
-        {'name': 'Tapas & Gin for Deb', 'note': 'Tight connection before dinner - venue not yet booked, see Things to Do'},
         {'name': 'The Lighterman, Granary Square', 'note': '6:30pm - Dinner'},
         {'name': 'The Level at Melia White House', 'note': 'Return for the night'},
     ],
     'legs': [
         {'time': '~20 min', 'distance': '~8 km', 'method': 'Drive: iQ Hotel Milano to Milan Linate Airport (car return)'},
         {'time': '~1h 55m flight (dep 3:55pm, arr 4:50pm)', 'distance': '~1,000 km', 'method': 'Flight BA575 (British Airways), Milan Linate to London Heathrow (T5) (~55 min apart on local clocks due to the UK/Italy time difference)'},
-        {'time': '~25 min', 'distance': 'n/a', 'method': 'Immigration/border and baggage at Heathrow T5, then meet the Luxury Private Vehicle driver at Meeting Point South, by Caffè Nero'},
-        {'time': '~45 min drive', 'distance': '~24 km', 'method': 'Luxury Private Vehicle transfer (The Traveling Group / London Travel In, ref 190826), Heathrow T5 direct to The Level at Meliá White House'},
-        {'time': 'Tight - likely won\'t fit', 'distance': 'TBC', 'method': 'Venue not yet booked, and with the corrected BA575/transfer timing there\'s only ~30 min before the 6:30pm Lighterman booking – see Audit/Things to Do'},
-        {'time': '~20 min', 'distance': '~1 mile', 'method': 'Walk towards King’s Cross/Granary Square (estimate assumes the Tapas & Gin venue ends up near the hotel – recheck once booked)'},
-        {'time': '~20 min', 'distance': '~1.6 km', 'method': 'Walk back via Euston Road (or ~10 min taxi)'},
+        {'time': '~70 min total', 'distance': '~24 km', 'method': 'Immigration/border and baggage at Heathrow T5 (~25 min), then meet the Luxury Private Vehicle driver at Meeting Point South, by Caffè Nero, for the transfer (The Traveling Group / London Travel In, ref 190826) direct to The Level at Meliá White House (~45 min drive)'},
+        {'time': '~20 min', 'distance': '~1.6 km', 'method': 'Walk towards King’s Cross/Granary Square (or ~10 min taxi)'},
+        {'time': '~20-25 min', 'distance': '~1.6 km', 'method': 'Walk back via Euston Road (or ~10 min taxi)'},
     ],
 }
 
@@ -1910,7 +1907,8 @@ DAY26_MAP = {
     'title': "Saturday 26 Sept - Today's Places & Suggested Routes",
     'stops': [
         {'name': 'The Level at Melia White House', 'note': 'Start of day - Longford Street, Regents Park'},
-        {'name': 'Tower of London', 'note': '9:00am - Crown Jewels + River Tour'},
+        {'name': 'Tower of London', 'note': '9:00am - Tower of London, London EC3N 4AB - Tower of London Tour'},
+        {'name': 'Tower Bridge Quay', 'note': "10:45am - St Katharine's Way, London E1W 1LD - River Tour"},
         {'name': 'Vaudeville Theatre, Strand', 'note': '3:00pm - Six the Musical'},
         {'name': 'Waterstones Piccadilly', 'note': '5:30pm'},
         {'name': 'Hard Rock Cafe London, Old Park Lane', 'note': '6:45pm - Dinner'},
@@ -1918,7 +1916,8 @@ DAY26_MAP = {
     ],
     'legs': [
         {'time': '~30-35 min', 'distance': '~5.7 km', 'method': 'Circle line: Great Portland Street to Tower Hill'},
-        {'time': '~20 min', 'distance': '~2.9 km', 'method': 'Circle/District line: Tower Hill to Embankment, then ~5 min walk up the Strand'},
+        {'time': '~5-8 min', 'distance': '~0.5 km', 'method': "Walk from the Tower of London to Tower Bridge Quay, St Katharine's Way"},
+        {'time': '~20-25 min', 'distance': '~3.0 km', 'method': 'Walk to Tower Hill, Circle/District line to Embankment, then ~5 min walk up the Strand'},
         {'time': '~12-15 min', 'distance': '~1.1 km', 'method': 'Walk via Trafalgar Square/Haymarket, or Covent Garden to Piccadilly Circus (1 stop, Piccadilly line) + short walk'},
         {'time': '~12-15 min', 'distance': '~1.3 km', 'method': 'Walk along Piccadilly towards Hyde Park Corner, or Piccadilly Circus to Hyde Park Corner (1 stop, Piccadilly line) + short walk'},
         {'time': '~20-25 min', 'distance': '~3.4 km', 'method': "Piccadilly line: Hyde Park Corner to Piccadilly Circus, change to Bakerloo line to Regent's Park, then ~5 min walk"},
@@ -2046,9 +2045,10 @@ LONDON_QUICKLINKS = (
     '</div>'
 )
 
-def bar_card(name, ctype, address, dist1_label, dist1_text, dist2_label, dist2_text, gmap_url, website=None, menu=None, tripadvisor=None, w3w=None, qr=None):
+def bar_card(name, ctype, address, dist1_label, dist1_text, dist2_label, dist2_text, gmap_url, website=None, menu=None, tripadvisor=None, w3w=None, qr=None, photo=None):
     links = f'<a class="pill" href="{esc(gmap_url)}" target="_blank">Map</a>'
-    if website:
+    website_target = menu or website
+    if not photo and website:
         links += f'<a class="pill pill-website" href="{esc(website)}" target="_blank">Website</a>'
     if menu:
         links += f'<a class="pill pill-weblink" href="{esc(menu)}" target="_blank">Menu</a>'
@@ -2060,8 +2060,17 @@ def bar_card(name, ctype, address, dist1_label, dist1_text, dist2_label, dist2_t
         f'<a class="place-qr-corner" href="{esc(qr_target)}" target="_blank" title="Scan or click for website">'
         f'<img src="data:image/png;base64,{qr}" alt="QR code to {esc(name)} website"></a>'
     ) if qr and qr_target else ''
+    photo_block = ''
+    if photo:
+        website_btn = f'<a class="pill place-website-btn" href="{esc(website_target)}" target="_blank">Website</a>' if website_target else ''
+        photo_block = (
+            f'<img class="place-photo" src="{esc(photo)}" alt="{esc(name)}" '
+            f'loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'">'
+            f'<div class="place-photo-btn">{website_btn}</div>'
+        )
     return f'''
     <div class="place-card">
+      {photo_block}
       <div class="place-name">{esc(name)} {w3w_html}</div>
       <div class="place-type">{esc(ctype)}</div>
       <div class="place-addr">{esc(address)}</div>
@@ -2079,7 +2088,8 @@ HRC_BARS = [
              'https://www.google.com/maps/dir/?api=1&origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&destination=150%20Piccadilly%2C%20London%20W1J%209BR&travelmode=walking',
              website='https://www.theritzlondon.com/dine-with-us/rivoli-bar/',
              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d3172284-Reviews-The_Rivoli_Bar-London_England.html',
-             w3w='jazz.choice.factories'),
+             w3w='jazz.choice.factories',
+             photo='https://www.theritzlondon.com/content/uploads/2026/07/The_Rivoli_Bar-1.avif'),
     bar_card('The Connaught Bar', "World-famous cocktail bar - a Mayfair institution, book ahead",
              'Carlos Pl, Mayfair, London W1K 2AL',
              'From Hard Rock', '~12 min walking',
@@ -2087,7 +2097,8 @@ HRC_BARS = [
              'https://www.google.com/maps/dir/?api=1&origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&destination=Carlos%20Pl%2C%20Mayfair%2C%20London%20W1K%202AL&travelmode=walking',
              website='https://www.maybourne.com/en/hotels/the-connaught/restaurants-bars/connaught-bar',
              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d6519169-Reviews-The_Connaught_Bar-London_England.html',
-             w3w='tamed.zooms.pest'),
+             w3w='tamed.zooms.pest',
+             photo='https://library.maybourne.com/transform/ab0099e8-c28d-42ad-8ebf-8ec43a907141/CON-CONNAUGHT-BAR-01'),
     bar_card('Dukes Bar', "Legendary martini bar (since 1908) - birthplace of the 'Vesper' martini style",
               "35 St James's Pl, London SW1A 1NY",
               'From Hard Rock', '~15 min walking',
@@ -2095,7 +2106,8 @@ HRC_BARS = [
               'https://www.google.com/maps/dir/?api=1&origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&destination=35%20St%20James%27s%20Place%2C%20London%20SW1A%201NY&travelmode=walking',
               website='https://www.dukeshotel.com/dukes-bar/',
               tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1014398-Reviews-DUKES_Bar-London_England.html',
-              w3w='less.candy.award'),
+              w3w='less.candy.award',
+              photo='https://www.dukeshotel.com/cmsGallery/imagerow/34383/resized/1920x1080/dukes_bar_with_maurizio_schiavone_1.jpg'),
     bar_card('Blue Bar at The Berkeley', 'Sophisticated hotel cocktail bar in Knightsbridge, David Collins-designed interior',
               'Wilton Pl, Knightsbridge, London SW1X 7RL',
               'From Hard Rock', '~26 min walking',
@@ -2103,7 +2115,8 @@ HRC_BARS = [
               'https://www.google.com/maps/dir/?api=1&origin=150%20Old%20Park%20Lane%2C%20Mayfair%2C%20London%20W1K%201QZ&destination=Wilton%20Place%2C%20Knightsbridge%2C%20London%20SW1X%207RL&travelmode=walking',
               website='https://www.the-berkeley.co.uk/blue-bar',
               tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d23586783-Reviews-Blue_Bar_The_Berkeley-London_England.html',
-              w3w='flame.fears.retail'),
+              w3w='flame.fears.retail',
+              photo='https://library.maybourne.com/transform/a08e2301-b7c5-4e95-85f9-5e85b754d9e6/BER-THE-BERKELEY-BAR-TERRACE-11'),
 ]
 
 MELIA_BARS = [
@@ -2113,7 +2126,8 @@ MELIA_BARS = [
               "To Hard Rock", "~25 min - Bakerloo line from Regent's Park/Great Portland Street to Piccadilly Circus, change to Piccadilly line to Hyde Park Corner, then ~5 min walk",
               'https://www.google.com/maps/dir/?api=1&origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&destination=5%20Clipstone%20St%2C%20London%20W1W%206BB&travelmode=walking',
               website='https://www.theluckypig.co.uk/',
-              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d2659449-Reviews-The_Lucky_Pig_Cocktail_Bar-London_England.html'),
+              tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d2659449-Reviews-The_Lucky_Pig_Cocktail_Bar-London_England.html',
+              photo='https://static.wixstatic.com/media/4c06d9_ce1851936556406e8a02149cfe20343f~mv2.jpg/v1/fit/w_2500,h_1330,al_c/4c06d9_ce1851936556406e8a02149cfe20343f~mv2.jpg'),
     bar_card('The George, Fitzrovia', 'Grade II listed 18th-century corner pub with an ornate Italianate facade',
               '55 Great Portland St, London W1W 7LQ',
               'From The Melia', '~5 min walking',
@@ -2121,7 +2135,8 @@ MELIA_BARS = [
               'https://www.google.com/maps/dir/?api=1&origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&destination=55%20Great%20Portland%20St%2C%20London%20W1W%207LQ&travelmode=walking',
               website='https://thegeorge.london/',
               tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d6405157-Reviews-The_George-London_England.html',
-              w3w='moss.fend.agrees'),
+              w3w='moss.fend.agrees',
+              photo='https://thegeorge.london/wp-content/uploads/2025/10/The-george-2162-HDR-1.jpg'),
     bar_card('Artesian at The Langham', "Multi-award-winning hotel cocktail bar - voted World's Best Bar for years running",
               '1c Portland Pl, London W1B 1JA',
               'From The Melia', '~13 min walking',
@@ -2232,37 +2247,40 @@ LUNCH_26SEP = [
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d23136938-Reviews-Honest_Burgers_St_Katharine_Docks-London_England.html',
      'photo': 'https://www.honestburgers.co.uk/wp-content/uploads/2021/01/st-katharine-docks-5.jpg',
      'w3w': 'tracks.salt.toward'},
-    {'place': 'Bravas Tapas', 'type': 'Independent family-run Basque tapas and Spanish wine, waterside setting',
-     'address': 'St Katharine Docks, E Smithfield, London E1W 1AT', 'phone': '020 7481 1464',
-     'hours': 'Mon-Sat 12pm-10pm, Sun 12pm-9pm',
-     'website': 'https://www.bravastapas.com/',
-     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=St%20Katharine%20Docks%2C%20E%20Smithfield%2C%20London%20E1W%201AT&travelmode=walking",
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d6413446-Reviews-Bravas_Tapas-London_England.html',
-     'photo': 'https://static.wixstatic.com/media/f00c08_39b2b0ce7df6482ba50b607efeb6bab5~mv2.png/v1/fit/w_2500,h_1330,al_c/f00c08_39b2b0ce7df6482ba50b607efeb6bab5~mv2.png',
-     'w3w': 'bucks.deal.flat'},
+    {'place': 'The Hung, Drawn & Quartered', 'type': "Fuller's pub on the corner of Great Tower Street, right by the Tower - classic pub food, cask ale, full bar",
+     'address': '26-27 Great Tower Street, London EC3R 5AQ', 'phone': '020 7626 6123',
+     'hours': 'Mon-Fri 11am-11pm, Sat 12pm-10pm, Sun 12pm-6pm',
+     'website': 'https://www.hung-drawn-and-quartered.co.uk/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=26-27%20Great%20Tower%20Street%2C%20London%20EC3R%205AQ&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/g186338-d2256991',
+     'photo': 'https://www.hung-drawn-and-quartered.co.uk/-/media/sites/pubs-and-hotels/h/the-hung-drawn-and-quartered-_-p042/images/2024-update/internal/fullers_hdq_annabelstaff_240627_104606_1.jpg',
+     'w3w': 'anyway.ledge.look'},
 ]
 
 LUNCH_STRAND = [
-    {'place': 'Cora Pearl', 'type': 'Modern British comfort food in a townhouse setting - devilled eggs, pies, roasts',
-     'address': '30 Henrietta Street, Covent Garden, London WC2E 8NA', 'phone': '020 7324 7722',
-     'hours': 'Mon-Sat 12:30pm-10:45pm',
-     'website': 'https://www.corapearl.co.uk/',
-     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=30%20Henrietta%20Street%2C%20Covent%20Garden%2C%20London%20WC2E%208NA&travelmode=walking",
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d14761695-Reviews-Cora_Pearl_Restaurant-London_England.html',
-     'w3w': 'length.poet.trace'},
-    {'place': 'Osteria by Bocconcino', 'type': 'Italian osteria - handmade pasta, charcoal grill, pre-theatre menu with a complimentary Prosecco',
-     'address': '366 Strand, London WC2R 0JF', 'phone': '020 7499 4510',
-     'hours': 'Pre-theatre menu Mon-Fri 12pm-6:30pm; check website for full hours',
-     'website': 'https://osteriabocconcino.co.uk/',
-     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=366%20Strand%2C%20London%20WC2R%200JF&travelmode=walking",
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d32573828-Reviews-Osteria_by_Bocconcino-London_England.html',
-     'w3w': 'ports.opera.unrealistic'},
+    {'place': 'The Coal Hole', 'type': "Historic Nicholson's pub - once the Savoy's coal cellar, now classic pub food, pies and real ale",
+     'address': '91-92 Strand, London WC2R 0DW', 'phone': '020 7379 9883',
+     'hours': 'Sun-Wed 10am-11pm, Thu 10am-11:30pm, Fri-Sat 10am-12am',
+     'website': 'https://www.nicholsonspubs.co.uk/restaurants/london/thecoalholestrandlondon',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=91-92%20Strand%2C%20London%20WC2R%200DW&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d2362628-Reviews-The_Coal_Hole-London_England.html',
+     'photo': 'https://s0.geograph.org.uk/photos/23/68/236879_f6320d95.jpg',
+     'w3w': 'object.cups.gates'},
+    {'place': 'The Harp', 'type': "Award-winning Fuller's ale house - traditional ciders and perries, no food kitchen but a classic pre-theatre pint",
+     'address': '47 Chandos Place, Covent Garden, London WC2N 4HS', 'phone': '020 7836 0291',
+     'hours': 'Mon-Sat 11am-11pm, Sun 12pm-8pm',
+     'website': 'https://www.harpcoventgarden.com/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=47%20Chandos%20Place%2C%20Covent%20Garden%2C%20London%20WC2N%204HS&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/g186338-d3649095',
+     'photo': 'https://www.harpcoventgarden.com/-/media/sites/pubs-and-hotels/h/the-harp-covent-garden-_-p180/images/gallery-2022/dsc_5643.jpg',
+     'w3w': 'mild.knee.echo'},
     {'place': 'Dishoom Covent Garden', 'type': 'Bombay-style cafe - all-day breakfast, bacon naan rolls, biryani; expect a queue at peak times',
      'address': "12 Upper St Martin's Lane, London WC2H 9FB", 'phone': '020 7420 9320',
      'hours': 'Mon-Thu 8am-11pm, Fri 8am-12am, Sat 9am-12am, Sun 9am-11pm',
      'website': 'https://www.dishoom.com/covent-garden/',
      'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=12%20Upper%20St%20Martin%27s%20Lane%2C%20London%20WC2H%209FB&travelmode=walking",
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1863498-Reviews-Dishoom_Covent_Garden-London_England.html',
+     'photo': 'https://cdn.sanity.io/images/daku84np/production/b492504165ed7b5327abddaf1086b7a099f65418-1200x797.jpg?rect=0,86,1200,627&w=1200&h=627&fit=crop&auto=format',
      'w3w': 'holds.weedy.sand'},
     {'place': 'Hawksmoor Seven Dials', 'type': 'British steakhouse - Sunday roasts, steaks and a well-regarded weekend brunch',
      'address': '11 Langley Street, London WC2H 9JG', 'phone': '020 7420 9390',
@@ -2270,6 +2288,7 @@ LUNCH_STRAND = [
      'website': 'https://thehawksmoor.com/locations/seven-dials/',
      'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=11%20Langley%20Street%2C%20London%20WC2H%209JG&travelmode=walking",
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1103687-Reviews-Hawksmoor_Seven_Dials-London_England.html',
+     'photo': 'https://thehawksmoor.com/wp-content/uploads/2022/03/seven-dials-04-X3.jpeg',
      'w3w': 'puns.drip.acting'},
 ]
 

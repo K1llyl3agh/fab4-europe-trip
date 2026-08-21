@@ -163,7 +163,7 @@
           "time": "9:00 AM",
           "event": "Tower of London Tour (#33605663)",
           "status": "Booked",
-          "address": null
+          "address": "Tower of London, London EC3N 4AB"
         },
         {
           "time": "10:45 AM",
@@ -175,7 +175,7 @@
           "time": "10:45 AM",
           "event": "River Tour (#33605662)",
           "status": "Booked",
-          "address": null
+          "address": "Tower Bridge Quay, St Katharine's Way, London E1W 1LD"
         },
         {
           "time": "11:30 AM",
