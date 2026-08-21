@@ -161,31 +161,25 @@
         },
         {
           "time": "9:00 AM",
-          "event": "Combo: 9:00am Tower of London Tour (#33605663)\n10:45am River Tour (#33605662)",
+          "event": "Tower of London Tour (#33605663)",
           "status": "Booked",
           "address": null
         },
         {
-          "time": "9:30 AM",
-          "event": "Tower of London / River Tour (continues)",
+          "time": "10:45 AM",
+          "event": "Tower of London Tour (continues)",
           "status": "Booked",
           "address": null
         },
         {
-          "time": "10:00 AM",
-          "event": "Tower of London / River Tour (continues)",
+          "time": "10:45 AM",
+          "event": "River Tour (#33605662)",
           "status": "Booked",
           "address": null
         },
         {
-          "time": "10:30 AM",
-          "event": "Tower of London / River Tour (continues)",
-          "status": "Booked",
-          "address": null
-        },
-        {
-          "time": "11:00 AM",
-          "event": "Tower of London / River Tour (continues)",
+          "time": "11:30 AM",
+          "event": "River Tour (continues)",
           "status": "Booked",
           "address": null
         },

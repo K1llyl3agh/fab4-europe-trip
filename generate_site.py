@@ -120,7 +120,8 @@ def weblink_for(name):
 EVENT_TRIPADVISOR = [
     ('dinner at albert schloss', 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d26909472-Reviews-Albert_s_Schloss_Soho-London_England.html'),
     ('dinner at the lighterman', 'https://www.tripadvisor.com/Restaurant_Review-g186338-d10121217-Reviews-The_Lighterman-London_England.html'),
-    ('combo: tower of london', 'https://www.tripadvisor.com/Attraction_Review-g186338-d187788-Reviews-Tower_of_London-London_England.html'),
+    ('tower of london tour', 'https://www.tripadvisor.com/Attraction_Review-g186338-d187788-Reviews-Tower_of_London-London_England.html'),
+    ('river tour', 'https://www.tripadvisor.com/Attraction_Review-g186338-d33301104-Reviews-Tower_of_London_River_Tour-London_England.html'),
     ("potential early lunch at harry's knightsbridge", 'https://www.tripadvisor.com/Restaurant_Review-g186338-d13224804-Reviews-Harry_s_Dolce_Vita_Knightsbridge-London_England.html'),
 ]
 
@@ -159,6 +160,8 @@ EVENT_W3W = [
     ('santa maria degli angeli', 'mouth.dished.cheaply'),
     ('transfer by private minibus to queen victoria', 'snipe.nipped.miss'),
     ('collect avis hire car', 'snipe.nipped.miss'),
+    ('tower of london tour', 'swift.blitz.funds'),
+    ('river tour', 'dunes.copy.miles'),
 ]
 
 def event_w3w_for(name):
@@ -167,32 +170,6 @@ def event_w3w_for(name):
         if keyword in n:
             return words
     return None
-
-# Some events need more than one what3words badge (e.g. a combo ticket where each
-# leg starts from a different spot). Keyed by a keyword match on the event name;
-# value is a list of (label, words) pairs rendered as a row of badges.
-EVENT_W3W_PAIRS = [
-    ('tower of london tour', [
-        ('Tower of London entrance', 'swift.blitz.funds'),
-        ('River Tour (Tower Bridge Quay)', 'dunes.copy.miles'),
-    ]),
-]
-
-def event_w3w_pairs_for(name):
-    n = name.lower()
-    for keyword, pairs in EVENT_W3W_PAIRS:
-        if keyword in n:
-            return pairs
-    return None
-
-def w3w_pairs_html(pairs):
-    items = ''.join(
-        f'<span style="display:inline-flex; align-items:center; gap:6px; margin:2px 10px 2px 0;">'
-        f'<a class="w3w-badge" href="https://what3words.com/{esc(words)}" target="_blank" title="what3words location">///{esc(words)}</a>'
-        f'<span style="color:var(--muted); font-size:.78rem;">{esc(label)}</span></span>'
-        for label, words in pairs
-    )
-    return f'<div class="ev-addr" style="display:flex; flex-wrap:wrap; margin-top:6px;">{items}</div>'
 
 LIGHTERMAN_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABi0lEQVR4nO2YwY7CMBBDn6v+/y97D54ksFqJE2G0AYTapj6Y0cRjR+bF53oF+CL+MeIG5c6y0izCa7UN0231wJAiVDm8HtSH6b56oFUTWeOxLl2YbkdIIAuM9UEebRAGK53ivxF7eHwSccP897IAOb+x2oXpHgQereBf3/G6C9Nt/TH3Rg3ciMdc7cJ0D0KuDbKGClNOjU7zH0MtZBHfESsyBsyB9dBsh1yrYyCl6sJ0G8IY2x6SKhmlR9SL6QZE/Km1HFiKoYwY92G6DaFY0loou24h6bz8chELImFhZduUIzszv1ggXHsmeyUrPk8/LpBLQQVJt6kKHKgf8kr7XncxZtZx/uMaCaZmiqKupann6UfybQauFTGdbv1A/cBmujEYnmy+Ozbfuqx7ZgzjEKQP0231eAyzyXR1LKQD/cfT+foQErLoY/NLyahB49QQkM/rjwdEgtzwI46Nb8n0jYj76clibJN5JtSF6UaE61C53Pq0Id7MowHiZg6YCjCejz4zv7Tg8UX0RPwAXk7F86HV554AAAAASUVORK5CYII='
 
@@ -346,6 +323,8 @@ def event_note_for(name):
     return None
 
 DIRECTIONS = [
+    ('tower of london tour', 'https://www.google.com/maps/dir/?api=1&origin=Longford%20Street%2C%20Regents%20Park%2C%20London%20NW1%203UP%2C%20UK&destination=Tower%20of%20London%2C%20London%20EC3N%204AB%2C%20UK&travelmode=transit'),
+    ('river tour', 'https://www.google.com/maps/dir/?api=1&origin=Tower%20of%20London%2C%20London%20EC3N%204AB%2C%20UK&destination=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD%2C%20UK&travelmode=walking'),
     ('drive from civitavecchia to talamone', 'https://www.google.com/maps/dir/?api=1&origin=Via%2016%20Settembre%2046%2C%20Civitavecchia%2C%20Italy&destination=Strada%20Vicinale%20delle%20Casacce%2C%2065%2C%2058010%20Talamone%2C%20Orbetello%2C%20Italy&travelmode=driving'),
     ('lunch option: agriturismo buratta', 'https://www.google.com/maps/dir/?api=1&destination=Strada%20Vicinale%20delle%20Casacce%2C%2065%2C%2058010%20Talamone%2C%20Orbetello%2C%20Italy&travelmode=driving'),
     ('drive from talamone to tuscany', 'https://www.google.com/maps/dir/?api=1&origin=Strada%20Vicinale%20delle%20Casacce%2C%2065%2C%2058010%20Talamone%2C%20Orbetello%2C%20Italy&destination=Via%20Roma%20191%2C%2050028%20Tavarnelle%20Val%20di%20Pesa%2C%20Italy&travelmode=driving'),
@@ -385,7 +364,8 @@ WEBLINKS_APPEND = [
     ('monaco and the old town', 'https://www.cunard.com/en-us/shore-excursions'),
     ('discover genoa shore excursion', 'https://www.cunard.com/en-us/shore-excursions'),
     ('easy pisa', 'https://www.cunard.com/en-us/shore-excursions'),
-    ('combo: tower of london', 'https://www.headout.com/tower-of-london-tickets/'),
+    ('tower of london tour', 'https://www.headout.com/tower-of-london-tickets/'),
+    ('river tour', 'https://www.toweroflondonrivertour.com/tickets/'),
     ('dinner in milan', 'https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html'),
     ('arrive milan - check-in at iq hotel milano', 'https://www.iqhotelmilano.it/'),
     ("lunch at harry's bar, cernobbio", 'https://www.harrysbarcernobbio.it/en/'),
@@ -543,7 +523,8 @@ INSTAGRAM = [
     ('monaco and the old town', 'https://www.instagram.com/cunardline/'),
     ('discover genoa shore excursion', 'https://www.instagram.com/cunardline/'),
     ('easy pisa', 'https://www.instagram.com/cunardline/'),
-    ('combo: tower of london', 'https://www.instagram.com/headout/'),
+    ('tower of london tour', 'https://www.instagram.com/headout/'),
+    ('river tour', 'https://www.instagram.com/toweroflondonrivertour/'),
     ('arrive milan - check-in at iq hotel milano', 'https://www.instagram.com/iqhotel_milano/'),
     ("lunch at harry's bar, cernobbio", 'https://www.instagram.com/harrysbarcernobbio/'),
     ('visit museo ferrari, maranello', 'https://www.instagram.com/museiferrari/'),
@@ -1474,8 +1455,6 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         ev_w3w = event_w3w_for(b['name'])
         w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(ev_w3w)}" target="_blank" title="what3words location">///{esc(ev_w3w)}</a>' if ev_w3w else ''
         ev_phone_html = f'<div class="ev-addr">&#128222; {esc(ev_phone)} {w3w_html}</div>' if ev_phone else (f'<div class="ev-addr">{w3w_html}</div>' if w3w_html else '')
-        ev_w3w_pairs = event_w3w_pairs_for(b['name'])
-        ev_w3w_pairs_html = w3w_pairs_html(ev_w3w_pairs) if ev_w3w_pairs else ''
         ev_note = event_note_for(b['name'])
         ev_note_html = f'<div class="ev-note">({ev_note})</div>' if ev_note else ''
         ev_qr = event_qr_for(b['name'])
@@ -1491,7 +1470,6 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
             <div class="ev-name">{esc_br(b['name'])} {badge(b['status'])} {logo_html}</div>
             {addr}
             {ev_phone_html}
-            {ev_w3w_pairs_html}
             {ev_note_html}
             {f'<div class="ev-link">{link_row}</div>' if link_row else ''}
             {ev_qr_html}
@@ -2236,37 +2214,74 @@ LUNCH_26SEP = [
      'website': 'https://www.dickensinn.co.uk/',
      'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=Marble%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201UH&travelmode=walking",
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1124979-Reviews-The_Dickens_Inn-London_England.html',
-     'photo': 'https://www.dickensinn.co.uk/wp-content/uploads/2026/06/The-Dickens-Inn-June-26-5261.jpg?format=auto'},
+     'photo': 'https://www.dickensinn.co.uk/wp-content/uploads/2026/06/The-Dickens-Inn-June-26-5261.jpg?format=auto',
+     'w3w': 'client.regime.thanks'},
     {'place': 'Coppa Club Tower Bridge', 'type': 'Riverside terrace and iconic igloos with Tower Bridge views - all-day dining, brunch and lunch bowls',
      'address': '3 Three Quays Walk, Lower Thames Street, London EC3R 6AH', 'phone': '020 8016 9227',
      'hours': 'Mon-Thu 9am-11pm, Fri-Sat 9am-12am, Sun 9am-10pm',
      'website': 'https://www.coppaclub.co.uk/tower',
      'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=3%20Three%20Quays%20Walk%2C%20Lower%20Thames%20Street%2C%20London%20EC3R%206AH&travelmode=walking",
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d10328438-Reviews-Coppa_Club_Tower_Bridge-London_England.html',
-     'photo': 'https://images.prismic.io/coppa/rEFWD5oZI4ZugV5Y_ADS_3451.jpg?auto=format,compress&rect=0,334,2000,1332&w=763&h=508'},
+     'photo': 'https://images.prismic.io/coppa/rEFWD5oZI4ZugV5Y_ADS_3451.jpg?auto=format,compress&rect=0,334,2000,1332&w=763&h=508',
+     'w3w': 'search.teams.herds'},
     {'place': 'Honest Burgers St Katharine Docks', 'type': 'British smashed-beef burgers and rosemary salted chips, right on the marina',
      'address': '1 Commodity Quay, London E1W 1AZ', 'phone': '020 4542 0590',
      'hours': 'Mon-Tue 11am-10pm, Wed-Sat 11am-11pm, Sun 11am-10pm',
      'website': 'https://www.honestburgers.co.uk/locations/st-katharine-docks/',
      'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=1%20Commodity%20Quay%2C%20London%20E1W%201AZ&travelmode=walking",
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d23136938-Reviews-Honest_Burgers_St_Katharine_Docks-London_England.html',
-     'photo': 'https://www.honestburgers.co.uk/wp-content/uploads/2021/01/st-katharine-docks-5.jpg'},
-    {'place': 'Cafe Rouge St Katharine Docks', 'type': 'French bistro classics (steak frites, croques, Beef Bourguignon burger) with a waterfront terrace',
-     'address': "Unit 4 Quayside, St Katharine's Way, London E1W 1BA", 'phone': '020 4530 7176',
-     'hours': 'Mon 9am-9pm, Tue-Sat 9am-10pm, Sun 9am-9pm',
-     'website': 'https://www.caferouge.com/restaurants/london/st-katherine-docks',
-     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=Unit%204%20Quayside%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201BA&travelmode=walking",
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1385610-Reviews-Cafe_Rouge_St_Katharine_Docks-London_England.html',
-     'photo': 'https://images.ctfassets.net/hhagtzhy2px1/3pIEU6pVvs0yEeI51945nP/c13af1700891cfc0ea185d7bd6bb17b2/SEO_Image.jpg'},
+     'photo': 'https://www.honestburgers.co.uk/wp-content/uploads/2021/01/st-katharine-docks-5.jpg',
+     'w3w': 'tracks.salt.toward'},
     {'place': 'Bravas Tapas', 'type': 'Independent family-run Basque tapas and Spanish wine, waterside setting',
      'address': 'St Katharine Docks, E Smithfield, London E1W 1AT', 'phone': '020 7481 1464',
      'hours': 'Mon-Sat 12pm-10pm, Sun 12pm-9pm',
      'website': 'https://www.bravastapas.com/',
      'gmap': "https://www.google.com/maps/dir/?api=1&origin=Tower%20Bridge%20Quay%2C%20St%20Katharine%27s%20Way%2C%20London%20E1W%201LD&destination=St%20Katharine%20Docks%2C%20E%20Smithfield%2C%20London%20E1W%201AT&travelmode=walking",
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d6413446-Reviews-Bravas_Tapas-London_England.html',
-     'photo': 'https://static.wixstatic.com/media/f00c08_39b2b0ce7df6482ba50b607efeb6bab5~mv2.png/v1/fit/w_2500,h_1330,al_c/f00c08_39b2b0ce7df6482ba50b607efeb6bab5~mv2.png'},
+     'photo': 'https://static.wixstatic.com/media/f00c08_39b2b0ce7df6482ba50b607efeb6bab5~mv2.png/v1/fit/w_2500,h_1330,al_c/f00c08_39b2b0ce7df6482ba50b607efeb6bab5~mv2.png',
+     'w3w': 'bucks.deal.flat'},
 ]
-LUNCH_26SEP_HTML = dinner_box('Lunch Suggestions (12:30-2:15pm) - near Tower Bridge / St Katharine Docks, a 5-8 min walk from the River Tour end point', LUNCH_26SEP)
+
+LUNCH_STRAND = [
+    {'place': 'Cora Pearl', 'type': 'Modern British comfort food in a townhouse setting - devilled eggs, pies, roasts',
+     'address': '30 Henrietta Street, Covent Garden, London WC2E 8NA', 'phone': '020 7324 7722',
+     'hours': 'Mon-Sat 12:30pm-10:45pm',
+     'website': 'https://www.corapearl.co.uk/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=30%20Henrietta%20Street%2C%20Covent%20Garden%2C%20London%20WC2E%208NA&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d14761695-Reviews-Cora_Pearl_Restaurant-London_England.html',
+     'w3w': 'length.poet.trace'},
+    {'place': 'Osteria by Bocconcino', 'type': 'Italian osteria - handmade pasta, charcoal grill, pre-theatre menu with a complimentary Prosecco',
+     'address': '366 Strand, London WC2R 0JF', 'phone': '020 7499 4510',
+     'hours': 'Pre-theatre menu Mon-Fri 12pm-6:30pm; check website for full hours',
+     'website': 'https://osteriabocconcino.co.uk/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=366%20Strand%2C%20London%20WC2R%200JF&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d32573828-Reviews-Osteria_by_Bocconcino-London_England.html',
+     'w3w': 'ports.opera.unrealistic'},
+    {'place': 'Dishoom Covent Garden', 'type': 'Bombay-style cafe - all-day breakfast, bacon naan rolls, biryani; expect a queue at peak times',
+     'address': "12 Upper St Martin's Lane, London WC2H 9FB", 'phone': '020 7420 9320',
+     'hours': 'Mon-Thu 8am-11pm, Fri 8am-12am, Sat 9am-12am, Sun 9am-11pm',
+     'website': 'https://www.dishoom.com/covent-garden/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=12%20Upper%20St%20Martin%27s%20Lane%2C%20London%20WC2H%209FB&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1863498-Reviews-Dishoom_Covent_Garden-London_England.html',
+     'w3w': 'holds.weedy.sand'},
+    {'place': 'Hawksmoor Seven Dials', 'type': 'British steakhouse - Sunday roasts, steaks and a well-regarded weekend brunch',
+     'address': '11 Langley Street, London WC2H 9JG', 'phone': '020 7420 9390',
+     'hours': 'Mon-Thu 12pm-3pm & 5pm-10:30pm, Fri-Sat 12pm-3pm & 5pm-11pm, Sun 12pm-9:30pm',
+     'website': 'https://thehawksmoor.com/locations/seven-dials/',
+     'gmap': "https://www.google.com/maps/dir/?api=1&origin=Vaudeville%20Theatre%2C%20Strand%2C%20London%20WC2R%200NH&destination=11%20Langley%20Street%2C%20London%20WC2H%209JG&travelmode=walking",
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1103687-Reviews-Hawksmoor_Seven_Dials-London_England.html',
+     'w3w': 'puns.drip.acting'},
+]
+
+LUNCH_26SEP_HTML = f'''
+<div class="dinner-box">
+  <div class="day-map-title">Lunch Suggestions (12:30-2:15pm)</div>
+  <p class="lede" style="margin:0 0 10px;">8 options in two areas &ndash; eat near the end of the River Tour, or head straight towards the Strand ready for Six at 4pm.</p>
+  <div class="option-box-sub"><strong>4 near the River Tour end (Tower Bridge / St Katharine Docks, 5-8 min walk):</strong></div>
+  <div class="place-grid">{''.join(place_card(p, with_review=True) for p in LUNCH_26SEP)}</div>
+  <div class="option-box-sub" style="margin-top:14px;"><strong>4 nearer the Strand (handy walk to Vaudeville Theatre for Six):</strong></div>
+  <div class="place-grid">{''.join(place_card(p, with_review=True) for p in LUNCH_STRAND)}</div>
+</div>'''
 
 SAT26_BARS_HTML = LUNCH_26SEP_HTML + f'''
 <div class="dinner-box">
