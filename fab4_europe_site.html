@@ -628,6 +628,15 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-london .tube-info-box { display:none !important; }
   body.printing-london .resto-list { display:none !important; }
   body.printing-london .london-quicklinks { display:none !important; }
+  /* Print Milan: show restaurant/event photos (normally stripped on print)
+     and tune page breaks so nothing splits mid-card or leaves an orphaned
+     heading - covers the base day, Options A/B/C and the dinner list. */
+  body.printing-milan .resto-list { display:flex !important; flex-direction:column !important; gap:14px !important; }
+  body.printing-milan .resto-item { display:flex !important; align-items:flex-start !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  body.printing-milan .resto-photo, body.printing-milan .ev-photo, body.printing-milan .place-photo, body.printing-milan .place-photo-btn { display:block !important; }
+  body.printing-milan .ev-photo-row { display:flex !important; }
+  body.printing-milan .ev-row { page-break-inside:avoid !important; break-inside:avoid !important; }
+  body.printing-milan .lede, body.printing-milan .ig-note { page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:avoid !important; }
   @page { margin: 8mm; }
 }
 @media (max-width:600px) {
