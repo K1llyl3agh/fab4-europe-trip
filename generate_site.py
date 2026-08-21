@@ -154,7 +154,6 @@ EVENT_W3W = [
     ('the republic hotel', 'sports.pocket.anchors'),
     ('fontana delle naiadi', 'mouth.dished.cheaply'),
     ('santa maria degli angeli', 'mouth.dished.cheaply'),
-    ('colosseum arena floor', 'food.reddish.dormant'),
     ('transfer by private minibus to queen victoria', 'snipe.nipped.miss'),
     ('collect avis hire car', 'snipe.nipped.miss'),
 ]
@@ -179,12 +178,16 @@ REPUBLIC_HOTEL_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABl0lEQVR
 CORTEFREDA_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABoklEQVR4nO2YvW0jQQyFP2oWUDgLuIArhdvBlXRQSdcBVYoLEMANDcziXTCSAuN8wQU2AxMTDZMPbx9/Zk38PY7TBwn4zsCJ3cxs2Tf2bV6ZmdlWgg2XRL8A7NthW5OUFXRbAMMBg2OFHsu+tlsFtkdm/9XSF/z8un0Rwb8yo19aQo8vI3gfCyBYuB4vv48feaxJF3sFNpQALf15APBRgW1GMvCmmGUrqQRbutLBRw96TBmVNXRLHz2UPnBJTXOI1WBT3Hl60NUS8Cq6KSQNfIAUo8f0Xgm2pEngSkaPAZJGL1QLSqSgS7p/1gJsJ+BYsdVt9QHs24CWNXqvpsEAp8e9uZXQbfbegFmnoWT0Qn4DHzC6HqOhTJ1KkughBT2aYk7VImxTtJZI0ZIyfjuxW1OcE+BYeVsxszJ1et9DZlubA6vGzHq8s/Bj9dEvwMJ1+VSCD0M5148Ab8mYg75SD2lJUzTFmJdldkvwpnj2t9FVxW+PaK8G1zfbWl5treC35zuL5eZnXc/5c7ltY6nA9nxn0dJHj/uCVKIW7Psf139l/gBxlzw1RY/RgwAAAABJRU5ErkJggg=='
 IQHOTEL_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAMYAAADGAQAAAACh4MLwAAABm0lEQVR4nO2YsW3kQAxFn5YDbDjqYEvhdnAlHbYzqhR3QIUGRvgXjGwHPsPABbcMzEjCTx5IkfzUIv4ex+ULAX4UQAlg0gB6mGYifTyf7QIuiX25pg98cior5O0CLMsd/LjF9eU+9jv70v4zwTfKZslxexzr0wi+VLqOdQPa0wg+RwMEjW20u72s2n/RxV6B7QLbsizsv6/p4A2OZVnWCmxoRropJNn5rgIzBKVLssQkeowepqAXYcMUA5d0UuFV2CTeR65COR+KsIVJo09CVzJ6VGFL6EE/M2bpdCkr7FM0v7EepjAFYOmjxK4/Z4gpxhvq6GFFaipZokSJpZsC3MrUdJYSnB7jrG+NvCWmkMLSlcxuLeMtOVYaHLdHA/pDetTwlih9wOhBF7jS544okrerosEA5QZbm074+WwfPkQKpStdSY28fdxZAPjApycpwPZ2ZwE9dBbXX9cqvQBuCkvmDQhFavqu+ADLzRSjRw1P/qG0Hq3H60rb788h+BSnJ5csmYZk9KiyTxPA0i1dEl1QpE+Xn39c/6T8AVOJRghHuXccAAAAAElFTkSuQmCC'
 MELIA_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACVElEQVR4nO2ZQYrcQAxFX00ZelkNc4A5ivpmQ46UG5SPMgcIyMsBmZ+Fyh3IommSkO6CEb2wWwt/q76kL7mIW7a/3HTDl//v/MgBqgQEROu0TstjsXg0vjvwm6SqLnVJ1S2waKqS/PnxL0DBgNJ8f/1O63vrS8B2rj8ej+9+vz4uCwac/CHP/zP/cr0qzfdXYP0sthf7T8//V/x3qno00XpeTML/o/64/fYD5qg/wzqty5Ejt2jj3wnwu0XrGfPApJ4nkq8wAX6JjLZDk9ykLvWaveDR+O7A3+VUJ0jaW94Cc/DfTZLcqhQYICegus3AnxeglLLAXkr1NVoHTs7+1vdyeQp8Ny0JH6MQdY7I0zQHf7J5udXMXB/iLdNhBvw9Ws/gR+vXzK1u0Z6f/2TmglUn8dejnc3Cn4z8r5qDaUiIGfC7BVbVr0JidAT1afCn8pGy8kcbjYAJ+J9+K29atgtYVWcrC1S3eBp8N0xStNF/r7OA3Gg9JuDPC3ByFmC7APsZmmBVjgDPgO+mJe3HKUjVCYAhh2aI/7o0LVthK/t56J8AWJ8E323LyEfrmbxHF+i0KeI/9Bs5sA/905P8c8zv6lnzD+Vz8H8a/cN125lbxBzBYBL9kOZW1Y9C1PMV5uCPA1QN5VmPQTIn4qfH/wImie2yv/X9vAbrZ7mcnMjd4hPgu21yG7IHy0J63T/MML8f+9vtvcZaP4p8pWlfiMWWeDy+e/3tW2zvYPvZUogCn2WW/YPy+1Fq5uqjqM7An+v+GZoSfECuU2aoP+Xr++lD/T8B6iIpTJGI5+8AAAAASUVORK5CYII='
+VATICAN_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAACx0lEQVR4nO2bTW7jMAxGH0cGulRukKPYN5gzzZF6A/soOcAA9tKAAs5Cv41XnaJOalMLVXH8EBlmyU+kJMqn2/Tr8wwYZJBBBhlkkEHHhCS1DiYRkWERAe4Ci8QutuEp0zNoRwhVVaVXVdXZpW6M3znV0QfoZ6fNfeOLP5NBX4G69He5QP+ePkivwPR7Rvpbh7KAgAu7T8+g50PTdRX9cwH6mwjgVIZv+SWDXhLqNleWN5X+JtC/uwCsoizPmp5Bu0OPOgK8xqSVjj6gI05NR5wJShaRWnr72y7fYBZxeChGjZrK1ukaAO6i03WVKCvaG/adnkG7QyVq1AhBHmkAfOq0NvMRR4Zy1PABHYuESNc0SYgxXgsWNU4Apf/96h4aAckHlREVhVnE0aEcDfLrzqsOaONHXITk0GEWcWSoWARAdhTRNpKEUKXks80izgPF170KAClgzABLF72FDKTuxzyTQf8DFR1BChMaO5c8g2ogjWbMR5wHKkqB6RqQwa+iIyAibzlD5cMDtN/0DNo/HzHTmgW0o5zeNh1xKsipjtkzJKewvClwT4nL8anTM2gvqM1Q6ZyWmzr6vIGmqXRZPuIUUA4EXouKzF/EFKbXIiotapwBapKUea3hsh1U55Gb+YjjQ20W++Ht4z8WN7zVNc4AlcqFa6paNZWdFQVW1zgL1GaoiF4gV0HrqPEWZhFHhzb7I1LoKBrTtyNTlseH2p0wVT1U4QC0hS/zEYeHHvdZRuHQLjxLNRyra5wB2uzF7ovQhLq/LgUW8xHHhx7rGjVXlaOGyx7ElOUpoXgIeLo4jXWNXlfJoSNtnPhxz2TQV6AUJm4dMvgA08VpHLF0yPDk6Rn07VA+5ecV4mE+/1dynLh3sZsuczzIoXtPz6Ddoc2ZrtrV8xpl9WlrjeNDmzNdbefqJ7S57cWfySCDDDLIIIMM2gf6B1P5A9rtVqFFAAAAAElFTkSuQmCC'
+COLOSSEUM_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAADlklEQVR4nO2cTW7cMAyFHysDs5SBHmCOYt8syJF6A+soOUABeTmADHZBypadLIJ00vnp48IY2/NBMkA8UtSPKL5m6ccXQYAkSZIkSZIkSfL+SHHrAMwiSD2AJCIAFhHpYS/Mxhv3luRdkoOqqmZApA8qIxaRlwwgyUl1AiAjgqqq6p68RW9J3iU5V30ZMoDhrYNOsUDGWCAveREAgEvVldok+Rxkd3yQeogCCkH8vT7LCszXapPkc5M6RVUk6aoi5UUwZEDGb2uT5GOTVYeiwpVm7ooMuRdg/qlIElRSn+1fbUHysb6T5PeR7kPJ8p0AGfJPAAhFAPjt8KsrADwp+us2ST4XaT7U6Es6F2g6X0SBiyCdC4BY4FJ1jTZJPiMpIwBg7uplf5v6RfRVurVmdI02ST4LCSv5DDmopdNDDqqat1pQsPqQ38Ziv3R6rO8k+d2kvp4vYiVqxAKPYHNn4zIZAZOgWm28bW9J3hfpqqIZAKKa5pgjmSJpQZUlS4rUitrUIZI7UsZYoPrW+azHNJ8UiBeREUE9p547uIfduLck74tEk/aoFqssWgI0We5T3HMGLVaBZD5Ecm81loV25G6OFFWP8c2CHH2I5DtSxnjxdBoI6pfZJzzkJQfVae7glxv3luR9kVWHLGQFtYtFNQtepYY2BDWBYiwjuTOvD6nHKH9Wi0QYsnuOlYYm0IdIHq3WDnX1l6AuQXVI1uqQcmxP8mhbfahdpIjgNaPWpWqeTR8iubMmlmFd7WrBC3AfArZ8KHBsT/Jg2lpNioatUhQLGpWiD5F8b+1cRxPB9om1qRTA+hDJD6xRoSmW9ZmXqDencUfivD3Jj0kZsQgwn1yHUu97ONoJsvpWxqu0SfJZyDXP2dTHzaY52kSp7ETrsb6T5D8hReRk2xMB+MSrb2zdFjjO3OdK8mjbeMuTnYz9QKydDtkI6hDJD0id5pPaXmnpgyL1LkZI/eK78bfC0a17S/JuyH19SBsxMluzoGaagzpE8j25nfthBaHU1xT7VTrUcz98w4eMN+4tybskh6bQuIilR0lO6zYPoK4uWrg3iOTBttTZNwgBx8Wvzb+5fojkZ8i6AATzSQ/PuCaf5GfIeBFbGptsz5mPxvT17FP7Ml69TZKPTH507gewrqeWQRdRzIsAERDEdfb1sb6T5LeTScSOXbQT9IBFZNxSoaiKIS/CWEbyvQnPOCdJkiRJkiRJ/ufkH8y2Esl4zjl7AAAAAElFTkSuQmCC'
 
 EVENT_QR = [
     ('dinner at the lighterman', ('https://www.thelighterman.co.uk/', LIGHTERMAN_QR_B64)),
     ('dinner at albert schloss', ('https://www.albertsschloss.com/menu/?location=london', ALBERT_SCHLOSS_MENU_QR_B64)),
     ('dinner at hard rock cafe london', ('https://cafe.hardrock.com/menu.aspx', HARD_ROCK_MENU_QR_B64)),
     ('need to be at mousetrap', ('https://stmartinstheatre.co.uk/', MOUSETRAP_QR_B64)),
+    ('skip-the-line vatican museums', ('https://fab4-europe-trip.netlify.app/fab4-vatican-voucher.pdf', VATICAN_QR_B64)),
+    ('colosseum, roman forum & palatine hill tour begins', ('https://fab4-europe-trip.netlify.app/fab4-colosseum-voucher.pdf', COLOSSEUM_QR_B64)),
 ]
 
 def event_qr_for(name):
@@ -208,13 +211,12 @@ HOTEL_QR = {
     'The Level at Melia White House': MELIA_QR_B64,
 }
 
-TRAVEL_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB8klEQVR4nO2YQWrlQAxEX/9uyLINc4AcRYY5QI4UcqS5QfsoOcBAe/lBpmYhO2QxIbMZokUaL2xrUxSlUqmL+PAct49r8F38rIgmQJW8S9McvAff5hnRmqQq1WneR9WIT82EaG9AKSv7el9o+7PvawP20r4Q0D8U60R6adhR1hSA/nLa9bLBVrBjgT7a1wH6FK2gYcejYPv5e6mvK13sCdHeYCulAA+va9ufwYCjlLIkRNsIv9q5/5gNjsdf62JhYfmmA5oGVKlOqoam1etPPgdD83o0YlKA0UfN6LdI0rSqUTXoJ7eaRk/JbUwxcHCsXiQn5pY6CTfwrqoRyHOipQ/HpOF9+AlYaVNNRBppgNWTZxLrlsiKdDlEx6V1MPqId3+n25SJkWj/UG9E3NR+Owl4dPmpW3MspRJugAfmSOBwLDS2Y0mYatA8faBK3s81J6tuT24dO5at7c+llPuyPUgpN53g1moskrE/auTNCdOqhmNgdUZOUJ05p8MNuC80oA/vL3SVUo4Fva4ZlRBnnsYLpkiMSXMCxO6g4V1XWsir2yviRrsNx/Lm22lX9LK4Vgq2PSO3b0U7Fo6FUtZjQdPanrDL3u5qqL6toP3pYT6VPpsn3dAlvVshrz09Y6q5PGEiyfuIXvOulLot3zf5/634B7IimfqVQm6jAAAAAElFTkSuQmCC'
+TRAVEL_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAAC+UlEQVR4nO2cXWrjMBRGzx0Z+mhDF9Cl2DuYJQ2zpO4gXkoXUJAeAw7fPEiynXRg6IQ6aXz1ECLHB67g8un+SDHx6TH++DwDDjnkkEMOOeTQY0JWRoMNqcGsAxs4mVl3Mkj1heEm5jm0PdRLkmJ5qEP+CKKPYANBkqRzaDvzHNoeSkUA9PvlaPSxPANC9gMza25nnkM3g+zX25NsSA2MXVB1i3sxz6Evh5qLueBoGrsAtO8mUpg+uMSdr8mha6DqEa2ABIw/34E2YrRg/WFCJFhXsu58TQ5dA7GOGHMo+beP+kIvSYc7X5ND10BZI85K2SeD9miML0erv57Xuu98TQ5dAxWN6OOcc7YqypBHK0kxSId2co3YF2RDO1GSi3aqT3NaejJIT16P2AGUNaIqA9DHUEWBoKwbuXTlGrELqHjEyi1yoBlKCTNHlprwXWMnUI0jasJR/KC6wCqEcI3YB1Q1Ipagcr1DxMVfZgdxj9gNFASpwYYl12gnbAB0yEFl8MhyB9CsEUFSlgKp7hATwBJjBrlGPD6UK1TWvwKkDuvjqREgI3WQC1aA9fF5e/Mc2hxa5RrQljSjhBCLbhDkkeVOoNkjlh0CSoVqcRBNtVDhHvHoEIs8nBWwg1YF7DnhcI14fKh2ulIzQWomjR1Wc4pTo/HnhNFGNC7HJO58TQ5dA60rDtKcYbRVFGhLHCHl6qVrxINDczc8yPrXZzF2UQag+ZstHfKtzXNoc2jd6Sp6UNKMJZ7M73nNch/Q5fmIPMq0trvy8OxzF9C697lkHXNzY+l45qlrxE6g5U4XpAaWHka5udGwPlf1Ldbk0FVQXxug9LGUrenfnsTYQd4wRmuw4TbmObQ9tLrTJZVDt7X3yWhmK1f5Lmty6H+gyxs8Bob6eEJjF4HUIDg1AmFbm+fQvUCpekofQ7n0R2pqOnJz8xz6Omh1qm45QVdzjTnroEw9+3x86MOdLijVKJZ219wC8+zz8SHTv9+5HP7PZA455JBDDjnkEMAfIC9/VXSETqkAAAAASUVORK5CYII='
 CAR_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAN4AAADeAQAAAAB6HIMaAAAB9UlEQVR4nO2YMW7kMAxFn4YCUsrAHiBHkW+wRwr2ZpyjzAEC0OUAMv4W0qQbZJvFsAjhwjabB+KJolTE0zgvz3Pwk/wuiQLA5KM5TaOJNuvdRzraC3RJQD12jvIWcOwmKRLW9gKUsgMWSM6x05yj1BcCPY369Xb/5fXz43wPjv2FQP9I+zageQ3O96ivA/qWVlPaAoVRsM+dJo6EtBe4llKgW3SL/hYdOEspW0JatMJNAiQfbf3K18FQ9NHcoktu0RUMmMApaVEwW64CRTc5TSPj7oDkU1rJTT6aLJh/ctJOb0fzwbLCgtGSmjCaA4pu0WmumGNDTto+mh6oGrBqm9PbwAKaFqo0mptE6toypgOBSSYlNUFugclZ9mJS1lV2AWh+37Dbh4IK53a9v/tLgZ7GNOGr30pSdJOS9tvAJMkBmubnPPJkpH1wjiaTSz7os8L5aC/QB+hWgHMDsKByPbec3i4Zpr00l5R5ToA+miSf3s4npbcXjo8BFSroViqcG2WDY89owoyAtpYYzJk8pQkBrN12Tl+KPieHfLSXdVdzlHtZbaHCoI8joQkVKHSaamylqQBcC1j8zkeLoq/jub4mxrkR5zQBgPaHY68wuNptH/M+JB0tiq450K7LBB+Pw1q+2j56wjqdrd6VdXcoPzf5/y35F9YVsOVd3wvZAAAAAElFTkSuQmCC'
 ETA_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADCklEQVR4nO2cwW3jMBBF36wE+EgDKcCliJ1tTduBWYoLCCAeDUj4eyApK7klDiTHHh50kPzgIUxwZv6nbOLLI/35OgMOOeSQQw455NBzQlZH327nHtIRSNYDuX0g7hKeQ9tDgyRphLIs0hEYRmDQBNBJkvQR2i48h7aHctsAhnE2i+FqFnPPbd9Y7yC/ZE4OfQfqP99IJwHMKJ0mgNkY/v3ANzn0O6DPK0IARniH4WJAeO9F3is8h3aDgqQzANmMYexkduwkXQ6yCEilotgnPIe2hpKZmR3BIp1KrzGMYLE8n0ursVd4Dm2dNdZSdriayLC+8FHrfvA5OXQPROkqa/fZlV9eZ0DnIDGUe13JKaUHPT/4nBy6B2orYmyVwqJMlMs51HssooSviJeAgmQx99TyMkyQTpLFfKgZYxhnryNeAKqJYLUfjFByxXIpD6Cr2cX3iGeGatYg1Lzw4VknSVPNH7fhK+L5IenSU3IFq3pybtYWsBK6f8ecHLqn+zTChMgGMPeCCZHfJpJ1IkUwWJrQB5+TQ/dDOjOb2UliuBxkMZtBuFr1PlsdYXGX8Bza3tcYLuUYBMBsAlVzg/zWxOswbh+eQ5tDi0LVSohST44AoRaVteHwXuMloFUPUW+EqfShpc2ojWfVMX1FPD/UhGluykTbD6oAMdFaD1exXweyCFjMZma3czKa0DkfVGrMImvuEp5D+9QRVY0quaJ6HcXwqGKm+xovBrVDt1WcokiYKzHTfY1XgFZueE0T4WaOr10P3Nd4Deizr9FqzMXzWpqQYTlH4Svi+aG2H0zYX0lmx/a8vLkhqRzA3Cc8h3bwNcroJiUDpdgjcjdVHbMJl+5rvAy0FA437QHChMXQfI1acu4SnkPbQ4vVnU6LJJV7IB9EsmZ87RWeQztD6Qhmp6uRTlcre8Rw6bH4EOE5tCVUXFCo4lRtPKk15k9+k0MPDYVqbpTtIYar3bJGNbnGrr329Uvm5NB3oKZHlLEctaXT6n2NtcbtesSTQ+b/TOaQQw455JBDDn0T+g/R5zGFDCexrAAAAABJRU5ErkJggg=='
 INSURANCE_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAADiklEQVR4nO2cXYqkShBGT1yFfkyhF3CXku5smCXdHehSZgED+tigfPOQP6b2cAeGLrpsIh6KstKDJgQRkV9Glom/s/mfvwTBSSeddNJJJ5108vlIy9ZjZn0ZW82Y029mNq7lrvGT39bJpySjJGkBTQCzmQGdbASkpRPQSZJ0Jj/jbZ18SnKt8SW8mX1bgHnYDdgNwpsBnKLUPefp5MeT/eXa4rIj2HriMiDYe+YRxPpRz3Tyy5OdbKSTjUFiHsC+LWDjI5/p5I3JEoeCIEWa9XVjNhDrAPAiIwgDaAXJe83TyYeTs5mZDeXXuORgRFwA1h5gT8uyj3qmk1+ERGcDOmkKZfkVF5C0Xe/TdK95Ovk4MvkGUSox5xhYOqVlfZSUFv0Elct7zdPJx5HFhxaySDSFjeIq+ZuURreGcB9yslqTxmIKPKCJTm3MgSpDdp7LnLzYkctSFRS15TQ2BSl5U0w6NbU8ch9y8rC0tk8eEn8YsL4K2C3Ji/lbSWPzABanz3pbJ5+XNBvA7F8l9ymDXS6K5mE3opR0x1xd33GeTj6CrLlsI5XOqYjWRpPBCHUUz2VOXu2kCm15+RWrIDQV92n8ytf2Tp6siUMTVRAqrlJcKkuO+Rb3ISdbyx4BZfV+UoVK6xDFkcLmuczJix1xiJTQSlZrPqR66XHIyXdWFMatVjx16KRY51sWr6mdvNpRUzeXsTa/Jo2xpDuPQ06+t9rHuBuEn71BtwneTKyvaUCzAVF7b/HoILrXPJ18HFniUFCrBdWN1yaDTWnY45CTVzvVQ2oTGkCzD+v6kJP/R9pIp3SgLFXS0EQfG8lHOvR92L2P0cmLNdEnbdSHus1RZOtDPSoSkschJxvLLrFAsxprFmd1ryP1xwb3ISev1tRD01FEp8V8VwTspa78vQfNyXd2Wpd1yYfSQFqc1T00wGtqJ39jTQ+aAAw6WVaKXmo3GhAnMMJWDpnda55OPpo8/vfjOFAmLeWA/Tzk3z7ymU5+FbLtp05d1LV7MaWspqdITcXtuczJYiW2rAPE/8AIP03zsMgALC4o5bc5CUMltd1snk4+jrz+74dYX2SEfN5e6eQ95RK8J9/JP5HzANKPeqw+bMDaY1nK7svO2VO8rZNPQL6rh1T6qU+7HkeTrPcPOXm1Zn+Vcrq17Hq0mlGWIQHXh5w8menP9/zW/D/OnXTSSSeddNLJL0L+Arn3cypOrt8/AAAAAElFTkSuQmCC'
 SIX_MUSICAL_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAADh0lEQVR4nO2cW4rjMBBFb40N/alAL6CXIu9gljTMkmYH9lJ6B/JnQObOh1TyI90MNB3ymFsfiaPoIBuKUr1kI74m048vgoBIkSJFihQpUuT9kValBzCbYSpXPWyYe9gAwIbZZw03vluRd0lGkmTy0ciz2YDFOALg79NiADqSJPfk19cU+SRkX7/nExD/AAZ0GZhfCSD3hpBhMYHA3P692d2KfAgypsVsCGczOwHkew9MVje0K60p8snIQAJzD8QE2BDOBoR8Me1O7lbk7UnfywIBzOt429DmV1oclzJvm5B8rOcUeXVyMiubVzFBAGCDfwDzCwEsJSz7rjVFPgl5YV+mE8zH1m1ssWqqvmNNkc9FooTrMQEAOnIMuYx5qN+xzmtTSJLjYz2nyOuR2KR8Isn6keA5I5IcA4nIjJIukg6J3MlqhzgWI5OBYm5S1wxUk5CrckmHRLq4rclYTZCrT9vaUseqOYGUDoncS92ZUDWnXI2h6guZqoFC84ykQyI/ImMCML2dbfMTWAzTm6cXI89GulP0oM8p8nrk9JaB+N7DfqVaxgfQ0YZifRYrZXw7tZzRQz6nyCuQLY6vvg+qO416NaIrIVmRSPnUIo+y6tD608OvDNcrd4piUn5I5FFaEqhozhrgu151njMqY8oPifycLH0e8LYPaz1oaP4QEDJs+L41RT4Buat1HNLRaTdla5Fkh0RuZFcvA2r/UGsYir6hrUki7WUi97L6Q55UrPpS7FBJW6/WJ1A6JPIg7k63XvtNod6LZkVChuplIj8QNzJ56/YgrDW0XNPWtZafFZeJPIjXy1qRFcCm8LpRKa/Dyg6J3Mu6l3m2sf0VuGlJ8/yQfGqRR9k6zABKorG52CgRffJQX7UOkRfSr5cWufTE/EKLI2AxAZx+JhBzl9VPLfJf5FJO2Zt5Awh/n1Bq+Zjezn7UvpzwuPndirwjcpsfqtlGd52LBC+8RnpJTf6QyJ14RA9gPddRqvVhTRy1kCxB/pDIg2x86to2ncHartgy1tzaIemQyL34DgavjYVtv5kHZy6t9CEdEvk56a9r4Di/0H69m60d+0Agbfj2NUU+MtlfjISE+q6hcDZOpy5bTK8Z088MAosTj/WcIq9HHt/7QcwGIuSemHtYUaly3h6wOHa0292tyHskj3HZpuW1HU9cvWvFZSIvxfSOc5EiRYoUKVLkf07+BaymRNL2lYVyAAAAAElFTkSuQmCC'
 QV_DECKPLAN_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAAC+UlEQVR4nO2bTW6kMBCFX42RsjRSDtBHMTcbzc3wUXIDs2zJ6M3CLnB3ssnP0Iy7WCAgfGosKq9eFbYQn97ir88zgEEGGWSQQQYZ1CckdRuAKANkWkQArIIoIsCiN0wPeTyDjocCSTIBCGkVzj5DZHQEfIZMcCRJ3kLHPZ5Bx0OLCkAcHWVaXsgZgPxOQDkSGR73eAYdBg33F0IaBfGSgfAmIJbX9/Xpycdk0I9C8UIiJEAmOAL+qu7hp3/JoFNCqhGeABZAwpuAUVxmvFwFgCOwAK1SnHxMBn0HQusY4YiQPtrpDYEk55OPyaDvQEUjdgEgcJVyFC8ZxVEUBXnE4xl0OFQ1IjCDczEOKhmBGYCvO+6baUTP0PamixSUpoRGCQnAlTq03GJZo3to8xH1xVfjQJKzzyCTU8nY/3DyMRn0HahqxOyrUFSNSEDNJJ7VXu6pwyKiZ6jJGtrFdpowvGaSGU4lwyKid0g9QwKKCsw+V1NZa07XaIRljf4h/beHI5nURc5evQW1CNktp0VE11BTVWoJ2nat6mnS2LCI6B7St+8zABWK2pS4v2YR8QyQakQCdh9RQiBo4VmumbN8DqjNGvU0l4KjugfW6rNGiUVE79CNs9wrDN82tdVUmkY8A9T2I2boi/+oL1XNp0VE59BNh0o/bmiHSncliVg/4img5ruGuofajyi5Yjuy7xpPAm0+AlA9qF2I5rvGphbmI/qHyowZCVwHxmnIAFwWwGWJAgj8OgCLPOjxDDocamfC3OWPYisANB++LGt0D93Ps6zdKGyeATe9Kssa3UPNfKl9dkzTtt5io34PtYh4FkjXdJUQiOMqZSXXBKAs/oyjzqb6X8Zk0Feg+zVdAp8gIb1mAV4oYV6FWF6zhHmbs33yMRn0kxD5NqCZgf1ndJTJZwDLAJke/HgG/XPofk0X4K/CWKrNdSCwDohjKss3TCP6h96t6dq72Pt6ja36tFqjf+iDNV37zu1nYHPbycdkkEEGGWSQQQYdA/0FwawEsvURLRMAAAAASUVORK5CYII='
-
 WALK_ROUTES = [
     ('dinner at albert schloss', {
         'from': "Albert's Schloss",
@@ -347,8 +349,8 @@ WEBLINKS_APPEND = [
     ('wandering around oxford street', 'https://www.oxfordstreet.co.uk/'),
     ('visit waterstones piccadilly', 'https://www.waterstones.com/bookshops/piccadilly'),
     ('dinner at britannia restaurant', 'https://www.cunard.com/en-us/cruise-ships/queen-victoria/9'),
-    ('pristine sistine', 'https://www.walksofitaly.com/vatican-tours/pristine-sistine-chapel-tour/'),
-    ("colosseum arena floor & vip caesar's palace", 'https://www.walksofitaly.com/rome-tours/rome-caesars-palace-tour-colosseum/'),
+    ('vatican museums & sistine chapel tour begins', 'https://townsofitaly.com/en/rome/private-vatican-museums-early-entrance-tickets'),
+    ('colosseum, roman forum & palatine hill tour begins', 'https://www.grayline.com/tours/prime-small-group-up-to-10-people-for-colosseum-roman-forum-and-palatine-hill/'),
     ('marseille and the little train', 'https://www.cunard.com/en-us/shore-excursions'),
     ('monaco and the old town', 'https://www.cunard.com/en-us/shore-excursions'),
     ('discover genoa shore excursion', 'https://www.cunard.com/en-us/shore-excursions'),
@@ -505,8 +507,8 @@ INSTAGRAM = [
     ('visit waterstones piccadilly', 'https://www.instagram.com/piccadillywaterstones/'),
     ('dinner at britannia restaurant', 'https://www.instagram.com/cunardline/'),
     ('rhubarb gin & pepsi max at the commodore club', 'https://www.instagram.com/cunardline/'),
-    ('pristine sistine', 'https://www.instagram.com/walksofitaly/'),
-    ("colosseum arena floor & vip caesar's palace", 'https://www.instagram.com/walksofitaly/'),
+    ('vatican museums & sistine chapel tour begins', 'https://www.instagram.com/townsofitaly/'),
+    ('colosseum, roman forum & palatine hill tour begins', 'https://www.instagram.com/graylinerome/'),
     ('marseille and the little train', 'https://www.instagram.com/cunardline/'),
     ('monaco and the old town', 'https://www.instagram.com/cunardline/'),
     ('discover genoa shore excursion', 'https://www.instagram.com/cunardline/'),
@@ -2800,7 +2802,7 @@ def flag_for_where(where):
 # Dates (ISO) that still have an outstanding item in the Things To Do "need to book" list -
 # these drive the UNCONFIRMED tag on the Trip at a Glance timeline. Kept in sync manually
 # against site_data_places.json's need_to_book array.
-UNCONFIRMED_DATES = {'2026-09-14', '2026-09-26'}
+UNCONFIRMED_DATES = {'2026-09-26'}
 
 timeline_html = ''
 for t in travel_json:
@@ -3304,7 +3306,7 @@ FLIGHTS_TABLE_HTML = f'''
 
 NAV_SECTIONS = [
     ('flights', '&#9992;&#65039;', 'Flights'),
-    ('overview', '&#129517;', 'Overview'),
+    ('overview', '&#129517;', 'Trip at a Glance'),
     ('rome', '&#127963;&#65039;', 'Rome'),
     ('cruise', '&#128674;', 'Cruise'),
     ('tuscany', '&#127817;', 'Tuscany'),
@@ -3771,7 +3773,7 @@ HTML = f'''<!DOCTYPE html>
   </div>
   <p class="lede">Key trip documents, saved here so they're always at hand &ndash; open on screen or scan the QR code with your phone.</p>
   <div class="td-row">
-    <a class="pill pill-weblink td-btn" href="fab4-travel-docs.pdf" target="_blank">Travel Docs</a>
+    <a class="pill pill-weblink td-btn" href="fab4-travel-docs-v2.pdf" target="_blank">Travel Docs</a>
     <img class="td-qr" src="data:image/png;base64,{TRAVEL_DOCS_QR_B64}" alt="QR code to Travel Docs">
   </div>
   <div class="td-row">

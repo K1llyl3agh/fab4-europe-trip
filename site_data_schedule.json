@@ -391,55 +391,25 @@
         },
         {
           "time": "7:00 AM",
-          "event": "Pristine Sistine Early Morning Small Group Tour - entry 7:15am (4hrs)",
-          "status": null,
-          "address": "Vatican Museums / Sistine Chapel, Vatican City\nVisit Website: Walks of Italy"
+          "event": "Travel to Vatican meeting point (be there 15 min before tour start)",
+          "status": "Booked",
+          "address": "Viale Vaticano, top of the stairs next to Caffè Vaticano - look for the white \"Towns of Italy\" sign"
         },
         {
-          "time": "7:30 AM",
-          "event": "Pristine Sistine Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "8:00 AM",
-          "event": "Pristine Sistine Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "8:30 AM",
-          "event": "Pristine Sistine Tour (continues)",
-          "status": null,
-          "address": null
+          "time": "7:45 AM",
+          "event": "Skip-the-Line Vatican Museums & Sistine Chapel Tour begins - Towns of Italy, Booking Ref 5CJM745M (4 adults, ~3hrs)",
+          "status": "Booked",
+          "address": "Vatican Museums / Sistine Chapel, Vatican City"
         },
         {
           "time": "9:00 AM",
-          "event": "Pristine Sistine Tour (continues)",
+          "event": "Vatican Museums & Sistine Chapel Tour (continues)",
           "status": null,
           "address": null
         },
         {
-          "time": "9:30 AM",
-          "event": "Pristine Sistine Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "10:00 AM",
-          "event": "Pristine Sistine Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "10:30 AM",
-          "event": "Pristine Sistine Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "11:00 AM",
-          "event": "Pristine Sistine Tour (continues - ends approx. 11:15am)",
+          "time": "10:45 AM",
+          "event": "Vatican Museums & Sistine Chapel Tour ends",
           "status": null,
           "address": null
         },
@@ -474,50 +444,32 @@
           "address": "Via dei Fori Imperiali, Rome"
         },
         {
-          "time": "1:00 PM",
+          "time": "12:30 PM",
           "event": "Lunch near Piazza del Colosseo - pick from the 5 suggestions below",
           "status": null,
           "address": null
         },
         {
-          "time": "3:30 PM",
-          "event": "Colosseum Arena Floor & VIP Caesar's Palace Tour - meet 3:30pm (3.5hrs)",
-          "status": null,
-          "address": "Piazza del Colosseo, 1, 00184 Roma RM, Italy\nVisit Website: Walks of Italy"
+          "time": "2:15 PM",
+          "event": "Travel to Colosseum meeting point (be there 15 min before tour start)",
+          "status": "Booked",
+          "address": "Colle Oppio Park, Via delle Terme di Tito, corner of Via Nicola Salvi - look for staff carrying the \"I Love Rome\" logo"
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Colosseum, Roman Forum & Palatine Hill Tour begins - Gray Line Rome, Booking ID 202645831 (4 adults, ~3hrs)",
+          "status": "Booked",
+          "address": "Colosseum / Roman Forum / Palatine Hill, Rome"
         },
         {
           "time": "4:00 PM",
-          "event": "Colosseum/Caesar's Palace Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "4:30 PM",
-          "event": "Colosseum/Caesar's Palace Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "5:00 PM",
-          "event": "Colosseum/Caesar's Palace Tour (continues)",
+          "event": "Colosseum, Roman Forum & Palatine Hill Tour (continues)",
           "status": null,
           "address": null
         },
         {
           "time": "5:30 PM",
-          "event": "Colosseum/Caesar's Palace Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "6:00 PM",
-          "event": "Colosseum/Caesar's Palace Tour (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "6:30 PM",
-          "event": "Colosseum/Caesar's Palace Tour (continues - ends approx. 7:00pm)",
+          "event": "Colosseum, Roman Forum & Palatine Hill Tour ends",
           "status": null,
           "address": null
         }
@@ -528,9 +480,9 @@
       "title": "MONDAY (DAY 14) - 14 SEP",
       "events": [
         {
-          "time": "2:00 PM",
-          "event": "Transfer by private minibus to Queen Victoria - evening departure",
-          "status": "To Confirm",
+          "time": "12:00 PM",
+          "event": "Transfer by private minibus to Queen Victoria - 12pm pickup confirmed",
+          "status": "Booked",
           "address": "Civitavecchia Downtown, Via 16 Settembre 46, Cruise Ship Gate"
         },
         {

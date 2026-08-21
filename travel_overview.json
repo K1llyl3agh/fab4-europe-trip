@@ -107,7 +107,7 @@
     "hours": null,
     "fdk": "QF0001 - SYD-SIN PE ~ BA0012 SIN - LHR PE ~ BA0548 LHR - FCO Econ",
     "fgk": "QF0162 WLG - SYD BUSINESS BABY ~ QF0001 - SYD-SIN PE ~ BA0012 SIN - LHR PE ~ BA0548 LHR - FCO Business",
-    "notes": "SIN transit ~2hrs (T1) - BA12 SIN (T1) to LHR (T5) arrive 6.35am, then BA548 LHR (T5) to FCO (T3) depart 8.00am (both British Airways) - Business Gary & Karen / Economy Debbie & Tom"
+    "notes": "SIN transit ~2hrs (T1) - BA12 SIN (T1) to LHR (T5) arrive 6.35am, then BA548 LHR (T5) to FCO (T3) depart 8.00am (both British Airways) - Business Gary & Karen / Economy Deb & Tom"
   },
   {
     "date": "2026-09-11",
@@ -125,40 +125,40 @@
     "dow": "Saturday",
     "accom": "The Republic Hotel",
     "where": "Rome ",
-    "what": "Pristine Sistine Early Morning Small Group Tour",
-    "hours": "7.15am - ???",
+    "what": "Vatican Museums & Sistine Chapel Tour (booked, Towns of Italy)",
+    "hours": "7.45am - 10.45am",
     "fdk": null,
     "fgk": null,
-    "notes": null
+    "notes": "Meet 7.30am at Viale Vaticano, Ref 5CJM745M"
   },
   {
     "date": "2026-09-13",
     "dow": "Sunday",
     "accom": "The Republic Hotel",
     "where": "Rome ",
-    "what": "Colosseum Areana Floor & VIP Caesar's Palace",
-    "hours": "3.30pm - ?",
+    "what": "Colosseum, Roman Forum & Palatine Hill Tour (booked, Gray Line Rome)",
+    "hours": "2.30pm - 5.30pm",
     "fdk": null,
     "fgk": null,
-    "notes": null
+    "notes": "Meet 2.15pm at Colle Oppio Park, Booking ID 202645831"
   },
   {
     "date": "2026-09-14",
     "dow": "Monday",
     "accom": "Queen Victoria",
     "where": "Rome ",
-    "what": "Transfer by Private Minibus to Queen Victoria",
-    "hours": "Evening Departure",
+    "what": "Transfer by Private Minibus to Queen Victoria - 12pm pickup confirmed",
+    "hours": "12:00pm pickup, board & depart evening",
     "fdk": null,
     "fgk": null,
-    "notes": null
+    "notes": "Civitavecchia Cruise Ship Gate, evening departure"
   },
   {
     "date": "2026-09-15",
     "dow": "Tuesday",
     "accom": "Queen Victoria",
     "where": "Sea Day",
-    "what": null,
+    "what": "Gala Evening – Red and Gold (formal)",
     "hours": null,
     "fdk": null,
     "fgk": null,
@@ -202,7 +202,7 @@
     "dow": "Saturday",
     "accom": "Queen Victoria",
     "where": "La Spezia (Florence or Pisa)",
-    "what": "Easy Pisa (booked)",
+    "what": "Easy Pisa (booked) · Gala Evening – Roaring 20s (formal)",
     "hours": null,
     "fdk": null,
     "fgk": null,

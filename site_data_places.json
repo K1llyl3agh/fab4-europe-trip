@@ -188,7 +188,7 @@
     },
     {
       "place": "Vatican Museums / Sistine Chapel",
-      "type": "Sightseeing - booked (Sat 12 Sep, 7:15am, 4hrs)",
+      "type": "Sightseeing - booked (Sat 12 Sep, 7:45am, ~3hrs, Towns of Italy, Ref 5CJM745M)",
       "address": "Vatican Museums, Vatican City",
       "website": "https://www.museivaticani.va/",
       "gmap": "https://www.google.com/maps/search/?api=1&query=Vatican+Museums",
@@ -208,7 +208,7 @@
     },
     {
       "place": "Colosseum",
-      "type": "Sightseeing - booked (Sun 13 Sep, 3:30pm, 3.5hrs, Arena Floor & VIP Caesar's Palace)",
+      "type": "Sightseeing - booked (Sun 13 Sep, 2:30pm, ~3hrs, Roman Forum & Palatine Hill, Gray Line Rome, Booking ID 202645831)",
       "address": "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
       "website": "https://colosseo.it/en/",
       "gmap": "https://www.google.com/maps/search/?api=1&query=Colosseum+Rome",
@@ -424,18 +424,11 @@
       "date": "Sat 12 Sep",
       "item": "Book Vatican Necropolis (Scavi Tour) - Tomb of St Peter",
       "status": "To Book",
-      "notes": "Guided tour beneath St Peter's Basilica ending at the tomb believed to hold St Peter's remains - must be booked well in advance (small groups, no photos allowed). Slotted into Saturday afternoon (after the Pristine Sistine tour and lunch) as one of the free-afternoon options.",
+      "notes": "Guided tour beneath St Peter's Basilica ending at the tomb believed to hold St Peter's remains - must be booked well in advance (small groups, no photos allowed). Slotted into Saturday afternoon (after the Vatican Museums/Sistine Chapel tour and lunch) as one of the free-afternoon options.",
       "flag": "Book ahead - popular, limited daily slots.",
       "website": "https://www.basilicasanpietro.va/en/products/the-necropolis",
       "review": "https://www.tripadvisor.com/Attraction_Review-g187793-d195269-Reviews-Necropolis_of_Saint_Peter-Vatican_City_Lazio.html",
       "w3w": "searched.circling.supposed"
-    },
-    {
-      "date": "Mon 14 Sep",
-      "item": "Confirm transfer time to Queen Victoria",
-      "status": "To Confirm",
-      "notes": "Transfer by private minibus, Rome to Civitavecchia - likely mid-afternoon, evening departure. Gary checked with Lynaire on 30 July, awaiting a response.",
-      "website": "https://www.cunard.com/en-us/find-a-cruise"
     },
     {
       "date": "Sat 26 Sep",
@@ -525,19 +518,19 @@
       "day": "Sat (12)",
       "item": "Plan Saturday afternoon in Rome",
       "status": "To Confirm",
-      "notes": "Free from ~11:15am after the Sistine Chapel tour"
+      "notes": "Free from ~10:45am after the Vatican Museums/Sistine Chapel tour"
     },
     {
       "day": "Sun (13)",
       "item": "Plan Sunday morning in Rome",
       "status": "To Confirm",
-      "notes": "Free until the 3:30pm Colosseum tour"
+      "notes": "Free until the 2:30pm Colosseum tour"
     },
     {
       "day": "Mon (14)",
-      "item": "Confirm transfer time to Queen Victoria",
-      "status": "To Confirm",
-      "notes": "Likely mid-afternoon - what to do in Rome first thing that morning?"
+      "item": "Free morning in Rome before transfer",
+      "status": "Confirmed",
+      "notes": "12pm minibus pickup confirmed - free morning in Rome beforehand"
     },
     {
       "day": "Wed (16)",
