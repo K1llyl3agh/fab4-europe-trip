@@ -3812,6 +3812,10 @@ HTML = f'''<!DOCTYPE html>
   </div>
   <p class="lede">Emergency contacts back home for each couple, in case anyone needs to reach family while we're away.</p>
   <div class="ec-boxes">{EMERGENCY_CONTACTS_HTML}</div>
+  <div class="mandatory-fee-box">
+    <span class="currency-badge">i</span>
+    <span class="mandatory-fee-text">Infinity Holidays After-hours Emergency Assist: <strong>0800 232 666</strong> (NZ) &#47; <strong>+1 201 746 5104</strong> (overseas) &ndash; for urgent issues with any booking on the itinerary. (Separate from the Chubb Assistance insurance line on the Travel Cover PDF, <strong>+64 9 374 1775</strong>.)</span>
+  </div>
 </section>
 
 <section id="traveldocuments" class="print-block" data-section="traveldocuments">
