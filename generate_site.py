@@ -15,6 +15,7 @@ IMG = {
     'tuscany': b64('tuscany_map.png'),
     'milan': b64('milan_map.png'),
     'hero': b64('fab4_hero_photo_web.jpg'),
+    'hero_bg': b64('fab4-hero-bg-towerbridge.jpg'),
     'ship': b64('ship_web.jpg'),
     'qv8': b64('qv8.png'),
     'ship_at_sea': b64('ship_at_sea_web.jpg'),
@@ -2777,6 +2778,8 @@ def idp_row(name, has_idp, number, idx):
       <td>{number_html}</td>
     </tr>'''
 idp_html = ''.join(idp_row(n, has_idp, num, i) for i, (n, has_idp, num) in enumerate(IDP_PEOPLE))
+debtom_idp_html = ''.join(idp_row(n, has_idp, num, i) for i, (n, has_idp, num) in enumerate(IDP_PEOPLE) if n in ('Deb Gyde', 'Thomas Akhurst'))
+DEBTOM_EMERGENCY_HTML = _emergency_contacts_box_html(EMERGENCY_CONTACTS[1])
 
 DRIVE_TIMES = [
     ('Civitavecchia (car collection) &rarr; Agriturismo Buratta, Talamone', '~140 km', '~2h 00m', 'Coastal route via SS1 Aurelia'),
@@ -2869,7 +2872,7 @@ CSS = '''
 * { box-sizing: border-box; }
 body { margin:0; font-family:'Segoe UI','Source Sans Pro',system-ui,sans-serif; color:var(--ink); background:var(--page-bg); line-height:1.5; }
 a { color: inherit; }
-.hero { background: linear-gradient(135deg, rgba(11,31,58,.86) 0%, rgba(196,90,60,.78) 45%, rgba(91,155,213,.72) 100%), url('data:image/svg+xml;base64,__EUROPE_MAP_B64__') center/cover no-repeat, var(--navy); color:#fff; padding:56px 24px; }
+.hero { background: linear-gradient(rgba(11,31,58,.25), rgba(11,31,58,.25)), url('data:image/jpeg;base64,__HERO_BG_B64__') center/cover no-repeat, var(--navy); color:#fff; padding:56px 24px; }
 .hero-flags { font-size:1.9rem; letter-spacing:10px; margin:6px 0 4px; }
 .hero-inner { max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; text-align:center; }
 .hero-text { flex:1 1 380px; text-align:center; }
@@ -3110,6 +3113,7 @@ table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
 .eta-reminder.flashing { animation: eta-flash 1.1s ease-in-out infinite; }
 @keyframes eta-flash { 0%, 100% { background:#c0392b; } 50% { background:#e67e22; } }
 @media (prefers-reduced-motion: reduce) { .eta-reminder.flashing { animation: none; } }
+@media (max-width:700px) { .eta-reminder.flashing { animation: none; background:#c0392b; } }
 .red-callout { margin:18px 0; border:2px solid #c0392b; border-radius:10px; padding:16px 20px; background:#fdecec; }
 .red-callout-title { font-weight:800; color:#c0392b; font-size:1.08rem; margin:0 0 8px; }
 .red-callout p { margin:0 0 10px; color:#7a2020; font-size:.92rem; line-height:1.5; }
@@ -3182,7 +3186,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'debtodo', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -3325,6 +3329,7 @@ NAV_SECTIONS = [
     ('london', '&#127468;&#127463;', 'London'),
     ('places', '&#128506;&#65039;', 'Places &amp; Maps'),
     ('needtobook', '&#9989;', 'Things to Do'),
+    ('debtodo', '&#128100;', "Deb &amp; Tom's To-Do"),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
     ('dailyquiz', '&#129504;', 'Daily Quiz'),
 ]
@@ -3344,7 +3349,7 @@ nav_grid_html = ''.join(
     for sid, icon, label in NAV_SECTIONS
 )
 
-CSS = CSS.replace('__EUROPE_MAP_B64__', EUROPE_MAP_B64)
+CSS = CSS.replace('__HERO_BG_B64__', IMG['hero_bg'])
 
 HTML = f'''<!DOCTYPE html>
 <html lang="en">
@@ -3377,6 +3382,7 @@ HTML = f'''<!DOCTYPE html>
       <a class="print-mini print-mini-all no-print" href="{PRINT_ALL_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128424;&#65039;</span>Print All</a>
       <button class="print-mini no-print" id="factsToggleBtn" onclick="toggleFunFacts()"><span class="ic">&#127881;</span>Hide Fun Facts</button>
       <button class="print-mini no-print" onclick="printSection('funfacts')"><span class="ic">&#128424;&#65039;</span>Print Fun Facts</button>
+      <a class="print-mini no-print" href="https://www.cruisemapper.com/?imo=9320556" target="_blank" rel="noopener"><span class="ic">&#128674;</span>QV Now</a>
       <div class="fab4">Karen Nicholson &middot; Deb Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
     </div>
     <div class="hero-photo">
@@ -3713,6 +3719,37 @@ HTML = f'''<!DOCTYPE html>
       {passport_html}
     </table>
   </details>
+</section>
+
+<section id="debtodo" class="print-block" data-section="debtodo">
+  <div class="section-head-row">
+    <h2>Deb &amp; Tom's To-Do</h2>
+    <button class="print-btn no-print" onclick="printSection('debtodo')"><span class="ic">&#128424;&#65039;</span>Print</button>
+  </div>
+  <p class="lede">A separate checklist just for Deb &amp; Tom &ndash; kept apart from the main Things to Do list so it's easy to find.</p>
+
+  <h3>Emergency Contacts</h3>
+  <p class="tt-note">Still blank &ndash; please add at least one emergency contact each before we leave (see the matching boxes in the main Emergency Contacts section).</p>
+  <div class="ec-boxes">{DEBTOM_EMERGENCY_HTML}</div>
+
+  <div class="mandatory-fee-box">
+    <span class="currency-badge">i</span>
+    <span class="mandatory-fee-text">Also worth saving: the G&amp;K travel insurance 24/7 emergency line &ndash; Chubb Assistance, <strong>+64 9 374 1775</strong> (see the Travel Cover PDF in Travel Documents for full details).</span>
+  </div>
+
+  <h3>International Driving Permit (IDP)</h3>
+  <p class="tt-note">Whoever's driving in Italy needs a valid IDP alongside their normal licence. Tick boxes save in this browser only.</p>
+  <table class="ntb">
+    <tr><th>Name</th><th>Have IDP?</th><th>IDP Number</th></tr>
+    {debtom_idp_html}
+  </table>
+
+  <h3>Still to Confirm</h3>
+  <p class="tt-note">Open items from the main Things to Do list that affect the whole group, including Deb &amp; Tom.</p>
+  <table class="ntb">
+    <tr><th>Date</th><th>Item</th><th>Status</th><th>Notes</th><th>Booked?</th><th>Links</th></tr>
+    {ntb_html}
+  </table>
 </section>
 
 <section id="hotels" class="print-block" data-section="hotels">
