@@ -2872,7 +2872,7 @@ CSS = '''
 * { box-sizing: border-box; }
 body { margin:0; font-family:'Segoe UI','Source Sans Pro',system-ui,sans-serif; color:var(--ink); background:var(--page-bg); line-height:1.5; }
 a { color: inherit; }
-.hero { background: linear-gradient(rgba(11,31,58,.25), rgba(11,31,58,.25)), url('data:image/jpeg;base64,__HERO_BG_B64__') center/cover no-repeat, var(--navy); color:#fff; padding:56px 24px; }
+.hero { background: linear-gradient(rgba(11,31,58,.15), rgba(11,31,58,.15)), url('data:image/jpeg;base64,__HERO_BG_B64__') center/cover no-repeat, var(--navy); color:#fff; padding:56px 24px; }
 .hero-flags { font-size:1.9rem; letter-spacing:10px; margin:6px 0 4px; }
 .hero-inner { max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; text-align:center; }
 .hero-text { flex:1 1 380px; text-align:center; }
