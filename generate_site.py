@@ -3082,6 +3082,21 @@ table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
 .eta-reminder.flashing { animation: eta-flash 1.1s ease-in-out infinite; }
 @keyframes eta-flash { 0%, 100% { background:#c0392b; } 50% { background:#e67e22; } }
 @media (prefers-reduced-motion: reduce) { .eta-reminder.flashing { animation: none; } }
+.red-callout { margin:18px 0; border:2px solid #c0392b; border-radius:10px; padding:16px 20px; background:#fdecec; }
+.red-callout-title { font-weight:800; color:#c0392b; font-size:1.08rem; margin:0 0 8px; }
+.red-callout p { margin:0 0 10px; color:#7a2020; font-size:.92rem; line-height:1.5; }
+.red-callout p:last-child { margin-bottom:0; }
+.red-callout ul { margin:0 0 10px 20px; padding:0; color:#7a2020; font-size:.9rem; line-height:1.55; }
+.red-callout ul:last-child { margin-bottom:0; }
+.red-callout li { margin-bottom:4px; }
+.red-callout strong { color:#c0392b; }
+.gala-hi { color:#c0392b; font-weight:800; }
+.gala-badge { display:inline-block; background:#c0392b; color:#fff; font-weight:700; font-size:.68rem; letter-spacing:.03em; padding:2px 8px; border-radius:5px; margin-left:6px; vertical-align:middle; text-transform:uppercase; }
+.gala-dates-row { display:flex; flex-wrap:wrap; gap:18px; margin-top:6px; }
+.gala-date-item { font-size:.95rem; color:#7a2020; }
+.gala-date-item .gd-date { font-weight:800; color:#c0392b; }
+.gala-date-item .gd-theme { font-weight:800; color:#c0392b; }
+@media print { .red-callout { break-inside: avoid; page-break-inside: avoid; } }
 .japan-banner { text-align:center; padding:50px 20px 60px; background:var(--navy); color:#fff; }
 .japan-banner .jb-text { font-size:2rem; font-weight:800; letter-spacing:.03em; margin:0; }
 .japan-banner .jb-flag { font-size:2.4rem; display:block; margin-bottom:10px; }
@@ -3401,8 +3416,40 @@ HTML = f'''<!DOCTYPE html>
 <div class="sec-wrap sec-cruise print-block" data-section="cruise">
 <section id="cruise">
   <h2>Queen Victoria Cruise</h2>
-  <p class="lede">14 &ndash; 20 September &middot; Marseille &middot; Villefranche &middot; Genoa &middot; La Spezia</p>
+  <p class="lede">14 &ndash; 21 September (7 nights, round trip from Civitavecchia) &middot; Marseille &middot; Villefranche &middot; Genoa &middot; La Spezia</p>
   <p class="ig-note">'I' buttons link to that place's official Instagram page.</p>
+
+  <div class="red-callout">
+    <div class="red-callout-title">&#127881; Gala Evenings &ndash; V618D (confirmed from Voyage Info, booking 3Q8W5T)</div>
+    <div class="gala-dates-row">
+      <div class="gala-date-item"><span class="gd-date">Tue 15 Sep</span> (sea day) &ndash; <span class="gd-theme">Red and Gold</span></div>
+      <div class="gala-date-item"><span class="gd-date">Sat 19 Sep</span> (La Spezia/Pisa day) &ndash; <span class="gd-theme">Roaring 20s</span></div>
+    </div>
+    <p style="margin-top:10px;">Every other night on board is smart attire. Both gala nights are picked out in <strong>bold red</strong> in the itinerary table below so they can't be missed.</p>
+  </div>
+
+  <div class="red-callout">
+    <div class="red-callout-title">&#128179; Onboard Costs &amp; Local Taxes</div>
+    <p>Your AU-market fare already includes port taxes and government fees &ndash; <strong>no port on this itinerary charges a landing tax at the gangway</strong>. Italian and French tourist taxes only apply if you sleep ashore, which you don't on any of these port days.</p>
+    <ul>
+      <li><strong>Onboard hotel/service charge:</strong> US$18 per person, per day &ndash; roughly <strong>US$252 for the two of you</strong> across the 7-night voyage, billed to your onboard account in USD.</li>
+      <li><strong>Drinks:</strong> 18% gratuity added automatically to every bar/drinks charge on board.</li>
+      <li><strong>Ashore:</strong> entry tickets, transport and any ATM/FX conversion costs are on you &ndash; including the new &euro;2 Trevi Fountain entry ticket if you're revisiting Rome-area sights.</li>
+      <li><strong>Booking conditions clause 36</strong> lets Cunard pass on any tourist/landing taxes introduced after booking, and change the service charge rate before you sail.</li>
+    </ul>
+    <p><strong>Two things worth acting on:</strong> EES biometrics have been live at EU borders since April 2026, so allow extra time at Civitavecchia on embarkation day; and My Cunard onboard tour prices close about 4 days before sailing (~10 Sep) at roughly 10% below the on-board price, so book any extra shore tours before then.</p>
+  </div>
+
+  <div class="red-callout">
+    <div class="red-callout-title">&#128204; Booked Tours &amp; Port Notes</div>
+    <ul>
+      <li><strong>Wed 16 Sep &ndash; Marseille:</strong> Little Train tour booked.</li>
+      <li><strong>Thu 17 Sep &ndash; Villefranche/Monaco:</strong> Monaco Old Town tour booked. Villefranche is a <strong>tender port</strong> &ndash; the ship anchors offshore and you'll be ferried in by tender boat, so allow extra time to get ashore.</li>
+      <li><strong>Fri 18 Sep &ndash; Genoa:</strong> Discover Genoa tour booked.</li>
+      <li><strong>Sat 19 Sep &ndash; La Spezia:</strong> Easy Pisa tour booked, departs 7:45am.</li>
+    </ul>
+  </div>
+
   <div class="ship-banner">
     <img src="data:image/jpeg;base64,{IMG['ship']}" alt="Cunard Queen Victoria in port">
     <div class="deck-plan-btn-row no-print">
@@ -3419,11 +3466,11 @@ HTML = f'''<!DOCTYPE html>
   <table class="ttc">
     <tr><th>Day</th><th>Port</th><th>Arrives</th><th>Departs</th></tr>
     <tr><td>Mon 14 Sep</td><td>Civitavecchia (depart Rome)</td><td>&ndash;</td><td>Evening</td></tr>
-    <tr><td>Tue 15 Sep</td><td>At Sea</td><td>&ndash;</td><td>&ndash;</td></tr>
+    <tr><td class="gala-hi">Tue 15 Sep &#127881;</td><td class="gala-hi">At Sea <span class="gala-badge">Gala &ndash; Red and Gold</span></td><td>&ndash;</td><td>&ndash;</td></tr>
     <tr><td>Wed 16 Sep</td><td>Marseille, France</td><td>Early morning</td><td>Evening</td></tr>
-    <tr><td>Thu 17 Sep</td><td>Villefranche, France</td><td>Early morning</td><td>Evening</td></tr>
+    <tr><td>Thu 17 Sep</td><td>Villefranche, France (tender port)</td><td>Early morning</td><td>Evening</td></tr>
     <tr><td>Fri 18 Sep</td><td>Genoa, Italy</td><td>Early morning</td><td>Late evening</td></tr>
-    <tr><td>Sat 19 Sep</td><td>La Spezia (tours to Florence or Pisa)</td><td>Early morning</td><td>Evening</td></tr>
+    <tr><td class="gala-hi">Sat 19 Sep &#127881;</td><td class="gala-hi">La Spezia (tours to Florence or Pisa) <span class="gala-badge">Gala &ndash; Roaring 20s</span></td><td>Early morning</td><td>Evening</td></tr>
     <tr><td>Sun 20 Sep</td><td>At Sea</td><td>&ndash;</td><td>&ndash;</td></tr>
     <tr><td>Mon 21 Sep</td><td>Civitavecchia (disembark)</td><td>Early morning</td><td>&ndash;</td></tr>
   </table>
@@ -3437,7 +3484,7 @@ HTML = f'''<!DOCTYPE html>
   <h3>Onboard &ndash; Things to Check Out</h3>
   <table class="ttc">
     <tr><th>Venue</th><th>Notes</th></tr>
-    <tr><td>Gala evenings</td><td>Formal nights with themed menus, cocktails, decorations, music and dancing</td></tr>
+    <tr><td class="gala-hi">Gala evenings</td><td class="gala-hi">Tue 15 Sep (Red and Gold) &amp; Sat 19 Sep (Roaring 20s) &ndash; formal nights with themed menus, cocktails, decorations, music and dancing</td></tr>
     <tr><td>Princess Grill Restaurant</td><td>Reserved table each night, elevated menu, sea views</td></tr>
     <tr><td>Chart Room</td><td>Signature venue with zodiac-themed cocktails, dark woods, golden lighting</td></tr>
     <tr><td>Queens Room</td><td>Fencing classes, Afternoon Tea, live music, dancing</td></tr>
