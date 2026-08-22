@@ -1579,10 +1579,14 @@ ROLLING_STONES_SHOP = {
     'photo': 'https://therollingstonesshop.com/cdn/shop/files/133_2Q6A0102-Gavsy-Media.jpg',
     'w3w': 'catch.future.librarian',
 }
+ROLLING_STONES_SONG_URL = 'https://www.youtube.com/watch?v=Ef9QnZVpVd8'
 ROLLING_STONES_HTML = f'''
 <div class="shop-list" style="margin-top:14px;">
   <div class="shop-list-title">Also worth a look:</div>
   <div class="place-grid" style="max-width:340px;">{place_card(ROLLING_STONES_SHOP)}</div>
+  <div class="ev-link" style="margin-top:6px;">
+    <a class="pill pill-play" href="{esc(ROLLING_STONES_SONG_URL)}" target="_blank">&#9654; Play "You Can't Always Get What You Want"</a>
+  </div>
 </div>'''
 
 def ttc_row(t):
@@ -3176,6 +3180,7 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 @media (max-width:520px) { .resto-item { flex-direction:column; } .resto-photo { width:100%; height:160px; } }
 .pill { font-size:.75rem; text-decoration:none; background:var(--navy); color:#fff !important; padding:4px 11px; border-radius:999px; font-weight:600; }
 .pill-review { background:var(--gold); }\n.pill-booking { background:#1f8a5f; }\n.ev-link { margin-top:6px; }\n.pill-weblink { background:var(--cruise); }\n.pill-directions { background:#8a5a1f; }\n.pill-instagram { background:#c13584; padding:4px 10px; font-weight:800; }\n.pill-todo { display:inline-block; background:#d64545; color:#fff !important; font-size:.68rem; font-weight:800; padding:2px 9px; border-radius:999px; margin-left:6px; letter-spacing:.4px; vertical-align:middle; }\n.ev-logo { height:34px; width:34px; vertical-align:middle; margin-left:6px; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,.25); }\n.ev-photo { display:block; width:100%; max-width:320px; height:180px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); margin-top:8px; box-shadow:0 1px 5px rgba(0,0,0,.15); }\n@media print { .ev-photo { display:none; } }\n.ev-photo-row { display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }\n.ev-photo-row .ev-photo { margin-top:8px; flex:0 0 auto; }\n.walk-map-wrap { display:flex; align-items:center; gap:12px; margin-top:8px; flex:0 0 auto; }\n.walk-map { display:block; width:100%; max-width:320px; height:auto; border-radius:12px; border:3px solid var(--photo-frame); box-shadow:0 1px 5px rgba(0,0,0,.15); }\n.walk-info { font-size:.82rem; color:var(--ink); max-width:150px; }\n.walk-time { font-weight:700; margin-bottom:4px; }\n.walk-dist { color:var(--muted); margin-bottom:4px; }\n.walk-note { color:var(--muted); font-size:.78rem; }\n@media print { .walk-map-wrap { display:none; } }\n@media (max-width:900px) { .ev-photo-row { flex-direction:column; } .walk-map-wrap { margin-top:0; } }\n@media (max-width:600px) { .walk-map-wrap { flex-direction:column; align-items:flex-start; width:100%; } .walk-map { max-width:100%; } .walk-info { max-width:100%; margin-top:8px; } }\n.travel-opts { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; font-size:.82rem; }\n.travel-opts-title { font-weight:700; color:var(--muted); text-transform:uppercase; font-size:.72rem; letter-spacing:.4px; margin-bottom:6px; }\n.travel-opt { margin:4px 0; color:var(--ink); }\n.travel-opt-label { font-weight:700; margin-right:6px; }\n@media print { .travel-opts { display:none; } }\n.ig-note { font-size:.78rem; color:var(--muted); font-style:italic; margin:-14px 0 20px; }
+.pill-play { background:#111; color:#fff !important; }
 .shop-list { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; }
 .shop-list-title { font-size:.78rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.4px; margin-bottom:6px; }
 .shop-item { display:flex; align-items:center; gap:8px; margin:5px 0; flex-wrap:wrap; }
