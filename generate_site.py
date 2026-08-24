@@ -96,6 +96,7 @@ STATUS_CLASS = {
     'Booked': 'badge-booked',
     'To Book': 'badge-tobook',
     'To Confirm': 'badge-toconfirm',
+    'Not Confirmed': 'badge-notconfirmed',
     'Optional': 'badge-optional',
 }
 
@@ -1639,40 +1640,68 @@ def dinner_box(title, options):
 
 DINNER_11SEP = [
     {'place': 'Trimani Il Winebar', 'type': "Rome's original wine bar (est. 1821 as a wine merchant) - simple Roman menu, huge wine list, fair prices",
-     'address': 'Via Cernaia 37 - ~3 min walk', 'website': 'http://www.trimani.com/',
+     'address': 'Via Cernaia 37 - ~3 min walk', 'website': 'http://www.trimani.com/', 'w3w': 'thuds.guarded.slate',
      'hours': 'Mon-Sat 11:30am-3pm & 5:30pm-midnight (closed Sun)',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d798184-Reviews-Trimani_Il_Winebar-Rome_Lazio.html',
      'fact': "Trimani started life in 1821 as a family wine merchant business - it's still run by the same Trimani family six generations later, and was the first place in the world to actually call itself a \"Wine Bar\"."},
     {'place': 'Rifugio Romano', 'type': 'Cosy trattoria a couple of minutes from Termini - classic Roman pastas, friendly service',
-     'address': 'Via Volturno 12 - ~6 min walk', 'website': 'https://www.thefork.it/ristorante/rifugio-romano',
+     'address': 'Via Volturno 12 - ~6 min walk', 'website': 'https://www.thefork.it/ristorante/rifugio-romano', 'w3w': 'decency.dumpy.squeaks',
      'hours': 'Tue-Sun 12:30pm-11pm (closed Mon)',
      'review': 'https://www.tripadvisor.com/RestaurantsNear-g187791-d246155-Piazza_della_Repubblica-Rome_Lazio.html'},
     {'place': 'Osteria Quarantaquattro', 'type': 'Relaxed osteria near Piazza della Repubblica - Roman staples, good value set menus',
-     'address': 'Via Volturno area - ~6 min walk', 'website': 'https://www.thefork.it/',
+     'address': 'Via Aureliana 42/44 - ~6 min walk', 'website': 'https://www.thefork.it/', 'w3w': 'mild.inquest.late',
      'hours': 'Check ahead - hours not consistently published',
      'review': 'https://www.tripadvisor.com/RestaurantsNear-g187791-d246155-Piazza_della_Repubblica-Rome_Lazio.html'},
     {'place': 'Pizzeria Ristoro Est! Est!! Est!!!', 'type': "Rome's oldest pizzeria (since 1905) - thin-crust Roman-style pizza, great old-school atmosphere",
-     'address': 'Via Genova 32 - ~8 min walk', 'website': 'https://pizzeriaristoroestestest.com/en/',
+     'address': 'Via Genova 32 - ~8 min walk', 'website': 'https://pizzeriaristoroestestest.com/en/', 'w3w': 'between.lemons.ruins',
      'hours': 'Check ahead - typically lunch & dinner daily',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d696551-Reviews-Pizzeria_Ristoro_Est_Est_Est-Rome_Lazio.html',
      'fact': 'The odd name comes from a medieval legend: a bishop travelling to Rome sent his servant ahead to chalk "Est!" (Latin for "it is [good]") on the doors of inns with good wine. At Montefiascone the wine was so good the servant wrote "Est! Est!! Est!!!" three times - the bishop loved it so much he settled there for the rest of his life.'},
     {'place': 'Osteria Barberini', 'type': 'Cosy osteria near Piazza Barberini - known for truffle dishes and classic Roman cuisine',
-     'address': 'Via della Purificazione 21 - ~17 min walk', 'website': 'https://www.osteriabarberini.it/',
+     'address': 'Via della Purificazione 21 - ~17 min walk', 'website': 'https://www.osteriabarberini.it/', 'w3w': 'quest.shocking.hosts',
      'hours': 'Mon-Sat 12:30-2:30pm & 7-11pm (closed Sun)',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1573090-Reviews-Osteria_Barberini-Rome_Lazio.html'},
     {'place': "Trattoria dell'Omo", 'type': 'Probably the closest proper trattoria to Termini - traditional Roman menu that changes by the day (gnocchi on Thursdays)',
-     'address': 'Via Vicenza 18 - ~5 min walk', 'website': None,
+     'address': 'Via Vicenza 18 - ~5 min walk', 'website': None, 'w3w': 'dreams.appetite.builders',
      'hours': 'Daily 12pm-3pm & 7pm-10:45pm',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2324300-Reviews-Trattoria_dell_Omo-Rome_Lazio.html'},
     {'place': 'La Matriciana dal 1870', 'type': 'Rome institution since 1870 opposite the Opera House - the amatriciana it\'s named after, plus classic carbonara',
-     'address': 'Via del Viminale 44 - ~10 min walk', 'website': 'https://www.lamatriciana.it/en/',
+     'address': 'Via del Viminale 44 - ~10 min walk', 'website': 'https://www.lamatriciana.it/en/', 'w3w': 'span.arrow.rooks',
      'hours': 'Sun-Fri 12:15-3pm & 7:15-11pm (closed Sat)',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1086681-Reviews-La_Matriciana-Rome_Lazio.html'},
     {'place': 'Trattoria Monti', 'type': 'Long-running family trattoria near Piazza Vittorio serving Le Marche regional dishes - olive ascolane, tortello al rosso d\'uovo. Book ahead, it\'s popular',
-     'address': 'Via di San Vito 13 - ~12 min walk', 'website': None,
+     'address': 'Via di San Vito 13 - ~12 min walk', 'website': None, 'w3w': 'bandage.passion.sank',
      'hours': 'Check ahead - reservations recommended',
      'review': 'https://www.tripadvisor.com/Restaurants-g187791-zfn7230918-Rome_Lazio.html'},
 ]
+
+LUNCH_11SEP = [
+    {'place': 'Trattoria Nonna Fortunata', 'type': 'Family-run trattoria a couple of minutes from the hotel - honest Roman classics, good value lunch menu',
+     'address': 'Via Flavia 66 - ~4 min walk', 'website': 'https://www.nonnafortunata.it/', 'w3w': 'meal.courtyard.deals',
+     'hours': 'Check ahead - typically lunch & dinner, closed Sundays',
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2384540-Reviews-Trattoria_Nonna_Fortunata-Rome_Lazio.html',
+     'photo': 'https://images.squarespace-cdn.com/content/v1/67f4e3dd0a400b613561d162/df6b026d-6f4a-42b8-8723-32effaa92337/Picsart_25-04-08_11-01-25-945.jpg?format=1500w'},
+    {'place': 'Mercato Centrale Roma', 'type': 'Gourmet food hall inside Termini station - dozens of stalls (pizza, pasta, fish, gelato) under one roof, easy for a relaxed first lunch after landing',
+     'address': 'Via Giovanni Giolitti 36 (inside Roma Termini) - ~8 min walk', 'website': 'https://www.mercatocentrale.it/roma/', 'w3w': 'duck.exulted.firm',
+     'hours': 'Daily 8am-midnight',
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d10036090-Reviews-Mercato_Centrale_Roma-Rome_Lazio.html',
+     'photo': 'https://mercatocentrale.it/wp-content/uploads/2018/07/MCR_Location-1.jpg'},
+    {'place': 'Pinsere', 'type': 'Popular no-frills pinsa (Roman-style pizza) counter - quick, cheap, and very well rated, good for a casual bite',
+     'address': 'Via Flavia 98 - ~4 min walk', 'website': None, 'w3w': 'sporting.crashing.fussed',
+     'hours': 'Mon-Fri 7am-3pm & 5pm-9pm (closed weekends)',
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2611971-Reviews-Pinsere-Rome_Lazio.html'},
+]
+lunch_box_11sep = dinner_box('Lunch Suggestions (3 ideas near the hotel)', LUNCH_11SEP)
+
+TWOPM_11SEP = [
+    {'place': 'Caffè Trombetta', 'type': 'Well-regarded local coffee bar near the hotel - good espresso and pastries, easy stop before heading out',
+     'address': 'Via Marsala 46 - ~5 min walk', 'website': None, 'w3w': 'snails.herds.planet',
+     'hours': 'Check ahead - typically early morning to early evening, closed Sundays'},
+    {'place': 'Caffetteria Casina del Lago', 'type': 'Lakeside cafe inside Villa Borghese Gardens, right by the little boating lake - a nice spot for a coffee once you arrive at the park',
+     'address': 'Viale dell\'Aranciera 2, Villa Borghese', 'website': None, 'w3w': 'directly.coarser.feasts',
+     'hours': 'Check ahead - typically 9am-7pm, seasonal'},
+]
+twopm_box_11sep = dinner_box('2pm Free Time - Coffee Suggestions', TWOPM_11SEP)
 
 DINNER_12SEP = [
     {'place': 'Ai Tre Scalini - Bottiglieria dal 1895', 'type': 'Historic Monti wine bar (since 1895) - great wines by the glass, traditional small plates, lively atmosphere',
@@ -1806,7 +1835,7 @@ LUNCH_13SEP = [
 lunch_box_13sep = dinner_box('Lunch Suggestions Near Piazza del Colosseo (8 ideas, before the tour)', LUNCH_13SEP)
 
 EXTRA_BOX_BY_DAY = {
-    '11 SEP': dinner_box_11sep,
+    '11 SEP': lunch_box_11sep + twopm_box_11sep + dinner_box_11sep,
     '12 SEP': afternoon_box_12sep + dinner_box_12sep,
     '13 SEP': lunch_box_13sep + dinner_box_13sep,
 }
@@ -3152,6 +3181,7 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .w3w-badge:hover { background:#222; }
 .badge-tobook { background:#fdecd6; color:#b6591a; }
 .badge-toconfirm { background:#e5edfb; color:#1f4fa6; }
+.badge-notconfirmed { background:#fbe1e1; color:#c0392b; }
 .badge-optional { background:#f1eef8; color:#6a3fa0; }
 .place-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin:18px 0 30px; }
 .place-card { position:relative; background:var(--card-bg); border-radius:10px; padding:14px 16px; box-shadow:0 1px 5px rgba(0,0,0,.07); border-top:4px solid var(--gold); }
