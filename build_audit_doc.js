@@ -105,10 +105,11 @@ const items = [
   { num: 4, dateArea: 'Ongoing', item: 'International Driving Permit (IDP) – Gary’s is confirmed (IDP196978); Karen, Deb and Tom are not yet ticked. Deb & Tom now have their own IDP checklist on the new Deb & Tom’s To-Do page – still needs to be filled in.', kind: 'warn' },
 ];
 
-// ---------- Recent changes (last 2 updates made to the site) ----------
+// ---------- Recent changes (last 3 updates made to the site) ----------
 const recentChanges = [
   { date: '24/08/2026', time: '11:19am', text: 'Added Fiumicino (FCO) → Republic Hotel transfer detail to 11 Sept schedule, 3 lunch spots + 2 coffee suggestions near the hotel, and what3words codes for all 11 Sept restaurants.' },
   { date: '24/08/2026', time: '6:13pm', text: 'Fiumicino (FCO) → Republic Hotel transfer confirmed - status changed to Booked, removed from outstanding items and Things To Do.' },
+  { date: '25/08/2026', time: '3:26pm', text: "Added St. Peter's Basilica Entry with Audio Guide (Headout, confirmed) to 12 Sept schedule, 2:00-3:00pm - removed Vatican Necropolis (Scavi Tour) from Things To Do." },
 ];
 
 const gapCount = items.filter(i => i.kind === 'gap').length;
@@ -198,7 +199,7 @@ const footerTable = new Table({
             new TextRun({ children: [PageNumber.CURRENT], size: 12, color: GREY, font: 'Source Sans Pro' }),
             new TextRun({ text: ' of ', size: 12, color: GREY, font: 'Source Sans Pro' }),
             new TextRun({ children: [PageNumber.TOTAL_PAGES], size: 12, color: GREY, font: 'Source Sans Pro' }),
-            new TextRun({ text: `   |   Printed: ${dd}/${mm}/${yyyy} (Version 3.3)`, size: 12, color: GREY, font: 'Source Sans Pro' }),
+            new TextRun({ text: `   |   Printed: ${dd}/${mm}/${yyyy} (Version 3.4)`, size: 12, color: GREY, font: 'Source Sans Pro' }),
           ],
         })],
       }),
@@ -225,6 +226,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buf => {
-  fs.writeFileSync('Fab4_Audit_v3.3.docx', buf);
-  console.log('Wrote Fab4_Audit_v3.3.docx', buf.length, 'bytes');
+  fs.writeFileSync('Fab4_Audit_v3.4.docx', buf);
+  console.log('Wrote Fab4_Audit_v3.4.docx', buf.length, 'bytes');
 });

@@ -163,6 +163,8 @@ EVENT_W3W = [
     ('collect avis hire car', 'snipe.nipped.miss'),
     ('tower of london tour', 'swift.blitz.funds'),
     ('river tour', 'dunes.copy.miles'),
+    ('villa borghese gardens', 'soak.settle.sweated'),
+    ('terrazza montemartini', 'cactus.defended.avocado'),
 ]
 
 def event_w3w_for(name):
@@ -1690,16 +1692,26 @@ LUNCH_11SEP = [
      'address': 'Via Flavia 98 - ~4 min walk', 'website': None, 'w3w': 'sporting.crashing.fussed',
      'hours': 'Mon-Fri 7am-3pm & 5pm-9pm (closed weekends)',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2611971-Reviews-Pinsere-Rome_Lazio.html'},
+    {'place': 'La Famiglia dal 1968', 'type': 'Roman & Abruzzese trattoria right on the hotel\'s own street - pasta, pizza and mains in casual rooms or on a terrace, open continuously all day',
+     'address': 'Via Gaeta 66, 00185 Rome - ~1 min walk', 'website': 'https://www.ristorantelafamiglia.it/', 'w3w': 'dices.foster.mornings',
+     'hours': 'Daily, continuous hours 12:15pm-11pm',
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2149469-Reviews-La_Famiglia-Rome_Lazio.html'},
 ]
-lunch_box_11sep = dinner_box('Lunch Suggestions (3 ideas near the hotel)', LUNCH_11SEP)
+lunch_box_11sep = dinner_box('Lunch Suggestions (4 ideas near the hotel)', LUNCH_11SEP)
 
 TWOPM_11SEP = [
     {'place': 'Caffè Trombetta', 'type': 'Well-regarded local coffee bar near the hotel - good espresso and pastries, easy stop before heading out',
-     'address': 'Via Marsala 46 - ~5 min walk', 'website': None, 'w3w': 'snails.herds.planet',
+     'address': 'Via Marsala 46-48, 00185 Rome - ~5 min walk', 'website': 'https://www.caffetrombetta.it', 'w3w': 'snails.herds.planet',
      'hours': 'Check ahead - typically early morning to early evening, closed Sundays'},
     {'place': 'Caffetteria Casina del Lago', 'type': 'Lakeside cafe inside Villa Borghese Gardens, right by the little boating lake - a nice spot for a coffee once you arrive at the park',
      'address': 'Viale dell\'Aranciera 2, Villa Borghese', 'website': None, 'w3w': 'directly.coarser.feasts',
      'hours': 'Check ahead - typically 9am-7pm, seasonal'},
+    {'place': 'Danesi Caffè', 'type': 'Historic Rome coffee-roasting family (since 1905) - small stand-up bar near the hotel, excellent espresso',
+     'address': 'Via Volturno 2, 00185 Rome - ~5 min walk', 'website': 'https://www.danesicaffe.eu/', 'w3w': 'terminal.rival.opera',
+     'hours': 'Mon-Sat 7am-7:30pm (closed Sun)'},
+    {'place': 'Coffee Shop Fondi', 'type': 'Popular neighbourhood cafe near Termini - coffee, croissants, breakfast and panini',
+     'address': 'Via Milazzo 16, 00185 Rome - ~7 min walk', 'website': 'https://coffeeshopfondi.shop/', 'w3w': 'tell.diet.police',
+     'hours': 'Daily 8am-2:30pm'},
 ]
 twopm_box_11sep = dinner_box('2pm Free Time - Coffee Suggestions', TWOPM_11SEP)
 

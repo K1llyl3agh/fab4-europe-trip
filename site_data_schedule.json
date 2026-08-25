@@ -309,7 +309,7 @@
           "time": "12:30 PM",
           "event": "Check in at The Republic Hotel, freshen up",
           "status": null,
-          "address": null
+          "address": "Via Gaeta 61, 185 Rome"
         },
         {
           "time": "1:00 PM",
@@ -363,7 +363,7 @@
           "time": "5:00 PM",
           "event": "Pre-dinner drinks - Terrazza Montemartini (rooftop bar, Palazzo Montemartini)\nVisit Website: Palazzo Montemartini",
           "status": null,
-          "address": "Largo Giovanni Montemartini, Rome - ~10 min walk from hotel"
+          "address": "Largo Giovanni Montemartini, 00185 Rome - ~10 min walk from hotel"
         },
         {
           "time": "5:30 PM",
@@ -424,6 +424,12 @@
           "event": "Free afternoon in Rome - pick from the 6 suggestions below",
           "status": null,
           "address": null
+        },
+        {
+          "time": "2:00 PM",
+          "event": "St. Peter's Basilica Entry with Audio Guide (2:00-3:00pm) - Reserved Entry Ticket + Immersive Audio Guide + Digital Guidebook - Headout, confirmed",
+          "status": "Booked",
+          "address": "St. Peter's Basilica, Vatican City"
         }
       ],
       "stay": "Staying at The Republic Hotel, Rome"
