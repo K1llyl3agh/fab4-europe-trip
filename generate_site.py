@@ -574,6 +574,7 @@ def where_for_day(title):
 HOTEL_INFO = [
     {'name': 'The Republic Hotel', 'address': 'Via Gaeta 61, 185 Rome',
      'full_address': 'Via Gaeta 61, 00185 Rome, Italy',
+     'w3w': 'sports.pocket.anchors',
      'phone': '+39 06 8115 7001', 'email': 'therepublic@aghotels.it',
      'website': 'https://www.therepublichotel.it/',
      'booking_ref': 'Gary &amp; Karen: 5179180 &middot; Deb &amp; Tom: 5179179',
@@ -1482,7 +1483,14 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
             {ev_fact_html}
           </div>
         </div>'''
-    stay = f'<div class="ev-stay">\U0001F3E8 {esc(stay_with_address(day["stay"]))}</div>' if day.get('stay') else ''
+    stay_w3w = None
+    if day.get('stay'):
+        for h in HOTEL_INFO:
+            if h['name'] in day['stay'] and h.get('w3w'):
+                stay_w3w = h['w3w']
+                break
+    stay_w3w_html = f' <a class="w3w-badge" href="https://what3words.com/{stay_w3w}" target="_blank" title="what3words location">///{stay_w3w}</a>' if stay_w3w else ''
+    stay = f'<div class="ev-stay">\U0001F3E8 {esc(stay_with_address(day["stay"]))}{stay_w3w_html}</div>' if day.get('stay') else ''
     where = where_for_day(day['title'])
     where_html = f'<span class="day-loc">{esc(where)}</span>' if where else ''
     print_day_btn = f'<button class="print-mini print-day-btn no-print" onclick="printDay(\'{day_id}\')">Print Day</button>' if day_id else ''
