@@ -1,4 +1,4 @@
-import json, base64, re, datetime, html, urllib.parse
+import json, base64, re, datetime, html, urllib.parse, os
 
 sched = json.load(open('site_data_schedule.json'))
 places = json.load(open('site_data_places.json'))
@@ -2158,8 +2158,25 @@ def _ordinal(n):
         return f'{n}th'
     return f'{n}' + {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
 
-GENERATED_DATE = datetime.date.today()
-GENERATED_DATE_DISPLAY = f'{_ordinal(GENERATED_DATE.day)} {GENERATED_DATE.strftime("%B %Y")}'
+NZT = datetime.timezone(datetime.timedelta(hours=12))
+GENERATED_DT = datetime.datetime.now(NZT)
+GENERATED_DATE_DISPLAY = f'{_ordinal(GENERATED_DT.day)} {GENERATED_DT.strftime("%B %Y")}'
+GENERATED_TIME_DISPLAY = GENERATED_DT.strftime('%-I:%M%p NZT').lower().replace('nzt', 'NZT')
+GENERATED_TIMESTAMP_DISPLAY = f'{GENERATED_DATE_DISPLAY}, {GENERATED_TIME_DISPLAY}'
+
+def _load_and_increment_version():
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'site_version.txt')
+    try:
+        with open(path) as f:
+            last = int(f.read().strip())
+    except (FileNotFoundError, ValueError):
+        last = 500
+    new_version = last + 1
+    with open(path, 'w') as f:
+        f.write(str(new_version))
+    return new_version
+
+SITE_VERSION = _load_and_increment_version()
 
 def day_heading_display(title):
     """Build the full-date day-card heading, e.g. 'Thursday 24th September (Day 15)',
@@ -3818,7 +3835,7 @@ HTML = f'''<!DOCTYPE html>
     </div>
     <div class="hero-photo">
       <div class="view-counter no-print" id="viewCounter" title="Website views"><span class="ic">&#128065;&#65039;</span><span id="viewCounterNum">100</span> views</div>
-      <div class="view-counter last-updated no-print" title="When this website was last regenerated"><span class="ic">&#128260;</span> Last updated: {GENERATED_DATE_DISPLAY}</div>
+      <div class="view-counter last-updated no-print" title="When this website was last regenerated"><span class="ic">&#128260;</span> Last updated: {GENERATED_TIMESTAMP_DISPLAY} &middot; v{SITE_VERSION}</div>
       <img src="data:image/jpeg;base64,{IMG['hero']}" alt="The Fab 4 at dinner">
       <div class="hero-clock no-print" id="heroClock">&nbsp;</div>
       <div class="hero-countdown-wrap no-print">
