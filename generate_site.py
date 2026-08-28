@@ -876,6 +876,8 @@ DAILY_QUIZ = [
          'note': "Czech - Karel Capek's play R.U.R., from 'robota', meaning forced labour."},
         {'q': "Which spice is the world's most expensive by weight?", 'opts': ['Vanilla', 'Cardamom', 'Saffron', 'Cinnamon'], 'ans': 2,
          'note': 'Saffron - each crocus flower yields just three tiny stigmas, all picked by hand.'},
+        {'q': '\U0001F389 BONUS: What is the correct collective noun for a group of flamingos?', 'opts': ['A flock', 'A flamboyance', 'A parade', 'A colony'], 'ans': 1,
+         'note': "A flamboyance of flamingos - yes, that's the real term, and frankly they've earned it.", 'bonus': True},
     ]},
     {'date': 'Sat 12 Sep', 'day_num': 3, 'theme': 'Vatican & Sistine Chapel', 'qs': [
         {'q': 'Who painted the ceiling of the Sistine Chapel?', 'opts': ['Leonardo da Vinci', 'Raphael', 'Michelangelo', 'Botticelli'], 'ans': 2,
@@ -898,6 +900,8 @@ DAILY_QUIZ = [
          'note': '1989 - the border opened on the night of 9 November and the crowds did the rest.'},
         {'q': 'What is the collective noun for a group of crows?', 'opts': ['A murder', 'A parliament', 'A gaggle', 'A pod'], 'ans': 0,
          'note': 'A murder of crows - a parliament is owls and a gaggle is geese.'},
+        {'q': '\U0001F389 BONUS: What is the correct collective noun for a group of pugs?', 'opts': ['A wrinkle', 'A snore', 'A grumble', 'A squish'], 'ans': 2,
+         'note': 'A grumble of pugs - one of the more accurate collective nouns out there.', 'bonus': True},
     ]},
     {'date': 'Sun 13 Sep', 'day_num': 4, 'theme': 'Colosseum', 'qs': [
         {'q': 'In roughly what year did construction of the Colosseum finish?', 'opts': ['80 AD', '200 AD', '30 BC', '500 AD'], 'ans': 0,
@@ -920,6 +924,8 @@ DAILY_QUIZ = [
          'note': 'Spain - specifically Valencia, where rabbit and beans are more traditional than seafood.'},
         {'q': "What does 'RSVP' stand for?", 'opts': ['Reply Swiftly, Very Politely', "Repondez s'il vous plait", 'Received, Sent, Verified, Posted', 'Reserve Space, Verify Place'], 'ans': 1,
          'note': "French for 'please reply' - repondez s'il vous plait."},
+        {'q': '\U0001F389 BONUS: What is a baby puffin called?', 'opts': ['A chick', 'A puffling', 'A pufflet', 'A squab'], 'ans': 1,
+         'note': 'A puffling - genuinely one of the best words in the English language.', 'bonus': True},
     ]},
     {'date': 'Mon 14 Sep', 'day_num': 5, 'theme': 'Rome to the Cruise', 'qs': [
         {'q': "What is the name of the ship we're boarding today?", 'opts': ['Queen Mary 2', 'Queen Elizabeth', 'Queen Victoria', 'Queen Anne'], 'ans': 2,
@@ -942,6 +948,8 @@ DAILY_QUIZ = [
          'note': 'Casablanca (1942) - the line does not appear anywhere in the original script.'},
         {'q': 'What is the main ingredient in traditional hummus?', 'opts': ['Lentils', 'Chickpeas', 'White beans', 'Peas'], 'ans': 1,
          'note': 'Chickpeas, blended with tahini, lemon and garlic.'},
+        {'q': '\U0001F389 BONUS: What is the technical word for the smell of rain hitting dry earth?', 'opts': ['Petrichor', 'Pluviosity', 'Hydrosol', 'Geosmin rain'], 'ans': 0,
+         'note': "Petrichor - coined in 1964 from Greek words for 'stone' and the blood of the gods.", 'bonus': True},
     ]},
     {'date': 'Tue 15 Sep', 'day_num': 6, 'theme': 'Sea Day', 'qs': [
         {'q': 'The Mediterranean Sea connects to the Atlantic Ocean via which strait?', 'opts': ['Strait of Messina', 'Strait of Gibraltar', 'The Bosphorus', 'Strait of Otranto'], 'ans': 1,
@@ -964,6 +972,8 @@ DAILY_QUIZ = [
          'note': 'Mandarin Chinese - roughly 940 million people speak it as a first language.'},
         {'q': "How long is an elephant's pregnancy?", 'opts': ['9 months', '12 months', '18 months', '22 months'], 'ans': 3,
          'note': 'About 22 months - the longest gestation of any land animal.'},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of hedgehogs?', 'opts': ['A prickle', 'A spike', 'A huddle', 'A bristle'], 'ans': 0,
+         'note': 'A prickle of hedgehogs - though given how rarely they gather, you may never get to use it.', 'bonus': True},
     ]},
     {'date': 'Wed 16 Sep', 'day_num': 7, 'theme': 'Marseille, France', 'qs': [
         {'q': "Marseille is France's ___ largest city.", 'opts': ['Largest', 'Second-largest', 'Third-largest', 'Fifth-largest'], 'ans': 1,
@@ -986,6 +996,8 @@ DAILY_QUIZ = [
          'note': 'Van Gogh, in 1889, painted from the window of his room at an asylum in Saint-Remy.'},
         {'q': "Which country has won the most men's FIFA World Cups?", 'opts': ['Germany', 'Italy', 'Brazil', 'Argentina'], 'ans': 2,
          'note': 'Brazil, with five titles - and the only country to have played in every tournament.'},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of unicorns?', 'opts': ['A sparkle', 'A blessing', 'A glitter', 'A marvel'], 'ans': 1,
+         'note': 'A blessing of unicorns - purely mythical, but the dictionaries agree on the term anyway.', 'bonus': True},
     ]},
     {'date': 'Thu 17 Sep', 'day_num': 8, 'theme': 'Villefranche & Monaco', 'qs': [
         {'q': 'Monaco is the second-smallest country in the world. Which is the smallest?', 'opts': ['San Marino', 'Vatican City', 'Liechtenstein', 'Malta'], 'ans': 1,
@@ -1008,6 +1020,8 @@ DAILY_QUIZ = [
          'note': 'Q and Z - J and X are worth 8 each.'},
         {'q': 'In which year did the Titanic sink?', 'opts': ['1898', '1912', '1920', '1931'], 'ans': 1,
          'note': '1912, on her maiden voyage from Southampton to New York.'},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of jellyfish?', 'opts': ['A sting', 'A smack', 'A wobble', 'A drift'], 'ans': 1,
+         'note': "A smack of jellyfish - unpleasantly accurate if you've ever swum into one.", 'bonus': True},
     ]},
     {'date': 'Fri 18 Sep', 'day_num': 9, 'theme': 'Genoa, Italy', 'qs': [
         {'q': 'Which explorer, credited with reaching the Americas in 1492, was born in Genoa?', 'opts': ['Marco Polo', 'Amerigo Vespucci', 'Christopher Columbus', 'Ferdinand Magellan'], 'ans': 2,
@@ -1030,6 +1044,8 @@ DAILY_QUIZ = [
          'note': 'The trumpet, though he started out on the cornet as a boy in New Orleans.'},
         {'q': 'In tennis, what is a score of 40-40 called?', 'opts': ['Advantage', 'Deuce', 'Love', 'Set point'], 'ans': 1,
          'note': "Deuce - from the French 'a deux', meaning two more points are needed to win."},
+        {'q': '\U0001F389 BONUS: Which classic children\'s toy was originally invented and sold as a wallpaper cleaner?', 'opts': ['Silly Putty', 'Play-Doh', 'Slime', 'Etch A Sketch'], 'ans': 1,
+         'note': 'Play-Doh - it only became a toy in the 1950s once coal heating (and sooty wallpaper) fell out of fashion.', 'bonus': True},
     ]},
     {'date': 'Sat 19 Sep', 'day_num': 10, 'theme': 'La Spezia & Pisa', 'qs': [
         {'q': 'The Leaning Tower of Pisa started leaning almost immediately, mainly because of what?', 'opts': ['An earthquake', 'Soft, unstable ground', 'A design flaw in the bells', 'War damage'], 'ans': 1,
@@ -1052,6 +1068,8 @@ DAILY_QUIZ = [
          'note': "Te Reo Maori - literally 'be well' or 'be healthy'."},
         {'q': 'How many countries share a land border with China?', 'opts': ['Eight', 'Ten', 'Fourteen', 'Eighteen'], 'ans': 2,
          'note': 'Fourteen - tied with Russia for the most of any country.'},
+        {'q': '\U0001F389 BONUS: What is the plastic (or metal) tip on the end of a shoelace officially called?', 'opts': ['A ferrule', 'A tag', 'An aglet', 'A clasp'], 'ans': 2,
+         'note': 'An aglet - stops the lace from fraying and makes it easier to thread.', 'bonus': True},
     ]},
     {'date': 'Sun 20 Sep', 'day_num': 11, 'theme': 'Sea Day', 'qs': [
         {'q': 'Which is traditionally considered the longest river in the world?', 'opts': ['Amazon', 'Nile', 'Yangtze', 'Mississippi'], 'ans': 1,
@@ -1074,6 +1092,8 @@ DAILY_QUIZ = [
          'note': 'Vivaldi, around 1720 - four violin concertos, one for each season.'},
         {'q': 'On which ship did Charles Darwin make his famous scientific voyage?', 'opts': ['HMS Victory', 'HMS Beagle', 'HMS Endeavour', 'HMS Bounty'], 'ans': 1,
          'note': 'HMS Beagle - five years at sea that led to On the Origin of Species.'},
+        {'q': '\U0001F389 BONUS: How long can a snail sleep for in one stretch?', 'opts': ['A few hours', 'About a week', 'Up to 3 years', '10 years'], 'ans': 2,
+         'note': 'Up to 3 years - snails hibernate or estivate to survive conditions that are too cold, hot or dry.', 'bonus': True},
     ]},
     {'date': 'Mon 21 Sep', 'day_num': 12, 'theme': 'Tuscany (Talamone & Chianti)', 'qs': [
         {'q': 'What colour is the rooster on the seal of authentic Chianti Classico wine?', 'opts': ['Red', 'White', 'Black', 'Gold'], 'ans': 2,
@@ -1096,6 +1116,8 @@ DAILY_QUIZ = [
          'note': "Latin - literally 'and the rest'."},
         {'q': 'In cricket, what is a batter dismissed for zero said to have scored?', 'opts': ['A blank', 'A duck', 'A nil', 'A love'], 'ans': 1,
          'note': "A duck - said to come from 'duck's egg', the shape of the zero on the scoreboard."},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of ferrets?', 'opts': ['A business', 'A pack', 'A troop', 'A colony'], 'ans': 0,
+         'note': "A business of ferrets - it's unclear what business they're conducting.", 'bonus': True},
     ]},
     {'date': 'Tue 22 Sep', 'day_num': 13, 'theme': 'Tuscany Free Day', 'qs': [
         {'q': 'San Gimignano, near our hotel, is famous for its skyline of medieval what?', 'opts': ['Windmills', 'Towers', 'Bridges', 'Domes'], 'ans': 1,
@@ -1118,6 +1140,8 @@ DAILY_QUIZ = [
          'note': 'Hamlet - Tom Stoppard later gave the pair a whole play of their own.'},
         {'q': 'Which sea has no coastline at all?', 'opts': ['The Dead Sea', 'The Sargasso Sea', 'The Caspian Sea', 'The Coral Sea'], 'ans': 1,
          'note': 'The Sargasso Sea - bounded by ocean currents rather than by land.'},
+        {'q': "\U0001F389 BONUS: What is the small dot over the letters 'i' and 'j' officially called?", 'opts': ['A serif', 'A tittle', 'A gliff', 'A fleck'], 'ans': 1,
+         'note': "A tittle - so 'dotting your i's' is technically 'tittling'.", 'bonus': True},
     ]},
     {'date': 'Wed 23 Sep', 'day_num': 14, 'theme': 'Milan (Options Day)', 'qs': [
         {'q': "Roughly how long did Milan's Duomo take to complete, from start to its final touches?", 'opts': ['About 10 years', 'About 50 years', 'Nearly 6 centuries', '100 years'], 'ans': 2,
@@ -1140,6 +1164,8 @@ DAILY_QUIZ = [
          'note': 'English - well over a billion people speak it as a second language.'},
         {'q': 'The Great Fire of London happened in which century?', 'opts': ['The 15th', 'The 16th', 'The 17th', 'The 18th'], 'ans': 2,
          'note': 'The 17th - September 1666, starting in a bakery on Pudding Lane.'},
+        {'q': '\U0001F389 BONUS: What was the search engine Google originally called, before it was renamed?', 'opts': ['WebCrawler', 'BackRub', 'Googol', 'SearchMe'], 'ans': 1,
+         'note': "BackRub - named for its knack of analysing 'back links' between pages. Good call renaming it.", 'bonus': True},
     ]},
     {'date': 'Thu 24 Sep', 'day_num': 15, 'theme': 'London Arrival', 'qs': [
         {'q': 'What is the name of the river that flows through London?', 'opts': ['The Severn', 'The Thames', 'The Avon', 'The Mersey'], 'ans': 1,
@@ -1162,6 +1188,8 @@ DAILY_QUIZ = [
          'note': 'Steven Spielberg - the mechanical shark broke down so often he had to imply it instead.'},
         {'q': 'Which is the tallest species of tree?', 'opts': ['Douglas fir', 'Coast redwood', 'Mountain ash', 'Kauri'], 'ans': 1,
          'note': 'The coast redwood - the tallest known specimen stands over 115m.'},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of rhinoceroses?', 'opts': ['A crash', 'A stampede', 'A herd', 'A battalion'], 'ans': 0,
+         'note': "A crash of rhinos - about as subtle as you'd expect.", 'bonus': True},
     ]},
     {'date': 'Fri 25 Sep', 'day_num': 16, 'theme': "London (The Mousetrap)", 'qs': [
         {'q': "The Mousetrap, which we're seeing tonight, is the world's longest-running what?", 'opts': ['Musical', 'Play', 'Opera', 'Ballet'], 'ans': 1,
@@ -1184,6 +1212,8 @@ DAILY_QUIZ = [
          'note': "A word or phrase that reads the same in both directions - like 'racecar' or 'level'."},
         {'q': 'Which country has the longest coastline in the world?', 'opts': ['Russia', 'Australia', 'Canada', 'Indonesia'], 'ans': 2,
          'note': 'Canada - more than 200,000 km once all the Arctic islands are counted.'},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of pandas?', 'opts': ['A cuddle', 'An embarrassment', 'A bamboo', 'A huddle'], 'ans': 1,
+         'note': "An embarrassment of pandas - nobody seems to know why, but it's the official term.", 'bonus': True},
     ]},
     {'date': 'Sat 26 Sep', 'day_num': 17, 'theme': 'London (Tower Bridge & Six)', 'qs': [
         {'q': "How many wives did King Henry VIII have - the subject of tonight's show, Six?", 'opts': ['Four', 'Five', 'Six', 'Seven'], 'ans': 2,
@@ -1206,6 +1236,8 @@ DAILY_QUIZ = [
          'note': "Les Miserables - Hugo's 1862 novel, on stage in the West End since 1985."},
         {'q': 'Who is the longest-reigning British monarch?', 'opts': ['Queen Victoria', 'Elizabeth II', 'George III', 'Henry VIII'], 'ans': 1,
          'note': "Elizabeth II - 70 years on the throne, passing Victoria's record in 2015."},
+        {'q': '\U0001F389 BONUS: Roughly how many times a year does Tower Bridge open to let tall ships through?', 'opts': ['About 50', 'About 200', 'About 800', 'About 3,000'], 'ans': 2,
+         'note': 'About 800 times a year - roughly twice a day on average, and always announced in advance online.', 'bonus': True},
     ]},
 ]
 
@@ -1235,6 +1267,16 @@ def _quiz_answer_day_html(day):
     </div>'''
 
 QUIZ_ANSWER_KEY_HTML = ''.join(_quiz_answer_day_html(d) for d in DAILY_QUIZ)
+
+# Data for the interactive "Play the Quiz" mode - day_num N runs from 11 Sep (N=2)
+# to 26 Sep (N=17), so the calendar date is simply September (9 + N).
+QUIZ_PLAY_DATA = [
+    {'day_num': d['day_num'], 'date': d['date'], 'theme': d['theme'],
+     'iso': f"2026-09-{9 + d['day_num']:02d}",
+     'qs': [{'q': q['q'], 'opts': q['opts'], 'ans': q['ans'], 'note': q['note'], 'bonus': bool(q.get('bonus'))} for q in d['qs']]}
+    for d in DAILY_QUIZ
+]
+QUIZ_PLAY_JSON = json.dumps(QUIZ_PLAY_DATA, ensure_ascii=False)
 
 FUN_FACTS = {
     'day-11': ('Villa Borghese Gardens were laid out from 1605 by Cardinal Scipione Borghese &ndash; nephew of Pope Paul V &ndash; as one of the first great "gardens of delight" in Europe, built purely for pleasure, art and parties rather than growing food.',
@@ -3745,6 +3787,36 @@ body.printing-dailyquiz .print-block[data-subsection="quizquestions"] { display:
   .quiz-answer-day li { margin-bottom:5px; font-size:.85rem; }
   .quiz-note { color:var(--muted); font-style:italic; }
 }
+.quiz-play-btn { margin-left:auto; }
+.quiz-play-overlay { display:none; position:fixed; inset:0; background:rgba(15,26,45,.72); z-index:900; padding:24px 14px; overflow-y:auto; }
+.quiz-play-overlay.open { display:block; }
+.quiz-play-card { background:var(--card-bg); max-width:680px; margin:0 auto; border-radius:14px; box-shadow:0 8px 30px rgba(0,0,0,.35); overflow:hidden; }
+.quiz-play-head { display:flex; align-items:center; justify-content:space-between; background:var(--navy); color:#fff; padding:14px 20px; font-weight:700; font-size:1.05rem; }
+.quiz-play-close { background:none; border:none; color:#fff; font-size:1.6rem; line-height:1; cursor:pointer; padding:0 4px; }
+.quiz-play-body { padding:20px 22px 26px; }
+.quiz-day-pick-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; }
+.quiz-day-pick-btn { background:var(--bg-alt,#f4f6fa); border:1px solid rgba(0,0,0,.08); border-radius:10px; padding:10px 12px; text-align:left; cursor:pointer; font-family:inherit; }
+.quiz-day-pick-btn:hover { border-color:var(--gold); background:#fdf6e3; }
+.quiz-day-pick-num { font-weight:700; color:var(--navy); display:block; font-size:.85rem; }
+.quiz-day-pick-date { font-size:.8rem; color:var(--muted); }
+.quiz-day-pick-theme { font-size:.85rem; margin-top:2px; }
+.quiz-play-progress { font-size:.85rem; color:var(--muted); margin-bottom:12px; }
+.quiz-play-qwrap { margin-bottom:22px; }
+.quiz-play-qtext { font-weight:700; color:var(--ink); margin-bottom:8px; }
+.quiz-play-bonus-badge { display:inline-block; background:var(--gold); color:var(--navy); font-size:.7rem; font-weight:700; border-radius:20px; padding:2px 10px; margin-bottom:6px; }
+.quiz-play-opts { display:flex; flex-direction:column; gap:7px; }
+.quiz-play-opt { display:flex; align-items:center; gap:9px; border:1px solid rgba(0,0,0,.12); border-radius:8px; padding:8px 12px; cursor:pointer; font-size:.92rem; }
+.quiz-play-opt:hover { border-color:var(--navy); }
+.quiz-play-opt input { accent-color:var(--navy); }
+.quiz-play-nav { display:flex; justify-content:space-between; gap:10px; margin-top:16px; }
+.quiz-play-result-score { text-align:center; font-size:1.6rem; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.quiz-play-result-sub { text-align:center; color:var(--muted); margin-bottom:18px; }
+.quiz-play-review-item { border-radius:10px; padding:12px 14px; margin-bottom:10px; border-left:5px solid #ccc; background:var(--bg-alt,#f4f6fa); }
+.quiz-play-review-item.correct { border-left-color:#2e8b57; }
+.quiz-play-review-item.incorrect { border-left-color:#c0392b; }
+.quiz-play-review-q { font-weight:600; margin-bottom:4px; }
+.quiz-play-review-ans { font-size:.85rem; }
+.quiz-play-review-note { font-size:.82rem; color:var(--muted); font-style:italic; margin-top:4px; }
 '''
 
 FLIGHTS = [
@@ -4181,8 +4253,9 @@ HTML = f'''<!DOCTYPE html>
 <section id="dailyquiz" class="print-block" data-section="dailyquiz">
   <div class="section-head-row">
     <h2>Daily Quiz</h2>
+    <button class="print-btn quiz-play-btn no-print" onclick="openQuizPlay()"><span class="ic">&#127918;</span>Play the Quiz</button>
   </div>
-  <p class="lede">A 5-question multi-choice quiz for every day of the trip, themed to wherever we are that day &ndash; Rome history, cruise trivia, French Riviera, Tuscany, London and more. Browse the questions below any time, or print two separate documents: one with just the questions, one with the answer key.</p>
+  <p class="lede">A 10-question multi-choice quiz for every day of the trip, plus a bonus funny general-knowledge question &ndash; themed to wherever we are that day: Rome history, cruise trivia, French Riviera, Tuscany, London and more. Browse the questions below any time, print two separate documents (questions / answer key), or hit Play the Quiz to check in to a day, answer on screen and reveal your score at the end.</p>
 
   <div class="print-block" data-subsection="quizquestions">
     <div class="section-head-row">
@@ -4201,6 +4274,16 @@ HTML = f'''<!DOCTYPE html>
     <div class="quiz-answers-hidden">{QUIZ_ANSWER_KEY_HTML}</div>
   </div>
 </section>
+
+<div id="quizPlayOverlay" class="quiz-play-overlay no-print" onclick="if(event.target===this)closeQuizPlay()">
+  <div class="quiz-play-card">
+    <div class="quiz-play-head">
+      <span id="quizPlayTitle">Play the Daily Quiz</span>
+      <button class="quiz-play-close" onclick="closeQuizPlay()" aria-label="Close">&times;</button>
+    </div>
+    <div id="quizPlayBody" class="quiz-play-body"></div>
+  </div>
+</div>
 
 <section id="tubemap" class="print-block" data-section="tubemap">
   <div class="section-head-row">
@@ -4424,6 +4507,100 @@ function updateCountdown() {{
 }}
 updateCountdown();
 setInterval(updateCountdown, 1000);
+var QUIZ_PLAY_DATA = {QUIZ_PLAY_JSON};
+var quizPlayState = {{ day: null, idx: 0, answers: [] }};
+function openQuizPlay() {{
+  quizPlayState = {{ day: null, idx: 0, answers: [] }};
+  renderQuizDayPicker();
+  document.getElementById('quizPlayOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}}
+function closeQuizPlay() {{
+  document.getElementById('quizPlayOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}}
+function renderQuizDayPicker() {{
+  document.getElementById('quizPlayTitle').textContent = 'Play the Daily Quiz – pick a day';
+  var html = '<div class="quiz-day-pick-grid">';
+  QUIZ_PLAY_DATA.forEach(function(d) {{
+    html += '<button type="button" class="quiz-day-pick-btn" onclick="startQuizDay(' + d.day_num + ')">'
+      + '<span class="quiz-day-pick-num">Day ' + d.day_num + '</span>'
+      + '<span class="quiz-day-pick-date">' + d.date + '</span>'
+      + '<div class="quiz-day-pick-theme">' + d.theme + '</div>'
+      + '</button>';
+  }});
+  html += '</div>';
+  document.getElementById('quizPlayBody').innerHTML = html;
+}}
+function startQuizDay(dayNum) {{
+  var day = QUIZ_PLAY_DATA.find(function(d) {{ return d.day_num === dayNum; }});
+  if (!day) return;
+  quizPlayState = {{ day: day, idx: 0, answers: new Array(day.qs.length).fill(null) }};
+  renderQuizPlayQuestion();
+}}
+function renderQuizPlayQuestion() {{
+  var day = quizPlayState.day;
+  var i = quizPlayState.idx;
+  var q = day.qs[i];
+  document.getElementById('quizPlayTitle').textContent = day.date + ' – ' + day.theme;
+  var html = '<div class="quiz-play-progress">Question ' + (i + 1) + ' of ' + day.qs.length + '</div>';
+  html += '<div class="quiz-play-qwrap">';
+  if (q.bonus) html += '<span class="quiz-play-bonus-badge">🎉 Bonus</span>';
+  html += '<div class="quiz-play-qtext">' + q.q + '</div>';
+  html += '<div class="quiz-play-opts">';
+  q.opts.forEach(function(opt, oi) {{
+    var checked = quizPlayState.answers[i] === oi ? 'checked' : '';
+    html += '<label class="quiz-play-opt"><input type="radio" name="quizPlayOpt" value="' + oi + '" ' + checked + ' onchange="quizPlaySelect(' + oi + ')">' + opt + '</label>';
+  }});
+  html += '</div></div>';
+  html += '<div class="quiz-play-nav">';
+  html += '<button type="button" class="print-btn" onclick="quizPlayBackToDays()">&larr; Choose another day</button>';
+  html += '<span>';
+  if (i > 0) html += '<button type="button" class="print-btn" onclick="quizPlayGoto(' + (i - 1) + ')">Back</button> ';
+  if (i < day.qs.length - 1) {{
+    html += '<button type="button" class="print-btn" onclick="quizPlayGoto(' + (i + 1) + ')">Next</button>';
+  }} else {{
+    html += '<button type="button" class="print-btn" onclick="submitQuizPlay()">See my score</button>';
+  }}
+  html += '</span></div>';
+  document.getElementById('quizPlayBody').innerHTML = html;
+}}
+function quizPlaySelect(oi) {{
+  quizPlayState.answers[quizPlayState.idx] = oi;
+}}
+function quizPlayGoto(i) {{
+  quizPlayState.idx = i;
+  renderQuizPlayQuestion();
+}}
+function quizPlayBackToDays() {{
+  renderQuizDayPicker();
+}}
+function submitQuizPlay() {{
+  var day = quizPlayState.day;
+  var score = 0;
+  var bonusCorrect = false;
+  var reviewHtml = '';
+  day.qs.forEach(function(q, i) {{
+    var picked = quizPlayState.answers[i];
+    var correct = picked === q.ans;
+    if (correct) {{ score++; if (q.bonus) bonusCorrect = true; }}
+    reviewHtml += '<div class="quiz-play-review-item ' + (correct ? 'correct' : 'incorrect') + '">';
+    if (q.bonus) reviewHtml += '<span class="quiz-play-bonus-badge">🎉 Bonus</span>';
+    reviewHtml += '<div class="quiz-play-review-q">' + q.q + '</div>';
+    var yourAns = picked === null ? '<em>No answer</em>' : q.opts[picked];
+    reviewHtml += '<div class="quiz-play-review-ans">Your answer: ' + yourAns + (correct ? ' ✅' : ' ❌ – correct answer: ' + q.opts[q.ans]) + '</div>';
+    if (q.note) reviewHtml += '<div class="quiz-play-review-note">' + q.note + '</div>';
+    reviewHtml += '</div>';
+  }});
+  document.getElementById('quizPlayTitle').textContent = day.date + ' – Results';
+  var total = day.qs.length;
+  var html = '<div class="quiz-play-result-score">' + score + ' / ' + total + '</div>';
+  html += '<div class="quiz-play-result-sub">' + (bonusCorrect ? 'Nailed the bonus question too! 🎉' : 'Nice work – check the review below.') + '</div>';
+  html += reviewHtml;
+  html += '<div class="quiz-play-nav"><button type="button" class="print-btn" onclick="quizPlayBackToDays()">&larr; Choose another day</button>';
+  html += '<button type="button" class="print-btn" onclick="startQuizDay(' + day.day_num + ')">Retake this quiz</button></div>';
+  document.getElementById('quizPlayBody').innerHTML = html;
+}}
 </script>
 
 </body>
