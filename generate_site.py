@@ -3685,7 +3685,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-all .day-map-caption { margin-top:4px; }
 ''' + '\n'.join(
     f'  body.printing-{sid} {{ font-size:.86em; }}\n'
-    f'  body.printing-{sid} .day-card {{ page-break-inside: auto; break-inside: auto; padding-top:4px; }}\n'
+    f'  body.printing-{sid} .day-card {{ page-break-inside: auto; break-inside: auto; page-break-before: always; break-before: page; padding-top:4px; }}\n'
     f'  body.printing-{sid} .day-head {{ padding:7px 12px; }}\n'
     f'  body.printing-{sid} .day-body {{ padding:3px 12px 8px; }}\n'
     f'  body.printing-{sid} .ev-row {{ padding:5px 0; gap:10px; }}\n'
