@@ -3711,6 +3711,16 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-milan .ev-photo-row { display:flex !important; }
   body.printing-milan .ev-row { page-break-inside:avoid !important; break-inside:avoid !important; }
   body.printing-milan .lede, body.printing-milan .ig-note { page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:avoid !important; }
+  /* Print London: show place-card photos (normally stripped on print) across
+     the 20 Things to Do, Shops, Piccadilly and Cars Baby Cars lists, plus the
+     day-by-day event/hotel photos - and keep photos from splitting a card
+     across a page break. */
+  body.printing-london .place-photo, body.printing-london .place-photo-btn,
+  body.printing-london .ev-photo, body.printing-london .day-map-box,
+  body.printing-london .walk-map-wrap, body.printing-london .travel-opts { display:block !important; }
+  body.printing-london .ev-photo-row { display:flex !important; }
+  body.printing-london .place-card { page-break-inside:avoid !important; break-inside:avoid !important; }
+  body.printing-london .place-grid { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); }
   @page { margin: 8mm; }
 }
 @media (max-width:600px) {
