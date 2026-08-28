@@ -318,6 +318,17 @@ EVENT_NOTES = [
     ('dinner at the lighterman', "If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;"),
 ]
 
+EVENT_TIME_WARNINGS = [
+    ('transfer by private minibus to queen victoria', 'Check time if want to change'),
+]
+
+def event_time_warning_for(name):
+    n = name.lower()
+    for keyword, warning in EVENT_TIME_WARNINGS:
+        if keyword in n:
+            return warning
+    return None
+
 def event_note_for(name):
     n = name.lower()
     for keyword, note in EVENT_NOTES:
@@ -586,14 +597,59 @@ HOTEL_INFO = [
      'website': 'https://www.borgodicortefreda.com/',
      'booking_ref': 'Gary &amp; Karen: 900422765 (hotel conf. 45873846) &middot; Deb &amp; Tom: 900422785 (hotel conf. 45873847)',
      'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;3.00 per person, per night (up to 7 nights), payable directly to the hotel'),
-     'dates': '21-23 Sept 2026 (check-out morning of the 23rd for the drive to Milan)'},
+     'dates': '21-23 Sept 2026 (check-out morning of the 23rd for the drive to Milan)',
+     'parking_note': 'Rental van (Mercedes Vito) parking &ndash; free onsite, 21&ndash;22 Sept. Confirmed by the hotel by email (see reply below).',
+     'parking_w3w': 'indecisive.whoever.retriever',
+     'parking_response': {
+         'status': 'confirmed',
+         'from': 'Riccardo, Borgo di Cortefreda',
+         'date': '26 Aug 2026',
+         'text': "There shouldn't be any problem regarding the van's dimensions as much larger vehicles regularly park in our courtyard. Once you arrive at the hotel, feel free to park wherever you find a spot available; should you have difficulties finding a place, please contact the reception desk.",
+     },
+     'parking_email_subject': 'Dates and Rental Car Booking',
+     'parking_email_body': (
+         "Dear Hotel Borgo di Cortefreda Relais team,\n\n"
+         "We're looking forward to staying with you from 21 to 23 September 2026 (booking references 900422765 and 900422785, "
+         "hotel confirmations 45873846 and 45873847).\n\n"
+         "We'll be arriving in a rental vehicle - a Mercedes Vito van, which is a little larger than a standard Italian rental car - "
+         "and would be very grateful if you could reserve an onsite parking space for it for the two nights of our stay (21 and 22 September).\n\n"
+         "Please let us know if you need any further details, or if there's anything we should be aware of regarding parking dimensions or access.\n\n"
+         "Thank you very much, and we look forward to our stay.\n\n"
+         "Kind regards,\nGary Nicholson"
+     )},
     {'name': 'iQ Hotel Milano', 'address': 'Via Giovanni Battista Pirelli, 5, 20124 Milan',
      'full_address': 'Via Giovanni Battista Pirelli 5, 20124 Milan, Italy',
      'phone': '+39 02 8498 0810', 'email': 'info@iqhotelmilano.it',
      'website': 'https://www.iqhotelmilano.it/',
      'booking_ref': 'Gary &amp; Karen: 9079750869671 (conf. 2385198897) &middot; Deb &amp; Tom: 9074737872483 (conf. 2385198904)',
      'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;10.00 per person, per night, payable directly to the hotel'),
-     'dates': '23-24 Sept 2026 (check-out morning of the 24th for the flight to London)'},
+     'dates': '23-24 Sept 2026 (check-out morning of the 24th for the flight to London)',
+     'parking_note': 'Rental van (Mercedes Vito) parking &ndash; no private hotel parking, 23 Sept. CONFIRMED: Garage 2000, ~200m away &ndash; &euro;27/24hrs standard car, &euro;32/24hrs luxury car, no reservation needed.',
+     'parking_w3w': 'blushes.bristle.combines',
+     'parking_w3w_label': 'Garage 2000 &ndash; Via Vittor Pisani 31',
+     'parking_entrance_w3w': 'loves.relaxed.colonies',
+     'parking_entrance_label': 'Garage entrance &ndash; Via Achille Zezon 2',
+     'parking_response': {
+         'status': 'confirmed',
+         'from': 'Ronaldo, iQ Hotel Staff',
+         'date': '26 Aug 2026',
+         'text': ("We are pleased to inform you that we have an agreement with a parking service located just 200 meters from our hotel. "
+                  "Our special rates for guests are as follows: &euro;27 for a standard car for 24 hours, &euro;32 for a luxury car for 24 hours. "
+                  "This rate applies for 24 consecutive hours. If you need to use the parking multiple times during your stay, kindly check the "
+                  "rates directly with the parking service. No reservation is needed. Garage Name: Garage 2000. Address: Via Vittor Pisani, 31, "
+                  "20124 Milan. Entrance: Via Zezon, 2, 20124 Milan."),
+     },
+     'parking_email_subject': 'Dates and Rental Car Booking',
+     'parking_email_body': (
+         "Dear iQ Hotel Milano team,\n\n"
+         "We're looking forward to staying with you from 23 to 24 September 2026 (booking references 9079750869671 and 9074737872483, "
+         "confirmations 2385198897 and 2385198904).\n\n"
+         "We'll be arriving in a rental vehicle - a Mercedes Vito van, which is a little larger than a standard Italian rental car - "
+         "and understand from your website that private parking isn't available onsite. Could you please let us know about reserving a space at "
+         "your nearest partner garage for the night of 23 September, and confirm the fee involved?\n\n"
+         "Thank you very much, and we look forward to our stay.\n\n"
+         "Kind regards,\nGary Nicholson"
+     )},
     {'name': 'The Level at Melia White House', 'address': 'Longford Street, Regents Park, London NW1 3UP',
      'full_address': "Longford Street, Regent's Park, London NW1 3UP, United Kingdom",
      'phone': '+44 20 7391 3000', 'email': 'melia.white.house@melia.com',
@@ -633,6 +689,41 @@ def hotel_directory_cards():
             f'<a class="place-qr-corner" href="{esc(h["website"])}" target="_blank" title="Scan or click for hotel website">'
             f'<img src="data:image/png;base64,{qr_b64}" alt="QR code to {esc(h["name"])} website"></a>'
         ) if qr_b64 and h.get('website') else ''
+        parking_w3w_html = (
+            f' <a class="w3w-badge" href="https://what3words.com/{h["parking_w3w"]}" target="_blank" title="what3words location">///{h["parking_w3w"]}</a>'
+        ) if h.get('parking_w3w') else ''
+        parking_w3w_label_html = (
+            f'<div class="place-hours">&#128205; {h["parking_w3w_label"]}{parking_w3w_html}</div>'
+        ) if h.get('parking_w3w_label') else ''
+        parking_entrance_html = ''
+        if h.get('parking_entrance_w3w'):
+            entrance_badge = f' <a class="w3w-badge" href="https://what3words.com/{h["parking_entrance_w3w"]}" target="_blank" title="what3words location">///{h["parking_entrance_w3w"]}</a>'
+            parking_entrance_html = f'<div class="place-hours">&#128205; {h.get("parking_entrance_label","Entrance")}{entrance_badge}</div>'
+        parking_html = (
+            f'<div class="place-hours">&#128663; {h["parking_note"]}{"" if h.get("parking_w3w_label") else parking_w3w_html}</div>{parking_w3w_label_html}{parking_entrance_html}'
+        ) if h.get('parking_note') else ''
+        parking_email_btn = ''
+        if h.get('parking_email_subject') and h.get('parking_email_body'):
+            parking_mailto = (
+                f'mailto:{urllib.parse.quote(h["email"])}'
+                f'?subject={urllib.parse.quote(h["parking_email_subject"])}'
+                f'&body={urllib.parse.quote(h["parking_email_body"])}'
+            )
+            parking_email_btn = f'<a class="pill pill-parking" href="{parking_mailto}" title="Open parking request email for {esc(h["name"])}">&#128663; Parking Request Email</a>'
+        parking_response_html = ''
+        pr = h.get('parking_response')
+        if pr:
+            if pr.get('status') == 'confirmed':
+                meta = f'<div class="parking-response-meta">&#9989; Confirmed by {esc(pr.get("from",""))} &ndash; {esc(pr.get("date",""))}</div>'
+                box_class = 'parking-response-box parking-response-confirmed'
+            else:
+                meta = ''
+                box_class = 'parking-response-box parking-response-pending'
+            parking_response_html = f'''
+          <div class="{box_class}">
+            {meta}
+            <div class="parking-response-text">&#8220;{pr["text"]}&#8221;</div>
+          </div>'''
         cards += f'''
         <div class="place-card hotel-card">
           <div class="place-name">{esc(h['name'])}</div>
@@ -642,7 +733,10 @@ def hotel_directory_cards():
           <div class="place-hours">&#9993;&#65039; {esc(h['email'])}</div>
           {tube_html}
           {ref_html}
+          {parking_html}
           {fee_html}
+          {f'<div class="place-links" style="margin-top:8px;">{parking_email_btn}</div>' if parking_email_btn else ''}
+          {parking_response_html}
           {qr_html}
         </div>'''
     return cards
@@ -772,6 +866,16 @@ DAILY_QUIZ = [
          'note': "The Colosseum - on the itinerary for Day 4 (Sunday)."},
         {'q': 'Legend says Rome was founded by twin brothers raised by a wolf. What were their names?', 'opts': ['Castor and Pollux', 'Romulus and Remus', 'Brutus and Cassius', 'Titus and Vespasian'], 'ans': 1,
          'note': 'Romulus and Remus - Romulus supposedly founded the city in 753 BC and became its first king.'},
+        {'q': 'What is the chemical symbol for gold?', 'opts': ['Go', 'Gd', 'Au', 'Ag'], 'ans': 2,
+         'note': "Au, from the Latin aurum meaning 'shining dawn'."},
+        {'q': 'How many hearts does an octopus have?', 'opts': ['One', 'Two', 'Three', 'Eight'], 'ans': 2,
+         'note': 'Three - two pump blood to the gills and one serves the rest of the body.'},
+        {'q': 'How many players are on the field per side in a rugby union team?', 'opts': ['Eleven', 'Thirteen', 'Fifteen', 'Eighteen'], 'ans': 2,
+         'note': 'Fifteen in union, thirteen in league - a distinction every Kiwi learns early.'},
+        {'q': "The word 'robot' comes from a 1920 play written in which language?", 'opts': ['German', 'Czech', 'Russian', 'Hungarian'], 'ans': 1,
+         'note': "Czech - Karel Capek's play R.U.R., from 'robota', meaning forced labour."},
+        {'q': "Which spice is the world's most expensive by weight?", 'opts': ['Vanilla', 'Cardamom', 'Saffron', 'Cinnamon'], 'ans': 2,
+         'note': 'Saffron - each crocus flower yields just three tiny stigmas, all picked by hand.'},
     ]},
     {'date': 'Sat 12 Sep', 'day_num': 3, 'theme': 'Vatican & Sistine Chapel', 'qs': [
         {'q': 'Who painted the ceiling of the Sistine Chapel?', 'opts': ['Leonardo da Vinci', 'Raphael', 'Michelangelo', 'Botticelli'], 'ans': 2,
@@ -784,6 +888,16 @@ DAILY_QUIZ = [
          'note': 'Vatican City - about 0.44 sq km, smaller than most golf courses.'},
         {'q': "What is the name of the huge square in front of St Peter's Basilica, ringed by Bernini's colonnades?", 'opts': ['Piazza Navona', 'Piazza del Popolo', "St Peter's Square", 'Piazza di Spagna'], 'ans': 2,
          'note': "St Peter's Square - the colonnade's four rows of columns are designed to line up as a single row from two marked spots in the piazza."},
+        {'q': 'How many strings does a standard violin have?', 'opts': ['Four', 'Five', 'Six', 'Seven'], 'ans': 0,
+         'note': 'Four, tuned G, D, A and E - a guitar has six.'},
+        {'q': 'What is the hardest naturally occurring substance on Earth?', 'opts': ['Quartz', 'Steel', 'Diamond', 'Titanium'], 'ans': 2,
+         'note': 'Diamond - a 10 on the Mohs scale, and only another diamond will scratch it.'},
+        {'q': "Which band released the album 'Abbey Road'?", 'opts': ['The Rolling Stones', 'The Beatles', 'The Who', 'Pink Floyd'], 'ans': 1,
+         'note': 'The Beatles, in 1969 - the original Fab Four.'},
+        {'q': 'In which year did the Berlin Wall come down?', 'opts': ['1961', '1979', '1989', '1991'], 'ans': 2,
+         'note': '1989 - the border opened on the night of 9 November and the crowds did the rest.'},
+        {'q': 'What is the collective noun for a group of crows?', 'opts': ['A murder', 'A parliament', 'A gaggle', 'A pod'], 'ans': 0,
+         'note': 'A murder of crows - a parliament is owls and a gaggle is geese.'},
     ]},
     {'date': 'Sun 13 Sep', 'day_num': 4, 'theme': 'Colosseum', 'qs': [
         {'q': 'In roughly what year did construction of the Colosseum finish?', 'opts': ['80 AD', '200 AD', '30 BC', '500 AD'], 'ans': 0,
@@ -796,6 +910,16 @@ DAILY_QUIZ = [
          'note': 'Vespasian, funded partly by treasure from the sack of Jerusalem.'},
         {'q': "What stone makes up most of the Colosseum's outer structure?", 'opts': ['Marble', 'Travertine limestone', 'Granite', 'Brick only'], 'ans': 1,
          'note': 'Travertine limestone, quarried near Tivoli and hauled to Rome along a purpose-built road.'},
+        {'q': 'How many bones are there in the adult human body?', 'opts': ['106', '206', '306', '406'], 'ans': 1,
+         'note': '206 - babies start with about 270 and some fuse together as they grow.'},
+        {'q': 'Which African country famously resisted European colonisation?', 'opts': ['Kenya', 'Ethiopia', 'Ghana', 'Senegal'], 'ans': 1,
+         'note': 'Ethiopia - it saw off an Italian invasion at the Battle of Adwa in 1896.'},
+        {'q': "In which sport would you hit a 'shuttlecock'?", 'opts': ['Squash', 'Badminton', 'Table tennis', 'Lacrosse'], 'ans': 1,
+         'note': 'Badminton - the fastest racquet sport, with smashes clocked at over 400 km/h.'},
+        {'q': 'Which country is the birthplace of the dish paella?', 'opts': ['Portugal', 'Spain', 'Mexico', 'Italy'], 'ans': 1,
+         'note': 'Spain - specifically Valencia, where rabbit and beans are more traditional than seafood.'},
+        {'q': "What does 'RSVP' stand for?", 'opts': ['Reply Swiftly, Very Politely', "Repondez s'il vous plait", 'Received, Sent, Verified, Posted', 'Reserve Space, Verify Place'], 'ans': 1,
+         'note': "French for 'please reply' - repondez s'il vous plait."},
     ]},
     {'date': 'Mon 14 Sep', 'day_num': 5, 'theme': 'Rome to the Cruise', 'qs': [
         {'q': "What is the name of the ship we're boarding today?", 'opts': ['Queen Mary 2', 'Queen Elizabeth', 'Queen Victoria', 'Queen Anne'], 'ans': 2,
@@ -808,6 +932,16 @@ DAILY_QUIZ = [
          'note': '1840, by Samuel Cunard - making it one of the oldest shipping brands still operating.'},
         {'q': "Which Italian port are we sailing from today?", 'opts': ['Naples', 'Genoa', 'Civitavecchia', 'Livorno'], 'ans': 2,
          'note': "Civitavecchia - Rome's cruise port, about an hour from the city."},
+        {'q': "Which gas makes up roughly 78% of Earth's atmosphere?", 'opts': ['Oxygen', 'Nitrogen', 'Carbon dioxide', 'Argon'], 'ans': 1,
+         'note': 'Nitrogen - oxygen accounts for only about 21%.'},
+        {'q': 'Who was the first person to walk on the Moon?', 'opts': ['Buzz Aldrin', 'Yuri Gagarin', 'Neil Armstrong', 'Michael Collins'], 'ans': 2,
+         'note': 'Neil Armstrong, on 20 July 1969, with Buzz Aldrin following about 20 minutes later.'},
+        {'q': 'What is the largest animal known to have ever lived?', 'opts': ['African elephant', 'Blue whale', 'Argentinosaurus', 'Giant squid'], 'ans': 1,
+         'note': 'The blue whale - up to 30m long and heavier than any dinosaur.'},
+        {'q': "Which classic film features the line 'Here's looking at you, kid'?", 'opts': ['Gone with the Wind', 'Casablanca', 'Citizen Kane', 'The Maltese Falcon'], 'ans': 1,
+         'note': 'Casablanca (1942) - the line does not appear anywhere in the original script.'},
+        {'q': 'What is the main ingredient in traditional hummus?', 'opts': ['Lentils', 'Chickpeas', 'White beans', 'Peas'], 'ans': 1,
+         'note': 'Chickpeas, blended with tahini, lemon and garlic.'},
     ]},
     {'date': 'Tue 15 Sep', 'day_num': 6, 'theme': 'Sea Day', 'qs': [
         {'q': 'The Mediterranean Sea connects to the Atlantic Ocean via which strait?', 'opts': ['Strait of Messina', 'Strait of Gibraltar', 'The Bosphorus', 'Strait of Otranto'], 'ans': 1,
@@ -820,6 +954,16 @@ DAILY_QUIZ = [
          'note': 'The Black Sea, via Istanbul\'s two famous straits.'},
         {'q': "What unit is traditionally used to measure a ship's speed at sea?", 'opts': ['Miles per hour', 'Knots', 'Fathoms per hour', 'Leagues per hour'], 'ans': 1,
          'note': 'Knots (nautical miles per hour) - one knot is about 1.85 km/h.'},
+        {'q': 'Roughly how fast does light travel in a vacuum?', 'opts': ['300 km per second', '3,000 km per second', '300,000 km per second', '3 million km per second'], 'ans': 2,
+         'note': 'About 300,000 km per second - close to seven and a half laps of the Earth every second.'},
+        {'q': 'What is the capital city of Australia?', 'opts': ['Sydney', 'Melbourne', 'Canberra', 'Brisbane'], 'ans': 2,
+         'note': 'Canberra - purpose-built as a compromise after Sydney and Melbourne could not agree.'},
+        {'q': 'How many holes are played in a standard round of golf?', 'opts': ['Nine', 'Twelve', 'Eighteen', 'Twenty-one'], 'ans': 2,
+         'note': 'Eighteen - the number was standardised by St Andrews back in 1764.'},
+        {'q': 'Which language has the most native speakers worldwide?', 'opts': ['English', 'Spanish', 'Mandarin Chinese', 'Hindi'], 'ans': 2,
+         'note': 'Mandarin Chinese - roughly 940 million people speak it as a first language.'},
+        {'q': "How long is an elephant's pregnancy?", 'opts': ['9 months', '12 months', '18 months', '22 months'], 'ans': 3,
+         'note': 'About 22 months - the longest gestation of any land animal.'},
     ]},
     {'date': 'Wed 16 Sep', 'day_num': 7, 'theme': 'Marseille, France', 'qs': [
         {'q': "Marseille is France's ___ largest city.", 'opts': ['Largest', 'Second-largest', 'Third-largest', 'Fifth-largest'], 'ans': 1,
@@ -832,6 +976,16 @@ DAILY_QUIZ = [
          'note': "Bouillabaisse - originally a fisherman's stew made from the day's unsellable catch."},
         {'q': "What is the fortified hilltop basilica overlooking Marseille's harbour called?", 'opts': ['Notre-Dame de la Garde', 'Sacré-Cœur', 'Notre-Dame de Paris', 'Sainte-Chapelle'], 'ans': 0,
          'note': "Notre-Dame de la Garde - locals call it 'la bonne mère' (the good mother)."},
+        {'q': 'Who was the first woman to win a Nobel Prize?', 'opts': ['Marie Curie', 'Rosalind Franklin', 'Mother Teresa', 'Dorothy Hodgkin'], 'ans': 0,
+         'note': 'Marie Curie, for Physics in 1903 - she later won a second, in Chemistry.'},
+        {'q': "What does 'DNA' stand for?", 'opts': ['Deoxyribonucleic acid', 'Dinucleic acid', 'Double nuclear acid', 'Deoxyribose nitrate'], 'ans': 0,
+         'note': 'Deoxyribonucleic acid - its double-helix structure was described in 1953.'},
+        {'q': 'Sparkling wine can only be labelled champagne if it comes from where?', 'opts': ['Anywhere in France', 'The Champagne region', 'Burgundy', 'Alsace'], 'ans': 1,
+         'note': 'The Champagne region - everything else is simply sparkling wine.'},
+        {'q': "Which artist painted 'The Starry Night'?", 'opts': ['Claude Monet', 'Vincent van Gogh', 'Paul Cezanne', 'Paul Gauguin'], 'ans': 1,
+         'note': 'Van Gogh, in 1889, painted from the window of his room at an asylum in Saint-Remy.'},
+        {'q': "Which country has won the most men's FIFA World Cups?", 'opts': ['Germany', 'Italy', 'Brazil', 'Argentina'], 'ans': 2,
+         'note': 'Brazil, with five titles - and the only country to have played in every tournament.'},
     ]},
     {'date': 'Thu 17 Sep', 'day_num': 8, 'theme': 'Villefranche & Monaco', 'qs': [
         {'q': 'Monaco is the second-smallest country in the world. Which is the smallest?', 'opts': ['San Marino', 'Vatican City', 'Liechtenstein', 'Malta'], 'ans': 1,
@@ -844,6 +998,16 @@ DAILY_QUIZ = [
          'note': 'Grace Kelly - she gave up her acting career to become Princess Grace.'},
         {'q': 'Monaco residents famously pay no what?', 'opts': ['Council rates', 'Income tax', 'Road tolls', 'Import duty'], 'ans': 1,
          'note': "No personal income tax for residents - part of why it's such an expensive place to live."},
+        {'q': 'What is the capital city of Canada?', 'opts': ['Toronto', 'Vancouver', 'Ottawa', 'Montreal'], 'ans': 2,
+         'note': 'Ottawa - picked as a compromise between English and French Canada.'},
+        {'q': 'What is the most abundant element in the universe?', 'opts': ['Oxygen', 'Carbon', 'Hydrogen', 'Helium'], 'ans': 2,
+         'note': 'Hydrogen - roughly three-quarters of all ordinary matter.'},
+        {'q': 'What is the fastest land animal over a short sprint?', 'opts': ['Pronghorn', 'Cheetah', 'Greyhound', 'Ostrich'], 'ans': 1,
+         'note': 'The cheetah - around 100 km/h, but only for 20 or 30 seconds at a time.'},
+        {'q': 'Which two letters are worth 10 points each in English-language Scrabble?', 'opts': ['J and X', 'Q and Z', 'K and W', 'V and Y'], 'ans': 1,
+         'note': 'Q and Z - J and X are worth 8 each.'},
+        {'q': 'In which year did the Titanic sink?', 'opts': ['1898', '1912', '1920', '1931'], 'ans': 1,
+         'note': '1912, on her maiden voyage from Southampton to New York.'},
     ]},
     {'date': 'Fri 18 Sep', 'day_num': 9, 'theme': 'Genoa, Italy', 'qs': [
         {'q': 'Which explorer, credited with reaching the Americas in 1492, was born in Genoa?', 'opts': ['Marco Polo', 'Amerigo Vespucci', 'Christopher Columbus', 'Ferdinand Magellan'], 'ans': 2,
@@ -856,6 +1020,16 @@ DAILY_QUIZ = [
          'note': "Its centro storico is regularly cited as one of the largest and best-preserved medieval old towns in Europe."},
         {'q': 'In the Middle Ages, Genoa was a powerful maritime republic rivalling which other Italian sea power?', 'opts': ['Naples', 'Venice', 'Palermo', 'Bari'], 'ans': 1,
          'note': 'Venice - the two republics fought several wars for control of Mediterranean trade.'},
+        {'q': 'How many elements are currently on the periodic table?', 'opts': ['92', '108', '118', '126'], 'ans': 2,
+         'note': '118 - the heaviest, oganesson, exists for only milliseconds in a lab.'},
+        {'q': 'Which nut is ground with sugar to make marzipan?', 'opts': ['Hazelnut', 'Almond', 'Walnut', 'Cashew'], 'ans': 1,
+         'note': 'Almonds - a Christmas cake staple in plenty of households.'},
+        {'q': "Angel Falls, the world's tallest waterfall, is in which country?", 'opts': ['Brazil', 'Venezuela', 'Colombia', 'Peru'], 'ans': 1,
+         'note': 'Venezuela - a 979m drop, so tall that much of the water turns to mist before it lands.'},
+        {'q': 'Which instrument was Louis Armstrong famous for playing?', 'opts': ['Saxophone', 'Trumpet', 'Piano', 'Clarinet'], 'ans': 1,
+         'note': 'The trumpet, though he started out on the cornet as a boy in New Orleans.'},
+        {'q': 'In tennis, what is a score of 40-40 called?', 'opts': ['Advantage', 'Deuce', 'Love', 'Set point'], 'ans': 1,
+         'note': "Deuce - from the French 'a deux', meaning two more points are needed to win."},
     ]},
     {'date': 'Sat 19 Sep', 'day_num': 10, 'theme': 'La Spezia & Pisa', 'qs': [
         {'q': 'The Leaning Tower of Pisa started leaning almost immediately, mainly because of what?', 'opts': ['An earthquake', 'Soft, unstable ground', 'A design flaw in the bells', 'War damage'], 'ans': 1,
@@ -868,6 +1042,16 @@ DAILY_QUIZ = [
          'note': "Galileo Galilei - the story is likely apocryphal, but he did live and study in Pisa."},
         {'q': 'La Spezia sits at the gateway to which colourful stretch of Ligurian coastline, famous for five cliffside villages?', 'opts': ['Amalfi Coast', 'Cinque Terre', 'Costa Smeralda', 'Riviera di Levante'], 'ans': 1,
          'note': "Cinque Terre - literally 'Five Lands': Monterosso, Vernazza, Corniglia, Manarola and Riomaggiore."},
+        {'q': 'Which of the Seven Wonders of the Ancient World still stands today?', 'opts': ['The Hanging Gardens of Babylon', 'The Great Pyramid of Giza', 'The Colossus of Rhodes', 'The Lighthouse of Alexandria'], 'ans': 1,
+         'note': 'The Great Pyramid of Giza - the only one of the seven still standing.'},
+        {'q': 'Which blood type is known as the universal donor?', 'opts': ['A positive', 'B negative', 'AB positive', 'O negative'], 'ans': 3,
+         'note': 'O negative - it can be given to almost anyone in an emergency.'},
+        {'q': 'How do honeybees tell the hive where to find food?', 'opts': ['By singing', 'With a waggle dance', 'By changing colour', 'By tapping antennae'], 'ans': 1,
+         'note': 'A waggle dance - the angle and duration signal the direction and distance.'},
+        {'q': "'Kia ora' is a greeting in which language?", 'opts': ['Samoan', 'Te Reo Maori', 'Tongan', 'Fijian'], 'ans': 1,
+         'note': "Te Reo Maori - literally 'be well' or 'be healthy'."},
+        {'q': 'How many countries share a land border with China?', 'opts': ['Eight', 'Ten', 'Fourteen', 'Eighteen'], 'ans': 2,
+         'note': 'Fourteen - tied with Russia for the most of any country.'},
     ]},
     {'date': 'Sun 20 Sep', 'day_num': 11, 'theme': 'Sea Day', 'qs': [
         {'q': 'Which is traditionally considered the longest river in the world?', 'opts': ['Amazon', 'Nile', 'Yangtze', 'Mississippi'], 'ans': 1,
@@ -880,6 +1064,16 @@ DAILY_QUIZ = [
          'note': 'Australia/Oceania.'},
         {'q': 'Which mountain range forms part of the traditional boundary between Europe and Asia?', 'opts': ['The Alps', 'The Urals', 'The Pyrenees', 'The Carpathians'], 'ans': 1,
          'note': 'The Ural Mountains, running through Russia.'},
+        {'q': 'What is the main cause of ocean tides?', 'opts': ['Wind', "The Moon's gravity", "Earth's rotation alone", 'Ocean currents'], 'ans': 1,
+         'note': "Mostly the Moon's gravity, with the Sun adding a smaller pull of its own."},
+        {'q': 'How many rings are on the Olympic flag?', 'opts': ['Four', 'Five', 'Six', 'Seven'], 'ans': 1,
+         'note': 'Five interlocking rings, one for each inhabited continent.'},
+        {'q': 'Which country drinks the most coffee per person?', 'opts': ['Italy', 'Brazil', 'Finland', 'United States'], 'ans': 2,
+         'note': 'Finland - around 12kg a head each year, roughly four cups a day.'},
+        {'q': "Who composed 'The Four Seasons'?", 'opts': ['J.S. Bach', 'Antonio Vivaldi', 'W.A. Mozart', 'G.F. Handel'], 'ans': 1,
+         'note': 'Vivaldi, around 1720 - four violin concertos, one for each season.'},
+        {'q': 'On which ship did Charles Darwin make his famous scientific voyage?', 'opts': ['HMS Victory', 'HMS Beagle', 'HMS Endeavour', 'HMS Bounty'], 'ans': 1,
+         'note': 'HMS Beagle - five years at sea that led to On the Origin of Species.'},
     ]},
     {'date': 'Mon 21 Sep', 'day_num': 12, 'theme': 'Tuscany (Talamone & Chianti)', 'qs': [
         {'q': 'What colour is the rooster on the seal of authentic Chianti Classico wine?', 'opts': ['Red', 'White', 'Black', 'Gold'], 'ans': 2,
@@ -892,6 +1086,16 @@ DAILY_QUIZ = [
          'note': 'Florence.'},
         {'q': 'What is the name for the low stone farmhouse-style accommodation common across the Tuscan countryside?', 'opts': ['Villa', 'Agriturismo', 'Palazzo', 'Trattoria'], 'ans': 1,
          'note': "Agriturismo - a working farm offering accommodation and food, like our lunch stop today."},
+        {'q': 'Which is the largest hot desert in the world?', 'opts': ['The Gobi', 'The Kalahari', 'The Sahara', 'The Arabian'], 'ans': 2,
+         'note': 'The Sahara - roughly the size of the United States.'},
+        {'q': 'Which part of the body contains the most bones?', 'opts': ['The spine', 'The hand and wrist', 'The foot', 'The skull'], 'ans': 1,
+         'note': '27 bones in each hand and wrist - both hands together are over a quarter of the skeleton.'},
+        {'q': 'What is a baby kangaroo called?', 'opts': ['A cub', 'A kit', 'A joey', 'A calf'], 'ans': 2,
+         'note': 'A joey - born about the size of a jellybean and finishing its development in the pouch.'},
+        {'q': "The phrase 'et cetera' comes from which language?", 'opts': ['Greek', 'Latin', 'French', 'Old English'], 'ans': 1,
+         'note': "Latin - literally 'and the rest'."},
+        {'q': 'In cricket, what is a batter dismissed for zero said to have scored?', 'opts': ['A blank', 'A duck', 'A nil', 'A love'], 'ans': 1,
+         'note': "A duck - said to come from 'duck's egg', the shape of the zero on the scoreboard."},
     ]},
     {'date': 'Tue 22 Sep', 'day_num': 13, 'theme': 'Tuscany Free Day', 'qs': [
         {'q': 'San Gimignano, near our hotel, is famous for its skyline of medieval what?', 'opts': ['Windmills', 'Towers', 'Bridges', 'Domes'], 'ans': 1,
@@ -904,6 +1108,16 @@ DAILY_QUIZ = [
          'note': 'Florence and Siena.'},
         {'q': 'Which powerful banking family ruled Florence and patronised the Renaissance for generations?', 'opts': ['The Borgias', 'The Medici', 'The Sforza', 'The Visconti'], 'ans': 1,
          'note': 'The Medici family - bankers, popes and patrons of Michelangelo, Botticelli and Galileo.'},
+        {'q': 'Which empire was founded by Genghis Khan?', 'opts': ['The Ottoman Empire', 'The Mongol Empire', 'The Persian Empire', 'The Byzantine Empire'], 'ans': 1,
+         'note': 'The Mongol Empire - at its peak the largest contiguous land empire in history.'},
+        {'q': 'What is the scientific study of earthquakes called?', 'opts': ['Geology', 'Seismology', 'Volcanology', 'Meteorology'], 'ans': 1,
+         'note': 'Seismology - useful knowledge for anyone living in New Zealand.'},
+        {'q': 'Which fruit is the base of traditional guacamole?', 'opts': ['Tomato', 'Avocado', 'Mango', 'Lime'], 'ans': 1,
+         'note': 'The avocado - botanically a berry, which surprises most people.'},
+        {'q': 'Rosencrantz and Guildenstern are characters in which Shakespeare play?', 'opts': ['Macbeth', 'Hamlet', 'Othello', 'King Lear'], 'ans': 1,
+         'note': 'Hamlet - Tom Stoppard later gave the pair a whole play of their own.'},
+        {'q': 'Which sea has no coastline at all?', 'opts': ['The Dead Sea', 'The Sargasso Sea', 'The Caspian Sea', 'The Coral Sea'], 'ans': 1,
+         'note': 'The Sargasso Sea - bounded by ocean currents rather than by land.'},
     ]},
     {'date': 'Wed 23 Sep', 'day_num': 14, 'theme': 'Milan (Options Day)', 'qs': [
         {'q': "Roughly how long did Milan's Duomo take to complete, from start to its final touches?", 'opts': ['About 10 years', 'About 50 years', 'Nearly 6 centuries', '100 years'], 'ans': 2,
@@ -916,6 +1130,16 @@ DAILY_QUIZ = [
          'note': 'La Scala, opened in 1778.'},
         {'q': "If we take the Como option today, whose famous villa on Lake Como's shore might we spot?", 'opts': ["Elton John's", "George Clooney's", "Tom Cruise's", "Ed Sheeran's"], 'ans': 1,
          'note': "George Clooney's Villa Oleandra in Laglio - he's an honorary citizen of the town."},
+        {'q': 'How many chambers does the human heart have?', 'opts': ['Two', 'Three', 'Four', 'Five'], 'ans': 2,
+         'note': 'Four - two atria on top and two ventricles below.'},
+        {'q': 'Which bird can fly backwards?', 'opts': ['The swift', 'The hummingbird', 'The kingfisher', 'The sparrow'], 'ans': 1,
+         'note': 'The hummingbird - its wings trace a figure-eight, beating up to 80 times a second.'},
+        {'q': 'What is the maximum break in a game of snooker?', 'opts': ['137', '147', '155', '180'], 'ans': 1,
+         'note': '147 - fifteen reds each followed by a black, then all six colours in order.'},
+        {'q': 'Which is the most widely spoken second language in the world?', 'opts': ['French', 'Spanish', 'English', 'Arabic'], 'ans': 2,
+         'note': 'English - well over a billion people speak it as a second language.'},
+        {'q': 'The Great Fire of London happened in which century?', 'opts': ['The 15th', 'The 16th', 'The 17th', 'The 18th'], 'ans': 2,
+         'note': 'The 17th - September 1666, starting in a bakery on Pudding Lane.'},
     ]},
     {'date': 'Thu 24 Sep', 'day_num': 15, 'theme': 'London Arrival', 'qs': [
         {'q': 'What is the name of the river that flows through London?', 'opts': ['The Severn', 'The Thames', 'The Avon', 'The Mersey'], 'ans': 1,
@@ -928,6 +1152,16 @@ DAILY_QUIZ = [
          'note': 'The Piccadilly line - dark blue, running past Piccadilly Circus.'},
         {'q': "What is the collective name for London's famous red double-decker vehicles?", 'opts': ['Trams', 'Buses', 'Tuk-tuks', 'Trolleys'], 'ans': 1,
          'note': 'Buses - the modern Routemaster is a direct descendant of the original AEC Routemaster.'},
+        {'q': "What is the world's largest island?", 'opts': ['Australia', 'Greenland', 'New Guinea', 'Borneo'], 'ans': 1,
+         'note': 'Greenland - Australia is bigger but is classed as a continent, not an island.'},
+        {'q': 'Which is the largest planet in our solar system?', 'opts': ['Saturn', 'Jupiter', 'Neptune', 'Uranus'], 'ans': 1,
+         'note': 'Jupiter - more than twice as massive as all the other planets put together.'},
+        {'q': 'The croissant originated in which country?', 'opts': ['France', 'Austria', 'Belgium', 'Switzerland'], 'ans': 1,
+         'note': 'Austria - the Viennese kipferl reached Paris in the 1830s and was reinvented there.'},
+        {'q': "Who directed the 1975 film 'Jaws'?", 'opts': ['George Lucas', 'Steven Spielberg', 'Francis Ford Coppola', 'Martin Scorsese'], 'ans': 1,
+         'note': 'Steven Spielberg - the mechanical shark broke down so often he had to imply it instead.'},
+        {'q': 'Which is the tallest species of tree?', 'opts': ['Douglas fir', 'Coast redwood', 'Mountain ash', 'Kauri'], 'ans': 1,
+         'note': 'The coast redwood - the tallest known specimen stands over 115m.'},
     ]},
     {'date': 'Fri 25 Sep', 'day_num': 16, 'theme': "London (The Mousetrap)", 'qs': [
         {'q': "The Mousetrap, which we're seeing tonight, is the world's longest-running what?", 'opts': ['Musical', 'Play', 'Opera', 'Ballet'], 'ans': 1,
@@ -940,6 +1174,16 @@ DAILY_QUIZ = [
          'note': '1952 - and it has run continuously ever since (apart from a brief COVID closure).'},
         {'q': 'Traditionally, audiences leaving The Mousetrap are asked to do what?', 'opts': ['Sign a guestbook', 'Keep the ending a secret', 'Take a photo with the cast', 'Write a review'], 'ans': 1,
          'note': "Keep the twist ending a secret - a tradition observed by audiences for over 70 years."},
+        {'q': 'Which war was formally ended by the Treaty of Versailles?', 'opts': ['The Napoleonic Wars', 'World War I', 'World War II', 'The Crimean War'], 'ans': 1,
+         'note': 'World War I - signed in 1919, five years to the day after the assassination in Sarajevo.'},
+        {'q': 'What is the chemical formula for common table salt?', 'opts': ['H2O', 'NaCl', 'CO2', 'KCl'], 'ans': 1,
+         'note': 'NaCl - sodium chloride.'},
+        {'q': 'How long is a marathon?', 'opts': ['26.2 miles', '24 miles', '30 miles', '20 miles'], 'ans': 0,
+         'note': '26.2 miles, or 42.195 km - the distance was fixed at the 1908 London Olympics.'},
+        {'q': "What is a 'palindrome'?", 'opts': ['A rhyming couplet', 'A word that reads the same backwards', 'A word with silent letters', 'A word borrowed from Greek'], 'ans': 1,
+         'note': "A word or phrase that reads the same in both directions - like 'racecar' or 'level'."},
+        {'q': 'Which country has the longest coastline in the world?', 'opts': ['Russia', 'Australia', 'Canada', 'Indonesia'], 'ans': 2,
+         'note': 'Canada - more than 200,000 km once all the Arctic islands are counted.'},
     ]},
     {'date': 'Sat 26 Sep', 'day_num': 17, 'theme': 'London (Tower Bridge & Six)', 'qs': [
         {'q': "How many wives did King Henry VIII have - the subject of tonight's show, Six?", 'opts': ['Four', 'Five', 'Six', 'Seven'], 'ans': 2,
@@ -952,6 +1196,16 @@ DAILY_QUIZ = [
          'note': 'The Tower of London - nearly 1,000 years old.'},
         {'q': 'What valuable items are famously kept and guarded at the Tower of London?', 'opts': ['The Crown Jewels', 'The original Magna Carta', 'The Domesday Book', "Nelson's flagship"], 'ans': 0,
          'note': 'The Crown Jewels - including the Imperial State Crown, worn at coronations.'},
+        {'q': 'Which metal is liquid at room temperature?', 'opts': ['Mercury', 'Lead', 'Gallium', 'Sodium'], 'ans': 0,
+         'note': 'Mercury - gallium comes close and will melt in the palm of your hand.'},
+        {'q': 'What is the largest species of shark?', 'opts': ['Great white', 'Whale shark', 'Tiger shark', 'Basking shark'], 'ans': 1,
+         'note': 'The whale shark - up to 18m long and completely harmless, feeding on plankton.'},
+        {'q': 'Which country drinks the most tea per person?', 'opts': ['England', 'India', 'Turkey', 'China'], 'ans': 2,
+         'note': 'Turkey, by a wide margin - roughly 3 to 4kg of tea per person every year.'},
+        {'q': 'Which long-running musical is based on a novel by Victor Hugo?', 'opts': ['The Phantom of the Opera', 'Les Miserables', 'Cats', 'Oliver!'], 'ans': 1,
+         'note': "Les Miserables - Hugo's 1862 novel, on stage in the West End since 1985."},
+        {'q': 'Who is the longest-reigning British monarch?', 'opts': ['Queen Victoria', 'Elizabeth II', 'George III', 'Henry VIII'], 'ans': 1,
+         'note': "Elizabeth II - 70 years on the throne, passing Victoria's record in 2015."},
     ]},
 ]
 
@@ -1467,9 +1721,11 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
             f'<img src="data:image/png;base64,{ev_qr[1]}" alt="QR code to website" width="88" height="88"></a>'
             f'<div class="ev-qr-label">Website</div></div>'
         ) if ev_qr else ''
+        time_warning = event_time_warning_for(b['name'])
+        time_warning_html = f'<span class="ev-time-warning">{esc(time_warning)}</span>' if time_warning else ''
         rows += f'''
         <div class="ev-row">
-          <div class="ev-time">{esc(b['time_display'])}</div>
+          <div class="ev-time">{esc(b['time_display'])}{time_warning_html}</div>
           <div class="ev-body">
             <div class="ev-name">{esc_br(b['name'])} {badge(b['status'])} {logo_html}</div>
             {addr}
@@ -1901,6 +2157,9 @@ def _ordinal(n):
     if 11 <= (n % 100) <= 13:
         return f'{n}th'
     return f'{n}' + {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+
+GENERATED_DATE = datetime.date.today()
+GENERATED_DATE_DISPLAY = f'{_ordinal(GENERATED_DATE.day)} {GENERATED_DATE.strftime("%B %Y")}'
 
 def day_heading_display(title):
     """Build the full-date day-card heading, e.g. 'Thursday 24th September (Day 15)',
@@ -3037,6 +3296,7 @@ a { color: inherit; }
 .hero-photo { flex:0 0 auto; display:flex; flex-direction:column; align-items:center; }
 .view-counter { display:inline-flex; align-items:center; gap:6px; margin-bottom:10px; padding:5px 14px; border-radius:20px; background:rgba(255,255,255,.12); color:#fff; font-size:.8rem; font-weight:600; border:1px solid rgba(255,255,255,.3); }
 .view-counter .ic { font-size:.9rem; }
+.view-counter.last-updated { margin-bottom:14px; background:rgba(255,255,255,.08); font-weight:500; }
 .hero-photo img { width:220px; height:220px; object-fit:cover; border-radius:50%; border:5px solid rgba(255,255,255,.85); box-shadow:0 8px 30px rgba(0,0,0,.35); }
 .hero-clock { margin-top:12px; font-size:.85rem; color:#fff; opacity:.9; text-align:center; }
 .hero-next-trip { margin-top:6px; font-size:.8rem; font-weight:700; letter-spacing:.04em; color:var(--gold); text-align:center; }
@@ -3159,6 +3419,7 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ev-row { display:grid; grid-template-columns:110px 1fr; gap:14px; padding:10px 0; border-bottom:1px solid #f0eee8; }
 .ev-row:last-child { border-bottom:none; }
 .ev-time { font-weight:700; color:var(--navy); font-size:.85rem; }
+.ev-time-warning { display:block; color:#c0392b; font-size:.62rem; font-weight:800; letter-spacing:.02em; margin-top:3px; text-transform:uppercase; }
 .ev-name { font-weight:600; }
 .ev-addr { color:var(--muted); font-size:.85rem; margin-top:2px; }
 .ev-note { color:var(--muted); font-size:.85rem; font-style:italic; margin-top:2px; }
@@ -3231,6 +3492,14 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .pill { font-size:.75rem; text-decoration:none; background:var(--navy); color:#fff !important; padding:4px 11px; border-radius:999px; font-weight:600; }
 .pill-review { background:var(--gold); }\n.pill-booking { background:#1f8a5f; }\n.ev-link { margin-top:6px; }\n.pill-weblink { background:var(--cruise); }\n.pill-directions { background:#8a5a1f; }\n.pill-instagram { background:#c13584; padding:4px 10px; font-weight:800; }\n.pill-todo { display:inline-block; background:#d64545; color:#fff !important; font-size:.68rem; font-weight:800; padding:2px 9px; border-radius:999px; margin-left:6px; letter-spacing:.4px; vertical-align:middle; }\n.ev-logo { height:34px; width:34px; vertical-align:middle; margin-left:6px; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,.25); }\n.ev-photo { display:block; width:100%; max-width:320px; height:180px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); margin-top:8px; box-shadow:0 1px 5px rgba(0,0,0,.15); }\n@media print { .ev-photo { display:none; } }\n.ev-photo-row { display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }\n.ev-photo-row .ev-photo { margin-top:8px; flex:0 0 auto; }\n.walk-map-wrap { display:flex; align-items:center; gap:12px; margin-top:8px; flex:0 0 auto; }\n.walk-map { display:block; width:100%; max-width:320px; height:auto; border-radius:12px; border:3px solid var(--photo-frame); box-shadow:0 1px 5px rgba(0,0,0,.15); }\n.walk-info { font-size:.82rem; color:var(--ink); max-width:150px; }\n.walk-time { font-weight:700; margin-bottom:4px; }\n.walk-dist { color:var(--muted); margin-bottom:4px; }\n.walk-note { color:var(--muted); font-size:.78rem; }\n@media print { .walk-map-wrap { display:none; } }\n@media (max-width:900px) { .ev-photo-row { flex-direction:column; } .walk-map-wrap { margin-top:0; } }\n@media (max-width:600px) { .walk-map-wrap { flex-direction:column; align-items:flex-start; width:100%; } .walk-map { max-width:100%; } .walk-info { max-width:100%; margin-top:8px; } }\n.travel-opts { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; font-size:.82rem; }\n.travel-opts-title { font-weight:700; color:var(--muted); text-transform:uppercase; font-size:.72rem; letter-spacing:.4px; margin-bottom:6px; }\n.travel-opt { margin:4px 0; color:var(--ink); }\n.travel-opt-label { font-weight:700; margin-right:6px; }\n@media print { .travel-opts { display:none; } }\n.ig-note { font-size:.78rem; color:var(--muted); font-style:italic; margin:-14px 0 20px; }
 .pill-play { background:#111; color:#fff !important; }
+.pill-parking { background:#2e7d32; }
+.parking-response-box { margin-top:8px; padding:8px 12px; border-radius:8px; font-size:.82rem; }
+.parking-response-confirmed { background:#eaf6ec; border-left:4px solid #2e7d32; }
+.parking-response-pending { background:#fdf3e3; border-left:4px solid #b6591a; }
+.parking-response-meta { font-weight:700; margin-bottom:4px; }
+.parking-response-confirmed .parking-response-meta { color:#1f6b34; }
+.parking-response-pending .parking-response-meta { color:#b6591a; }
+.parking-response-text { font-style:italic; color:var(--ink); }
 .shop-list { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; }
 .shop-list-title { font-size:.78rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.4px; margin-bottom:6px; }
 .shop-item { display:flex; align-items:center; gap:8px; margin:5px 0; flex-wrap:wrap; }
@@ -3268,12 +3537,6 @@ table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
 .uketa-box { margin-top:28px; border:2px solid #c0392b; border-radius:10px; padding:14px 18px; background:#fdecec; }
 .uketa-summary { cursor:pointer; font-weight:700; color:#c0392b; font-size:1.02rem; }
 .uketa-box .tt-note { margin-top:10px; }
-.eta-reminder { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; background:#c0392b; color:#fff; text-align:center; padding:12px 20px; font-weight:700; font-size:.95rem; }
-.eta-reminder a { color:#fff; text-decoration:underline; }
-.eta-reminder.flashing { animation: eta-flash 1.1s ease-in-out infinite; }
-@keyframes eta-flash { 0%, 100% { background:#c0392b; } 50% { background:#e67e22; } }
-@media (prefers-reduced-motion: reduce) { .eta-reminder.flashing { animation: none; } }
-@media (max-width:700px) { .eta-reminder.flashing { animation: none; background:#c0392b; } }
 .red-callout { margin:18px 0; border:2px solid #c0392b; border-radius:10px; padding:16px 20px; background:#fdecec; }
 .red-callout-title { font-weight:800; color:#c0392b; font-size:1.08rem; margin:0 0 8px; }
 .red-callout p { margin:0 0 10px; color:#7a2020; font-size:.92rem; line-height:1.5; }
@@ -3346,7 +3609,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'debtodo', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -3498,7 +3761,6 @@ NAV_SECTIONS = [
     ('london', '&#127468;&#127463;', 'London'),
     ('places', '&#128506;&#65039;', 'Places &amp; Maps'),
     ('needtobook', '&#9989;', 'Things to Do'),
-    ('debtodo', '&#128100;', "Deb &amp; Tom's To-Do"),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
     ('dailyquiz', '&#129504;', 'Daily Quiz'),
 ]
@@ -3556,6 +3818,7 @@ HTML = f'''<!DOCTYPE html>
     </div>
     <div class="hero-photo">
       <div class="view-counter no-print" id="viewCounter" title="Website views"><span class="ic">&#128065;&#65039;</span><span id="viewCounterNum">100</span> views</div>
+      <div class="view-counter last-updated no-print" title="When this website was last regenerated"><span class="ic">&#128260;</span> Last updated: {GENERATED_DATE_DISPLAY}</div>
       <img src="data:image/jpeg;base64,{IMG['hero']}" alt="The Fab 4 at dinner">
       <div class="hero-clock no-print" id="heroClock">&nbsp;</div>
       <div class="hero-countdown-wrap no-print">
@@ -3575,18 +3838,6 @@ HTML = f'''<!DOCTYPE html>
       </div>
     </div>
   </div>
-</div>
-
-<div id="etaReminder" class="eta-reminder no-print" style="display:none">
-  <span class="ic">&#9888;&#65039;</span>
-  <span id="etaReminderText">Reminder: Do our UK ETA's!</span>
-  <a href="{UKETA_URL}" target="_blank" rel="noopener" onclick="revealEtaChecklist()">Go to checklist</a>
-</div>
-
-<div id="passportReminder" class="eta-reminder no-print" style="display:none">
-  <span class="ic">&#9888;&#65039;</span>
-  <span id="passportReminderText">Reminder: Check our passports are valid!</span>
-  <a href="#needtobook" onclick="revealPassportChecklist()">Go to checklist</a>
 </div>
 
 <section id="flights" class="print-block" data-section="flights">
@@ -3890,37 +4141,6 @@ HTML = f'''<!DOCTYPE html>
   </details>
 </section>
 
-<section id="debtodo" class="print-block" data-section="debtodo">
-  <div class="section-head-row">
-    <h2>Deb &amp; Tom's To-Do</h2>
-    <button class="print-btn no-print" onclick="printSection('debtodo')"><span class="ic">&#128424;&#65039;</span>Print</button>
-  </div>
-  <p class="lede">A separate checklist just for Deb &amp; Tom &ndash; kept apart from the main Things to Do list so it's easy to find.</p>
-
-  <h3>Emergency Contacts</h3>
-  <p class="tt-note">Still blank &ndash; please add at least one emergency contact each before we leave (see the matching boxes in the main Emergency Contacts section).</p>
-  <div class="ec-boxes">{DEBTOM_EMERGENCY_HTML}</div>
-
-  <div class="mandatory-fee-box">
-    <span class="currency-badge">i</span>
-    <span class="mandatory-fee-text">Also worth saving: the G&amp;K travel insurance 24/7 emergency line &ndash; Chubb Assistance, <strong>+64 9 374 1775</strong> (see the Travel Cover PDF in Travel Documents for full details).</span>
-  </div>
-
-  <h3>International Driving Permit (IDP)</h3>
-  <p class="tt-note">Whoever's driving in Italy needs a valid IDP alongside their normal licence. Tick boxes save in this browser only.</p>
-  <table class="ntb">
-    <tr><th>Name</th><th>Have IDP?</th><th>IDP Number</th></tr>
-    {debtom_idp_html}
-  </table>
-
-  <h3>Still to Confirm</h3>
-  <p class="tt-note">Open items from the main Things to Do list that affect the whole group, including Deb &amp; Tom.</p>
-  <table class="ntb">
-    <tr><th>Date</th><th>Item</th><th>Status</th><th>Notes</th><th>Booked?</th><th>Links</th></tr>
-    {ntb_html}
-  </table>
-</section>
-
 <section id="hotels" class="print-block" data-section="hotels">
   <div class="section-head-row">
     <h2>Hotel Addresses</h2>
@@ -4095,91 +4315,6 @@ function shareSite(e) {{
     prompt('Copy this link to share:', url);
   }}
 }}
-function revealEtaChecklist() {{
-  var d = document.getElementById('uketaDetails');
-  if (d) {{
-    d.open = true;
-    setTimeout(function() {{ d.scrollIntoView({{behavior:'smooth', block:'center'}}); }}, 60);
-  }}
-}}
-function joinNamesWithAnd(names) {{
-  if (names.length === 0) return '';
-  if (names.length === 1) return names[0];
-  return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
-}}
-(function() {{
-  var boxes = document.querySelectorAll('.eta-check');
-  function updateEtaReminder() {{
-    var banner = document.getElementById('etaReminder');
-    var textEl = document.getElementById('etaReminderText');
-    if (!banner || !boxes.length) return;
-    var doneCount = 0;
-    var remaining = [];
-    boxes.forEach(function(b) {{
-      if (b.checked) {{ doneCount++; }} else {{ remaining.push(b.dataset.firstName); }}
-    }});
-    if (doneCount < boxes.length) {{
-      banner.style.display = 'flex';
-      banner.classList.add('flashing');
-      var base = "Reminder: Do our UK ETA's!";
-      if (textEl) textEl.textContent = doneCount > 0
-        ? base + ' Only ' + joinNamesWithAnd(remaining) + ' left to go'
-        : base;
-    }} else {{
-      banner.style.display = 'none';
-      banner.classList.remove('flashing');
-    }}
-  }}
-  boxes.forEach(function(box) {{
-    var key = 'fab4-eta-' + box.dataset.etaId;
-    box.checked = localStorage.getItem(key) === '1';
-    box.addEventListener('change', function() {{
-      localStorage.setItem(key, box.checked ? '1' : '0');
-      updateEtaReminder();
-    }});
-  }});
-  updateEtaReminder();
-}})();
-function revealPassportChecklist() {{
-  var d = document.getElementById('passportDetails');
-  if (d) {{
-    d.open = true;
-    setTimeout(function() {{ d.scrollIntoView({{behavior:'smooth', block:'center'}}); }}, 60);
-  }}
-}}
-(function() {{
-  var boxes = document.querySelectorAll('.passport-check');
-  function updatePassportReminder() {{
-    var banner = document.getElementById('passportReminder');
-    var textEl = document.getElementById('passportReminderText');
-    if (!banner || !boxes.length) return;
-    var doneCount = 0;
-    var remaining = [];
-    boxes.forEach(function(b) {{
-      if (b.checked) {{ doneCount++; }} else {{ remaining.push(b.dataset.firstName); }}
-    }});
-    if (doneCount < boxes.length) {{
-      banner.style.display = 'flex';
-      banner.classList.add('flashing');
-      var base = 'Reminder: Check our passports are valid!';
-      if (textEl) textEl.textContent = doneCount > 0
-        ? base + ' Only ' + joinNamesWithAnd(remaining) + ' left to go'
-        : base;
-    }} else {{
-      banner.style.display = 'none';
-      banner.classList.remove('flashing');
-    }}
-  }}
-  boxes.forEach(function(box) {{
-    var key = 'fab4-passport-' + box.dataset.passportId;
-    box.checked = localStorage.getItem(key) === '1';
-    box.addEventListener('change', function() {{
-      localStorage.setItem(key, box.checked ? '1' : '0');
-      updatePassportReminder();
-    }});
-  }});
-  updatePassportReminder();
-}})();
 (function() {{
   var boxes = document.querySelectorAll('.idp-check');
   boxes.forEach(function(box) {{
