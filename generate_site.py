@@ -2762,8 +2762,16 @@ CASTLE_OPTION1_HTML = f'''
   </div>
 </div>'''
 
+MELIA_TRANSFER_EMAIL_SENT_HTML = '''
+<div class="email-sent-box">
+  <div class="email-sent-title">&#9993;&#65039; Email sent to The Level at Meli&aacute; White House</div>
+  <div class="email-sent-meta"><strong>To:</strong> melia.white.house@melia.com &middot; <strong>Subject:</strong> Transfer to Heathrow &middot; <strong>Sent:</strong> 30 Aug 2026</div>
+  <p>Asked whether the hotel arranges private transfers to Heathrow for our party of 4 with luggage, gave them the BA15 flight details (10:00pm, Terminal 5), and proposed a 6:00pm hotel pickup for their advice/confirmation on timing.</p>
+  <p><em>Awaiting their reply &ndash; update this once they confirm.</em></p>
+</div>'''
+
 LONDON_OPTION_HTML = {
-    'SUNDAY (DAY 27)': CASTLE_OPTION1_HTML,
+    'SUNDAY (DAY 27)': CASTLE_OPTION1_HTML + MELIA_TRANSFER_EMAIL_SENT_HTML,
 }
 LONDON_DINNER_HTML = {
     'THURSDAY (DAY 24)': THU24_BARS_HTML,
@@ -3596,6 +3604,12 @@ table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
 .uketa-box { margin-top:28px; border:2px solid #c0392b; border-radius:10px; padding:14px 18px; background:#fdecec; }
 .uketa-summary { cursor:pointer; font-weight:700; color:#c0392b; font-size:1.02rem; }
 .uketa-box .tt-note { margin-top:10px; }
+.email-sent-box { margin-top:16px; border:1.5px solid #2e74b5; border-radius:10px; padding:14px 18px; background:#eaf1fa; }
+.email-sent-title { font-weight:700; color:#1f3864; font-size:.98rem; margin-bottom:6px; }
+.email-sent-meta { font-size:.84rem; color:#3a5a86; margin-bottom:8px; }
+.email-sent-meta strong { color:#1f3864; }
+.email-sent-box p { margin:0 0 6px; color:#262626; font-size:.88rem; line-height:1.5; }
+.email-sent-box p:last-child { margin-bottom:0; }
 .red-callout { margin:18px 0; border:2px solid #c0392b; border-radius:10px; padding:16px 20px; background:#fdecec; }
 .red-callout-title { font-weight:800; color:#c0392b; font-size:1.08rem; margin:0 0 8px; }
 .red-callout p { margin:0 0 10px; color:#7a2020; font-size:.92rem; line-height:1.5; }
@@ -4214,30 +4228,6 @@ HTML = f'''<!DOCTYPE html>
     {ntb_html}
   </table>
 
-  <h3>Things to Take</h3>
-  <p class="tt-note">Packing checklist. Tick boxes save in this browser only &mdash; they don't sync back to the spreadsheet, so keep the master list on the Things to Do tab in the workbook up to date separately.</p>
-  <table class="ntb">
-    <tr><th>Item</th><th>Packed?</th></tr>
-    {tt_html}
-  </table>
-
-  <details id="uketaDetails" class="uketa-box">
-    <summary class="uketa-summary"><span class="ic">&#128179;</span> UK ETA Applications &ndash; tick off once each person has applied</summary>
-    <p class="tt-note">Apply here: <a href="{UKETA_URL}" target="_blank" rel="noopener">gov.uk/eta/apply</a> &ndash; each of the 4 of us needs our own UK ETA before flying to London. Tick boxes save in this browser only.</p>
-    <table class="ntb">
-      <tr><th>Name</th><th>Applied?</th></tr>
-      {eta_html}
-    </table>
-  </details>
-
-  <details id="passportDetails" class="uketa-box">
-    <summary class="uketa-summary"><span class="ic">&#128209;</span> Passport Validity Check &ndash; tick off once each passport is confirmed valid</summary>
-    <p class="tt-note">Passports need at least 6 months' validity remaining AT THE END of the trip (29 Sept 2026) &ndash; so valid until at least 29 March 2027. Tick boxes save in this browser only.</p>
-    <table class="ntb">
-      <tr><th>Name</th><th>Checked?</th></tr>
-      {passport_html}
-    </table>
-  </details>
 </section>
 
 <section id="hotels" class="print-block" data-section="hotels">
