@@ -318,6 +318,17 @@ EVENT_NOTES = [
     ('dinner at the lighterman', "If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;"),
 ]
 
+EVENT_PENDING_NOTES = [
+    ('dinner at the lighterman', "Time change requested to 7:30pm (from 6:30pm) due to a delayed flight &ndash; emailed The Lighterman on 30 Aug 2026. TO BE CONFIRMED."),
+]
+
+def event_pending_for(name):
+    n = name.lower()
+    for keyword, note in EVENT_PENDING_NOTES:
+        if keyword in n:
+            return note
+    return None
+
 EVENT_TIME_WARNINGS = [
     ('transfer by private minibus to queen victoria', 'Check time if want to change'),
 ]
@@ -1757,6 +1768,8 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         ev_phone_html = f'<div class="ev-addr">&#128222; {esc(ev_phone)} {w3w_html}</div>' if ev_phone else (f'<div class="ev-addr">{w3w_html}</div>' if w3w_html else '')
         ev_note = event_note_for(b['name'])
         ev_note_html = f'<div class="ev-note">({ev_note})</div>' if ev_note else ''
+        ev_pending = event_pending_for(b['name'])
+        ev_pending_html = f'<div class="ev-pending-box">&#9888;&#65039; {ev_pending}</div>' if ev_pending else ''
         ev_qr = event_qr_for(b['name'])
         ev_qr_html = (
             f'<div class="ev-qr"><a href="{esc(ev_qr[0])}" target="_blank" title="Scan or click for website">'
@@ -1773,6 +1786,7 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
             {addr}
             {ev_phone_html}
             {ev_note_html}
+            {ev_pending_html}
             {f'<div class="ev-link">{link_row}</div>' if link_row else ''}
             {ev_qr_html}
             {shops_html}
@@ -2241,7 +2255,7 @@ DAY24_MAP = {
         {'name': 'Milan Linate Airport', 'note': '12:00pm - Return hire car'},
         {'name': 'London Heathrow Airport (Terminal 5)', 'note': '4:50pm - Arrive on flight BA575'},
         {'name': 'The Level at Melia White House', 'note': '6:00pm - Arrive, check in / drop bags'},
-        {'name': 'The Lighterman, Granary Square', 'note': '6:30pm - Dinner'},
+        {'name': 'The Lighterman, Granary Square', 'note': '7:30pm - Dinner (time change requested, to be confirmed)'},
         {'name': 'The Level at Melia White House', 'note': 'Return for the night'},
     ],
     'legs': [
@@ -3487,6 +3501,7 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ev-row:last-child { border-bottom:none; }
 .ev-time { font-weight:700; color:var(--navy); font-size:.85rem; }
 .ev-time-warning { display:block; color:#c0392b; font-size:.62rem; font-weight:800; letter-spacing:.02em; margin-top:3px; text-transform:uppercase; }
+.ev-pending-box { margin-top:8px; border:2px solid #c0392b; border-radius:8px; padding:8px 12px; background:#fdecec; color:#c0392b; font-weight:700; font-size:.82rem; line-height:1.4; }
 .ev-name { font-weight:600; }
 .ev-addr { color:var(--muted); font-size:.85rem; margin-top:2px; }
 .ev-note { color:var(--muted); font-size:.85rem; font-style:italic; margin-top:2px; }
