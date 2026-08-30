@@ -54,6 +54,18 @@ EUROPE_MAP_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 70
 </svg>'''
 EUROPE_MAP_B64 = base64.b64encode(EUROPE_MAP_SVG.encode('utf-8')).decode('ascii')
 
+PAGE_WAVE_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 40" preserveAspectRatio="none">
+<path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 V0 H0 Z" fill="#d6e9f8"/>
+<path d="M0 28 Q 75 12 150 28 T 300 28 T 450 28 T 600 28 V0 H0 Z" fill="#e3f0fa"/>
+</svg>'''
+PAGE_WAVE_B64 = base64.b64encode(PAGE_WAVE_SVG.encode('utf-8')).decode('ascii')
+
+HERO_WAVE_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 60" preserveAspectRatio="none">
+<path d="M0 30 Q 75 55 150 30 T 300 30 T 450 30 T 600 30 V60 H0 Z" fill="#cfe0f5"/>
+<path d="M0 40 Q 75 15 150 40 T 300 40 T 450 40 T 600 40 V60 H0 Z" fill="#eaf3fb"/>
+</svg>'''
+HERO_WAVE_B64 = base64.b64encode(HERO_WAVE_SVG.encode('utf-8')).decode('ascii')
+
 def esc(s):
     return html.escape(str(s)) if s is not None else ''
 
@@ -859,6 +871,53 @@ def _ztl_card(c):
     </div>'''
 
 ZTL_CARDS_HTML = ''.join(_ztl_card(c) for c in ZTL_CITIES)
+
+# Compact per-drive ZTL warnings - short zone/hours/tip trios, keyed so they can be
+# attached directly to the specific driving-leg schedule events (base plan + Options A/B/C),
+# rather than only living in the general ZTL reference section above.
+ZTL_ALERT_ZONES = {
+    'siena': ('Siena', 'historic centre effectively car-free', 'only relevant if we detour to Piazza del Campo'),
+    'san_gimignano': ('San Gimignano', 'no visitor cars inside the walls (Apr&ndash;Oct)', 'park in P1&ndash;P5 outside the gates and walk up'),
+    'bologna': ('Bologna centre', 'ZTL every day, 7am&ndash;8pm', 'park outside for the breakfast stop and walk in'),
+    'modena': ('Modena &amp; Maranello', "Modena's ZTL is effectively permit-only", 'follow the ring road/tangenziale around Modena, not through its centre'),
+    'como': ('Como &amp; Cernobbio', 'Como old town ZTL, daily 9am&ndash;10pm', "park outside the old town for Harry's Bar/the lakefront"),
+    'milan': ('Milan &ndash; Area C', 'Mon&ndash;Fri 7:30am&ndash;7:30pm, camera-enforced daily from 2026', "fine unless driving toward the Duomo &ndash; the iQ Hotel sits just outside the ring"),
+    'venice': ('Venice', 'no cars at all in the historic centre', 'leave the car at Tronchetto/Piazzale Roma, then walk or vaporetto in'),
+}
+
+EVENT_ZTL_ALERTS = [
+    ('check out of hotel borgo di cortefreda relais & drive to milan', ['siena', 'san_gimignano', 'milan']),
+    ('check out of hotel borgo di cortefreda relais & drive to bologna', ['siena', 'san_gimignano', 'bologna']),
+    ('drive from bologna to como', ['como']),
+    ('drive from como to cernobbio', ['como']),
+    ('drive from lake como to milan', ['milan']),
+    ('check out of hotel borgo di cortefreda relais & drive to maranello', ['siena', 'san_gimignano', 'modena']),
+    ('drive from maranello to milan', ['milan']),
+    ('check out of hotel borgo di cortefreda relais & drive to venice', ['siena', 'san_gimignano', 'venice']),
+    ('drive from venice to milan', ['milan']),
+    ('return hire car - mercedes vito', ['milan']),
+]
+
+def ztl_alert_for(name):
+    n = name.lower()
+    for keyword, zone_keys in EVENT_ZTL_ALERTS:
+        if keyword in n:
+            zones = [ZTL_ALERT_ZONES[k] for k in zone_keys if k in ZTL_ALERT_ZONES]
+            if zones:
+                return zones
+    return None
+
+def ztl_alert_html(zones):
+    items = ''.join(
+        f'<div class="ztl-alert-zone">&#8226; <strong>{place}</strong> &ndash; {hours}. {tip[0].upper() + tip[1:]}.</div>'
+        for place, hours, tip in zones
+    )
+    return f'''
+        <div class="ev-ztl-alert">
+          <div class="ev-ztl-alert-title">&#128663; ZTL zone{'' if len(zones) == 1 else 's'} on this drive &ndash; camera-enforced, avoid or park outside:</div>
+          {items}
+          <a class="ztl-alert-link" href="#ztl">Full ZTL details &amp; map &rarr;</a>
+        </div>'''
 
 # ---------- Daily Quiz (16 "on the ground" days, 11-26 Sept - excludes pure long-haul travel days) ----------
 
@@ -1750,6 +1809,8 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         shops_html = shoplist_html(shops) if shops else ''
         if shops:
             shops_html += ROLLING_STONES_HTML
+        event_place_html = event_place_for(b['name']) or ''
+        shops_html += event_place_html
         photo_url = event_photo_for(b['name'])
         photo_html = (
             f'<img class="ev-photo" src="{esc(photo_url)}" alt="{esc(b["name"])}" '
@@ -1778,6 +1839,8 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         ) if ev_qr else ''
         time_warning = event_time_warning_for(b['name'])
         time_warning_html = f'<span class="ev-time-warning">{esc(time_warning)}</span>' if time_warning else ''
+        ztl_zones = ztl_alert_for(b['name'])
+        ztl_html = ztl_alert_html(ztl_zones) if ztl_zones else ''
         rows += f'''
         <div class="ev-row">
           <div class="ev-time">{esc(b['time_display'])}{time_warning_html}</div>
@@ -1787,6 +1850,7 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
             {ev_phone_html}
             {ev_note_html}
             {ev_pending_html}
+            {ztl_html}
             {f'<div class="ev-link">{link_row}</div>' if link_row else ''}
             {ev_qr_html}
             {shops_html}
@@ -1877,6 +1941,7 @@ def place_card(p, with_review=False):
     fact_html = f'<div class="place-fact">&#128161; {esc(p["fact"])}</div>' if p.get('fact') else ''
     hours_html = f'<div class="place-hours">&#128337; {esc(p["hours"])}</div>' if p.get('hours') else ''
     phone_html = f'<div class="place-hours">&#128222; {esc(p["phone"])}</div>' if p.get('phone') else ''
+    whatsapp_html = f'<div class="place-hours">&#128241; WhatsApp: {esc(p["whatsapp"])}</div>' if p.get('whatsapp') else ''
     email_html = f'<div class="place-hours">&#9993;&#65039; {esc(p["email"])}</div>' if p.get('email') else ''
     w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(p["w3w"])}" target="_blank" title="what3words location">///{esc(p["w3w"])}</a>' if p.get('w3w') else ''
     return f'''
@@ -1887,6 +1952,7 @@ def place_card(p, with_review=False):
       <div class="place-addr">{esc(p.get('address') or '')}</div>
       {hours_html}
       {phone_html}
+      {whatsapp_html}
       {email_html}
       <div class="place-links">{links}</div>
       {fact_html}
@@ -1911,6 +1977,35 @@ ROLLING_STONES_HTML = f'''
     <a class="pill pill-play" href="{esc(ROLLING_STONES_SONG_URL)}" target="_blank">&#9654; Play "You Can't Always Get What You Want"</a>
   </div>
 </div>'''
+
+BOUTIQUE_FORMULE1_SHOP = {
+    'place': 'Boutique Formule 1',
+    'type': "Monaco's own Formula 1 boutique, open since 1989 - team merchandise, scale model cars, replica helmets and racing memorabilia, a short walk from the Grand Prix circuit",
+    'address': '15 Rue Grimaldi, 98000 Monaco',
+    'phone': '+377 93 15 92 44',
+    'whatsapp': '+33 7 64 39 11 31',
+    'email': 'boutiqueformule1@monaco.mc',
+    'website': 'https://boutiqueformule1.com/',
+    'instagram': 'https://www.instagram.com/boutiqueformule1/',
+    'gmap': 'https://www.google.com/maps/dir/?api=1&destination=15+Rue+Grimaldi%2C+98000+Monaco&travelmode=walking',
+    'photo': 'https://boutiqueformule1.com/cdn/shop/files/Boutique_f1.jpg?v=1739614105',
+    'w3w': 'weeks.wisely.cover',
+}
+BOUTIQUE_FORMULE1_HTML = f'''
+<div class="shop-list" style="margin-top:14px;">
+  <div class="shop-list-title">Also worth a look:</div>
+  <div class="place-grid" style="max-width:340px;">{place_card(BOUTIQUE_FORMULE1_SHOP)}</div>
+</div>'''
+
+EVENT_PLACE_CARDS = [
+    ('monaco and the old town', BOUTIQUE_FORMULE1_HTML),
+]
+def event_place_for(name):
+    n = name.lower()
+    for keyword, html_block in EVENT_PLACE_CARDS:
+        if keyword in n:
+            return html_block
+    return None
 
 def ttc_row(t):
     todo_btn = '<span class="pill pill-todo">TO DO</span>' if t.get('status') in ('To Book', 'To Confirm') else ''
@@ -3368,11 +3463,12 @@ CSS = '''
   --hero-blue: #cfe0f5;
 }
 * { box-sizing: border-box; }
-body { margin:0; font-family:'Segoe UI','Source Sans Pro',system-ui,sans-serif; color:var(--ink); background:var(--page-bg); line-height:1.5; }
+body { margin:0; font-family:'Segoe UI','Source Sans Pro',system-ui,sans-serif; color:var(--ink); background:var(--page-bg) url('data:image/svg+xml;base64,__PAGE_WAVE_B64__') repeat-x top; background-size:300px 40px; line-height:1.5; }
 a { color: inherit; }
-.hero { background: linear-gradient(135deg, rgba(11,31,58,.86) 0%, rgba(196,90,60,.78) 45%, rgba(91,155,213,.72) 100%), url('data:image/svg+xml;base64,__EUROPE_MAP_B64__') center/cover no-repeat, var(--navy); color:#fff; padding:56px 24px; }
+.hero { position:relative; background: linear-gradient(135deg, rgba(11,31,58,.86) 0%, rgba(196,90,60,.78) 45%, rgba(91,155,213,.72) 100%), url('data:image/svg+xml;base64,__EUROPE_MAP_B64__') center/cover no-repeat, var(--navy); color:#fff; padding:56px 24px 76px; }
+.hero::after { content:''; position:absolute; left:0; right:0; bottom:-1px; height:60px; background:url('data:image/svg+xml;base64,__HERO_WAVE_B64__') repeat-x bottom; background-size:300px 60px; pointer-events:none; z-index:0; }
 .hero-flags { font-size:1.9rem; letter-spacing:10px; margin:6px 0 4px; }
-.hero-inner { max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; text-align:center; }
+.hero-inner { position:relative; z-index:1; max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; text-align:center; }
 .hero-text { flex:1 1 380px; text-align:center; }
 .hero-photo { flex:0 0 auto; display:flex; flex-direction:column; align-items:center; }
 .view-counter { display:inline-flex; align-items:center; gap:6px; margin-bottom:10px; padding:5px 14px; border-radius:20px; background:rgba(255,255,255,.12); color:#fff; font-size:.8rem; font-weight:600; border:1px solid rgba(255,255,255,.3); }
@@ -3502,6 +3598,11 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ev-time { font-weight:700; color:var(--navy); font-size:.85rem; }
 .ev-time-warning { display:block; color:#c0392b; font-size:.62rem; font-weight:800; letter-spacing:.02em; margin-top:3px; text-transform:uppercase; }
 .ev-pending-box { margin-top:8px; border:2px solid #c0392b; border-radius:8px; padding:8px 12px; background:#fdecec; color:#c0392b; font-weight:700; font-size:.82rem; line-height:1.4; }
+.ev-ztl-alert { margin-top:8px; border-left:4px solid #b6591a; border-radius:8px; padding:8px 12px; background:#fdf3e3; font-size:.82rem; line-height:1.45; }
+.ev-ztl-alert-title { font-weight:700; color:#8a4008; margin-bottom:3px; }
+.ztl-alert-zone { color:#5c3a10; }
+.ztl-alert-link { display:inline-block; margin-top:4px; font-weight:700; font-size:.78rem; color:#8a4008; text-decoration:none; }
+.ztl-alert-link:hover { text-decoration:underline; }
 .ev-name { font-weight:600; }
 .ev-addr { color:var(--muted); font-size:.85rem; margin-top:2px; }
 .ev-note { color:var(--muted); font-size:.85rem; font-style:italic; margin-top:2px; }
@@ -3684,6 +3785,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
   body.printing-book .day-card { page-break-before: always; break-before: page; }
   body.printing-book [data-day-id="day-11"] .dinner-box { page-break-before: always; break-before: page; }
   body.printing-book .hero { background:#fff !important; color:var(--navy) !important; padding:0; height:100vh; page-break-after:always; break-after:page; page-break-inside:avoid; display:flex; align-items:center; justify-content:center; }
+  body.printing-book .hero::after { display:none !important; }
   body.printing-book .hero-title-row, body.printing-book .hero-flags, body.printing-book .hero p.sub,
   body.printing-book .nav-grid, body.printing-book .hero .fab4 { display:none !important; }
   body.printing-book .hero-inner { display:block; text-align:center; }
@@ -3909,6 +4011,8 @@ nav_grid_html = ''.join(
 )
 
 CSS = CSS.replace('__EUROPE_MAP_B64__', EUROPE_MAP_B64)
+CSS = CSS.replace('__PAGE_WAVE_B64__', PAGE_WAVE_B64)
+CSS = CSS.replace('__HERO_WAVE_B64__', HERO_WAVE_B64)
 
 HTML = f'''<!DOCTYPE html>
 <html lang="en">
