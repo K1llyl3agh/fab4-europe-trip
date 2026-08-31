@@ -253,6 +253,8 @@ ETA_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADCklEQVR4nO2cw
 INSURANCE_DOCS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAADiklEQVR4nO2cXYqkShBGT1yFfkyhF3CXku5smCXdHehSZgED+tigfPOQP6b2cAeGLrpsIh6KstKDJgQRkV9Glom/s/mfvwTBSSeddNJJJ5108vlIy9ZjZn0ZW82Y029mNq7lrvGT39bJpySjJGkBTQCzmQGdbASkpRPQSZJ0Jj/jbZ18SnKt8SW8mX1bgHnYDdgNwpsBnKLUPefp5MeT/eXa4rIj2HriMiDYe+YRxPpRz3Tyy5OdbKSTjUFiHsC+LWDjI5/p5I3JEoeCIEWa9XVjNhDrAPAiIwgDaAXJe83TyYeTs5mZDeXXuORgRFwA1h5gT8uyj3qmk1+ERGcDOmkKZfkVF5C0Xe/TdK95Ovk4MvkGUSox5xhYOqVlfZSUFv0Elct7zdPJx5HFhxaySDSFjeIq+ZuURreGcB9yslqTxmIKPKCJTm3MgSpDdp7LnLzYkctSFRS15TQ2BSl5U0w6NbU8ch9y8rC0tk8eEn8YsL4K2C3Ji/lbSWPzABanz3pbJ5+XNBvA7F8l9ymDXS6K5mE3opR0x1xd33GeTj6CrLlsI5XOqYjWRpPBCHUUz2VOXu2kCm15+RWrIDQV92n8ytf2Tp6siUMTVRAqrlJcKkuO+Rb3ISdbyx4BZfV+UoVK6xDFkcLmuczJix1xiJTQSlZrPqR66XHIyXdWFMatVjx16KRY51sWr6mdvNpRUzeXsTa/Jo2xpDuPQ06+t9rHuBuEn71BtwneTKyvaUCzAVF7b/HoILrXPJ18HFniUFCrBdWN1yaDTWnY45CTVzvVQ2oTGkCzD+v6kJP/R9pIp3SgLFXS0EQfG8lHOvR92L2P0cmLNdEnbdSHus1RZOtDPSoSkschJxvLLrFAsxprFmd1ryP1xwb3ISev1tRD01FEp8V8VwTspa78vQfNyXd2Wpd1yYfSQFqc1T00wGtqJ39jTQ+aAAw6WVaKXmo3GhAnMMJWDpnda55OPpo8/vfjOFAmLeWA/Tzk3z7ymU5+FbLtp05d1LV7MaWspqdITcXtuczJYiW2rAPE/8AIP03zsMgALC4o5bc5CUMltd1snk4+jrz+74dYX2SEfN5e6eQ95RK8J9/JP5HzANKPeqw+bMDaY1nK7svO2VO8rZNPQL6rh1T6qU+7HkeTrPcPOXm1Zn+Vcrq17Hq0mlGWIQHXh5w8menP9/zW/D/OnXTSSSeddNLJL0L+Arn3cypOrt8/AAAAAElFTkSuQmCC'
 SIX_MUSICAL_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAADh0lEQVR4nO2cW4rjMBBFb40N/alAL6CXIu9gljTMkmYH9lJ6B/JnQObOh1TyI90MNB3ymFsfiaPoIBuKUr1kI74m048vgoBIkSJFihQpUuT9kValBzCbYSpXPWyYe9gAwIbZZw03vluRd0lGkmTy0ciz2YDFOALg79NiADqSJPfk19cU+SRkX7/nExD/AAZ0GZhfCSD3hpBhMYHA3P692d2KfAgypsVsCGczOwHkew9MVje0K60p8snIQAJzD8QE2BDOBoR8Me1O7lbk7UnfywIBzOt429DmV1oclzJvm5B8rOcUeXVyMiubVzFBAGCDfwDzCwEsJSz7rjVFPgl5YV+mE8zH1m1ssWqqvmNNkc9FooTrMQEAOnIMuYx5qN+xzmtTSJLjYz2nyOuR2KR8Isn6keA5I5IcA4nIjJIukg6J3MlqhzgWI5OBYm5S1wxUk5CrckmHRLq4rclYTZCrT9vaUseqOYGUDoncS92ZUDWnXI2h6guZqoFC84ykQyI/ImMCML2dbfMTWAzTm6cXI89GulP0oM8p8nrk9JaB+N7DfqVaxgfQ0YZifRYrZXw7tZzRQz6nyCuQLY6vvg+qO416NaIrIVmRSPnUIo+y6tD608OvDNcrd4piUn5I5FFaEqhozhrgu151njMqY8oPifycLH0e8LYPaz1oaP4QEDJs+L41RT4Buat1HNLRaTdla5Fkh0RuZFcvA2r/UGsYir6hrUki7WUi97L6Q55UrPpS7FBJW6/WJ1A6JPIg7k63XvtNod6LZkVChuplIj8QNzJ56/YgrDW0XNPWtZafFZeJPIjXy1qRFcCm8LpRKa/Dyg6J3Mu6l3m2sf0VuGlJ8/yQfGqRR9k6zABKorG52CgRffJQX7UOkRfSr5cWufTE/EKLI2AxAZx+JhBzl9VPLfJf5FJO2Zt5Awh/n1Bq+Zjezn7UvpzwuPndirwjcpsfqtlGd52LBC+8RnpJTf6QyJ14RA9gPddRqvVhTRy1kCxB/pDIg2x86to2ncHartgy1tzaIemQyL34DgavjYVtv5kHZy6t9CEdEvk56a9r4Di/0H69m60d+0Agbfj2NUU+MtlfjISE+q6hcDZOpy5bTK8Z088MAosTj/WcIq9HHt/7QcwGIuSemHtYUaly3h6wOHa0292tyHskj3HZpuW1HU9cvWvFZSIvxfSOc5EiRYoUKVLkf07+BaymRNL2lYVyAAAAAElFTkSuQmCC'
 QV_DECKPLAN_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAAC+UlEQVR4nO2bTW6kMBCFX42RsjRSDtBHMTcbzc3wUXIDs2zJ6M3CLnB3ssnP0Iy7WCAgfGosKq9eFbYQn97ir88zgEEGGWSQQQYZ1CckdRuAKANkWkQArIIoIsCiN0wPeTyDjocCSTIBCGkVzj5DZHQEfIZMcCRJ3kLHPZ5Bx0OLCkAcHWVaXsgZgPxOQDkSGR73eAYdBg33F0IaBfGSgfAmIJbX9/Xpycdk0I9C8UIiJEAmOAL+qu7hp3/JoFNCqhGeABZAwpuAUVxmvFwFgCOwAK1SnHxMBn0HQusY4YiQPtrpDYEk55OPyaDvQEUjdgEgcJVyFC8ZxVEUBXnE4xl0OFQ1IjCDczEOKhmBGYCvO+6baUTP0PamixSUpoRGCQnAlTq03GJZo3to8xH1xVfjQJKzzyCTU8nY/3DyMRn0HahqxOyrUFSNSEDNJJ7VXu6pwyKiZ6jJGtrFdpowvGaSGU4lwyKid0g9QwKKCsw+V1NZa07XaIRljf4h/beHI5nURc5evQW1CNktp0VE11BTVWoJ2nat6mnS2LCI6B7St+8zABWK2pS4v2YR8QyQakQCdh9RQiBo4VmumbN8DqjNGvU0l4KjugfW6rNGiUVE79CNs9wrDN82tdVUmkY8A9T2I2boi/+oL1XNp0VE59BNh0o/bmiHSncliVg/4img5ruGuofajyi5Yjuy7xpPAm0+AlA9qF2I5rvGphbmI/qHyowZCVwHxmnIAFwWwGWJAgj8OgCLPOjxDDocamfC3OWPYisANB++LGt0D93Ps6zdKGyeATe9Kssa3UPNfKl9dkzTtt5io34PtYh4FkjXdJUQiOMqZSXXBKAs/oyjzqb6X8Zk0Feg+zVdAp8gIb1mAV4oYV6FWF6zhHmbs33yMRn0kxD5NqCZgf1ndJTJZwDLAJke/HgG/XPofk0X4K/CWKrNdSCwDohjKss3TCP6h96t6dq72Pt6ja36tFqjf+iDNV37zu1nYHPbycdkkEEGGWSQQQYdA/0FwawEsvURLRMAAAAASUVORK5CYII='
+BOARDING_PASS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB7ElEQVR4nO2azWotMQyDpct5/1f+7sI/k9N20dWJoXYLkyGCCuNoFLtGv4h/vwEtalHf4iU5Vkgysuhn70xlfyVfQpIsmVxBvPbOVPZ38iVnzjJlkSvz7ExlfxdFnEPhStcMXlNRIVe2oN8m8JqEekl1GB1HUZh89DGdyv7zqKglSeKHn4JMZf951ClTUVVSOYpnayr7KyhLli0LcNSVJcmtYYPZX0DZSIRRPZKVftXrv86AlDAkBIBiFdti9euMzo8ohc/MxclEbL7eUBbhHkLqoYTe6yd+QoFx6lcUl0PqU8pWv47wYeVpR/FUW1TfVPb3/L3JmmonwWHIprK/159Q3H6cqlXGKw/pVPa39D5chJ0fxKqxVv7B7D+Mqg4OveiiinQZb3/1HQXCuNIkSXYJGF69/4KyLEy6sOzjUH0w1k+8oyA6qlIofaoWdRO/xWskqudD0SQ0yGldQ8m89fUFxfObc7ScE2XyVr/OoC7a5ItU+Yv9vW+fcTRRLXUrP25FuVg/8cQx3yZ9/vNdbDM2lf2d+1DaLqexV69C09avnpGSRTQOj8EQz/7qV8frWWZ7MJUrJkQ5g5zK/iqK4+luIHr7hd9Q9NDW1ZtQtcPY+jrjpf5Axoj2mNP2v+qMZX/Vf33oLy7qL6H+AzAaFgo1v2yTAAAAAElFTkSuQmCC'
+LUGGAGE_TAGS_QR_B64 = 'iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB8ElEQVR4nO2a24oDMQxDj5b5/1/WPthOMnuBfUoMGxc6pRFUCMeRncr8IT7+Arqoi/oWDyg+GQQWBhnhudKV/RG9MIBAzocMljxWurI/oxcKzRxKISPHV7nSlf1plCwyteRfUft59UE9y+fQCpzJdpJXV9QDWcDQKPmWFYL5FK+uqEgmAP/wKkhX9vtR666LrIrEUhiLY7waowRCessFoDJgndnvR1lQdhUPsZx+Vdd/LSGnx4rtpzJdKhllXX//RoVaYb2QtJ4AYWE7s9+LUqaW3ttypNzV6x0PWcC8pFV1kVHw735cog7DNKnkO/lt1rWu7I/5r+yzcwfm2ui+27I/57/KbGkaVRNm4hSvrigjG2t0RjPpqqY1Zr8ZpTwaZx80FlSN0a33M2rSlc3QkC5Lvm/9escyqZ/lHYZkXD/xFWUj7GlRF8Oax0Bj9ptRz9I5ZkaV2Q/55Ntvv1FOOy+HOLURJdcYvzH7zShsYisajJdxaz1956szlvnqaK/L4XvU/a7sT82/YFx6DH+RHTe3f1xjud8e/wBQeP7corp+4itKyjxKecYkWln8W7Pfilrua1UjnLCuqmHh3Y8/o+KAzFK/9ETXfy2x3G/XTZEoZ28cf9Lpyv6MXnlACnlULJiD6b7sj/qvTb94Uf8J9QmIqP08NAV0bwAAAABJRU5ErkJggg=='
 WALK_ROUTES = [
     ('dinner at albert schloss', {
         'from': "Albert's Schloss",
@@ -4142,6 +4144,13 @@ HTML = f'''<!DOCTYPE html>
   <p class="lede">14 &ndash; 21 September (7 nights, round trip from Civitavecchia) &middot; Marseille &middot; Villefranche &middot; Genoa &middot; La Spezia</p>
   <p class="ig-note">'I' buttons link to that place's official Instagram page.</p>
 
+  <ul class="cruise-booking-summary">
+    <li><strong>Booking reference:</strong> 3Q8W5T</li>
+    <li><strong>Ship:</strong> Queen Victoria</li>
+    <li><strong>Voyage number:</strong> V618D</li>
+    <li><strong>Departure date:</strong> 14/09/2026</li>
+  </ul>
+
   <div class="red-callout">
     <div class="red-callout-title">&#127881; Gala Evenings &ndash; V618D (confirmed from Voyage Info, booking 3Q8W5T)</div>
     <div class="gala-dates-row">
@@ -4497,6 +4506,14 @@ HTML = f'''<!DOCTYPE html>
     <div class="td-row">
       <a class="pill pill-weblink td-btn" href="fab4-qv-deck-plans.pdf" target="_blank">QV Deck Plans</a>
       <img class="td-qr" src="data:image/png;base64,{QV_DECKPLAN_QR_B64}" alt="QR code to Queen Victoria Deck Plans">
+    </div>
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-boarding-pass-gk.pdf" target="_blank">Boarding Pass - G&amp;K</a>
+      <img class="td-qr" src="data:image/png;base64,{BOARDING_PASS_QR_B64}" alt="QR code to Boarding Pass - G&amp;K">
+    </div>
+    <div class="td-row">
+      <a class="pill pill-weblink td-btn" href="fab4-luggage-tags-gk.pdf" target="_blank">Luggage Tags - G&amp;K</a>
+      <img class="td-qr" src="data:image/png;base64,{LUGGAGE_TAGS_QR_B64}" alt="QR code to Luggage Tags - G&amp;K">
     </div>
   </div>
 
