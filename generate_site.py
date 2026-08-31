@@ -3485,6 +3485,20 @@ a { color: inherit; }
 .hero-inner { position:relative; z-index:1; max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; text-align:center; }
 .hero-text { flex:1 1 380px; text-align:center; }
 .hero-photo { flex:0 0 auto; display:flex; flex-direction:column; align-items:center; }
+.hero-search-wrap { position:relative; width:280px; max-width:80vw; margin:0 0 12px; }
+.hero-search-input { width:100%; box-sizing:border-box; padding:9px 16px; border-radius:20px; border:1px solid rgba(31,56,100,.3); background:rgba(255,255,255,.65); color:var(--navy); font-size:.85rem; font-family:inherit; outline:none; }
+.hero-search-input::placeholder { color:rgba(31,56,100,.55); }
+.hero-search-input:focus { background:#fff; border-color:var(--navy); }
+.hero-search-results { display:none; position:absolute; top:calc(100% + 6px); left:0; right:0; background:#fff; border-radius:12px; box-shadow:0 8px 24px rgba(31,56,100,.28); max-height:320px; overflow-y:auto; z-index:60; text-align:left; }
+.hero-search-results.open { display:block; }
+.hero-search-result { padding:9px 16px; cursor:pointer; border-bottom:1px solid #eef2f7; }
+.hero-search-result:last-child { border-bottom:none; }
+.hero-search-result:hover, .hero-search-result.active { background:#f2f6fb; }
+.hsr-text { display:block; font-weight:600; color:var(--navy); font-size:.85rem; }
+.hsr-context { display:block; font-size:.7rem; color:var(--muted); margin-top:2px; }
+.hero-search-empty { padding:10px 16px; font-size:.8rem; color:var(--muted); font-style:italic; }
+.search-highlight { animation: searchFlash 2s ease; }
+@keyframes searchFlash { 0%,100% { box-shadow:none; } 15%,55% { box-shadow:0 0 0 4px #ffe27a, 0 0 0 4px #ffe27a inset; background-color:#fffbe0; } }
 .view-counter { display:inline-flex; align-items:center; gap:6px; margin-bottom:10px; padding:5px 14px; border-radius:20px; background:rgba(31,56,100,.08); color:var(--navy); font-size:.8rem; font-weight:600; border:1px solid rgba(31,56,100,.25); }
 .view-counter .ic { font-size:.9rem; }
 .view-counter.last-updated { margin-bottom:14px; background:rgba(31,56,100,.05); font-weight:500; }
@@ -4068,6 +4082,10 @@ HTML = f'''<!DOCTYPE html>
       <div class="fab4">Karen Nicholson &middot; Deb Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
     </div>
     <div class="hero-photo">
+      <div class="hero-search-wrap no-print">
+        <input type="text" id="siteSearchInput" class="hero-search-input" placeholder="&#128269; Search restaurants, hotels, events&hellip;" autocomplete="off">
+        <div class="hero-search-results" id="siteSearchResults"></div>
+      </div>
       <div class="view-counter no-print" id="viewCounter" title="Website views"><span class="ic">&#128065;&#65039;</span><span id="viewCounterNum">100</span> views</div>
       <div class="view-counter last-updated no-print" title="When this website was last regenerated"><span class="ic">&#128260;</span> Last updated: {GENERATED_TIMESTAMP_DISPLAY} &middot; v{SITE_VERSION}</div>
       <img src="data:image/jpeg;base64,{IMG['hero']}" alt="The Fab 4 at dinner">
@@ -4586,6 +4604,101 @@ function updateHeroClock() {{
 }}
 updateHeroClock();
 setInterval(updateHeroClock, 1000);
+(function() {{
+  var searchIndex = null;
+  function buildSearchIndex() {{
+    searchIndex = [];
+    var els = document.querySelectorAll('.day-title, section[data-section] > h2, .ev-name, .place-name');
+    els.forEach(function(el) {{
+      var clone = el.cloneNode(true);
+      var strip = clone.querySelectorAll('.w3w-badge, .badge, .ev-time-warning');
+      strip.forEach(function(n) {{ n.remove(); }});
+      var text = clone.textContent.replace(/\s+/g, ' ').trim();
+      if (!text) return;
+      var context = '';
+      var dayCard = el.closest('.day-card');
+      if (dayCard) {{
+        var dt = dayCard.querySelector('.day-title');
+        if (dt) context = dt.textContent.replace(/\s+/g, ' ').trim();
+      }} else {{
+        var sectionEl = el.closest('section[data-section]');
+        if (sectionEl) {{
+          var h2 = sectionEl.querySelector('h2');
+          if (h2) context = h2.textContent.replace(/\s+/g, ' ').trim();
+        }}
+      }}
+      searchIndex.push({{ text: text, el: el, context: context }});
+    }});
+  }}
+  function runSiteSearch(q) {{
+    if (!searchIndex) buildSearchIndex();
+    q = q.trim().toLowerCase();
+    if (!q) return [];
+    var out = [];
+    for (var i = 0; i < searchIndex.length && out.length < 12; i++) {{
+      if (searchIndex[i].text.toLowerCase().indexOf(q) !== -1) out.push(searchIndex[i]);
+    }}
+    return out;
+  }}
+  function jumpToSearchResult(item) {{
+    var prev = document.querySelectorAll('.search-highlight');
+    prev.forEach(function(n) {{ n.classList.remove('search-highlight'); }});
+    item.el.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+    item.el.classList.add('search-highlight');
+    setTimeout(function() {{ item.el.classList.remove('search-highlight'); }}, 2200);
+  }}
+  var searchInput = document.getElementById('siteSearchInput');
+  var searchBox = document.getElementById('siteSearchResults');
+  if (searchInput && searchBox) {{
+    searchInput.addEventListener('input', function() {{
+      searchBox.innerHTML = '';
+      if (!searchInput.value.trim()) {{ searchBox.classList.remove('open'); return; }}
+      var results = runSiteSearch(searchInput.value);
+      if (!results.length) {{
+        var empty = document.createElement('div');
+        empty.className = 'hero-search-empty';
+        empty.textContent = 'No matches';
+        searchBox.appendChild(empty);
+        searchBox.classList.add('open');
+        return;
+      }}
+      results.forEach(function(r) {{
+        var row = document.createElement('div');
+        row.className = 'hero-search-result';
+        var t = document.createElement('span');
+        t.className = 'hsr-text';
+        t.textContent = r.text;
+        row.appendChild(t);
+        if (r.context) {{
+          var c = document.createElement('span');
+          c.className = 'hsr-context';
+          c.textContent = r.context;
+          row.appendChild(c);
+        }}
+        row.addEventListener('click', function() {{
+          jumpToSearchResult(r);
+          searchBox.classList.remove('open');
+          searchInput.value = r.text;
+          searchInput.blur();
+        }});
+        searchBox.appendChild(row);
+      }});
+      searchBox.classList.add('open');
+    }});
+    searchInput.addEventListener('keydown', function(e) {{
+      if (e.key === 'Enter') {{
+        var first = searchBox.querySelector('.hero-search-result');
+        if (first) first.click();
+      }} else if (e.key === 'Escape') {{
+        searchBox.classList.remove('open');
+        searchInput.blur();
+      }}
+    }});
+    document.addEventListener('click', function(e) {{
+      if (!e.target.closest('.hero-search-wrap')) searchBox.classList.remove('open');
+    }});
+  }}
+}})();
 function toggleFunFacts() {{
   var hidden = document.body.classList.toggle('hide-facts');
   localStorage.setItem('fab4-hide-facts', hidden ? '1' : '0');
