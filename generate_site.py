@@ -66,6 +66,20 @@ HERO_WAVE_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 60" 
 </svg>'''
 HERO_WAVE_B64 = base64.b64encode(HERO_WAVE_SVG.encode('utf-8')).decode('ascii')
 
+HERO_CLOUDS_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 180" preserveAspectRatio="xMidYMid slice">
+<g fill="#ffffff">
+  <ellipse cx="70" cy="90" rx="46" ry="22" fill-opacity="0.55"/>
+  <ellipse cx="108" cy="76" rx="32" ry="18" fill-opacity="0.55"/>
+  <ellipse cx="38" cy="80" rx="28" ry="15" fill-opacity="0.5"/>
+  <ellipse cx="330" cy="45" rx="40" ry="19" fill-opacity="0.45"/>
+  <ellipse cx="364" cy="34" rx="26" ry="14" fill-opacity="0.45"/>
+  <ellipse cx="300" cy="40" rx="22" ry="12" fill-opacity="0.4"/>
+  <ellipse cx="450" cy="120" rx="34" ry="16" fill-opacity="0.4"/>
+  <ellipse cx="478" cy="110" rx="22" ry="12" fill-opacity="0.4"/>
+</g>
+</svg>'''
+HERO_CLOUDS_B64 = base64.b64encode(HERO_CLOUDS_SVG.encode('utf-8')).decode('ascii')
+
 def esc(s):
     return html.escape(str(s)) if s is not None else ''
 
@@ -3465,7 +3479,7 @@ CSS = '''
 * { box-sizing: border-box; }
 body { margin:0; font-family:'Segoe UI','Source Sans Pro',system-ui,sans-serif; color:var(--ink); background:var(--page-bg) url('data:image/svg+xml;base64,__PAGE_WAVE_B64__') repeat-x top; background-size:300px 40px; line-height:1.5; }
 a { color: inherit; }
-.hero { position:relative; background: linear-gradient(135deg, rgba(207,224,245,.85) 0%, rgba(234,243,251,.85) 100%), url('data:image/svg+xml;base64,__EUROPE_MAP_B64__') center/cover no-repeat, var(--hero-blue); color:var(--navy); padding:56px 24px 76px; }
+.hero { position:relative; background: url('data:image/svg+xml;base64,__HERO_CLOUDS_B64__') top left/500px 180px repeat-x, linear-gradient(135deg, rgba(207,224,245,.85) 0%, rgba(234,243,251,.85) 100%) center/cover no-repeat, url('data:image/svg+xml;base64,__EUROPE_MAP_B64__') center/cover no-repeat, var(--hero-blue); color:var(--navy); padding:56px 24px 76px; }
 .hero::after { content:''; position:absolute; left:0; right:0; bottom:-1px; height:60px; background:url('data:image/svg+xml;base64,__HERO_WAVE_B64__') repeat-x bottom; background-size:300px 60px; pointer-events:none; z-index:0; }
 .hero-flags { font-size:1.9rem; letter-spacing:10px; margin:6px 0 4px; }
 .hero-inner { position:relative; z-index:1; max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; text-align:center; }
@@ -3478,8 +3492,8 @@ a { color: inherit; }
 .hero-clock { margin-top:12px; font-size:.85rem; color:var(--navy); opacity:.85; text-align:center; }
 .hero-next-trip { margin-top:6px; font-size:.8rem; font-weight:700; letter-spacing:.04em; color:var(--gold); text-align:center; }
 @media print { .hero-next-trip { display:none !important; } }
-.hero-countdown-wrap { margin-top:16px; text-align:center; }
-.hero-countdown-label { font-size:.75rem; letter-spacing:.09em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; font-weight:700; }
+.hero-countdown-wrap { margin:16px auto 0; text-align:center; display:flex; flex-direction:column; width:fit-content; }
+.hero-countdown-label { font-size:.75rem; letter-spacing:.09em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; font-weight:700; display:block; width:100%; }
 .polarsteps-link { display:inline-flex; align-items:center; gap:6px; margin-top:14px; padding:7px 16px; border-radius:20px; background:rgba(31,56,100,.08); color:var(--navy); text-decoration:none; font-size:.82rem; font-weight:600; border:1px solid rgba(31,56,100,.25); transition:background .2s; }
 .polarsteps-link:hover { background:rgba(31,56,100,.16); }
 .polarsteps-link .ic { font-size:1rem; }
@@ -3489,7 +3503,7 @@ a { color: inherit; }
 .flip-card::after { content:''; position:absolute; top:50%; left:0; right:0; height:2px; background:rgba(0,0,0,.55); transform:translateY(-1px); z-index:2; }
 .flip-digit { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:2.2rem; font-weight:800; color:#fff; font-variant-numeric:tabular-nums; transform-origin:center top; transition:transform .35s cubic-bezier(.4,0,.2,1), opacity .35s ease; }
 .flip-digit.flip-drop { transform:rotateX(-90deg) translateY(6px); opacity:.25; }
-.flip-label { margin-top:8px; font-size:.68rem; letter-spacing:.07em; text-transform:uppercase; color:#fff; opacity:.9; font-weight:600; }
+.flip-label { margin-top:8px; font-size:.68rem; letter-spacing:.07em; text-transform:uppercase; color:var(--navy); opacity:.85; font-weight:600; }
 @media (max-width:480px) { .flip-card { width:48px; height:58px; } .flip-digit { font-size:1.5rem; } .flip-clock { gap:8px; } }
 .hero h1 { font-size:2.6rem; margin:0 0 8px; letter-spacing:.5px; text-shadow:0 1px 0 rgba(255,255,255,.6); }
 .hero-h1-cover { display:none; }
@@ -4017,6 +4031,7 @@ nav_grid_html = ''.join(
 CSS = CSS.replace('__EUROPE_MAP_B64__', EUROPE_MAP_B64)
 CSS = CSS.replace('__PAGE_WAVE_B64__', PAGE_WAVE_B64)
 CSS = CSS.replace('__HERO_WAVE_B64__', HERO_WAVE_B64)
+CSS = CSS.replace('__HERO_CLOUDS_B64__', HERO_CLOUDS_B64)
 
 HTML = f'''<!DOCTYPE html>
 <html lang="en">
@@ -4605,7 +4620,7 @@ function updateCountdown() {{
   var target = new Date('2026-09-10T14:45:00');
   var diff = target.getTime() - new Date().getTime();
   if (diff <= 0) {{
-    wrap.innerHTML = '<div class="flip-label" style="font-size:1.1rem;color:#fff;">✈️ We\\'re off!</div>';
+    wrap.innerHTML = '<div class="flip-label" style="font-size:1.1rem;color:var(--navy);">✈️ We\\'re off!</div>';
     return;
   }}
   var totalSeconds = Math.floor(diff / 1000);
