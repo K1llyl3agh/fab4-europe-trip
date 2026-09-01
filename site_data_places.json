@@ -419,15 +419,7 @@
       "photo": "https://media-cdn.tripadvisor.com/media/photo-o/1c/56/af/9c/caption.jpg"
     }
   ],
-  "need_to_book": [
-    {
-      "date": "Sun 27 Sep",
-      "item": "Confirm transfer to airport",
-      "status": "To Confirm",
-      "notes": "Leaving hotel 7:00pm for 10:00pm LHR departure",
-      "website": "https://www.melia.com/en/hotels/united-kingdom/london/melia-white-house"
-    }
-  ],
+  "need_to_book": [],
   "things_to_take": [
     {
       "item": "Euro Power Adapter"
@@ -469,12 +461,6 @@
       "item": "Dinner reservation - Hard Rock Cafe London",
       "status": "Booked",
       "notes": "150 Old Park Lane, Mayfair, London W1K 1QZ - cafe.hardrock.com/london - confirmation #496211 (via OpenTable), 6:30pm (after the Six show, ends 5:15pm)"
-    },
-    {
-      "day": "Sun (27)",
-      "item": "Confirm transfer to airport",
-      "status": "To Confirm",
-      "notes": "Leaving hotel 7:00pm for 10:00pm LHR departure"
     }
   ],
   "italy_ttc": [

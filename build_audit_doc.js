@@ -99,20 +99,24 @@ function table(rows, labels, cols, colsSum) {
 // version) and its wording corrected below.
 
 const items = [
-  { num: 1, dateArea: 'Sun 27 Sep\nLondon departure', item: 'Meliá White House → Heathrow (T5) transfer – IN PROGRESS. Emailed the hotel today (30 Aug) asking whether they arrange private transfers for a party of 4 with luggage, giving BA15 flight details (10:00pm, T5) and proposing a 6:00pm hotel pickup for their advice/confirmation. Awaiting their reply – see the bordered note on the 27 Sept day card.', kind: 'gap' },
-  { num: 2, dateArea: 'Wed 23 Sep\nMilan / Venice', item: 'Dinner in Milan (7:00pm, all three day-route Options A/B/C) still needs a restaurant picked from Cantine Milano, L\'Immagine Bistrot or Casa Festa Alcolica. If Option C (Venice Lunch) is the one taken, the 12:30pm Venice lunch spot also still needs choosing – no shortlist attached yet.', kind: 'gap' },
-  { num: 3, dateArea: 'Thu 10 Sep\nOutbound', item: 'Singapore connection (~2 hr, Qantas → British Airways) – confirm checked baggage goes through to Rome across the airline change.', kind: 'warn' },
-  { num: 4, dateArea: 'Fri 11 Sep\nOutbound', item: 'Heathrow connection (~85 min) – clears BA’s 75-minute T5 minimum connection time, but only by about 10 minutes. No action possible, just worth knowing there’s no margin if the overnight sector runs late.', kind: 'warn' },
-  { num: 5, dateArea: 'Ongoing', item: 'International Driving Permit (IDP) – Gary’s is confirmed (IDP196978); Karen, Deb and Tom are not yet ticked on the site\'s IDP checklist.', kind: 'warn' },
+  { num: 20, dateArea: 'Wed 23 Sep\nMilan / Venice', item: 'Dinner in Milan (7:00pm, all three day-route Options A/B/C) still needs a restaurant picked from Cantine Milano, L\'Immagine Bistrot or Casa Festa Alcolica. If Option C (Venice Lunch) is the one taken, the 12:30pm Venice lunch spot also still needs choosing – no shortlist attached yet.', kind: 'gap' },
+  { num: 21, dateArea: 'Thu 10 Sep\nOutbound', item: 'Singapore connection (~2 hr, Qantas → British Airways) – confirm checked baggage goes through to Rome across the airline change.', kind: 'warn' },
+  { num: 22, dateArea: 'Fri 11 Sep\nOutbound', item: 'Heathrow connection (~85 min) – clears BA’s 75-minute T5 minimum connection time, but only by about 10 minutes. No action possible, just worth knowing there’s no margin if the overnight sector runs late.', kind: 'warn' },
+  { num: 23, dateArea: 'Ongoing', item: 'International Driving Permit (IDP) – Gary’s is confirmed (IDP196978); Karen, Deb and Tom are not yet ticked on the site\'s IDP checklist.', kind: 'warn' },
 ];
 
 // ---------- Recent changes (last updates made to the site) ----------
 const recentChanges = [
   { date: '30/08/2026', time: '10:15am', text: 'Fixed a stale Things To Do entry for the Hard Rock Cafe dinner (26 Sept) that still showed "To Book" even though the day schedule already had it confirmed (OpenTable confirmation #496211) – now shows Booked in both places.' },
-  { date: '30/08/2026', time: '10:15am', text: 'Emailed the Meliá White House about arranging the Heathrow transfer for 27 Sept (see item 1 below); corrected an email drafting error that had given Tom the surname "Gyde" instead of his correct surname, Akhurst.' },
+  { date: '30/08/2026', time: '10:15am', text: 'Emailed the Meliá White House about arranging the Heathrow transfer for 27 Sept (see item 19 below); corrected an email drafting error that had given Tom the surname "Gyde" instead of his correct surname, Akhurst.' },
   { date: '30/08/2026', time: '10:15am', text: 'Removed the Things to Take, UK ETA Applications and Passport Validity Check tick-lists from the site now that packing, ETAs and passport checks are all done.' },
   { date: '30/08/2026', time: '10:15am', text: 'Full re-audit run: flagged a genuine scheduling conflict on 24 Sept ("Tapas and Gin for Deb" no longer fit the day) and the still-open Milan dinner / Venice lunch restaurant choices.' },
   { date: '30/08/2026', time: '10:45am', text: '"Tapas and Gin for Deb" (24 Sept) dropped from the schedule per Gary\'s decision – resolved and removed from this list.' },
+  { date: '31/08/2026', time: '9:07pm', text: 'The Lighterman (24 Sept) dinner time change to 7:30pm CONFIRMED by Teagan, Reservations – booking 4NJL3Z4M6XN3 amended to 19:30–21:30 for 4 guests. The red "TO BE CONFIRMED" warning has been replaced with a green confirmed note on the day card, and the day-24 route map updated to match.' },
+  { date: '31/08/2026', time: '8:20pm', text: 'Added the Queen Victoria cruise booking summary (booking reference 3Q8W5T, ship, voyage V618D, departure 14/09/2026) to the top of the Cruise section, ahead of the Gala Evenings / Onboard Costs / Booked Tours boxes.' },
+  { date: '31/08/2026', time: '8:20pm', text: 'Added "Boarding Pass - G&K" and "Luggage Tags - G&K" to the Travel Documents section, each with its own QR code linking to the PDF.' },
+  { date: '31/08/2026', time: '9:35pm', text: 'Fixed a bug in push_fab4_live.command where a single locked file could silently halt the entire live push part-way through with no commit or deploy reaching GitHub/Netlify; it now clears stale files first and skips-and-warns instead of aborting.' },
+  { date: '01/09/2026', time: '8:18pm', text: 'Meliá White House → Heathrow transfer (item 19) CONFIRMED – the concierge (Rowan Armitt-Brewster) confirmed 6:00pm hotel departure for the 10:00pm BA15 flight, private Mercedes with chauffeur, £135. Removed from Things to Do and Things to Consider – London (both still showed the old 7:00pm/"To Confirm" placeholder); the 27 Sept day card now shows a confirmed transfer box instead. Still need to reply with the lead passenger\'s contact number to finalise the booking.' },
 ];
 
 const gapCount = items.filter(i => i.kind === 'gap').length;
@@ -143,7 +147,7 @@ children.push(new Paragraph({
 children.push(new Paragraph({
   spacing: { after: 260 },
   children: [new TextRun({
-    text: `Full re-audit run today (30 Aug 2026), including a chronological check of every day's schedule times: the Hard Rock Cafe dinner (26 Sept) had a stale "To Book" tag on the Things To Do list despite being confirmed on the day schedule – now corrected to Booked. The Meliá → Heathrow transfer (item 1) is now in progress – an email has gone to the hotel today. The still-open Milan/Venice restaurant choices (item 2) were found and added, having not previously been tracked on this list. A genuine timing conflict found on 24 Sept ("Tapas and Gin for Deb") has since been resolved – Gary decided to drop it, so it's been removed from the schedule and this list. ${gapCount} item${gapCount === 1 ? '' : 's'} need booking${decideCount ? `, ${decideCount} need${decideCount === 1 ? 's' : ''} a decision` : ''}, and ${warnCount} ${warnCount === 1 ? 'is' : 'are'} worth a final check.`,
+    text: `Re-audit run today (1 Sept 2026): The Meliá White House → Heathrow transfer (item 19) is now CONFIRMED – the hotel's concierge confirmed 6:00pm hotel departure for the 10:00pm BA15 flight (private Mercedes, £135) – and no longer appears on this outstanding list; a small follow-up (sending the lead passenger's contact number) remains, noted under Recent changes. The Lighterman dinner time change (24 Sept) is also CONFIRMED (booking 4NJL3Z4M6XN3, 19:30–21:30). Item numbering on this list continues from where each audit left off rather than resetting to 1, so a number always refers to the same underlying issue across revisions – hence the list below starts at 20. ${gapCount} item${gapCount === 1 ? '' : 's'} need booking${decideCount ? `, ${decideCount} need${decideCount === 1 ? 's' : ''} a decision` : ''}, and ${warnCount} ${warnCount === 1 ? 'is' : 'are'} worth a final check.`,
     italics: true, color: GREY, size: 18, font: 'Source Sans Pro',
   })],
 }));
@@ -203,7 +207,7 @@ const footerTable = new Table({
             new TextRun({ children: [PageNumber.CURRENT], size: 12, color: GREY, font: 'Source Sans Pro' }),
             new TextRun({ text: ' of ', size: 12, color: GREY, font: 'Source Sans Pro' }),
             new TextRun({ children: [PageNumber.TOTAL_PAGES], size: 12, color: GREY, font: 'Source Sans Pro' }),
-            new TextRun({ text: `   |   Printed: ${dd}/${mm}/${yyyy} (Version 3.6)`, size: 12, color: GREY, font: 'Source Sans Pro' }),
+            new TextRun({ text: `   |   Printed: ${dd}/${mm}/${yyyy} (Version 3.8)`, size: 12, color: GREY, font: 'Source Sans Pro' }),
           ],
         })],
       }),
@@ -230,6 +234,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buf => {
-  fs.writeFileSync('Fab4_Audit_v3.6.docx', buf);
-  console.log('Wrote Fab4_Audit_v3.6.docx', buf.length, 'bytes');
+  fs.writeFileSync('Fab4_Audit_v3.8.docx', buf);
+  console.log('Wrote Fab4_Audit_v3.8.docx', buf.length, 'bytes');
 });

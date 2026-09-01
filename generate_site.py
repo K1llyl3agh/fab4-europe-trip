@@ -2902,10 +2902,10 @@ CASTLE_OPTION1_HTML = f'''
 
 MELIA_TRANSFER_EMAIL_SENT_HTML = '''
 <div class="email-sent-box">
-  <div class="email-sent-title">&#9993;&#65039; Email sent to The Level at Meli&aacute; White House</div>
-  <div class="email-sent-meta"><strong>To:</strong> melia.white.house@melia.com &middot; <strong>Subject:</strong> Transfer to Heathrow &middot; <strong>Sent:</strong> 30 Aug 2026</div>
-  <p>Asked whether the hotel arranges private transfers to Heathrow for our party of 4 with luggage, gave them the BA15 flight details (10:00pm, Terminal 5), and proposed a 6:00pm hotel pickup for their advice/confirmation on timing.</p>
-  <p><em>Awaiting their reply &ndash; update this once they confirm.</em></p>
+  <div class="email-sent-title">&#9989; Transfer to Heathrow CONFIRMED &ndash; The Level at Meli&aacute; White House</div>
+  <div class="email-sent-meta"><strong>From:</strong> MWH.concierge@melia.com (Rowan Armitt-Brewster, Junior Concierge) &middot; <strong>Subject:</strong> RE: Transfer to Heathrow &middot; <strong>Received:</strong> 1 Sept 2026, 8:18pm</div>
+  <p>The hotel can arrange a private transfer to Heathrow (T5) for our party of 4 with luggage &ndash; a large Mercedes driven by a private chauffeur, <strong>&pound;135</strong>. They've confirmed <strong>6:00pm</strong> is the best time to leave the hotel for our 10:00pm BA15 departure, giving plenty of time at the airport.</p>
+  <p><strong>Still to do:</strong> reply to the concierge with the lead passenger's contact number and confirm whether any assistance is needed, so they can finalise the booking. Hotel phone: +44 (0)20 7391 3181/3182.</p>
 </div>'''
 
 LONDON_OPTION_HTML = {
