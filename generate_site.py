@@ -951,6 +951,48 @@ QUIZ_PEOPLE = ['Gary', 'Karen', 'Deb', 'Tom']
 QUIZ_LETTERS = ['A', 'B', 'C', 'D']
 
 DAILY_QUIZ = [
+    {'date': 'Thu 10 Sep', 'day_num': 1, 'theme': 'Departure Day', 'qs': [
+        {'q': 'What time does our first flight, QF162, leave Wellington?', 'opts': ['6:05am', '7:45am', '8:00am', '2:45pm'], 'ans': 0,
+         'note': '6:05am - an early start, landing in Sydney at 7:45am.'},
+        {'q': 'Which airline operates our Wellington-Sydney-Singapore legs?', 'opts': ['Air New Zealand', 'Qantas', 'British Airways', 'Singapore Airlines'], 'ans': 1,
+         'note': 'Qantas - QF162 to Sydney, then QF1 on to Singapore.'},
+        {'q': "What class are Gary & Karen flying on the Wellington to Sydney leg?", 'opts': ['Economy', 'Premium Economy', 'Business', 'First'], 'ans': 2,
+         'note': 'Business - a nice start to a very long day of travel.'},
+        {'q': 'In which city do Deb and Tom join the rest of the group?', 'opts': ['Wellington', 'Sydney', 'Singapore', 'London'], 'ans': 1,
+         'note': "Sydney - they don't need the Wellington-Sydney sector."},
+        {'q': 'Which city do we fly through overnight on BA12 before reaching London?', 'opts': ['Dubai', 'Doha', 'Singapore', 'Hong Kong'], 'ans': 2,
+         'note': 'Singapore - BA12 departs SIN around 11:20pm and lands at Heathrow 6:35am the next morning.'},
+        {'q': 'Roughly how long is the overnight BA12 flight from Singapore to London Heathrow?', 'opts': ['About 8 hours', 'About 11 hours', 'About 14 hours', 'About 18 hours'], 'ans': 2,
+         'note': 'About 14 hours 10-15 minutes - the longest single sector of the whole trip.'},
+        {'q': "After landing in London, which flight and city do we connect to next?", 'opts': ['BA548 to Rome', 'BA15 to Singapore', 'QF1 to Sydney', 'BA12 back to Singapore'], 'ans': 0,
+         'note': 'BA548 to Rome Fiumicino (FCO), landing 11:35am on Friday 11 September.'},
+        {'q': "According to Gary's own email to a friend, how many days will he and Karen be away in Europe?", 'opts': ['14 days', '18 days', '21 days', '25 days'], 'ans': 2,
+         'note': "21 days - as Gary wrote: 'Karen and myself will be away in Europe... for 21 days.'"},
+        {'q': 'What is the name of the first hotel the group checks into, in Rome?', 'opts': ['The Republic Hotel', 'Hotel Borgo di Cortefreda Relais', 'iQ Hotel Milano', 'The Level at Meliá White House'], 'ans': 0,
+         'note': 'The Republic Hotel, Via Gaeta 61 - home base for the first four nights in Rome.'},
+        {'q': "Which two European countries' Travel Documents are we carrying reservation codes for on this outbound trip?", 'opts': ['Only the UK', 'Only Italy', 'Both the UK and Italy (transiting through London to Rome)', 'Neither - we fly direct to Rome'], 'ans': 2,
+         'note': "We transit through London Heathrow (UK) on the way to Rome (Italy) - the first of several country changes on this trip."},
+        {'q': 'What is the correct collective noun for a group of pandas?', 'opts': ['A bamboozle', 'An embarrassment', 'A cuddle', 'A blur'], 'ans': 1,
+         'note': "An embarrassment of pandas - one of the more delightfully odd collective nouns."},
+        {'q': 'Which planet in our solar system currently has the most confirmed moons?', 'opts': ['Jupiter', 'Saturn', 'Uranus', 'Neptune'], 'ans': 1,
+         'note': 'Saturn - it overtook Jupiter after a batch of new moons were confirmed in recent years.'},
+        {'q': "What is generally recognised as the world's tallest dog breed?", 'opts': ['Irish Wolfhound', 'Great Dane', 'Mastiff', 'Saint Bernard'], 'ans': 1,
+         'note': 'The Great Dane - record-holding individuals have stood taller than 1m at the shoulder.'},
+        {'q': 'How many hearts does an earthworm have (technically, paired aortic arches)?', 'opts': ['1', '3', '5', '10'], 'ans': 2,
+         'note': 'Five pairs of aortic arches that function like hearts, pumping blood through its body.'},
+        {'q': 'In which country was modern bungee jumping invented?', 'opts': ['Australia', 'New Zealand', 'South Africa', 'France'], 'ans': 1,
+         'note': 'New Zealand - AJ Hackett made the first commercial jump off the Kawarau Bridge near Queenstown in 1988.'},
+        {'q': 'What is the only mammal capable of true, sustained flight?', 'opts': ['Flying squirrel', 'Bat', 'Sugar glider', 'Colugo'], 'ans': 1,
+         'note': 'The bat - flying squirrels and sugar gliders only glide, they never truly fly.'},
+        {'q': 'Which everyday fruit is technically classified by botanists as a giant berry?', 'opts': ['Strawberry', 'Watermelon', 'Banana', 'Coconut'], 'ans': 2,
+         'note': "The banana - strawberries, oddly, aren't true berries at all."},
+        {'q': 'In the classic UK edition of Monopoly, which is the most expensive property on the board?', 'opts': ['Park Lane', 'Mayfair', 'Bond Street', 'Regent Street'], 'ans': 1,
+         'note': 'Mayfair - the dark blue square right before GO, and the priciest square in the whole game.'},
+        {'q': 'What is a baby kangaroo called?', 'opts': ['A cub', 'A joey', 'A kid', 'A pup'], 'ans': 1,
+         'note': 'A joey - and it stays in mum\'s pouch for around six months.'},
+        {'q': 'Roughly what percentage of the adult human body is water?', 'opts': ['30%', '45%', '60%', '90%'], 'ans': 2,
+         'note': "About 60% - though it varies a bit by age, sex and body composition."},
+    ]},
     {'date': 'Fri 11 Sep', 'day_num': 2, 'theme': 'Rome Arrival', 'qs': [
         {'q': 'Which river runs through the middle of Rome?', 'opts': ['The Po', 'The Tiber', 'The Arno', 'The Danube'], 'ans': 1,
          'note': 'The Tiber (Tevere) flows right past our hotel on its way out to the sea at Ostia.'},
@@ -4424,7 +4466,7 @@ HTML = f'''<!DOCTYPE html>
     <h2>Daily Quiz</h2>
     <button class="print-btn quiz-play-btn no-print" onclick="openQuizPlay()"><span class="ic">&#127918;</span>Play the Quiz</button>
   </div>
-  <p class="lede">A 10-question multi-choice quiz for every day of the trip, plus a bonus funny general-knowledge question &ndash; themed to wherever we are that day: Rome history, cruise trivia, French Riviera, Tuscany, London and more. Browse the questions below any time, print two separate documents (questions / answer key), or hit Play the Quiz to check in to a day, answer on screen and reveal your score at the end.</p>
+  <p class="lede">A multi-choice quiz for every day of the trip, themed to wherever we are that day: Rome history, cruise trivia, French Riviera, Tuscany, London and more &ndash; most days have 10 questions plus a bonus funny general-knowledge one, and Day 1 (departure day) kicks off with a bumper 20. Browse the questions below any time, print two separate documents (questions / answer key), or hit Play the Quiz to check in to a day, answer on screen and reveal your score at the end.</p>
 
   <div class="print-block" data-subsection="quizquestions">
     <div class="section-head-row">
