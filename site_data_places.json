@@ -419,7 +419,15 @@
       "photo": "https://media-cdn.tripadvisor.com/media/photo-o/1c/56/af/9c/caption.jpg"
     }
   ],
-  "need_to_book": [],
+  "need_to_book": [
+    {
+      "date": "Fri 11 Sep",
+      "item": "Book dinner reservation",
+      "status": "To Book",
+      "notes": "Pizzeria Ristoro Est! Est!! Est!!! (Deb needs a Pizza, I heard), 6:30pm - Via Genova 32, Rome",
+      "website": "https://pizzeriaristoroestestest.com/en/"
+    }
+  ],
   "things_to_take": [
     {
       "item": "Euro Power Adapter"
