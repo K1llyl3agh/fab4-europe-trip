@@ -269,6 +269,15 @@
       "instagram": null,
       "photo": "https://media-cdn.tripadvisor.com/media/photo-s/15/47/c4/ee/the-exterior.jpg",
       "menu": "https://restaurantguru.com/Trattoria-Monti-Rome/menu"
+    },
+    {
+      "place": "Dan John Roma - Via del Tritone",
+      "type": "Shop candidate - menswear/jackets (Italian brand, British-style tailoring)",
+      "address": "Via del Tritone, 116, 00187 Roma RM",
+      "phone": "+39 06 8956 2880",
+      "hours": "Daily 10:00am-8:00pm",
+      "website": "https://stores.danjohn.com/en/italy/lazio/roma/roma-via-del-tritone",
+      "gmap": "https://www.google.com/maps/search/?api=1&query=Dan+John+Via+del+Tritone+116+Roma"
     }
   ],
   "tuscany_places": [
