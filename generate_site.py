@@ -709,6 +709,63 @@ HOTEL_INFO = [
      'dates': '24-27 Sept 2026 (depart Heathrow the night of the 27th)'},
 ]
 
+SUPERMARKET_INFO = {
+    'The Republic Hotel': [
+        {'name': 'Conad City', 'address': "Piazza dell'Indipendenza 28, 00185 Roma",
+         'w3w': 'revival.beyond.breathy', 'website': 'https://www.conad.it/',
+         'quickest': '2 min walk (~190m)'},
+        {'name': 'Sapori &amp; Dintorni Conad', 'address': 'Piazza dei Cinquecento, 00185 Roma',
+         'w3w': 'ruby.cashew.denser', 'website': 'https://www.conad.it/',
+         'quickest': '4 min walk (~340m)'},
+    ],
+    'Hotel Borgo di Cortefreda Relais': [
+        {'name': 'Coop (Unicoop Firenze)', 'address': 'Via Giorgio La Pira 45, 50028 Barberino Tavarnelle (FI)',
+         'w3w': 'albums.jeopardy.committed', 'website': 'https://unicoopfirenze.it/punti-vendita/barberino-tavarnelle',
+         'quickest': '~3 min drive (~1.0km) &ndash; rural road, not a practical walk'},
+        {'name': 'Coop Mercatale', 'address': "Via di Novoli 1, 50021 Barberino Val d'Elsa (FI)",
+         'w3w': 'gossip.buzzard.basins', 'website': 'http://www.coop-mercatale.it/',
+         'quickest': '~4 min drive (~1.4km) &ndash; rural road, not a practical walk'},
+    ],
+    'iQ Hotel Milano': [
+        {'name': 'Aldi', 'address': 'Via Luigi Galvani 12, 20124 Milano',
+         'w3w': 'woods.mimed.caves', 'website': 'https://www.aldi.it/',
+         'quickest': '3 min walk (~220m)'},
+        {'name': 'Penny Express', 'address': 'Via Ruggero Boscovich 18, 20124 Milano',
+         'w3w': 'country.term.fizzle', 'website': 'https://www.pennymarket.it/',
+         'quickest': '3 min walk (~235m)'},
+    ],
+    'The Level at Melia White House': [
+        {'name': 'Tesco Express', 'address': '385 Euston Road, London NW1 3AU',
+         'w3w': 'status.swift.rear', 'website': 'https://www.tesco.com/store-locator/',
+         'quickest': '2 min walk (~180m)'},
+        {'name': "Sainsbury's Local &ndash; Regent's Place", 'address': "1 Triton Square, Regent's Place, London NW1 3DX",
+         'w3w': 'shaky.storm.work', 'website': 'https://stores.sainsburys.co.uk/4380/london-euston-regents-place-local',
+         'quickest': '4 min walk (~330m)'},
+    ],
+}
+
+def supermarket_box(hotel_name):
+    items = SUPERMARKET_INFO.get(hotel_name)
+    if not items:
+        return ''
+    rows = ''
+    for s in items:
+        w3w_html = (
+            f' <a class="w3w-badge" href="https://what3words.com/{s["w3w"]}" target="_blank" title="what3words location">///{s["w3w"]}</a>'
+        ) if s.get('w3w') else ''
+        website_html = f' &middot; <a href="{esc(s["website"])}" target="_blank" rel="noopener">Website</a>' if s.get('website') else ''
+        rows += f'''
+        <div class="supermarket-item">
+          <div class="supermarket-name">{s['name']}</div>
+          <div class="supermarket-line">&#128205; {esc(s['address'])}{w3w_html}</div>
+          <div class="supermarket-line">&#128694; {s['quickest']}{website_html}</div>
+        </div>'''
+    return f'''
+        <div class="supermarket-box">
+          <div class="supermarket-box-title">&#128722; 2 Closest Supermarkets</div>
+          {rows}
+        </div>'''
+
 HOTEL_ADDRESS = [(h['name'], h['address']) for h in HOTEL_INFO]
 
 def stay_with_address(stay_text):
@@ -787,6 +844,7 @@ def hotel_directory_cards():
           {fee_html}
           {f'<div class="place-links" style="margin-top:8px;">{parking_email_btn}</div>' if parking_email_btn else ''}
           {parking_response_html}
+          {supermarket_box(h['name'])}
           {qr_html}
         </div>'''
     return cards
@@ -3609,6 +3667,13 @@ a { color: inherit; }
 .mandatory-fee-box { display:flex; align-items:flex-start; gap:8px; margin-top:8px; padding:7px 10px; background:#eef8ee; border:1.5px solid #8fce8f; border-radius:7px; }
 .currency-badge { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:#3f9142; color:#fff; font-size:.72rem; font-weight:700; line-height:1; }
 .mandatory-fee-text { font-size:.76rem; color:#2e5c2e; line-height:1.35; }
+.supermarket-box { margin-top:10px; padding:10px 12px; background:#eaf1fa; border:1.5px solid #2e74b5; border-radius:10px; }
+.supermarket-box-title { font-size:.78rem; font-weight:700; color:#1f3864; text-transform:uppercase; letter-spacing:.4px; margin-bottom:6px; display:flex; align-items:center; gap:6px; }
+.supermarket-item { padding:6px 0; }
+.supermarket-item + .supermarket-item { border-top:1px dashed #b7cbe6; }
+.supermarket-name { font-weight:700; color:var(--ink); font-size:.85rem; }
+.supermarket-line { font-size:.76rem; color:#33475b; line-height:1.4; margin-top:2px; }
+.supermarket-line a { color:#2e74b5; }
 section { max-width:1080px; margin:0 auto; padding:48px 20px 8px; }
 section h2 { font-size:1.7rem; color:var(--navy); border-left:6px solid var(--gold); padding-left:14px; margin-bottom:6px; }
 section h3 { color:var(--navy); margin-top: 30px; }
@@ -4082,6 +4147,7 @@ NAV_SECTIONS = [
     ('london', '&#127468;&#127463;', 'London'),
     ('places', '&#128506;&#65039;', 'Places &amp; Maps'),
     ('needtobook', '&#9989;', 'Things to Do'),
+    ('hotels', '&#128722;', 'Supermarket Addresses'),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
     ('dailyquiz', '&#129504;', 'Daily Quiz'),
 ]
@@ -4458,7 +4524,7 @@ HTML = f'''<!DOCTYPE html>
     <button class="print-btn no-print" onclick="printSection('hotels')"><span class="ic">&#128424;&#65039;</span>Print</button>
     <a class="print-btn no-print" href="{HOTEL_MAILTO}"><span class="ic">&#9993;&#65039;</span>Email</a>
   </div>
-  <p class="lede">Every hotel on the trip, with address, phone and email &ndash; use Print for a paper copy or a browser "Save as PDF", or Email to send yourself/family a copy.</p>
+  <p class="lede">Every hotel on the trip, with address, phone and email &ndash; use Print for a paper copy or a browser "Save as PDF", or Email to send yourself/family a copy. Each hotel card also lists the 2 closest supermarkets, with address, what3words and the quickest way to get there.</p>
   <div class="place-grid">{HOTEL_DIRECTORY_HTML}</div>
 </section>
 
