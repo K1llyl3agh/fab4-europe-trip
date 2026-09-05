@@ -31,7 +31,8 @@
       "photo": "https://assets.albertsschloss.com/content/uploads/2024/01/Schloss-London-Header-1400x788.jpg",
       "menu": "https://www.albertsschloss.com/menu/?location=london",
       "phone": "020 8165 0000",
-      "email": "eventslondon@albertsschloss.co.uk"
+      "email": "eventslondon@albertsschloss.co.uk",
+      "w3w": "hope.rots.towns"
     },
     {
       "place": "The Lighterman",
@@ -43,7 +44,8 @@
       "instagram": "https://www.instagram.com/thelightermankx/",
       "photo": "http://static1.squarespace.com/static/61cc647e2e2bca2f4e1ae1da/t/61cc64ad2e2bca2f4e1ae5e8/1745590094055/WC%2BHeader.png?format=1500w",
       "menu": "https://www.thelighterman.co.uk/menus",
-      "phone": "020 3846 3400"
+      "phone": "020 3846 3400",
+      "w3w": "gates.upset.nasal"
     },
     {
       "place": "St Martin's Theatre (The Mousetrap)",
@@ -88,7 +90,8 @@
       "review": null,
       "instagram": "https://www.instagram.com/hopscotchtaprooms/",
       "menu": "https://www.hopscotchtap.com/copy-of-parties",
-      "phone": "+44 7394 072189"
+      "phone": "+44 7394 072189",
+      "w3w": "wheels.draw.loved"
     },
     {
       "place": "Harrods",
@@ -121,7 +124,8 @@
       "review": "https://www.tripadvisor.com/Restaurant_Review-g186338-d13224804-Reviews-Harry_s_Dolce_Vita_Knightsbridge-London_England.html",
       "instagram": null,
       "menu": "https://harrysdolcevita.com/harrys-menu/",
-      "phone": "+44 20 3940 1020"
+      "phone": "+44 20 3940 1020",
+      "w3w": "punchy.added.hush"
     },
     {
       "place": "Primark (Oxford Street)",
@@ -245,7 +249,8 @@
       "review": "https://www.tripadvisor.com/Restaurant_Review-g187791-d2041920-Reviews-Cantina_Cantarini_da_Mario-Rome_Lazio.html",
       "instagram": "https://www.instagram.com/cantinacantarini/",
       "photo": "https://cms.paginesi.it/user_img_online/2450/-1/1_IMAGESSCOR_CHILD_20141010_051624.png?20231130021809",
-      "menu": "https://www.ristorantecantinacantarini.it/menu-di-terra.php"
+      "menu": "https://www.ristorantecantinacantarini.it/menu-di-terra.php",
+      "w3w": "engaging.when.chop"
     },
     {
       "place": "Girarrosto Fiorentino",
@@ -256,7 +261,8 @@
       "review": "https://www.tripadvisor.com/Restaurant_Review-g187791-d780142-Reviews-Girarrosto_Fiorentino-Rome_Lazio.html",
       "instagram": "https://www.instagram.com/girarrostofiorentino/",
       "photo": "https://www.girarrostofiorentino.it/images/base.jpg",
-      "menu": "https://www.thefork.com/restaurant/girarrosto-fiorentino-r78540/menu"
+      "menu": "https://www.thefork.com/restaurant/girarrosto-fiorentino-r78540/menu",
+      "w3w": "shows.moving.eyelid"
     },
     {
       "place": "Colline Emiliane",
@@ -267,7 +273,8 @@
       "review": "https://www.tripadvisor.com/Restaurant_Review-g187791-d696516-Reviews-Colline_Emiliane-Rome_Lazio.html",
       "instagram": "https://www.instagram.com/collineemiliane1931/",
       "photo": "https://www.collineemiliane.com/wp-content/uploads/2021/03/Colline-Emiliane_0000_IMG_0323_0000_IMG_0355_0001_IMG_0322-1.jpg",
-      "menu": "https://restaurantguru.com/Colline-Emiliane-Rome/menu"
+      "menu": "https://restaurantguru.com/Colline-Emiliane-Rome/menu",
+      "w3w": "pencil.necklace.doll"
     },
     {
       "place": "Trattoria Monti",
@@ -278,7 +285,8 @@
       "review": "https://www.tripadvisor.com/Restaurant_Review-g187791-d793216-Reviews-Trattoria_Monti-Rome_Lazio.html",
       "instagram": null,
       "photo": "https://media-cdn.tripadvisor.com/media/photo-s/15/47/c4/ee/the-exterior.jpg",
-      "menu": "https://restaurantguru.com/Trattoria-Monti-Rome/menu"
+      "menu": "https://restaurantguru.com/Trattoria-Monti-Rome/menu",
+      "w3w": "clips.novelist.rewarding"
     }
   ],
   "tuscany_places": [
@@ -301,7 +309,8 @@
       "review": "https://www.tripadvisor.com/Restaurant_Review-g670654-d3612860-Reviews-Caffe_Degli_Amici-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html",
       "instagram": "https://www.instagram.com/ilcaffedegliamici/",
       "photo": "https://media-cdn.tripadvisor.com/media/photo-w/27/f7/be/40/caption.jpg",
-      "menu": "https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf"
+      "menu": "https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf",
+      "w3w": "woodworking.loafing.readily"
     },
     {
       "place": "Pasticceria La Golosa",
@@ -311,7 +320,8 @@
       "gmap": "https://www.google.com/maps/search/?api=1&query=Pasticceria+La+Golosa+Via+Palazzuolo+Tavarnelle+Val+di+Pesa",
       "review": "https://www.tripadvisor.com/Restaurant_Review-g670654-d3418380-Reviews-Pasticceria_La_Golosa-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html",
       "instagram": null,
-      "photo": "https://media-cdn.tripadvisor.com/media/photo-o/1c/56/af/9c/caption.jpg"
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-o/1c/56/af/9c/caption.jpg",
+      "w3w": "undoubtedly.boisterous.level"
     },
     {
       "place": "Ristorante Triocco",
@@ -322,7 +332,8 @@
       "review": "https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html",
       "instagram": "https://www.instagram.com/triocco/",
       "photo": "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/82/95/b5/20191006-191143-largejpg.jpg",
-      "menu": "https://www.borghiditoscana.net/en/restaurant-pizzeria-triocco-in-barberino-val-delsa-florence/il-menu-del-ristorante-triocco-barberino-val-delsa-2/"
+      "menu": "https://www.borghiditoscana.net/en/restaurant-pizzeria-triocco-in-barberino-val-delsa-florence/il-menu-del-ristorante-triocco-barberino-val-delsa-2/",
+      "w3w": "friendship.feud.evaporates"
     },
     {
       "place": "Agriturismo Buratta",
@@ -333,7 +344,8 @@
       "review": "https://www.tripadvisor.co.nz/Restaurant_Review-g194929-d1894984-Reviews-Agriturismo_Buratta-Talamone_Orbetello_Province_of_Grosseto_Tuscany.html",
       "instagram": null,
       "photo": "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/4f/b5/87/photo7jpg.jpg",
-      "menu": "https://restaurantguru.com/Agriturismo-Buratta-Fonteblanda/menu"
+      "menu": "https://restaurantguru.com/Agriturismo-Buratta-Fonteblanda/menu",
+      "w3w": "irritant.caramel.enlisted"
     }
   ],
   "italy_places": [
@@ -416,7 +428,8 @@
       "review": null,
       "instagram": "https://www.instagram.com/ilcaffedegliamici/",
       "photo": "https://media-cdn.tripadvisor.com/media/photo-w/27/f7/be/40/caption.jpg",
-      "menu": "https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf"
+      "menu": "https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf",
+      "w3w": "woodworking.loafing.readily"
     },
     {
       "place": "Pasticceria La Golosa",
@@ -426,7 +439,8 @@
       "gmap": "https://www.google.com/maps/search/?api=1&query=Pasticceria+La+Golosa+Via+Palazzuolo+Tavarnelle+Val+di+Pesa",
       "review": null,
       "instagram": null,
-      "photo": "https://media-cdn.tripadvisor.com/media/photo-o/1c/56/af/9c/caption.jpg"
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-o/1c/56/af/9c/caption.jpg",
+      "w3w": "undoubtedly.boisterous.level"
     }
   ],
   "need_to_book": [

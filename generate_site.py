@@ -744,8 +744,43 @@ SUPERMARKET_INFO = {
     ],
 }
 
-def supermarket_box(hotel_name):
-    items = SUPERMARKET_INFO.get(hotel_name)
+CHEMIST_INFO = {
+    'The Republic Hotel': [
+        {'name': 'Farmacia XX Settembre', 'address': 'Via Venti Settembre 47, 00187 Roma',
+         'w3w': 'arts.steroids.saloons', 'website': None,
+         'quickest': '4 min walk (~370m)'},
+        {'name': 'Farmacia Indipendenza', 'address': 'Via San Martino della Battaglia 10, 00185 Roma',
+         'w3w': 'landings.stroke.comfort', 'website': None,
+         'quickest': '4 min walk (~375m)'},
+    ],
+    'Hotel Borgo di Cortefreda Relais': [
+        {'name': 'Farmacia Tanganelli', 'address': 'Via del Mulino 13, 50028 Tavarnelle Val di Pesa (FI)',
+         'w3w': 'feudal.kangaroos.jamming', 'website': 'https://www.farmaciatanganelli.it/',
+         'quickest': '~3 min drive (~1.1km) &ndash; rural road, not a practical walk'},
+        {'name': 'Farmacia Pratelli', 'address': "Piazza Ugo Capocchini 21, 50028 Barberino Val d'Elsa (FI)",
+         'w3w': 'bridegroom.urgent.remand', 'website': None,
+         'quickest': '~4 min drive (~1.5km) &ndash; rural road, not a practical walk'},
+    ],
+    'iQ Hotel Milano': [
+        {'name': 'Farmacia Pisani 26', 'address': 'Via Vittor Pisani 26, 20124 Milano',
+         'w3w': 'harps.fried.dizzy', 'website': None,
+         'quickest': '2 min walk (~120m)'},
+        {'name': 'Farmacia Humanitas', 'address': 'Via Fabio Filzi 10, 20124 Milano',
+         'w3w': 'wooden.enlarge.talker', 'website': None,
+         'quickest': '2 min walk (~165m)'},
+    ],
+    'The Level at Melia White House': [
+        {'name': 'Chel Pharmacy', 'address': '173 Great Portland Street, London',
+         'w3w': 'laws.switch.even', 'website': None,
+         'quickest': '5 min walk (~380m)'},
+        {'name': 'Green Light Pharmacy', 'address': 'Drummond Street, London NW1 2PB',
+         'w3w': 'assist.shady.strict', 'website': 'https://greenlightpharmacy.com/green-light-euston',
+         'quickest': '5 min walk (~395m)'},
+    ],
+}
+
+def _nearby_box(hotel_name, info_dict, title, icon):
+    items = info_dict.get(hotel_name)
     if not items:
         return ''
     rows = ''
@@ -762,9 +797,15 @@ def supermarket_box(hotel_name):
         </div>'''
     return f'''
         <div class="supermarket-box">
-          <div class="supermarket-box-title">&#128722; 2 Closest Supermarkets</div>
+          <div class="supermarket-box-title">{icon} {title}</div>
           {rows}
         </div>'''
+
+def supermarket_box(hotel_name):
+    return _nearby_box(hotel_name, SUPERMARKET_INFO, '2 Closest Supermarkets', '&#128722;')
+
+def chemist_box(hotel_name):
+    return _nearby_box(hotel_name, CHEMIST_INFO, '2 Closest Chemists', '&#128138;')
 
 HOTEL_ADDRESS = [(h['name'], h['address']) for h in HOTEL_INFO]
 
@@ -845,6 +886,7 @@ def hotel_directory_cards():
           {f'<div class="place-links" style="margin-top:8px;">{parking_email_btn}</div>' if parking_email_btn else ''}
           {parking_response_html}
           {supermarket_box(h['name'])}
+          {chemist_box(h['name'])}
           {qr_html}
         </div>'''
     return cards
@@ -2265,71 +2307,71 @@ DINNER_12SEP = [
      'address': 'Via Panisperna 251, Monti - ~15 min walk', 'website': None,
      'hours': 'Daily 12pm-10pm',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1187387-Reviews-Ai_Tre_Scalini_Bottiglieria_dal_1895-Rome_Lazio.html',
-     'fact': 'The name means "at the three steps" - a nod to the three little steps down into its cosy, cellar-like wine bar, which has barely changed since it opened in 1895.'},
+     'fact': 'The name means "at the three steps" - a nod to the three little steps down into its cosy, cellar-like wine bar, which has barely changed since it opened in 1895.', 'w3w': 'muscular.winners.giggle'},
     {'place': 'La Carbonara', 'type': 'Rome institution since 1906, famous for its namesake dish - carbonara, amatriciana, cacio e pepe',
      'address': 'Via Panisperna 214, Monti - ~15 min walk', 'website': None,
      'hours': 'Mon-Sat 12:30-2:30pm & 7-11pm (closed Sun)',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1016936-Reviews-La_Carbonara-Rome_Lazio.html',
-     'fact': "Ironically, this restaurant opened in 1906 - decades before food historians think the dish carbonara was even invented (most trace it to Rome in the 1940s, possibly influenced by American GI rations of eggs and bacon)."},
+     'fact': "Ironically, this restaurant opened in 1906 - decades before food historians think the dish carbonara was even invented (most trace it to Rome in the 1940s, possibly influenced by American GI rations of eggs and bacon).", 'w3w': 'fuss.saga.active'},
     {'place': 'Al Vino al Vino', 'type': 'Intimate Monti enoteca (since 1999) - excellent wine list by the glass, sweet-and-sour eggplant caponata',
      'address': 'Via dei Serpenti 19, Monti - ~14 min walk', 'website': None,
      'hours': 'Mon-Thu & Sun 7pm-midnight, Fri-Sat 7pm-1:30am',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1063520-Reviews-Al_Vino_al_Vino-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1063520-Reviews-Al_Vino_al_Vino-Rome_Lazio.html', 'w3w': 'emblem.casual.ketchup'},
     {'place': 'La Taverna dei Monti', 'type': 'Popular traditional trattoria - carbonara, cacio e pepe and other Roman staples done well',
      'address': 'Via del Boschetto 41, Monti - ~15 min walk', 'website': None,
      'hours': 'Tue-Sun 12:30pm-11pm (closed Mon)',
-     'review': 'https://www.tripadvisor.com/RestaurantsNear-g187791-d6704256-Rione_Monti-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/RestaurantsNear-g187791-d6704256-Rione_Monti-Rome_Lazio.html', 'w3w': 'caravan.ribs.topped'},
     {'place': 'Alle Carrette', 'type': 'One of the best-loved pizzerias in Monti - good prices, lovely courtyard seating out back',
      'address': 'Vicolo delle Carrette, Monti - ~16 min walk', 'website': None,
      'hours': 'Check ahead - published hours conflict between sources',
-     'review': 'https://www.tripadvisor.com/RestaurantsNear-g187791-d6704256-Rione_Monti-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/RestaurantsNear-g187791-d6704256-Rione_Monti-Rome_Lazio.html', 'w3w': 'owners.provide.deeper'},
     {'place': 'Maharajah', 'type': 'Well-rated Indian restaurant in the middle of Monti - good change of pace if craving something other than Italian',
      'address': 'Via dei Serpenti 124, Monti - ~14 min walk', 'website': 'https://www.maharajah1.com/index-en.html',
      'hours': 'Mon-Thu 12:30-3pm & 7:30pm-midnight (check ahead for weekends)',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d795697-Reviews-Maharajah-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d795697-Reviews-Maharajah-Rome_Lazio.html', 'w3w': 'archive.magpie.heat'},
     {'place': 'Temakinho', 'type': 'Fun Brazilian-Japanese fusion (sushi meets caipirinha) - colourful spot a few steps from the Colosseum end of Monti',
      'address': 'Via dei Serpenti 16, Monti - ~13 min walk', 'website': 'https://www.temakinho.com/',
      'hours': 'Daily 12-3:30pm & 7-11:30pm',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d5612568-Reviews-Temakinho_Rome_Monti-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d5612568-Reviews-Temakinho_Rome_Monti-Rome_Lazio.html', 'w3w': 'winners.fragment.leave'},
     {'place': 'Taverna Romana', 'type': 'Popular family-run local spot known for authentic Roman cuisine and reasonable prices - book ahead as it fills fast',
      'address': 'Via della Madonna dei Monti 79, Monti - ~14 min walk', 'website': None,
      'hours': 'Mon-Sat 12-3pm & 7:30-11pm (closed Sun)',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1943547-Reviews-Taverna_Romana-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1943547-Reviews-Taverna_Romana-Rome_Lazio.html', 'w3w': 'placed.dorm.jaunts'},
 ]
 
 DINNER_13SEP = [
     {'place': 'Hostaria al Boschetto', 'type': 'Warm, cosy Roman comfort food - a Monti favourite, fair prices',
      'address': 'Via del Boschetto, Monti - ~15 min walk', 'website': None,
      'hours': 'Check ahead - hours not consistently published',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1067222-Reviews-Hostaria_Al_Boschetto-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1067222-Reviews-Hostaria_Al_Boschetto-Rome_Lazio.html', 'w3w': 'legs.earful.across'},
     {'place': 'Urbana 47', 'type': 'Farm-to-table Italian - seasonal, organic produce with a modern twist on Roman classics',
      'address': 'Via Urbana 47, Monti - ~15 min walk', 'website': 'https://urbana47.com/?lang=en',
      'hours': 'Daily 8:30am-midnight',
-     'review': None},
+     'review': None, 'w3w': 'detection.budding.rejects'},
     {'place': 'La Bottega del Caffè', 'type': 'Lively bar/trattoria right on the prettiest square in Monti - good for a relaxed evening',
      'address': 'Piazza Madonna dei Monti 5, Monti - ~16 min walk', 'website': None,
      'hours': 'Mon-Sat 8am-2am, Sun 9am-2am',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1150937-Reviews-Bottega_del_Caffe-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1150937-Reviews-Bottega_del_Caffe-Rome_Lazio.html', 'w3w': 'sanded.spite.soak'},
     {'place': 'Ornelli Black Angus Steakhouse', 'type': "TripAdvisor 4.8★ - top-rated steakhouse, handy since it's right near where today's Colosseum tour finishes",
      'address': 'Via Merulana 224 - ~20 min walk from hotel, ~5 min from the Colosseum', 'website': None,
      'hours': 'Closed Mondays - check ahead for exact times',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2206695-Reviews-Ornelli_Black_Angus_Steakhouse-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2206695-Reviews-Ornelli_Black_Angus_Steakhouse-Rome_Lazio.html', 'w3w': 'gagging.prefix.arts'},
     {'place': 'Cuoco & Camicia', 'type': 'TripAdvisor 4.5★ - relaxed elegance, modern Italian cuisine, near the Colosseum end of the tour',
      'address': 'Near Cavour/Colosseum - ~22 min walk from hotel, ~5 min from the Colosseum', 'website': 'https://www.cuocoecamicia.it/en/',
      'hours': 'Check ahead - hours not consistently published',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2391713-Reviews-Cuoco_Camicia-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2391713-Reviews-Cuoco_Camicia-Rome_Lazio.html', 'w3w': 'outraged.revision.grills'},
     {'place': 'Trattoria Vecchia Roma', 'type': "Traveller's Choice 2025 winner, est. 1916 - famous for its Amatriciana Flambé, near Piazza Vittorio",
      'address': 'Via Ferruccio 12B/C, Esquilino - ~18 min walk', 'website': None,
      'hours': 'Mon-Sat 12:30-3pm & 7-11pm (closed Sun)',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1584357-Reviews-Trattoria_Vecchia_Roma-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1584357-Reviews-Trattoria_Vecchia_Roma-Rome_Lazio.html', 'w3w': 'tornado.sizing.canyons'},
     {'place': 'Le Caveau', 'type': "Traveller's Choice-rated Italian restaurant near Piazza Vittorio - fried baby octopus, burrata, good all-rounder",
      'address': 'Via Conte Verde 6, Esquilino - ~15 min walk', 'website': None,
      'hours': 'Daily 12pm-11pm',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1583145-Reviews-Le_Caveau-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1583145-Reviews-Le_Caveau-Rome_Lazio.html', 'w3w': 'grumble.volunteered.cared'},
     {'place': 'Hostaria Al Gladiatore', 'type': "Over 200 years serving Roman classics right on Piazza del Colosseo - come for the Colosseum view as much as the carbonara",
      'address': 'Piazza del Colosseo 5 - ~20 min walk from hotel, on the Colosseum square', 'website': None,
      'hours': 'Daily 7am-midnight',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1012381-Reviews-Hostaria_al_Gladiatore-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1012381-Reviews-Hostaria_al_Gladiatore-Rome_Lazio.html', 'w3w': 'national.chatting.mute'},
 ]
 
 dinner_box_11sep = dinner_box('Dinner Suggestions (8 ideas, within ~20 min walk of the hotel)', DINNER_11SEP)
@@ -2359,35 +2401,35 @@ LUNCH_13SEP = [
     {'place': 'Il Salotto del Colosseo', 'type': 'TripAdvisor 4.7★ - "great lunch by the Colosseum", cosy hidden gem',
      'address': 'Via di S. Giovanni in Laterano 42, Rome - ~2 min from Piazza del Colosseo', 'website': 'https://ilsalottodelcolosseo.it/en/',
      'hours': 'Daily 11am-11:30pm',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d23737738-Reviews-Il_Salotto_Del_Colosseo-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d23737738-Reviews-Il_Salotto_Del_Colosseo-Rome_Lazio.html', 'w3w': 'sandals.camped.agrees'},
     {'place': 'Fuorinorma', 'type': 'TripAdvisor 4.8★ - "best panini in Rome", fresh charcuterie boards, quick and casual',
      'address': 'Via dei Serpenti 178, Monti - ~10 min walk to Colosseo', 'website': None,
      'hours': 'Mon-Sat 11:30am-11:30pm (closed Sun)',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d12729060-Reviews-Fuorinorma-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d12729060-Reviews-Fuorinorma-Rome_Lazio.html', 'w3w': 'library.veto.persuade'},
     {'place': 'Trattoria Luzzi', 'type': "Bustling local trattoria/pizzeria, a few blocks from the Colosseum - good value, always busy",
      'address': 'Via di San Giovanni in Laterano 88, Rome', 'website': None,
      'hours': 'Mon, Tue, Thu-Sun 12pm-midnight (closed Wed)',
-     'review': None},
+     'review': None, 'w3w': 'rainy.flatten.awesome'},
     {'place': 'Coming Out', 'type': 'TripAdvisor 4.6★ - relaxed all-day cafe/bar right by the Colosseum, big varied menu',
      'address': 'Via San Giovanni in Laterano 8, Rome', 'website': None,
      'hours': 'Check ahead - known for long/late hours but not consistently published',
-     'review': None},
+     'review': None, 'w3w': 'affair.moisture.venue'},
     {'place': 'Le Naumachie (Naumachia)', 'type': "Long-running Roman/Tuscan institution near the Colosseum, grilled mains",
      'address': 'Via Celimontana 7, Rome', 'website': 'https://www.naumachiaroma.com/',
      'hours': 'Daily 11am-11:30pm',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1601155-Reviews-Naumachia-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1601155-Reviews-Naumachia-Rome_Lazio.html', 'w3w': 'devotion.asteroid.buddy'},
     {'place': 'Cafè Cafè', 'type': 'Relaxed bistro/wine bar near the Colosseum - smoothies, salads and sandwiches, good for a lighter lunch',
      'address': 'Via dei Santi Quattro 44, Rome', 'website': 'https://www.cafecafebistrot.it',
      'hours': 'Mon & Wed-Sun 9:30am-7:45pm, Tue 9:30am-4:15pm',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1070852-Reviews-Cafe_Cafe-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1070852-Reviews-Cafe_Cafe-Rome_Lazio.html', 'w3w': 'sponsors.noise.playoffs'},
     {'place': 'Terre e Domus', 'type': "Enoteca run by the Province of Rome next to Trajan's Column - ingredients sourced entirely from the Lazio region",
      'address': 'Foro Traiano 82, Rome', 'website': None,
      'hours': 'Daily 9am-midnight',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d10201057-Reviews-Terre_e_Domus-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d10201057-Reviews-Terre_e_Domus-Rome_Lazio.html', 'w3w': 'reaction.order.twisty'},
     {'place': 'La Taverna dei Quaranta', 'type': 'Family-run local trattoria near the Colosseum, serving since 1984 - authentic Roman classics',
      'address': 'Via Claudia 24, Rome', 'website': 'https://www.latavernadeiquaranta.com/en/',
      'hours': 'Mon-Wed 12-3:30pm & 7:30pm-midnight',
-     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d3162638-Reviews-La_Taverna_Dei_Quaranta-Rome_Lazio.html'},
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d3162638-Reviews-La_Taverna_Dei_Quaranta-Rome_Lazio.html', 'w3w': 'possible.front.choice'},
 ]
 lunch_box_13sep = dinner_box('Lunch Suggestions Near Piazza del Colosseo (8 ideas, before the tour)', LUNCH_13SEP)
 
@@ -3351,42 +3393,42 @@ MILAN_DINNER_OPTIONS = [
      'website': 'https://cantinemilano.com/', 'menu': 'https://cantinemilano.com/menu/',
      'gmap': 'https://www.google.com/maps/search/?api=1&query=Cantine+Milano+Via+Trau+1+Milano',
      'instagram': 'https://www.instagram.com/cantinemilano/',
-     'photo': 'https://cantinemilano.com/wp-content/uploads/2023/05/wine-restaurant.jpg'},
+     'photo': 'https://cantinemilano.com/wp-content/uploads/2023/05/wine-restaurant.jpg', 'w3w': 'twisty.chef.fevered'},
     {'place': "L'Immagine Ristorante Bistrot", 'type': 'Open Wed: 6:00–10:30pm (dinner only)', 'address': 'Via Varesina 61, 20156 Milano',
      'website': 'https://www.limmaginebistrot.com/', 'menu': 'https://www.limmaginebistrot.com/s/menu-465.html',
      'gmap': 'https://www.google.com/maps/search/?api=1&query=L%27immagine+Bistrot+Via+Varesina+61+Milano',
      'instagram': 'https://www.instagram.com/limmaginebistrot/',
-     'photo': 'https://media-cdn.tripadvisor.com/media/photo-f/1b/2d/36/13/interno-sala-bistrot.jpg'},
+     'photo': 'https://media-cdn.tripadvisor.com/media/photo-f/1b/2d/36/13/interno-sala-bistrot.jpg', 'w3w': 'traffic.toys.spare'},
     {'place': 'Casa Festa - Pizzeria Alcolica', 'type': 'Open Wed: 11:30am–3:00pm & 6:30–11:30pm', 'address': 'Viale Bligny 42, 20136 Milano',
      'website': 'https://www.pizzeriacasafesta.it/', 'menu': 'https://www.quandoo.it/en/place/johnny-take-ue-93037/menu',
      'gmap': 'https://www.google.com/maps/search/?api=1&query=Casa+Festa+Pizzeria+Alcolica+Viale+Bligny+42+Milano',
      'instagram': 'https://www.instagram.com/casafesta_pizzeriaalcolica/',
-     'photo': 'https://media-cdn.tripadvisor.com/media/photo-s/1c/15/d3/e2/johnny-take-ue-bligny.jpg'},
+     'photo': 'https://media-cdn.tripadvisor.com/media/photo-s/1c/15/d3/e2/johnny-take-ue-bligny.jpg', 'w3w': 'empires.crumble.perfume'},
     {'place': 'Osteria Cornalia', 'type': 'TripAdvisor 4.6★ (362 reviews) · Open Wed: 12:00–3:00pm & 7:00pm–12:00am', 'address': 'Via Emilio Cornalia 16, 20124 Milano',
      'website': 'https://www.osteriacornalia.it/', 'menu': 'https://www.osteriacornalia.it/menu-cena-osteria-cornalia/',
      'gmap': 'https://www.google.com/maps/search/?api=1&query=Osteria+Cornalia+Via+Emilio+Cornalia+16+Milano',
      'instagram': 'https://www.instagram.com/osteriacornalia/',
-     'photo': 'https://www.osteriacornalia.it/wp-content/uploads/2024/02/IMG_2521-scaled.jpg'},
+     'photo': 'https://www.osteriacornalia.it/wp-content/uploads/2024/02/IMG_2521-scaled.jpg', 'w3w': 'mime.recline.braked'},
     {'place': 'Da Gigi Ristorante & Pizzeria', 'type': 'TheFork 8.9/10 · Open Wed: 12:00pm–11:00pm (non-stop)', 'address': 'Via Mauro Macchi 2, 20124 Milano',
      'website': 'https://www.dagigiristorante.it/', 'menu': 'https://www.thefork.it/ristorante/da-gigi-ristorante-r742987/menu',
      'gmap': 'https://www.google.com/maps/search/?api=1&query=Da+Gigi+Ristorante+Via+Mauro+Macchi+2+Milano',
      'instagram': 'https://www.instagram.com/dagigi_ristorante/',
-     'photo': 'https://www.dagigiristorante.it/wp-content/uploads/2026/01/DA-GIGI-1727-scaled-e1768401050721.jpg'},
+     'photo': 'https://www.dagigiristorante.it/wp-content/uploads/2026/01/DA-GIGI-1727-scaled-e1768401050721.jpg', 'w3w': 'invite.country.task'},
     {'place': 'Osteria Nanin - Torriani', 'type': 'TripAdvisor 4.0★ (97 reviews) · Open Wed: 12:00–3:00pm & 7:00–10:45pm', 'address': 'Via Napo Torriani 10, 20124 Milano',
      'website': 'https://nanin.it/', 'menu': 'https://nanin.it/wp-content/uploads/Menu-Osteria-Nanin-Napo-Torriani-Gennaio-2024.pdf',
      'gmap': 'https://www.google.com/maps/search/?api=1&query=Osteria+Nanin+Torriani+Via+Napo+Torriani+10+Milano',
      'instagram': 'https://www.instagram.com/osteria_nanin/',
-     'photo': 'https://nanin.it/wp-content/uploads/Header_Osteria_V2.jpeg'},
+     'photo': 'https://nanin.it/wp-content/uploads/Header_Osteria_V2.jpeg', 'w3w': 'coach.soothing.vocally'},
     {'place': 'Giannino dal 1899', 'type': 'TripAdvisor 4.3★ (303 reviews) · Open Wed: 12:00–3:00pm & 7:00–11:30pm', 'address': 'Via Vittor Pisani 6, 20124 Milano',
      'website': 'https://gianninoristorante.it/', 'menu': 'https://gianninoristorante.it/en/the-menu/',
      'gmap': 'https://www.google.com/maps/search/?api=1&query=Giannino+dal+1899+Via+Vittor+Pisani+6+Milano',
      'instagram': 'https://www.instagram.com/gianninodal1899/',
-     'photo': 'https://gianninoristorante.it/wp-content/uploads/2022/02/home1.jpg'},
+     'photo': 'https://gianninoristorante.it/wp-content/uploads/2022/02/home1.jpg', 'w3w': 'hunt.fairway.deny'},
     {'place': 'Pizza Shambò', 'type': 'TripAdvisor 4.6★ (229 reviews) · Open Wed: 12:00–3:00pm & 6:00–11:00pm', 'address': 'Via Edolo 1, 20125 Milano',
      'website': 'https://www.thefork.it/ristorante/shambo-r465529', 'menu': 'https://www.thefork.it/ristorante/shambo-r465529/menu',
      'gmap': 'https://www.google.com/maps/search/?api=1&query=Pizza+Shambo+Via+Edolo+1+Milano',
      'instagram': 'https://www.instagram.com/pizzashambo/',
-     'photo': 'https://www.pizzashambo.com/wp-content/uploads/2025/02/DSC09015-683x1024.jpg'},
+     'photo': 'https://www.pizzashambo.com/wp-content/uploads/2025/02/DSC09015-683x1024.jpg', 'w3w': 'hooked.weekends.premiums'},
 ]
 milan_dinner_html = ''.join(place_card(p) for p in MILAN_DINNER_OPTIONS)
 
@@ -3426,10 +3468,11 @@ def milan_dinner_stack():
                 f'loading="lazy" referrerpolicy="no-referrer" '
                 f'onerror="this.style.display=\'none\'">'
             )
+        w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(p["w3w"])}" target="_blank" title="what3words location">///{esc(p["w3w"])}</a>' if p.get('w3w') else ''
         rows.append(f'''
         <div class="resto-item">
           <div class="resto-info">
-            <div class="resto-name">{esc(p['place'])}</div>
+            <div class="resto-name">{esc(p['place'])} {w3w_html}</div>
             <div class="resto-hours">{esc(p.get('type') or '')}</div>
             <div class="resto-addr">{esc(p.get('address') or '')}</div>
             <div class="resto-dist"><span class="resto-dist-ic">&#128663;</span>{esc(dist)} from iQ Hotel Milano &middot; {esc(time_)} &middot; {esc(method)}</div>
@@ -4148,7 +4191,7 @@ NAV_SECTIONS = [
     ('london', '&#127468;&#127463;', 'London'),
     ('places', '&#128506;&#65039;', 'Places &amp; Maps'),
     ('needtobook', '&#9989;', 'Things to Do'),
-    ('hotels', '&#128722;', 'Supermarket Addresses'),
+    ('hotels', '&#128722;', 'Market/Chemist Addresses'),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
     ('dailyquiz', '&#129504;', 'Daily Quiz'),
 ]
@@ -4525,7 +4568,7 @@ HTML = f'''<!DOCTYPE html>
     <button class="print-btn no-print" onclick="printSection('hotels')"><span class="ic">&#128424;&#65039;</span>Print</button>
     <a class="print-btn no-print" href="{HOTEL_MAILTO}"><span class="ic">&#9993;&#65039;</span>Email</a>
   </div>
-  <p class="lede">Every hotel on the trip, with address, phone and email &ndash; use Print for a paper copy or a browser "Save as PDF", or Email to send yourself/family a copy. Each hotel card also lists the 2 closest supermarkets, with address, what3words and the quickest way to get there.</p>
+  <p class="lede">Every hotel on the trip, with address, phone and email &ndash; use Print for a paper copy or a browser "Save as PDF", or Email to send yourself/family a copy. Each hotel card also lists the 2 closest supermarkets and 2 closest chemists, with address, what3words and the quickest way to get there.</p>
   <div class="place-grid">{HOTEL_DIRECTORY_HTML}</div>
 </section>
 
