@@ -4107,24 +4107,24 @@ body.printing-dailyquiz .print-block[data-subsection="quizquestions"] { display:
 '''
 
 FLIGHTS = [
-    ('Thu 10 Sept', 'QF162', 'Qantas', 'T1 &rarr; T1', 'Wellington (WLG) &rarr; Sydney (SYD)', '6:05am &rarr; 7:45am', 'Business', '3h 40m', 'gk'),
-    ('Thu 10 Sept', 'QF1', 'Qantas', 'T1 &rarr; T1', 'Sydney (SYD) &rarr; Singapore (SIN)', '2:45pm &rarr; 9:15pm', 'Premium Economy', '8h 30m', 'all'),
-    ('Thu 10 &ndash; Fri 11 Sept', 'BA12', 'British Airways', 'T1 &rarr; T5', 'Singapore (SIN) &rarr; London Heathrow (LHR)', '11:20/11:25pm &rarr; 6:35am +1', 'Premium Economy', '~14h 10-15m', 'all'),
-    ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Business', '2h 35m', 'gk'),
-    ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Economy', '2h 35m', 'dt'),
-    ('Thu 24 Sept', 'BA575', 'British Airways', 'n/a &rarr; T5', 'Milan Linate (LIN) &rarr; London Heathrow (LHR)', '3:55pm &rarr; 4:50pm', 'Business', '1h 55m', 'all'),
-    ('Sun 27 &ndash; Mon 28 Sept', 'BA15', 'British Airways', 'T5 &rarr; T1', 'London Heathrow (LHR) &rarr; Singapore (SIN)', '10:00pm &rarr; 6:40pm +1', 'Premium Economy', '13h 40m', 'all'),
-    ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'British Airways', 'T1 &rarr; T1', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; 6:05am +1', 'Premium Economy', '7h 45m', 'all'),
-    ('Tue 29 Sept', 'QF161', 'Qantas', 'T1 &rarr; n/a', 'Sydney (SYD) &rarr; Wellington (WLG)', '9:35am &rarr; 3:45pm', 'Economy', '3h 10m', 'gk'),
+    ('Thu 10 Sept', 'QF162', 'Qantas', 'T1 &rarr; T1', 'Wellington (WLG) &rarr; Sydney (SYD)', '6:05am &rarr; 7:45am', 'Business', '3h 40m', 'gk', '40kg'),
+    ('Thu 10 Sept', 'QF1', 'Qantas', 'T1 &rarr; T1', 'Sydney (SYD) &rarr; Singapore (SIN)', '2:45pm &rarr; 9:15pm', 'Premium Economy', '8h 30m', 'all', '40kg'),
+    ('Thu 10 &ndash; Fri 11 Sept', 'BA12', 'British Airways', 'T1 &rarr; T5', 'Singapore (SIN) &rarr; London Heathrow (LHR)', '11:20/11:25pm &rarr; 6:35am +1', 'Premium Economy', '~14h 10-15m', 'all', '2&times;23kg'),
+    ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Business', '2h 35m', 'gk', '2&times;32kg'),
+    ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Economy', '2h 35m', 'dt', '23kg'),
+    ('Thu 24 Sept', 'BA575', 'British Airways', 'n/a &rarr; T5', 'Milan Linate (LIN) &rarr; London Heathrow (LHR)', '3:55pm &rarr; 4:50pm', 'Business', '1h 55m', 'all', '2&times;32kg'),
+    ('Sun 27 &ndash; Mon 28 Sept', 'BA15', 'British Airways', 'T5 &rarr; T1', 'London Heathrow (LHR) &rarr; Singapore (SIN)', '10:00pm &rarr; 6:40pm +1', 'Premium Economy', '13h 40m', 'all', '2&times;23kg'),
+    ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'British Airways', 'T1 &rarr; T1', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; 6:05am +1', 'Premium Economy', '7h 45m', 'all', '2&times;23kg'),
+    ('Tue 29 Sept', 'QF161', 'Qantas', 'T1 &rarr; n/a', 'Sydney (SYD) &rarr; Wellington (WLG)', '9:35am &rarr; 3:45pm', 'Economy', '3h 10m', 'gk', '30kg'),
 ]
 FLIGHT_WHO = {'gk': 'Karen &amp; Gary only', 'dt': 'Deb &amp; Tom only', 'all': 'All 4'}
 flight_rows_html = ''.join(
-    f'<tr class="flight-{who}"><td>{date}</td><td>{flight}</td><td>{terminals}</td><td>{airline}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td></tr>'
-    for date, flight, airline, terminals, route, times, cabin, dur, who in FLIGHTS
+    f'<tr class="flight-{who}"><td>{date}</td><td>{flight}</td><td>{terminals}</td><td>{airline}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td><td>{bag}</td></tr>'
+    for date, flight, airline, terminals, route, times, cabin, dur, who, bag in FLIGHTS
 )
 FLIGHTS_TABLE_HTML = f'''
 <table class="ttc flight-table">
-  <tr><th>Date</th><th>Flight</th><th>Terminal</th><th>Airline</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th></tr>
+  <tr><th>Date</th><th>Flight</th><th>Terminal</th><th>Airline</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th><th>Checked Bag</th></tr>
   {flight_rows_html}
 </table>
 <div class="flight-legend">
@@ -4133,6 +4133,7 @@ FLIGHTS_TABLE_HTML = f'''
   <span><span class="flight-swatch all"></span>All 4 together</span>
 </div>
 <p class="tt-note">All flights are on 2026 dates, operated by Qantas (QF) and British Airways (BA). Reservation codes: Gary &amp; Karen &ndash; KXFECY / EKNMYW; Deb &amp; Tom &ndash; UWBGQP / EKH3PP (the Akhursts join the group in Sydney, so have no Wellington&ndash;Sydney sector). Frequent flyer numbers, seat assignments and check-in requirements are held in the original Sabre itinerary emails.</p>
+<p class="tt-note"><strong>Checked bag allowances</strong> (per person, weight-based, no single piece over 32kg): on Qantas-operated trans-Tasman/international sectors (QF162, QF1, QF161), Business &amp; Premium Economy get 40kg total, Economy gets 30kg. On British Airways, Economy (World Traveller) gets 1 bag up to 23kg, Premium Economy (World Traveller Plus) gets 2 bags up to 23kg each, and Business (Club World/Club Europe) gets 2 bags up to 32kg each &ndash; so Gary &amp; Karen's BA548 Business sector has a noticeably bigger allowance than Deb &amp; Tom's Economy sector on the same flight. Always double-check your exact allowance at Manage Booking before you fly, as fare type and Frequent Flyer/Executive Club status can add extra kilos.</p>
 <p class="tt-note"><strong>Sydney layover (Thu 10 Sept, ~7 hrs):</strong> Yes, you can leave the airport. As NZ passport holders, Gary &amp; Karen are automatically granted a Special Category (subclass 444) visa on arrival, so there's no separate visa to arrange. A ~7 hour layover is comfortably above the ~5 hour minimum generally recommended to clear immigration, get into the city and back through security in time (allow ~45 min for immigration on arrival, ~60 min for security before the next departure).</p>
 <p class="tt-note"><strong>Singapore transit on BA15 (Mon 28 Sept, ~1h 40m):</strong> Everyone must deplane at Changi with all carry-on items &ndash; there's no option to stay onboard. On one ticket with bags checked through you won't need to clear passport control, but you WILL need to re-clear security before boarding the onward Sydney sector, as security is at the gate in Singapore. Queues can be long since the whole aircraft transits at once &ndash; follow the crew's instruction on what time to be back at the gate.</p>
 '''
