@@ -1481,19 +1481,23 @@ DAILY_QUIZ = [
     ]},
 ]
 
+def _quiz_day_id(date_str):
+    m = re.search(r'(\d{1,2})\s+Sep', date_str)
+    return f'day-{int(m.group(1))}' if m else None
+
 def _quiz_screen_day_html(day):
     q_html = ''.join(
         f'<li><div class="quiz-q-text">{q["q"]}</div>'
         f'<div class="quiz-opts">{"&nbsp;&nbsp;&nbsp;".join(f"{QUIZ_LETTERS[i]}) {opt}" for i, opt in enumerate(q["opts"]))}</div></li>'
         for q in day['qs']
     )
+    fact_html = fun_fact_box(_quiz_day_id(day['date']))
     return f'''
     <div class="quiz-day-box">
       <div class="quiz-day-head">Day {day['day_num']} &middot; {day['date']} &middot; {day['theme']}</div>
       <ol class="quiz-q-list">{q_html}</ol>
+      {fact_html}
     </div>'''
-
-QUIZ_SCREEN_HTML = ''.join(_quiz_screen_day_html(d) for d in DAILY_QUIZ)
 
 def _quiz_answer_day_html(day):
     li_html = ''.join(
@@ -1954,6 +1958,8 @@ def fun_fact_box(day_id):
       <div class="fun-fact-label">&#127881; Fun Fact{'s' if len(facts) > 1 else ''}</div>
       {facts_html}
     </div>'''
+
+QUIZ_SCREEN_HTML = ''.join(_quiz_screen_day_html(d) for d in DAILY_QUIZ)
 
 def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_html=None, option_html=None):
     blocks = collapse_events(day['events'])
