@@ -187,6 +187,7 @@ EVENT_W3W = [
     ('santa maria degli angeli', 'mouth.dished.cheaply'),
     ('transfer by private minibus to queen victoria', 'snipe.nipped.miss'),
     ('collect avis hire car', 'snipe.nipped.miss'),
+    ('return hire car', 'learn.patting.jazzy'),
     ('tower of london tour', 'swift.blitz.funds'),
     ('river tour', 'dunes.copy.miles'),
     ('villa borghese gardens', 'soak.settle.sweated'),
