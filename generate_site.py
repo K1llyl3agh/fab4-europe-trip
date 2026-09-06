@@ -192,6 +192,9 @@ EVENT_W3W = [
     ('river tour', 'dunes.copy.miles'),
     ('villa borghese gardens', 'soak.settle.sweated'),
     ('terrazza montemartini', 'cactus.defended.avocado'),
+    ('travel to vatican meeting point', 'changing.swimmer.mutual'),
+    ('travel to colosseum meeting point', 'mule.dabbing.fonts'),
+    ("st. peter's basilica entry", 'bind.cobbled.muscular'),
 ]
 
 def event_w3w_for(name):
