@@ -2098,7 +2098,29 @@ def day_map_box(day_map):
       <div class="day-map-caption">Schematic order of the day &ndash; not to scale. Times/distances/routes are estimates; check live transit apps on the day.</div>
     </div>'''
 
-def place_card(p, with_review=False):
+_FOOD_CODE_COUNTER = {}
+ALL_FOOD_PLACES = []
+
+def next_food_code(day_num):
+    seq = _FOOD_CODE_COUNTER.get(day_num, 0) + 1
+    _FOOD_CODE_COUNTER[day_num] = seq
+    return f'{day_num}:{seq:03d}'
+
+def register_food_places(list_title, day_num, options):
+    """Assign a day-based code (e.g. '15:003') to each place dict in `options`,
+    tag it onto the dict as '_food_code', and register it in ALL_FOOD_PLACES
+    for the Food Visited section. Call once per suggestion list, in the order
+    the lists should be numbered."""
+    for p in options:
+        code = next_food_code(day_num)
+        p['_food_code'] = code
+        ALL_FOOD_PLACES.append({
+            'code': code, 'place': p['place'], 'day_num': day_num,
+            'list_title': list_title, 'address': p.get('address') or '',
+        })
+    return options
+
+def place_card(p, with_review=False, code=None):
     photo = p.get('photo')
     website_target = p.get('menu') or p.get('website')
     links = ''
@@ -2126,9 +2148,18 @@ def place_card(p, with_review=False):
     whatsapp_html = f'<div class="place-hours">&#128241; WhatsApp: {esc(p["whatsapp"])}</div>' if p.get('whatsapp') else ''
     email_html = f'<div class="place-hours">&#9993;&#65039; {esc(p["email"])}</div>' if p.get('email') else ''
     w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(p["w3w"])}" target="_blank" title="what3words location">///{esc(p["w3w"])}</a>' if p.get('w3w') else ''
+    visited_html = ''
+    if code:
+        visited_html = (
+            f'<div class="place-visited-row">'
+            f'<label class="place-visited-label"><input type="checkbox" class="place-visited-check" data-code="{esc(code)}" onchange="toggleFoodVisited(\'{esc(code)}\', this.checked)"> Visited</label>'
+            f'<span class="place-code-badge">{esc(code)}</span>'
+            f'</div>'
+        )
     return f'''
     <div class="place-card">
       {photo_block}
+      {visited_html}
       <div class="place-name">{esc(p['place'])} {w3w_html}</div>
       <div class="place-type">{esc(p.get('type') or '')}</div>
       <div class="place-addr">{esc(p.get('address') or '')}</div>
@@ -2229,8 +2260,10 @@ tuscany_days = italy_days[10:12]
 milan_days = italy_days[12:13]
 london_days = sched['london']
 
-def dinner_box(title, options):
-    cards = ''.join(place_card(p, with_review=True) for p in options)
+def dinner_box(title, options, day_num=None, food=True):
+    if food and day_num:
+        register_food_places(title, day_num, options)
+    cards = ''.join(place_card(p, with_review=True, code=(p.get('_food_code') if food and day_num else None)) for p in options)
     return f'''
     <div class="dinner-box">
       <div class="day-map-title">{esc(title)}</div>
@@ -2294,7 +2327,7 @@ LUNCH_11SEP = [
      'hours': 'Daily, continuous hours 12:15pm-11pm',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2149469-Reviews-La_Famiglia-Rome_Lazio.html'},
 ]
-lunch_box_11sep = dinner_box('Lunch Suggestions (4 ideas near the hotel)', LUNCH_11SEP)
+lunch_box_11sep = dinner_box('Lunch Suggestions (4 ideas near the hotel)', LUNCH_11SEP, day_num=2)
 
 TWOPM_11SEP = [
     {'place': 'Caffè Trombetta', 'type': 'Well-regarded local coffee bar near the hotel - good espresso and pastries, easy stop before heading out',
@@ -2310,7 +2343,7 @@ TWOPM_11SEP = [
      'address': 'Via Milazzo 16, 00185 Rome - ~7 min walk', 'website': 'https://coffeeshopfondi.shop/', 'w3w': 'tell.diet.police',
      'hours': 'Daily 8am-2:30pm'},
 ]
-twopm_box_11sep = dinner_box('2pm Free Time - Coffee Suggestions', TWOPM_11SEP)
+twopm_box_11sep = dinner_box('2pm Free Time - Coffee Suggestions', TWOPM_11SEP, day_num=2)
 
 DINNER_12SEP = [
     {'place': 'Ai Tre Scalini - Bottiglieria dal 1895', 'type': 'Historic Monti wine bar (since 1895) - great wines by the glass, traditional small plates, lively atmosphere',
@@ -2384,9 +2417,9 @@ DINNER_13SEP = [
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1012381-Reviews-Hostaria_al_Gladiatore-Rome_Lazio.html', 'w3w': 'national.chatting.mute'},
 ]
 
-dinner_box_11sep = dinner_box('Dinner Suggestions (8 ideas, within ~20 min walk of the hotel)', DINNER_11SEP)
-dinner_box_12sep = dinner_box('8 More Dinner Suggestions (no repeats from the 11th)', DINNER_12SEP)
-dinner_box_13sep = dinner_box('8 More Dinner Suggestions (no repeats - handy for after the Colosseum tour)', DINNER_13SEP)
+dinner_box_11sep = dinner_box('Dinner Suggestions (8 ideas, within ~20 min walk of the hotel)', DINNER_11SEP, day_num=2)
+dinner_box_12sep = dinner_box('8 More Dinner Suggestions (no repeats from the 11th)', DINNER_12SEP, day_num=3)
+dinner_box_13sep = dinner_box('8 More Dinner Suggestions (no repeats - handy for after the Colosseum tour)', DINNER_13SEP, day_num=4)
 
 AFTERNOON_12SEP = [
     {'place': 'Trevi Fountain', 'type': 'Iconic baroque fountain - toss a coin in for luck (~15 min walk from hotel)',
@@ -2405,7 +2438,7 @@ AFTERNOON_12SEP = [
      'review': 'https://www.tripadvisor.com/Attraction_Review-g187793-d195269-Reviews-Necropolis_of_Saint_Peter-Vatican_City_Lazio.html',
      'w3w': 'searched.circling.supposed'},
 ]
-afternoon_box_12sep = dinner_box('Saturday Afternoon Suggestions (6 ideas, after lunch)', AFTERNOON_12SEP)
+afternoon_box_12sep = dinner_box('Saturday Afternoon Suggestions (6 ideas, after lunch)', AFTERNOON_12SEP, food=False)
 
 LUNCH_13SEP = [
     {'place': 'Il Salotto del Colosseo', 'type': 'TripAdvisor 4.7★ - "great lunch by the Colosseum", cosy hidden gem',
@@ -2441,7 +2474,7 @@ LUNCH_13SEP = [
      'hours': 'Mon-Wed 12-3:30pm & 7:30pm-midnight',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d3162638-Reviews-La_Taverna_Dei_Quaranta-Rome_Lazio.html', 'w3w': 'possible.front.choice'},
 ]
-lunch_box_13sep = dinner_box('Lunch Suggestions Near Piazza del Colosseo (8 ideas, before the tour)', LUNCH_13SEP)
+lunch_box_13sep = dinner_box('Lunch Suggestions Near Piazza del Colosseo (8 ideas, before the tour)', LUNCH_13SEP, day_num=4)
 
 EXTRA_BOX_BY_DAY = {
     '11 SEP': lunch_box_11sep + twopm_box_11sep + dinner_box_11sep,
@@ -2954,14 +2987,15 @@ LUNCH_STRAND = [
      'w3w': 'puns.drip.acting'},
 ]
 
+register_food_places('Lunch Suggestions (River Tour end + Strand)', 17, LUNCH_26SEP + LUNCH_STRAND)
 LUNCH_26SEP_HTML = f'''
 <div class="dinner-box">
   <div class="day-map-title">Lunch Suggestions (12:30-2:15pm)</div>
   <p class="lede" style="margin:0 0 10px;">8 options in two areas &ndash; eat near the end of the River Tour, or head straight towards the Strand ready for Six at 4pm.</p>
   <div class="option-box-sub"><strong>4 near the River Tour end (Tower Bridge / St Katharine Docks, 5-8 min walk):</strong></div>
-  <div class="place-grid">{''.join(place_card(p, with_review=True) for p in LUNCH_26SEP)}</div>
+  <div class="place-grid">{''.join(place_card(p, with_review=True, code=p.get('_food_code')) for p in LUNCH_26SEP)}</div>
   <div class="option-box-sub" style="margin-top:14px;"><strong>4 nearer the Strand (handy walk to Vaudeville Theatre for Six):</strong></div>
-  <div class="place-grid">{''.join(place_card(p, with_review=True) for p in LUNCH_STRAND)}</div>
+  <div class="place-grid">{''.join(place_card(p, with_review=True, code=p.get('_food_code')) for p in LUNCH_STRAND)}</div>
 </div>'''
 
 SAT26_BARS_HTML = LUNCH_26SEP_HTML + f'''
@@ -3440,7 +3474,8 @@ MILAN_DINNER_OPTIONS = [
      'instagram': 'https://www.instagram.com/pizzashambo/',
      'photo': 'https://www.pizzashambo.com/wp-content/uploads/2025/02/DSC09015-683x1024.jpg', 'w3w': 'hooked.weekends.premiums'},
 ]
-milan_dinner_html = ''.join(place_card(p) for p in MILAN_DINNER_OPTIONS)
+register_food_places('Milan Dinner Options', 14, MILAN_DINNER_OPTIONS)
+milan_dinner_html = ''.join(place_card(p, code=p.get('_food_code')) for p in MILAN_DINNER_OPTIONS)
 
 MILAN_DINNER_DISTANCE = [
     ('Cantine Milano', '~1.8 km', '~20 min walk / ~7 min taxi', 'Walk via Via Sammartini, or short taxi'),
@@ -3479,9 +3514,19 @@ def milan_dinner_stack():
                 f'onerror="this.style.display=\'none\'">'
             )
         w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(p["w3w"])}" target="_blank" title="what3words location">///{esc(p["w3w"])}</a>' if p.get('w3w') else ''
+        code = p.get('_food_code')
+        visited_html = ''
+        if code:
+            visited_html = (
+                f'<div class="place-visited-row">'
+                f'<label class="place-visited-label"><input type="checkbox" class="place-visited-check" data-code="{esc(code)}" onchange="toggleFoodVisited(\'{esc(code)}\', this.checked)"> Visited</label>'
+                f'<span class="place-code-badge">{esc(code)}</span>'
+                f'</div>'
+            )
         rows.append(f'''
         <div class="resto-item">
           <div class="resto-info">
+            {visited_html}
             <div class="resto-name">{esc(p['place'])} {w3w_html}</div>
             <div class="resto-hours">{esc(p.get('type') or '')}</div>
             <div class="resto-addr">{esc(p.get('address') or '')}</div>
@@ -3865,6 +3910,10 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 .place-addr { font-size:.82rem; color:var(--muted); margin-bottom:10px; min-height:2.2em; }
 .place-links { display:flex; gap:6px; flex-wrap:wrap; }
 @media print { .place-photo, .place-photo-btn { display:none; } }
+.place-visited-row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; padding-bottom:8px; border-bottom:1px dashed #dde3ea; }
+.place-visited-label { display:flex; align-items:center; gap:6px; font-size:.82rem; font-weight:700; color:var(--navy); cursor:pointer; }
+.place-visited-label input[type="checkbox"] { width:16px; height:16px; accent-color:var(--gold); cursor:pointer; }
+.place-code-badge { font-size:.72rem; font-weight:700; color:#fff; background:var(--navy); border-radius:5px; padding:2px 7px; letter-spacing:.02em; }
 .resto-list { display:flex; flex-direction:column; gap:14px; margin:18px 0 30px; }
 .resto-item { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; background:var(--card-bg); border-radius:10px; padding:14px 18px; box-shadow:0 1px 5px rgba(0,0,0,.07); border-left:4px solid var(--milan); }
 .resto-info { flex:1 1 auto; min-width:0; }
@@ -3979,7 +4028,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .expense-modal { background:#fff; border-radius:16px; padding:24px 26px; max-width:420px; width:100%; box-shadow:0 12px 40px rgba(0,0,0,.35); max-height:90vh; overflow-y:auto; }
 .expense-modal h3 { margin:0 0 14px; color:var(--navy); font-size:1.15rem; }
 .expense-modal label { display:block; font-size:.8rem; color:var(--muted); margin:10px 0 4px; font-weight:600; }
-.expense-modal input, .expense-modal select { width:100%; padding:9px 12px; border-radius:8px; border:1px solid #ccd5e3; font-size:.9rem; font-family:inherit; box-sizing:border-box; }
+.expense-modal input, .expense-modal select, .expense-modal textarea { width:100%; padding:9px 12px; border-radius:8px; border:1px solid #ccd5e3; font-size:.9rem; font-family:inherit; box-sizing:border-box; resize:vertical; }
 .expense-modal-actions { display:flex; gap:10px; margin-top:18px; }
 .expense-modal-actions button { flex:1; padding:10px; border-radius:8px; border:none; font-weight:700; cursor:pointer; font-size:.9rem; }
 .expense-save-btn { background:var(--navy); color:#fff; }
@@ -3988,11 +4037,19 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .expense-panel-inner { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; margin-bottom:12px; }
 .expense-add-btn { background:var(--gold); color:#fff; border:none; padding:10px 20px; border-radius:999px; font-weight:700; font-size:.9rem; cursor:pointer; }
 .expense-add-btn:hover { background:var(--navy); }
+.expense-export-btn { background:var(--navy); }
+.expense-export-btn:hover { background:var(--gold); }
+.expense-export-box { background:#f6f8fb; border:1px solid #ccd5e3; border-radius:10px; padding:14px; margin-bottom:14px; }
+.expense-export-title { font-weight:700; color:var(--navy); font-size:.85rem; margin-bottom:8px; }
+.expense-export-box textarea { width:100%; min-height:140px; padding:10px; border-radius:8px; border:1px solid #ccd5e3; font-family:inherit; font-size:.85rem; box-sizing:border-box; margin-bottom:10px; }
 .expense-totals { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
 .expense-total-pill { background:rgba(31,56,100,.08); color:var(--navy); font-weight:700; padding:6px 14px; border-radius:999px; font-size:.85rem; }
 .expense-grand-totals { display:flex; gap:22px; margin-top:14px; padding-top:14px; border-top:1px solid #eee; flex-wrap:wrap; }
 .expense-grand-total { font-size:1.25rem; font-weight:800; color:var(--navy); }
 .expense-grand-total span.lbl { display:block; font-size:.7rem; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+.expense-team-totals { display:flex; gap:22px; margin-top:10px; padding-top:10px; border-top:1px dashed #ddd; flex-wrap:wrap; }
+.expense-team-total { font-size:1rem; font-weight:700; color:var(--navy); }
+.expense-team-total span.lbl { display:block; font-size:.68rem; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
 .expense-table-wrap { overflow-x:auto; }
 .expense-table { width:100%; border-collapse:collapse; font-size:.85rem; margin-top:10px; min-width:640px; }
 .expense-table th { text-align:left; padding:6px 8px; border-bottom:2px solid var(--navy); color:var(--navy); font-size:.72rem; text-transform:uppercase; letter-spacing:.3px; }
@@ -4002,6 +4059,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .expense-pending { color:#b98600; font-size:.7rem; font-style:italic; margin-left:4px; }
 .expense-rate-note { font-size:.72rem; color:var(--muted); margin-top:10px; }
 .expense-row-actions { white-space:nowrap; text-align:right; }
+.fv-code { font-weight:700; color:var(--navy); white-space:nowrap; }
+.fv-tick { text-align:center; }
+.fv-tick input[type="checkbox"] { width:18px; height:18px; accent-color:var(--gold); cursor:pointer; }
 .expense-row-box { display:inline-flex; gap:6px; border:1px solid #ccd5e3; border-radius:8px; padding:3px; background:#fafcff; }
 .expense-row-btn { background:#fff; border:1px solid #ccd5e3; border-radius:6px; cursor:pointer; font-size:.72rem; font-weight:700; padding:5px 10px; color:var(--navy); }
 .expense-row-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy); }
@@ -4017,6 +4077,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .hero .print-mini-all:hover { background:#b98a30; }
 @media print {
   body, body * { font-family:'Source Sans Pro','Segoe UI',system-ui,sans-serif !important; }
+  body { background:#fff !important; }
+  .hero { background:#fff !important; }
   .home-fab { display:none !important; }
   .no-print { display:none !important; }
   .day-card, .place-card, .tl-row { page-break-inside: avoid; break-inside: avoid; }
@@ -4043,7 +4105,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz', 'expenses']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz', 'expenses', 'foodvisited']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -4236,10 +4298,11 @@ NAV_SECTIONS = [
     ('london', '&#127468;&#127463;', 'London'),
     ('places', '&#128506;&#65039;', 'Places &amp; Maps'),
     ('needtobook', '&#9989;', 'Things to Do'),
-    ('hotels', '&#128722;', 'Market/Chemist Addresses'),
+    ('hotels', '&#128722;', "Shop Adr'"),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
     ('dailyquiz', '&#129504;', 'Daily Quiz'),
     ('expenses', '$', 'Expenses'),
+    ('foodvisited', '&#127860;', 'Food Visited'),
 ]
 UKETA_URL = 'https://www.gov.uk/eta/apply'
 POLARSTEPS_URL = 'https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan'
@@ -4276,6 +4339,12 @@ EXPENSES_SECTION_HTML = f'''
   <p class="lede">Every meal, ticket and taxi the group pays for, in one running tally &ndash; split by who paid, converted to NZD and AUD at the bottom.</p>
   <div class="expense-panel-inner">
     <button class="expense-add-btn no-print" onclick="openExpenseModal()"><span class="ic">$</span> Add an expense</button>
+    <button class="expense-add-btn expense-export-btn no-print" onclick="exportTripAdvisorReviews()"><span class="ic">&#9733;</span> Export TripAdvisor Reviews</button>
+  </div>
+  <div class="expense-export-box no-print" id="expenseExportBox" style="display:none">
+    <div class="expense-export-title">Copy the text below and paste into TripAdvisor for each place:</div>
+    <textarea id="expenseExportText" readonly></textarea>
+    <button type="button" class="expense-cancel-btn no-print" onclick="document.getElementById('expenseExportBox').style.display='none'">Close</button>
   </div>
   <div class="expense-totals" id="expenseTotals"></div>
   <div class="expense-table-wrap">
@@ -4287,6 +4356,7 @@ EXPENSES_SECTION_HTML = f'''
     </table>
   </div>
   <div class="expense-grand-totals" id="expenseGrandTotals"></div>
+  <div class="expense-team-totals" id="expenseTeamTotals"></div>
   <p class="expense-rate-note">NZD/AUD conversions use exchange rates as of {EXPENSE_RATE_DATE}. These are fixed for the trip and will be updated to the final rate once we're back.</p>
 </section>
 
@@ -4325,6 +4395,24 @@ EXPENSES_SECTION_HTML = f'''
         <option>Team K</option>
         <option>Team D</option>
       </select>
+      <label for="exp_locnum">Location number (optional &ndash; e.g. 15:003)</label>
+      <input type="text" id="exp_locnum" name="locnum" placeholder="e.g. 15:003">
+      <label for="exp_rating">Star rating (optional, 1-10)</label>
+      <select id="exp_rating" name="rating">
+        <option value="">Not rated</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+      </select>
+      <label for="exp_taplaced">TripAdvisor review placed?</label>
+      <select id="exp_taplaced" name="taplaced">
+        <option value="">Choose one&hellip;</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      <label for="exp_tareview">TripAdvisor review (for later export/upload)</label>
+      <textarea id="exp_tareview" name="tareview" rows="3" placeholder="Optional &ndash; draft your review here to copy across to TripAdvisor later"></textarea>
+      <label for="exp_comment">Comment (private &ndash; not shown on the expense report)</label>
+      <textarea id="exp_comment" name="comment" rows="2" placeholder="Optional notes to yourself"></textarea>
       <p class="expense-error" id="expenseError"></p>
       <div class="expense-modal-actions">
         <button type="button" class="expense-cancel-btn" onclick="closeExpenseModal()">Cancel</button>
@@ -4370,12 +4458,17 @@ function openExpenseModal(editId) {{
     document.getElementById('exp_what').value = entry.what;
     document.getElementById('exp_business').value = entry.business;
     document.getElementById('exp_paidby').value = entry.paidby;
+    document.getElementById('exp_locnum').value = entry.locnum || '';
+    document.getElementById('exp_rating').value = entry.rating || '';
+    document.getElementById('exp_taplaced').value = entry.taplaced || '';
+    document.getElementById('exp_tareview').value = entry.tareview || '';
+    document.getElementById('exp_comment').value = entry.comment || '';
     title.textContent = 'Edit expense';
     saveBtn.textContent = 'Save changes';
   }} else {{
     document.getElementById('exp_id').value = '';
     document.getElementById('exp_action').value = 'add';
-    ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_paidby'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
+    ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_paidby','exp_locnum','exp_rating','exp_taplaced','exp_tareview','exp_comment'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
     title.textContent = 'Add an expense';
     saveBtn.textContent = 'Save expense';
   }}
@@ -4414,6 +4507,19 @@ function renderExpenses() {{
     '<div class="expense-grand-total"><span class="lbl">Total (NZD)</span>NZ$ ' + fmtMoney(totalNzd) + '</div>' +
     '<div class="expense-grand-total"><span class="lbl">Total (AUD)</span>A$ ' + fmtMoney(totalAud) + '</div>'
   ) : '';
+  var teamEl = document.getElementById('expenseTeamTotals');
+  var byTeam = {{'Team K': {{nzd:0, aud:0}}, 'Team D': {{nzd:0, aud:0}}}};
+  all.forEach(function(e) {{
+    var team = byTeam[e.paidby];
+    if (!team) return;
+    var rNzd = EXPENSE_RATES_NZD[e.currency] || 0;
+    var rAud = EXPENSE_RATES_AUD[e.currency] || 0;
+    team.nzd += Number(e.value) * rNzd;
+    team.aud += Number(e.value) * rAud;
+  }});
+  teamEl.innerHTML = all.length ? Object.keys(byTeam).map(function(team) {{
+    return '<div class="expense-team-total"><span class="lbl">' + team + '</span>NZ$ ' + fmtMoney(byTeam[team].nzd) + ' &middot; A$ ' + fmtMoney(byTeam[team].aud) + '</div>';
+  }}).join('') : '';
 }}
 function postExpenseEvent(entry) {{
   var body = Object.keys(entry).filter(function(k) {{ return k !== 'pending'; }}).map(function(k) {{
@@ -4431,6 +4537,11 @@ function saveExpense() {{
   var what = document.getElementById('exp_what').value;
   var business = document.getElementById('exp_business').value.trim();
   var paidby = document.getElementById('exp_paidby').value;
+  var locnum = document.getElementById('exp_locnum').value.trim();
+  var rating = document.getElementById('exp_rating').value;
+  var taplaced = document.getElementById('exp_taplaced').value;
+  var tareview = document.getElementById('exp_tareview').value.trim();
+  var comment = document.getElementById('exp_comment').value.trim();
   var err = document.getElementById('expenseError');
   if (!location || !value || !date || !what || !business || !paidby) {{
     err.textContent = 'Fill in every field first.';
@@ -4438,13 +4549,29 @@ function saveExpense() {{
     return;
   }}
   err.style.display = 'none';
-  var entry = {{id:id, action:action, location:location, value:parseFloat(value), currency:currency, date:date, what:what, business:business, paidby:paidby, pending:true}};
+  var entry = {{id:id, action:action, location:location, value:parseFloat(value), currency:currency, date:date, what:what, business:business, paidby:paidby,
+                locnum:locnum, rating:rating, taplaced:taplaced, tareview:tareview, comment:comment, pending:true}};
   var pending = getPendingExpenses();
   pending.push(entry);
   savePendingExpenses(pending);
   renderExpenses();
   closeExpenseModal();
   postExpenseEvent(entry);
+}}
+function exportTripAdvisorReviews() {{
+  var all = computeActiveExpenses().filter(function(e) {{ return e.tareview && e.tareview.trim(); }});
+  var box = document.getElementById('expenseExportBox');
+  var textEl = document.getElementById('expenseExportText');
+  if (!all.length) {{
+    textEl.value = 'No TripAdvisor review text has been entered on any expense yet. Add one via the "Add an expense" form.';
+  }} else {{
+    textEl.value = all.map(function(e) {{
+      return '=== ' + e.business + ' (' + e.date + (e.locnum ? ', ' + e.locnum : '') + ') ===\\n' + e.tareview + '\\n';
+    }}).join('\\n');
+  }}
+  box.style.display = 'block';
+  textEl.focus();
+  textEl.select();
 }}
 function deleteExpense(id) {{
   if (!window.confirm('Delete this expense?')) return;
@@ -4456,6 +4583,80 @@ function deleteExpense(id) {{
   postExpenseEvent({{id:id, action:'delete'}});
 }}
 document.addEventListener('DOMContentLoaded', renderExpenses);
+</script>
+'''
+
+def _food_seq(entry):
+    try:
+        return (entry['day_num'], int(entry['code'].split(':')[1]))
+    except Exception:
+        return (entry['day_num'], 0)
+
+FOOD_VISITED_SEED = {}  # {code: true} for confirmed 'visited' submissions, baked in each regeneration
+_SORTED_FOOD_PLACES = sorted(ALL_FOOD_PLACES, key=_food_seq)
+FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
+
+food_visited_rows_html = ''.join(f'''
+    <tr>
+      <td class="fv-code">{esc(fp['code'])}</td>
+      <td>Day {fp['day_num']}</td>
+      <td>{esc(fp['place'])}</td>
+      <td class="ttc-notes">{esc(fp['address'])}</td>
+      <td class="ttc-notes">{esc(fp['list_title'])}</td>
+      <td class="fv-tick"><label class="place-visited-label"><input type="checkbox" class="place-visited-check" data-code="{esc(fp['code'])}" onchange="toggleFoodVisited('{esc(fp['code'])}', this.checked)"></label></td>
+    </tr>''' for fp in _SORTED_FOOD_PLACES)
+
+FOOD_VISITED_SECTION_HTML = f'''
+<section id="foodvisited" class="print-block" data-section="foodvisited">
+  <h2>Food Visited</h2>
+  <p class="lede">Every restaurant/cafe option listed anywhere on this site, with its day code ({len(ALL_FOOD_PLACES)} in total) &ndash; tick the ones you actually went to. Ticking a box here or on the place&rsquo;s own card keeps both in sync.</p>
+  <div class="expense-table-wrap">
+    <table class="expense-table">
+      <thead><tr><th>Code</th><th>Day</th><th>Place</th><th>Address</th><th>List</th><th>Visited</th></tr></thead>
+      <tbody>{food_visited_rows_html}</tbody>
+    </table>
+  </div>
+</section>
+
+<form name="foodvisited" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:none" aria-hidden="true">
+  <input type="hidden" name="form-name" value="foodvisited">
+  <p style="display:none"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+  <input name="code"><input name="place"><input name="visited">
+</form>
+
+<script>
+var FOOD_VISITED_SEED = {json.dumps(FOOD_VISITED_SEED)};
+var FOOD_PLACES_MAP = {json.dumps(FOOD_PLACES_MAP, ensure_ascii=False)};
+function foodVisitedKey() {{ return 'fab4_food_visited'; }}
+function getFoodVisited() {{
+  var local = {{}};
+  try {{ local = JSON.parse(localStorage.getItem(foodVisitedKey())) || {{}}; }} catch (e) {{}}
+  return Object.assign({{}}, FOOD_VISITED_SEED, local);
+}}
+function setFoodVisitedLocal(code, val) {{
+  var local = {{}};
+  try {{ local = JSON.parse(localStorage.getItem(foodVisitedKey())) || {{}}; }} catch (e) {{}}
+  local[code] = val;
+  try {{ localStorage.setItem(foodVisitedKey(), JSON.stringify(local)); }} catch (e) {{}}
+}}
+function postFoodVisitedEvent(code, checked) {{
+  var place = FOOD_PLACES_MAP[code] || '';
+  var body = 'form-name=foodvisited&code=' + encodeURIComponent(code) + '&place=' + encodeURIComponent(place) + '&visited=' + (checked ? 'Yes' : 'No');
+  fetch('/', {{ method: 'POST', headers: {{'Content-Type': 'application/x-www-form-urlencoded'}}, body: body }}).catch(function() {{}});
+}}
+function toggleFoodVisited(code, checked) {{
+  setFoodVisitedLocal(code, checked);
+  document.querySelectorAll('.place-visited-check[data-code="' + code + '"]').forEach(function(cb) {{ cb.checked = checked; }});
+  postFoodVisitedEvent(code, checked);
+}}
+function renderFoodVisited() {{
+  var state = getFoodVisited();
+  document.querySelectorAll('.place-visited-check').forEach(function(cb) {{
+    var code = cb.getAttribute('data-code');
+    cb.checked = !!state[code];
+  }});
+}}
+document.addEventListener('DOMContentLoaded', renderFoodVisited);
 </script>
 '''
 
@@ -4523,6 +4724,8 @@ HTML = f'''<!DOCTYPE html>
 </div>
 
 {EXPENSES_SECTION_HTML}
+
+{FOOD_VISITED_SECTION_HTML}
 
 <section id="flights" class="print-block" data-section="flights">
   <h2>Flight Summary</h2>
