@@ -3971,6 +3971,36 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .home-fab-fixed { position:fixed; bottom:22px; right:22px; z-index:999; display:flex; align-items:center; justify-content:center; width:54px; height:54px; border-radius:50%; background:var(--navy); color:#fff !important; text-decoration:none; font-size:1.5rem; box-shadow:0 3px 14px rgba(0,0,0,.35); transition:background .15s, transform .15s; }
 .home-fab-fixed:hover { background:var(--gold); transform:scale(1.06); }
 @media (max-width:600px) { .home-fab-fixed { width:46px; height:46px; font-size:1.25rem; bottom:14px; right:14px; } }
+.expense-fab-fixed { position:fixed; bottom:22px; right:86px; z-index:999; display:flex; align-items:center; justify-content:center; width:54px; height:54px; border-radius:50%; background:var(--gold); color:#fff; border:none; font-size:1.4rem; font-weight:800; cursor:pointer; box-shadow:0 3px 14px rgba(0,0,0,.35); transition:background .15s, transform .15s; }
+.expense-fab-fixed:hover { background:var(--navy); transform:scale(1.06); }
+@media (max-width:600px) { .expense-fab-fixed { width:46px; height:46px; font-size:1.15rem; bottom:14px; right:68px; } }
+.expense-modal-overlay { display:none; position:fixed; inset:0; background:rgba(15,26,45,.55); z-index:9999; align-items:center; justify-content:center; padding:20px; }
+.expense-modal-overlay.open { display:flex; }
+.expense-modal { background:#fff; border-radius:16px; padding:24px 26px; max-width:420px; width:100%; box-shadow:0 12px 40px rgba(0,0,0,.35); max-height:90vh; overflow-y:auto; }
+.expense-modal h3 { margin:0 0 14px; color:var(--navy); font-size:1.15rem; }
+.expense-modal label { display:block; font-size:.8rem; color:var(--muted); margin:10px 0 4px; font-weight:600; }
+.expense-modal input, .expense-modal select { width:100%; padding:9px 12px; border-radius:8px; border:1px solid #ccd5e3; font-size:.9rem; font-family:inherit; box-sizing:border-box; }
+.expense-modal-actions { display:flex; gap:10px; margin-top:18px; }
+.expense-modal-actions button { flex:1; padding:10px; border-radius:8px; border:none; font-weight:700; cursor:pointer; font-size:.9rem; }
+.expense-save-btn { background:var(--navy); color:#fff; }
+.expense-cancel-btn { background:#eee; color:var(--ink); }
+.expense-error { color:#a32d2d; font-size:.8rem; margin-top:6px; display:none; }
+.expense-panel-inner { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; margin-bottom:12px; }
+.expense-add-btn { background:var(--gold); color:#fff; border:none; padding:10px 20px; border-radius:999px; font-weight:700; font-size:.9rem; cursor:pointer; }
+.expense-add-btn:hover { background:var(--navy); }
+.expense-totals { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+.expense-total-pill { background:rgba(31,56,100,.08); color:var(--navy); font-weight:700; padding:6px 14px; border-radius:999px; font-size:.85rem; }
+.expense-grand-totals { display:flex; gap:22px; margin-top:14px; padding-top:14px; border-top:1px solid #eee; flex-wrap:wrap; }
+.expense-grand-total { font-size:1.25rem; font-weight:800; color:var(--navy); }
+.expense-grand-total span.lbl { display:block; font-size:.7rem; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+.expense-table-wrap { overflow-x:auto; }
+.expense-table { width:100%; border-collapse:collapse; font-size:.85rem; margin-top:10px; min-width:640px; }
+.expense-table th { text-align:left; padding:6px 8px; border-bottom:2px solid var(--navy); color:var(--navy); font-size:.72rem; text-transform:uppercase; letter-spacing:.3px; }
+.expense-table td { padding:6px 8px; border-bottom:1px solid #eee; }
+.expense-table td.amt { text-align:right; white-space:nowrap; }
+.expense-empty-row td { color:var(--muted); font-style:italic; }
+.expense-pending { color:#b98600; font-size:.7rem; font-style:italic; margin-left:4px; }
+.expense-rate-note { font-size:.72rem; color:var(--muted); margin-top:10px; }
 .print-row { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:18px 0 4px; }
 .print-mini { display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.4); color:#fff; font-size:.76rem; font-weight:600; padding:6px 13px; border-radius:999px; cursor:pointer; }
 .print-mini:hover { background:rgba(255,255,255,.32); }
@@ -4008,7 +4038,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz', 'expenses']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -4204,6 +4234,7 @@ NAV_SECTIONS = [
     ('hotels', '&#128722;', 'Market/Chemist Addresses'),
     ('hotels', '&#127976;&#65039;', 'Hotel Addresses'),
     ('dailyquiz', '&#129504;', 'Daily Quiz'),
+    ('expenses', '$', 'Expenses'),
 ]
 UKETA_URL = 'https://www.gov.uk/eta/apply'
 POLARSTEPS_URL = 'https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan'
@@ -4226,6 +4257,146 @@ CSS = CSS.replace('__PAGE_WAVE_B64__', PAGE_WAVE_B64)
 CSS = CSS.replace('__HERO_WAVE_B64__', HERO_WAVE_B64)
 CSS = CSS.replace('__HERO_CLOUDS_B64__', HERO_CLOUDS_B64)
 
+# --- Expense tracker ---------------------------------------------------
+# Exchange rates as of 9 Sept 2026 (source: exchangerate-api.com via open.er-api.com).
+# Update these two dicts at the end of the trip with the final rates.
+EXPENSE_RATE_DATE = '9 Sept 2026'
+EXPENSE_RATES_TO_NZD = {'EUR': 1.9858, 'GBP': 2.3131, 'USD': 1.7080, 'AUD': 1.2332, 'NZD': 1.0}
+EXPENSE_RATES_TO_AUD = {'EUR': 1.6105, 'GBP': 1.8753, 'USD': 1.3854, 'NZD': 0.8109, 'AUD': 1.0}
+EXPENSES_SEED = []  # confirmed submissions, baked in each time the site is regenerated
+
+EXPENSES_SECTION_HTML = f'''
+<section id="expenses" class="print-block" data-section="expenses">
+  <h2>Expenses</h2>
+  <p class="lede">Every meal, ticket and taxi the group pays for, in one running tally &ndash; split by who paid, converted to NZD and AUD at the bottom.</p>
+  <div class="expense-panel-inner">
+    <button class="expense-add-btn no-print" onclick="openExpenseModal()"><span class="ic">$</span> Add an expense</button>
+  </div>
+  <div class="expense-totals" id="expenseTotals"></div>
+  <div class="expense-table-wrap">
+    <table class="expense-table">
+      <thead>
+        <tr><th>Date</th><th>Location</th><th>What</th><th>Place</th><th>Paid by</th><th style="text-align:right">Amount</th></tr>
+      </thead>
+      <tbody id="expenseRows"></tbody>
+    </table>
+  </div>
+  <div class="expense-grand-totals" id="expenseGrandTotals"></div>
+  <p class="expense-rate-note">NZD/AUD conversions use exchange rates as of {EXPENSE_RATE_DATE}. These are fixed for the trip and will be updated to the final rate once we're back.</p>
+</section>
+
+<div class="expense-modal-overlay no-print" id="expenseModalOverlay">
+  <div class="expense-modal">
+    <h3>Add an expense</h3>
+    <form name="expenses" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="expenseForm">
+      <input type="hidden" name="form-name" value="expenses">
+      <p style="display:none"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+      <label for="exp_location">Where did you spend it?</label>
+      <input type="text" id="exp_location" name="location" placeholder="e.g. Rome">
+      <label for="exp_value">Amount</label>
+      <div style="display:flex; gap:8px">
+        <input type="number" step="0.01" id="exp_value" name="value" placeholder="0.00" style="flex:1">
+        <select id="exp_currency" name="currency" style="width:100px">
+          <option>EUR</option><option>GBP</option><option>NZD</option><option>AUD</option><option>USD</option>
+        </select>
+      </div>
+      <label for="exp_date">Date</label>
+      <input type="date" id="exp_date" name="date">
+      <label for="exp_what">What was it?</label>
+      <input type="text" id="exp_what" name="what" placeholder="e.g. Breakfast">
+      <label for="exp_business">Name of the place</label>
+      <input type="text" id="exp_business" name="business" placeholder="e.g. Pinsere">
+      <label for="exp_paidby">Who paid?</label>
+      <select id="exp_paidby" name="paidby">
+        <option value="">Choose one&hellip;</option>
+        <option>Team K</option>
+        <option>Team D</option>
+      </select>
+      <p class="expense-error" id="expenseError"></p>
+      <div class="expense-modal-actions">
+        <button type="button" class="expense-cancel-btn" onclick="closeExpenseModal()">Cancel</button>
+        <button type="button" class="expense-save-btn" onclick="saveExpense()">Save expense</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+var EXPENSE_SEED = {json.dumps(EXPENSES_SEED, ensure_ascii=False)};
+var EXPENSE_RATES_NZD = {json.dumps(EXPENSE_RATES_TO_NZD)};
+var EXPENSE_RATES_AUD = {json.dumps(EXPENSE_RATES_TO_AUD)};
+function expensePendingKey() {{ return 'fab4_pending_expenses'; }}
+function getPendingExpenses() {{
+  try {{ return JSON.parse(localStorage.getItem(expensePendingKey())) || []; }} catch (e) {{ return []; }}
+}}
+function savePendingExpenses(list) {{
+  try {{ localStorage.setItem(expensePendingKey(), JSON.stringify(list)); }} catch (e) {{}}
+}}
+function openExpenseModal() {{ document.getElementById('expenseModalOverlay').classList.add('open'); }}
+function closeExpenseModal() {{ document.getElementById('expenseModalOverlay').classList.remove('open'); }}
+function fmtMoney(n) {{ return Number(n).toLocaleString(undefined, {{minimumFractionDigits:2, maximumFractionDigits:2}}); }}
+function renderExpenses() {{
+  var all = EXPENSE_SEED.concat(getPendingExpenses());
+  var rows = document.getElementById('expenseRows');
+  var totalsEl = document.getElementById('expenseTotals');
+  var grandEl = document.getElementById('expenseGrandTotals');
+  if (!rows) return;
+  if (all.length === 0) {{
+    rows.innerHTML = '<tr class="expense-empty-row"><td colspan="6">No expenses logged yet &ndash; click "Add an expense" above.</td></tr>';
+  }} else {{
+    rows.innerHTML = all.map(function(e) {{
+      var pendingTag = e.pending ? '<span class="expense-pending">(syncing&hellip;)</span>' : '';
+      return '<tr><td>' + e.date + '</td><td>' + e.location + '</td><td>' + e.what + '</td><td>' + e.business + '</td><td>' + e.paidby + pendingTag + '</td><td class="amt">' + e.currency + ' ' + fmtMoney(e.value) + '</td></tr>';
+    }}).join('');
+  }}
+  var byCurrency = {{}};
+  all.forEach(function(e) {{ byCurrency[e.currency] = (byCurrency[e.currency] || 0) + Number(e.value); }});
+  totalsEl.innerHTML = Object.keys(byCurrency).map(function(c) {{
+    return '<span class="expense-total-pill">' + c + ' ' + fmtMoney(byCurrency[c]) + '</span>';
+  }}).join('');
+  var totalNzd = 0, totalAud = 0;
+  Object.keys(byCurrency).forEach(function(c) {{
+    var rNzd = EXPENSE_RATES_NZD[c] || 0;
+    var rAud = EXPENSE_RATES_AUD[c] || 0;
+    totalNzd += byCurrency[c] * rNzd;
+    totalAud += byCurrency[c] * rAud;
+  }});
+  grandEl.innerHTML = all.length ? (
+    '<div class="expense-grand-total"><span class="lbl">Total (NZD)</span>NZ$ ' + fmtMoney(totalNzd) + '</div>' +
+    '<div class="expense-grand-total"><span class="lbl">Total (AUD)</span>A$ ' + fmtMoney(totalAud) + '</div>'
+  ) : '';
+}}
+function saveExpense() {{
+  var location = document.getElementById('exp_location').value.trim();
+  var value = document.getElementById('exp_value').value;
+  var currency = document.getElementById('exp_currency').value;
+  var date = document.getElementById('exp_date').value;
+  var what = document.getElementById('exp_what').value.trim();
+  var business = document.getElementById('exp_business').value.trim();
+  var paidby = document.getElementById('exp_paidby').value;
+  var err = document.getElementById('expenseError');
+  if (!location || !value || !date || !what || !business || !paidby) {{
+    err.textContent = 'Fill in every field first.';
+    err.style.display = 'block';
+    return;
+  }}
+  err.style.display = 'none';
+  var entry = {{location:location, value:parseFloat(value), currency:currency, date:date, what:what, business:business, paidby:paidby, pending:true}};
+  var pending = getPendingExpenses();
+  pending.push(entry);
+  savePendingExpenses(pending);
+  renderExpenses();
+  closeExpenseModal();
+  ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_paidby'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
+  var body = Object.keys(entry).filter(function(k) {{ return k !== 'pending'; }}).map(function(k) {{
+    return encodeURIComponent(k) + '=' + encodeURIComponent(entry[k]);
+  }}).join('&') + '&form-name=expenses';
+  fetch('/', {{ method: 'POST', headers: {{'Content-Type': 'application/x-www-form-urlencoded'}}, body: body }}).catch(function() {{}});
+}}
+document.addEventListener('DOMContentLoaded', renderExpenses);
+</script>
+'''
+
 HTML = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -4240,6 +4411,7 @@ HTML = f'''<!DOCTYPE html>
 <body>
 
 <a href="#top" class="home-fab-fixed no-print" title="Back to Home">&#127968;</a>
+<button class="expense-fab-fixed no-print" onclick="openExpenseModal()" title="Add an expense" aria-label="Add an expense">$</button>
 
 <div class="hero" id="top">
   <div class="hero-inner">
@@ -4287,6 +4459,8 @@ HTML = f'''<!DOCTYPE html>
     </div>
   </div>
 </div>
+
+{EXPENSES_SECTION_HTML}
 
 <section id="flights" class="print-block" data-section="flights">
   <h2>Flight Summary</h2>
