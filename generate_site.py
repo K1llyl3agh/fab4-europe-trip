@@ -4001,6 +4001,9 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .expense-empty-row td { color:var(--muted); font-style:italic; }
 .expense-pending { color:#b98600; font-size:.7rem; font-style:italic; margin-left:4px; }
 .expense-rate-note { font-size:.72rem; color:var(--muted); margin-top:10px; }
+.expense-row-actions { white-space:nowrap; text-align:right; }
+.expense-row-btn { background:none; border:none; cursor:pointer; font-size:1rem; padding:2px 6px; color:var(--muted); }
+.expense-row-btn:hover { color:var(--navy); }
 .print-row { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:18px 0 4px; }
 .print-mini { display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.4); color:#fff; font-size:.76rem; font-weight:600; padding:6px 13px; border-radius:999px; cursor:pointer; }
 .print-mini:hover { background:rgba(255,255,255,.32); }
@@ -4276,7 +4279,7 @@ EXPENSES_SECTION_HTML = f'''
   <div class="expense-table-wrap">
     <table class="expense-table">
       <thead>
-        <tr><th>Date</th><th>Location</th><th>What</th><th>Place</th><th>Paid by</th><th style="text-align:right">Amount</th></tr>
+        <tr><th>Date</th><th>Location</th><th>What</th><th>Place</th><th>Paid by</th><th style="text-align:right">Amount</th><th class="no-print">&nbsp;</th></tr>
       </thead>
       <tbody id="expenseRows"></tbody>
     </table>
@@ -4287,9 +4290,11 @@ EXPENSES_SECTION_HTML = f'''
 
 <div class="expense-modal-overlay no-print" id="expenseModalOverlay">
   <div class="expense-modal">
-    <h3>Add an expense</h3>
+    <h3 id="expenseModalTitle">Add an expense</h3>
     <form name="expenses" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="expenseForm">
       <input type="hidden" name="form-name" value="expenses">
+      <input type="hidden" name="id" id="exp_id">
+      <input type="hidden" name="action" id="exp_action" value="add">
       <p style="display:none"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
       <label for="exp_location">Where did you spend it?</label>
       <input type="text" id="exp_location" name="location" placeholder="e.g. Rome">
@@ -4303,7 +4308,13 @@ EXPENSES_SECTION_HTML = f'''
       <label for="exp_date">Date</label>
       <input type="date" id="exp_date" name="date">
       <label for="exp_what">What was it?</label>
-      <input type="text" id="exp_what" name="what" placeholder="e.g. Breakfast">
+      <select id="exp_what" name="what">
+        <option value="">Choose one&hellip;</option>
+        <option>Breakfast</option>
+        <option>Lunch</option>
+        <option>Dinner</option>
+        <option>Other</option>
+      </select>
       <label for="exp_business">Name of the place</label>
       <input type="text" id="exp_business" name="business" placeholder="e.g. Pinsere">
       <label for="exp_paidby">Who paid?</label>
@@ -4315,7 +4326,7 @@ EXPENSES_SECTION_HTML = f'''
       <p class="expense-error" id="expenseError"></p>
       <div class="expense-modal-actions">
         <button type="button" class="expense-cancel-btn" onclick="closeExpenseModal()">Cancel</button>
-        <button type="button" class="expense-save-btn" onclick="saveExpense()">Save expense</button>
+        <button type="button" class="expense-save-btn" id="expenseSaveBtn" onclick="saveExpense()">Save expense</button>
       </div>
     </form>
   </div>
@@ -4332,21 +4343,57 @@ function getPendingExpenses() {{
 function savePendingExpenses(list) {{
   try {{ localStorage.setItem(expensePendingKey(), JSON.stringify(list)); }} catch (e) {{}}
 }}
-function openExpenseModal() {{ document.getElementById('expenseModalOverlay').classList.add('open'); }}
+function newExpenseId() {{ return 'e' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }}
+function computeActiveExpenses() {{
+  var map = {{}};
+  EXPENSE_SEED.forEach(function(e) {{ map[e.id] = e; }});
+  getPendingExpenses().forEach(function(ev) {{
+    if (ev.action === 'delete') {{ delete map[ev.id]; }}
+    else {{ map[ev.id] = ev; }}
+  }});
+  return Object.keys(map).map(function(id) {{ return map[id]; }}).sort(function(a, b) {{ return (a.date || '').localeCompare(b.date || ''); }});
+}}
+function openExpenseModal(editId) {{
+  var title = document.getElementById('expenseModalTitle');
+  var saveBtn = document.getElementById('expenseSaveBtn');
+  if (editId) {{
+    var entry = computeActiveExpenses().filter(function(e) {{ return e.id === editId; }})[0];
+    if (!entry) return;
+    document.getElementById('exp_id').value = entry.id;
+    document.getElementById('exp_action').value = 'edit';
+    document.getElementById('exp_location').value = entry.location;
+    document.getElementById('exp_value').value = entry.value;
+    document.getElementById('exp_currency').value = entry.currency;
+    document.getElementById('exp_date').value = entry.date;
+    document.getElementById('exp_what').value = entry.what;
+    document.getElementById('exp_business').value = entry.business;
+    document.getElementById('exp_paidby').value = entry.paidby;
+    title.textContent = 'Edit expense';
+    saveBtn.textContent = 'Save changes';
+  }} else {{
+    document.getElementById('exp_id').value = '';
+    document.getElementById('exp_action').value = 'add';
+    ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_paidby'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
+    title.textContent = 'Add an expense';
+    saveBtn.textContent = 'Save expense';
+  }}
+  document.getElementById('expenseModalOverlay').classList.add('open');
+}}
 function closeExpenseModal() {{ document.getElementById('expenseModalOverlay').classList.remove('open'); }}
 function fmtMoney(n) {{ return Number(n).toLocaleString(undefined, {{minimumFractionDigits:2, maximumFractionDigits:2}}); }}
 function renderExpenses() {{
-  var all = EXPENSE_SEED.concat(getPendingExpenses());
+  var all = computeActiveExpenses();
   var rows = document.getElementById('expenseRows');
   var totalsEl = document.getElementById('expenseTotals');
   var grandEl = document.getElementById('expenseGrandTotals');
   if (!rows) return;
   if (all.length === 0) {{
-    rows.innerHTML = '<tr class="expense-empty-row"><td colspan="6">No expenses logged yet &ndash; click "Add an expense" above.</td></tr>';
+    rows.innerHTML = '<tr class="expense-empty-row"><td colspan="7">No expenses logged yet &ndash; click "Add an expense" above.</td></tr>';
   }} else {{
     rows.innerHTML = all.map(function(e) {{
       var pendingTag = e.pending ? '<span class="expense-pending">(syncing&hellip;)</span>' : '';
-      return '<tr><td>' + e.date + '</td><td>' + e.location + '</td><td>' + e.what + '</td><td>' + e.business + '</td><td>' + e.paidby + pendingTag + '</td><td class="amt">' + e.currency + ' ' + fmtMoney(e.value) + '</td></tr>';
+      return '<tr><td>' + e.date + '</td><td>' + e.location + '</td><td>' + e.what + '</td><td>' + e.business + '</td><td>' + e.paidby + pendingTag + '</td><td class="amt">' + e.currency + ' ' + fmtMoney(e.value) + '</td>' +
+        '<td class="no-print expense-row-actions"><button type="button" class="expense-row-btn" onclick="openExpenseModal(\\'' + e.id + '\\')" aria-label="Edit">&#9998;</button><button type="button" class="expense-row-btn" onclick="deleteExpense(\\'' + e.id + '\\')" aria-label="Delete">&#128465;</button></td></tr>';
     }}).join('');
   }}
   var byCurrency = {{}};
@@ -4366,12 +4413,20 @@ function renderExpenses() {{
     '<div class="expense-grand-total"><span class="lbl">Total (AUD)</span>A$ ' + fmtMoney(totalAud) + '</div>'
   ) : '';
 }}
+function postExpenseEvent(entry) {{
+  var body = Object.keys(entry).filter(function(k) {{ return k !== 'pending'; }}).map(function(k) {{
+    return encodeURIComponent(k) + '=' + encodeURIComponent(entry[k]);
+  }}).join('&') + '&form-name=expenses';
+  fetch('/', {{ method: 'POST', headers: {{'Content-Type': 'application/x-www-form-urlencoded'}}, body: body }}).catch(function() {{}});
+}}
 function saveExpense() {{
+  var id = document.getElementById('exp_id').value || newExpenseId();
+  var action = document.getElementById('exp_action').value || 'add';
   var location = document.getElementById('exp_location').value.trim();
   var value = document.getElementById('exp_value').value;
   var currency = document.getElementById('exp_currency').value;
   var date = document.getElementById('exp_date').value;
-  var what = document.getElementById('exp_what').value.trim();
+  var what = document.getElementById('exp_what').value;
   var business = document.getElementById('exp_business').value.trim();
   var paidby = document.getElementById('exp_paidby').value;
   var err = document.getElementById('expenseError');
@@ -4381,17 +4436,22 @@ function saveExpense() {{
     return;
   }}
   err.style.display = 'none';
-  var entry = {{location:location, value:parseFloat(value), currency:currency, date:date, what:what, business:business, paidby:paidby, pending:true}};
+  var entry = {{id:id, action:action, location:location, value:parseFloat(value), currency:currency, date:date, what:what, business:business, paidby:paidby, pending:true}};
   var pending = getPendingExpenses();
   pending.push(entry);
   savePendingExpenses(pending);
   renderExpenses();
   closeExpenseModal();
-  ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_paidby'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
-  var body = Object.keys(entry).filter(function(k) {{ return k !== 'pending'; }}).map(function(k) {{
-    return encodeURIComponent(k) + '=' + encodeURIComponent(entry[k]);
-  }}).join('&') + '&form-name=expenses';
-  fetch('/', {{ method: 'POST', headers: {{'Content-Type': 'application/x-www-form-urlencoded'}}, body: body }}).catch(function() {{}});
+  postExpenseEvent(entry);
+}}
+function deleteExpense(id) {{
+  if (!window.confirm('Delete this expense?')) return;
+  var entry = {{id:id, action:'delete', location:'', value:0, currency:'', date:'', what:'', business:'', paidby:'', pending:true}};
+  var pending = getPendingExpenses();
+  pending.push(entry);
+  savePendingExpenses(pending);
+  renderExpenses();
+  postExpenseEvent({{id:id, action:'delete'}});
 }}
 document.addEventListener('DOMContentLoaded', renderExpenses);
 </script>
