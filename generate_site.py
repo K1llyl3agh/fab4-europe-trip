@@ -4002,8 +4002,10 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .expense-pending { color:#b98600; font-size:.7rem; font-style:italic; margin-left:4px; }
 .expense-rate-note { font-size:.72rem; color:var(--muted); margin-top:10px; }
 .expense-row-actions { white-space:nowrap; text-align:right; }
-.expense-row-btn { background:none; border:none; cursor:pointer; font-size:1rem; padding:2px 6px; color:var(--muted); }
-.expense-row-btn:hover { color:var(--navy); }
+.expense-row-box { display:inline-flex; gap:6px; border:1px solid #ccd5e3; border-radius:8px; padding:3px; background:#fafcff; }
+.expense-row-btn { background:#fff; border:1px solid #ccd5e3; border-radius:6px; cursor:pointer; font-size:.72rem; font-weight:700; padding:5px 10px; color:var(--navy); }
+.expense-row-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy); }
+.expense-row-btn.expense-row-delete:hover { background:#a32d2d; border-color:#a32d2d; }
 .print-row { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:18px 0 4px; }
 .print-mini { display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.4); color:#fff; font-size:.76rem; font-weight:600; padding:6px 13px; border-radius:999px; cursor:pointer; }
 .print-mini:hover { background:rgba(255,255,255,.32); }
@@ -4393,7 +4395,7 @@ function renderExpenses() {{
     rows.innerHTML = all.map(function(e) {{
       var pendingTag = e.pending ? '<span class="expense-pending">(syncing&hellip;)</span>' : '';
       return '<tr><td>' + e.date + '</td><td>' + e.location + '</td><td>' + e.what + '</td><td>' + e.business + '</td><td>' + e.paidby + pendingTag + '</td><td class="amt">' + e.currency + ' ' + fmtMoney(e.value) + '</td>' +
-        '<td class="no-print expense-row-actions"><button type="button" class="expense-row-btn" onclick="openExpenseModal(\\'' + e.id + '\\')" aria-label="Edit">&#9998;</button><button type="button" class="expense-row-btn" onclick="deleteExpense(\\'' + e.id + '\\')" aria-label="Delete">&#128465;</button></td></tr>';
+        '<td class="no-print expense-row-actions"><span class="expense-row-box"><button type="button" class="expense-row-btn" onclick="openExpenseModal(\\'' + e.id + '\\')">Edit</button><button type="button" class="expense-row-btn expense-row-delete" onclick="deleteExpense(\\'' + e.id + '\\')">Delete</button></span></td></tr>';
     }}).join('');
   }}
   var byCurrency = {{}};
