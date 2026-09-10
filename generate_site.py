@@ -350,11 +350,12 @@ def travel_options_html(opts):
 EVENT_NOTES = [
     ('dinner at the lighterman', "If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;"),
     ('check in at the republic hotel, freshen up', "Time shown is approximate, based on the revised evening arrival &ndash; will depend on the actual transfer pickup time."),
+    ('piazza della repubblica & fontana delle naiadi', "Cancelled due to the delayed/rebooked flight (new 7:15pm Rome arrival) &ndash; this whole afternoon block, through Villa Borghese Gardens and pre-dinner drinks at Terrazza Montemartini, is no longer possible before landing. Struck through rather than removed in case any of it can be worked in another day."),
+    ('dinner at pizzeria ristoro est', "Time pushed back to 8:30pm (from 6:30pm) to allow for the new 7:15pm Rome arrival, transfer and hotel check-in &ndash; still to be booked/confirmed at this later time."),
 ]
 
 EVENT_PENDING_NOTES = [
     ('airport to the republic hotel', "Pickup time needs to change &ndash; this was booked around the original 11:35am landing. Call Destination Italia (tel +39 06 6228 7900) to reschedule the pickup for the new ~7:15&ndash;7:30pm arrival (allow time to clear immigration/baggage after the Bangkok flight)."),
-    ('piazza della repubblica & fontana delle naiadi', "With the new 7:15pm Rome arrival, this afternoon block &ndash; Piazza della Repubblica through Villa Borghese Gardens, pre-dinner drinks at Terrazza Montemartini, and the 6:30pm pizza dinner &ndash; is no longer feasible before landing. These will need to be rescheduled (e.g. moved to another day) or dropped for Friday 11 Sept. Let Claude know how you'd like to handle it."),
 ]
 
 def event_pending_for(name):
@@ -379,6 +380,24 @@ def event_confirmed_for(name):
 EVENT_TIME_WARNINGS = [
     ('transfer by private minibus to queen victoria', 'Check time if want to change'),
 ]
+
+# Events struck through (red, line-through) rather than deleted, when they become
+# infeasible due to a schedule change elsewhere (e.g. a delayed/rebooked flight) -
+# keeps the original plan visible while making clear it's off for now.
+EVENT_CANCELLED = [
+    'piazza della repubblica & fontana delle naiadi',
+    'santa maria degli angeli e dei martiri',
+    'free time / coffee near the hotel',
+    'villa borghese gardens',
+    'terrazza montemartini',
+]
+
+def event_cancelled_for(name):
+    n = name.lower()
+    for keyword in EVENT_CANCELLED:
+        if keyword in n:
+            return True
+    return False
 
 def event_time_warning_for(name):
     n = name.lower()
@@ -2026,11 +2045,14 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         time_warning_html = f'<span class="ev-time-warning">{esc(time_warning)}</span>' if time_warning else ''
         ztl_zones = ztl_alert_for(b['name'])
         ztl_html = ztl_alert_html(ztl_zones) if ztl_zones else ''
+        ev_cancelled = event_cancelled_for(b['name'])
+        _cancelled_row_class = ' ev-row-cancelled' if ev_cancelled else ''
+        _cancelled_tag = '<span class="ev-cancelled-tag">CANCELLED &ndash; flight delay</span>' if ev_cancelled else ''
         rows += f'''
-        <div class="ev-row">
+        <div class="ev-row{_cancelled_row_class}">
           <div class="ev-time">{esc(b['time_display'])}{time_warning_html}</div>
           <div class="ev-body">
-            <div class="ev-name">{esc_br(b['name'])} {badge(b['status'])} {logo_html}</div>
+            <div class="ev-name">{esc_br(b['name'])} {badge(b['status'])} {logo_html} {_cancelled_tag}</div>
             {addr}
             {ev_phone_html}
             {ev_note_html}
@@ -3852,6 +3874,9 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ev-time-warning { display:block; color:#c0392b; font-size:.62rem; font-weight:800; letter-spacing:.02em; margin-top:3px; text-transform:uppercase; }
 .ev-pending-box { margin-top:8px; border:2px solid #c0392b; border-radius:8px; padding:8px 12px; background:#fdecec; color:#c0392b; font-weight:700; font-size:.82rem; line-height:1.4; }
 .ev-confirmed-box { margin-top:8px; border:2px solid #2e7d32; border-radius:8px; padding:8px 12px; background:#eaf7ec; color:#1e5c23; font-weight:700; font-size:.82rem; line-height:1.4; }
+.ev-row-cancelled { background:#f7f7f7; border-radius:6px; }
+.ev-row-cancelled .ev-time, .ev-row-cancelled .ev-name, .ev-row-cancelled .ev-addr { text-decoration:line-through; color:#a0231b; }
+.ev-cancelled-tag { display:inline-block; background:#c0392b; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.02em; text-decoration:none; border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
 .ev-ztl-alert { margin-top:8px; border-left:4px solid #b6591a; border-radius:8px; padding:8px 12px; background:#fdf3e3; font-size:.82rem; line-height:1.45; }
 .ev-ztl-alert-title { font-weight:700; color:#8a4008; margin-bottom:3px; }
 .ztl-alert-zone { color:#5c3a10; }
