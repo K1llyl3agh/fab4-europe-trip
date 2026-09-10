@@ -3954,6 +3954,7 @@ table.flight-table { font-size:.82rem; }
 table.flight-table th, table.flight-table td { padding:8px 9px; }
 table.flight-table tr.flight-gk td { background:var(--london-light); }
 table.flight-table tr.flight-dt td { background:var(--tuscany-light); }
+table.flight-table tr.flight-connection td { background:#fdf6e3; color:var(--navy); font-style:italic; text-align:center; font-size:.78rem; padding:5px 9px; border-bottom:1px dashed #e0d3a8; }
 @media print {
   table.flight-table { font-size:.72rem; }
   table.flight-table th, table.flight-table td { padding:5px 6px; }
@@ -4268,10 +4269,21 @@ FLIGHTS = [
     ('Tue 29 Sept', 'QF161', 'Qantas', 'T1 &rarr; n/a', 'Sydney (SYD) &rarr; Wellington (WLG)', '9:35am &rarr; 3:45pm', 'Economy', '3h 10m', 'gk', '30kg'),
 ]
 FLIGHT_WHO = {'gk': 'Karen &amp; Gary only', 'dt': 'Deb &amp; Tom only', 'all': 'All 4'}
-flight_rows_html = ''.join(
-    f'<tr class="flight-{who}"><td>{date}</td><td>{flight}</td><td>{terminals}</td><td>{airline}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td><td>{bag}</td></tr>'
-    for date, flight, airline, terminals, route, times, cabin, dur, who, bag in FLIGHTS
-)
+# Connection time between two consecutive flights at the same airport, keyed by the
+# FLIGHTS index the connection precedes (i.e. the layover before boarding that row).
+FLIGHT_CONNECTIONS = {
+    1: ('Sydney (SYD)', '7h 00m'),
+    2: ('Singapore (SIN)', '~2h 05-10m'),
+    3: ('London Heathrow (LHR)', '1h 25m'),
+    7: ('Singapore (SIN)', '1h 40m'),
+    8: ('Sydney (SYD)', '3h 30m'),
+}
+flight_rows_html = ''
+for _i, (date, flight, airline, terminals, route, times, cabin, dur, who, bag) in enumerate(FLIGHTS):
+    if _i in FLIGHT_CONNECTIONS:
+        _airport, _gap = FLIGHT_CONNECTIONS[_i]
+        flight_rows_html += f'<tr class="flight-connection"><td colspan="9">&#9203; Connection at {_airport} &ndash; approx. {_gap} between flights</td></tr>'
+    flight_rows_html += f'<tr class="flight-{who}"><td>{date}</td><td>{flight}</td><td>{terminals}</td><td>{airline}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td><td>{bag}</td></tr>'
 FLIGHTS_TABLE_HTML = f'''
 <table class="ttc flight-table">
   <tr><th>Date</th><th>Flight</th><th>Terminal</th><th>Airline</th><th>Route</th><th>Depart &rarr; Arrive</th><th>Cabin</th><th>Duration</th><th>Checked Bag</th></tr>
