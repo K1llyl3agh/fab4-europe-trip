@@ -194,6 +194,7 @@ EVENT_W3W = [
     ('terrazza montemartini', 'cactus.defended.avocado'),
     ('travel to vatican meeting point', 'changing.swimmer.mutual'),
     ('vatican museums & sistine chapel tour begins', 'changing.swimmer.mutual'),
+    ('vatican museums & sistine chapel tour ends', 'changing.swimmer.mutual'),
     ('travel to colosseum meeting point', 'mule.dabbing.fonts'),
     ("st. peter's basilica entry", 'bind.cobbled.muscular'),
 ]
@@ -355,6 +356,8 @@ EVENT_NOTES = [
     ('dinner at pizzeria ristoro est', "Time pushed back to 8:30pm (from 6:30pm) to allow for the new 7:15pm Rome arrival, transfer and hotel check-in &ndash; still to be booked/confirmed at this later time."),
     ('travel to vatican meeting point', "No transfer is booked for this leg (checked against the Infinity Holidays paperwork &ndash; only the tour itself, Ref 5CJM745M, is booked; the only booked transfers are FCO&rarr;hotel on 11 Sept and hotel&rarr;Civitavecchia on 14 Sept). You'll need to make your own way there. The Republic Hotel to the meeting point (Viale Vaticano, next to Caff&egrave; Vaticano) is about 7km (4.3 miles): fastest by taxi/rideshare, roughly 15 min depending on traffic. By Metro: walk to Termini, take Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani (5 stops), then it's a 5&ndash;8 min walk to the meeting point &ndash; about 30 min door to door, trains every ~3&ndash;5 min. Leaving the hotel by 7:00am gives a comfortable buffer either way for the 7:45am tour start."),
     ("st. peter's basilica entry", "This is also not a booked transfer &ndash; no transport is arranged for this leg either. The Republic Hotel to St Peter's Basilica/Square is about 6.5km (4 miles): by taxi/rideshare roughly 15 min depending on traffic; by Metro, Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani then a ~10 min walk, about 30 min door to door. Note this means a second trip out to the Vatican area the same day (after the morning tour and lunch back near the hotel) &ndash; worth keeping in mind when planning the afternoon."),
+    ('vatican museums & sistine chapel tour begins', "Do you have to pay to get into Vatican City? St Peter's Basilica itself is free to enter (just a security/bag-check queue &ndash; climbing the dome costs extra, roughly &euro;10 by stairs / &euro;13 with the lift). The Vatican Museums &amp; Sistine Chapel are paid entry (normally &euro;17+) &ndash; already covered by this Towns of Italy booking. Vatican City and St Peter's Square themselves are free to walk around at any time."),
+    ('vatican museums & sistine chapel tour ends', "The tour finishes inside the Sistine Chapel &ndash; the guide points out the route to St Peter's Square but doesn't walk you there, so you exit back out via the Museums' own exit, which lets out on Viale Vaticano close to where the tour started. From there to St Peter's Basilica is about 1.5km, roughly a 20 min walk via Viale Vaticano and around into St Peter's Square (no transfer is booked for this leg)."),
 ]
 
 EVENT_PENDING_NOTES = [
@@ -2475,6 +2478,22 @@ AFTERNOON_12SEP = [
 ]
 afternoon_box_12sep = dinner_box('Saturday Afternoon Suggestions (6 ideas, after lunch)', AFTERNOON_12SEP, food=False)
 
+LUNCH_12SEP = [
+    {'place': 'Ristorante Arlù', 'type': "Roman institution since 1959 in Borgo Pio - carbonara and tiramisu are the standouts, TripAdvisor 4.7★ (#19 of 11,871 in Rome)",
+     'address': 'Borgo Pio 135, 00193 Rome - ~5 min/350m from St Peter’s Basilica, ~18 min/1.4km from the Vatican Museums tour-end', 'website': 'https://www.ristorantearlu.it/en/', 'w3w': 'shears.pizza.tags',
+     'hours': 'Mon-Sat 11:30am-10pm (closed Sun) - continuous hours, easy for lunch',
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1034543-Reviews-Ristorante_Arlu-Rome_Lazio.html'},
+    {'place': 'Hostaria Dino e Tony', 'type': 'No-frills family trattoria run by two brothers - fried artichokes, carbonara, amatriciana, coda alla vaccinara',
+     'address': 'Via Leone IV 60, 00192 Rome - roughly the midpoint: ~12 min/1.0km from the Vatican Museums tour-end, ~14 min/1.0km from St Peter’s Basilica', 'website': None, 'w3w': 'braced.drag.times',
+     'hours': 'Lunch 12:30-3pm, dinner 7:30-11pm - tel +39 06 3973 3284',
+     'review': 'https://restaurantguru.com/Dino-and-Tony-Rome'},
+    {'place': 'E.G.G. Pasta Fresca', 'type': 'Quick, casual fresh-pasta counter (eat-in or takeaway) - carbonara, cacio e pepe, bolognese',
+     'address': 'Vicolo del Farinone 25/A, 00193 Rome - ~4 min/300m from St Peter’s Basilica, ~18 min/1.4km from the Vatican Museums tour-end', 'website': None, 'w3w': 'painter.frame.minute',
+     'hours': 'Lunch service - tel +39 06 8901 3927',
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d6774611-Reviews-Egg_Pasta_Fresca-Rome_Lazio.html'},
+]
+lunch_box_12sep = dinner_box('Lunch Suggestions Near the Vatican (3 ideas, between the Museums tour and St Peter’s Basilica)', LUNCH_12SEP, day_num=3)
+
 LUNCH_13SEP = [
     {'place': 'Il Salotto del Colosseo', 'type': 'TripAdvisor 4.7★ - "great lunch by the Colosseum", cosy hidden gem',
      'address': 'Via di S. Giovanni in Laterano 42, Rome - ~2 min from Piazza del Colosseo', 'website': 'https://ilsalottodelcolosseo.it/en/',
@@ -2513,7 +2532,7 @@ lunch_box_13sep = dinner_box('Lunch Suggestions Near Piazza del Colosseo (8 idea
 
 EXTRA_BOX_BY_DAY = {
     '11 SEP': lunch_box_11sep + twopm_box_11sep + dinner_box_11sep,
-    '12 SEP': afternoon_box_12sep + dinner_box_12sep,
+    '12 SEP': lunch_box_12sep + afternoon_box_12sep + dinner_box_12sep,
     '13 SEP': lunch_box_13sep + dinner_box_13sep,
 }
 
