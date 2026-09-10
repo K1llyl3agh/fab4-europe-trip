@@ -4397,6 +4397,8 @@ EXPENSES_SECTION_HTML = f'''
         <option value="">Choose one&hellip;</option>
         <option>Team K</option>
         <option>Team D</option>
+        <option>K&amp;G</option>
+        <option>T&amp;D</option>
       </select>
       <label for="exp_locnum">Location number (optional &ndash; e.g. 15:003)</label>
       <input type="text" id="exp_locnum" name="locnum" placeholder="e.g. 15:003">
@@ -4521,7 +4523,7 @@ function renderExpenses() {{
     '<div class="expense-grand-total"><span class="lbl">Total (AUD)</span>A$ ' + fmtMoney(totalAud) + '</div>'
   ) : '';
   var teamEl = document.getElementById('expenseTeamTotals');
-  var byTeam = {{'Team K': {{nzd:0, aud:0}}, 'Team D': {{nzd:0, aud:0}}}};
+  var byTeam = {{'Team K': {{nzd:0, aud:0}}, 'Team D': {{nzd:0, aud:0}}, 'K&G': {{nzd:0, aud:0}}, 'T&D': {{nzd:0, aud:0}}}};
   all.forEach(function(e) {{
     var team = byTeam[e.paidby];
     if (!team) return;
