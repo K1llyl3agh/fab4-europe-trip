@@ -4385,10 +4385,13 @@ EXPENSES_SECTION_HTML = f'''
         <option>Breakfast</option>
         <option>Lunch</option>
         <option>Dinner</option>
+        <option>Drinks</option>
         <option>Other</option>
       </select>
       <label for="exp_business">Name of the place</label>
       <input type="text" id="exp_business" name="business" placeholder="e.g. Pinsere">
+      <label for="exp_w3w">What3Words</label>
+      <input type="text" id="exp_w3w" name="w3w" placeholder="///guard.cling.radio">
       <label for="exp_paidby">Who paid?</label>
       <select id="exp_paidby" name="paidby">
         <option value="">Choose one&hellip;</option>
@@ -4457,6 +4460,7 @@ function openExpenseModal(editId) {{
     document.getElementById('exp_date').value = entry.date;
     document.getElementById('exp_what').value = entry.what;
     document.getElementById('exp_business').value = entry.business;
+    document.getElementById('exp_w3w').value = entry.w3w || '';
     document.getElementById('exp_paidby').value = entry.paidby;
     document.getElementById('exp_locnum').value = entry.locnum || '';
     document.getElementById('exp_rating').value = entry.rating || '';
@@ -4468,7 +4472,7 @@ function openExpenseModal(editId) {{
   }} else {{
     document.getElementById('exp_id').value = '';
     document.getElementById('exp_action').value = 'add';
-    ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_paidby','exp_locnum','exp_rating','exp_taplaced','exp_tareview','exp_comment'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
+    ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_w3w','exp_paidby','exp_locnum','exp_rating','exp_taplaced','exp_tareview','exp_comment'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
     title.textContent = 'Add an expense';
     saveBtn.textContent = 'Save expense';
   }}
@@ -4476,6 +4480,15 @@ function openExpenseModal(editId) {{
 }}
 function closeExpenseModal() {{ document.getElementById('expenseModalOverlay').classList.remove('open'); }}
 function fmtMoney(n) {{ return Number(n).toLocaleString(undefined, {{minimumFractionDigits:2, maximumFractionDigits:2}}); }}
+function normalizeW3W(v) {{
+  v = (v || '').trim().toLowerCase();
+  if (!v) return '';
+  v = v.replace(/^\/+/, '');
+  v = v.replace(/[^a-z.]/g, '');
+  var parts = v.split('.').filter(function(p) {{ return p.length; }});
+  if (!parts.length) return '';
+  return '///' + parts.slice(0, 3).join('.');
+}}
 function renderExpenses() {{
   var all = computeActiveExpenses();
   var rows = document.getElementById('expenseRows');
@@ -4536,6 +4549,7 @@ function saveExpense() {{
   var date = document.getElementById('exp_date').value;
   var what = document.getElementById('exp_what').value;
   var business = document.getElementById('exp_business').value.trim();
+  var w3w = normalizeW3W(document.getElementById('exp_w3w').value);
   var paidby = document.getElementById('exp_paidby').value;
   var locnum = document.getElementById('exp_locnum').value.trim();
   var rating = document.getElementById('exp_rating').value;
@@ -4549,7 +4563,7 @@ function saveExpense() {{
     return;
   }}
   err.style.display = 'none';
-  var entry = {{id:id, action:action, location:location, value:parseFloat(value), currency:currency, date:date, what:what, business:business, paidby:paidby,
+  var entry = {{id:id, action:action, location:location, value:parseFloat(value), currency:currency, date:date, what:what, business:business, w3w:w3w, paidby:paidby,
                 locnum:locnum, rating:rating, taplaced:taplaced, tareview:tareview, comment:comment, pending:true}};
   var pending = getPendingExpenses();
   pending.push(entry);
