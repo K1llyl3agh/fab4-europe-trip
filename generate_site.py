@@ -852,7 +852,7 @@ def stay_with_address(stay_text):
             return f"{stay_text} - {h['address']} ({h['phone']} · {h['email']})"
     return stay_text
 
-CURRENCY_SYMBOL = {'EUR': '&euro;', 'GBP': '&pound;', 'USD': '$', 'NZD': 'NZ$'}
+CURRENCY_SYMBOL = {'EUR': '&euro;', 'GBP': '&pound;', 'USD': '$', 'NZD': 'NZ$', 'SGD': 'S$'}
 
 def mandatory_fee_box(currency, text):
     symbol = CURRENCY_SYMBOL.get(currency, currency)
@@ -4444,8 +4444,8 @@ CSS = CSS.replace('__HERO_CLOUDS_B64__', HERO_CLOUDS_B64)
 # Exchange rates as of 9 Sept 2026 (source: exchangerate-api.com via open.er-api.com).
 # Update these two dicts at the end of the trip with the final rates.
 EXPENSE_RATE_DATE = '9 Sept 2026'
-EXPENSE_RATES_TO_NZD = {'EUR': 1.9858, 'GBP': 2.3131, 'USD': 1.7080, 'AUD': 1.2332, 'NZD': 1.0}
-EXPENSE_RATES_TO_AUD = {'EUR': 1.6105, 'GBP': 1.8753, 'USD': 1.3854, 'NZD': 0.8109, 'AUD': 1.0}
+EXPENSE_RATES_TO_NZD = {'EUR': 1.9858, 'GBP': 2.3131, 'USD': 1.7080, 'AUD': 1.2332, 'NZD': 1.0, 'SGD': 1.3505}
+EXPENSE_RATES_TO_AUD = {'EUR': 1.6105, 'GBP': 1.8753, 'USD': 1.3854, 'NZD': 0.8109, 'AUD': 1.0, 'SGD': 1.0948}
 EXPENSES_SEED = []  # confirmed submissions, baked in each time the site is regenerated
 
 EXPENSES_SECTION_HTML = f'''
@@ -4489,7 +4489,7 @@ EXPENSES_SECTION_HTML = f'''
       <div style="display:flex; gap:8px">
         <input type="number" step="0.01" id="exp_value" name="value" placeholder="0.00" style="flex:1">
         <select id="exp_currency" name="currency" style="width:100px">
-          <option>EUR</option><option>GBP</option><option>NZD</option><option>AUD</option><option>USD</option>
+          <option>EUR</option><option>GBP</option><option>NZD</option><option>AUD</option><option>USD</option><option>SGD</option>
         </select>
       </div>
       <label for="exp_date">Date</label>
