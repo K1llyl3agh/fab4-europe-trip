@@ -4125,6 +4125,8 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .expense-empty-row td { color:var(--muted); font-style:italic; }
 .expense-pending { color:#b98600; font-size:.7rem; font-style:italic; margin-left:4px; }
 .expense-rate-note { font-size:.72rem; color:var(--muted); margin-top:10px; }
+.expense-rate-table { display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:6px; }
+.expense-rate-row { font-size:.72rem; color:var(--muted); font-variant-numeric:tabular-nums; }
 .expense-row-actions { white-space:nowrap; text-align:right; }
 .fv-code { font-weight:700; color:var(--navy); white-space:nowrap; }
 .fv-tick { text-align:center; }
@@ -4329,8 +4331,8 @@ FLIGHTS = [
     ('Thu 10 &ndash; Fri 11 Sept', 'BA12', 'British Airways', 'T1 &rarr; T5', 'Singapore (SIN) &rarr; London Heathrow (LHR)', '11:20/11:25pm &rarr; 6:35am +1', 'Premium Economy', '~14h 10-15m', 'all', '2&times;23kg'),   #2 SUPERSEDED
     ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Business', '2h 35m', 'gk', '2&times;32kg'),                    #3 SUPERSEDED
     ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Economy', '2h 35m', 'dt', '23kg'),                             #4 SUPERSEDED
-    ('Fri 11 Sept', 'TG402', 'Thai Airways', 'T2 &rarr; n/a', 'Singapore (SIN) &rarr; Bangkok (BKK)', '8:00am &rarr; 9:20am', 'Economy', '2h 20m', 'all', 'Included'),                          #5 REBOOKED
-    ('Fri 11 Sept', 'AZ759', 'ITA Airways', 'n/a &rarr; T3', 'Bangkok (BKK) &rarr; Rome Fiumicino (FCO)', '12:25pm &rarr; 7:15pm', 'Premium Economy', '11h 50m', 'all', 'Included'),                    #6 REBOOKED
+    ('Fri 11 Sept', 'TG402', 'Thai Airways', 'T2 &rarr; Main Terminal', 'Singapore (SIN) &rarr; Bangkok (BKK)', '8:00am &rarr; 9:20am', 'Economy', '2h 20m', 'all', 'Included'),                          #5 REBOOKED
+    ('Fri 11 Sept', 'AZ759', 'ITA Airways', 'SAT-1 &rarr; T3', 'Bangkok (BKK) &rarr; Rome Fiumicino (FCO)', '12:25pm &rarr; 7:15pm', 'Premium Economy', '11h 50m', 'all', 'Included'),                    #6 REBOOKED
     ('Thu 24 Sept', 'BA575', 'British Airways', 'n/a &rarr; T5', 'Milan Linate (LIN) &rarr; London Heathrow (LHR)', '3:55pm &rarr; 4:50pm', 'Business', '1h 55m', 'all', '2&times;32kg'),                     #7
     ('Sun 27 &ndash; Mon 28 Sept', 'BA15', 'British Airways', 'T5 &rarr; T1', 'London Heathrow (LHR) &rarr; Singapore (SIN)', '10:00pm &rarr; 6:40pm +1', 'Premium Economy', '13h 40m', 'all', '2&times;23kg'), #8
     ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'British Airways', 'T1 &rarr; T1', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; 6:05am +1', 'Premium Economy', '7h 45m', 'all', '2&times;23kg'),          #9
@@ -4350,7 +4352,6 @@ FLIGHT_ROW_STATUS = {
 # alert and new Bangkok connection below instead.)
 FLIGHT_CONNECTIONS = {
     1: ('Sydney (SYD)', '12h 21m'),
-    6: ('Bangkok (BKK)', '3h 05m'),
     9: ('Singapore (SIN)', '1h 40m'),
     10: ('Sydney (SYD)', '3h 30m'),
 }
@@ -4359,6 +4360,8 @@ FLIGHT_CONNECTIONS = {
 FLIGHT_GAP_ALERTS = {
     5: ('Singapore (SIN)', '5h 30m overnight',
         'QF1 now lands in Singapore at 2:30am Fri 11 Sept, and the rebooked TG402 doesn\'t leave until 8:00am the same morning &ndash; about 5&frac12; hours in the middle of the night at Changi. Most shops/restaurants will be shut at that hour; worth locating one of Changi\'s 24-hour transit lounges or a short-stay rest area/pod to nap in rather than the gate seating.'),
+    6: ('Bangkok (BKK)', '3h 05m',
+        "Suvarnabhumi doesn't use numbered terminals like Singapore or Rome &ndash; just one main building plus a separate satellite concourse, which is why these two show as Main Terminal / SAT-1 rather than T1/T2 etc. Thai Airways' TG402 lands at the Main Terminal (Concourses C&ndash;E); ITA Airways' AZ759 departs from Satellite Terminal 1 (SAT-1), about 1km away and reached only via an underground Automated People Mover (train). Allow extra time within the 3h 05m layover for that transfer, plus the usual security/passport re-check before the connecting international flight."),
 }
 # Live-status / rebooking notes, added under the affected flight row (not replacing it),
 # following the Tue 8 Sept NATS (UK air traffic control) system failure that cancelled
@@ -4443,9 +4446,13 @@ CSS = CSS.replace('__HERO_CLOUDS_B64__', HERO_CLOUDS_B64)
 # --- Expense tracker ---------------------------------------------------
 # Exchange rates as of 9 Sept 2026 (source: exchangerate-api.com via open.er-api.com).
 # Update these two dicts at the end of the trip with the final rates.
-EXPENSE_RATE_DATE = '9 Sept 2026'
+EXPENSE_RATE_DATE = '11 Sept 2026'
 EXPENSE_RATES_TO_NZD = {'EUR': 1.9858, 'GBP': 2.3131, 'USD': 1.7080, 'AUD': 1.2332, 'NZD': 1.0, 'SGD': 1.3505}
 EXPENSE_RATES_TO_AUD = {'EUR': 1.6105, 'GBP': 1.8753, 'USD': 1.3854, 'NZD': 0.8109, 'AUD': 1.0, 'SGD': 1.0948}
+EXPENSE_RATE_ROWS_HTML = ''.join(
+    f'<div class="expense-rate-row">1 {c} = {EXPENSE_RATES_TO_NZD[c]:.4f} NZD &middot; {EXPENSE_RATES_TO_AUD[c]:.4f} AUD</div>'
+    for c in ['EUR', 'GBP', 'USD', 'SGD', 'AUD', 'NZD']
+)
 EXPENSES_SEED = []  # confirmed submissions, baked in each time the site is regenerated
 
 EXPENSES_SECTION_HTML = f'''
@@ -4473,6 +4480,7 @@ EXPENSES_SECTION_HTML = f'''
   <div class="expense-grand-totals" id="expenseGrandTotals"></div>
   <div class="expense-team-totals" id="expenseTeamTotals"></div>
   <p class="expense-rate-note">NZD/AUD conversions use exchange rates as of {EXPENSE_RATE_DATE}. These are fixed for the trip and will be updated to the final rate once we're back.</p>
+  <div class="expense-rate-table">{EXPENSE_RATE_ROWS_HTML}</div>
 </section>
 
 <div class="expense-modal-overlay no-print" id="expenseModalOverlay">
