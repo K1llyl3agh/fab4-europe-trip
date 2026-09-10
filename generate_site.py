@@ -193,6 +193,7 @@ EVENT_W3W = [
     ('villa borghese gardens', 'soak.settle.sweated'),
     ('terrazza montemartini', 'cactus.defended.avocado'),
     ('travel to vatican meeting point', 'changing.swimmer.mutual'),
+    ('vatican museums & sistine chapel tour begins', 'changing.swimmer.mutual'),
     ('travel to colosseum meeting point', 'mule.dabbing.fonts'),
     ("st. peter's basilica entry", 'bind.cobbled.muscular'),
 ]
@@ -352,6 +353,7 @@ EVENT_NOTES = [
     ('check in at the republic hotel, freshen up', "Time shown is approximate, based on the revised evening arrival &ndash; will depend on the actual transfer pickup time."),
     ('piazza della repubblica & fontana delle naiadi', "Cancelled due to the delayed/rebooked flight (new 7:15pm Rome arrival) &ndash; this whole afternoon block, through Villa Borghese Gardens and pre-dinner drinks at Terrazza Montemartini, is no longer possible before landing. Struck through rather than removed in case any of it can be worked in another day."),
     ('dinner at pizzeria ristoro est', "Time pushed back to 8:30pm (from 6:30pm) to allow for the new 7:15pm Rome arrival, transfer and hotel check-in &ndash; still to be booked/confirmed at this later time."),
+    ('travel to vatican meeting point', "No transfer is booked for this leg (checked against the Infinity Holidays paperwork &ndash; only the tour itself, Ref 5CJM745M, is booked; the only booked transfers are FCO&rarr;hotel on 11 Sept and hotel&rarr;Civitavecchia on 14 Sept). You'll need to make your own way there. The Republic Hotel to the meeting point (Viale Vaticano, next to Caff&egrave; Vaticano) is about 7km (4.3 miles): fastest by taxi/rideshare, roughly 15 min depending on traffic. By Metro: walk to Termini, take Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani (5 stops), then it's a 5&ndash;8 min walk to the meeting point &ndash; about 30 min door to door, trains every ~3&ndash;5 min. Leaving the hotel by 7:00am gives a comfortable buffer either way for the 7:45am tour start."),
 ]
 
 EVENT_PENDING_NOTES = [
