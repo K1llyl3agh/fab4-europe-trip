@@ -3960,8 +3960,10 @@ table.flight-table tr.flight-gap-alert td { background:#fdeaea; color:#a4231b; t
 table.flight-table tr.flight-superseded td { background:#f2f2f2 !important; color:#8c8c8c; text-decoration:line-through; }
 table.flight-table tr.flight-superseded td:last-child { text-decoration:none; }
 table.flight-table tr.flight-rebooked td { background:#e6f6ea !important; color:#1e5c34; font-weight:600; }
+table.flight-table tr.flight-retimed td { background:#fff6e0 !important; color:#8a6400; font-weight:600; }
 .flight-superseded-tag { display:inline-block; background:#c0392b; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.02em; text-decoration:none; border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
 .flight-rebooked-tag { display:inline-block; background:#1e8449; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.02em; text-decoration:none; border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+.flight-retimed-tag { display:inline-block; background:#b9840c; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.02em; text-decoration:none; border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
 @media print {
   table.flight-table { font-size:.72rem; }
   table.flight-table th, table.flight-table td { padding:5px 6px; }
@@ -4265,8 +4267,8 @@ body.printing-dailyquiz .print-block[data-subsection="quizquestions"] { display:
 '''
 
 FLIGHTS = [
-    ('Thu 10 Sept', 'QF162', 'Qantas', 'T1 &rarr; T1', 'Wellington (WLG) &rarr; Sydney (SYD)', '6:05am &rarr; 7:45am', 'Business', '3h 40m', 'gk', '40kg'),                                                    #0
-    ('Thu 10 Sept', 'QF1', 'Qantas', 'T1 &rarr; T1', 'Sydney (SYD) &rarr; Singapore (SIN)', '2:45pm &rarr; 9:15pm', 'Premium Economy', '8h 30m', 'all', '40kg'),                                              #1
+    ('Thu 10 Sept', 'QF162', 'Qantas', 'T1 &rarr; T1', 'Wellington (WLG) &rarr; Sydney (SYD)', '6:05am &rarr; 7:39am', 'Business', '3h 34m', 'gk', '40kg'),                                                    #0
+    ('Thu 10 Sept', 'QF1', 'Qantas', 'T1 &rarr; T1', 'Sydney (SYD) &rarr; Singapore (SIN)', '8:00pm &rarr; 2:30am +1', 'Premium Economy', '8h 30m', 'all', '40kg'),                                              #1 REBOOKED (time changed)
     ('Thu 10 &ndash; Fri 11 Sept', 'BA12', 'British Airways', 'T1 &rarr; T5', 'Singapore (SIN) &rarr; London Heathrow (LHR)', '11:20/11:25pm &rarr; 6:35am +1', 'Premium Economy', '~14h 10-15m', 'all', '2&times;23kg'),   #2 SUPERSEDED
     ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Business', '2h 35m', 'gk', '2&times;32kg'),                    #3 SUPERSEDED
     ('Fri 11 Sept', 'BA548', 'British Airways', 'T5 &rarr; T3', 'London Heathrow (LHR) &rarr; Rome Fiumicino (FCO)', '8:00am &rarr; 11:35am', 'Economy', '2h 35m', 'dt', '23kg'),                             #4 SUPERSEDED
@@ -4281,6 +4283,7 @@ FLIGHT_WHO = {'gk': 'Karen &amp; Gary only', 'dt': 'Deb &amp; Tom only', 'all': 
 # Extra row-status classes: 'superseded' (struck through - cancelled/replaced but kept
 # visible for the record) and 'rebooked' (the new replacement flight, highlighted green).
 FLIGHT_ROW_STATUS = {
+    1: 'retimed',
     2: 'superseded', 3: 'superseded', 4: 'superseded',
     5: 'rebooked', 6: 'rebooked',
 }
@@ -4289,7 +4292,7 @@ FLIGHT_ROW_STATUS = {
 # (No entries for 2/3 - the old SIN-LHR-FCO connections are superseded, see the gap
 # alert and new Bangkok connection below instead.)
 FLIGHT_CONNECTIONS = {
-    1: ('Sydney (SYD)', '7h 00m'),
+    1: ('Sydney (SYD)', '12h 21m'),
     6: ('Bangkok (BKK)', '3h 05m'),
     9: ('Singapore (SIN)', '1h 40m'),
     10: ('Sydney (SYD)', '3h 30m'),
@@ -4297,16 +4300,16 @@ FLIGHT_CONNECTIONS = {
 # A longer, actionable gap that needs something arranged (e.g. an overnight stay),
 # rendered in a stronger red-accented alert row rather than the plain gold connection style.
 FLIGHT_GAP_ALERTS = {
-    5: ('Singapore (SIN)', '~10h 45m overnight',
-        'QF1 lands at 9:15pm Thu 10 Sept, but the rebooked TG402 doesn\'t leave until 8:00am Fri 11 Sept &ndash; an overnight gap at Changi that didn\'t exist in the original plan. Worth arranging an airport transit hotel or day room for the night (Changi has several inside the transit area) rather than trying to sit it out in the terminal.'),
+    5: ('Singapore (SIN)', '5h 30m overnight',
+        'QF1 now lands in Singapore at 2:30am Fri 11 Sept, and the rebooked TG402 doesn\'t leave until 8:00am the same morning &ndash; about 5&frac12; hours in the middle of the night at Changi. Most shops/restaurants will be shut at that hour; worth locating one of Changi\'s 24-hour transit lounges or a short-stay rest area/pod to nap in rather than the gate seating.'),
 }
 # Live-status / rebooking notes, added under the affected flight row (not replacing it),
 # following the Tue 8 Sept NATS (UK air traffic control) system failure that cancelled
 # 1,750+ UK flights and disrupted Heathrow for several days. Checked/worded as of 10 Sept.
 FLIGHT_STATUS_NOTES = {
-    1: '&#128992; Update (checked 10 Sept, NZ/AEST time): this Sydney&rarr;Singapore sector never enters UK airspace, so it was never at risk from the Heathrow disruption &ndash; tracking on schedule.',
-    4: '&#10060; Rebooked (10 Sept): after the NATS (UK air traffic control) system failure on Tue 8 Sept cancelled 1,750+ UK flights and disrupted Heathrow for days (including this route\'s BA548 and BA575 services on Wed 9 Sept), Qantas has rebooked this Singapore&rarr;London&rarr;Rome connection entirely off the London routing. The two rows above (BA12, BA548) are cancelled for this booking &ndash; see the new routing via Bangkok below.',
-    6: '&#9989; New routing (10 Sept): TG402 + AZ759 replace BA12 + BA548, avoiding London/Heathrow altogether. This now lands in Rome at 7:15pm instead of 11:35am &ndash; about 7&frac12; hours later than planned, so Friday 11 Sept\'s Rome afternoon (transfer, lunch, free time) will need reworking once this is confirmed. Cabin class and checked-bag allowance weren\'t specified in the rebooking message &ndash; confirm both at qantas.com/yourbooking or the Qantas app before travelling. If a refund is preferred instead of flying this new routing, that\'s also available there (or via your travel agent if booked through one).',
+    1: '&#128992; Update (per Qantas booking #EKNMYW): as part of this rebooking, QF1\'s own Sydney&rarr;Singapore departure has also shifted &ndash; from the original 2:45pm to 8:00pm, now landing in Singapore at 2:30am (was 9:15pm). It still never enters UK airspace, so it wasn\'t itself broken by the Heathrow disruption &ndash; Qantas has just re-sequenced it to line up with the new Bangkok routing below. Sydney transit is now 12h 21m, up from the original ~7h.',
+    4: '&#10060; Rebooked (per Qantas booking #EKNMYW): after the NATS (UK air traffic control) system failure on Tue 8 Sept cancelled 1,750+ UK flights and disrupted Heathrow for days (including this route\'s BA548 and BA575 services on Wed 9 Sept), Qantas has rebooked this Singapore&rarr;London&rarr;Rome connection entirely off the London routing. The two rows above (BA12, BA548) are cancelled for this booking &ndash; see the new routing via Bangkok below.',
+    6: '&#9989; New routing (per Qantas booking #EKNMYW): TG402 + AZ759 replace BA12 + BA548, avoiding London/Heathrow altogether. This now lands in Rome at 7:15pm instead of 11:35am &ndash; about 7&frac12; hours later than planned, so Friday 11 Sept\'s Rome afternoon (transfer, lunch, free time) will need reworking once this is confirmed. Cabin class and checked-bag allowance weren\'t specified in the rebooking &ndash; confirm both at qantas.com/yourbooking or the Qantas app before travelling. If a refund is preferred instead of flying this new routing, that\'s also available there (or via your travel agent if booked through one).',
 }
 flight_rows_html = ''
 for _i, (date, flight, airline, terminals, route, times, cabin, dur, who, bag) in enumerate(FLIGHTS):
@@ -4316,8 +4319,14 @@ for _i, (date, flight, airline, terminals, route, times, cabin, dur, who, bag) i
     if _i in FLIGHT_GAP_ALERTS:
         _airport, _gap, _alert_text = FLIGHT_GAP_ALERTS[_i]
         flight_rows_html += f'<tr class="flight-gap-alert"><td colspan="9">&#9888;&#65039; Gap at {_airport} &ndash; {_gap}. {_alert_text}</td></tr>'
-    _status_class = f' flight-{FLIGHT_ROW_STATUS[_i]}' if _i in FLIGHT_ROW_STATUS else ''
-    _flight_label = f'{flight} <span class="flight-superseded-tag">CANCELLED &ndash; rebooked</span>' if FLIGHT_ROW_STATUS.get(_i) == 'superseded' else (f'{flight} <span class="flight-rebooked-tag">NEW</span>' if FLIGHT_ROW_STATUS.get(_i) == 'rebooked' else flight)
+    _status = FLIGHT_ROW_STATUS.get(_i)
+    _status_class = f' flight-{_status}' if _status else ''
+    _tag_html = {
+        'superseded': '<span class="flight-superseded-tag">CANCELLED &ndash; rebooked</span>',
+        'rebooked': '<span class="flight-rebooked-tag">NEW</span>',
+        'retimed': '<span class="flight-retimed-tag">TIME CHANGED</span>',
+    }.get(_status, '')
+    _flight_label = f'{flight} {_tag_html}' if _tag_html else flight
     flight_rows_html += f'<tr class="flight-{who}{_status_class}"><td>{date}</td><td>{_flight_label}</td><td>{terminals}</td><td>{airline}</td><td>{route}</td><td>{times}</td><td>{cabin}</td><td>{dur}</td><td>{bag}</td></tr>'
     if _i in FLIGHT_STATUS_NOTES:
         flight_rows_html += f'<tr class="flight-status-note"><td colspan="9">{FLIGHT_STATUS_NOTES[_i]}</td></tr>'
