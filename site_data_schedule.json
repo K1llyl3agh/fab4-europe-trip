@@ -282,19 +282,19 @@
       "title": "FRIDAY (DAY 11) - 11 SEP",
       "events": [
         {
-          "time": "11:30 AM",
+          "time": "7:15 PM",
           "event": "Arrive Fiumicino Airport (FCO Terminal 3) 11.35am - flight BA548 (British Airways) from London Heathrow (T5)",
           "status": null,
           "address": null
         },
         {
-          "time": "12:00 PM",
+          "time": "7:45 PM",
           "event": "Transfer by private minibus - airport to The Republic Hotel (~30-45 min drive depending on traffic, ~28 min best case). Confirmed as Private Minibus, pick-up at FCO Terminal 3, Meeting Point Column 3 - driver waits 1h15m after landing. Supplier: Destination Italia (tel +39 06 6228 7900).",
           "status": "Booked",
           "address": "Via Gaeta 61, 185 Rome"
         },
         {
-          "time": "12:30 PM",
+          "time": "8:30 PM",
           "event": "Check in at The Republic Hotel, freshen up",
           "status": null,
           "address": "Via Gaeta 61, 185 Rome"

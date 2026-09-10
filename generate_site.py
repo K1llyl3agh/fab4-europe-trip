@@ -349,9 +349,12 @@ def travel_options_html(opts):
 
 EVENT_NOTES = [
     ('dinner at the lighterman', "If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;"),
+    ('check in at the republic hotel, freshen up', "Time shown is approximate, based on the revised evening arrival &ndash; will depend on the actual transfer pickup time."),
 ]
 
 EVENT_PENDING_NOTES = [
+    ('airport to the republic hotel', "Pickup time needs to change &ndash; this was booked around the original 11:35am landing. Call Destination Italia (tel +39 06 6228 7900) to reschedule the pickup for the new ~7:15&ndash;7:30pm arrival (allow time to clear immigration/baggage after the Bangkok flight)."),
+    ('piazza della repubblica & fontana delle naiadi', "With the new 7:15pm Rome arrival, this afternoon block &ndash; Piazza della Repubblica through Villa Borghese Gardens, pre-dinner drinks at Terrazza Montemartini, and the 6:30pm pizza dinner &ndash; is no longer feasible before landing. These will need to be rescheduled (e.g. moved to another day) or dropped for Friday 11 Sept. Let Claude know how you'd like to handle it."),
 ]
 
 def event_pending_for(name):
@@ -363,6 +366,7 @@ def event_pending_for(name):
 
 EVENT_CONFIRMED_NOTES = [
     ('dinner at the lighterman', "Time change to 7:30pm CONFIRMED &ndash; Teagan (Reservations, The Lighterman) amended booking 4NJL3Z4M6XN3 to 19:30&ndash;21:30 for 4 guests, confirmed by email 31 Aug 2026."),
+    ('arrive fiumicino airport', "Flight change (per Qantas booking #EKNMYW): the London-routed BA548 shown above was cancelled after the NATS/Heathrow air traffic control system failure (8&ndash;9 Sept). Rebooked via Bangkok &ndash; now arriving on <strong>AZ759 at 7:15pm</strong> (was 11:35am via BA548). See the Flight Summary page for the full new routing (QF1 &rarr; TG402 &rarr; AZ759)."),
 ]
 
 def event_confirmed_for(name):
@@ -1069,8 +1073,8 @@ DAILY_QUIZ = [
          'note': 'Singapore - BA12 departs SIN around 11:20pm and lands at Heathrow 6:35am the next morning.'},
         {'q': 'Roughly how long is the overnight BA12 flight from Singapore to London Heathrow?', 'opts': ['About 8 hours', 'About 11 hours', 'About 14 hours', 'About 18 hours'], 'ans': 2,
          'note': 'About 14 hours 10-15 minutes - the longest single sector of the whole trip.'},
-        {'q': "After landing in London, which flight and city do we connect to next?", 'opts': ['BA548 to Rome', 'BA15 to Singapore', 'QF1 to Sydney', 'BA12 back to Singapore'], 'ans': 0,
-         'note': 'BA548 to Rome Fiumicino (FCO), landing 11:35am on Friday 11 September.'},
+        {'q': "This routing via London was later rebooked due to a UK air traffic control disruption. Which city do we now connect through instead, to reach Rome?", 'opts': ['Bangkok', 'Dubai', 'Doha', 'Hong Kong'], 'ans': 0,
+         'note': "Bangkok (BKK) &ndash; after the NATS/Heathrow ATC failure, Qantas rebooked us via TG402 (Singapore &rarr; Bangkok) then AZ759 (Bangkok &rarr; Rome), now landing 7:15pm on Friday 11 September instead of the original 11:35am via BA12/BA548."},
         {'q': "According to Gary's own email to a friend, how many days will he and Karen be away in Europe?", 'opts': ['14 days', '18 days', '21 days', '25 days'], 'ans': 2,
          'note': "21 days - as Gary wrote: 'Karen and myself will be away in Europe... for 21 days.'"},
         {'q': 'What is the name of the first hotel the group checks into, in Rome?', 'opts': ['The Republic Hotel', 'Hotel Borgo di Cortefreda Relais', 'iQ Hotel Milano', 'The Level at Meliá White House'], 'ans': 0,
