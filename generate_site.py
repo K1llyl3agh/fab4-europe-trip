@@ -354,6 +354,7 @@ EVENT_NOTES = [
     ('piazza della repubblica & fontana delle naiadi', "Cancelled due to the delayed/rebooked flight (new 7:15pm Rome arrival) &ndash; this whole afternoon block, through Villa Borghese Gardens and pre-dinner drinks at Terrazza Montemartini, is no longer possible before landing. Struck through rather than removed in case any of it can be worked in another day."),
     ('dinner at pizzeria ristoro est', "Time pushed back to 8:30pm (from 6:30pm) to allow for the new 7:15pm Rome arrival, transfer and hotel check-in &ndash; still to be booked/confirmed at this later time."),
     ('travel to vatican meeting point', "No transfer is booked for this leg (checked against the Infinity Holidays paperwork &ndash; only the tour itself, Ref 5CJM745M, is booked; the only booked transfers are FCO&rarr;hotel on 11 Sept and hotel&rarr;Civitavecchia on 14 Sept). You'll need to make your own way there. The Republic Hotel to the meeting point (Viale Vaticano, next to Caff&egrave; Vaticano) is about 7km (4.3 miles): fastest by taxi/rideshare, roughly 15 min depending on traffic. By Metro: walk to Termini, take Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani (5 stops), then it's a 5&ndash;8 min walk to the meeting point &ndash; about 30 min door to door, trains every ~3&ndash;5 min. Leaving the hotel by 7:00am gives a comfortable buffer either way for the 7:45am tour start."),
+    ("st. peter's basilica entry", "This is also not a booked transfer &ndash; no transport is arranged for this leg either. The Republic Hotel to St Peter's Basilica/Square is about 6.5km (4 miles): by taxi/rideshare roughly 15 min depending on traffic; by Metro, Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani then a ~10 min walk, about 30 min door to door. Note this means a second trip out to the Vatican area the same day (after the morning tour and lunch back near the hotel) &ndash; worth keeping in mind when planning the afternoon."),
 ]
 
 EVENT_PENDING_NOTES = [
@@ -669,6 +670,7 @@ HOTEL_INFO = [
      'website': 'https://www.therepublichotel.it/',
      'booking_ref': 'Gary &amp; Karen: 5179180 &middot; Deb &amp; Tom: 5179179',
      'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;7.50 per person, per night (up to 10 nights), payable directly to the hotel'),
+     'meal_plan': 'Bed &amp; Breakfast (included) &ndash; complimentary buffet breakfast served daily 7:00&ndash;10:30am',
      'dates': '11-14 Sept 2026 (check-out morning of the 14th for Civitavecchia/cruise embarkation)'},
     {'name': 'Hotel Borgo di Cortefreda Relais', 'address': 'Via Roma 191, 50028, Tavarnelle Val Di Pesa',
      'full_address': 'Via Roma 191, 50028 Tavarnelle Val di Pesa (FI), Italy',
@@ -676,6 +678,7 @@ HOTEL_INFO = [
      'website': 'https://www.borgodicortefreda.com/',
      'booking_ref': 'Gary &amp; Karen: 900422765 (hotel conf. 45873846) &middot; Deb &amp; Tom: 900422785 (hotel conf. 45873847)',
      'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;3.00 per person, per night (up to 7 nights), payable directly to the hotel'),
+     'meal_plan': 'Bed &amp; Breakfast (included) &ndash; complimentary buffet breakfast',
      'dates': '21-23 Sept 2026 (check-out morning of the 23rd for the drive to Milan)',
      'parking_note': 'Rental van (Mercedes Vito) parking &ndash; free onsite, 21&ndash;22 Sept. Confirmed by the hotel by email (see reply below).',
      'parking_w3w': 'indecisive.whoever.retriever',
@@ -702,6 +705,7 @@ HOTEL_INFO = [
      'website': 'https://www.iqhotelmilano.it/',
      'booking_ref': 'Gary &amp; Karen: 9079750869671 (conf. 2385198897) &middot; Deb &amp; Tom: 9074737872483 (conf. 2385198904)',
      'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;10.00 per person, per night, payable directly to the hotel'),
+     'meal_plan': 'Room only &ndash; breakfast NOT included; buffet breakfast available for approx. &euro;13/adult if wanted',
      'dates': '23-24 Sept 2026 (check-out morning of the 24th for the flight to London)',
      'parking_note': 'Rental van (Mercedes Vito) parking &ndash; no private hotel parking, 23 Sept. CONFIRMED: Garage 2000, ~200m away &ndash; &euro;27/24hrs standard car, &euro;32/24hrs luxury car, no reservation needed.',
      'parking_w3w': 'blushes.bristle.combines',
@@ -735,6 +739,7 @@ HOTEL_INFO = [
      'website': 'https://www.melia.com/en/hotels/united-kingdom/london/the-level-at-melia-white-house',
      'tube': 'Great Portland Street station (Circle, Hammersmith & City, Metropolitan lines) - approx. 2-3 min walk (~0.2 km), directly opposite the hotel',
      'booking_ref': 'Gary &amp; Karen: 702Lb92xxk &middot; Deb &amp; Tom: 702Hpxuze6',
+     'meal_plan': 'Bed &amp; Breakfast (included)',
      'dates': '24-27 Sept 2026 (depart Heathrow the night of the 27th)'},
 ]
 
@@ -860,6 +865,7 @@ def hotel_directory_cards():
         tube_html = f'<div class="place-hours">&#128676; {esc(h["tube"])}</div>' if h.get('tube') else ''
         dates_html = f'<div class="place-hours">&#128197; {esc(h["dates"])}</div>' if h.get('dates') else ''
         ref_html = f'<div class="place-hours">&#128203; Booking ref &ndash; {h["booking_ref"]}</div>' if h.get('booking_ref') else ''
+        meal_plan_html = f'<div class="place-hours">&#127869; {h["meal_plan"]}</div>' if h.get('meal_plan') else ''
         fee_html = mandatory_fee_box(*h['mandatory_fee']) if h.get('mandatory_fee') else ''
         qr_b64 = HOTEL_QR.get(h['name'])
         qr_html = (
@@ -910,6 +916,7 @@ def hotel_directory_cards():
           <div class="place-hours">&#9993;&#65039; {esc(h['email'])}</div>
           {tube_html}
           {ref_html}
+          {meal_plan_html}
           {parking_html}
           {fee_html}
           {f'<div class="place-links" style="margin-top:8px;">{parking_email_btn}</div>' if parking_email_btn else ''}
