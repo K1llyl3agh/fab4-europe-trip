@@ -2663,11 +2663,6 @@ def wwd_row_html(b):
     ev_phone_html = f'<div class="ev-addr">&#128222; {esc(ev_phone)} {w3w_html}</div>' if ev_phone else (f'<div class="ev-addr">{w3w_html}</div>' if w3w_html else '')
     ev_note = event_note_for(b['name']) or event_confirmed_for(b['name'])
     ev_note_html = f'<div class="ev-note">{ev_note}</div>' if ev_note else ''
-    photo_url = event_photo_for(b['name'])
-    photo_html = (
-        f'<img class="ev-photo" src="{esc(photo_url)}" alt="{esc(b["name"])}" '
-        f'loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'">'
-    ) if photo_url else ''
     return f'''
         <div class="ev-row ev-row-visited">
           <div class="ev-time">{esc(b['time_display'])}</div>
@@ -2677,7 +2672,6 @@ def wwd_row_html(b):
             {ev_phone_html}
             {ev_note_html}
             {f'<div class="ev-link">{link_row}</div>' if link_row else ''}
-            {photo_html}
           </div>
         </div>'''
 
@@ -4851,6 +4845,12 @@ ALL_FOOD_PLACES.append({
     'code': next_food_code(3), 'place': 'Ristorante Pizzeria Castello', 'day_num': 3,
     'list_title': 'Drinks (12 Sept, actually visited)',
     'address': "Via Delle Fornaci 27, 00165 Rome (S. Pietro) - ~15 min walk (or short taxi) from St Peter's Basilica",
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(3), 'place': 'Pizzeria Ristoro Est! Est!! Est!!!', 'day_num': 3,
+    'list_title': 'Dinner (12 Sept, actually visited)',
+    'address': 'Via Genova 32, Rome - ~8 min walk from hotel',
     'visited': True,
 })
 
