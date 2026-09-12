@@ -402,16 +402,22 @@
           "address": "Vatican Museums exit, Viale Vaticano, Vatican City"
         },
         {
-          "time": "12:00 PM",
+          "time": "11:45 AM",
           "event": "Lunch at Caffe Leonina",
           "status": "Visited",
           "address": "Piazza della Citta Leonina 5/6, 00193 Rome - just outside the Vatican walls\nPhone: +39 06 687 1568"
         },
         {
-          "time": "2:00 PM",
-          "event": "St. Peter's Basilica Entry with Audio Guide (2:00-3:00pm) - Reserved Entry Ticket + Immersive Audio Guide + Digital Guidebook - Headout, confirmed",
+          "time": "1:00 PM",
+          "event": "St. Peter's Basilica Entry with Audio Guide (1:00-2:30pm) - Reserved Entry Ticket + Immersive Audio Guide + Digital Guidebook - Headout, confirmed",
           "status": "Booked",
           "address": "St. Peter's Basilica, Vatican City"
+        },
+        {
+          "time": "2:30 PM",
+          "event": "Drinks at Ristorante Pizzeria Castello",
+          "status": "Visited",
+          "address": "Via Delle Fornaci 27, 00165 Rome (S. Pietro) - ~15 min walk (or short taxi) from St Peter's Basilica"
         },
         {
           "time": "6:00 PM",

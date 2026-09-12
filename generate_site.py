@@ -146,6 +146,7 @@ def weblink_for(name):
     return None
 
 EVENT_TRIPADVISOR = [
+    ('drinks at ristorante pizzeria castello', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d19723306-Reviews-Ristorante_Pizzeria_Castello-Rome_Lazio.html'),
     ('dinner at pizzeria ristoro', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d696551-Reviews-Pizzeria_Ristoro_Est_Est_Est-Rome_Lazio.html'),
     ('lunch at caffe leonina', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d28130247-Reviews-Caffe_Leonina-Rome_Lazio.html'),
     ('dinner at albert schloss', 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d26909472-Reviews-Albert_s_Schloss_Soho-London_England.html'),
@@ -163,6 +164,7 @@ def tripadvisor_for(name):
     return None
 
 EVENT_PHONE = [
+    ('drinks at ristorante pizzeria castello', '+39 389 1615333'),
     ('dinner at albert schloss', '020 8165 0000'),
     ('dinner at the lighterman', '020 3846 3400'),
     ('dinner at hard rock cafe london', '0044 20 7514 1700'),
@@ -479,6 +481,7 @@ WEBLINKS_APPEND = [
     ('gelato with a view at il balcone sul lago', 'https://www.facebook.com/Ilbalconesullago/'),
     ('nightcap drinks at liquido rooftop bar', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html'),
     ('pre-dinner drinks - terrazza montemartini', 'http://www.palazzomontemartini.com/'),
+    ('drinks at ristorante pizzeria castello', 'https://www.ristorantepizzeriacastello.com/'),
     ('dinner at pizzeria ristoro', 'https://pizzeriaristoroestestest.com/en/'),
     ('skip-the-line leaning tower of pisa', 'https://www.viator.com/tours/Pisa/Skip-the-Line-Leaning-Tower-of-Pisa/d520-36478P5'),
 ]
@@ -4773,6 +4776,12 @@ ALL_FOOD_PLACES.append({
     'code': next_food_code(3), 'place': 'Caffe Leonina', 'day_num': 3,
     'list_title': 'Lunch (12 Sept, actually visited)',
     'address': 'Piazza della Citta Leonina 5/6, 00193 Rome - just outside the Vatican walls',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(3), 'place': 'Ristorante Pizzeria Castello', 'day_num': 3,
+    'list_title': 'Drinks (12 Sept, actually visited)',
+    'address': "Via Delle Fornaci 27, 00165 Rome (S. Pietro) - ~15 min walk (or short taxi) from St Peter's Basilica",
     'visited': True,
 })
 
