@@ -164,6 +164,7 @@ def tripadvisor_for(name):
     return None
 
 EVENT_PHONE = [
+    ('travel to colosseum meeting point', '+39 06 4742501'),
     ('drinks at ristorante pizzeria castello', '+39 389 1615333'),
     ('dinner at albert schloss', '020 8165 0000'),
     ('dinner at the lighterman', '020 3846 3400'),
@@ -365,6 +366,7 @@ EVENT_NOTES = [
     ("st. peter's basilica entry", "This is also not a booked transfer &ndash; no transport is arranged for this leg either. The Republic Hotel to St Peter's Basilica/Square is about 6.5km (4 miles): by taxi/rideshare roughly 15 min depending on traffic; by Metro, Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani then a ~10 min walk, about 30 min door to door. Note this means a second trip out to the Vatican area the same day (after the morning tour and lunch back near the hotel) &ndash; worth keeping in mind when planning the afternoon."),
     ('vatican museums & sistine chapel tour begins', "Do you have to pay to get into Vatican City? St Peter's Basilica itself is free to enter (just a security/bag-check queue &ndash; climbing the dome costs extra, roughly &euro;10 by stairs / &euro;13 with the lift). The Vatican Museums &amp; Sistine Chapel are paid entry (normally &euro;17+) &ndash; already covered by this Towns of Italy booking. Vatican City and St Peter's Square themselves are free to walk around at any time."),
     ('vatican museums & sistine chapel tour ends', "The tour finishes inside the Sistine Chapel &ndash; the guide points out the route to St Peter's Square but doesn't walk you there, so you exit back out via the Museums' own exit, which lets out on Viale Vaticano close to where the tour started. From there to St Peter's Basilica is about 1.5km, roughly a 20 min walk via Viale Vaticano and around into St Peter's Square (no transfer is booked for this leg)."),
+    ('travel to colosseum meeting point', "Per the Gray Line voucher (Booking ID 202645831): meet inside Colle Oppio Park, at the corner of Via delle Terme di Tito and Via Nicola Salvi, 15 minutes before the 2:30pm start &ndash; look for staff carrying the &ldquo;I Love Rome&rdquo; logo (that's Gray Line Rome's local operating name). Bring passport/ID &ndash; it's mandatory and you may not be allowed on the tour without it. Backup contact if you can't find the group: Gray Line &ndash; I Love Rome office, Via Solferino 17, open daily 6:30am&ndash;9:00pm, graylinerome@carrani.com, +39 06 4742501 (or WhatsApp +39 348 811 2027)."),
 ]
 
 EVENT_PENDING_NOTES = [
