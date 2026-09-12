@@ -2166,6 +2166,7 @@ def register_food_places(list_title, day_num, options):
         ALL_FOOD_PLACES.append({
             'code': code, 'place': p['place'], 'day_num': day_num,
             'list_title': list_title, 'address': p.get('address') or '',
+            'visited': bool(p.get('visited') or p.get('rating')),
         })
     return options
 
@@ -2335,7 +2336,7 @@ DINNER_11SEP = [
      'address': 'Via Gaeta 66, 00185 Rome - ~1 min walk', 'website': 'https://www.ristorantelafamiglia.it/', 'w3w': 'dices.foster.mornings',
      'hours': 'Daily, continuous hours 12:15pm-11pm',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2149469-Reviews-La_Famiglia-Rome_Lazio.html',
-     'rating': '7.5'},
+     'rating': '7.5', 'visited': True},
     {'place': 'Trimani Il Winebar', 'type': "Rome's original wine bar (est. 1821 as a wine merchant) - simple Roman menu, huge wine list, fair prices",
      'address': 'Via Cernaia 37 - ~3 min walk', 'website': 'http://www.trimani.com/', 'w3w': 'thuds.guarded.slate',
      'hours': 'Mon-Sat 11:30am-3pm & 5:30pm-midnight (closed Sun)',
@@ -4768,9 +4769,17 @@ def _food_seq(entry):
     except Exception:
         return (entry['day_num'], 0)
 
-FOOD_VISITED_SEED = {}  # {code: true} for confirmed 'visited' submissions, baked in each regeneration
-_SORTED_FOOD_PLACES = sorted(ALL_FOOD_PLACES, key=_food_seq)
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(3), 'place': 'Caffe Leonina', 'day_num': 3,
+    'list_title': 'Lunch (12 Sept, actually visited)',
+    'address': 'Piazza della Citta Leonina 5/6, 00193 Rome - just outside the Vatican walls',
+    'visited': True,
+})
+
 FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
+_VISITED_FOOD_PLACES = [fp for fp in ALL_FOOD_PLACES if fp.get('visited')]
+FOOD_VISITED_SEED = {fp['code']: True for fp in _VISITED_FOOD_PLACES}  # confirmed 'visited' places, baked in each regeneration
+_SORTED_FOOD_PLACES = sorted(_VISITED_FOOD_PLACES, key=_food_seq)
 
 food_visited_rows_html = ''.join(f'''
     <tr>
@@ -4785,7 +4794,7 @@ food_visited_rows_html = ''.join(f'''
 FOOD_VISITED_SECTION_HTML = f'''
 <section id="foodvisited" class="print-block" data-section="foodvisited">
   <h2>Food Visited</h2>
-  <p class="lede">Every restaurant/cafe option listed anywhere on this site, with its day code ({len(ALL_FOOD_PLACES)} in total) &ndash; tick the ones you actually went to. Ticking a box here or on the place&rsquo;s own card keeps both in sync.</p>
+  <p class="lede">Restaurants/cafes we&rsquo;ve actually eaten at so far on the trip ({len(_SORTED_FOOD_PLACES)} so far) &ndash; not the full list of suggestions, just the confirmed visits. Untick here only if one of these turns out to be wrong.</p>
   <div class="expense-table-wrap">
     <table class="expense-table">
       <thead><tr><th>Code</th><th>Day</th><th>Place</th><th>Address</th><th>List</th><th>Visited</th></tr></thead>
