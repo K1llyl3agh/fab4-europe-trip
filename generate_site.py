@@ -190,6 +190,7 @@ EVENT_W3W = [
     ('return hire car', 'learn.patting.jazzy'),
     ('tower of london tour', 'swift.blitz.funds'),
     ('river tour', 'dunes.copy.miles'),
+    ('dinner at la famiglia', 'dices.foster.mornings'),
     ('villa borghese gardens', 'soak.settle.sweated'),
     ('terrazza montemartini', 'cactus.defended.avocado'),
     ('travel to vatican meeting point', 'changing.swimmer.mutual'),
@@ -353,7 +354,7 @@ EVENT_NOTES = [
     ('dinner at the lighterman', "If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;"),
     ('check in at the republic hotel, freshen up', "Time shown is approximate, based on the revised evening arrival &ndash; will depend on the actual transfer pickup time."),
     ('piazza della repubblica & fontana delle naiadi', "Cancelled due to the delayed/rebooked flight (new 7:15pm Rome arrival) &ndash; this whole afternoon block, through Villa Borghese Gardens and pre-dinner drinks at Terrazza Montemartini, is no longer possible before landing. Struck through rather than removed in case any of it can be worked in another day."),
-    ('dinner at pizzeria ristoro est', "Time pushed back to 8:30pm (from 6:30pm) to allow for the new 7:15pm Rome arrival, transfer and hotel check-in &ndash; still to be booked/confirmed at this later time."),
+    ('dinner at la famiglia', "Original plan was Pizzeria Ristoro Est! Est!! Est!!! (8:30pm, pushed back from 6:30pm for the late 7:15pm Rome arrival) - in the end the family went to La Famiglia instead, right on the hotel's own street, so it was an easy first night out. Rated 7.5/10 - see the Dinner Suggestions box below for details."),
     ('travel to vatican meeting point', "No transfer is booked for this leg (checked against the Infinity Holidays paperwork &ndash; only the tour itself, Ref 5CJM745M, is booked; the only booked transfers are FCO&rarr;hotel on 11 Sept and hotel&rarr;Civitavecchia on 14 Sept). You'll need to make your own way there. The Republic Hotel to the meeting point (Viale Vaticano, next to Caff&egrave; Vaticano) is about 7km (4.3 miles): fastest by taxi/rideshare, roughly 15 min depending on traffic. By Metro: walk to Termini, take Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani (5 stops), then it's a 5&ndash;8 min walk to the meeting point &ndash; about 30 min door to door, trains every ~3&ndash;5 min. Leaving the hotel by 7:00am gives a comfortable buffer either way for the 7:45am tour start."),
     ("st. peter's basilica entry", "This is also not a booked transfer &ndash; no transport is arranged for this leg either. The Republic Hotel to St Peter's Basilica/Square is about 6.5km (4 miles): by taxi/rideshare roughly 15 min depending on traffic; by Metro, Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani then a ~10 min walk, about 30 min door to door. Note this means a second trip out to the Vatican area the same day (after the morning tour and lunch back near the hotel) &ndash; worth keeping in mind when planning the afternoon."),
     ('vatican museums & sistine chapel tour begins', "Do you have to pay to get into Vatican City? St Peter's Basilica itself is free to enter (just a security/bag-check queue &ndash; climbing the dome costs extra, roughly &euro;10 by stairs / &euro;13 with the lift). The Vatican Museums &amp; Sistine Chapel are paid entry (normally &euro;17+) &ndash; already covered by this Towns of Italy booking. Vatican City and St Peter's Square themselves are free to walk around at any time."),
@@ -852,7 +853,7 @@ def stay_with_address(stay_text):
             return f"{stay_text} - {h['address']} ({h['phone']} · {h['email']})"
     return stay_text
 
-CURRENCY_SYMBOL = {'EUR': '&euro;', 'GBP': '&pound;', 'USD': '$', 'NZD': 'NZ$', 'SGD': 'S$'}
+CURRENCY_SYMBOL = {'EUR': '&euro;', 'GBP': '&pound;', 'USD': '$', 'NZD': 'NZ$', 'SGD': 'S$', 'THB': '&#3647;'}
 
 def mandatory_fee_box(currency, text):
     symbol = CURRENCY_SYMBOL.get(currency, currency)
@@ -2186,6 +2187,7 @@ def place_card(p, with_review=False, code=None):
     whatsapp_html = f'<div class="place-hours">&#128241; WhatsApp: {esc(p["whatsapp"])}</div>' if p.get('whatsapp') else ''
     email_html = f'<div class="place-hours">&#9993;&#65039; {esc(p["email"])}</div>' if p.get('email') else ''
     w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(p["w3w"])}" target="_blank" title="what3words location">///{esc(p["w3w"])}</a>' if p.get('w3w') else ''
+    rating_html = f'<div class="place-rating">&#11088; We went &ndash; rated {esc(p["rating"])}/10</div>' if p.get('rating') else ''
     visited_html = ''
     if code:
         visited_html = (
@@ -2206,6 +2208,7 @@ def place_card(p, with_review=False, code=None):
       {whatsapp_html}
       {email_html}
       <div class="place-links">{links}</div>
+      {rating_html}
       {fact_html}
     </div>'''
 
@@ -2309,6 +2312,11 @@ def dinner_box(title, options, day_num=None, food=True):
     </div>'''
 
 DINNER_11SEP = [
+    {'place': 'La Famiglia dal 1968', 'type': "Roman & Abruzzese trattoria right on the hotel's own street - pasta, pizza and mains in casual rooms or on a terrace, open continuously all day. This is where we actually went for dinner on 11 Sept - handy since it's literally next door to the hotel.",
+     'address': 'Via Gaeta 66, 00185 Rome - ~1 min walk', 'website': 'https://www.ristorantelafamiglia.it/', 'w3w': 'dices.foster.mornings',
+     'hours': 'Daily, continuous hours 12:15pm-11pm',
+     'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d2149469-Reviews-La_Famiglia-Rome_Lazio.html',
+     'rating': '7.5'},
     {'place': 'Trimani Il Winebar', 'type': "Rome's original wine bar (est. 1821 as a wine merchant) - simple Roman menu, huge wine list, fair prices",
      'address': 'Via Cernaia 37 - ~3 min walk', 'website': 'http://www.trimani.com/', 'w3w': 'thuds.guarded.slate',
      'hours': 'Mon-Sat 11:30am-3pm & 5:30pm-midnight (closed Sun)',
@@ -2326,7 +2334,7 @@ DINNER_11SEP = [
      'address': 'Via Genova 32 - ~8 min walk', 'website': 'https://pizzeriaristoroestestest.com/en/', 'w3w': 'between.lemons.ruins',
      'hours': 'Check ahead - typically lunch & dinner daily',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d696551-Reviews-Pizzeria_Ristoro_Est_Est_Est-Rome_Lazio.html',
-     'fact': 'The odd name comes from a medieval legend: a bishop travelling to Rome sent his servant ahead to chalk "Est!" (Latin for "it is [good]") on the doors of inns with good wine. At Montefiascone the wine was so good the servant wrote "Est! Est!! Est!!!" three times - the bishop loved it so much he settled there for the rest of his life.'},
+     'fact': 'The odd name comes from a medieval legend: a bishop travelling to Rome sent his servant ahead to chalk "Est!" (Latin for "it is [good]") on the doors of inns with good wine. At Montefiascone the wine was so good the servant wrote "Est! Est!! Est!!!" three times - the bishop loved it so much he settled there for the rest of his life. Update: this was the original dinner plan for 11 Sept - in the end the family went to La Famiglia instead (see above), just around the corner from the hotel, so Deb still got her pizza fix.'},
     {'place': 'Osteria Barberini', 'type': 'Cosy osteria near Piazza Barberini - known for truffle dishes and classic Roman cuisine',
      'address': 'Via della Purificazione 21 - ~17 min walk', 'website': 'https://www.osteriabarberini.it/', 'w3w': 'quest.shocking.hosts',
      'hours': 'Mon-Sat 12:30-2:30pm & 7-11pm (closed Sun)',
@@ -2455,7 +2463,7 @@ DINNER_13SEP = [
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1012381-Reviews-Hostaria_al_Gladiatore-Rome_Lazio.html', 'w3w': 'national.chatting.mute'},
 ]
 
-dinner_box_11sep = dinner_box('Dinner Suggestions (8 ideas, within ~20 min walk of the hotel)', DINNER_11SEP, day_num=2)
+dinner_box_11sep = dinner_box('Dinner Suggestions (9 ideas, within ~20 min walk of the hotel)', DINNER_11SEP, day_num=2)
 dinner_box_12sep = dinner_box('8 More Dinner Suggestions (no repeats from the 11th)', DINNER_12SEP, day_num=3)
 dinner_box_13sep = dinner_box('8 More Dinner Suggestions (no repeats - handy for after the Colosseum tour)', DINNER_13SEP, day_num=4)
 
@@ -3941,6 +3949,7 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 @media print { .td-grid { grid-template-columns:repeat(3, 1fr); } .td-row { break-inside:avoid; page-break-inside:avoid; } }
 @media (max-width: 640px) { .td-grid { grid-template-columns:1fr; } }
 .place-fact { margin-top:8px; padding-top:8px; border-top:1px dashed #e3ddc9; font-size:.78rem; color:var(--muted); font-style:italic; line-height:1.4; }
+.place-rating { margin-top:6px; font-size:.78rem; font-weight:700; color:#3f9142; }
 .place-hours { font-size:.78rem; color:var(--navy); font-weight:600; margin:2px 0 6px; }
 body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !important; }
 .badge { display:inline-block; font-size:.7rem; font-weight:700; padding:2px 9px; border-radius:999px; margin-left:6px; vertical-align:middle; text-transform:uppercase; letter-spacing:.3px; }
@@ -4446,12 +4455,12 @@ CSS = CSS.replace('__HERO_CLOUDS_B64__', HERO_CLOUDS_B64)
 # --- Expense tracker ---------------------------------------------------
 # Exchange rates as of 9 Sept 2026 (source: exchangerate-api.com via open.er-api.com).
 # Update these two dicts at the end of the trip with the final rates.
-EXPENSE_RATE_DATE = '11 Sept 2026'
-EXPENSE_RATES_TO_NZD = {'EUR': 1.9858, 'GBP': 2.3131, 'USD': 1.7080, 'AUD': 1.2332, 'NZD': 1.0, 'SGD': 1.3505}
-EXPENSE_RATES_TO_AUD = {'EUR': 1.6105, 'GBP': 1.8753, 'USD': 1.3854, 'NZD': 0.8109, 'AUD': 1.0, 'SGD': 1.0948}
+EXPENSE_RATE_DATE = '12 Sept 2026'
+EXPENSE_RATES_TO_NZD = {'EUR': 1.9858, 'GBP': 2.3131, 'USD': 1.7080, 'AUD': 1.2332, 'NZD': 1.0, 'SGD': 1.3505, 'THB': 0.0517}
+EXPENSE_RATES_TO_AUD = {'EUR': 1.6105, 'GBP': 1.8753, 'USD': 1.3854, 'NZD': 0.8109, 'AUD': 1.0, 'SGD': 1.0948, 'THB': 0.0411}
 EXPENSE_RATE_ROWS_HTML = ''.join(
     f'<div class="expense-rate-row">1 {c} = {EXPENSE_RATES_TO_NZD[c]:.4f} NZD &middot; {EXPENSE_RATES_TO_AUD[c]:.4f} AUD</div>'
-    for c in ['EUR', 'GBP', 'USD', 'SGD', 'AUD', 'NZD']
+    for c in ['EUR', 'GBP', 'USD', 'SGD', 'THB', 'AUD', 'NZD']
 )
 EXPENSES_SEED = []  # confirmed submissions, baked in each time the site is regenerated
 
@@ -4497,7 +4506,7 @@ EXPENSES_SECTION_HTML = f'''
       <div style="display:flex; gap:8px">
         <input type="number" step="0.01" id="exp_value" name="value" placeholder="0.00" style="flex:1">
         <select id="exp_currency" name="currency" style="width:100px">
-          <option>EUR</option><option>GBP</option><option>NZD</option><option>AUD</option><option>USD</option><option>SGD</option>
+          <option>EUR</option><option>GBP</option><option>NZD</option><option>AUD</option><option>USD</option><option>SGD</option><option>THB</option>
         </select>
       </div>
       <label for="exp_date">Date</label>
