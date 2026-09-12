@@ -120,6 +120,7 @@ def collapse_events(events):
 
 STATUS_CLASS = {
     'Booked': 'badge-booked',
+    'Visited': 'badge-visited',
     'To Book': 'badge-tobook',
     'To Confirm': 'badge-toconfirm',
     'Not Confirmed': 'badge-notconfirmed',
@@ -145,6 +146,8 @@ def weblink_for(name):
     return None
 
 EVENT_TRIPADVISOR = [
+    ('dinner at pizzeria ristoro', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d696551-Reviews-Pizzeria_Ristoro_Est_Est_Est-Rome_Lazio.html'),
+    ('lunch at caffe leonina', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d28130247-Reviews-Caffe_Leonina-Rome_Lazio.html'),
     ('dinner at albert schloss', 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d26909472-Reviews-Albert_s_Schloss_Soho-London_England.html'),
     ('dinner at the lighterman', 'https://www.tripadvisor.com/Restaurant_Review-g186338-d10121217-Reviews-The_Lighterman-London_England.html'),
     ('tower of london tour', 'https://www.tripadvisor.com/Attraction_Review-g186338-d187788-Reviews-Tower_of_London-London_England.html'),
@@ -173,6 +176,7 @@ def event_phone_for(name):
     return None
 
 EVENT_W3W = [
+    ('dinner at pizzeria ristoro', 'between.lemons.ruins'),
     ('dinner at albert schloss', 'assist.given.desk'),
     ('mousetrap begins', 'trains.areas.nights'),
     ('dinner at the lighterman', 'guides.riots.trader'),
@@ -475,7 +479,7 @@ WEBLINKS_APPEND = [
     ('gelato with a view at il balcone sul lago', 'https://www.facebook.com/Ilbalconesullago/'),
     ('nightcap drinks at liquido rooftop bar', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html'),
     ('pre-dinner drinks - terrazza montemartini', 'http://www.palazzomontemartini.com/'),
-    ('lunch at target restaurant', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d967428-Reviews-Target-Rome_Lazio.html'),
+    ('dinner at pizzeria ristoro', 'https://pizzeriaristoroestestest.com/en/'),
     ('skip-the-line leaning tower of pisa', 'https://www.viator.com/tours/Pisa/Skip-the-Line-Leaning-Tower-of-Pisa/d520-36478P5'),
 ]
 WEBLINKS.extend(WEBLINKS_APPEND)
@@ -1534,8 +1538,8 @@ def _quiz_screen_day_html(day):
     return f'''
     <div class="quiz-day-box">
       <div class="quiz-day-head">Day {day['day_num']} &middot; {day['date']} &middot; {day['theme']}</div>
-      <ol class="quiz-q-list">{q_html}</ol>
       {fact_html}
+      <ol class="quiz-q-list">{q_html}</ol>
     </div>'''
 
 def _quiz_answer_day_html(day):
@@ -1550,16 +1554,6 @@ def _quiz_answer_day_html(day):
     </div>'''
 
 QUIZ_ANSWER_KEY_HTML = ''.join(_quiz_answer_day_html(d) for d in DAILY_QUIZ)
-
-# Data for the interactive "Play the Quiz" mode - day_num N runs from 11 Sep (N=2)
-# to 26 Sep (N=17), so the calendar date is simply September (9 + N).
-QUIZ_PLAY_DATA = [
-    {'day_num': d['day_num'], 'date': d['date'], 'theme': d['theme'],
-     'iso': f"2026-09-{9 + d['day_num']:02d}",
-     'qs': [{'q': q['q'], 'opts': q['opts'], 'ans': q['ans'], 'note': q['note'], 'bonus': bool(q.get('bonus'))} for q in d['qs']]}
-    for d in DAILY_QUIZ
-]
-QUIZ_PLAY_JSON = json.dumps(QUIZ_PLAY_DATA, ensure_ascii=False)
 
 FUN_FACTS = {
     'day-11': ('Villa Borghese Gardens were laid out from 1605 by Cardinal Scipione Borghese &ndash; nephew of Pope Paul V &ndash; as one of the first great "gardens of delight" in Europe, built purely for pleasure, art and parties rather than growing food.',
@@ -1761,6 +1755,21 @@ FUN_FACTS_6 = {
     'day-27': ("The Castle's current building on Cowcross Street, Farringdon, is Grade II listed and dates to 1865, sitting just off historic Smithfield Market in the City of London's square mile.",
                'CAMRA', 'https://camra.org.uk/pubs/castle-london-156309'),
 }
+
+# Data for the interactive "Play the Quiz" mode - day_num N runs from 11 Sep (N=2)
+# to 26 Sep (N=17), so the calendar date is simply September (9 + N).
+def _quiz_play_facts(day_id):
+    facts = [f for f in (FUN_FACTS.get(day_id), FUN_FACTS_2.get(day_id), FUN_FACTS_3.get(day_id), FUN_FACTS_4.get(day_id)) if f]
+    return [{'text': text, 'source_label': source_label, 'source_url': source_url} for text, source_label, source_url in facts]
+
+QUIZ_PLAY_DATA = [
+    {'day_num': d['day_num'], 'date': d['date'], 'theme': d['theme'],
+     'iso': f"2026-09-{9 + d['day_num']:02d}",
+     'facts': _quiz_play_facts(_quiz_day_id(d['date'])),
+     'qs': [{'q': q['q'], 'opts': q['opts'], 'ans': q['ans'], 'note': q['note'], 'bonus': bool(q.get('bonus'))} for q in d['qs']]}
+    for d in DAILY_QUIZ
+]
+QUIZ_PLAY_JSON = json.dumps(QUIZ_PLAY_DATA, ensure_ascii=False)
 
 # Extra quirky/offbeat print-only facts - same rules as FUN_FACTS_5/6 (print-only,
 # never shown on screen or in Print Day/Book/section prints). Counts vary per day
@@ -2061,8 +2070,9 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         ev_cancelled = event_cancelled_for(b['name'])
         _cancelled_row_class = ' ev-row-cancelled' if ev_cancelled else ''
         _cancelled_tag = '<span class="ev-cancelled-tag">CANCELLED &ndash; flight delay</span>' if ev_cancelled else ''
+        _visited_row_class = ' ev-row-visited' if b['status'] == 'Visited' else ''
         rows += f'''
-        <div class="ev-row{_cancelled_row_class}">
+        <div class="ev-row{_cancelled_row_class}{_visited_row_class}">
           <div class="ev-time">{esc(b['time_display'])}{time_warning_html}</div>
           <div class="ev-body">
             <div class="ev-name">{esc_br(b['name'])} {badge(b['status'])} {logo_html} {_cancelled_tag}</div>
@@ -2301,10 +2311,19 @@ tuscany_days = italy_days[10:12]
 milan_days = italy_days[12:13]
 london_days = sched['london']
 
-def dinner_box(title, options, day_num=None, food=True):
+def dinner_box(title, options, day_num=None, food=True, box_id=None, default_hidden=False):
     if food and day_num:
         register_food_places(title, day_num, options)
     cards = ''.join(place_card(p, with_review=True, code=(p.get('_food_code') if food and day_num else None)) for p in options)
+    if box_id:
+        hidden_class = ' box-hidden' if default_hidden else ''
+        btn_label = 'Show Suggestions' if default_hidden else 'Hide Suggestions'
+        toggle_btn = f'<button class="print-mini no-print box-toggle-btn" id="{box_id}-btn" onclick="toggleBox(\'{box_id}\')">{btn_label}</button>'
+        return f'''
+    <div class="dinner-box{hidden_class}" id="{box_id}">
+      <div class="day-map-title">{esc(title)} {toggle_btn}</div>
+      <div class="place-grid">{cards}</div>
+    </div>'''
     return f'''
     <div class="dinner-box">
       <div class="day-map-title">{esc(title)}</div>
@@ -2500,7 +2519,7 @@ LUNCH_12SEP = [
      'hours': 'Lunch service - tel +39 06 8901 3927',
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d6774611-Reviews-Egg_Pasta_Fresca-Rome_Lazio.html'},
 ]
-lunch_box_12sep = dinner_box('Lunch Suggestions Near the Vatican (3 ideas, between the Museums tour and St Peter’s Basilica)', LUNCH_12SEP, day_num=3)
+lunch_box_12sep = dinner_box('Lunch Suggestions Near the Vatican (3 ideas, between the Museums tour and St Peter’s Basilica)', LUNCH_12SEP, day_num=3, box_id='lunch-box-12sep', default_hidden=True)
 
 LUNCH_13SEP = [
     {'place': 'Il Salotto del Colosseo', 'type': 'TripAdvisor 4.7★ - "great lunch by the Colosseum", cosy hidden gem',
@@ -3877,6 +3896,9 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .print-day-btn:hover { background:rgba(255,255,255,.32); }
 .day-map-box { margin-top:16px; padding:16px 18px; background:#faf9f5; border:1px dashed #d9d3c4; border-radius:10px; }
 .dinner-box { margin-top:16px; padding:16px 18px; background:#fdf6ec; border:1px dashed var(--gold); border-radius:10px; }
+.box-toggle-btn { float:right; margin-top:-2px; }
+.box-hidden .place-grid { display:none; }
+@media print { .box-hidden .place-grid { display:none !important; } }
 .dinner-box .place-grid { margin:10px 0 0; }
 .option-box { margin-top:16px; padding:16px 18px; background:#eef3fb; border:1px dashed var(--london); border-radius:10px; }
 .option-box .place-grid { margin:10px 0 0; grid-template-columns:1fr; max-width:340px; }
@@ -3913,6 +3935,8 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ev-row-cancelled { background:#f7f7f7; border-radius:6px; }
 .ev-row-cancelled .ev-time, .ev-row-cancelled .ev-name, .ev-row-cancelled .ev-addr { text-decoration:line-through; color:#a0231b; }
 .ev-cancelled-tag { display:inline-block; background:#c0392b; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.02em; text-decoration:none; border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+.ev-row-visited { background:#fdf6ec; border:3px solid var(--gold); border-radius:10px; padding:10px 14px; margin:6px 0; }
+.badge-visited { background:var(--gold); color:#fff; }
 .ev-ztl-alert { margin-top:8px; border-left:4px solid #b6591a; border-radius:8px; padding:8px 12px; background:#fdf3e3; font-size:.82rem; line-height:1.45; }
 .ev-ztl-alert-title { font-weight:700; color:#8a4008; margin-bottom:3px; }
 .ztl-alert-zone { color:#5c3a10; }
@@ -4332,6 +4356,9 @@ body.printing-dailyquiz .print-block[data-subsection="quizquestions"] { display:
 .quiz-play-review-q { font-weight:600; margin-bottom:4px; }
 .quiz-play-review-ans { font-size:.85rem; }
 .quiz-play-review-note { font-size:.82rem; color:var(--muted); font-style:italic; margin-top:4px; }
+.quiz-play-facts-label { font-weight:700; color:var(--navy); margin-bottom:10px; font-size:1.02rem; }
+.quiz-play-fact { background:#fdf8ec; border:1px dashed var(--gold); border-radius:8px; padding:10px 12px; margin-bottom:10px; font-size:.9rem; line-height:1.45; }
+.quiz-play-fact a { color:var(--navy); font-size:.78rem; }
 '''
 
 FLIGHTS = [
@@ -4518,6 +4545,7 @@ EXPENSES_SECTION_HTML = f'''
         <option>Lunch</option>
         <option>Dinner</option>
         <option>Drinks</option>
+        <option>Taxi</option>
         <option>Other</option>
       </select>
       <label for="exp_business">Name of the place</label>
@@ -5499,6 +5527,26 @@ function toggleFunFacts() {{
     if (btn) btn.innerHTML = '<span class="ic">&#127881;</span>Show Fun Facts';
   }}
 }})();
+function toggleBox(id) {{
+  var box = document.getElementById(id);
+  if (!box) return;
+  var btn = document.getElementById(id + '-btn');
+  var hidden = box.classList.toggle('box-hidden');
+  localStorage.setItem('fab4-box-hidden-' + id, hidden ? '1' : '0');
+  if (btn) btn.textContent = hidden ? 'Show Suggestions' : 'Hide Suggestions';
+}}
+(function() {{
+  var _boxIds = ['lunch-box-12sep'];
+  _boxIds.forEach(function(id) {{
+    var saved = localStorage.getItem('fab4-box-hidden-' + id);
+    if (saved === null) return;
+    var box = document.getElementById(id);
+    var btn = document.getElementById(id + '-btn');
+    var hidden = saved === '1';
+    if (box) box.classList.toggle('box-hidden', hidden);
+    if (btn) btn.textContent = hidden ? 'Show Suggestions' : 'Hide Suggestions';
+  }});
+}})();
 var flipLastValues = {{}};
 function setFlipDigit(unitName, value) {{
   var el = document.querySelector('.flip-digit[data-unit="' + unitName + '"]');
@@ -5562,7 +5610,26 @@ function startQuizDay(dayNum) {{
   var day = QUIZ_PLAY_DATA.find(function(d) {{ return d.day_num === dayNum; }});
   if (!day) return;
   quizPlayState = {{ day: day, idx: 0, answers: new Array(day.qs.length).fill(null) }};
-  renderQuizPlayQuestion();
+  if (day.facts && day.facts.length) {{
+    renderQuizPlayFacts();
+  }} else {{
+    renderQuizPlayQuestion();
+  }}
+}}
+function renderQuizPlayFacts() {{
+  var day = quizPlayState.day;
+  document.getElementById('quizPlayTitle').textContent = day.date + ' – ' + day.theme;
+  var html = '<div class="quiz-play-facts-label">🎉 Fun Fact' + (day.facts.length > 1 ? 's' : '') + ' before you start</div>';
+  day.facts.forEach(function(f) {{
+    html += '<div class="quiz-play-fact">' + f.text
+      + (f.source_url ? ' <a href="' + f.source_url + '" target="_blank" rel="noopener">— ' + f.source_label + '</a>' : '')
+      + '</div>';
+  }});
+  html += '<div class="quiz-play-nav">';
+  html += '<button type="button" class="print-btn" onclick="quizPlayBackToDays()">&larr; Choose another day</button>';
+  html += '<button type="button" class="print-btn" onclick="renderQuizPlayQuestion()">Start Quiz &rarr;</button>';
+  html += '</div>';
+  document.getElementById('quizPlayBody').innerHTML = html;
 }}
 function renderQuizPlayQuestion() {{
   var day = quizPlayState.day;
