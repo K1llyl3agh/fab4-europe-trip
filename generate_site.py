@@ -494,6 +494,10 @@ EVENT_PHOTOS = [
     ('dinner at albert schloss', 'https://assets.albertsschloss.com/content/uploads/2024/01/Schloss-London-Header-1400x788.jpg'),
     ('dinner at the lighterman', 'http://static1.squarespace.com/static/61cc647e2e2bca2f4e1ae1da/t/61cc64ad2e2bca2f4e1ae5e8/1745590094055/WC%2BHeader.png?format=1500w'),
     ('arrive at the level', 'https://commons.wikimedia.org/wiki/Special:FilePath/Great%20Portland%20Street%20underground%20station%20-%20geograph.org.uk%20-%201522059.jpg'),
+    ('dinner at la famiglia', 'https://www.ristorantelafamiglia.it/wp-content/uploads/2024/10/F0A4959_1.jpg'),
+    ('lunch at caffe leonina', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/3a/17/66/pinseria-paninoteca-prodotti.jpg?w=900&h=500&s=1'),
+    ('drinks at ristorante pizzeria castello', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/1d/02/40/new-windows-on-via-delle.jpg?w=900&h=500&s=1'),
+    ('dinner at pizzeria ristoro', 'https://pizzeriaristoroestestest.com/wp-content/uploads/2026/04/pizzeria-ristoro-estestest-esterno.jpg'),
 ]
 
 def event_photo_for(name):
@@ -2645,6 +2649,58 @@ def day_heading_display(title):
 
 FUN_FACTS_PAGE_HTML = fun_facts_page_html()
 
+def wwd_row_html(b):
+    """Render one 'What We Actually Did' diary row for a collapsed, status=='Visited' event block."""
+    addr = f'<div class="ev-addr">{esc(b["address"])}</div>' if b.get('address') else ''
+    weblink_url = weblink_for(b['name'])
+    weblink_btn = f'<a class="pill pill-website" href="{esc(weblink_url)}" target="_blank">Website</a>' if weblink_url else ''
+    tripadvisor_url = tripadvisor_for(b['name'])
+    tripadvisor_btn = f'<a class="pill pill-review" href="{esc(tripadvisor_url)}" target="_blank">TripAdvisor</a>' if tripadvisor_url else ''
+    link_row = weblink_btn + tripadvisor_btn
+    ev_phone = event_phone_for(b['name'])
+    ev_w3w = event_w3w_for(b['name'])
+    w3w_html = f'<a class="w3w-badge" href="https://what3words.com/{esc(ev_w3w)}" target="_blank" title="what3words location">///{esc(ev_w3w)}</a>' if ev_w3w else ''
+    ev_phone_html = f'<div class="ev-addr">&#128222; {esc(ev_phone)} {w3w_html}</div>' if ev_phone else (f'<div class="ev-addr">{w3w_html}</div>' if w3w_html else '')
+    ev_note = event_note_for(b['name']) or event_confirmed_for(b['name'])
+    ev_note_html = f'<div class="ev-note">{ev_note}</div>' if ev_note else ''
+    photo_url = event_photo_for(b['name'])
+    photo_html = (
+        f'<img class="ev-photo" src="{esc(photo_url)}" alt="{esc(b["name"])}" '
+        f'loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'">'
+    ) if photo_url else ''
+    return f'''
+        <div class="ev-row ev-row-visited">
+          <div class="ev-time">{esc(b['time_display'])}</div>
+          <div class="ev-body">
+            <div class="ev-name">{esc_br(b['name'])} {badge('Visited')}</div>
+            {addr}
+            {ev_phone_html}
+            {ev_note_html}
+            {f'<div class="ev-link">{link_row}</div>' if link_row else ''}
+            {photo_html}
+          </div>
+        </div>'''
+
+def what_we_did_html():
+    """Build the growing day-by-day diary of status=='Visited' events across the whole trip so far."""
+    day_html = ''
+    total = 0
+    for d in italy_days + london_days:
+        blocks = collapse_events(d['events'])
+        visited = [b for b in blocks if b.get('status') == 'Visited']
+        if not visited:
+            continue
+        total += len(visited)
+        rows = ''.join(wwd_row_html(b) for b in visited)
+        day_html += f'''
+      <div class="day-card wwd-card">
+        <div class="day-head wwd-day-head"><span class="day-title">{esc(day_heading_display(d['title']))}</span></div>
+        <div class="day-body">{rows}</div>
+      </div>'''
+    if not day_html:
+        day_html = '<p class="lede">Nothing confirmed as actually done yet &ndash; check back once the trip is under way.</p>'
+    return day_html, total
+
 DAY24_MAP = {
     'title': "Thursday 24 Sept - Today's Places & Suggested Routes",
     'stops': [
@@ -4223,7 +4279,7 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
     f'  body.printing-{sid} > *:not(.print-block) {{ display:none !important; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] {{ padding-top:10px; }}\n'
     f'  body.printing-{sid} .print-block[data-section="{sid}"] h2 {{ page-break-before: avoid; }}'
-    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz', 'expenses', 'foodvisited']
+    for sid in ['flights', 'overview', 'rome', 'cruise', 'tuscany', 'milan', 'london', 'places', 'needtobook', 'hotels', 'funfacts', 'emergencycontacts', 'traveldocuments', 'ztl', 'dailyquiz', 'expenses', 'foodvisited', 'whatwedid']
 ) + '\n' + '\n'.join(
     f'  body.printing-day-{did} [data-day-id]:not([data-day-id="{did}"]) {{ display:none !important; }}\n'
     f'  body.printing-day-{did} .print-block:not(:has([data-day-id="{did}"])) {{ display:none !important; }}\n'
@@ -4473,6 +4529,7 @@ NAV_SECTIONS = [
     ('dailyquiz', '&#129504;', 'Daily Quiz'),
     ('expenses', '$', 'Expenses'),
     ('foodvisited', '&#127860;', 'Food Visited'),
+    ('whatwedid', '&#127942;', 'What We Did'),
 ]
 UKETA_URL = 'https://www.gov.uk/eta/apply'
 POLARSTEPS_URL = 'https://www.polarsteps.com/BaxterBrown/24078717-fab-four-does-europe-26?mode=plan'
@@ -4812,6 +4869,16 @@ food_visited_rows_html = ''.join(f'''
       <td class="fv-tick"><label class="place-visited-label"><input type="checkbox" class="place-visited-check" data-code="{esc(fp['code'])}" onchange="toggleFoodVisited('{esc(fp['code'])}', this.checked)"></label></td>
     </tr>''' for fp in _SORTED_FOOD_PLACES)
 
+_wwd_days_html, _wwd_total = what_we_did_html()
+
+WHAT_WE_DID_SECTION_HTML = f'''
+<section id="whatwedid" class="print-block" data-section="whatwedid">
+  <h2>What We Actually Did</h2>
+  <p class="lede">A running diary of what we&rsquo;ve actually done on the trip so far ({_wwd_total} confirmed so far) &ndash; grows day by day as things get ticked off as Visited. By the end of the trip this becomes our full record of what really happened.</p>
+  {_wwd_days_html}
+</section>
+'''
+
 FOOD_VISITED_SECTION_HTML = f'''
 <section id="foodvisited" class="print-block" data-section="foodvisited">
   <h2>Food Visited</h2>
@@ -4896,7 +4963,8 @@ HTML = f'''<!DOCTYPE html>
       <div class="nav-grid">{nav_grid_html}</div>
       <a class="print-mini print-mini-all no-print" href="{PRINT_BOOK_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128214;</span>Print Book</a>
       <a class="print-mini print-mini-all no-print" href="{PRINT_ALL_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128424;&#65039;</span>Print All</a>
-      <button class="print-mini no-print" id="factsToggleBtn" onclick="toggleFunFacts()"><span class="ic">&#127881;</span>Hide Fun Facts</button>
+      <a class="print-mini no-print" href="#whatwedid"><span class="ic">&#127942;</span>What We Actually Did</a>
+      <button class="print-mini no-print" onclick="printSection('whatwedid')"><span class="ic">&#128424;&#65039;</span>Print What We Did</button>
       <button class="print-mini no-print" onclick="printSection('funfacts')"><span class="ic">&#128424;&#65039;</span>Print Fun Facts</button>
       <a class="print-mini no-print" href="https://www.cruisemapper.com/?imo=9320556" target="_blank" rel="noopener"><span class="ic">&#128674;</span>QV Now</a>
       <div class="fab4">Karen Nicholson &middot; Deb Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
@@ -4931,6 +4999,7 @@ HTML = f'''<!DOCTYPE html>
 
 {EXPENSES_SECTION_HTML}
 
+{WHAT_WE_DID_SECTION_HTML}
 {FOOD_VISITED_SECTION_HTML}
 
 <section id="flights" class="print-block" data-section="flights">
