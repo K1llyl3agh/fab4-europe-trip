@@ -366,7 +366,7 @@ EVENT_NOTES = [
     ("st. peter's basilica entry", "This is also not a booked transfer &ndash; no transport is arranged for this leg either. The Republic Hotel to St Peter's Basilica/Square is about 6.5km (4 miles): by taxi/rideshare roughly 15 min depending on traffic; by Metro, Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani then a ~10 min walk, about 30 min door to door. Note this means a second trip out to the Vatican area the same day (after the morning tour and lunch back near the hotel) &ndash; worth keeping in mind when planning the afternoon."),
     ('vatican museums & sistine chapel tour begins', "Do you have to pay to get into Vatican City? St Peter's Basilica itself is free to enter (just a security/bag-check queue &ndash; climbing the dome costs extra, roughly &euro;10 by stairs / &euro;13 with the lift). The Vatican Museums &amp; Sistine Chapel are paid entry (normally &euro;17+) &ndash; already covered by this Towns of Italy booking. Vatican City and St Peter's Square themselves are free to walk around at any time."),
     ('vatican museums & sistine chapel tour ends', "The tour finishes inside the Sistine Chapel &ndash; the guide points out the route to St Peter's Square but doesn't walk you there, so you exit back out via the Museums' own exit, which lets out on Viale Vaticano close to where the tour started. From there to St Peter's Basilica is about 1.5km, roughly a 20 min walk via Viale Vaticano and around into St Peter's Square (no transfer is booked for this leg)."),
-    ('travel to colosseum meeting point', "Per the Gray Line voucher (Booking ID 202645831): meet inside Colle Oppio Park, at the corner of Via delle Terme di Tito and Via Nicola Salvi, 15 minutes before the 2:30pm start &ndash; look for staff carrying the &ldquo;I Love Rome&rdquo; logo (that's Gray Line Rome's local operating name). Bring passport/ID &ndash; it's mandatory and you may not be allowed on the tour without it. Backup contact if you can't find the group: Gray Line &ndash; I Love Rome office, Via Solferino 17, open daily 6:30am&ndash;9:00pm, graylinerome@carrani.com, +39 06 4742501 (or WhatsApp +39 348 811 2027)."),
+    ('travel to colosseum meeting point', "Per the Gray Line voucher (Booking ID 202645831): meet inside Colle Oppio Park, at the corner of Via delle Terme di Tito and Via Nicola Salvi, 15 minutes before the 2:30pm start &ndash; look for staff carrying the &ldquo;I Love Rome&rdquo; logo (that's Gray Line Rome's local operating name). Bring valid photo ID &ndash; the voucher says &ldquo;ID/passport&rdquo;, so a passport, driving licence or other government photo ID is fine, it doesn't have to be a passport specifically. Whatever you bring just needs to match the name on the booking exactly &ndash; a passport is the safest bet since it's always an exact match, but not compulsory. It's mandatory to have some form of photo ID on you &ndash; you may not be allowed on the tour without it. Backup contact if you can't find the group: Gray Line &ndash; I Love Rome office, Via Solferino 17, open daily 6:30am&ndash;9:00pm, graylinerome@carrani.com, +39 06 4742501 (or WhatsApp +39 348 811 2027)."),
 ]
 
 EVENT_PENDING_NOTES = [
@@ -2709,14 +2709,21 @@ DAY26_MAP = {
 def simplify_stop_name(name):
     return re.sub(r'\s*\([^()]*\)\s*$', '', name).strip()
 
+# Days that have already happened - the route box below shows what we actually did
+# (real stops actually visited, cancelled/never-happened stops dropped) rather than
+# the original suggested plan. Add each day's '(DAY N)' tag here once it's done;
+# leave future days alone so they keep showing the suggested route.
+DAYS_ACTUALLY_DONE = ['(DAY 11)', '(DAY 12)']
+
 def day_route_title(title):
     m = re.search(r'([A-Z]+)\s*\(DAY\s*\d+\)\s*-\s*(\d{1,2})\s*([A-Z]+)', title, re.I)
+    label = 'What We Actually Did Today' if any(tag in title for tag in DAYS_ACTUALLY_DONE) else "Today's Places & Suggested Route"
     if not m:
-        return "Today's Places & Suggested Route"
+        return label
     weekday = m.group(1).capitalize()
     daynum = m.group(2)
     month = m.group(3).capitalize()[:3]
-    return f"{weekday} {daynum} {month} - Today's Places & Suggested Route"
+    return f"{weekday} {daynum} {month} - {label}"
 
 def hotel_match(stay_text):
     stay_text = stay_text or ''
@@ -2726,8 +2733,9 @@ def hotel_match(stay_text):
     return None, None
 
 def auto_day_map(day, theme, prev_stay=None):
+    is_done = any(tag in day['title'] for tag in DAYS_ACTUALLY_DONE)
     blocks = collapse_events(day['events'])
-    stops_src = [b for b in blocks if b.get('address')]
+    stops_src = [b for b in blocks if b.get('address') and not event_cancelled_for(b['name'])]
     if len(stops_src) < 2:
         return None
     start_hotel_name, start_hotel_addr = hotel_match(prev_stay)
@@ -2752,6 +2760,8 @@ def auto_day_map(day, theme, prev_stay=None):
             legs.append({'time': 'Estimate', 'distance': 'Estimate', 'method': "Ashore in port - taxi, shore excursion coach or walk; confirm with your tour operator or the ship's shore excursion desk"})
         elif is_cruise:
             legs.append({'time': 'Onboard', 'distance': 'Onboard', 'method': 'No transfer needed - both are on the ship'})
+        elif is_done:
+            legs.append({'time': 'Estimate', 'distance': 'Estimate', 'method': 'Walk, taxi or local transport between these two stops'})
         else:
             legs.append({'time': 'Estimate', 'distance': 'Estimate', 'method': 'Walk, taxi or local transport - check live maps for the exact route'})
     return {'title': day_route_title(day['title']), 'stops': stops, 'legs': legs}
