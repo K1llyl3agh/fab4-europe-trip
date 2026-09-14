@@ -486,6 +486,18 @@
       "title": "MONDAY (DAY 14) - 14 SEP",
       "events": [
         {
+          "time": "8:00 AM",
+          "event": "Breakfast at The Republic Hotel (included, buffet 7:00-10:30am)",
+          "status": null,
+          "address": "The Republic Hotel, Via Gaeta 61, Rome"
+        },
+        {
+          "time": "9:30 AM",
+          "event": "Borghese Gardens Revisit (POTENTIAL - if time allows before the 12pm transfer)",
+          "status": "Potential",
+          "address": "Villa Borghese, Rome, Italy - about 2.3km from The Republic Hotel: roughly 28-30 min walk (via Via Nizza and Via Veneto up to the Porta Pinciana gate), or ~10-12 min by taxi/rideshare depending on traffic"
+        },
+        {
           "time": "12:00 PM",
           "event": "Transfer by private minibus to Queen Victoria - 12pm pickup confirmed",
           "status": "Booked",

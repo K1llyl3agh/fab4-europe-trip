@@ -125,6 +125,7 @@ STATUS_CLASS = {
     'To Confirm': 'badge-toconfirm',
     'Not Confirmed': 'badge-notconfirmed',
     'Optional': 'badge-optional',
+    'Potential': 'badge-potential',
 }
 
 def badge(status):
@@ -201,6 +202,7 @@ EVENT_W3W = [
     ('river tour', 'dunes.copy.miles'),
     ('dinner at la famiglia', 'dices.foster.mornings'),
     ('villa borghese gardens', 'soak.settle.sweated'),
+    ('borghese gardens revisit', 'soak.settle.sweated'),
     ('terrazza montemartini', 'cactus.defended.avocado'),
     ('travel to vatican meeting point', 'changing.swimmer.mutual'),
     ('vatican museums & sistine chapel tour begins', 'changing.swimmer.mutual'),
@@ -362,6 +364,7 @@ def travel_options_html(opts):
 EVENT_NOTES = [
     ('dinner at the lighterman', "If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;"),
     ('check in at the republic hotel, freshen up', "Time shown is approximate, based on the revised evening arrival &ndash; will depend on the actual transfer pickup time."),
+    ('borghese gardens revisit', "The original Villa Borghese Gardens visit on 11 Sept was cancelled after the delayed/rebooked flight in &ndash; this is a chance to fit it in after all if there's time this morning. It's a walk-in park (no ticket needed for the grounds themselves), so no booking to worry about. Keep an eye on the clock: the transfer to Civitavecchia leaves at 12pm sharp, so turn back in good time."),
     ('piazza della repubblica & fontana delle naiadi', "Cancelled due to the delayed/rebooked flight (new 7:15pm Rome arrival) &ndash; this whole afternoon block, through Villa Borghese Gardens and pre-dinner drinks at Terrazza Montemartini, is no longer possible before landing. Struck through rather than removed in case any of it can be worked in another day."),
     ('dinner at la famiglia', "Original plan was Pizzeria Ristoro Est! Est!! Est!!! (8:30pm, pushed back from 6:30pm for the late 7:15pm Rome arrival) - in the end the family went to La Famiglia instead, right on the hotel's own street, so it was an easy first night out. Rated 7.5/10 - see the Dinner Suggestions box below for details."),
     ('travel to vatican meeting point', "No transfer is booked for this leg (checked against the Infinity Holidays paperwork &ndash; only the tour itself, Ref 5CJM745M, is booked; the only booked transfers are FCO&rarr;hotel on 11 Sept and hotel&rarr;Civitavecchia on 14 Sept). You'll need to make your own way there. The Republic Hotel to the meeting point (Viale Vaticano, next to Caff&egrave; Vaticano) is about 7km (4.3 miles): fastest by taxi/rideshare, roughly 15 min depending on traffic. By Metro: walk to Termini, take Line A (red, towards Battistini) to Ottaviano&ndash;San Pietro/Musei Vaticani (5 stops), then it's a 5&ndash;8 min walk to the meeting point &ndash; about 30 min door to door, trains every ~3&ndash;5 min. Leaving the hotel by 7:00am gives a comfortable buffer either way for the 7:45am tour start."),
@@ -2084,8 +2087,9 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         _cancelled_row_class = ' ev-row-cancelled' if ev_cancelled else ''
         _cancelled_tag = '<span class="ev-cancelled-tag">CANCELLED &ndash; flight delay</span>' if ev_cancelled else ''
         _visited_row_class = ' ev-row-visited' if b['status'] == 'Visited' else ''
+        _potential_row_class = ' ev-row-potential' if b['status'] == 'Potential' else ''
         rows += f'''
-        <div class="ev-row{_cancelled_row_class}{_visited_row_class}">
+        <div class="ev-row{_cancelled_row_class}{_visited_row_class}{_potential_row_class}">
           <div class="ev-time">{esc(b['time_display'])}{time_warning_html}</div>
           <div class="ev-body">
             <div class="ev-name">{esc_br(b['name'])} {badge(b['status'])} {logo_html} {_cancelled_tag}</div>
@@ -2501,7 +2505,7 @@ DINNER_13SEP = [
      'review': 'https://www.tripadvisor.com/Restaurant_Review-g187791-d1012381-Reviews-Hostaria_al_Gladiatore-Rome_Lazio.html', 'w3w': 'national.chatting.mute'},
 ]
 
-dinner_box_11sep = dinner_box('Dinner Suggestions (9 ideas, within ~20 min walk of the hotel)', DINNER_11SEP, day_num=2)
+dinner_box_11sep = dinner_box('Dinner (11 Sept, actually visited)', DINNER_11SEP, day_num=2)
 dinner_box_12sep = dinner_box('8 More Dinner Suggestions (no repeats from the 11th)', DINNER_12SEP, day_num=3)
 dinner_box_13sep = dinner_box('8 More Dinner Suggestions (no repeats - handy for after the Colosseum tour)', DINNER_13SEP, day_num=4)
 
@@ -4034,6 +4038,8 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .ev-cancelled-tag { display:inline-block; background:#c0392b; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.02em; text-decoration:none; border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
 .ev-row-visited { background:#fdf6ec; border:3px solid var(--gold); border-radius:10px; padding:10px 14px; margin:6px 0; }
 .badge-visited { background:var(--gold); color:#fff; }
+.ev-row-potential { background:#eaf7ec; border:3px solid #2e7d32; border-radius:10px; padding:10px 14px; margin:6px 0; }
+.badge-potential { background:#2e7d32; color:#fff; }
 .ev-ztl-alert { margin-top:8px; border-left:4px solid #b6591a; border-radius:8px; padding:8px 12px; background:#fdf3e3; font-size:.82rem; line-height:1.45; }
 .ev-ztl-alert-title { font-weight:700; color:#8a4008; margin-bottom:3px; }
 .ztl-alert-zone { color:#5c3a10; }
