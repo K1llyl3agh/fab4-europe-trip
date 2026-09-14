@@ -2791,6 +2791,21 @@ def hotel_match(stay_text):
             return name, addr
     return None, None
 
+# Custom leg text for specific stop-to-stop legs on days already done, where what
+# actually happened differed from the generic "walk/taxi" placeholder. Match is a
+# case-insensitive substring check against the (simplified) stop names either side.
+LEG_OVERRIDES = {
+    ('self-guided morning walk', 'travel to colosseum meeting point'):
+        "Wandering around the shops locally, La Rinascente and heading out to a mall in suburbia before finally finding an Uber and heading to the Colosseum tour.",
+}
+
+def leg_override_for(from_name, to_name):
+    fn, tn = (from_name or '').lower(), (to_name or '').lower()
+    for (f, t), text in LEG_OVERRIDES.items():
+        if f in fn and t in tn:
+            return text
+    return None
+
 def auto_day_map(day, theme, prev_stay=None):
     is_done = any(tag in day['title'] for tag in DAYS_ACTUALLY_DONE)
     blocks = collapse_events(day['events'])
@@ -2815,7 +2830,10 @@ def auto_day_map(day, theme, prev_stay=None):
         return None
     legs = []
     for i in range(len(stops) - 1):
-        if is_cruise and is_port_day:
+        leg_override = leg_override_for(stops[i]['name'], stops[i + 1]['name'])
+        if leg_override:
+            legs.append({'time': 'Actual', 'distance': 'Actual', 'method': leg_override})
+        elif is_cruise and is_port_day:
             legs.append({'time': 'Estimate', 'distance': 'Estimate', 'method': "Ashore in port - taxi, shore excursion coach or walk; confirm with your tour operator or the ship's shore excursion desk"})
         elif is_cruise:
             legs.append({'time': 'Onboard', 'distance': 'Onboard', 'method': 'No transfer needed - both are on the ship'})
