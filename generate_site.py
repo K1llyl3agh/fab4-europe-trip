@@ -146,6 +146,7 @@ def weblink_for(name):
     return None
 
 EVENT_TRIPADVISOR = [
+    ('dinner at diana\'s place bistrot', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d12785400-Reviews-Diana_s_Place_Bistrot-Rome_Lazio.html'),
     ('drinks at ristorante pizzeria castello', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d19723306-Reviews-Ristorante_Pizzeria_Castello-Rome_Lazio.html'),
     ('dinner at pizzeria ristoro', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d696551-Reviews-Pizzeria_Ristoro_Est_Est_Est-Rome_Lazio.html'),
     ('lunch at caffe leonina', 'https://www.tripadvisor.com/Restaurant_Review-g187791-d28130247-Reviews-Caffe_Leonina-Rome_Lazio.html'),
@@ -164,6 +165,7 @@ def tripadvisor_for(name):
     return None
 
 EVENT_PHONE = [
+    ('dinner at diana\'s place bistrot', '+39 06 8781 8000'),
     ('travel to colosseum meeting point', '+39 06 4742501'),
     ('drinks at ristorante pizzeria castello', '+39 389 1615333'),
     ('dinner at albert schloss', '020 8165 0000'),
@@ -483,6 +485,7 @@ WEBLINKS_APPEND = [
     ('gelato with a view at il balcone sul lago', 'https://www.facebook.com/Ilbalconesullago/'),
     ('nightcap drinks at liquido rooftop bar', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html'),
     ('pre-dinner drinks - terrazza montemartini', 'http://www.palazzomontemartini.com/'),
+    ('dinner at diana\'s place bistrot', 'https://www.dianasplace.it/'),
     ('drinks at ristorante pizzeria castello', 'https://www.ristorantepizzeriacastello.com/'),
     ('dinner at pizzeria ristoro', 'https://pizzeriaristoroestestest.com/en/'),
     ('skip-the-line leaning tower of pisa', 'https://www.viator.com/tours/Pisa/Skip-the-Line-Leaning-Tower-of-Pisa/d520-36478P5'),
@@ -498,6 +501,7 @@ EVENT_PHOTOS = [
     ('lunch at caffe leonina', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/3a/17/66/pinseria-paninoteca-prodotti.jpg?w=900&h=500&s=1'),
     ('drinks at ristorante pizzeria castello', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/1d/02/40/new-windows-on-via-delle.jpg?w=900&h=500&s=1'),
     ('dinner at pizzeria ristoro', 'https://pizzeriaristoroestestest.com/wp-content/uploads/2026/04/pizzeria-ristoro-estestest-esterno.jpg'),
+    ('dinner at diana\'s place bistrot', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/76/5e/3c/dining-room.jpg?w=900&h=500&s=1'),
 ]
 
 def event_photo_for(name):
@@ -2113,9 +2117,14 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
     day_id_attr = f' data-day-id="{day_id}"' if day_id else ''
     map_html = day_map_box(day_map) if day_map else ''
     fact_html = fun_fact_box(day_id) if day_id else ''
+    food_toggle_btn = ''
+    if dinner_html and day_id and any(tag in day['title'] for tag in DAYS_ACTUALLY_DONE):
+        food_wrap_id = f'food-wrap-{day_id}'
+        food_toggle_btn = f'<button class="print-mini no-print food-toggle-btn" id="{food_wrap_id}-btn" onclick="toggleFoodWrap(\'{food_wrap_id}\')">Show Food</button>'
+        dinner_html = f'<div class="food-wrap food-wrap-hidden" id="{food_wrap_id}">{dinner_html}</div>'
     return f'''
     <div class="day-card theme-{theme}"{day_id_attr}>
-      <div class="day-head"><span class="day-title">{esc(day_heading_display(day['title']))}</span><span class="day-head-right">{print_day_btn}{where_html}</span></div>
+      <div class="day-head"><span class="day-title">{esc(day_heading_display(day['title']))}</span><span class="day-head-right">{print_day_btn}{food_toggle_btn}{where_html}</span></div>
       <div class="day-body">
         {fact_html}
         {quicklink_html or ''}
@@ -2763,7 +2772,7 @@ def simplify_stop_name(name):
 # (real stops actually visited, cancelled/never-happened stops dropped) rather than
 # the original suggested plan. Add each day's '(DAY N)' tag here once it's done;
 # leave future days alone so they keep showing the suggested route.
-DAYS_ACTUALLY_DONE = ['(DAY 11)', '(DAY 12)']
+DAYS_ACTUALLY_DONE = ['(DAY 11)', '(DAY 12)', '(DAY 13)']
 
 def day_route_title(title):
     m = re.search(r'([A-Z]+)\s*\(DAY\s*\d+\)\s*-\s*(\d{1,2})\s*([A-Z]+)', title, re.I)
@@ -3965,6 +3974,10 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .box-toggle-btn { float:right; margin-top:-2px; }
 .box-hidden .place-grid { display:none; }
 @media print { .box-hidden .place-grid { display:none !important; } }
+.food-toggle-btn { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.5); color:#fff; font-size:.72rem; font-weight:700; padding:4px 11px; border-radius:999px; cursor:pointer; }
+.food-toggle-btn:hover { background:rgba(255,255,255,.32); }
+.food-wrap-hidden { display:none; }
+@media print { .food-wrap-hidden { display:none !important; } }
 .dinner-box .place-grid { margin:10px 0 0; }
 .option-box { margin-top:16px; padding:16px 18px; background:#eef3fb; border:1px dashed var(--london); border-radius:10px; }
 .option-box .place-grid { margin:10px 0 0; grid-template-columns:1fr; max-width:340px; }
@@ -4853,6 +4866,12 @@ ALL_FOOD_PLACES.append({
     'address': 'Via Genova 32, Rome - ~8 min walk from hotel',
     'visited': True,
 })
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(4), 'place': "Diana's Place Bistrot", 'day_num': 4,
+    'list_title': 'Dinner (13 Sept, actually visited)',
+    'address': 'Via Volturno 54, 00185 Rome',
+    'visited': True,
+})
 
 FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
 _VISITED_FOOD_PLACES = [fp for fp in ALL_FOOD_PLACES if fp.get('visited')]
@@ -5634,6 +5653,25 @@ function toggleBox(id) {{
   localStorage.setItem('fab4-box-hidden-' + id, hidden ? '1' : '0');
   if (btn) btn.textContent = hidden ? 'Show Suggestions' : 'Hide Suggestions';
 }}
+function toggleFoodWrap(id) {{
+  var box = document.getElementById(id);
+  if (!box) return;
+  var btn = document.getElementById(id + '-btn');
+  var hidden = box.classList.toggle('food-wrap-hidden');
+  localStorage.setItem('fab4-food-hidden-' + id, hidden ? '1' : '0');
+  if (btn) btn.textContent = hidden ? 'Show Food' : 'Hide Food';
+}}
+(function() {{
+  document.querySelectorAll('[id^="food-wrap-"]').forEach(function(box) {{
+    var id = box.id;
+    var saved = localStorage.getItem('fab4-food-hidden-' + id);
+    if (saved === null) return;
+    var btn = document.getElementById(id + '-btn');
+    var hidden = saved === '1';
+    box.classList.toggle('food-wrap-hidden', hidden);
+    if (btn) btn.textContent = hidden ? 'Show Food' : 'Hide Food';
+  }});
+}})();
 (function() {{
   var _boxIds = ['lunch-box-12sep'];
   _boxIds.forEach(function(id) {{

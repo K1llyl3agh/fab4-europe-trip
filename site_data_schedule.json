@@ -472,6 +472,12 @@
           "event": "Colosseum, Roman Forum & Palatine Hill Tour ends",
           "status": null,
           "address": null
+        },
+        {
+          "time": "7:30 PM",
+          "event": "Dinner at Diana's Place Bistrot (7:30-9:30pm)",
+          "status": "Visited",
+          "address": "Via Volturno 54, 00185 Rome"
         }
       ],
       "stay": "Staying at The Republic Hotel, Rome"
