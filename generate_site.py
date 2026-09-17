@@ -840,6 +840,33 @@ CHEMIST_INFO = {
     ],
 }
 
+LAUNDROMAT_INFO = {
+    'Hotel Borgo di Cortefreda Relais': [
+        {'name': 'Lavanderia Self-Service LavaPi&ugrave; - Stireria', 'address': 'Via Don Minzoni 25, 50026 San Casciano in Val di Pesa (FI)',
+         'website': None,
+         'quickest': '~15 min drive (~9km) &ndash; nearest town with a laundromat, not a practical walk. Self-service, open Mon&ndash;Sat 7am&ndash;10pm, Sun 8am&ndash;10pm'},
+        {'name': 'Lavanderia Igea', 'address': 'Via Empolese 250, 50026 San Casciano in Val di Pesa (FI)',
+         'website': None,
+         'quickest': '~15 min drive (~9km) &ndash; nearest town with a laundromat, not a practical walk. Tel. 055 826150'},
+    ],
+    'iQ Hotel Milano': [
+        {'name': 'The Laundry Central Station &ndash; Lavanderia Self-Service Milano Centrale', 'address': 'Via Benedetto Marcello 93, 20124 Milano',
+         'website': None,
+         'quickest': 'approx. 15 min walk (~1.1km, not map-verified) &ndash; self-service, open daily 7am&ndash;10pm'},
+        {'name': 'Self Service Laundromat Stazione Centrale', 'address': 'Via Giulio e Corrado Venini 14/A, 20127 Milano',
+         'website': None,
+         'quickest': 'approx. 18 min walk (~1.4km, not map-verified) or a short taxi &ndash; self-service, open daily 6am&ndash;11pm, 365 days a year'},
+    ],
+    'The Level at Melia White House': [
+        {'name': 'Posh Wash Launderette &amp; Dry Cleaners', 'address': '3 Chester Court, Albany Street, London NW1 4BU',
+         'website': None,
+         'quickest': 'approx. 6 min walk (~500m, not map-verified) &ndash; along the east side of Regent&rsquo;s Park. Tel. 0207 486 6883'},
+        {'name': 'That Nice Launderette', 'address': '3 Crowndale Road, Camden, London NW1 1TU',
+         'website': None,
+         'quickest': 'approx. 22 min walk (~1.7km, not map-verified) or a short bus/taxi via Camden. Tel. 020 7383 0791'},
+    ],
+}
+
 def _nearby_box(hotel_name, info_dict, title, icon):
     items = info_dict.get(hotel_name)
     if not items:
@@ -867,6 +894,9 @@ def supermarket_box(hotel_name):
 
 def chemist_box(hotel_name):
     return _nearby_box(hotel_name, CHEMIST_INFO, '2 Closest Chemists', '&#128138;')
+
+def laundromat_box(hotel_name):
+    return _nearby_box(hotel_name, LAUNDROMAT_INFO, '2 Closest Laundromats', '&#129530;')
 
 HOTEL_ADDRESS = [(h['name'], h['address']) for h in HOTEL_INFO]
 
@@ -952,6 +982,7 @@ def hotel_directory_cards():
           {parking_response_html}
           {supermarket_box(h['name'])}
           {chemist_box(h['name'])}
+          {laundromat_box(h['name'])}
           {qr_html}
         </div>'''
     return cards
@@ -1348,6 +1379,8 @@ DAILY_QUIZ = [
          'note': 'The trumpet, though he started out on the cornet as a boy in New Orleans.'},
         {'q': 'In tennis, what is a score of 40-40 called?', 'opts': ['Advantage', 'Deuce', 'Love', 'Set point'], 'ans': 1,
          'note': "Deuce - from the French 'a deux', meaning two more points are needed to win."},
+        {'q': 'What is the collective noun for a group of owls?', 'opts': ['A parliament', 'A conclave', 'A wisdom', 'A roost'], 'ans': 0,
+         'note': "A parliament of owls - the term is thought to come from C.S. Lewis's Narnia books, where the owls held a council called the Parliament."},
         {'q': '\U0001F389 BONUS: Which classic children\'s toy was originally invented and sold as a wallpaper cleaner?', 'opts': ['Silly Putty', 'Play-Doh', 'Slime', 'Etch A Sketch'], 'ans': 1,
          'note': 'Play-Doh - it only became a toy in the 1950s once coal heating (and sooty wallpaper) fell out of fashion.', 'bonus': True},
     ]},
@@ -1372,6 +1405,8 @@ DAILY_QUIZ = [
          'note': "Te Reo Maori - literally 'be well' or 'be healthy'."},
         {'q': 'How many countries share a land border with China?', 'opts': ['Eight', 'Ten', 'Fourteen', 'Eighteen'], 'ans': 2,
          'note': 'Fourteen - tied with Russia for the most of any country.'},
+        {'q': 'What is the collective noun for a group of ravens?', 'opts': ['A murder', 'An unkindness', 'A conspiracy', 'A shadow'], 'ans': 1,
+         'note': "An unkindness of ravens - a murder is the term for crows; ravens get the gloomier 'unkindness'."},
         {'q': '\U0001F389 BONUS: What is the plastic (or metal) tip on the end of a shoelace officially called?', 'opts': ['A ferrule', 'A tag', 'An aglet', 'A clasp'], 'ans': 2,
          'note': 'An aglet - stops the lace from fraying and makes it easier to thread.', 'bonus': True},
     ]},
@@ -1396,6 +1431,8 @@ DAILY_QUIZ = [
          'note': 'Vivaldi, around 1720 - four violin concertos, one for each season.'},
         {'q': 'On which ship did Charles Darwin make his famous scientific voyage?', 'opts': ['HMS Victory', 'HMS Beagle', 'HMS Endeavour', 'HMS Bounty'], 'ans': 1,
          'note': 'HMS Beagle - five years at sea that led to On the Origin of Species.'},
+        {'q': 'What is the collective noun for a group of geese on the ground or water?', 'opts': ['A gaggle', 'A skein', 'A brood', 'A covey'], 'ans': 0,
+         'note': "A gaggle of geese - once they take to the air, the same group becomes a 'skein' instead."},
         {'q': '\U0001F389 BONUS: How long can a snail sleep for in one stretch?', 'opts': ['A few hours', 'About a week', 'Up to 3 years', '10 years'], 'ans': 2,
          'note': 'Up to 3 years - snails hibernate or estivate to survive conditions that are too cold, hot or dry.', 'bonus': True},
     ]},
@@ -1420,6 +1457,8 @@ DAILY_QUIZ = [
          'note': "Latin - literally 'and the rest'."},
         {'q': 'In cricket, what is a batter dismissed for zero said to have scored?', 'opts': ['A blank', 'A duck', 'A nil', 'A love'], 'ans': 1,
          'note': "A duck - said to come from 'duck's egg', the shape of the zero on the scoreboard."},
+        {'q': 'What is the collective noun for a group of giraffes?', 'opts': ['A tower', 'A stretch', 'A journey', 'A herd'], 'ans': 0,
+         'note': "A tower of giraffes - fittingly, given how tall they are. 'A journey' is also sometimes used for giraffes on the move."},
         {'q': '\U0001F389 BONUS: What is the collective noun for a group of ferrets?', 'opts': ['A business', 'A pack', 'A troop', 'A colony'], 'ans': 0,
          'note': "A business of ferrets - it's unclear what business they're conducting.", 'bonus': True},
     ]},
@@ -1444,6 +1483,8 @@ DAILY_QUIZ = [
          'note': 'Hamlet - Tom Stoppard later gave the pair a whole play of their own.'},
         {'q': 'Which sea has no coastline at all?', 'opts': ['The Dead Sea', 'The Sargasso Sea', 'The Caspian Sea', 'The Coral Sea'], 'ans': 1,
          'note': 'The Sargasso Sea - bounded by ocean currents rather than by land.'},
+        {'q': 'What is the collective noun for a group of zebras?', 'opts': ['A dazzle', 'A stripe', 'A herd', 'A muster'], 'ans': 0,
+         'note': "A dazzle of zebras - thought to reference how their stripes confuse predators when the herd moves together."},
         {'q': "\U0001F389 BONUS: What is the small dot over the letters 'i' and 'j' officially called?", 'opts': ['A serif', 'A tittle', 'A gliff', 'A fleck'], 'ans': 1,
          'note': "A tittle - so 'dotting your i's' is technically 'tittling'.", 'bonus': True},
     ]},
@@ -1468,6 +1509,8 @@ DAILY_QUIZ = [
          'note': 'English - well over a billion people speak it as a second language.'},
         {'q': 'The Great Fire of London happened in which century?', 'opts': ['The 15th', 'The 16th', 'The 17th', 'The 18th'], 'ans': 2,
          'note': 'The 17th - September 1666, starting in a bakery on Pudding Lane.'},
+        {'q': 'What is the collective noun for a group of lions?', 'opts': ['A pack', 'A pride', 'A coalition', 'A clan'], 'ans': 1,
+         'note': "A pride of lions - 'coalition' is actually the real term for a group of male lions specifically."},
         {'q': '\U0001F389 BONUS: What was the search engine Google originally called, before it was renamed?', 'opts': ['WebCrawler', 'BackRub', 'Googol', 'SearchMe'], 'ans': 1,
          'note': "BackRub - named for its knack of analysing 'back links' between pages. Good call renaming it.", 'bonus': True},
     ]},
@@ -1492,6 +1535,8 @@ DAILY_QUIZ = [
          'note': 'Steven Spielberg - the mechanical shark broke down so often he had to imply it instead.'},
         {'q': 'Which is the tallest species of tree?', 'opts': ['Douglas fir', 'Coast redwood', 'Mountain ash', 'Kauri'], 'ans': 1,
          'note': 'The coast redwood - the tallest known specimen stands over 115m.'},
+        {'q': 'What is the collective noun for a group of peacocks?', 'opts': ['A flourish', 'A display', 'An ostentation', 'A plume'], 'ans': 2,
+         'note': "An ostentation of peacocks - it's also sometimes called a 'muster', but ostentation suits them best."},
         {'q': '\U0001F389 BONUS: What is the collective noun for a group of rhinoceroses?', 'opts': ['A crash', 'A stampede', 'A herd', 'A battalion'], 'ans': 0,
          'note': "A crash of rhinos - about as subtle as you'd expect.", 'bonus': True},
     ]},
@@ -1516,6 +1561,8 @@ DAILY_QUIZ = [
          'note': "A word or phrase that reads the same in both directions - like 'racecar' or 'level'."},
         {'q': 'Which country has the longest coastline in the world?', 'opts': ['Russia', 'Australia', 'Canada', 'Indonesia'], 'ans': 2,
          'note': 'Canada - more than 200,000 km once all the Arctic islands are counted.'},
+        {'q': 'What is the collective noun for a group of kangaroos?', 'opts': ['A troop', 'A mob', 'A bound', 'A hop'], 'ans': 1,
+         'note': "A mob of kangaroos - one of the most commonly used Australian collective nouns."},
         {'q': '\U0001F389 BONUS: What is the collective noun for a group of pandas?', 'opts': ['A cuddle', 'An embarrassment', 'A bamboo', 'A huddle'], 'ans': 1,
          'note': "An embarrassment of pandas - nobody seems to know why, but it's the official term.", 'bonus': True},
     ]},
@@ -1540,6 +1587,8 @@ DAILY_QUIZ = [
          'note': "Les Miserables - Hugo's 1862 novel, on stage in the West End since 1985."},
         {'q': 'Who is the longest-reigning British monarch?', 'opts': ['Queen Victoria', 'Elizabeth II', 'George III', 'Henry VIII'], 'ans': 1,
          'note': "Elizabeth II - 70 years on the throne, passing Victoria's record in 2015."},
+        {'q': 'What is the collective noun for a group of moles?', 'opts': ['A labour', 'A dig', 'A tunnel', 'A company'], 'ans': 0,
+         'note': "A labour of moles - a fitting name given how much digging they get through underground."},
         {'q': '\U0001F389 BONUS: Roughly how many times a year does Tower Bridge open to let tall ships through?', 'opts': ['About 50', 'About 200', 'About 800', 'About 3,000'], 'ans': 2,
          'note': 'About 800 times a year - roughly twice a day on average, and always announced in advance online.', 'bonus': True},
     ]},
@@ -5354,6 +5403,8 @@ HTML = f'''<!DOCTYPE html>
   </div>
   <p class="lede">A multi-choice quiz for every day of the trip, themed to wherever we are that day: Rome history, cruise trivia, French Riviera, Tuscany, London and more &ndash; most days have 10 questions plus a bonus funny general-knowledge one, and Day 1 (departure day) kicks off with a bumper 20. Browse the questions below any time, print two separate documents (questions / answer key), or hit Play the Quiz to check in to a day, answer on screen and reveal your score at the end.</p>
 
+  <div id="quizCumulativeScoreBox" class="quiz-total-banner no-print" style="display:none;"></div>
+
   <div class="print-block" data-subsection="quizquestions">
     <div class="section-head-row">
       <h3 id="quizquestions" style="margin-bottom:0;">Questions</h3>
@@ -5769,7 +5820,27 @@ function saveQuizScore(dayNum, score, total) {{
   var scores = getQuizScores();
   scores[dayNum] = {{ score: score, total: total }};
   try {{ localStorage.setItem('fab4_quiz_scores', JSON.stringify(scores)); }} catch (e) {{}}
+  renderQuizCumulativeScore();
 }}
+function renderQuizCumulativeScore() {{
+  var box = document.getElementById('quizCumulativeScoreBox');
+  if (!box) return;
+  var scores = getQuizScores();
+  var totalScore = 0, totalPossible = 0, daysDone = 0;
+  QUIZ_PLAY_DATA.forEach(function(d) {{
+    var s = scores[d.day_num];
+    if (s) {{ totalScore += s.score; totalPossible += s.total; daysDone++; }}
+  }});
+  if (daysDone === 0) {{
+    box.style.display = 'none';
+    box.innerHTML = '';
+    return;
+  }}
+  box.style.display = '';
+  box.innerHTML = 'Trip total so far: ' + totalScore + ' / ' + totalPossible
+    + '<span>' + daysDone + ' of ' + QUIZ_PLAY_DATA.length + ' days played &ndash; retake a day any time in Play the Quiz to update its score</span>';
+}}
+document.addEventListener('DOMContentLoaded', renderQuizCumulativeScore);
 function renderQuizDayPicker() {{
   document.getElementById('quizPlayTitle').textContent = 'Play the Daily Quiz – pick a day';
   var scores = getQuizScores();
