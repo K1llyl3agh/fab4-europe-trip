@@ -703,6 +703,7 @@ HOTEL_INFO = [
      'booking_ref': 'Gary &amp; Karen: 900422765 (hotel conf. 45873846) &middot; Deb &amp; Tom: 900422785 (hotel conf. 45873847)',
      'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;3.00 per person, per night (up to 7 nights), payable directly to the hotel'),
      'meal_plan': 'Bed &amp; Breakfast (included) &ndash; complimentary buffet breakfast',
+     'laundry': 'Laundry, dry cleaning &amp; pressing available via reception (additional charge) &ndash; ask at check-in for turnaround times.',
      'dates': '21-23 Sept 2026 (check-out morning of the 23rd for the drive to Milan)',
      'parking_note': 'Rental van (Mercedes Vito) parking &ndash; free onsite, 21&ndash;22 Sept. Confirmed by the hotel by email (see reply below).',
      'parking_w3w': 'indecisive.whoever.retriever',
@@ -730,6 +731,7 @@ HOTEL_INFO = [
      'booking_ref': 'Gary &amp; Karen: 9079750869671 (conf. 2385198897) &middot; Deb &amp; Tom: 9074737872483 (conf. 2385198904)',
      'mandatory_fee': ('EUR', 'City tourist tax &ndash; &euro;10.00 per person, per night, payable directly to the hotel'),
      'meal_plan': 'Room only &ndash; breakfast NOT included; buffet breakfast available for approx. &euro;13/adult if wanted',
+     'laundry': 'Laundry &amp; dry-cleaning service via reception (additional charge), plus a self-service coin-operated washer/dryer with iron &amp; ironing board in the guest laundry room.',
      'dates': '23-24 Sept 2026 (check-out morning of the 24th for the flight to London)',
      'parking_note': 'Rental van (Mercedes Vito) parking &ndash; no private hotel parking, 23 Sept. CONFIRMED: Garage 2000, ~200m away &ndash; &euro;27/24hrs standard car, &euro;32/24hrs luxury car, no reservation needed.',
      'parking_w3w': 'blushes.bristle.combines',
@@ -764,6 +766,7 @@ HOTEL_INFO = [
      'tube': 'Great Portland Street station (Circle, Hammersmith & City, Metropolitan lines) - approx. 2-3 min walk (~0.2 km), directly opposite the hotel',
      'booking_ref': 'Gary &amp; Karen: 702Lb92xxk &middot; Deb &amp; Tom: 702Hpxuze6',
      'meal_plan': 'Bed &amp; Breakfast (included)',
+     'laundry': 'Laundry &amp; dry-cleaning service via reception (additional charge) &ndash; leave items for collection, typically returned within 24-48 hours.',
      'dates': '24-27 Sept 2026 (depart Heathrow the night of the 27th)'},
 ]
 
@@ -890,6 +893,7 @@ def hotel_directory_cards():
         dates_html = f'<div class="place-hours">&#128197; {esc(h["dates"])}</div>' if h.get('dates') else ''
         ref_html = f'<div class="place-hours">&#128203; Booking ref &ndash; {h["booking_ref"]}</div>' if h.get('booking_ref') else ''
         meal_plan_html = f'<div class="place-hours">&#127869; {h["meal_plan"]}</div>' if h.get('meal_plan') else ''
+        laundry_html = f'<div class="place-hours">&#129530; {h["laundry"]}</div>' if h.get('laundry') else ''
         fee_html = mandatory_fee_box(*h['mandatory_fee']) if h.get('mandatory_fee') else ''
         qr_b64 = HOTEL_QR.get(h['name'])
         qr_html = (
@@ -941,6 +945,7 @@ def hotel_directory_cards():
           {tube_html}
           {ref_html}
           {meal_plan_html}
+          {laundry_html}
           {parking_html}
           {fee_html}
           {f'<div class="place-links" style="margin-top:8px;">{parking_email_btn}</div>' if parking_email_btn else ''}
@@ -4442,6 +4447,9 @@ body.printing-dailyquiz .print-block[data-subsection="quizquestions"] { display:
 .quiz-day-pick-num { font-weight:700; color:var(--navy); display:block; font-size:.85rem; }
 .quiz-day-pick-date { font-size:.8rem; color:var(--muted); }
 .quiz-day-pick-theme { font-size:.85rem; margin-top:2px; }
+.quiz-day-pick-score { display:inline-block; margin-top:6px; font-size:.75rem; font-weight:700; color:#1e7d3a; background:#e3f6e8; border-radius:20px; padding:2px 9px; }
+.quiz-total-banner { text-align:center; font-weight:700; color:var(--navy); background:#fdf6e3; border:1px solid var(--gold); border-radius:10px; padding:10px 14px; margin-bottom:14px; }
+.quiz-total-banner span { font-weight:400; color:var(--muted); font-size:.82rem; display:block; margin-top:2px; }
 .quiz-play-progress { font-size:.85rem; color:var(--muted); margin-bottom:12px; }
 .quiz-play-qwrap { margin-bottom:22px; }
 .quiz-play-qtext { font-weight:700; color:var(--ink); margin-bottom:8px; }
@@ -5754,14 +5762,36 @@ function closeQuizPlay() {{
   document.getElementById('quizPlayOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }}
+function getQuizScores() {{
+  try {{ return JSON.parse(localStorage.getItem('fab4_quiz_scores')) || {{}}; }} catch (e) {{ return {{}}; }}
+}}
+function saveQuizScore(dayNum, score, total) {{
+  var scores = getQuizScores();
+  scores[dayNum] = {{ score: score, total: total }};
+  try {{ localStorage.setItem('fab4_quiz_scores', JSON.stringify(scores)); }} catch (e) {{}}
+}}
 function renderQuizDayPicker() {{
   document.getElementById('quizPlayTitle').textContent = 'Play the Daily Quiz – pick a day';
-  var html = '<div class="quiz-day-pick-grid">';
+  var scores = getQuizScores();
+  var totalScore = 0, totalPossible = 0, daysDone = 0;
   QUIZ_PLAY_DATA.forEach(function(d) {{
+    var s = scores[d.day_num];
+    if (s) {{ totalScore += s.score; totalPossible += s.total; daysDone++; }}
+  }});
+  var html = '';
+  if (daysDone > 0) {{
+    html += '<div class="quiz-total-banner">Trip total so far: ' + totalScore + ' / ' + totalPossible
+      + '<span>' + daysDone + ' of ' + QUIZ_PLAY_DATA.length + ' days played &ndash; retake a day any time to update its score</span></div>';
+  }}
+  html += '<div class="quiz-day-pick-grid">';
+  QUIZ_PLAY_DATA.forEach(function(d) {{
+    var s = scores[d.day_num];
+    var scoreBadge = s ? '<span class="quiz-day-pick-score">&#10003; ' + s.score + '/' + s.total + '</span>' : '';
     html += '<button type="button" class="quiz-day-pick-btn" onclick="startQuizDay(' + d.day_num + ')">'
       + '<span class="quiz-day-pick-num">Day ' + d.day_num + '</span>'
       + '<span class="quiz-day-pick-date">' + d.date + '</span>'
       + '<div class="quiz-day-pick-theme">' + d.theme + '</div>'
+      + scoreBadge
       + '</button>';
   }});
   html += '</div>';
@@ -5848,8 +5878,17 @@ function submitQuizPlay() {{
   }});
   document.getElementById('quizPlayTitle').textContent = day.date + ' – Results';
   var total = day.qs.length;
+  saveQuizScore(day.day_num, score, total);
+  var scores = getQuizScores();
+  var tripScore = 0, tripPossible = 0, tripDaysDone = 0;
+  QUIZ_PLAY_DATA.forEach(function(d) {{
+    var s = scores[d.day_num];
+    if (s) {{ tripScore += s.score; tripPossible += s.total; tripDaysDone++; }}
+  }});
   var html = '<div class="quiz-play-result-score">' + score + ' / ' + total + '</div>';
   html += '<div class="quiz-play-result-sub">' + (bonusCorrect ? 'Nailed the bonus question too! 🎉' : 'Nice work – check the review below.') + '</div>';
+  html += '<div class="quiz-total-banner">Trip total so far: ' + tripScore + ' / ' + tripPossible
+    + '<span>' + tripDaysDone + ' of ' + QUIZ_PLAY_DATA.length + ' days played</span></div>';
   html += reviewHtml;
   html += '<div class="quiz-play-nav"><button type="button" class="print-btn" onclick="quizPlayBackToDays()">&larr; Choose another day</button>';
   html += '<button type="button" class="print-btn" onclick="startQuizDay(' + day.day_num + ')">Retake this quiz</button></div>';
