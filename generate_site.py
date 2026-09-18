@@ -4288,6 +4288,14 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .expense-modal input, .expense-modal select, .expense-modal textarea { width:100%; padding:9px 12px; border-radius:8px; border:1px solid #ccd5e3; font-size:.9rem; font-family:inherit; box-sizing:border-box; resize:vertical; }
 .expense-modal-actions { display:flex; gap:10px; margin-top:18px; }
 .expense-modal-actions button { flex:1; padding:10px; border-radius:8px; border:none; font-weight:700; cursor:pointer; font-size:.9rem; }
+.expense-receipt-preview { margin-top:8px; }
+.expense-receipt-preview img { max-width:130px; max-height:130px; border-radius:8px; border:1px solid #ccd5e3; display:block; margin-bottom:6px; object-fit:cover; }
+.expense-receipt-remove { background:none; border:1px solid #ccd5e3; border-radius:6px; padding:4px 10px; font-size:.78rem; cursor:pointer; color:var(--muted); }
+.expense-receipt-badge { background:none; border:none; cursor:pointer; font-size:.85rem; padding:0 0 0 4px; vertical-align:middle; }
+.receipt-lightbox-overlay { display:none; position:fixed; inset:0; background:rgba(10,16,28,.88); z-index:10000; align-items:center; justify-content:center; padding:24px; }
+.receipt-lightbox-overlay.open { display:flex; }
+.receipt-lightbox-overlay img { max-width:100%; max-height:88vh; border-radius:10px; box-shadow:0 10px 34px rgba(0,0,0,.5); }
+.receipt-lightbox-close { position:absolute; top:18px; right:22px; background:#fff; border:none; border-radius:50%; width:38px; height:38px; font-size:1.3rem; line-height:1; cursor:pointer; box-shadow:0 3px 10px rgba(0,0,0,.3); }
 .expense-save-btn { background:var(--navy); color:#fff; }
 .expense-cancel-btn { background:#eee; color:var(--ink); }
 .expense-error { color:#a32d2d; font-size:.8rem; margin-top:6px; display:none; }
@@ -4711,6 +4719,10 @@ EXPENSES_SECTION_HTML = f'''
       </select>
       <label for="exp_business">Name of the place</label>
       <input type="text" id="exp_business" name="business" placeholder="e.g. Pinsere">
+      <label for="exp_receipt_file">Receipt photo (optional)</label>
+      <input type="file" accept="image/*" capture="environment" id="exp_receipt_file" onchange="handleReceiptFile(this.files[0])">
+      <input type="hidden" id="exp_receipt_data" name="receipt">
+      <div id="exp_receipt_preview" class="expense-receipt-preview"></div>
       <label for="exp_w3w">What3Words</label>
       <input type="text" id="exp_w3w" name="w3w" placeholder="///guard.cling.radio">
       <label for="exp_paidby">Who paid?</label>
@@ -4746,6 +4758,11 @@ EXPENSES_SECTION_HTML = f'''
       </div>
     </form>
   </div>
+</div>
+
+<div class="receipt-lightbox-overlay no-print" id="receiptLightboxOverlay" onclick="closeReceiptLightbox()">
+  <button type="button" class="receipt-lightbox-close" onclick="event.stopPropagation(); closeReceiptLightbox()">&times;</button>
+  <img id="receiptLightboxImg" src="" alt="Receipt">
 </div>
 
 <script>
@@ -4790,16 +4807,63 @@ function openExpenseModal(editId) {{
     document.getElementById('exp_taplaced').value = entry.taplaced || '';
     document.getElementById('exp_tareview').value = entry.tareview || '';
     document.getElementById('exp_comment').value = entry.comment || '';
+    document.getElementById('exp_receipt_data').value = entry.receipt || '';
+    document.getElementById('exp_receipt_file').value = '';
+    renderReceiptPreview(entry.receipt || '');
     title.textContent = 'Edit expense';
     saveBtn.textContent = 'Save changes';
   }} else {{
     document.getElementById('exp_id').value = '';
     document.getElementById('exp_action').value = 'add';
-    ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_w3w','exp_paidby','exp_locnum','exp_rating','exp_taplaced','exp_tareview','exp_comment'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
+    ['exp_location','exp_value','exp_date','exp_what','exp_business','exp_w3w','exp_paidby','exp_locnum','exp_rating','exp_taplaced','exp_tareview','exp_comment','exp_receipt_data','exp_receipt_file'].forEach(function(id) {{ document.getElementById(id).value = ''; }});
+    renderReceiptPreview('');
     title.textContent = 'Add an expense';
     saveBtn.textContent = 'Save expense';
   }}
   document.getElementById('expenseModalOverlay').classList.add('open');
+}}
+function handleReceiptFile(file) {{
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {{
+    var img = new Image();
+    img.onload = function() {{
+      var maxDim = 900;
+      var w = img.width, h = img.height;
+      if (w > maxDim || h > maxDim) {{
+        if (w > h) {{ h = Math.round(h * maxDim / w); w = maxDim; }}
+        else {{ w = Math.round(w * maxDim / h); h = maxDim; }}
+      }}
+      var canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      var dataUrl = canvas.toDataURL('image/jpeg', 0.6);
+      document.getElementById('exp_receipt_data').value = dataUrl;
+      renderReceiptPreview(dataUrl);
+    }};
+    img.src = ev.target.result;
+  }};
+  reader.readAsDataURL(file);
+}}
+function renderReceiptPreview(dataUrl) {{
+  var box = document.getElementById('exp_receipt_preview');
+  if (!box) return;
+  if (!dataUrl) {{ box.innerHTML = ''; return; }}
+  box.innerHTML = '<img src="' + dataUrl + '" alt="Receipt preview"><button type="button" class="expense-receipt-remove" onclick="removeReceiptPhoto()">Remove photo</button>';
+}}
+function removeReceiptPhoto() {{
+  document.getElementById('exp_receipt_data').value = '';
+  document.getElementById('exp_receipt_file').value = '';
+  renderReceiptPreview('');
+}}
+function openReceiptLightbox(id) {{
+  var e = computeActiveExpenses().filter(function(x) {{ return x.id === id; }})[0];
+  if (!e || !e.receipt) return;
+  document.getElementById('receiptLightboxImg').src = e.receipt;
+  document.getElementById('receiptLightboxOverlay').classList.add('open');
+}}
+function closeReceiptLightbox() {{
+  document.getElementById('receiptLightboxOverlay').classList.remove('open');
 }}
 function closeExpenseModal() {{ document.getElementById('expenseModalOverlay').classList.remove('open'); }}
 function fmtMoney(n) {{ return Number(n).toLocaleString(undefined, {{minimumFractionDigits:2, maximumFractionDigits:2}}); }}
@@ -4823,7 +4887,8 @@ function renderExpenses() {{
   }} else {{
     rows.innerHTML = all.map(function(e) {{
       var pendingTag = e.pending ? '<span class="expense-pending">(syncing&hellip;)</span>' : '';
-      return '<tr><td>' + e.date + '</td><td>' + e.location + '</td><td>' + e.what + '</td><td>' + e.business + '</td><td>' + e.paidby + pendingTag + '</td><td class="amt">' + e.currency + ' ' + fmtMoney(e.value) + '</td>' +
+      var receiptBadge = e.receipt ? ' <button type="button" class="expense-receipt-badge" onclick="openReceiptLightbox(\\'' + e.id + '\\')" title="View receipt">&#128247;</button>' : '';
+      return '<tr><td>' + e.date + '</td><td>' + e.location + '</td><td>' + e.what + '</td><td>' + e.business + receiptBadge + '</td><td>' + e.paidby + pendingTag + '</td><td class="amt">' + e.currency + ' ' + fmtMoney(e.value) + '</td>' +
         '<td class="no-print expense-row-actions"><span class="expense-row-box"><button type="button" class="expense-row-btn" onclick="openExpenseModal(\\'' + e.id + '\\')">Edit</button><button type="button" class="expense-row-btn expense-row-delete" onclick="deleteExpense(\\'' + e.id + '\\')">Delete</button></span></td></tr>';
     }}).join('');
   }}
@@ -4879,6 +4944,7 @@ function saveExpense() {{
   var taplaced = document.getElementById('exp_taplaced').value;
   var tareview = document.getElementById('exp_tareview').value.trim();
   var comment = document.getElementById('exp_comment').value.trim();
+  var receipt = document.getElementById('exp_receipt_data').value;
   var err = document.getElementById('expenseError');
   if (!location || !value || !date || !what || !business || !paidby) {{
     err.textContent = 'Fill in every field first.';
@@ -4887,7 +4953,7 @@ function saveExpense() {{
   }}
   err.style.display = 'none';
   var entry = {{id:id, action:action, location:location, value:parseFloat(value), currency:currency, date:date, what:what, business:business, w3w:w3w, paidby:paidby,
-                locnum:locnum, rating:rating, taplaced:taplaced, tareview:tareview, comment:comment, pending:true}};
+                locnum:locnum, rating:rating, taplaced:taplaced, tareview:tareview, comment:comment, receipt:receipt, pending:true}};
   var pending = getPendingExpenses();
   pending.push(entry);
   savePendingExpenses(pending);
