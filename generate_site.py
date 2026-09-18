@@ -4953,6 +4953,12 @@ ALL_FOOD_PLACES.append({
     'address': 'Via Volturno 54, 00185 Rome',
     'visited': True,
 })
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(9), 'place': 'Café Douce', 'day_num': 9,
+    'list_title': 'Gelato (18 Sept, actually visited)',
+    'address': 'Piazza Giacomo Matteotti 84R, 16123 Genova, Italy',
+    'visited': True,
+})
 
 FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
 _VISITED_FOOD_PLACES = [fp for fp in ALL_FOOD_PLACES if fp.get('visited')]

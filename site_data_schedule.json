@@ -672,6 +672,12 @@
           "address": "Visit Website: Cunard Shore Excursions"
         },
         {
+          "time": "12:00 PM",
+          "event": "Gelato at Café Douce",
+          "status": "Visited",
+          "address": "Piazza Giacomo Matteotti 84R, 16123 Genova, Italy"
+        },
+        {
           "time": "5:00 PM",
           "event": "Pre-dinner drinks at the Golden Lion Pub",
           "status": "Optional",
@@ -694,12 +700,6 @@
           "event": "Rhubarb Gin & Pepsi Max at the Commodore Club",
           "status": "Optional",
           "address": "Aboard Queen Victoria"
-        },
-        {
-          "time": "10:00 PM",
-          "event": "Churchill's Cigar Lounge, Level 10",
-          "status": "Optional",
-          "address": "Aboard Queen Victoria, Level 10 (Commodore Deck)"
         }
       ],
       "stay": "Staying aboard Queen Victoria"
