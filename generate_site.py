@@ -4539,7 +4539,7 @@ FLIGHTS = [
     ('Fri 11 Sept', 'AZ759', 'ITA Airways', 'SAT-1 &rarr; T3', 'Bangkok (BKK) &rarr; Rome Fiumicino (FCO)', '12:25pm &rarr; 7:15pm', 'Premium Economy', '11h 50m', 'all', 'Included'),                    #6 REBOOKED
     ('Thu 24 Sept', 'BA575', 'British Airways', 'n/a &rarr; T5', 'Milan Linate (LIN) &rarr; London Heathrow (LHR)', '3:55pm &rarr; 4:50pm', 'Business', '1h 55m', 'all', '2&times;32kg'),                     #7
     ('Sun 27 &ndash; Mon 28 Sept', 'BA15', 'British Airways', 'T5 &rarr; T1', 'London Heathrow (LHR) &rarr; Singapore (SIN)', '10:00pm &rarr; 6:40pm +1', 'Premium Economy', '13h 40m', 'all', '2&times;23kg'), #8
-    ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'British Airways', 'T1 &rarr; T1', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; 6:05am +1', 'Premium Economy', '7h 45m', 'all', '2&times;23kg'),          #9
+    ('Mon 28 &ndash; Tue 29 Sept', 'BA15', 'British Airways', 'T1 &rarr; T1', 'Singapore (SIN) &rarr; Sydney (SYD)', '8:20pm &rarr; <s>6:05am +1</s> 5:45am +1', 'Premium Economy', '<s>7h 45m</s> 7h 25m', 'all', '2&times;23kg'),          #9 RETIMED
     ('Tue 29 Sept', 'QF161', 'Qantas', 'T1 &rarr; n/a', 'Sydney (SYD) &rarr; Wellington (WLG)', '9:35am &rarr; 3:45pm', 'Economy', '3h 10m', 'gk', '30kg'),                                                    #10
 ]
 FLIGHT_WHO = {'gk': 'Karen &amp; Gary only', 'dt': 'Deb &amp; Tom only', 'all': 'All 4'}
@@ -4549,6 +4549,7 @@ FLIGHT_ROW_STATUS = {
     1: 'retimed',
     2: 'superseded', 3: 'superseded', 4: 'superseded',
     5: 'rebooked', 6: 'rebooked',
+    9: 'retimed',
 }
 # Connection time between two consecutive flights at the same airport, keyed by the
 # FLIGHTS index the connection precedes (i.e. the layover before boarding that row).
@@ -4557,7 +4558,7 @@ FLIGHT_ROW_STATUS = {
 FLIGHT_CONNECTIONS = {
     1: ('Sydney (SYD)', '12h 21m'),
     9: ('Singapore (SIN)', '1h 40m'),
-    10: ('Sydney (SYD)', '3h 30m'),
+    10: ('Sydney (SYD)', '3h 50m'),
 }
 # A longer, actionable gap that needs something arranged (e.g. an overnight stay),
 # rendered in a stronger red-accented alert row rather than the plain gold connection style.
@@ -4574,6 +4575,7 @@ FLIGHT_STATUS_NOTES = {
     1: '&#128992; Update (per Qantas booking #EKNMYW): as part of this rebooking, QF1\'s own Sydney&rarr;Singapore departure has also shifted &ndash; from the original 2:45pm to 8:00pm, now landing in Singapore at 2:30am (was 9:15pm). It still never enters UK airspace, so it wasn\'t itself broken by the Heathrow disruption &ndash; Qantas has just re-sequenced it to line up with the new Bangkok routing below. Sydney transit is now 12h 21m, up from the original ~7h.',
     4: '&#10060; Rebooked (per Qantas booking #EKNMYW): after the NATS (UK air traffic control) system failure on Tue 8 Sept cancelled 1,750+ UK flights and disrupted Heathrow for days (including this route\'s BA548 and BA575 services on Wed 9 Sept), Qantas has rebooked this Singapore&rarr;London&rarr;Rome connection entirely off the London routing. The two rows above (BA12, BA548) are cancelled for this booking &ndash; see the new routing via Bangkok below.',
     6: '&#9989; New routing CONFIRMED (per official Qantas booking PDFs #EKNMYW &amp; #EKH3PP, sent by Lynaire Monnery/Envoyage 10 Sept): TG402 (Economy) + AZ759 (Premium Economy) replace BA12 + BA548, avoiding London/Heathrow altogether. This now lands in Rome at 7:15pm instead of 11:35am &ndash; about 7&frac12; hours later than planned, so Friday 11 Sept\'s Rome afternoon (transfer, lunch, free time) needs reworking &ndash; see Day 2 of the itinerary. Checked-bag allowance for these two sectors is shown only as “included” (no kg figure given) &ndash; confirm the exact weight at qantas.com/yourbooking or the Qantas app before travelling. If a refund is preferred instead of flying this new routing, that\'s also available there (or via your travel agent if booked through one).',
+    9: '&#128992; Update (per updated Sabre e-ticket, fwd by Lynaire Monnery/Envoyage 18 Sept, confirmation# EKNMYW): British Airways has retimed this Singapore&rarr;Sydney sector &ndash; new flight duration 7h 25m (was 7h 45m), now landing at 5:45am +1 (was 6:05am +1). Departure from Singapore is unchanged at 8:20pm, as is the earlier LHR&rarr;SIN sector (still 10:00pm &rarr; 6:40pm +1) and the onward QF161 Sydney&rarr;Wellington sector (still 9:35am &rarr; 3:45pm) &ndash; nothing else on the return journey has moved. No issues caused by this change: landing 20 minutes earlier only lengthens the Sydney layover before QF161, from 3h 30m to 3h 50m, so there\'s comfortably more buffer than before, not less.',
 }
 flight_rows_html = ''
 for _i, (date, flight, airline, terminals, route, times, cabin, dur, who, bag) in enumerate(FLIGHTS):
