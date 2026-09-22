@@ -840,16 +840,34 @@
           "address": "Directions from Hotel: Il Caffè degli Amici"
         },
         {
+          "time": "10:30 AM",
+          "event": "Morning tea at Blandis Cafe & Wine Bar, Siena",
+          "status": "Visited",
+          "address": "Via Esterna di Fontebranda 50, 53100 Siena, Italy"
+        },
+        {
+          "time": "12:00 PM",
+          "event": "Lunch at 4 Cantoni, Siena",
+          "status": "Visited",
+          "address": "Piazza Postierla 5, 53100 Siena, Italy"
+        },
+        {
+          "time": "2:00 PM",
+          "event": "Visit Duomo di Siena (Karen & Deb went in, Tom & Gary patiently waited)",
+          "status": "Visited",
+          "address": "Piazza del Duomo, 53100 Siena, Italy"
+        },
+        {
           "time": "4:00 PM",
-          "event": "Potential Pastries/Coffee: Pasticceria La Golosa",
-          "status": "Optional",
-          "address": "Directions from Hotel: Pasticceria La Golosa"
+          "event": "Drink at Roxy Bar, Siena (Diet Coke)",
+          "status": "Visited",
+          "address": "Via del Poggio, 53100 Siena, Italy"
         },
         {
           "time": "7:00 PM",
-          "event": "Potential Restaurant: Triocco",
-          "status": "Optional",
-          "address": "Directions from Hotel: Triocco"
+          "event": "Dinner at Triocco",
+          "status": "Visited",
+          "address": "Via Vittorio Veneto 48, 50021 Barberino Tavarnelle (FI), Italy"
         }
       ],
       "stay": "Staying at Hotel Borgo di Cortefreda Relais, Tuscany"

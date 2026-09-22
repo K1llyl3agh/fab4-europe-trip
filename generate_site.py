@@ -139,6 +139,7 @@ WEBLINKS = [
     ('hard rock', 'https://cafe.hardrock.com/london/'),
     ('lunch at locanda dei mille', 'https://www.locandadeimille.it/'),
     ('dinner at ristorante cortefreda', 'https://www.borgodicortefreda.com/en/restaurant.php'),
+    ('blandis cafe', 'https://www.blandis.cafe/'),
 ]
 
 def weblink_for(name):
@@ -160,6 +161,10 @@ EVENT_TRIPADVISOR = [
     ("potential early lunch at harry's knightsbridge", 'https://www.tripadvisor.com/Restaurant_Review-g186338-d13224804-Reviews-Harry_s_Dolce_Vita_Knightsbridge-London_England.html'),
     ('lunch at locanda dei mille', 'https://www.tripadvisor.com/Restaurant_Review-g194929-d2166432-Reviews-Locanda_Dei_Mille-Talamone_Orbetello_Province_of_Grosseto_Tuscany.html'),
     ('dinner at ristorante cortefreda', 'https://www.tripadvisor.com/Restaurant_Review-g670654-d2313868-Reviews-Ristorante_Cortefreda-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html'),
+    ('blandis cafe', 'https://www.tripadvisor.com/Restaurant_Review-g187902-d10187240-Reviews-Blandis_Cafe_Wine_Bar-Siena_Tuscany.html'),
+    ('lunch at 4 cantoni', 'https://www.tripadvisor.com/Restaurant_Review-g187902-d1985429-Reviews-Ristorante_Quattro_Cantoni-Siena_Tuscany.html'),
+    ('drink at roxy bar', 'https://www.tripadvisor.com/Restaurant_Review-g187902-d3732724-Reviews-Roxy_Bar_Siena-Siena_Tuscany.html'),
+    ('dinner at triocco', 'https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html'),
 ]
 
 def tripadvisor_for(name):
@@ -178,6 +183,10 @@ EVENT_PHONE = [
     ('dinner at hard rock cafe london', '0044 20 7514 1700'),
     ('lunch at locanda dei mille', '+39 380 3088229'),
     ('dinner at ristorante cortefreda', '+39 055 807 3333'),
+    ('blandis cafe', '+39 338 8965141'),
+    ('lunch at 4 cantoni', '+39 0577 601366'),
+    ('drink at roxy bar', '+39 0577 42143'),
+    ('dinner at triocco', '+39 055 807 5120'),
 ]
 
 def event_phone_for(name):
@@ -217,6 +226,10 @@ EVENT_W3W = [
     ("st. peter's basilica entry", 'bind.cobbled.muscular'),
     ('lunch at locanda dei mille', 'coughed.skinning.wools'),
     ('dinner at ristorante cortefreda', 'glimpse.much.overage'),
+    ('blandis cafe', 'distract.cure.reviewed'),
+    ('lunch at 4 cantoni', 'tester.allergy.behaving'),
+    ('drink at roxy bar', 'guitars.soldiers.signal'),
+    ('dinner at triocco', 'pricked.comically.barbers'),
 ]
 
 def event_w3w_for(name):
@@ -473,7 +486,6 @@ WEBLINKS_APPEND = [
     ('agriturismo buratta', 'https://www.tripadvisor.co.nz/Restaurant_Review-g194929-d1894984-Reviews-Agriturismo_Buratta-Talamone_Orbetello_Province_of_Grosseto_Tuscany.html'),
     ('il caff', 'https://www.tripadvisor.com/Restaurant_Review-g670654-d3612860-Reviews-Caffe_Degli_Amici-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html'),
     ('la golosa', 'https://www.tripadvisor.com/Restaurant_Review-g670654-d3418380-Reviews-Pasticceria_La_Golosa-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html'),
-    ('triocco', 'https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html'),
     ('wandering around oxford street', 'https://www.oxfordstreet.co.uk/'),
     ('visit waterstones piccadilly', 'https://www.waterstones.com/bookshops/piccadilly'),
     ('dinner at britannia restaurant', 'https://www.cunard.com/en-us/cruise-ships/queen-victoria/9'),
@@ -5045,6 +5057,24 @@ ALL_FOOD_PLACES.append({
     'code': next_food_code(12), 'place': 'Ristorante Cortefreda', 'day_num': 12,
     'list_title': 'Dinner (21 Sept, actually visited)',
     'address': 'Via Roma 191, 50028 Tavarnelle Val di Pesa (FI), Italy',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(13), 'place': 'Blandis Cafe & Wine Bar', 'day_num': 13,
+    'list_title': 'Morning Tea (22 Sept, actually visited)',
+    'address': 'Via Esterna di Fontebranda 50, 53100 Siena, Italy',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(13), 'place': '4 Cantoni', 'day_num': 13,
+    'list_title': 'Lunch (22 Sept, actually visited)',
+    'address': 'Piazza Postierla 5, 53100 Siena, Italy',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(13), 'place': 'Triocco', 'day_num': 13,
+    'list_title': 'Dinner (22 Sept, actually visited)',
+    'address': 'Via Vittorio Veneto 48, 50021 Barberino Tavarnelle (FI), Italy',
     'visited': True,
 })
 
