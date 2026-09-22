@@ -137,6 +137,8 @@ def badge(status):
 WEBLINKS = [
     ('lighterman', 'https://www.thelighterman.co.uk/'),
     ('hard rock', 'https://cafe.hardrock.com/london/'),
+    ('lunch at locanda dei mille', 'https://www.locandadeimille.it/'),
+    ('dinner at ristorante cortefreda', 'https://www.borgodicortefreda.com/en/restaurant.php'),
 ]
 
 def weblink_for(name):
@@ -156,6 +158,8 @@ EVENT_TRIPADVISOR = [
     ('tower of london tour', 'https://www.tripadvisor.com/Attraction_Review-g186338-d187788-Reviews-Tower_of_London-London_England.html'),
     ('river tour', 'https://www.tripadvisor.com/Attraction_Review-g186338-d33301104-Reviews-Tower_of_London_River_Tour-London_England.html'),
     ("potential early lunch at harry's knightsbridge", 'https://www.tripadvisor.com/Restaurant_Review-g186338-d13224804-Reviews-Harry_s_Dolce_Vita_Knightsbridge-London_England.html'),
+    ('lunch at locanda dei mille', 'https://www.tripadvisor.com/Restaurant_Review-g194929-d2166432-Reviews-Locanda_Dei_Mille-Talamone_Orbetello_Province_of_Grosseto_Tuscany.html'),
+    ('dinner at ristorante cortefreda', 'https://www.tripadvisor.com/Restaurant_Review-g670654-d2313868-Reviews-Ristorante_Cortefreda-Tavarnelle_Val_di_Pesa_Barberino_Tavarnellle_Tuscany.html'),
 ]
 
 def tripadvisor_for(name):
@@ -172,6 +176,8 @@ EVENT_PHONE = [
     ('dinner at albert schloss', '020 8165 0000'),
     ('dinner at the lighterman', '020 3846 3400'),
     ('dinner at hard rock cafe london', '0044 20 7514 1700'),
+    ('lunch at locanda dei mille', '+39 380 3088229'),
+    ('dinner at ristorante cortefreda', '+39 055 807 3333'),
 ]
 
 def event_phone_for(name):
@@ -209,6 +215,8 @@ EVENT_W3W = [
     ('vatican museums & sistine chapel tour ends', 'changing.swimmer.mutual'),
     ('travel to colosseum meeting point', 'mule.dabbing.fonts'),
     ("st. peter's basilica entry", 'bind.cobbled.muscular'),
+    ('lunch at locanda dei mille', 'coughed.skinning.wools'),
+    ('dinner at ristorante cortefreda', 'glimpse.much.overage'),
 ]
 
 def event_w3w_for(name):
@@ -5025,6 +5033,18 @@ ALL_FOOD_PLACES.append({
     'code': next_food_code(9), 'place': 'Café Douce', 'day_num': 9,
     'list_title': 'Gelato (18 Sept, actually visited)',
     'address': 'Piazza Giacomo Matteotti 84R, 16123 Genova, Italy',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(12), 'place': 'Locanda dei Mille', 'day_num': 12,
+    'list_title': 'Lunch (21 Sept, actually visited)',
+    'address': 'Piazza IV Novembre 1, 58015 Talamone, Orbetello (GR), Italy',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(12), 'place': 'Ristorante Cortefreda', 'day_num': 12,
+    'list_title': 'Dinner (21 Sept, actually visited)',
+    'address': 'Via Roma 191, 50028 Tavarnelle Val di Pesa (FI), Italy',
     'visited': True,
 })
 

@@ -805,9 +805,9 @@
         },
         {
           "time": "11:30 AM",
-          "event": "Lunch option: Agriturismo Buratta, Talamone",
-          "status": "Optional",
-          "address": "Directions: Agriturismo Buratta"
+          "event": "Lunch at Locanda dei Mille, Talamone",
+          "status": "Visited",
+          "address": "Piazza IV Novembre 1, 58015 Talamone, Orbetello (GR), Italy"
         },
         {
           "time": "1:00 PM",
@@ -820,6 +820,12 @@
           "event": "Arrive Hotel Borgo di Cortefreda Relais",
           "status": null,
           "address": "Via Roma 191, 50028, Tavarnelle Val Di Pesa\nParking note: free onsite parking (contact hotel in advance to reserve a space)"
+        },
+        {
+          "time": "7:30 PM",
+          "event": "Dinner at Ristorante Cortefreda",
+          "status": "Visited",
+          "address": "Via Roma 191, 50028 Tavarnelle Val di Pesa (FI), Italy"
         }
       ],
       "stay": "Staying at Hotel Borgo di Cortefreda Relais, Tuscany"
