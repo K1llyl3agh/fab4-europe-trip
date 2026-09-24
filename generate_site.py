@@ -142,6 +142,7 @@ WEBLINKS = [
     ('blandis cafe', 'https://www.blandis.cafe/'),
     ('dinner at il tavolino', 'https://www.ristoranteiltavolino.it/en/'),
     ('lunch at caffè miralago', 'https://www.miralagoluxuryapartments.com/'),
+    ('coffee & croissant at biffi', 'https://www.biffigalleria.it/en/the-biffi'),
 ]
 
 def weblink_for(name):
@@ -169,6 +170,7 @@ EVENT_TRIPADVISOR = [
     ('dinner at triocco', 'https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html'),
     ('dinner at il tavolino', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d2705901-Reviews-Il_Tavolino-Milan_Lombardy.html'),
     ('lunch at caffè miralago', 'https://www.tripadvisor.com/Restaurant_Review-g194728-d2075715-Reviews-Caffe_Miralago-Cernobbio_Lake_Como_Lombardy.html'),
+    ('coffee & croissant at biffi', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d1541347-Reviews-Biffi-Milan_Lombardy.html'),
 ]
 
 def tripadvisor_for(name):
@@ -193,6 +195,7 @@ EVENT_PHONE = [
     ('dinner at triocco', '+39 055 807 5120'),
     ('dinner at il tavolino', '+39 02 6703520'),
     ('lunch at caffè miralago', '+39 031 443 86 01'),
+    ('coffee & croissant at biffi', '+39 02 805 7961'),
 ]
 
 def event_phone_for(name):
@@ -238,6 +241,7 @@ EVENT_W3W = [
     ('dinner at triocco', 'pricked.comically.barbers'),
     ('dinner at il tavolino', 'educated.symphony.jams'),
     ('lunch at caffè miralago', 'output.gardener.obsessively'),
+    ('coffee & croissant at biffi', 'result.migrants.trip'),
 ]
 
 def event_w3w_for(name):
@@ -2807,6 +2811,7 @@ DAY24_MAP = {
     'title': "Thursday 24 Sept - Today's Places & Suggested Routes",
     'stops': [
         {'name': 'iQ Hotel Milano', 'note': 'Start of day - check out'},
+        {'name': 'Duomo di Milano / Galleria Vittorio Emanuele II', 'note': '9:30am - Metro to Duomo, look around, coffee & croissant at Biffi'},
         {'name': 'Milan Linate Airport', 'note': '12:00pm - Return hire car'},
         {'name': 'London Heathrow Airport (Terminal 5)', 'note': '4:50pm - Arrive on flight BA575'},
         {'name': 'The Level at Melia White House', 'note': '6:00pm - Arrive, check in / drop bags'},
@@ -2814,6 +2819,7 @@ DAY24_MAP = {
         {'name': 'The Level at Melia White House', 'note': 'Return for the night'},
     ],
     'legs': [
+        {'time': '~10 min each way', 'distance': '~2.5 km', 'method': 'Milan Metro M3 (yellow line): direct from Milano Centrale FS to Duomo, no change needed'},
         {'time': '~20 min', 'distance': '~8 km', 'method': 'Drive: iQ Hotel Milano to Milan Linate Airport (car return)'},
         {'time': '~1h 55m flight (dep 3:55pm, arr 4:50pm)', 'distance': '~1,000 km', 'method': 'Flight BA575 (British Airways), Milan Linate to London Heathrow (T5) (~55 min apart on local clocks due to the UK/Italy time difference)'},
         {'time': '~70 min total', 'distance': '~24 km', 'method': 'Immigration/border and baggage at Heathrow T5 (~25 min), then meet the Luxury Private Vehicle driver at Meeting Point South, by Caffè Nero, for the transfer (The Traveling Group / London Travel In, ref 190826) direct to The Level at Meliá White House (~45 min drive)'},
@@ -4107,6 +4113,9 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .options-toggle-row { text-align:center; margin:10px 0 18px; }
 .options-toggle-btn { padding:8px 18px; }
 @media print { .options-toggle-row { display:none !important; } .options-bc-hidden { display:block !important; } }
+.resto-toggle-btn { margin-left:10px; vertical-align:middle; }
+.milan-resto-wrap-hidden { display:none; }
+@media print { .milan-resto-wrap-hidden { display:none !important; } }
 .dinner-box .place-grid { margin:10px 0 0; }
 .option-box { margin-top:16px; padding:16px 18px; background:#eef3fb; border:1px dashed var(--london); border-radius:10px; }
 .option-box .place-grid { margin:10px 0 0; grid-template-columns:1fr; max-width:340px; }
@@ -5128,6 +5137,12 @@ ALL_FOOD_PLACES.append({
     'address': 'Via Gustavo Fara 23, 20124 Milan, Italy',
     'visited': True,
 })
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(15), 'place': 'Biffi', 'day_num': 15,
+    'list_title': 'Coffee & Croissant (24 Sept, actually visited)',
+    'address': 'Via Ugo Foscolo 3, 20121 Milano, Italy (Galleria Vittorio Emanuele II, by Piazza del Duomo)',
+    'visited': True,
+})
 
 FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
 _VISITED_FOOD_PLACES = [fp for fp in ALL_FOOD_PLACES if fp.get('visited')]
@@ -5427,9 +5442,11 @@ HTML = f'''<!DOCTYPE html>
   <p class="lede"><strong>Note on Option C:</strong> Venice is a significant detour east before doubling back west to Milan &ndash; approx. 610 km / ~6h 20m total driving (vs. ~1h 30m for the base plan, ~5h 15m for Option A, ~3h 40m for Option B). Also note Venice's historic centre is car-free, so the car must be left at Tronchetto or Piazzale Roma and the centre reached on foot/vaporetto. Worth confirming everyone's comfortable with the long day before booking.</p>
   {italy_options_html}
 
-  <h3>Potential Dinner Restaurants &ndash; Milan (23 September, all 3 plans)</h3>
+  <h3>Potential Dinner Restaurants &ndash; Milan (23 September, all 3 plans) <button class="print-mini no-print resto-toggle-btn" id="milan-resto-toggle-btn" onclick="toggleMilanRestos()">Hide</button></h3>
+  <div class="milan-resto-wrap" id="milan-resto-wrap">
   <p class="lede">All confirmed open on a Wednesday. The first three (Cantine Milano, L'Immagine, Casa Festa) were the original shortlist; the five below (Osteria Cornalia, Da Gigi, Osteria Nanin - Torriani, Giannino dal 1899, Pizza Shamb&ograve;) are all 4-5 star Italian/Mediterranean options and much closer to the hotel (6-12 min walk, except Pizza Shamb&ograve; at ~25 min). Hours and ratings sourced online &ndash; please reconfirm nearer the date. Distances are estimates only, from iQ Hotel Milano.</p>
   <div class="resto-list">{milan_dinner_stack_html}</div>
+  </div>
 </section>
 </div>
 
@@ -5936,6 +5953,24 @@ function toggleOptionsBC() {{
   var hidden = saved === '1';
   box.classList.toggle('options-bc-hidden', hidden);
   if (btn) btn.textContent = hidden ? 'Show Options B & C' : 'Hide Options B & C';
+}})();
+function toggleMilanRestos() {{
+  var box = document.getElementById('milan-resto-wrap');
+  if (!box) return;
+  var btn = document.getElementById('milan-resto-toggle-btn');
+  var hidden = box.classList.toggle('milan-resto-wrap-hidden');
+  localStorage.setItem('fab4-milan-resto-hidden', hidden ? '1' : '0');
+  if (btn) btn.textContent = hidden ? 'Show' : 'Hide';
+}}
+(function() {{
+  var box = document.getElementById('milan-resto-wrap');
+  if (!box) return;
+  var saved = localStorage.getItem('fab4-milan-resto-hidden');
+  if (saved === null) return;
+  var btn = document.getElementById('milan-resto-toggle-btn');
+  var hidden = saved === '1';
+  box.classList.toggle('milan-resto-wrap-hidden', hidden);
+  if (btn) btn.textContent = hidden ? 'Show' : 'Hide';
 }})();
 (function() {{
   document.querySelectorAll('[id^="food-wrap-"]').forEach(function(box) {{
