@@ -521,7 +521,7 @@ WEBLINKS_APPEND = [
     ('aroma specialty coffee', 'https://www.ilpiaceredelcaffe.it/'),
     ('arrive como - como-brunate funicular', 'https://www.funicolarecomo.it/'),
     ('gelato with a view at il balcone sul lago', 'https://www.facebook.com/Ilbalconesullago/'),
-    ('nightcap drinks at liquido rooftop bar', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html'),
+    ('pre-dinner drinks at liquido rooftop bar', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d19184966-Reviews-Liquido_Rooftop_Bar-Milan_Lombardy.html'),
     ('pre-dinner drinks - terrazza montemartini', 'http://www.palazzomontemartini.com/'),
     ('dinner at diana\'s place bistrot', 'https://www.dianasplace.it/'),
     ('drinks at ristorante pizzeria castello', 'https://www.ristorantepizzeriacastello.com/'),
@@ -531,7 +531,7 @@ WEBLINKS_APPEND = [
 WEBLINKS.extend(WEBLINKS_APPEND)
 
 EVENT_PHOTOS = [
-    ('nightcap drinks at liquido rooftop bar', 'https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg'),
+    ('pre-dinner drinks at liquido rooftop bar', 'https://www.iqhotelmilano.it/static/673921934cef5b847413f341bc82c433/b0c6e/0de29cf2-6818-490c-ba2f-1dd8aaa4f4ee.jpg'),
     ('dinner at albert schloss', 'https://assets.albertsschloss.com/content/uploads/2024/01/Schloss-London-Header-1400x788.jpg'),
     ('dinner at the lighterman', 'http://static1.squarespace.com/static/61cc647e2e2bca2f4e1ae1da/t/61cc64ad2e2bca2f4e1ae5e8/1745590094055/WC%2BHeader.png?format=1500w'),
     ('arrive at the level', 'https://commons.wikimedia.org/wiki/Special:FilePath/Great%20Portland%20Street%20underground%20station%20-%20geograph.org.uk%20-%201522059.jpg'),
@@ -557,7 +557,7 @@ MENU_LINKS = [
     ('potential restaurant: triocco', 'https://www.borghiditoscana.net/en/restaurant-pizzeria-triocco-in-barberino-val-delsa-florence/il-menu-del-ristorante-triocco-barberino-val-delsa-2/'),
     ('lunch option: agriturismo buratta', 'https://restaurantguru.com/Agriturismo-Buratta-Fonteblanda/menu'),
     ('potential breakfast/coffee: il caff', 'https://weur-cdn.piatti.menu/storage/media/companies_menu_pdf/112559238/il-caffe-degli-amici-tavarnelle-val-di-pesa-piatti.pdf'),
-    ('nightcap drinks at liquido rooftop bar', 'https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf'),
+    ('pre-dinner drinks at liquido rooftop bar', 'https://www.iqhotelmilano.it/static/c1cb719b5ae20721fbd597b4fa1f23c9/Menu%20Beverage%20+%20Food_Liquido.pdf.pdf'),
     ("potential early lunch at harry's knightsbridge", 'https://harrysdolcevita.com/harrys-menu/'),
 ]
 

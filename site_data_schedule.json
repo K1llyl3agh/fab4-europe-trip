@@ -984,6 +984,12 @@
           "address": null
         },
         {
+          "time": "6:00 PM",
+          "event": "Pre-Dinner drinks at LiQuido Rooftop Bar, before heading out on the town (6:00pm-6:45pm)",
+          "status": "Booked",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)"
+        },
+        {
           "time": "7:00 PM",
           "event": "Dinner in Milan",
           "status": "To Book",
@@ -999,18 +1005,6 @@
           "time": "8:00 PM",
           "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
           "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "9:00 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar",
-          "status": "Booked",
-          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
-        },
-        {
-          "time": "9:30 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
-          "status": "Booked",
           "address": null
         }
       ],
@@ -1148,22 +1142,16 @@
           "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
         },
         {
+          "time": "6:30 PM",
+          "event": "Pre-Dinner drinks at LiQuido Rooftop Bar, before heading out on the town (6:30pm-6:55pm)",
+          "status": "Visited",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)"
+        },
+        {
           "time": "7:00 PM",
           "event": "Dinner at Il Tavolino, 7:00-10:45pm (a GREAT Night)",
           "status": "Visited",
           "address": "Via Gustavo Fara 23, 20124 Milan, Italy"
-        },
-        {
-          "time": "9:00 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar",
-          "status": "Booked",
-          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
-        },
-        {
-          "time": "9:30 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
-          "status": "Booked",
-          "address": null
         }
       ],
       "stay": "iQ Hotel Milano, Milan (OPTION A)"
@@ -1256,6 +1244,12 @@
           "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
         },
         {
+          "time": "6:00 PM",
+          "event": "Pre-Dinner drinks at LiQuido Rooftop Bar, before heading out on the town (6:00pm-6:45pm)",
+          "status": "Booked",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)"
+        },
+        {
           "time": "7:00 PM",
           "event": "Dinner in Milan",
           "status": "To Book",
@@ -1271,18 +1265,6 @@
           "time": "8:00 PM",
           "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
           "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "9:00 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar",
-          "status": "Booked",
-          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
-        },
-        {
-          "time": "9:30 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
-          "status": "Booked",
           "address": null
         }
       ],
@@ -1430,6 +1412,12 @@
           "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
         },
         {
+          "time": "6:00 PM",
+          "event": "Pre-Dinner drinks at LiQuido Rooftop Bar, before heading out on the town (6:00pm-6:45pm)",
+          "status": "Booked",
+          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)"
+        },
+        {
           "time": "7:00 PM",
           "event": "Dinner in Milan",
           "status": "To Book",
@@ -1445,18 +1433,6 @@
           "time": "8:00 PM",
           "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
           "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "9:00 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar",
-          "status": "Booked",
-          "address": "Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)\nVisit TripAdvisor: LiQuido Rooftop Bar"
-        },
-        {
-          "time": "9:30 PM",
-          "event": "Nightcap drinks at LiQuido Rooftop Bar (continues - ends approx. 10:00pm)",
-          "status": "Booked",
           "address": null
         }
       ],
