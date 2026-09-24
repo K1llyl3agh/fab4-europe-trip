@@ -997,21 +997,9 @@
         },
         {
           "time": "7:00 PM",
-          "event": "Dinner in Milan",
-          "status": "To Book",
-          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
-        },
-        {
-          "time": "7:30 PM",
-          "event": "Dinner in Milan (continues)",
-          "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "8:00 PM",
-          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
-          "status": "To Book",
-          "address": null
+          "event": "Dinner at Il Tavolino, 7:00-10:45pm (a GREAT Night)",
+          "status": "Visited",
+          "address": "Via Gustavo Fara 23, 20124 Milan, Italy"
         }
       ],
       "stay": null
@@ -1257,21 +1245,9 @@
         },
         {
           "time": "7:00 PM",
-          "event": "Dinner in Milan",
-          "status": "To Book",
-          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
-        },
-        {
-          "time": "7:30 PM",
-          "event": "Dinner in Milan (continues)",
-          "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "8:00 PM",
-          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
-          "status": "To Book",
-          "address": null
+          "event": "Dinner at Il Tavolino, 7:00-10:45pm (a GREAT Night)",
+          "status": "Visited",
+          "address": "Via Gustavo Fara 23, 20124 Milan, Italy"
         }
       ],
       "stay": "iQ Hotel Milano, Milan (OPTION B)"
@@ -1425,21 +1401,9 @@
         },
         {
           "time": "7:00 PM",
-          "event": "Dinner in Milan",
-          "status": "To Book",
-          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
-        },
-        {
-          "time": "7:30 PM",
-          "event": "Dinner in Milan (continues)",
-          "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "8:00 PM",
-          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
-          "status": "To Book",
-          "address": null
+          "event": "Dinner at Il Tavolino, 7:00-10:45pm (a GREAT Night)",
+          "status": "Visited",
+          "address": "Via Gustavo Fara 23, 20124 Milan, Italy"
         }
       ],
       "stay": "iQ Hotel Milano, Milan (OPTION C)"

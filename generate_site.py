@@ -516,7 +516,6 @@ WEBLINKS_APPEND = [
     ('easy pisa', 'https://www.cunard.com/en-us/shore-excursions'),
     ('tower of london tour', 'https://www.headout.com/tower-of-london-tickets/'),
     ('river tour', 'https://www.toweroflondonrivertour.com/tickets/'),
-    ('dinner in milan', 'https://www.tripadvisor.com/Restaurants-g187849-Milan_Lombardy.html'),
     ('arrive milan - check-in at iq hotel milano', 'https://www.iqhotelmilano.it/'),
     ("lunch at harry's bar, cernobbio", 'https://www.harrysbarcernobbio.it/en/'),
     ('visit museo ferrari, maranello', 'https://www.ferrari.com/en-EN/museums/ferrari-maranello'),
