@@ -140,6 +140,8 @@ WEBLINKS = [
     ('lunch at locanda dei mille', 'https://www.locandadeimille.it/'),
     ('dinner at ristorante cortefreda', 'https://www.borgodicortefreda.com/en/restaurant.php'),
     ('blandis cafe', 'https://www.blandis.cafe/'),
+    ('dinner at il tavolino', 'https://www.ristoranteiltavolino.it/en/'),
+    ('lunch at caffè miralago', 'https://www.miralagoluxuryapartments.com/'),
 ]
 
 def weblink_for(name):
@@ -165,6 +167,8 @@ EVENT_TRIPADVISOR = [
     ('lunch at 4 cantoni', 'https://www.tripadvisor.com/Restaurant_Review-g187902-d1985429-Reviews-Ristorante_Quattro_Cantoni-Siena_Tuscany.html'),
     ('drink at roxy bar', 'https://www.tripadvisor.com/Restaurant_Review-g187902-d3732724-Reviews-Roxy_Bar_Siena-Siena_Tuscany.html'),
     ('dinner at triocco', 'https://www.tripadvisor.com/Restaurant_Review-g616195-d14128899-Reviews-Triocco-Barberino_Val_d_Elsa_Barberino_Tavarnelle_Tuscany.html'),
+    ('dinner at il tavolino', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d2705901-Reviews-Il_Tavolino-Milan_Lombardy.html'),
+    ('lunch at caffè miralago', 'https://www.tripadvisor.com/Restaurant_Review-g194728-d2075715-Reviews-Caffe_Miralago-Cernobbio_Lake_Como_Lombardy.html'),
 ]
 
 def tripadvisor_for(name):
@@ -187,6 +191,8 @@ EVENT_PHONE = [
     ('lunch at 4 cantoni', '+39 0577 601366'),
     ('drink at roxy bar', '+39 0577 42143'),
     ('dinner at triocco', '+39 055 807 5120'),
+    ('dinner at il tavolino', '+39 02 6703520'),
+    ('lunch at caffè miralago', '+39 031 443 86 01'),
 ]
 
 def event_phone_for(name):
@@ -230,6 +236,8 @@ EVENT_W3W = [
     ('lunch at 4 cantoni', 'tester.allergy.behaving'),
     ('drink at roxy bar', 'guitars.soldiers.signal'),
     ('dinner at triocco', 'pricked.comically.barbers'),
+    ('dinner at il tavolino', 'educated.symphony.jams'),
+    ('lunch at caffè miralago', 'output.gardener.obsessively'),
 ]
 
 def event_w3w_for(name):
@@ -393,6 +401,8 @@ EVENT_NOTES = [
     ('vatican museums & sistine chapel tour begins', "Do you have to pay to get into Vatican City? St Peter's Basilica itself is free to enter (just a security/bag-check queue &ndash; climbing the dome costs extra, roughly &euro;10 by stairs / &euro;13 with the lift). The Vatican Museums &amp; Sistine Chapel are paid entry (normally &euro;17+) &ndash; already covered by this Towns of Italy booking. Vatican City and St Peter's Square themselves are free to walk around at any time."),
     ('vatican museums & sistine chapel tour ends', "The tour finishes inside the Sistine Chapel &ndash; the guide points out the route to St Peter's Square but doesn't walk you there, so you exit back out via the Museums' own exit, which lets out on Viale Vaticano close to where the tour started. From there to St Peter's Basilica is about 1.5km, roughly a 20 min walk via Viale Vaticano and around into St Peter's Square (no transfer is booked for this leg)."),
     ('travel to colosseum meeting point', "Per the Gray Line voucher (Booking ID 202645831): meet inside Colle Oppio Park, at the corner of Via delle Terme di Tito and Via Nicola Salvi, 15 minutes before the 2:30pm start &ndash; look for staff carrying the &ldquo;I Love Rome&rdquo; logo (that's Gray Line Rome's local operating name). Bring valid photo ID &ndash; the voucher says &ldquo;ID/passport&rdquo;, so a passport, driving licence or other government photo ID is fine, it doesn't have to be a passport specifically. Whatever you bring just needs to match the name on the booking exactly &ndash; a passport is the safest bet since it's always an exact match, but not compulsory. It's mandatory to have some form of photo ID on you &ndash; you may not be allowed on the tour without it. Backup contact if you can't find the group: Gray Line &ndash; I Love Rome office, Via Solferino 17, open daily 6:30am&ndash;9:00pm, graylinerome@carrani.com, +39 06 4742501 (or WhatsApp +39 348 811 2027)."),
+    ("lunch at harry's bar, cernobbio", "Harry's Bar was closed for the grand opening of the new Miralago Luxury Apartments next door &ndash; we had lunch at their on-site restaurant, Caff&egrave; Miralago, instead."),
+    ('gelato with a view at il balcone', "Thanks to Gary's GPS taking a &ldquo;scenic&rdquo; route, we drove all the way to the top of the Funicular instead of riding it up &ndash; Tom will never be the same again. &#128512;"),
 ]
 
 EVENT_PENDING_NOTES = [
@@ -425,20 +435,25 @@ EVENT_TIME_WARNINGS = [
 # Events struck through (red, line-through) rather than deleted, when they become
 # infeasible due to a schedule change elsewhere (e.g. a delayed/rebooked flight) -
 # keeps the original plan visible while making clear it's off for now.
+# Each entry is (keyword, reason) - the reason is shown in the red "CANCELLED - ..." tag.
 EVENT_CANCELLED = [
-    'piazza della repubblica & fontana delle naiadi',
-    'santa maria degli angeli e dei martiri',
-    'free time / coffee near the hotel',
-    'villa borghese gardens',
-    'terrazza montemartini',
+    ('piazza della repubblica & fontana delle naiadi', 'flight delay'),
+    ('santa maria degli angeli e dei martiri', 'flight delay'),
+    ('free time / coffee near the hotel', 'flight delay'),
+    ('villa borghese gardens', 'flight delay'),
+    ('terrazza montemartini', 'flight delay'),
+    ('drive to bologna (continues)', 'drove straight through to Como'),
+    ('arrive bologna - breakfast at aroma specialty coffee', 'drove straight through to Como'),
+    ('breakfast at aroma specialty coffee, bologna (continues', 'drove straight through to Como'),
+    ("lunch at harry's bar, cernobbio", 'closed for the Miralago Luxury Apartments opening'),
 ]
 
 def event_cancelled_for(name):
     n = name.lower()
-    for keyword in EVENT_CANCELLED:
+    for keyword, reason in EVENT_CANCELLED:
         if keyword in n:
-            return True
-    return False
+            return reason
+    return None
 
 def event_time_warning_for(name):
     n = name.lower()
@@ -2159,7 +2174,7 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
         ztl_html = ztl_alert_html(ztl_zones) if ztl_zones else ''
         ev_cancelled = event_cancelled_for(b['name'])
         _cancelled_row_class = ' ev-row-cancelled' if ev_cancelled else ''
-        _cancelled_tag = '<span class="ev-cancelled-tag">CANCELLED &ndash; flight delay</span>' if ev_cancelled else ''
+        _cancelled_tag = f'<span class="ev-cancelled-tag">CANCELLED &ndash; {esc(ev_cancelled)}</span>' if ev_cancelled else ''
         _visited_row_class = ' ev-row-visited' if b['status'] == 'Visited' else ''
         _potential_row_class = ' ev-row-potential' if b['status'] == 'Potential' else ''
         rows += f'''
@@ -2766,7 +2781,7 @@ def what_we_did_html():
     """Build the growing day-by-day diary of status=='Visited' events across the whole trip so far."""
     day_html = ''
     total = 0
-    for d in italy_days + london_days:
+    for d in italy_days + italy_options + london_days:
         blocks = collapse_events(d['events'])
         visited = [b for b in blocks if b.get('status') == 'Visited']
         if not visited:
@@ -3793,11 +3808,19 @@ milan_dinner_stack_html = milan_dinner_stack()
 
 italy_options = sched.get('italy_options', [])
 _options_prev_stay = tuscany_days[-1].get('stay') if tuscany_days else None
-italy_options_html = ''.join(
+_options_cards = [
     day_card(d, 'milan2', day_id=day_id_for(d['title']),
              day_map=day_map_for(d['title'], d, 'milan2', prev_stay=_options_prev_stay))
     for d in italy_options
-)
+]
+if len(_options_cards) > 1:
+    italy_options_html = (
+        _options_cards[0]
+        + '<div class="options-toggle-row no-print"><button class="print-mini options-toggle-btn" id="options-bc-toggle-btn" onclick="toggleOptionsBC()">Show Options B &amp; C</button></div>'
+        + f'<div class="options-bc-wrap options-bc-hidden" id="options-bc-wrap">{"".join(_options_cards[1:])}</div>'
+    )
+else:
+    italy_options_html = ''.join(_options_cards)
 
 london_places_html = ''.join(place_card(p, with_review=True) for p in places['london_places'])
 rome_places_html = ''.join(place_card(p, with_review=True) for p in places['rome_places'])
@@ -4074,6 +4097,10 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .food-toggle-btn:hover { background:rgba(255,255,255,.32); }
 .food-wrap-hidden { display:none; }
 @media print { .food-wrap-hidden { display:none !important; } }
+.options-bc-hidden { display:none; }
+.options-toggle-row { text-align:center; margin:10px 0 18px; }
+.options-toggle-btn { padding:8px 18px; }
+@media print { .options-toggle-row { display:none !important; } .options-bc-hidden { display:block !important; } }
 .dinner-box .place-grid { margin:10px 0 0; }
 .option-box { margin-top:16px; padding:16px 18px; background:#eef3fb; border:1px dashed var(--london); border-radius:10px; }
 .option-box .place-grid { margin:10px 0 0; grid-template-columns:1fr; max-width:340px; }
@@ -5077,6 +5104,18 @@ ALL_FOOD_PLACES.append({
     'address': 'Via Vittorio Veneto 48, 50021 Barberino Tavarnelle (FI), Italy',
     'visited': True,
 })
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(14), 'place': 'Caffè Miralago', 'day_num': 14,
+    'list_title': 'Lunch (23 Sept, actually visited)',
+    'address': 'Piazza Risorgimento 1, 22012 Cernobbio (CO), Italy',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(14), 'place': 'Il Tavolino', 'day_num': 14,
+    'list_title': 'Dinner (23 Sept, actually visited)',
+    'address': 'Via Gustavo Fara 23, 20124 Milan, Italy',
+    'visited': True,
+})
 
 FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
 _VISITED_FOOD_PLACES = [fp for fp in ALL_FOOD_PLACES if fp.get('visited')]
@@ -5868,6 +5907,24 @@ function toggleFoodWrap(id) {{
   localStorage.setItem('fab4-food-hidden-' + id, hidden ? '1' : '0');
   if (btn) btn.textContent = hidden ? 'Show Food' : 'Hide Food';
 }}
+function toggleOptionsBC() {{
+  var box = document.getElementById('options-bc-wrap');
+  if (!box) return;
+  var btn = document.getElementById('options-bc-toggle-btn');
+  var hidden = box.classList.toggle('options-bc-hidden');
+  localStorage.setItem('fab4-options-bc-hidden', hidden ? '1' : '0');
+  if (btn) btn.textContent = hidden ? 'Show Options B & C' : 'Hide Options B & C';
+}}
+(function() {{
+  var box = document.getElementById('options-bc-wrap');
+  if (!box) return;
+  var saved = localStorage.getItem('fab4-options-bc-hidden');
+  if (saved === null) return;
+  var btn = document.getElementById('options-bc-toggle-btn');
+  var hidden = saved === '1';
+  box.classList.toggle('options-bc-hidden', hidden);
+  if (btn) btn.textContent = hidden ? 'Show Options B & C' : 'Hide Options B & C';
+}})();
 (function() {{
   document.querySelectorAll('[id^="food-wrap-"]').forEach(function(box) {{
     var id = box.id;

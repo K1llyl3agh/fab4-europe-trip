@@ -1022,142 +1022,136 @@
       "title": "OPTION A - LAKE COMO, LUNCH AT HARRY'S (23 SEP) [Total driving: 5h 15m]",
       "events": [
         {
-          "time": "6:00 AM",
+          "time": "9:00 AM",
           "event": "Check out of Hotel Borgo di Cortefreda Relais & drive to Bologna (approx. 1h 30m)",
           "status": null,
           "address": "Directions: Tuscany to Bologna"
         },
         {
-          "time": "6:30 AM",
-          "event": "Drive to Bologna (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "7:00 AM",
-          "event": "Drive to Bologna (continues)",
-          "status": null,
-          "address": null
-        },
-        {
-          "time": "7:30 AM",
-          "event": "Arrive Bologna - Breakfast at Aroma Specialty Coffee",
-          "status": "Optional",
-          "address": "Via Portanova 12/b, 40123 Bologna, Italy\nVisit Website: Aroma Specialty Coffee (Il Piacere del Caffè)"
-        },
-        {
-          "time": "8:00 AM",
-          "event": "Breakfast at Aroma Specialty Coffee, Bologna (continues - ends approx. 8:30am)",
-          "status": "Optional",
-          "address": null
-        },
-        {
-          "time": "8:30 AM",
-          "event": "Drive from Bologna to Como (approx. 2h 30m)",
-          "status": null,
-          "address": "Directions: Bologna to Como"
-        },
-        {
-          "time": "9:00 AM",
-          "event": "Drive to Como (continues)",
-          "status": null,
-          "address": null
-        },
-        {
           "time": "9:30 AM",
-          "event": "Drive to Como (continues)",
+          "event": "Drive to Bologna (continues)",
           "status": null,
           "address": null
         },
         {
           "time": "10:00 AM",
-          "event": "Drive to Como (continues)",
+          "event": "Drive to Bologna (continues)",
           "status": null,
           "address": null
         },
         {
           "time": "10:30 AM",
-          "event": "Drive to Como (continues - ends approx. 11:00am)",
-          "status": null,
-          "address": null
+          "event": "Arrive Bologna - Breakfast at Aroma Specialty Coffee",
+          "status": "Optional",
+          "address": "Via Portanova 12/b, 40123 Bologna, Italy\nVisit Website: Aroma Specialty Coffee (Il Piacere del Caffè)"
         },
         {
           "time": "11:00 AM",
-          "event": "Arrive Como - Como-Brunate Funicular up to Brunate (approx. 7 min ride)",
-          "status": null,
-          "address": "Piazza Alcide de Gasperi 4, 22100 Como, Italy\nVisit Website: Funicolare Como-Brunate"
+          "event": "Breakfast at Aroma Specialty Coffee, Bologna (continues - ends approx. 11:30am)",
+          "status": "Optional",
+          "address": null
         },
         {
           "time": "11:30 AM",
-          "event": "Gelato with a view at Il Balcone sul Lago Café, Brunate",
-          "status": "Optional",
-          "address": "Via Pissarottino 26, 22034 Brunate (Como), Italy\nVisit Website: Il Balcone sul Lago (Facebook)"
+          "event": "Drive from Bologna to Como (approx. 2h 30m)",
+          "status": null,
+          "address": "Directions: Bologna to Como"
         },
         {
           "time": "12:00 PM",
-          "event": "Funicular back down to Como (continues - ends approx. 12:30pm)",
+          "event": "Drive to Como (continues)",
           "status": null,
           "address": null
         },
         {
           "time": "12:30 PM",
-          "event": "Drive from Como to Cernobbio (approx. 15 min)",
+          "event": "Drive to Como (continues)",
           "status": null,
-          "address": "Directions: Como to Cernobbio"
+          "address": null
         },
         {
           "time": "1:00 PM",
-          "event": "Lunch at Harry's Bar, Cernobbio (Lake Como)",
-          "status": "Optional",
-          "address": "Via Besana 1, 22012 Cernobbio, Como, Italy\nVisit Website: Harry's Bar Cernobbio"
+          "event": "Drive to Como (continues)",
+          "status": null,
+          "address": null
         },
         {
           "time": "1:30 PM",
-          "event": "Lunch at Harry's Bar, Cernobbio (continues)",
-          "status": "Optional",
+          "event": "Drive to Como (continues - ends approx. 2:00pm)",
+          "status": null,
           "address": null
         },
         {
           "time": "2:00 PM",
-          "event": "Lunch at Harry's Bar, Cernobbio (continues - ends approx. 2:30pm)",
-          "status": "Optional",
-          "address": null
+          "event": "Arrive Como - Como-Brunate Funicular up to Brunate (approx. 7 min ride)",
+          "status": null,
+          "address": "Piazza Alcide de Gasperi 4, 22100 Como, Italy\nVisit Website: Funicolare Como-Brunate"
         },
         {
           "time": "2:30 PM",
-          "event": "Drive from Lake Como to Milan (approx. 1h)",
-          "status": null,
-          "address": "Directions: Lake Como to Milan"
+          "event": "Gelato with a view at Il Balcone sul Lago Café, Brunate",
+          "status": "Visited",
+          "address": "Via Pissarottino 26, 22034 Brunate (Como), Italy\nVisit Website: Il Balcone sul Lago (Facebook)"
         },
         {
           "time": "3:00 PM",
-          "event": "Drive to Milan (continues - ends approx. 3:30pm)",
+          "event": "Funicular back down to Como (continues - ends approx. 3:30pm)",
           "status": null,
           "address": null
         },
         {
           "time": "3:30 PM",
+          "event": "Drive from Como to Cernobbio (approx. 15 min)",
+          "status": null,
+          "address": "Directions: Como to Cernobbio"
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (Lake Como)",
+          "status": "Optional",
+          "address": "Via Besana 1, 22012 Cernobbio, Como, Italy\nVisit Website: Harry's Bar Cernobbio"
+        },
+        {
+          "time": "4:30 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (continues)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "5:00 PM",
+          "event": "Lunch at Harry's Bar, Cernobbio (continues - ends approx. 5:30pm)",
+          "status": "Optional",
+          "address": null
+        },
+        {
+          "time": "4:00 PM",
+          "event": "Lunch at Caffè Miralago, Cernobbio (4:00pm-5:00pm)",
+          "status": "Visited",
+          "address": "Piazza Risorgimento 1, 22012 Cernobbio (CO), Italy"
+        },
+        {
+          "time": "5:30 PM",
+          "event": "Drive from Lake Como to Milan (approx. 1h)",
+          "status": null,
+          "address": "Directions: Lake Como to Milan"
+        },
+        {
+          "time": "6:00 PM",
+          "event": "Drive to Milan (continues - ends approx. 6:30pm)",
+          "status": null,
+          "address": null
+        },
+        {
+          "time": "6:30 PM",
           "event": "Arrive Milan - Check-in at iQ Hotel Milano",
           "status": null,
           "address": "Via Giovanni Battista Pirelli, 5, 20124 Milan, Italy\nCheck-in from 3:00pm - call ahead if arriving early: +39 02 8498 0810\nParking note: no private hotel parking - nearest partner garage ~100m away (fee applies, ask reception)"
         },
         {
           "time": "7:00 PM",
-          "event": "Dinner in Milan",
-          "status": "To Book",
-          "address": "Options: Cantine Milano, L'Immagine Bistrot, Casa Festa Alcolica - see Italy Map tab"
-        },
-        {
-          "time": "7:30 PM",
-          "event": "Dinner in Milan (continues)",
-          "status": "To Book",
-          "address": null
-        },
-        {
-          "time": "8:00 PM",
-          "event": "Dinner in Milan (continues - ends approx. 8:30pm)",
-          "status": "To Book",
-          "address": null
+          "event": "Dinner at Il Tavolino, 7:00-10:45pm (a GREAT Night)",
+          "status": "Visited",
+          "address": "Via Gustavo Fara 23, 20124 Milan, Italy"
         },
         {
           "time": "9:00 PM",
