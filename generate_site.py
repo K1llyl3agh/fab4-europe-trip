@@ -1574,6 +1574,8 @@ DAILY_QUIZ = [
          'note': "An ostentation of peacocks - it's also sometimes called a 'muster', but ostentation suits them best."},
         {'q': '\U0001F389 BONUS: What is the collective noun for a group of rhinoceroses?', 'opts': ['A crash', 'A stampede', 'A herd', 'A battalion'], 'ans': 0,
          'note': "A crash of rhinos - about as subtle as you'd expect.", 'bonus': True},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of butterflies?', 'opts': ['A kaleidoscope', 'A flutter', 'A swarm', 'A bloom'], 'ans': 0,
+         'note': 'A kaleidoscope of butterflies - one of the prettiest collective nouns in the English language.', 'bonus': True},
     ]},
     {'date': 'Fri 25 Sep', 'day_num': 16, 'theme': "London (The Mousetrap)", 'qs': [
         {'q': "The Mousetrap, which we're seeing tonight, is the world's longest-running what?", 'opts': ['Musical', 'Play', 'Opera', 'Ballet'], 'ans': 1,
@@ -1600,6 +1602,8 @@ DAILY_QUIZ = [
          'note': "A mob of kangaroos - one of the most commonly used Australian collective nouns."},
         {'q': '\U0001F389 BONUS: What is the collective noun for a group of pandas?', 'opts': ['A cuddle', 'An embarrassment', 'A bamboo', 'A huddle'], 'ans': 1,
          'note': "An embarrassment of pandas - nobody seems to know why, but it's the official term.", 'bonus': True},
+        {'q': "\U0001F389 BONUS: Which Shakespeare play contains the famous stage direction 'Exit, pursued by a bear'?", 'opts': ["The Winter's Tale", "A Midsummer Night's Dream", 'Macbeth', 'The Tempest'], 'ans': 0,
+         'note': "The Winter's Tale - one of the strangest and most-quoted stage directions in all of theatre.", 'bonus': True},
     ]},
     {'date': 'Sat 26 Sep', 'day_num': 17, 'theme': 'London (Tower Bridge & Six)', 'qs': [
         {'q': "How many wives did King Henry VIII have - the subject of tonight's show, Six?", 'opts': ['Four', 'Five', 'Six', 'Seven'], 'ans': 2,
@@ -1626,6 +1630,8 @@ DAILY_QUIZ = [
          'note': "A labour of moles - a fitting name given how much digging they get through underground."},
         {'q': '\U0001F389 BONUS: Roughly how many times a year does Tower Bridge open to let tall ships through?', 'opts': ['About 50', 'About 200', 'About 800', 'About 3,000'], 'ans': 2,
          'note': 'About 800 times a year - roughly twice a day on average, and always announced in advance online.', 'bonus': True},
+        {'q': '\U0001F389 BONUS: What is the technical term for the fear of long words?', 'opts': ['Hippopotomonstrosesquippedaliophobia', 'Logophobia', 'Verbaphobia', 'Sesquipediophobia'], 'ans': 0,
+         'note': 'Hippopotomonstrosesquippedaliophobia - the fear of long words genuinely has one of the longest names in the dictionary. The irony is entirely intentional.', 'bonus': True},
     ]},
 ]
 
@@ -5108,6 +5114,12 @@ ALL_FOOD_PLACES.append({
     'code': next_food_code(14), 'place': 'Caffè Miralago', 'day_num': 14,
     'list_title': 'Lunch (23 Sept, actually visited)',
     'address': 'Piazza Risorgimento 1, 22012 Cernobbio (CO), Italy',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(14), 'place': 'LiQuido Rooftop Bar', 'day_num': 14,
+    'list_title': 'Pre-Dinner Drinks (23 Sept, actually visited)',
+    'address': 'Via Giovanni Battista Pirelli 5, 20124 Milan, Italy (rooftop of iQ Hotel Milano)',
     'visited': True,
 })
 ALL_FOOD_PLACES.append({
