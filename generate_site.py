@@ -395,7 +395,7 @@ def travel_options_html(opts):
     return f'<div class="travel-opts"><div class="travel-opts-title">Other ways to get there:</div>{items}</div>'
 
 EVENT_NOTES = [
-    ('dinner at the lighterman', "If we're early, we could grab a quick Gin &amp; Pepsi downstairs first &#128522;"),
+    ('dinner at the lighterman', "In the end this one was sadly a bit noisy inside, and in retrospect not the best choice for the night &ndash; sorry, team!"),
     ('check in at the republic hotel, freshen up', "Time shown is approximate, based on the revised evening arrival &ndash; will depend on the actual transfer pickup time."),
     ('borghese gardens revisit', "The original Villa Borghese Gardens visit on 11 Sept was cancelled after the delayed/rebooked flight in &ndash; this is a chance to fit it in after all if there's time this morning. It's a walk-in park (no ticket needed for the grounds themselves), so no booking to worry about. Keep an eye on the clock: the transfer to Civitavecchia leaves at 12pm sharp, so turn back in good time."),
     ('piazza della repubblica & fontana delle naiadi', "Cancelled due to the delayed/rebooked flight (new 7:15pm Rome arrival) &ndash; this whole afternoon block, through Villa Borghese Gardens and pre-dinner drinks at Terrazza Montemartini, is no longer possible before landing. Struck through rather than removed in case any of it can be worked in another day."),
@@ -2354,6 +2354,16 @@ ROLLING_STONES_SHOP = {
     'w3w': 'catch.future.librarian',
 }
 ROLLING_STONES_SONG_URL = 'https://www.youtube.com/watch?v=Ef9QnZVpVd8'
+ROLLING_STONES_TRAVEL_OPTS = [
+    ('A. Walk', 'about 10-12 min (~0.6 mi) via Regent Street, then right into Carnaby Street - flat, easy, and part of the fun of wandering the area'),
+    ('B. Uber', 'approx. &pound;6-&pound;10 (UberX) - traffic and one-way streets around Carnaby mean it&rsquo;s often no quicker than walking for such a short hop'),
+    ('C. Tube', "Central, Victoria or Bakerloo line to Oxford Circus (if you're not already near it), then ~5 min walk via Kingly Street into Carnaby Street - Oxford Circus is the closest station to the shop"),
+]
+ROLLING_STONES_TRAVEL_HTML = f'''
+<div class="travel-opts">
+  <div class="travel-opts-title">Getting there from Oxford Street:</div>
+  {''.join(f'<div class="travel-opt"><span class="travel-opt-label">{esc(label)}</span> {detail}</div>' for label, detail in ROLLING_STONES_TRAVEL_OPTS)}
+</div>'''
 ROLLING_STONES_HTML = f'''
 <div class="shop-list" style="margin-top:14px;">
   <div class="shop-list-title">Also worth a look:</div>
@@ -2361,6 +2371,7 @@ ROLLING_STONES_HTML = f'''
   <div class="ev-link" style="margin-top:6px;">
     <a class="pill pill-play" href="{esc(ROLLING_STONES_SONG_URL)}" target="_blank">&#9654; Play "You Can't Always Get What You Want"</a>
   </div>
+  {ROLLING_STONES_TRAVEL_HTML}
 </div>'''
 
 BOUTIQUE_FORMULE1_SHOP = {
@@ -5142,6 +5153,12 @@ ALL_FOOD_PLACES.append({
     'address': 'Via Ugo Foscolo 3, 20121 Milano, Italy (Galleria Vittorio Emanuele II, by Piazza del Duomo)',
     'visited': True,
 })
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(15), 'place': 'The Lighterman', 'day_num': 15,
+    'list_title': 'Dinner (24 Sept, actually visited)',
+    'address': '3 Granary Square, London N1C 4BH',
+    'visited': True,
+})
 
 FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
 _VISITED_FOOD_PLACES = [fp for fp in ALL_FOOD_PLACES if fp.get('visited')]
@@ -5247,7 +5264,7 @@ HTML = f'''<!DOCTYPE html>
       </div>
       <h1 class="hero-h1-cover">FAB4 Does Europe &ndash; September 2026</h1>
       <p class="hero-dates-cover">10 &ndash; 29 September 2026</p>
-      <div class="hero-flags" aria-label="United Kingdom, Italy, France">&#127468;&#127463; &#127470;&#127481; &#127467;&#127479;</div>
+      <div class="hero-flags" aria-label="United Kingdom, Italy, France, Monaco">&#127468;&#127463; &#127470;&#127481; &#127467;&#127479; &#127474;&#127464;</div>
       <p class="sub">10 &ndash; 29 September 2026</p>
       <div class="nav-grid">{nav_grid_html}</div>
       <a class="print-mini print-mini-all no-print" href="{PRINT_BOOK_PDF_URL}" target="_blank" rel="noopener"><span class="ic">&#128214;</span>Print Book</a>

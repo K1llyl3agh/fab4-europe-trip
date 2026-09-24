@@ -36,13 +36,13 @@
         {
           "time": "7:30 PM",
           "event": "Dinner at The Lighterman (confirmation 4NJL3Z4M6XN3)",
-          "status": "Booked",
+          "status": "Visited",
           "address": "3 Granary Square, London N1C 4BH (~1 mile / 20 min walk from hotel)"
         },
         {
           "time": "8:00 PM",
           "event": "Dinner at The Lighterman (continues)",
-          "status": "Booked",
+          "status": "Visited",
           "address": null
         }
       ],
