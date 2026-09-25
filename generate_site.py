@@ -3367,8 +3367,8 @@ SAT26_BARS_HTML = LUNCH_26SEP_HTML + f'''
 </div>'''
 
 THU24_BARS_HTML = f'''
-<div class="dinner-box">
-  <div class="day-map-title">After The Lighterman: Nightcap Options</div>
+<div class="dinner-box" id="lighterman-bars-thu24">
+  <div class="day-map-title">After The Lighterman: Nightcap Options <button class="print-mini no-print box-toggle-btn" id="lighterman-bars-thu24-btn" onclick="toggleBox('lighterman-bars-thu24')">Hide Suggestions</button></div>
   <p class="lede" style="margin:0 0 10px;">Estimates only &ndash; check live transit apps on the day.</p>
   <div class="place-grid">{''.join(LIGHTERMAN_BARS)}</div>
   <div class="travel-opts" style="margin-top:16px;">
@@ -4183,7 +4183,8 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .dinner-box { margin-top:16px; padding:16px 18px; background:#fdf6ec; border:1px dashed var(--gold); border-radius:10px; }
 .box-toggle-btn { float:right; margin-top:-2px; }
 .box-hidden .place-grid { display:none; }
-@media print { .box-hidden .place-grid { display:none !important; } }
+.box-hidden > *:not(.day-map-title) { display:none; }
+@media print { .box-hidden .place-grid { display:none !important; } .box-hidden > *:not(.day-map-title) { display:none !important; } }
 .food-toggle-btn { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.5); color:#fff; font-size:.72rem; font-weight:700; padding:4px 11px; border-radius:999px; cursor:pointer; }
 .food-toggle-btn:hover { background:rgba(255,255,255,.32); }
 .food-wrap-hidden { display:none; }
@@ -6069,7 +6070,7 @@ function toggleMilanRestos() {{
   }});
 }})();
 (function() {{
-  var _boxIds = ['lunch-box-12sep'];
+  var _boxIds = ['lunch-box-12sep', 'lighterman-bars-thu24'];
   _boxIds.forEach(function(id) {{
     var saved = localStorage.getItem('fab4-box-hidden-' + id);
     if (saved === null) return;
