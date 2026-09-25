@@ -2911,20 +2911,16 @@ DAY25_MAP = {
     'title': "Friday 25 Sept - Today's Places & Suggested Routes",
     'stops': [
         {'name': 'The Level at Melia White House', 'note': 'Start of day - Breakfast 8:00am'},
-        {'name': 'V&A Museum', 'note': '9:30am'},
-        {'name': "Harry's Knightsbridge", 'note': '12:00pm - Early lunch'},
-        {'name': 'Oxford Street', 'note': '1:00pm - Free time / shopping'},
+        {'name': 'Oxford Street', 'note': "9:00am - Free time / shopping (V&A Museum & Harry's Knightsbridge skipped - running short on time)"},
         {'name': 'Albert Schloss, Shaftesbury Avenue', 'note': '4:30pm - Dinner'},
         {'name': "St Martin's Theatre", 'note': '6:30pm - The Mousetrap'},
         {'name': 'The Level at Melia White House', 'note': 'Return for the night (after 10:00pm)'},
     ],
     'legs': [
-        {'time': '~30-35 min', 'distance': '~6.5 km', 'method': 'Bakerloo line to Piccadilly Circus, change to Piccadilly line to South Kensington, then ~5 min walk (or Circle line via Baker Street, one change)'},
-        {'time': '~12-15 min', 'distance': '~1.1 km', 'method': 'Walk via Brompton Road, or 1 stop on the Piccadilly line, South Kensington to Knightsbridge'},
-        {'time': '~10-12 min', 'distance': '~3.2 km', 'method': 'Piccadilly line to Green Park, change to Victoria line to Oxford Circus'},
+        {'time': '~15-25 min', 'distance': '~1.6 km', 'method': 'Walk via Cleveland Street (~20-25 min) or Tube via Great Portland Street & Baker Street, Bakerloo line to Oxford Circus (~15-18 min) - see Walking Route Directions box below for full turn-by-turn'},
         {'time': '~15 min', 'distance': '~1.3 km', 'method': 'Walk down Regent Street/Shaftesbury Avenue, or 1 stop Central line to Tottenham Court Road + short walk'},
         {'time': '~6-8 min', 'distance': '~0.5 km', 'method': 'Walk along Shaftesbury Avenue'},
-        {'time': '~20-25 min', 'distance': '~3.3 km', 'method': "Piccadilly line: Leicester Square to Piccadilly Circus, change to Bakerloo line to Regent's Park, then ~5 min walk"},
+        {'time': '~15-18 min', 'distance': '~2.2 km', 'method': "Northern line (Charing Cross branch): Leicester Square to Warren Street, direct, no change (3 stops), then ~8 min walk via Euston Road/Albany Street - see Home from The Mousetrap box below for the Uber/walk options too"},
     ],
 }
 
