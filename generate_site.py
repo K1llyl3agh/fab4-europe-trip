@@ -394,6 +394,68 @@ def travel_options_html(opts):
     )
     return f'<div class="travel-opts"><div class="travel-opts-title">Other ways to get there:</div>{items}</div>'
 
+def route_steps_html(steps):
+    items = ''.join(f'<li><strong>{esc(label)}:</strong> {detail}</li>' for label, detail in steps)
+    return f'<ol class="route-steps">{items}</ol>'
+
+def route_box_html(title, subs):
+    subs_html = ''.join(
+        f'<div class="route-sub"><div class="route-sub-title">{esc(sub_title)}</div>{route_steps_html(steps)}'
+        f'<div class="route-meta">{meta}</div></div>'
+        for sub_title, steps, meta in subs
+    )
+    return f'<div class="route-box"><div class="route-box-title">{esc(title)}</div>{subs_html}</div>'
+
+EVENT_ROUTE_BOX = [
+    ('free time wandering around oxford street', route_box_html('Walking Route Directions', [
+        ('Walking to Oxford Street', [
+            ('Start', 'Head south on Albany Street toward Euston Road / Great Portland Street.'),
+            ('Continue', 'Cross over Euston Road and continue down Cleveland Street. <a href="https://www.google.com/maps/dir/Melia+white+house,+Meli%C3%A1+White+House,+9+Albany+St,+London+NW1+3UP,+UK/The+Tottenham,+14-28+Oxford+St,+London+W1D+1AU,+UK/data=!4m14!4m13!1m5!1m1!19sChIJgck5gdcadkgRomNryOi-tsY!2m2!1d-0.1436607!2d51.5251902!1m5!1m1!19sChIJw9JIGS0bdkgRBI80QM4s9WE!2m2!1d-0.1314197!2d51.5165234!3e2" target="_blank">Map</a>'),
+            ('Turn', 'Turn left onto Goodge Street, or continue straight as Cleveland Street becomes Newman Street / parallel routes toward Oxford Street.'),
+            ('Arrive', 'Head toward Oxford Street and turn right to reach Primark (near Tottenham Court Road).'),
+        ], '&#128694; ~20-25 min &middot; ~1 mile (1.6 km)'),
+        ('Tube to Oxford Street', [
+            ('Walk', '~5 min from the hotel to Great Portland Street station (Circle / Hammersmith &amp; City / Metropolitan lines).'),
+            ('Board', 'Hammersmith &amp; City or Circle line, 1 stop to Baker Street.'),
+            ('Change', 'At Baker Street, change to the Bakerloo line (southbound, towards Elephant &amp; Castle).'),
+            ('Ride', '2 stops via Regent&rsquo;s Park to Oxford Circus.'),
+            ('Arrive', 'Exit at Oxford Circus &ndash; Oxford Street is right outside; the Primark / Tottenham Court Road end is a further ~8 min walk east.'),
+        ], '&#128647; ~15-18 min total (incl. the change) &middot; approx. &pound;2.80 pay-as-you-go'),
+    ])),
+]
+def route_box_for(name):
+    n = name.lower()
+    for keyword, html_block in EVENT_ROUTE_BOX:
+        if keyword in n:
+            return html_block
+    return None
+
+EVENT_ROUTE_BOX_AFTER = [
+    ('the mousetrap begins', route_box_html('Home from The Mousetrap', [
+        ('By Uber', [
+            ('Cost', 'approx. &pound;12-&pound;18 (UberX) for the ~1.7 mile trip &ndash; can run higher just after 10pm as nearby West End theatres let out at the same time and demand spikes.'),
+        ], '&#128662; ~12-15 min depending on traffic'),
+        ('On Foot', [
+            ('Start', 'From St Martin&rsquo;s Theatre, head to Cambridge Circus, then north up Charing Cross Road.'),
+            ('Continue', 'Charing Cross Road becomes Tottenham Court Road &ndash; keep heading north, passing Goodge Street and Warren Street tube stations.'),
+            ('Turn', 'Turn right onto Euston Road, then left onto Albany Street.'),
+            ('Arrive', 'The Level at Meli&aacute; White House is a short walk up Albany Street on the right.'),
+        ], '&#128694; ~35-40 min &middot; ~1.7 miles (2.7 km) &ndash; well-lit main roads the whole way, but a taxi or tube is the easier option after a late show'),
+        ('By Tube', [
+            ('Walk', '~2 min from St Martin&rsquo;s Theatre (via Cranbourn Street) to Leicester Square station.'),
+            ('Board', 'Northern line (Charing Cross branch), northbound &ndash; direct, no change needed.'),
+            ('Ride', '3 stops: Tottenham Court Road, Goodge Street, then Warren Street.'),
+            ('Arrive', 'Exit at Warren Street and it&rsquo;s a further ~8 min walk via Euston Road / Albany Street to the hotel.'),
+        ], '&#128647; ~15-18 min total &middot; approx. &pound;2.80 pay-as-you-go'),
+    ])),
+]
+def route_box_after_for(name):
+    n = name.lower()
+    for keyword, html_block in EVENT_ROUTE_BOX_AFTER:
+        if keyword in n:
+            return html_block
+    return None
+
 EVENT_NOTES = [
     ('dinner at the lighterman', "In the end this one was sadly a bit noisy inside, and in retrospect not the best choice for the night &ndash; sorry, team!"),
     ('check in at the republic hotel, freshen up', "Time shown is approximate, based on the revised evening arrival &ndash; will depend on the actual transfer pickup time."),
@@ -450,6 +512,8 @@ EVENT_CANCELLED = [
     ('arrive bologna - breakfast at aroma specialty coffee', 'drove straight through to Como'),
     ('breakfast at aroma specialty coffee, bologna (continues', 'drove straight through to Como'),
     ("lunch at harry's bar, cernobbio", 'closed for the Miralago Luxury Apartments opening'),
+    ('potential victoria and albert museum', 'running short on time this morning - headed straight to Oxford Street instead'),
+    ("potential early lunch at harry's knightsbridge", 'running short on time this morning - headed straight to Oxford Street instead'),
 ]
 
 def event_cancelled_for(name):
@@ -2128,6 +2192,8 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
     rows = ''
     for b in blocks:
         addr = f'<div class="ev-addr">{esc(b["address"])}</div>' if b['address'] else ''
+        route_box = route_box_for(b['name']) or ''
+        route_box_after = route_box_after_for(b['name']) or ''
         weblink_url = weblink_for(b['name'])
         weblink_btn = f'<a class="pill pill-website" href="{esc(weblink_url)}" target="_blank">Website</a>' if weblink_url else ''
         directions_url = directions_for(b['name'])
@@ -2192,6 +2258,7 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
           <div class="ev-body">
             <div class="ev-name">{esc_br(b['name'])} {badge(b['status'])} {logo_html} {_cancelled_tag}</div>
             {addr}
+            {route_box}
             {ev_phone_html}
             {ev_note_html}
             {ev_pending_html}
@@ -2202,6 +2269,7 @@ def day_card(day, theme, day_id=None, day_map=None, dinner_html=None, quicklink_
             {shops_html}
             {photo_html}
             {travel_opts_html}
+            {route_box_after}
             {ev_fact_html}
           </div>
         </div>'''
@@ -4246,7 +4314,7 @@ body.hide-facts .fun-fact-box, body.hide-facts .place-fact { display:none !impor
 @media print { .resto-photo { display:none; } .resto-item { display:block; } }
 @media (max-width:520px) { .resto-item { flex-direction:column; } .resto-photo { width:100%; height:160px; } }
 .pill { font-size:.75rem; text-decoration:none; background:var(--navy); color:#fff !important; padding:4px 11px; border-radius:999px; font-weight:600; }
-.pill-review { background:var(--gold); }\n.pill-booking { background:#1f8a5f; }\n.ev-link { margin-top:6px; }\n.pill-weblink { background:var(--cruise); }\n.pill-directions { background:#8a5a1f; }\n.pill-instagram { background:#c13584; padding:4px 10px; font-weight:800; }\n.pill-todo { display:inline-block; background:#d64545; color:#fff !important; font-size:.68rem; font-weight:800; padding:2px 9px; border-radius:999px; margin-left:6px; letter-spacing:.4px; vertical-align:middle; }\n.ev-logo { height:34px; width:34px; vertical-align:middle; margin-left:6px; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,.25); }\n.ev-photo { display:block; width:100%; max-width:320px; height:180px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); margin-top:8px; box-shadow:0 1px 5px rgba(0,0,0,.15); }\n@media print { .ev-photo { display:none; } }\n.ev-photo-row { display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }\n.ev-photo-row .ev-photo { margin-top:8px; flex:0 0 auto; }\n.walk-map-wrap { display:flex; align-items:center; gap:12px; margin-top:8px; flex:0 0 auto; }\n.walk-map { display:block; width:100%; max-width:320px; height:auto; border-radius:12px; border:3px solid var(--photo-frame); box-shadow:0 1px 5px rgba(0,0,0,.15); }\n.walk-info { font-size:.82rem; color:var(--ink); max-width:150px; }\n.walk-time { font-weight:700; margin-bottom:4px; }\n.walk-dist { color:var(--muted); margin-bottom:4px; }\n.walk-note { color:var(--muted); font-size:.78rem; }\n@media print { .walk-map-wrap { display:none; } }\n@media (max-width:900px) { .ev-photo-row { flex-direction:column; } .walk-map-wrap { margin-top:0; } }\n@media (max-width:600px) { .walk-map-wrap { flex-direction:column; align-items:flex-start; width:100%; } .walk-map { max-width:100%; } .walk-info { max-width:100%; margin-top:8px; } }\n.travel-opts { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; font-size:.82rem; }\n.travel-opts-title { font-weight:700; color:var(--muted); text-transform:uppercase; font-size:.72rem; letter-spacing:.4px; margin-bottom:6px; }\n.travel-opt { margin:4px 0; color:var(--ink); }\n.travel-opt-label { font-weight:700; margin-right:6px; }\n@media print { .travel-opts { display:none; } }\n.ig-note { font-size:.78rem; color:var(--muted); font-style:italic; margin:-14px 0 20px; }
+.pill-review { background:var(--gold); }\n.pill-booking { background:#1f8a5f; }\n.ev-link { margin-top:6px; }\n.pill-weblink { background:var(--cruise); }\n.pill-directions { background:#8a5a1f; }\n.pill-instagram { background:#c13584; padding:4px 10px; font-weight:800; }\n.pill-todo { display:inline-block; background:#d64545; color:#fff !important; font-size:.68rem; font-weight:800; padding:2px 9px; border-radius:999px; margin-left:6px; letter-spacing:.4px; vertical-align:middle; }\n.ev-logo { height:34px; width:34px; vertical-align:middle; margin-left:6px; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,.25); }\n.ev-photo { display:block; width:100%; max-width:320px; height:180px; object-fit:cover; border-radius:12px; border:3px solid var(--photo-frame); margin-top:8px; box-shadow:0 1px 5px rgba(0,0,0,.15); }\n@media print { .ev-photo { display:none; } }\n.ev-photo-row { display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }\n.ev-photo-row .ev-photo { margin-top:8px; flex:0 0 auto; }\n.walk-map-wrap { display:flex; align-items:center; gap:12px; margin-top:8px; flex:0 0 auto; }\n.walk-map { display:block; width:100%; max-width:320px; height:auto; border-radius:12px; border:3px solid var(--photo-frame); box-shadow:0 1px 5px rgba(0,0,0,.15); }\n.walk-info { font-size:.82rem; color:var(--ink); max-width:150px; }\n.walk-time { font-weight:700; margin-bottom:4px; }\n.walk-dist { color:var(--muted); margin-bottom:4px; }\n.walk-note { color:var(--muted); font-size:.78rem; }\n@media print { .walk-map-wrap { display:none; } }\n@media (max-width:900px) { .ev-photo-row { flex-direction:column; } .walk-map-wrap { margin-top:0; } }\n@media (max-width:600px) { .walk-map-wrap { flex-direction:column; align-items:flex-start; width:100%; } .walk-map { max-width:100%; } .walk-info { max-width:100%; margin-top:8px; } }\n.travel-opts { margin-top:10px; padding-top:8px; border-top:1px dashed #e2ddd0; font-size:.82rem; }\n.travel-opts-title { font-weight:700; color:var(--muted); text-transform:uppercase; font-size:.72rem; letter-spacing:.4px; margin-bottom:6px; }\n.travel-opt { margin:4px 0; color:var(--ink); }\n.travel-opt-label { font-weight:700; margin-right:6px; }\n@media print { .travel-opts { display:none; } }\n.route-box { margin:8px 0 10px; border:1px solid var(--navy); border-radius:10px; padding:10px 14px; background:#eef2f8; font-size:.85rem; }\n.route-box-title { font-weight:800; color:var(--navy); font-size:.9rem; margin-bottom:8px; }\n.route-sub { margin-top:10px; }\n.route-sub:first-of-type { margin-top:0; }\n.route-sub-title { font-weight:700; color:var(--ink); margin-bottom:4px; }\n.route-steps { margin:4px 0 6px 20px; padding:0; }\n.route-steps li { margin:3px 0; }\n.route-meta { color:var(--muted); font-size:.78rem; font-style:italic; }\n.ig-note { font-size:.78rem; color:var(--muted); font-style:italic; margin:-14px 0 20px; }
 .pill-play { background:#111; color:#fff !important; }
 .pill-parking { background:#2e7d32; }
 .parking-response-box { margin-top:8px; padding:8px 12px; border-radius:8px; font-size:.82rem; }

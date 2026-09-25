@@ -64,6 +64,12 @@
           "address": null
         },
         {
+          "time": "9:00 AM",
+          "event": "Free time wandering around Oxford Street",
+          "status": null,
+          "address": "Oxford Street: oxfordstreet.co.uk"
+        },
+        {
           "time": "9:30 AM",
           "event": "Potential Victoria and Albert Museum",
           "status": "Optional",
@@ -74,12 +80,6 @@
           "event": "Potential Early Lunch at Harry's Knightsbridge",
           "status": "Optional",
           "address": "Directions from Hotel: Harry's Knightsbridge"
-        },
-        {
-          "time": "1:00 PM",
-          "event": "Free time wandering around Oxford Street",
-          "status": null,
-          "address": "Oxford Street: oxfordstreet.co.uk"
         },
         {
           "time": "4:30 PM",
