@@ -689,16 +689,16 @@ def logo_for(name):
 
 SHOPLISTS = {
     'wandering around oxford street': [
-        ('Primark', '14-28 Oxford Street, London W1D 1AR', 'https://www.google.com/maps/search/?api=1&query=Primark+14-28+Oxford+Street+London', 'https://www.primark.com/en-gb/stores/london/14-28-oxford-street'),
-        ('Uniqlo', '311 Oxford Street, London W1C 2HP', 'https://www.google.com/maps/search/?api=1&query=Uniqlo+311+Oxford+Street+London', 'https://www.uniqlo.com/uk/en/'),
-        ('Selfridges', '400 Oxford Street, London W1A 1AB', 'https://www.google.com/maps/search/?api=1&query=Selfridges+400+Oxford+Street+London', 'https://www.selfridges.com/'),
-        ('John Lewis', '300 Oxford Street, London W1C 1DX', 'https://www.google.com/maps/search/?api=1&query=John+Lewis+300+Oxford+Street+London', 'https://www.johnlewis.com/our-shops/oxford-street'),
-        ('Hamleys', '188-196 Regent Street, London W1B 5BT', 'https://www.google.com/maps/search/?api=1&query=Hamleys+188-196+Regent+Street+London', 'https://www.hamleys.com/'),
-        ('Nike Town London', '236 Oxford Street, London W1C 1DE', 'https://www.google.com/maps/search/?api=1&query=Nike+Town+236+Oxford+Street+London', 'https://www.nike.com/gb/retail/s/niketown-london'),
-        ('Adidas Flagship Store', '425 Oxford Street, London W1C 2PG', 'https://www.google.com/maps/search/?api=1&query=Adidas+425+Oxford+Street+London', 'https://www.adidas.co.uk/stores/london-oxford-street-425/9990043889'),
-        ('Zara Oxford Street', '460-490 Oxford Street, London W1C 1AT', 'https://www.google.com/maps/search/?api=1&query=Zara+460-490+Oxford+Street+London', 'https://www.zara.com/uk/en/stores-locator/zara-london-oxford-s1377'),
-        ('HMV', '363 Oxford Street, London W1C 2LA', 'https://www.google.com/maps/search/?api=1&query=HMV+363+Oxford+Street+London', 'https://hmv.com/'),
-        ('Liberty London', 'Great Marlborough St / Regent Street, London W1B 5AH', 'https://www.google.com/maps/search/?api=1&query=Liberty+London+Regent+Street', 'https://www.libertylondon.com/'),
+        ('Primark', '14-28 Oxford Street, London W1D 1AR', 'https://www.google.com/maps/search/?api=1&query=Primark+14-28+Oxford+Street+London', 'https://www.primark.com/en-gb/stores/london/14-28-oxford-street', 'humble.dawn.post'),
+        ('Uniqlo', '311 Oxford Street, London W1C 2HP', 'https://www.google.com/maps/search/?api=1&query=Uniqlo+311+Oxford+Street+London', 'https://www.uniqlo.com/uk/en/', None),
+        ('Selfridges', '400 Oxford Street, London W1A 1AB', 'https://www.google.com/maps/search/?api=1&query=Selfridges+400+Oxford+Street+London', 'https://www.selfridges.com/', None),
+        ('John Lewis', '300 Oxford Street, London W1C 1DX', 'https://www.google.com/maps/search/?api=1&query=John+Lewis+300+Oxford+Street+London', 'https://www.johnlewis.com/our-shops/oxford-street', None),
+        ('Hamleys', '188-196 Regent Street, London W1B 5BT', 'https://www.google.com/maps/search/?api=1&query=Hamleys+188-196+Regent+Street+London', 'https://www.hamleys.com/', None),
+        ('Nike Town London', '236 Oxford Street, London W1C 1DE', 'https://www.google.com/maps/search/?api=1&query=Nike+Town+236+Oxford+Street+London', 'https://www.nike.com/gb/retail/s/niketown-london', None),
+        ('Adidas Flagship Store', '425 Oxford Street, London W1C 2PG', 'https://www.google.com/maps/search/?api=1&query=Adidas+425+Oxford+Street+London', 'https://www.adidas.co.uk/stores/london-oxford-street-425/9990043889', None),
+        ('Zara Oxford Street', '460-490 Oxford Street, London W1C 1AT', 'https://www.google.com/maps/search/?api=1&query=Zara+460-490+Oxford+Street+London', 'https://www.zara.com/uk/en/stores-locator/zara-london-oxford-s1377', None),
+        ('HMV', '363 Oxford Street, London W1C 2LA', 'https://www.google.com/maps/search/?api=1&query=HMV+363+Oxford+Street+London', 'https://hmv.com/', None),
+        ('Liberty London', 'Great Marlborough St / Regent Street, London W1B 5AH', 'https://www.google.com/maps/search/?api=1&query=Liberty+London+Regent+Street', 'https://www.libertylondon.com/', None),
     ],
 }
 
@@ -714,8 +714,9 @@ def shoplist_html(shops):
         f'<div class="shop-item"><span class="shop-name">{esc(name)}</span>'
         f'<a class="pill" href="{esc(addr_url)}" target="_blank">Address</a>'
         f'<a class="pill pill-website" href="{esc(web_url)}" target="_blank">Website</a>'
-        f'<span class="shop-addr-text">{esc(address)}</span></div>'
-        for name, address, addr_url, web_url in shops
+        + (f'<a class="w3w-badge" href="https://what3words.com/{esc(w3w)}" target="_blank" title="what3words location">///{esc(w3w)}</a>' if w3w else '')
+        + f'<span class="shop-addr-text">{esc(address)}</span></div>'
+        for name, address, addr_url, web_url, w3w in shops
     )
     return f'<div class="shop-list"><div class="shop-list-title">Potential shops to look at:</div>{items}</div>'
 
