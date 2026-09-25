@@ -422,11 +422,104 @@ EVENT_ROUTE_BOX = [
             ('Arrive', 'Exit at Oxford Circus &ndash; Oxford Street is right outside; the Primark / Tottenham Court Road end is a further ~8 min walk east.'),
         ], '&#128647; ~15-18 min total (incl. the change) &middot; approx. &pound;2.80 pay-as-you-go'),
     ])),
+    ('tower of london tour (#33605663', route_box_html('Getting to the Tower of London', [
+        ('General Directions', [
+            ('Distance', 'approx. 5.5 miles (8.9 km) from The Level at Meli&aacute; White House to the Tower of London, EC3N 4AB.'),
+            ('What3words', 'Meet at ///swift.blitz.funds &ndash; the Tube (no interchange needed) is the quickest and most reliable option for a 9:00am start; Uber is a comfortable door-to-door alternative.'),
+        ], '&#128205; Tower Hill (Circle/District) is the nearest station, ~3 min walk from the entrance'),
+        ('By Uber', [
+            ('Cost', 'approx. &pound;18-&pound;25 (UberX) for the ~5.5 mile trip &ndash; can run higher if there&rsquo;s Saturday morning traffic through the City.'),
+        ], '&#128662; ~20-30 min depending on traffic'),
+        ('On Foot', [
+            ('Note', 'Not realistic for a 9:00am start &ndash; it&rsquo;s about 5.5 miles from the hotel, roughly a 1 hour 50 minute walk. Tube or Uber recommended instead.'),
+        ], '&#128694; ~1h50m &middot; ~5.5 miles (8.9 km) &ndash; for reference only'),
+        ('By Tube', [
+            ('Walk', '~5 min from the hotel to Great Portland Street station.'),
+            ('Board', 'Circle or Hammersmith &amp; City line, eastbound &ndash; direct, no change needed.'),
+            ('Ride', '8 stops via Euston Square, King&rsquo;s Cross St Pancras, Farringdon, Barbican, Moorgate, Liverpool Street and Aldgate, to Tower Hill.'),
+            ('Arrive', 'Exit at Tower Hill and it&rsquo;s a further ~3 min walk to the Tower of London entrance.'),
+        ], '&#128647; ~25-30 min total &middot; approx. &pound;2.80 pay-as-you-go'),
+    ])),
+    ('river tour (#33605662', route_box_html('Tower of London to River Tour', [
+        ('On Foot', [
+            ('Start', 'Exit the Tower of London and head to Tower Bridge, crossing to the south side or staying north depending on the meeting point.'),
+            ('Arrive', 'Follow St Katharine&rsquo;s Way to Tower Bridge Quay &ndash; the River Tour departure point.'),
+        ], '&#128694; ~5-8 min &middot; ~0.5 km &ndash; an easy, flat walk'),
+        ('By Uber / By Tube', [
+            ('Note', 'Not worth booking for such a short hop &ndash; walking is quicker than waiting for a car or using the Tube for ~0.5 km.'),
+        ], '&#128205; Walking is the recommended option for this leg'),
+    ])),
+    ('need to be at vaudeville theatre', route_box_html('Lunch Area to Vaudeville Theatre', [
+        ('By Uber', [
+            ('Cost', 'approx. &pound;12-&pound;18 (UberX) for the ~2.3 mile trip &ndash; allow extra time for Saturday midday City/West End traffic.'),
+        ], '&#128662; ~15-20 min depending on traffic'),
+        ('On Foot', [
+            ('Start', 'From St Katharine Docks / Tower Bridge Quay, head west along the Thames Path via Lower Thames Street and Victoria Embankment.'),
+            ('Continue', 'Follow the Embankment past Blackfriars and Temple.'),
+            ('Arrive', 'Turn up Savoy Street or Southampton Street to reach the Strand and the Vaudeville Theatre.'),
+        ], '&#128694; ~45-50 min &middot; ~2.3 miles (3.7 km) &ndash; scenic riverside walk, but allow plenty of time before the 3:00pm entry'),
+        ('By Tube', [
+            ('Walk', '~5 min from St Katharine Docks to Tower Hill station.'),
+            ('Board', 'District or Circle line, westbound &ndash; direct, no change needed.'),
+            ('Ride', '6 stops via Monument, Cannon Street, Mansion House, Blackfriars and Temple, to Embankment.'),
+            ('Arrive', 'Exit at Embankment and it&rsquo;s a further ~5 min walk up Villiers Street to the Strand and the Vaudeville Theatre.'),
+        ], '&#128647; ~20-25 min total &middot; approx. &pound;2.80 pay-as-you-go'),
+    ])),
+    ('visit waterstones piccadilly', route_box_html('Vaudeville Theatre to Waterstones Piccadilly', [
+        ('By Uber', [
+            ('Cost', 'approx. &pound;8-&pound;12 (UberX) for the ~0.9 mile trip &ndash; often no quicker than walking through pedestrianised theatre-land streets.'),
+        ], '&#128662; ~10 min depending on traffic'),
+        ('On Foot', [
+            ('Start', 'From the Vaudeville Theatre, head west along the Strand, then north up Charing Cross Road.'),
+            ('Continue', 'Cross through Leicester Square, then head west via Coventry Street to Piccadilly Circus.'),
+            ('Arrive', 'From Piccadilly Circus, Waterstones Piccadilly is a short walk further along Piccadilly.'),
+        ], '&#128694; ~18-20 min &middot; ~0.9 miles (1.4 km)'),
+        ('By Tube', [
+            ('Walk', '~3 min from the Vaudeville Theatre to Covent Garden or Leicester Square station.'),
+            ('Board', 'Piccadilly line, westbound.'),
+            ('Ride', '1-2 stops to Piccadilly Circus.'),
+            ('Arrive', 'Exit at Piccadilly Circus and it&rsquo;s a further ~3 min walk to Waterstones Piccadilly.'),
+        ], '&#128647; ~12-15 min total (incl. walking) &middot; approx. &pound;2.80 pay-as-you-go'),
+    ]), 'continues'),
+    ('dinner at hard rock cafe london (confirmation', route_box_html('Waterstones Piccadilly to Hard Rock Cafe', [
+        ('By Uber', [
+            ('Cost', 'approx. &pound;8-&pound;12 (UberX) for the ~0.8 mile trip &ndash; Piccadilly/Park Lane traffic can slow things down on a Saturday evening.'),
+        ], '&#128662; ~10 min depending on traffic'),
+        ('On Foot', [
+            ('Start', 'From Waterstones Piccadilly, head west along Piccadilly, past Green Park.'),
+            ('Arrive', 'Continue to Hyde Park Corner, then it&rsquo;s a short walk to Hard Rock Cafe at 150 Old Park Lane.'),
+        ], '&#128694; ~15-18 min &middot; ~0.8 miles (1.3 km)'),
+        ('By Tube', [
+            ('Walk', '~2 min from Waterstones to Piccadilly Circus station.'),
+            ('Board', 'Piccadilly line, westbound &ndash; direct, no change needed.'),
+            ('Ride', '2 stops via Green Park, to Hyde Park Corner.'),
+            ('Arrive', 'Exit at Hyde Park Corner and it&rsquo;s a further ~3 min walk to Hard Rock Cafe.'),
+        ], '&#128647; ~12-15 min total (incl. walking) &middot; approx. &pound;2.80 pay-as-you-go'),
+    ])),
+    ('dinner at albert schloss (booked', route_box_html('Hotel to Albert Schloss', [
+        ('By Uber', [
+            ('Cost', 'approx. &pound;10-&pound;15 (UberX) for the ~1.6 mile trip &ndash; can run higher in early-evening traffic around Oxford Circus and Shaftesbury Avenue.'),
+        ], '&#128662; ~12-15 min depending on traffic'),
+        ('On Foot', [
+            ('Start', 'From The Level at Meli&aacute; White House, head down Albany Street toward Euston Road.'),
+            ('Continue', 'Cross Euston Road and head south down Tottenham Court Road, passing Warren Street and Goodge Street tube stations.'),
+            ('Turn', 'Tottenham Court Road becomes Charing Cross Road &ndash; keep heading south to Cambridge Circus.'),
+            ('Arrive', 'From Cambridge Circus, head along Shaftesbury Avenue to Albert Schloss (20-24 Shaftesbury Avenue).'),
+        ], '&#128694; ~35-40 min &middot; ~1.7 miles (2.7 km) &ndash; well-lit main roads the whole way'),
+        ('By Tube', [
+            ('Walk', '~5 min from the hotel to Great Portland Street or Warren Street station.'),
+            ('Board', 'Northern line (Charing Cross branch), southbound &ndash; direct, no change needed from Warren Street.'),
+            ('Ride', '3 stops: Goodge Street, Tottenham Court Road, then Leicester Square.'),
+            ('Arrive', 'Exit at Leicester Square (via Cranbourn Street) and it&rsquo;s a further ~2 min walk to Albert Schloss.'),
+        ], '&#128647; ~15-18 min total &middot; approx. &pound;2.80 pay-as-you-go'),
+    ])),
 ]
 def route_box_for(name):
     n = name.lower()
-    for keyword, html_block in EVENT_ROUTE_BOX:
-        if keyword in n:
+    for entry in EVENT_ROUTE_BOX:
+        keyword, html_block = entry[0], entry[1]
+        exclude = entry[2] if len(entry) > 2 else None
+        if keyword in n and (not exclude or exclude not in n):
             return html_block
     return None
 
@@ -447,6 +540,22 @@ EVENT_ROUTE_BOX_AFTER = [
             ('Ride', '3 stops: Tottenham Court Road, Goodge Street, then Warren Street.'),
             ('Arrive', 'Exit at Warren Street and it&rsquo;s a further ~8 min walk via Euston Road / Albany Street to the hotel.'),
         ], '&#128647; ~15-18 min total &middot; approx. &pound;2.80 pay-as-you-go'),
+    ])),
+    ('dinner at hard rock cafe london (confirmation', route_box_html('Hard Rock Cafe to Hotel', [
+        ('By Uber', [
+            ('Cost', 'approx. &pound;12-&pound;18 (UberX) for the ~1.8 mile trip &ndash; both convenient and quick to end a long day.'),
+        ], '&#128662; ~15-20 min depending on traffic'),
+        ('On Foot', [
+            ('Start', 'From Hard Rock Cafe, head north via Park Lane past Marble Arch.'),
+            ('Continue', 'Continue up Edgware Road or Baker Street, then east onto Marylebone Road.'),
+            ('Arrive', 'Turn onto Albany Street and The Level at Meli&aacute; White House is a short walk up on the right.'),
+        ], '&#128694; ~35-40 min &middot; ~1.8 miles (2.9 km) &ndash; a fair walk after a long day, but well-lit main roads the whole way'),
+        ('By Tube', [
+            ('Walk', '~5 min from Hard Rock Cafe to Hyde Park Corner station.'),
+            ('Board', 'Piccadilly line, eastbound, 1 stop to Green Park, then change to the Jubilee line, northbound.'),
+            ('Ride', '2 stops via Bond Street, to Baker Street.'),
+            ('Arrive', 'Exit at Baker Street and it&rsquo;s a further ~10 min walk via Marylebone Road / Albany Street to the hotel.'),
+        ], '&#128647; ~25-30 min total (incl. the change) &middot; approx. &pound;2.80 pay-as-you-go'),
     ])),
 ]
 def route_box_after_for(name):
@@ -693,7 +802,8 @@ SHOPLISTS = {
         ('Uniqlo', '311 Oxford Street, London W1C 2HP', 'https://www.google.com/maps/search/?api=1&query=Uniqlo+311+Oxford+Street+London', 'https://www.uniqlo.com/uk/en/', None),
         ('Selfridges', '400 Oxford Street, London W1A 1AB', 'https://www.google.com/maps/search/?api=1&query=Selfridges+400+Oxford+Street+London', 'https://www.selfridges.com/', None),
         ('John Lewis', '300 Oxford Street, London W1C 1DX', 'https://www.google.com/maps/search/?api=1&query=John+Lewis+300+Oxford+Street+London', 'https://www.johnlewis.com/our-shops/oxford-street', None),
-        ('Hamleys', '188-196 Regent Street, London W1B 5BT', 'https://www.google.com/maps/search/?api=1&query=Hamleys+188-196+Regent+Street+London', 'https://www.hamleys.com/', None),
+        ('Hamleys', '188-196 Regent Street, London W1B 5BT', 'https://www.google.com/maps/search/?api=1&query=Hamleys+188-196+Regent+Street+London', 'https://www.hamleys.com/', 'cult.crisis.mime'),
+        ('H&M Oxford Street East', '174-176 Oxford Street, London W1D 1NX', 'https://www.google.com/maps/search/?api=1&query=H%26M+174-176+Oxford+Street+London', 'https://www2.hm.com/en_gb/index.html', 'refuse.foster.sweep'),
         ('Nike Town London', '236 Oxford Street, London W1C 1DE', 'https://www.google.com/maps/search/?api=1&query=Nike+Town+236+Oxford+Street+London', 'https://www.nike.com/gb/retail/s/niketown-london', None),
         ('Adidas Flagship Store', '425 Oxford Street, London W1C 2PG', 'https://www.google.com/maps/search/?api=1&query=Adidas+425+Oxford+Street+London', 'https://www.adidas.co.uk/stores/london-oxford-street-425/9990043889', None),
         ('Zara Oxford Street', '460-490 Oxford Street, London W1C 1AT', 'https://www.google.com/maps/search/?api=1&query=Zara+460-490+Oxford+Street+London', 'https://www.zara.com/uk/en/stores-locator/zara-london-oxford-s1377', None),
