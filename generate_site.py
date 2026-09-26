@@ -406,6 +406,13 @@ def route_box_html(title, subs):
     )
     return f'<div class="route-box"><div class="route-box-title">{esc(title)}</div>{subs_html}</div>'
 
+def meeting_point_box_html(title, lines, w3w, meta):
+    lines_html = ''.join(f'<div style="margin:3px 0;">{l}</div>' for l in lines)
+    w3w_html = (f'<div style="margin-top:6px;"><a class="w3w-badge" href="https://what3words.com/{esc(w3w)}" '
+                f'target="_blank" title="what3words location">///{esc(w3w)}</a></div>') if w3w else ''
+    return (f'<div class="route-box"><div class="route-box-title">{esc(title)}</div>'
+            f'{lines_html}{w3w_html}<div class="route-meta" style="margin-top:6px;">{meta}</div></div>')
+
 EVENT_ROUTE_BOX = [
     ('free time wandering around oxford street', route_box_html('Walking Route Directions', [
         ('Walking to Oxford Street', [
@@ -422,7 +429,13 @@ EVENT_ROUTE_BOX = [
             ('Arrive', 'Exit at Oxford Circus &ndash; Oxford Street is right outside; the Primark / Tottenham Court Road end is a further ~8 min walk east.'),
         ], '&#128647; ~15-18 min total (incl. the change) &middot; approx. &pound;2.80 pay-as-you-go'),
     ])),
-    ('tower of london tour (#33605663', route_box_html('Getting to the Tower of London', [
+    ('tower of london tour (#33605663', meeting_point_box_html(
+        'Tour Meeting Point (per Headout Booking Confirmation #33605663)',
+        ['Meeting point: Tower of London, London, United Kingdom.',
+         'Arrive 15 minutes early (by 8:45am for the 9:00am start) and bring a valid government-issued photo ID &ndash; late arrivals are treated as a no-show with no refund.'],
+        'swift.blitz.funds',
+        '&#128205; Head for the main visitor entrance near Tower Hill',
+    ) + route_box_html('Getting to the Tower of London', [
         ('General Directions', [
             ('Distance', 'approx. 5.5 miles (8.9 km) from The Level at Meli&aacute; White House to the Tower of London, EC3N 4AB.'),
             ('What3words', 'Meet at ///swift.blitz.funds &ndash; the Tube (no interchange needed) is the quickest and most reliable option for a 9:00am start; Uber is a comfortable door-to-door alternative.'),
@@ -440,7 +453,13 @@ EVENT_ROUTE_BOX = [
             ('Arrive', 'Exit at Tower Hill and it&rsquo;s a further ~3 min walk to the Tower of London entrance.'),
         ], '&#128647; ~25-30 min total &middot; approx. &pound;2.80 pay-as-you-go'),
     ])),
-    ('river tour (#33605662', route_box_html('Tower of London to River Tour', [
+    ('river tour (#33605662', meeting_point_box_html(
+        'River Tour Meeting Point (per Headout Booking Confirmation #33605662)',
+        ["Meeting point: Tower of London River Tour, St Katharine's Way, London &ndash; now sailing from Tower Bridge Quay.",
+         'Arrive 15 minutes early (by 10:30am for the 10:45am start) and bring a valid government-issued photo ID.'],
+        'dunes.copy.miles',
+        '&#9973; Boarding point: Tower Bridge Quay',
+    ) + route_box_html('Tower of London to River Tour', [
         ('On Foot', [
             ('Start', 'Exit the Tower of London and head to Tower Bridge, crossing to the south side or staying north depending on the meeting point.'),
             ('Arrive', 'Follow St Katharine&rsquo;s Way to Tower Bridge Quay &ndash; the River Tour departure point.'),
@@ -3485,11 +3504,25 @@ THU24_BARS_HTML = f'''
   </div>
 </div>'''
 
+GREENE_MAN_BAR = bar_card('The Greene Man', 'Traditional British pub (Greene King) - dating back to 1708',
+          '383 Euston Road, London NW1 3AU',
+          "From St Martin's Theatre", '~35-40 min walking (or see the Home from The Mousetrap box above for Uber/Tube options)',
+          'To The Melia', '~3-5 min walking - almost next door to the hotel',
+          "https://www.google.com/maps/dir/?api=1&origin=West%20Street%2C%20London%20WC2H%209NZ&destination=383%20Euston%20Road%2C%20London%20NW1%203AU&travelmode=walking",
+          website='https://www.greeneking.co.uk/pubs/greater-london/greene-man',
+          tripadvisor='https://www.tripadvisor.com/Restaurant_Review-g186338-d1446640-Reviews-Greene_Man-London_England.html',
+          w3w='torn.ashes.prone')
+
 FRI25_BARS_HTML = f'''
 <div class="dinner-box">
   <div class="day-map-title">After The Mousetrap: Nightcap Options</div>
-  <p class="lede" style="margin:0 0 10px;">Estimates only &ndash; check live transit apps on the day.</p>
-  <div class="place-grid">{''.join(MOUSETRAP_BARS)}</div>
+  <p class="lede" style="margin:0 0 10px;"><span class="badge badge-visited">Visited</span> We had a post-show drink at The Greene Man &ndash; a traditional British pub just down the road from the hotel.</p>
+  <div class="place-grid">{GREENE_MAN_BAR}</div>
+  <div id="mousetrap-bars-fri25" style="margin-top:14px;">
+    <div class="day-map-title" style="font-size:.85rem;">Other Suggestions We Didn&rsquo;t Get To <button class="print-mini no-print box-toggle-btn" id="mousetrap-bars-fri25-btn" onclick="toggleBox('mousetrap-bars-fri25')">Hide Suggestions</button></div>
+    <p class="lede" style="margin:0 0 10px;">Estimates only &ndash; check live transit apps on the day.</p>
+    <div class="place-grid">{''.join(MOUSETRAP_BARS)}</div>
+  </div>
 </div>'''
 
 LONDON_TUBE_INFO_HTML = '''
@@ -5335,6 +5368,24 @@ ALL_FOOD_PLACES.append({
     'address': '3 Granary Square, London N1C 4BH',
     'visited': True,
 })
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(16), 'place': 'Pieminister', 'day_num': 16,
+    'list_title': 'Lunch (25 Sept, actually visited)',
+    'address': 'The Market, Covent Garden, London WC2E 8RE',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(16), 'place': 'Albert Schloss', 'day_num': 16,
+    'list_title': 'Dinner (25 Sept, actually visited)',
+    'address': '20-24 Shaftesbury Avenue, London W1D 7EU',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(16), 'place': 'The Greene Man', 'day_num': 16,
+    'list_title': 'Post-Show Drinks (25 Sept, actually visited)',
+    'address': '383 Euston Road, London NW1 3AU',
+    'visited': True,
+})
 
 FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
 _VISITED_FOOD_PLACES = [fp for fp in ALL_FOOD_PLACES if fp.get('visited')]
@@ -6176,7 +6227,7 @@ function toggleMilanRestos() {{
   }});
 }})();
 (function() {{
-  var _boxIds = ['lunch-box-12sep', 'lighterman-bars-thu24'];
+  var _boxIds = ['lunch-box-12sep', 'lighterman-bars-thu24', 'mousetrap-bars-fri25'];
   _boxIds.forEach(function(id) {{
     var saved = localStorage.getItem('fab4-box-hidden-' + id);
     if (saved === null) return;
