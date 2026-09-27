@@ -143,6 +143,7 @@ WEBLINKS = [
     ('dinner at il tavolino', 'https://www.ristoranteiltavolino.it/en/'),
     ('lunch at caffè miralago', 'https://www.miralagoluxuryapartments.com/'),
     ('coffee & croissant at biffi', 'https://www.biffigalleria.it/en/the-biffi'),
+    ('lunch at the old star pub', 'https://www.greeneking.co.uk/pubs/greater-london/old-star'),
 ]
 
 def weblink_for(name):
@@ -171,6 +172,8 @@ EVENT_TRIPADVISOR = [
     ('dinner at il tavolino', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d2705901-Reviews-Il_Tavolino-Milan_Lombardy.html'),
     ('lunch at caffè miralago', 'https://www.tripadvisor.com/Restaurant_Review-g194728-d2075715-Reviews-Caffe_Miralago-Cernobbio_Lake_Como_Lombardy.html'),
     ('coffee & croissant at biffi', 'https://www.tripadvisor.com/Restaurant_Review-g187849-d1541347-Reviews-Biffi-Milan_Lombardy.html'),
+    ('dinner at hard rock cafe london', 'https://www.tripadvisor.com/Restaurant_Review-g186338-d719297-Reviews-Hard_Rock_Cafe-London_England.html'),
+    ('lunch at the old star pub', 'https://www.tripadvisor.com/Restaurant_Review-g186338-d1753731-Reviews-The_Old_Star-London_England.html'),
 ]
 
 def tripadvisor_for(name):
@@ -216,6 +219,7 @@ EVENT_W3W = [
     ('vaudeville theatre', 'diner.donor.rails'),
     ('waterstones piccadilly', 'blank.buns.bump'),
     ('hard rock cafe london', 'month.wakes.tests'),
+    ('lunch at the old star pub', 'only.bulb.liner'),
     ('the republic hotel', 'sports.pocket.anchors'),
     ('fontana delle naiadi', 'mouth.dished.cheaply'),
     ('santa maria degli angeli', 'mouth.dished.cheaply'),
@@ -1830,6 +1834,72 @@ DAILY_QUIZ = [
         {'q': '\U0001F389 BONUS: What is the technical term for the fear of long words?', 'opts': ['Hippopotomonstrosesquippedaliophobia', 'Logophobia', 'Verbaphobia', 'Sesquipediophobia'], 'ans': 0,
          'note': 'Hippopotomonstrosesquippedaliophobia - the fear of long words genuinely has one of the longest names in the dictionary. The irony is entirely intentional.', 'bonus': True},
     ]},
+    {'date': 'Sun 27 Sep', 'day_num': 18, 'theme': 'Farewell London (bumper 20)', 'qs': [
+        {'q': 'What time do we leave the hotel for Heathrow this evening?', 'opts': ['4:00pm', '6:00pm', '8:00pm', '10:00pm'], 'ans': 1,
+         'note': '6:00pm - giving plenty of time before the 10:00pm departure.'},
+        {'q': 'What time does our flight, BA15, depart Heathrow tonight?', 'opts': ['6:00pm', '8:00pm', '10:00pm', 'Midnight'], 'ans': 2,
+         'note': '10:00pm - BA15 to Singapore, then on to Sydney.'},
+        {'q': 'Which Heathrow terminal do we depart from tonight?', 'opts': ['Terminal 2', 'Terminal 3', 'Terminal 5', 'Terminal 4'], 'ans': 2,
+         'note': "Terminal 5 - British Airways' home terminal at Heathrow, same as our arrival back on Day 15."},
+        {'q': "The Castle pub in Farringdon - suggested for a last lunch today - is licensed as an unusual second type of business. What is it?", 'opts': ['A pawnbroker', 'A chemist', 'A bank', 'A post office'], 'ans': 0,
+         'note': "A pawnbroker - supposedly granted personally by King George IV after he pawned his watch there to settle a gambling debt."},
+        {'q': 'What is the largest ocean on Earth by surface area?', 'opts': ['Atlantic', 'Indian', 'Pacific', 'Arctic'], 'ans': 2,
+         'note': 'The Pacific - covering roughly a third of the entire surface of the planet.'},
+        {'q': 'Which planet is known as the "Red Planet"?', 'opts': ['Venus', 'Mars', 'Jupiter', 'Mercury'], 'ans': 1,
+         'note': 'Mars - the reddish colour comes from iron oxide (rust) covering its surface.'},
+        {'q': 'What is the smallest prime number?', 'opts': ['0', '1', '2', '3'], 'ans': 2,
+         'note': '2 - the only even prime number; every other even number can be divided by it.'},
+        {'q': 'In which country would you find the ancient rock-carved city of Petra?', 'opts': ['Egypt', 'Jordan', 'Syria', 'Israel'], 'ans': 1,
+         'note': 'Jordan - carved into rose-coloured rock face over 2,000 years ago by the Nabataeans.'},
+        {'q': 'What is the hardest naturally occurring substance on Earth?', 'opts': ['Quartz', 'Titanium', 'Diamond', 'Granite'], 'ans': 2,
+         'note': 'Diamond - a 10 on the Mohs hardness scale, formed under extreme heat and pressure deep underground.'},
+        {'q': 'Which Shakespeare play features the characters Rosencrantz and Guildenstern?', 'opts': ['Macbeth', 'Hamlet', 'Othello', 'King Lear'], 'ans': 1,
+         'note': "Hamlet - the pair later got their own spin-off play, Tom Stoppard's Rosencrantz and Guildenstern Are Dead."},
+        {'q': "What is the currency of Japan?", 'opts': ['Won', 'Yuan', 'Yen', 'Ringgit'], 'ans': 2,
+         'note': 'The yen - introduced in 1871 to replace a patchwork of old feudal currencies.'},
+        {'q': 'How many bones are in the adult human body?', 'opts': ['186', '206', '226', '256'], 'ans': 1,
+         'note': "206 - babies are actually born with around 270 bones, many of which fuse together as they grow."},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of crows?', 'opts': ['A murder', 'A conspiracy', 'A wake', 'A parliament'], 'ans': 0,
+         'note': "A murder of crows - nobody is entirely sure why, though old folk tales about crows 'trying' one of their own are the leading theory.", 'bonus': True},
+        {'q': '\U0001F389 BONUS: What was Play-Doh originally invented and sold as?', 'opts': ['A wallpaper cleaner', 'A shoe polish', 'A sealant for windows', 'A pottery clay'], 'ans': 0,
+         'note': "A wallpaper cleaner - it only became a children's toy in the 1950s after coal-based home heating (and sooty wallpaper) declined.", 'bonus': True},
+        {'q': "\U0001F389 BONUS: In Cockney rhyming slang, what does 'dog and bone' mean?", 'opts': ['Phone', 'Home', 'Money', 'Wife'], 'ans': 0,
+         'note': "Phone - one of the better-known bits of Cockney rhyming slang, still heard around London today.", 'bonus': True},
+        {'q': '\U0001F389 BONUS: What is the collective noun for a group of owls?', 'opts': ['A parliament', 'A congress', 'A senate', 'A council'], 'ans': 0,
+         'note': "A parliament of owls - popularised partly by C.S. Lewis's Narnia books.", 'bonus': True},
+        {'q': '\U0001F389 BONUS: Which common fruit carries its seeds on the outside rather than the inside?', 'opts': ['Strawberry', 'Kiwifruit', 'Fig', 'Blackberry'], 'ans': 0,
+         'note': 'The strawberry - technically making it an "accessory fruit" rather than a true berry at all.', 'bonus': True},
+        {'q': "\U0001F389 BONUS: What was Google's original working name, before the company settled on 'Google'?", 'opts': ['BackRub', 'PageFind', 'WebCrawl', 'NetSearch'], 'ans': 0,
+         'note': "BackRub - named for its early focus on analysing the 'back links' pointing to a webpage.", 'bonus': True},
+        {'q': '\U0001F389 BONUS: Ants can carry roughly how many times their own body weight?', 'opts': ['5 times', '20 times', '50 times', '200 times'], 'ans': 2,
+         'note': "Up to about 50 times their own body weight - relative to their size, that's like a person lifting a car.", 'bonus': True},
+        {'q': '\U0001F389 BONUS: Roughly how many passengers did Heathrow handle in its first full year of operation, 1946?', 'opts': ['6,300', '63,000', '630,000', '6.3 million'], 'ans': 1,
+         'note': "63,000 passengers in 1946, when the 'terminal' was literally a row of ex-military tents - by 2025 that had grown to a record 84.5 million in a single year.", 'bonus': True},
+    ]},
+    {'date': 'Mon 28 Sep', 'day_num': 19, 'theme': 'Travel Day - Singapore Transit', 'qs': [
+        {'q': 'What flight number carries us all the way from London to Sydney today, via a stop in Singapore?', 'opts': ['BA12', 'BA15', 'QF1', 'QF162'], 'ans': 1,
+         'note': 'BA15 - the same service all the way from Heathrow to Singapore and on to Sydney.'},
+        {'q': "Roughly what time do we land in Singapore this evening (local time)?", 'opts': ['2:40pm', '4:40pm', '6:40pm', '8:40pm'], 'ans': 2,
+         'note': '6:40pm - after an overnight flight from London.'},
+        {'q': 'How long is the layover in Singapore before continuing on to Sydney?', 'opts': ['40 minutes', 'About 1h 40m', 'About 3 hours', 'About 5 hours'], 'ans': 1,
+         'note': "About 1h 40m - landing 6:40pm, departing again at 8:20pm, all within Changi's Terminal 1."},
+        {'q': 'Which cabin class are the family flying on this BA15 service?', 'opts': ['Economy', 'Premium Economy', 'Business', 'First'], 'ans': 1,
+         'note': 'Premium Economy - for both the London-Singapore and Singapore-Sydney sectors.'},
+        {'q': 'Roughly how many time zones do we cross travelling from London to Singapore today?', 'opts': ['3', '5', '7', '10'], 'ans': 2,
+         'note': "About 7 hours - London is UTC+1 (British Summer Time) in late September, Singapore is UTC+8 year-round."},
+        {'q': "Which airport is generally ranked the world's busiest by passenger traffic?", 'opts': ['Heathrow', "Hartsfield-Jackson Atlanta", 'Dubai International', 'Changi Singapore'], 'ans': 1,
+         'note': "Hartsfield-Jackson Atlanta International - it has topped the rankings for most of the last two decades."},
+        {'q': "Singapore's Changi Airport, where we transit today, has consistently topped world rankings for what?", 'opts': ["World's best airport", 'Most runways', 'Oldest airport in Asia', 'Largest duty-free by revenue'], 'ans': 0,
+         'note': "World's best airport - Changi has won the Skytrax award more times than any other airport."},
+        {'q': 'What is generally considered the longest river in the world?', 'opts': ['Amazon', 'Nile', 'Yangtze', 'Mississippi'], 'ans': 1,
+         'note': 'The Nile - though the Amazon carries far more water and some measurements put it narrowly ahead in length too.'},
+        {'q': 'Which country has the most time zones of any country in the world?', 'opts': ['Russia', 'United States', 'France', 'Australia'], 'ans': 2,
+         'note': "France - thanks to its scattered overseas territories, it spans 12 time zones in total."},
+        {'q': 'What is the capital city of Australia?', 'opts': ['Sydney', 'Melbourne', 'Canberra', 'Brisbane'], 'ans': 2,
+         'note': "Canberra - a purpose-built capital chosen in 1908 as a compromise between rivals Sydney and Melbourne."},
+        {'q': '\U0001F389 BONUS: What is the common term for the groggy, disoriented feeling from crossing many time zones quickly?', 'opts': ['Jet lag', 'Circadian drift', 'Time sickness', 'Zone fatigue'], 'ans': 0,
+         'note': "Jet lag - caused by your body's internal clock being out of sync with the new local time. A good excuse for an early night once we're home.", 'bonus': True},
+    ]},
 ]
 
 def _quiz_day_id(date_str):
@@ -3014,6 +3084,150 @@ def what_we_did_html():
     if not day_html:
         day_html = '<p class="lede">Nothing confirmed as actually done yet &ndash; check back once the trip is under way.</p>'
     return day_html, total
+
+def _fts_day_num(title):
+    """Map a schedule day title's '(DAY N)' or '(N SEP)' date-of-month tag to the trip day
+    number (10 Sept = Day 1). Handles both the regular day titles (e.g. 'FRIDAY (DAY 11) - 11 SEP')
+    and the Option A/B/C titles for 23 Sept (e.g. '...(23 SEP) [Total driving: 5h 15m]')."""
+    m = re.search(r'\(DAY\s*(\d{1,2})\)', title, re.I)
+    if not m:
+        m = re.search(r'\((\d{1,2})\s*SEP\)', title, re.I)
+    if not m:
+        return None
+    return int(m.group(1)) - (TRIP_START_DATE.day - 1)
+
+def _fts_classify(name):
+    n = name.lower()
+    if 'breakfast' in n:
+        return 'breakfast'
+    if 'lunch' in n:
+        return 'lunch'
+    if 'dinner' in n:
+        return 'dinner'
+    if any(k in n for k in ('drinks', 'gelato', 'morning tea', 'coffee & croissant')):
+        return 'extra'
+    return None
+
+def full_trip_summary_html():
+    """Build a one-row-per-day, Trip-at-a-Glance-style table covering the whole trip
+    (Day 1 = 10 Sept departure, through Day 19 = 28 Sept travel home), with a Breakfast /
+    Lunch / Dinner column for every day. Actually-visited meals (status=='Visited' in the
+    schedule) are shown as confirmed; anything not yet reached uses the currently scheduled
+    plan, shown lighter/italic so it's clear it's still just the plan."""
+    accom_by_date = {t['date']: t.get('accom') for t in travel_json}
+    where_by_date = {t['date']: t.get('where') for t in travel_json}
+
+    meals = {}  # day_num -> {'breakfast':[blocks], 'lunch':[...], 'dinner':[...], 'extra':[...]}
+    planned = {}  # day_num -> {'lunch': block_or_None, 'dinner': block_or_None}
+
+    source_days = [d for d in italy_days if '(DAY 23)' not in d['title']]
+    if italy_options:
+        source_days.append(italy_options[0])  # Option A is what actually happened on 23 Sept
+    source_days += london_days
+
+    for d in source_days:
+        dn = _fts_day_num(d['title'])
+        if dn is None:
+            continue
+        m_slots = meals.setdefault(dn, {'breakfast': [], 'lunch': [], 'dinner': [], 'extra': []})
+        p_slots = planned.setdefault(dn, {'lunch': None, 'dinner': None})
+        for b in collapse_events(d['events']):
+            cat = _fts_classify(b['name'])
+            if not cat:
+                continue
+            if b.get('status') == 'Visited':
+                m_slots[cat].append(b)
+            elif cat in ('lunch', 'dinner') and p_slots[cat] is None:
+                p_slots[cat] = b
+
+    # Fallback source: some visited meals only ever got added to the Food Visited registry
+    # (ALL_FOOD_PLACES) without a matching 'Visited' row in the hour-by-hour schedule (e.g.
+    # a lunch/dinner swap noted after the fact) - pick those up too, keyed off list_title.
+    afp_by_day = {}
+    for fp in ALL_FOOD_PLACES:
+        if not fp.get('visited'):
+            continue
+        title = (fp.get('list_title') or '').lower()
+        if title.startswith('lunch'):
+            cat = 'lunch'
+        elif title.startswith('dinner'):
+            cat = 'dinner'
+        else:
+            continue
+        afp_by_day.setdefault(fp['day_num'], {}).setdefault(cat, []).append(fp)
+
+    def breakfast_cell(dn):
+        date = TRIP_START_DATE + datetime.timedelta(days=dn - 1)
+        prev_iso = (date - datetime.timedelta(days=1)).isoformat()
+        accom = accom_by_date.get(prev_iso)
+        if accom:
+            return esc(accom), False
+        where = (where_by_date.get(prev_iso) or '').lower()
+        if 'air travel' in where or where == 'air travel':
+            return 'In transit (flying)', True
+        if dn == 1:
+            return 'Before departure (NZ)', True
+        return '&ndash;', True
+
+    def meal_cell(dn, cat):
+        blocks = meals.get(dn, {}).get(cat, [])
+        if blocks:
+            parts = []
+            for b in blocks:
+                nm = re.sub(r'^(Breakfast|Lunch|Dinner)\s+at\s+', '', b['name'], flags=re.I)
+                parts.append(f'{esc(nm)} {badge("Visited")}')
+            return '<br>'.join(parts), False
+        afp_blocks = afp_by_day.get(dn, {}).get(cat, []) if cat in ('lunch', 'dinner') else []
+        if afp_blocks:
+            parts = [f'{esc(fp["place"])} {badge("Visited")}' for fp in afp_blocks]
+            return '<br>'.join(parts), False
+        pb = planned.get(dn, {}).get(cat) if cat in ('lunch', 'dinner') else None
+        if pb:
+            nm = re.sub(r'^(Lunch|Dinner)\s+at\s+', '', pb['name'], flags=re.I)
+            nm = re.sub(r'\s*\([^()]*confirmation[^()]*\)', '', nm, flags=re.I).strip()
+            return f'<em>{esc(nm)} (planned)</em>', True
+        date = TRIP_START_DATE + datetime.timedelta(days=dn - 1)
+        iso = date.isoformat()
+        prev_iso = (date - datetime.timedelta(days=1)).isoformat()
+        where = (where_by_date.get(iso) or '').lower()
+        if 'sea day' in where or 'queen victoria' in (accom_by_date.get(iso) or '').lower():
+            return '<em>Onboard Queen Victoria</em>', True
+        # Only call it "in transit" when there's no base at all either side of this day
+        # (a genuine flight day) - an evening-departure day where we're still in a city/hotel
+        # for most of the day falls through to the free-time line below instead.
+        if not accom_by_date.get(iso) and not accom_by_date.get(prev_iso):
+            return '<em>In transit</em>', True
+        return '<em>Free time / no set booking</em>', True
+
+    def extras_cell(dn):
+        blocks = meals.get(dn, {}).get('extra', [])
+        if not blocks:
+            return ''
+        parts = []
+        for b in blocks:
+            nm = re.sub(r'^(Pre-Dinner Drinks|Drinks|Gelato|Morning Tea|Coffee & Croissant)\s+at\s+', '', b['name'], flags=re.I)
+            parts.append(f'{esc(nm)} {badge("Visited")}')
+        return '<br>'.join(parts)
+
+    rows = []
+    for dn in range(1, 20):
+        date = TRIP_START_DATE + datetime.timedelta(days=dn - 1)
+        date_disp = date.strftime('%a %d %b')
+        bfast, bfast_dim = breakfast_cell(dn)
+        lunch, lunch_dim = meal_cell(dn, 'lunch')
+        dinner, dinner_dim = meal_cell(dn, 'dinner')
+        extras = extras_cell(dn)
+        extras_html = f'<div class="fts-extra">{extras}</div>' if extras else ''
+        today_cls = ' fts-today' if dn == 17 else ''
+        rows.append(f'''
+    <tr class="fts-row{today_cls}">
+      <td class="fts-day">Day {dn}</td>
+      <td>{esc(date_disp)}</td>
+      <td class="{'fts-dim' if bfast_dim else ''}">{bfast}</td>
+      <td class="{'fts-dim' if lunch_dim else ''}">{lunch}</td>
+      <td class="{'fts-dim' if dinner_dim else ''}">{dinner}{extras_html}</td>
+    </tr>''')
+    return ''.join(rows)
 
 DAY24_MAP = {
     'title': "Thursday 24 Sept - Today's Places & Suggested Routes",
@@ -4608,6 +4822,10 @@ footer { text-align:center; padding:30px 20px 50px; color:var(--muted); font-siz
 .expense-rate-row { font-size:.72rem; color:var(--muted); font-variant-numeric:tabular-nums; }
 .expense-row-actions { white-space:nowrap; text-align:right; }
 .fv-code { font-weight:700; color:var(--navy); white-space:nowrap; }
+.fts-day { font-weight:700; color:var(--navy); white-space:nowrap; }
+.fts-row.fts-today { background:#fdf6e3; }
+.fts-dim { color:var(--muted); font-style:italic; }
+.fts-extra { font-size:.76rem; color:var(--muted); margin-top:3px; }
 .fv-tick { text-align:center; }
 .fv-tick input[type="checkbox"] { width:18px; height:18px; accent-color:var(--gold); cursor:pointer; }
 .expense-row-box { display:inline-flex; gap:6px; border:1px solid #ccd5e3; border-radius:8px; padding:3px; background:#fafcff; }
@@ -4941,7 +5159,10 @@ EXPENSE_RATE_ROWS_HTML = ''.join(
     f'<div class="expense-rate-row">1 {c} = {EXPENSE_RATES_TO_NZD[c]:.4f} NZD &middot; {EXPENSE_RATES_TO_AUD[c]:.4f} AUD</div>'
     for c in ['EUR', 'GBP', 'USD', 'SGD', 'THB', 'AUD', 'NZD']
 )
-EXPENSES_SEED = []  # confirmed submissions, baked in each time the site is regenerated
+try:
+    EXPENSES_SEED = json.load(open('expenses_seed.json', encoding='utf-8'))  # confirmed submissions, baked in each time the site is regenerated - pulled in from Netlify Forms via pull_netlify_expenses.py
+except FileNotFoundError:
+    EXPENSES_SEED = []
 
 EXPENSES_SECTION_HTML = f'''
 <section id="expenses" class="print-block" data-section="expenses">
@@ -5279,6 +5500,12 @@ def _food_seq(entry):
         return (entry['day_num'], 0)
 
 ALL_FOOD_PLACES.append({
+    'code': next_food_code(2), 'place': 'La Famiglia dal 1968', 'day_num': 2,
+    'list_title': 'Dinner (11 Sept, actually visited)',
+    'address': 'Via Gaeta 66, 00185 Rome - ~1 min walk from hotel',
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
     'code': next_food_code(3), 'place': 'Caffe Leonina', 'day_num': 3,
     'list_title': 'Lunch (12 Sept, actually visited)',
     'address': 'Piazza della Citta Leonina 5/6, 00193 Rome - just outside the Vatican walls',
@@ -5386,6 +5613,18 @@ ALL_FOOD_PLACES.append({
     'address': '383 Euston Road, London NW1 3AU',
     'visited': True,
 })
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(17), 'place': 'The Old Star Pub', 'day_num': 17,
+    'list_title': 'Lunch (26 Sept, actually visited)',
+    'address': "66 Broadway, Westminster, London SW1H 0DB - classic Victorian pub (Greene King)",
+    'visited': True,
+})
+ALL_FOOD_PLACES.append({
+    'code': next_food_code(17), 'place': 'Hard Rock Cafe London', 'day_num': 17,
+    'list_title': 'Dinner (26 Sept, actually visited)',
+    'address': '150 Old Park Lane, Mayfair, London W1K 1QZ',
+    'visited': True,
+})
 
 FOOD_PLACES_MAP = {fp['code']: fp['place'] for fp in ALL_FOOD_PLACES}
 _VISITED_FOOD_PLACES = [fp for fp in ALL_FOOD_PLACES if fp.get('visited')]
@@ -5403,11 +5642,23 @@ food_visited_rows_html = ''.join(f'''
     </tr>''' for fp in _SORTED_FOOD_PLACES)
 
 _wwd_days_html, _wwd_total = what_we_did_html()
+_fts_rows_html = full_trip_summary_html()
 
 WHAT_WE_DID_SECTION_HTML = f'''
 <section id="whatwedid" class="print-block" data-section="whatwedid">
   <h2>What We Actually Did</h2>
   <p class="lede">A running diary of what we&rsquo;ve actually done on the trip so far ({_wwd_total} confirmed so far) &ndash; grows day by day as things get ticked off as Visited. By the end of the trip this becomes our full record of what really happened.</p>
+
+  <h3>Full Trip Meal Summary</h3>
+  <p class="lede">Every day of the trip (Day 1 = 10 Sept departure, through Day 19 = 28 Sept travel home), Breakfast/Lunch/Dinner at a glance. Confirmed &ldquo;Visited&rdquo; meals are shown solid; anything still just the plan is shown lighter &amp; in <em>italics</em>.</p>
+  <div class="expense-table-wrap">
+    <table class="expense-table">
+      <thead><tr><th>Day</th><th>Date</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr></thead>
+      <tbody>{_fts_rows_html}</tbody>
+    </table>
+  </div>
+
+  <h3>Day-by-Day Diary</h3>
   {_wwd_days_html}
 </section>
 '''

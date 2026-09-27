@@ -179,14 +179,14 @@
         },
         {
           "time": "12:30 PM",
-          "event": "Lunch near Tower Bridge / St Katharine Docks (see suggestions below)",
-          "status": "Optional",
-          "address": null
+          "event": "Lunch at The Old Star Pub",
+          "status": "Visited",
+          "address": "66 Broadway, Westminster, London SW1H 0DB - classic Victorian pub (Greene King), just off St James's Park\nPhone: 020 7222 8755"
         },
         {
           "time": "2:15 PM",
-          "event": "Lunch (continues)",
-          "status": "Optional",
+          "event": "Lunch at The Old Star Pub (continues)",
+          "status": "Visited",
           "address": null
         },
         {
@@ -228,25 +228,25 @@
         {
           "time": "6:30 PM",
           "event": "Dinner at Hard Rock Cafe London (confirmation #496211, via OpenTable) (starts 6:45pm)",
-          "status": "Booked",
+          "status": "Visited",
           "address": "150 Old Park Lane, Mayfair, London W1K 1QZ"
         },
         {
           "time": "7:00 PM",
           "event": "Dinner at Hard Rock Cafe London (continues)",
-          "status": "Booked",
+          "status": "Visited",
           "address": null
         },
         {
           "time": "7:30 PM",
           "event": "Dinner at Hard Rock Cafe London (continues)",
-          "status": "Booked",
+          "status": "Visited",
           "address": null
         },
         {
           "time": "8:00 PM",
           "event": "Dinner at Hard Rock Cafe London (continues, ends 8:15pm)",
-          "status": "Booked",
+          "status": "Visited",
           "address": null
         }
       ],
