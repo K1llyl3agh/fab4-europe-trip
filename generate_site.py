@@ -3040,7 +3040,10 @@ def day_heading_display(title):
 FUN_FACTS_PAGE_HTML = fun_facts_page_html()
 
 def wwd_row_html(b):
-    """Render one 'What We Actually Did' diary row for a collapsed, status=='Visited' event block."""
+    """Render one 'What We Actually Did' diary row for a collapsed event block. Events
+    manually confirmed as status=='Visited' get the bold gold treatment; everything else
+    (flights, transfers, tours, check-ins, meals not individually re-confirmed, etc.) still
+    shows with its own status badge so the diary is a complete record, not just meals."""
     addr = f'<div class="ev-addr">{esc(b["address"])}</div>' if b.get('address') else ''
     weblink_url = weblink_for(b['name'])
     weblink_btn = f'<a class="pill pill-website" href="{esc(weblink_url)}" target="_blank">Website</a>' if weblink_url else ''
@@ -3053,11 +3056,14 @@ def wwd_row_html(b):
     ev_phone_html = f'<div class="ev-addr">&#128222; {esc(ev_phone)} {w3w_html}</div>' if ev_phone else (f'<div class="ev-addr">{w3w_html}</div>' if w3w_html else '')
     ev_note = event_note_for(b['name']) or event_confirmed_for(b['name'])
     ev_note_html = f'<div class="ev-note">{ev_note}</div>' if ev_note else ''
+    is_visited = b.get('status') == 'Visited'
+    row_class = 'ev-row-visited' if is_visited else 'ev-row-diary'
+    row_badge = badge('Visited') if is_visited else badge(b.get('status'))
     return f'''
-        <div class="ev-row ev-row-visited">
+        <div class="ev-row {row_class}">
           <div class="ev-time">{esc(b['time_display'])}</div>
           <div class="ev-body">
-            <div class="ev-name">{esc_br(b['name'])} {badge('Visited')}</div>
+            <div class="ev-name">{esc_br(b['name'])} {row_badge}</div>
             {addr}
             {ev_phone_html}
             {ev_note_html}
@@ -3066,24 +3072,36 @@ def wwd_row_html(b):
         </div>'''
 
 def what_we_did_html():
-    """Build the growing day-by-day diary of status=='Visited' events across the whole trip so far."""
+    """Build the complete day-by-day diary of the whole trip: every event on every day
+    (flights, transfers, tours, hotel check-ins, meals, drinks, everything) in schedule
+    order, not just the meals that were individually ticked off as 'Visited'. Events that
+    were cancelled/superseded on the day (flight delays, route changes, closed venues etc.
+    - see EVENT_CANCELLED) are left out since they didn't actually happen. Uses the same
+    day set as full_trip_summary_html: the generic Day 23 placeholder is dropped in favour
+    of Option A (Lake Como), which is what actually ran, and cruise days are included since
+    cruise_days is just a slice of italy_days."""
     day_html = ''
     total = 0
-    for d in italy_days + italy_options + london_days:
-        blocks = collapse_events(d['events'])
-        visited = [b for b in blocks if b.get('status') == 'Visited']
-        if not visited:
+    visited_total = 0
+    source_days = [d for d in italy_days if '(DAY 23)' not in d['title']]
+    if italy_options:
+        source_days.append(italy_options[0])
+    source_days += london_days
+    for d in source_days:
+        blocks = [b for b in collapse_events(d['events']) if not event_cancelled_for(b['name'])]
+        if not blocks:
             continue
-        total += len(visited)
-        rows = ''.join(wwd_row_html(b) for b in visited)
+        total += len(blocks)
+        visited_total += sum(1 for b in blocks if b.get('status') == 'Visited')
+        rows = ''.join(wwd_row_html(b) for b in blocks)
         day_html += f'''
       <div class="day-card wwd-card">
         <div class="day-head wwd-day-head"><span class="day-title">{esc(day_heading_display(d['title']))}</span></div>
         <div class="day-body">{rows}</div>
       </div>'''
     if not day_html:
-        day_html = '<p class="lede">Nothing confirmed as actually done yet &ndash; check back once the trip is under way.</p>'
-    return day_html, total
+        day_html = '<p class="lede">Nothing recorded yet &ndash; check back once the trip is under way.</p>'
+    return day_html, total, visited_total
 
 def _fts_day_num(title):
     """Map a schedule day title's '(DAY N)' or '(N SEP)' date-of-month tag to the trip day
@@ -4589,6 +4607,8 @@ body.hide-all-suggestions .sugg-box { display:none !important; }
 .ev-row-cancelled .ev-time, .ev-row-cancelled .ev-name, .ev-row-cancelled .ev-addr { text-decoration:line-through; color:#a0231b; }
 .ev-cancelled-tag { display:inline-block; background:#c0392b; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.02em; text-decoration:none; border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
 .ev-row-visited { background:#fdf6ec; border:3px solid var(--gold); border-radius:10px; padding:10px 14px; margin:6px 0; }
+.ev-row-diary { background:#f7f9fc; border-left:3px solid var(--london); border-radius:6px; padding:8px 14px; margin:4px 0; }
+@media print { .wwd-card { break-inside: avoid; page-break-inside: avoid; } }
 .badge-visited { background:var(--gold); color:#fff; }
 .ev-row-potential { background:#eaf7ec; border:3px solid #2e7d32; border-radius:10px; padding:10px 14px; margin:6px 0; }
 .badge-potential { background:#2e7d32; color:#fff; }
@@ -5649,13 +5669,13 @@ food_visited_rows_html = ''.join(f'''
       <td class="fv-tick"><label class="place-visited-label"><input type="checkbox" class="place-visited-check" data-code="{esc(fp['code'])}" onchange="toggleFoodVisited('{esc(fp['code'])}', this.checked)"></label></td>
     </tr>''' for fp in _SORTED_FOOD_PLACES)
 
-_wwd_days_html, _wwd_total = what_we_did_html()
+_wwd_days_html, _wwd_total, _wwd_visited_total = what_we_did_html()
 _fts_rows_html = full_trip_summary_html()
 
 WHAT_WE_DID_SECTION_HTML = f'''
 <section id="whatwedid" class="print-block" data-section="whatwedid">
   <h2>What We Actually Did</h2>
-  <p class="lede">A running diary of what we&rsquo;ve actually done on the trip so far ({_wwd_total} confirmed so far) &ndash; grows day by day as things get ticked off as Visited. By the end of the trip this becomes our full record of what really happened.</p>
+  <p class="lede">The complete diary of the trip &ndash; every event, flight, transfer, tour, check-in, meal and drink, in order, day by day ({_wwd_total} entries in total, {_wwd_visited_total} of them individually confirmed as <span class="badge badge-visited">Visited</span> and shown in a gold box). Anything without a gold box is what was booked/scheduled for that slot and is included here as the best record of what actually happened; cancelled or superseded plans are left out.</p>
 
   <h3>Full Trip Meal Summary</h3>
   <p class="lede">Every day of the trip (Day 1 = 10 Sept departure, through Day 19 = 28 Sept travel home), Breakfast/Lunch/Dinner at a glance. Confirmed &ldquo;Visited&rdquo; meals are shown solid; anything still just the plan is shown lighter &amp; in <em>italics</em>.</p>
