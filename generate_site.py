@@ -4412,7 +4412,7 @@ ALL_DAY_IDS = sorted(set(
     ) if did
 ))
 
-SUB_IDS = ['melia20', 'shops20', 'piccshops20', 'piccthings20', 'carsbaby', 'quizquestions', 'quizanswers']
+SUB_IDS = ['melia20', 'shops20', 'piccshops20', 'piccthings20', 'carsbaby', 'quizquestions', 'quizanswers', 'wwddiary']
 
 CSS = '''
 :root {
@@ -5686,8 +5686,11 @@ WHAT_WE_DID_SECTION_HTML = f'''
     </table>
   </div>
 
-  <h3>Day-by-Day Diary</h3>
+  <h3 id="wwddiaryhead" style="margin-bottom:0;">Day-by-Day Diary</h3>
+  <button class="print-btn no-print" onclick="printSub('wwddiary')"><span class="ic">&#128424;&#65039;</span>Print Diary</button>
+  <div data-subsection="wwddiary">
   {_wwd_days_html}
+  </div>
 </section>
 '''
 
