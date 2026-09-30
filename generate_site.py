@@ -2720,12 +2720,12 @@ def dinner_box(title, options, day_num=None, food=True, box_id=None, default_hid
         btn_label = 'Show Suggestions' if default_hidden else 'Hide Suggestions'
         toggle_btn = f'<button class="print-mini no-print box-toggle-btn" id="{box_id}-btn" onclick="toggleBox(\'{box_id}\')">{btn_label}</button>'
         return f'''
-    <div class="dinner-box{hidden_class}" id="{box_id}">
+    <div class="dinner-box sugg-box{hidden_class}" id="{box_id}">
       <div class="day-map-title">{esc(title)} {toggle_btn}</div>
       <div class="place-grid">{cards}</div>
     </div>'''
     return f'''
-    <div class="dinner-box">
+    <div class="dinner-box sugg-box">
       <div class="day-map-title">{esc(title)}</div>
       <div class="place-grid">{cards}</div>
     </div>'''
@@ -3686,7 +3686,7 @@ LUNCH_STRAND = [
 
 register_food_places('Lunch Suggestions (River Tour end + Strand)', 17, LUNCH_26SEP + LUNCH_STRAND)
 LUNCH_26SEP_HTML = f'''
-<div class="dinner-box">
+<div class="dinner-box sugg-box">
   <div class="day-map-title">Lunch Suggestions (12:30-2:15pm)</div>
   <p class="lede" style="margin:0 0 10px;">8 options in two areas &ndash; eat near the end of the River Tour, or head straight towards the Strand ready for Six at 4pm.</p>
   <div class="option-box-sub"><strong>4 near the River Tour end (Tower Bridge / St Katharine Docks, 5-8 min walk):</strong></div>
@@ -3696,7 +3696,7 @@ LUNCH_26SEP_HTML = f'''
 </div>'''
 
 SAT26_BARS_HTML = LUNCH_26SEP_HTML + f'''
-<div class="dinner-box">
+<div class="dinner-box sugg-box">
   <div class="day-map-title">After Hard Rock: Nightcap Options</div>
   <p class="lede" style="margin:0 0 10px;">Estimates only &ndash; check live transit apps on the day.</p>
   <div class="option-box-sub"><strong>4 bars near Hard Rock Cafe:</strong></div>
@@ -3706,7 +3706,7 @@ SAT26_BARS_HTML = LUNCH_26SEP_HTML + f'''
 </div>'''
 
 THU24_BARS_HTML = f'''
-<div class="dinner-box" id="lighterman-bars-thu24">
+<div class="dinner-box sugg-box" id="lighterman-bars-thu24">
   <div class="day-map-title">After The Lighterman: Nightcap Options <button class="print-mini no-print box-toggle-btn" id="lighterman-bars-thu24-btn" onclick="toggleBox('lighterman-bars-thu24')">Hide Suggestions</button></div>
   <p class="lede" style="margin:0 0 10px;">Estimates only &ndash; check live transit apps on the day.</p>
   <div class="place-grid">{''.join(LIGHTERMAN_BARS)}</div>
@@ -3732,7 +3732,7 @@ FRI25_BARS_HTML = f'''
   <div class="day-map-title">After The Mousetrap: Nightcap Options</div>
   <p class="lede" style="margin:0 0 10px;"><span class="badge badge-visited">Visited</span> We had a post-show drink at The Greene Man &ndash; a traditional British pub just down the road from the hotel.</p>
   <div class="place-grid">{GREENE_MAN_BAR}</div>
-  <div id="mousetrap-bars-fri25" style="margin-top:14px;">
+  <div class="sugg-box" id="mousetrap-bars-fri25" style="margin-top:14px;">
     <div class="day-map-title" style="font-size:.85rem;">Other Suggestions We Didn&rsquo;t Get To <button class="print-mini no-print box-toggle-btn" id="mousetrap-bars-fri25-btn" onclick="toggleBox('mousetrap-bars-fri25')">Hide Suggestions</button></div>
     <p class="lede" style="margin:0 0 10px;">Estimates only &ndash; check live transit apps on the day.</p>
     <div class="place-grid">{''.join(MOUSETRAP_BARS)}</div>
@@ -4549,6 +4549,9 @@ section .lede { color:var(--muted); margin-bottom:26px; font-size:.98rem; }
 .resto-toggle-btn { margin-left:10px; vertical-align:middle; }
 .milan-resto-wrap-hidden { display:none; }
 @media print { .milan-resto-wrap-hidden { display:none !important; } }
+body.hide-all-suggestions .sugg-box { display:none !important; }
+@media print { body.hide-all-suggestions .sugg-box { display:none !important; } }
+.master-sugg-toggle-btn { margin-left:8px; }
 .dinner-box .place-grid { margin:10px 0 0; }
 .option-box { margin-top:16px; padding:16px 18px; background:#eef3fb; border:1px dashed var(--london); border-radius:10px; }
 .option-box .place-grid { margin:10px 0 0; grid-template-columns:1fr; max-width:340px; }
@@ -4752,6 +4755,11 @@ table.flight-table tr.flight-retimed td { background:#fff6e0 !important; color:#
 .japan-banner .jb-flag { font-size:2.4rem; display:block; margin-bottom:10px; }
 @media (max-width:600px) { .japan-banner .jb-text { font-size:1.3rem; } }
 @media print { .japan-banner { display:none !important; } }
+.europe28-banner { text-align:center; padding:50px 20px 60px; background:var(--gold); color:var(--navy); }
+.europe28-banner .eb-text { font-size:2rem; font-weight:800; letter-spacing:.03em; margin:0; }
+.europe28-banner .eb-flag { font-size:2.4rem; display:block; margin-bottom:10px; }
+@media (max-width:600px) { .europe28-banner .eb-text { font-size:1.3rem; } }
+@media print { .europe28-banner { display:none !important; } }
 .sec-rome { background:var(--rome-light); }
 .sec-cruise { background:var(--cruise-light); }
 .sec-tuscany { background:var(--tuscany-light); }
@@ -5751,6 +5759,7 @@ HTML = f'''<!DOCTYPE html>
       <button class="print-mini no-print" onclick="printSection('whatwedid')"><span class="ic">&#128424;&#65039;</span>Print What We Did</button>
       <button class="print-mini no-print" onclick="printSection('funfacts')"><span class="ic">&#128424;&#65039;</span>Print Fun Facts</button>
       <a class="print-mini no-print" href="https://www.cruisemapper.com/?imo=9320556" target="_blank" rel="noopener"><span class="ic">&#128674;</span>QV Now</a>
+      <button class="print-mini no-print master-sugg-toggle-btn" id="master-sugg-toggle-btn" onclick="toggleAllSuggestions()"><span class="ic">&#128065;&#65039;</span>Hide Restaurants We Didn&rsquo;t Visit</button>
       <div class="fab4">Karen Nicholson &middot; Deb Gyde &middot; Thomas Akhurst &middot; Gary Nicholson</div>
     </div>
     <div class="hero-photo">
@@ -5937,7 +5946,7 @@ HTML = f'''<!DOCTYPE html>
   {italy_options_html}
 
   <h3>Potential Dinner Restaurants &ndash; Milan (23 September, all 3 plans) <button class="print-mini no-print resto-toggle-btn" id="milan-resto-toggle-btn" onclick="toggleMilanRestos()">Hide</button></h3>
-  <div class="milan-resto-wrap" id="milan-resto-wrap">
+  <div class="milan-resto-wrap sugg-box" id="milan-resto-wrap">
   <p class="lede">All confirmed open on a Wednesday. The first three (Cantine Milano, L'Immagine, Casa Festa) were the original shortlist; the five below (Osteria Cornalia, Da Gigi, Osteria Nanin - Torriani, Giannino dal 1899, Pizza Shamb&ograve;) are all 4-5 star Italian/Mediterranean options and much closer to the hotel (6-12 min walk, except Pizza Shamb&ograve; at ~25 min). Hours and ratings sourced online &ndash; please reconfirm nearer the date. Distances are estimates only, from iQ Hotel Milano.</p>
   <div class="resto-list">{milan_dinner_stack_html}</div>
   </div>
@@ -6219,6 +6228,11 @@ HTML = f'''<!DOCTYPE html>
   <p class="jb-text">BRING ON JAPAN 2027</p>
 </div>
 
+<div class="europe28-banner">
+  <span class="eb-flag">&#127466;&#127482;</span>
+  <p class="eb-text">ROLL ON EUROPE 28</p>
+</div>
+
 <script>
 function printSection(id) {{
   document.body.className = 'printing-' + id;
@@ -6488,6 +6502,24 @@ function toggleMilanRestos() {{
     if (box) box.classList.toggle('box-hidden', hidden);
     if (btn) btn.textContent = hidden ? 'Show Suggestions' : 'Hide Suggestions';
   }});
+}})();
+function toggleAllSuggestions() {{
+  var btn = document.getElementById('master-sugg-toggle-btn');
+  var hidden = document.body.classList.toggle('hide-all-suggestions');
+  localStorage.setItem('fab4-hide-all-suggestions', hidden ? '1' : '0');
+  if (btn) btn.innerHTML = hidden
+    ? '<span class="ic">&#128065;&#65039;</span>Show Restaurants We Didn&rsquo;t Visit'
+    : '<span class="ic">&#128065;&#65039;</span>Hide Restaurants We Didn&rsquo;t Visit';
+}}
+(function() {{
+  var saved = localStorage.getItem('fab4-hide-all-suggestions');
+  if (saved === null) return;
+  var hidden = saved === '1';
+  document.body.classList.toggle('hide-all-suggestions', hidden);
+  var btn = document.getElementById('master-sugg-toggle-btn');
+  if (btn) btn.innerHTML = hidden
+    ? '<span class="ic">&#128065;&#65039;</span>Show Restaurants We Didn&rsquo;t Visit'
+    : '<span class="ic">&#128065;&#65039;</span>Hide Restaurants We Didn&rsquo;t Visit';
 }})();
 var flipLastValues = {{}};
 function setFlipDigit(unitName, value) {{
