@@ -6223,11 +6223,6 @@ HTML = f'''<!DOCTYPE html>
   Built from the Fab4takeoneurope itinerary workbook &middot; private &amp; for family use only
 </footer>
 
-<div class="japan-banner">
-  <span class="jb-flag">&#127471;&#127477;</span>
-  <p class="jb-text">BRING ON JAPAN 2027</p>
-</div>
-
 <div class="europe28-banner">
   <span class="eb-flag">&#127466;&#127482;</span>
   <p class="eb-text">ROLL ON EUROPE 28</p>
